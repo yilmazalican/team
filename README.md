@@ -1,4 +1,9 @@
-(T)olga(E)ren(A)lican(M)eva
+# This is documentation branch.
+# There will be no code or something other than documentations.
 
-SE301 Project
-Rent a Flat
+---------------------------------
+|  (T)olga(E)ren(A)lican(M)eva  |
+|                               |
+|         SE301 Project         |
+|          Rent a Flat          |
+---------------------------------
