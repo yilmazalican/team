@@ -1,4 +1,4 @@
-# tam
+# tama
 
 Eren Değiştirdi
 
