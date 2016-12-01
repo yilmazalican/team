@@ -15,7 +15,7 @@
 		1AC48BA91DE6615100505913 /* iFlatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BA81DE6615100505913 /* iFlatUITests.swift */; };
 		1AC48BBE1DE6622100505913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48BBD1DE6622100505913 /* Main.storyboard */; };
 		1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BC21DE6625C00505913 /* ViewController.swift */; };
-		46E8E9991DF09B1900C265E3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Login.storyboard */; };
+		46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Loginn.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
 		49587D11F6CA3220CD322A34 /* Pods_iFlatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9571773469B7A5F34F3C3447 /* Pods_iFlatTests.framework */; };
@@ -58,7 +58,7 @@
 		1AC48BC21DE6625C00505913 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1ACF698E2B3BE179FF12D22C /* Pods-iFlatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlatUITests/Pods-iFlatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		445ED9DCE6F7C0266D026584 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46E8E9981DF09B1900C265E3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		46E8E9981DF09B1900C265E3 /* Loginn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loginn.storyboard; sourceTree = "<group>"; };
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4F5BD7A07A81D2F3BE95E6E8 /* Pods-iFlatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlatTests/Pods-iFlatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				46E8E9AE1DF0A0AF00C265E3 /* Controller */,
-				46E8E9981DF09B1900C265E3 /* Login.storyboard */,
+				46E8E9981DF09B1900C265E3 /* Loginn.storyboard */,
 			);
 			name = MevaMVC;
 			sourceTree = "<group>";
@@ -394,7 +394,7 @@
 				1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
 				1AC48B901DE6615100505913 /* Assets.xcassets in Resources */,
-				46E8E9991DF09B1900C265E3 /* Login.storyboard in Resources */,
+				46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
