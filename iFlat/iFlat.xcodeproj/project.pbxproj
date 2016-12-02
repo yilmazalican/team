@@ -15,6 +15,9 @@
 		1AC48BA91DE6615100505913 /* iFlatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BA81DE6615100505913 /* iFlatUITests.swift */; };
 		1AC48BBE1DE6622100505913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48BBD1DE6622100505913 /* Main.storyboard */; };
 		1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BC21DE6625C00505913 /* ViewController.swift */; };
+		1ADCD0281DF1816600CC08F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0271DF1816600CC08F9 /* User.swift */; };
+		1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */; };
+		1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */; };
 		46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Loginn.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
@@ -57,6 +60,9 @@
 		1AC48BBD1DE6622100505913 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1AC48BC21DE6625C00505913 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1ACF698E2B3BE179FF12D22C /* Pods-iFlatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlatUITests/Pods-iFlatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1ADCD0271DF1816600CC08F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRUSER.swift; sourceTree = "<group>"; };
+		1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableUser.swift; sourceTree = "<group>"; };
 		445ED9DCE6F7C0266D026584 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E8E9981DF09B1900C265E3 /* Loginn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loginn.storyboard; sourceTree = "<group>"; };
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -122,11 +128,9 @@
 		1AC48B871DE6615100505913 /* iFlat */ = {
 			isa = PBXGroup;
 			children = (
-				1AC48BBB1DE661B300505913 /* STORAGE DO NOT TOUCH! */,
-				1AC48BBA1DE661AD00505913 /* MevaMVC */,
-				1AC48BB91DE661A700505913 /* ErenMVC */,
-				1AC48BB81DE661A000505913 /* TolgaMVC */,
-				1AC48BB71DE6619500505913 /* AlicanMVC */,
+				1ADCD0261DF1813B00CC08F9 /* FIREBASE_LAYER */,
+				1AC48BBB1DE661B300505913 /* MODEL_LAYER */,
+				1ADCD0251DF1812500CC08F9 /* TEAM_MVC_LAYER */,
 			);
 			path = iFlat;
 			sourceTree = "<group>";
@@ -195,11 +199,12 @@
 			name = MevaMVC;
 			sourceTree = "<group>";
 		};
-		1AC48BBB1DE661B300505913 /* STORAGE DO NOT TOUCH! */ = {
+		1AC48BBB1DE661B300505913 /* MODEL_LAYER */ = {
 			isa = PBXGroup;
 			children = (
+				1ADCD0271DF1816600CC08F9 /* User.swift */,
 			);
-			name = "STORAGE DO NOT TOUCH!";
+			name = MODEL_LAYER;
 			sourceTree = "<group>";
 		};
 		1AC48BBC1DE661E000505913 /* Tests */ = {
@@ -232,6 +237,26 @@
 				1AC48BC21DE6625C00505913 /* ViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		1ADCD0251DF1812500CC08F9 /* TEAM_MVC_LAYER */ = {
+			isa = PBXGroup;
+			children = (
+				1AC48BBA1DE661AD00505913 /* MevaMVC */,
+				1AC48BB91DE661A700505913 /* ErenMVC */,
+				1AC48BB81DE661A000505913 /* TolgaMVC */,
+				1AC48BB71DE6619500505913 /* AlicanMVC */,
+			);
+			name = TEAM_MVC_LAYER;
+			sourceTree = "<group>";
+		};
+		1ADCD0261DF1813B00CC08F9 /* FIREBASE_LAYER */ = {
+			isa = PBXGroup;
+			children = (
+				1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */,
+				1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */,
+			);
+			name = FIREBASE_LAYER;
 			sourceTree = "<group>";
 		};
 		2AB9C57D868DBA1D53BD1456 /* Products */ = {
@@ -545,6 +570,9 @@
 				46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */,
 				46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */,
 				1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */,
+				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
+				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
+				1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */,
 				1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
