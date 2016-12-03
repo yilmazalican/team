@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5354AC1DE663B400353614 /* GoogleService-Info.plist */; };
+		1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */; };
 		1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B881DE6615100505913 /* AppDelegate.swift */; };
 		1AC48B901DE6615100505913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B8F1DE6615100505913 /* Assets.xcassets */; };
 		1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B911DE6615100505913 /* LaunchScreen.storyboard */; };
-		1AC48B9E1DE6615100505913 /* iFlatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B9D1DE6615100505913 /* iFlatTests.swift */; };
+		1AC48B9E1DE6615100505913 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B9D1DE6615100505913 /* UserModelTests.swift */; };
 		1AC48BA91DE6615100505913 /* iFlatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BA81DE6615100505913 /* iFlatUITests.swift */; };
 		1AC48BBE1DE6622100505913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48BBD1DE6622100505913 /* Main.storyboard */; };
 		1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BC21DE6625C00505913 /* ViewController.swift */; };
@@ -45,14 +46,16 @@
 
 /* Begin PBXFileReference section */
 		0D80C9BFA406CCA67BA0C304 /* Pods-iFlatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlatUITests/Pods-iFlatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
 		1A5354AC1DE663B400353614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRREF.swift; sourceTree = "<group>"; };
 		1AC48B851DE6615100505913 /* iFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48B881DE6615100505913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = iFlat/AppDelegate.swift; sourceTree = "<group>"; };
 		1AC48B8F1DE6615100505913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iFlat/Assets.xcassets; sourceTree = "<group>"; };
 		1AC48B921DE6615100505913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AC48B941DE6615100505913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
 		1AC48B991DE6615100505913 /* iFlatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFlatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AC48B9D1DE6615100505913 /* iFlatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlatTests.swift; sourceTree = "<group>"; };
+		1AC48B9D1DE6615100505913 /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
 		1AC48B9F1DE6615100505913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC48BA41DE6615100505913 /* iFlatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFlatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48BA81DE6615100505913 /* iFlatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlatUITests.swift; sourceTree = "<group>"; };
@@ -103,15 +106,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A8083601DF18368009655AD /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AC48B9D1DE6615100505913 /* UserModelTests.swift */,
+				1AC48B9F1DE6615100505913 /* Info.plist */,
+			);
+			name = ModelTests;
+			path = iFlatTests;
+			sourceTree = "<group>";
+		};
+		1A8083611DF1838D009655AD /* UTILITY */ = {
+			isa = PBXGroup;
+			children = (
+				A34A72619DB0BFDE3ACFB621 /* Pods */,
+				81BEF02A75E137096BDCDB9E /* Frameworks */,
+				1AC48B861DE6615100505913 /* Products */,
+			);
+			name = UTILITY;
+			sourceTree = "<group>";
+		};
 		1AC48B7C1DE6615000505913 = {
 			isa = PBXGroup;
 			children = (
 				1AC48BB61DE6616300505913 /* Static */,
 				1AC48B871DE6615100505913 /* iFlat */,
-				1AC48BBC1DE661E000505913 /* Tests */,
-				2AB9C57D868DBA1D53BD1456 /* Products */,
-				A34A72619DB0BFDE3ACFB621 /* Pods */,
-				81BEF02A75E137096BDCDB9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +147,8 @@
 		1AC48B871DE6615100505913 /* iFlat */ = {
 			isa = PBXGroup;
 			children = (
+				1A257C081DF1DA3100F08B61 /* iFlat.entitlements */,
+				1AC48BBC1DE661E000505913 /* TEST_LAYER */,
 				1ADCD0261DF1813B00CC08F9 /* FIREBASE_LAYER */,
 				1AC48BBB1DE661B300505913 /* MODEL_LAYER */,
 				1ADCD0251DF1812500CC08F9 /* TEAM_MVC_LAYER */,
@@ -135,29 +156,21 @@
 			path = iFlat;
 			sourceTree = "<group>";
 		};
-		1AC48B9C1DE6615100505913 /* iFlatTests */ = {
-			isa = PBXGroup;
-			children = (
-				1AC48B9D1DE6615100505913 /* iFlatTests.swift */,
-				1AC48B9F1DE6615100505913 /* Info.plist */,
-			);
-			path = iFlatTests;
-			sourceTree = "<group>";
-		};
-		1AC48BA71DE6615100505913 /* iFlatUITests */ = {
+		1AC48BA71DE6615100505913 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
 				1AC48BA81DE6615100505913 /* iFlatUITests.swift */,
 				1AC48BAA1DE6615100505913 /* Info.plist */,
 			);
+			name = UITests;
 			path = iFlatUITests;
 			sourceTree = "<group>";
 		};
 		1AC48BB61DE6616300505913 /* Static */ = {
 			isa = PBXGroup;
 			children = (
+				1A8083611DF1838D009655AD /* UTILITY */,
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
-				1AC48B861DE6615100505913 /* Products */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
 				1AC48B911DE6615100505913 /* LaunchScreen.storyboard */,
 				1A5354AC1DE663B400353614 /* GoogleService-Info.plist */,
@@ -207,13 +220,14 @@
 			name = MODEL_LAYER;
 			sourceTree = "<group>";
 		};
-		1AC48BBC1DE661E000505913 /* Tests */ = {
+		1AC48BBC1DE661E000505913 /* TEST_LAYER */ = {
 			isa = PBXGroup;
 			children = (
-				1AC48B9C1DE6615100505913 /* iFlatTests */,
-				1AC48BA71DE6615100505913 /* iFlatUITests */,
+				1A8083601DF18368009655AD /* ModelTests */,
+				1AC48BA71DE6615100505913 /* UITests */,
 			);
-			name = Tests;
+			name = TEST_LAYER;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1AC48BBF1DE6622C00505913 /* Model */ = {
@@ -255,15 +269,9 @@
 			children = (
 				1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */,
 				1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */,
+				1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */,
 			);
 			name = FIREBASE_LAYER;
-			sourceTree = "<group>";
-		};
-		2AB9C57D868DBA1D53BD1456 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		46E8E9AE1DF0A0AF00C265E3 /* Controller */ = {
@@ -374,7 +382,13 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 97TQ8HBR2G;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					1AC48B981DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
@@ -399,7 +413,7 @@
 				Base,
 			);
 			mainGroup = 1AC48B7C1DE6615000505913;
-			productRefGroup = 2AB9C57D868DBA1D53BD1456 /* Products */;
+			productRefGroup = 1AC48B7C1DE6615000505913;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -572,6 +586,7 @@
 				1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */,
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
+				1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */,
 				1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */,
 				1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */,
 			);
@@ -581,7 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC48B9E1DE6615100505913 /* iFlatTests.swift in Sources */,
+				1AC48B9E1DE6615100505913 /* UserModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,7 +734,8 @@
 			baseConfigurationReference = B41D1E76123D9D00A24B8DC2 /* Pods-iFlat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
@@ -733,7 +749,8 @@
 			baseConfigurationReference = A35716F2100E68B4CDFC3C20 /* Pods-iFlat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;

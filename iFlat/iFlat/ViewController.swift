@@ -13,11 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var ref: FIRDatabaseReference!
-        
-        ref = FIRDatabase.database().reference()
-        ref.child("Flats").child("Flat1").setValue(["username": "Alican","password":"31"])
-    }
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

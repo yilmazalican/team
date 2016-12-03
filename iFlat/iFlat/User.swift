@@ -10,21 +10,18 @@ import Foundation
 
 class User:ManipulableUser
 {
-    var id:Int
-    var name:String
-    var middleName:String?
-    var surname:String
-    var email:String
-    var password:String
-    var birthDate:String
-    var Gender:Gender
-    var DB_ENDPOINT:FIRUSER
+    var id:String?
+    var name:String?
+    var surname:String?
+    var email:String?
+    var password:String?
+    var birthDate:String?
+    var Gender: String?
+    private var DB_ENDPOINT:FIRUSERDelegate?
     
-    required init(id:Int,name:String,middleName:String?, surname:String, email:String,password:String, birthDate:String, Gender:Gender)
+    required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String)
     {
-        self.id = id
         self.name = name
-        self.middleName = middleName
         self.surname = surname
         self.email = email
         self.password = password
@@ -33,32 +30,14 @@ class User:ManipulableUser
         self.DB_ENDPOINT = FIRUSER()
     }
     
-    func Register()
-    {
-        self.DB_ENDPOINT.insert(usr: self){
-        }
+    internal required init() {
+        
     }
     
-    func EditInfo(usr:ManipulableUser)
-    {
-        self.DB_ENDPOINT.edit(usr: usr){
-        }
-    }
-    
-    func delete()
-    {
-        self.DB_ENDPOINT.delete(usr: self){
-        }
-    }
-    
-    func Login()
-    {
-        self.DB_ENDPOINT.Login(usr: self){
-        }
-    }
     
 
-    
 
     
-}
+    
+    
+  }

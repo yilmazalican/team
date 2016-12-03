@@ -12,19 +12,19 @@
 		15F9229A82FBF89A858BB1FCABADD283 /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 139C806E9064BBCD9843BF7392FBF218 /* GTMDebugSelectorValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E6F4C1F5FC9D8C84C434BB45985FCFB /* GTMSessionUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C1D9E4BB8B22A541F54591A8422B24 /* GTMSessionUploadFetcher.m */; };
 		25C40E5227B25581C854804747C2C346 /* GTMSessionUploadFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 87793EE1D265634987CAE534B8968C14 /* GTMSessionUploadFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29353AFA59346AD39591FFF6C56C86BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D692051EF32C02A74F6A5706D54B828B /* Foundation.framework */; };
-		299997AC8D39BBDF4CF90CD40B102D9E /* Pods-iFlatTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C529F5BE0F46414CE61C4C257B592C0E /* Pods-iFlatTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3038A7C994F29BD85B724F4498934A65 /* Pods-iFlatUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E141EE8B87A5DFBDEE49AC5A08CBE361 /* Pods-iFlatUITests-dummy.m */; };
 		39195CE4F51713267EFFB978CC6FF659 /* GTMNSDictionary+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AA89667E380BE0DF598EBA0ED15538 /* GTMNSDictionary+URLArguments.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		48A5794D7633E929CAF945CCE5D94916 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D692051EF32C02A74F6A5706D54B828B /* Foundation.framework */; };
 		496142BA8FDC455B8C71EB1D9D9CC520 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E39BA2221391B78D7449F492456C7452 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49A321B774CEAF6675C5354769517F27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D692051EF32C02A74F6A5706D54B828B /* Foundation.framework */; };
+		4C2912432F052FB09EA20F45F5688435 /* Pods-iFlatTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C529F5BE0F46414CE61C4C257B592C0E /* Pods-iFlatTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52C93F841C149E5040384D4D16FEEF53 /* GTMSessionFetcher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5642291C71A13571276487BF1E297DC0 /* GTMSessionFetcher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6575B03C92455416D43B5FC3573CB205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D692051EF32C02A74F6A5706D54B828B /* Foundation.framework */; };
+		663F13F1FE6E13406378979B613DCD79 /* Pods-iFlatTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0E58C7A22724D90B85081CE7346CB /* Pods-iFlatTests-dummy.m */; };
 		731196A3A85E405C95CA491032AA77F7 /* GTMSessionFetcherLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B248FE34DD3809F1CDA178FB4C06CC6 /* GTMSessionFetcherLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BACCF61D73B6C690CE657C66614E65F /* GTMSessionFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = A992A72913C55FA379325B2BABB9ADC0 /* GTMSessionFetcherLogging.m */; };
 		7CB712C6A1E658068A0F9DAB530FB705 /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC39DBCBC8C25F534668299DF5F0F37 /* GTMSessionFetcher.m */; };
 		8F8D1EEFFD0AC14C975C78CAD0C9808F /* GTMSessionFetcher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CEA27F59E221BFA40A936326DC08B3 /* GTMSessionFetcher-dummy.m */; };
-		94762164A6AD4347AB035823C120074B /* Pods-iFlatTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0E58C7A22724D90B85081CE7346CB /* Pods-iFlatTests-dummy.m */; };
 		9A03275F6099149BA40499CCE7A70E8F /* GTMSessionFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BDF261D1226E69E8F29F7F3547726E /* GTMSessionFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E04F263EC254EC7F300993464986A35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D692051EF32C02A74F6A5706D54B828B /* Foundation.framework */; };
 		9EB44D548B901D324940C86B706CCF96 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EB645053A39B4E088C0BDA3A6C9F5D /* Security.framework */; };
@@ -44,7 +44,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		48342685404A86ECDAFDC7CD33BFEA8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D04535608058A2FABC0D16935868FB9;
+			remoteInfo = GoogleToolboxForMac;
+		};
 		E845136D0ACF64F0BA314CC889DA3863 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23BA9083ED0D2392A167A8AFA04427FA;
+			remoteInfo = GTMSessionFetcher;
+		};
+		E8827FEC7E664C0FF748E98FF0CDCC2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -166,11 +180,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2E6F0F269CCDD75BC9678F283BE6EE9 /* Frameworks */ = {
+		603EB4714EA00F5EF2F72FB25B5721EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29353AFA59346AD39591FFF6C56C86BD /* Foundation.framework in Frameworks */,
+				49A321B774CEAF6675C5354769517F27 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,14 +562,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		18616081BA15AA51B17AD579BE039237 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				299997AC8D39BBDF4CF90CD40B102D9E /* Pods-iFlatTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		293736674DAFF98204041CC914976590 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,6 +605,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D49C1B4931EB14BB5641B11FEF0A6AF7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2912432F052FB09EA20F45F5688435 /* Pods-iFlatTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -634,23 +648,6 @@
 			name = "Pods-iFlatUITests";
 			productName = "Pods-iFlatUITests";
 			productReference = 2D502D4F531D6D6724EAE927B2B7639B /* Pods_iFlatUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		48999905C44C50D8B9B1A7B52C4A4725 /* Pods-iFlatTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C6C5FDA6335EC99E6C8CDA12955F3F94 /* Build configuration list for PBXNativeTarget "Pods-iFlatTests" */;
-			buildPhases = (
-				B367B6134120B3371C893723EAC012C1 /* Sources */,
-				A2E6F0F269CCDD75BC9678F283BE6EE9 /* Frameworks */,
-				18616081BA15AA51B17AD579BE039237 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-iFlatTests";
-			productName = "Pods-iFlatTests";
-			productReference = 5FD76A6F72F4945B1F4F923B508F9123 /* Pods_iFlatTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7D04535608058A2FABC0D16935868FB9 /* GoogleToolboxForMac */ = {
@@ -689,6 +686,25 @@
 			productReference = BDA38897DCCCC863822C96180E225F2E /* Pods_iFlat.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D0FFAE128A489B388D6DCEEE624254C2 /* Pods-iFlatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 964CE427D4F8BBD27CF4CB769FDEBC0E /* Build configuration list for PBXNativeTarget "Pods-iFlatTests" */;
+			buildPhases = (
+				E3B5AE070A54F922981D9EC3F22496B4 /* Sources */,
+				603EB4714EA00F5EF2F72FB25B5721EE /* Frameworks */,
+				D49C1B4931EB14BB5641B11FEF0A6AF7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D79062F2CC529C57C410D923A61BBAE9 /* PBXTargetDependency */,
+				1732FB5BA67813C4F6ADD535DCBAF3D7 /* PBXTargetDependency */,
+			);
+			name = "Pods-iFlatTests";
+			productName = "Pods-iFlatTests";
+			productReference = 5FD76A6F72F4945B1F4F923B508F9123 /* Pods_iFlatTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -713,7 +729,7 @@
 				7D04535608058A2FABC0D16935868FB9 /* GoogleToolboxForMac */,
 				23BA9083ED0D2392A167A8AFA04427FA /* GTMSessionFetcher */,
 				BB94829189B28EF312BFA5DBBB41D345 /* Pods-iFlat */,
-				48999905C44C50D8B9B1A7B52C4A4725 /* Pods-iFlatTests */,
+				D0FFAE128A489B388D6DCEEE624254C2 /* Pods-iFlatTests */,
 				414DD9148DB6AF142AE2304549576B4F /* Pods-iFlatUITests */,
 			);
 		};
@@ -759,17 +775,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B367B6134120B3371C893723EAC012C1 /* Sources */ = {
+		E3B5AE070A54F922981D9EC3F22496B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94762164A6AD4347AB035823C120074B /* Pods-iFlatTests-dummy.m in Sources */,
+				663F13F1FE6E13406378979B613DCD79 /* Pods-iFlatTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1732FB5BA67813C4F6ADD535DCBAF3D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 7D04535608058A2FABC0D16935868FB9 /* GoogleToolboxForMac */;
+			targetProxy = 48342685404A86ECDAFDC7CD33BFEA8D /* PBXContainerItemProxy */;
+		};
 		3C03709B9C138E6DD536F23BED553775 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GTMSessionFetcher;
@@ -781,6 +803,12 @@
 			name = GoogleToolboxForMac;
 			target = 7D04535608058A2FABC0D16935868FB9 /* GoogleToolboxForMac */;
 			targetProxy = FC9AE8880EE873CDA84561DA5A2DB89A /* PBXContainerItemProxy */;
+		};
+		D79062F2CC529C57C410D923A61BBAE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTMSessionFetcher;
+			target = 23BA9083ED0D2392A167A8AFA04427FA /* GTMSessionFetcher */;
+			targetProxy = E8827FEC7E664C0FF748E98FF0CDCC2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -813,6 +841,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		1CE810C2F60CBFB31C7456A6E34F3C24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7D43B7683202253AA46593D1B50ECA9 /* Pods-iFlatTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-iFlatTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iFlatTests/Pods-iFlatTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_iFlatTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		22433D82CF20F9C4AC7CEA52B9E4D49F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -901,39 +962,6 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_iFlatUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		63364033750E9F5D773000404A155925 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 684D167FF4C2D278C3F87445AB2D6C12 /* Pods-iFlatTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-iFlatTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iFlatTests/Pods-iFlatTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iFlatTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1066,6 +1094,39 @@
 			};
 			name = Release;
 		};
+		C59EF2F9D22A7BE933578D306EEA6A18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 684D167FF4C2D278C3F87445AB2D6C12 /* Pods-iFlatTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-iFlatTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iFlatTests/Pods-iFlatTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_iFlatTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		D560687C2EAA7604298B56AEE78343D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1101,39 +1162,6 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		E797E00E41D7303FD5C2DDFF1254640D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7D43B7683202253AA46593D1B50ECA9 /* Pods-iFlatTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-iFlatTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iFlatTests/Pods-iFlatTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_iFlatTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1227,11 +1255,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6C5FDA6335EC99E6C8CDA12955F3F94 /* Build configuration list for PBXNativeTarget "Pods-iFlatTests" */ = {
+		964CE427D4F8BBD27CF4CB769FDEBC0E /* Build configuration list for PBXNativeTarget "Pods-iFlatTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				63364033750E9F5D773000404A155925 /* Debug */,
-				E797E00E41D7303FD5C2DDFF1254640D /* Release */,
+				C59EF2F9D22A7BE933578D306EEA6A18 /* Debug */,
+				1CE810C2F60CBFB31C7456A6E34F3C24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
