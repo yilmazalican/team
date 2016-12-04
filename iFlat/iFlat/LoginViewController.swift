@@ -13,35 +13,11 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.DB_ENDPOINT = FIRUSER()
+        DB_ENDPOINT = FIRUSER()
 
-        let usr = User(name: "Alicanbaba", surname: "Yilmazbaba4", email: "yilmazbaba19@gmail.com", password: "frozen4192", birthDate: "12/12/12", Gender: "Male")
         
-        FIRREF.instance.getRef().child("users").queryOrderedByKey().observe(.childAdded, with: { (snapshot) in
-            print("selam")
-        })
-    }
+}
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

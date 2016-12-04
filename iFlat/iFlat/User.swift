@@ -31,13 +31,10 @@ class User:ManipulableUser
     }
     
     internal required init() {
-        
+        self.DB_ENDPOINT = FIRUSER()
+
     }
     
-    
 
-
-    
-    
-    
+  
   }
