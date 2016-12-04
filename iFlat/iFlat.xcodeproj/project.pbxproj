@@ -22,6 +22,9 @@
 		46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Loginn.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
+		76962615056C1C254145A4C3 /* Pods_iFlat_iFlatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BEC1A37B37E7D79765D48F /* Pods_iFlat_iFlatUITests.framework */; };
+		7947E1430E61D23BCCBAEC81 /* Pods_iFlat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990174680DF4EE8D7DE58C44 /* Pods_iFlat.framework */; };
+		9D796AC1CB46BFE4908240FD /* Pods_iFlat_iFlatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1E4E12111123D3FDFD50EC /* Pods_iFlat_iFlatTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,15 @@
 		46E8E9981DF09B1900C265E3 /* Loginn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loginn.storyboard; sourceTree = "<group>"; };
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4B3083CF76C2E127258AD58D /* Pods-iFlat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.release.xcconfig"; sourceTree = "<group>"; };
+		54BEC1A37B37E7D79765D48F /* Pods_iFlat_iFlatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A0A58F5F614DB37FEB339CD /* Pods-iFlat-iFlatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F1F5CC599594FF38C6295A3 /* Pods-iFlat-iFlatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		990174680DF4EE8D7DE58C44 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1E4E12111123D3FDFD50EC /* Pods_iFlat_iFlatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1D93EE7D80F03BE006AFEF /* Pods-iFlat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.debug.xcconfig"; sourceTree = "<group>"; };
+		AF4CA1E650D58B9CAC216C21 /* Pods-iFlat-iFlatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9841FAA99E243D431BC1A63 /* Pods-iFlat-iFlatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7947E1430E61D23BCCBAEC81 /* Pods_iFlat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D796AC1CB46BFE4908240FD /* Pods_iFlat_iFlatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76962615056C1C254145A4C3 /* Pods_iFlat_iFlatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +146,8 @@
 			children = (
 				1AC48BB61DE6616300505913 /* Static */,
 				1AC48B871DE6615100505913 /* iFlat */,
+				A1A8CC4776734EB4F0C7FB06 /* Pods */,
+				7E10CC0D0FDE5FCFE1CE490D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,6 +299,29 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		7E10CC0D0FDE5FCFE1CE490D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				990174680DF4EE8D7DE58C44 /* Pods_iFlat.framework */,
+				9D1E4E12111123D3FDFD50EC /* Pods_iFlat_iFlatTests.framework */,
+				54BEC1A37B37E7D79765D48F /* Pods_iFlat_iFlatUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1A8CC4776734EB4F0C7FB06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB1D93EE7D80F03BE006AFEF /* Pods-iFlat.debug.xcconfig */,
+				4B3083CF76C2E127258AD58D /* Pods-iFlat.release.xcconfig */,
+				7F1F5CC599594FF38C6295A3 /* Pods-iFlat-iFlatTests.debug.xcconfig */,
+				B9841FAA99E243D431BC1A63 /* Pods-iFlat-iFlatTests.release.xcconfig */,
+				AF4CA1E650D58B9CAC216C21 /* Pods-iFlat-iFlatUITests.debug.xcconfig */,
+				5A0A58F5F614DB37FEB339CD /* Pods-iFlat-iFlatUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,9 +329,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AC48BAD1DE6615100505913 /* Build configuration list for PBXNativeTarget "iFlat" */;
 			buildPhases = (
+				5897A42FCE4AE816A45E8D5E /* [CP] Check Pods Manifest.lock */,
 				1AC48B811DE6615100505913 /* Sources */,
 				1AC48B821DE6615100505913 /* Frameworks */,
 				1AC48B831DE6615100505913 /* Resources */,
+				92A299F7A5C5EB18959D9040 /* [CP] Embed Pods Frameworks */,
+				1132BD753F6898F971AE7AAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,9 +349,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AC48BB01DE6615100505913 /* Build configuration list for PBXNativeTarget "iFlatTests" */;
 			buildPhases = (
+				7C524B11C1C1F1A551634DBF /* [CP] Check Pods Manifest.lock */,
 				1AC48B951DE6615100505913 /* Sources */,
 				1AC48B961DE6615100505913 /* Frameworks */,
 				1AC48B971DE6615100505913 /* Resources */,
+				F26A51D5282F04369FBD174F /* [CP] Embed Pods Frameworks */,
+				314E83115472187159D6B3A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,9 +370,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AC48BB31DE6615100505913 /* Build configuration list for PBXNativeTarget "iFlatUITests" */;
 			buildPhases = (
+				490C01B8B0D726798A9E8448 /* [CP] Check Pods Manifest.lock */,
 				1AC48BA01DE6615100505913 /* Sources */,
 				1AC48BA11DE6615100505913 /* Frameworks */,
 				1AC48BA21DE6615100505913 /* Resources */,
+				95F275A99FA16894C974E511 /* [CP] Embed Pods Frameworks */,
+				FB36C7F44E959FBA26F26466 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,6 +469,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1132BD753F6898F971AE7AAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFlat/Pods-iFlat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		314E83115472187159D6B3A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		490C01B8B0D726798A9E8448 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5897A42FCE4AE816A45E8D5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7C524B11C1C1F1A551634DBF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92A299F7A5C5EB18959D9040 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFlat/Pods-iFlat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95F275A99FA16894C974E511 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F26A51D5282F04369FBD174F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB36C7F44E959FBA26F26466 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1AC48B811DE6615100505913 /* Sources */ = {
@@ -578,6 +765,7 @@
 		};
 		1AC48BAE1DE6615100505913 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB1D93EE7D80F03BE006AFEF /* Pods-iFlat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
@@ -592,6 +780,7 @@
 		};
 		1AC48BAF1DE6615100505913 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B3083CF76C2E127258AD58D /* Pods-iFlat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
@@ -606,6 +795,7 @@
 		};
 		1AC48BB11DE6615100505913 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F1F5CC599594FF38C6295A3 /* Pods-iFlat-iFlatTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 97TQ8HBR2G;
@@ -620,6 +810,7 @@
 		};
 		1AC48BB21DE6615100505913 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9841FAA99E243D431BC1A63 /* Pods-iFlat-iFlatTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 97TQ8HBR2G;
@@ -634,6 +825,7 @@
 		};
 		1AC48BB41DE6615100505913 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF4CA1E650D58B9CAC216C21 /* Pods-iFlat-iFlatUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlatUITests/Info.plist;
@@ -647,6 +839,7 @@
 		};
 		1AC48BB51DE6615100505913 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A0A58F5F614DB37FEB339CD /* Pods-iFlat-iFlatUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlatUITests/Info.plist;
