@@ -1,7 +1,9 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
- - rbx-2
-# uncomment and edit the following line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+language: objective-c
+
+branches:
+ only:
+ - master
+
+xcode_project: iFlat/iFlat.xcodeproj
+osx_image: xcode8.1
+xcode_sdk: iphonesimulator10.1
