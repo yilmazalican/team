@@ -1,6 +1,6 @@
 ![](https://travis-ci.org/yilmazalican/team.svg?branch=master)
 # Welcome
-iFlat is a extra space monetizing platform which allows customers to rent their flat with the easily and showcase it to an audience of millions.
+iFlat is a extra space monetizing platform which allows customers to rent their flat easily and showcase it to an audience of millions.
 
 #### Team Members
 <ul>
