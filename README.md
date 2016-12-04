@@ -1,6 +1,6 @@
 ![](https://travis-ci.org/yilmazalican/team.svg?branch=master)
 # Welcome
-iFlat is a extra space monetizing platform which allows customers to rent their flat with the easily and showcase it to an audience of millions.iFlat is currently using for persistent data storage solution, Firebase so we are using No-sql apporach. Our project is writing by Swift language 3 and for development environment we are using Xcode 8 currently.
+iFlat is a extra space monetizing platform which allows customers to rent their flat with the easily and showcase it to an audience of millions.
 
 #### Team Members
 <ul>
