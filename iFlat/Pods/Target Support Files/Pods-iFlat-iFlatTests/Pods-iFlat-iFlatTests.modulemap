@@ -1,6 +1,0 @@
-framework module Pods_iFlat_iFlatTests {
-  umbrella header "Pods-iFlat-iFlatTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
