@@ -10,6 +10,7 @@ import Foundation
 
 class User:ManipulableUser
 {
+
     var id:String?
     var name:String?
     var surname:String?
@@ -17,7 +18,8 @@ class User:ManipulableUser
     var password:String?
     var birthDate:String?
     var Gender: String?
-    private var DB_ENDPOINT:FIRUSERDelegate?
+    var DB_ENDPOINT: FIRUSER
+
     
     required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String)
     {
@@ -27,7 +29,7 @@ class User:ManipulableUser
         self.password = password
         self.birthDate = birthDate
         self.Gender = Gender
-        self.DB_ENDPOINT = FIRUSER()
+        DB_ENDPOINT = FIRUSER()
     }
     
     internal required init() {

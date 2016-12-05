@@ -7,7 +7,7 @@
 //
 //Change password and change email not included.
 //This class is wroted though FIREBASE user authendication framework!
-
+//Handle Optionals
 import Foundation
 import Firebase
 
@@ -170,11 +170,11 @@ class FIRUSER: FIRUSERDelegate{
             {
                 FIRREF.instance.getRef().child("users").child(user!.uid).setValue(
                     [
-                    "firstName": usr.name,
+                    "firstName": usr.name!,
                     "lastName" : usr.surname!,
                     "email": usr.email!,
                     "gender": usr.Gender!,
-                    "birthdate": usr.birthDate
+                    "birthdate": usr.birthDate!
                     ],
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
