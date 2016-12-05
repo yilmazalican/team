@@ -8,22 +8,19 @@
 
 import Foundation
 
-protocol ManipulableUser
+protocol ManipulableUser :class
 {
-    var id:Int {get}
-    var name:String {get set}
-    var middleName:String? {get set}
-    var surname:String {get set}
-    var email:String {get set}
-    var password:String {get set}
-    var birthDate:String {get set}
-    var Gender:Gender {get set}
+    var id:String? {get set}
+    var name:String? {get set}
+    var surname:String? {get set}
+    var email:String? {get set}
+    var password:String? {get set}
+    var birthDate:String? {get set}
+    var Gender:String? {get set}
     var DB_ENDPOINT:FIRUSER {get set}
-   
-    init(id:Int,name:String,middleName:String?, surname:String, email:String,password:String, birthDate:String, Gender:Gender)
-}
-enum Gender{
-    case Male
-    case Female
+    
+    init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String)
+    init()
+
 }
 
