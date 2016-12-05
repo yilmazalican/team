@@ -19,6 +19,12 @@
 		1ADCD0281DF1816600CC08F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0271DF1816600CC08F9 /* User.swift */; };
 		1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */; };
 		1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */; };
+		462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462D7F131DF587B80060807B /* FlatProfile.storyboard */; };
+		462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F151DF588760060807B /* FlatProfileViewController.swift */; };
+		462D7F181DF589090060807B /* FlatProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F171DF589090060807B /* FlatProfileTableViewCell.swift */; };
+		462D7F1A1DF58F040060807B /* ListFlat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462D7F191DF58F040060807B /* ListFlat.storyboard */; };
+		462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */; };
+		462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */; };
 		46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Loginn.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
@@ -68,6 +74,12 @@
 		1ADCD0271DF1816600CC08F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRUSER.swift; sourceTree = "<group>"; };
 		1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableUser.swift; sourceTree = "<group>"; };
+		462D7F131DF587B80060807B /* FlatProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FlatProfile.storyboard; sourceTree = "<group>"; };
+		462D7F151DF588760060807B /* FlatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatProfileViewController.swift; sourceTree = "<group>"; };
+		462D7F171DF589090060807B /* FlatProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatProfileTableViewCell.swift; sourceTree = "<group>"; };
+		462D7F191DF58F040060807B /* ListFlat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListFlat.storyboard; sourceTree = "<group>"; };
+		462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatViewController.swift; sourceTree = "<group>"; };
+		462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatCollectionViewCell.swift; sourceTree = "<group>"; };
 		46E8E9981DF09B1900C265E3 /* Loginn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loginn.storyboard; sourceTree = "<group>"; };
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +236,8 @@
 		1AC48BB91DE661A700505913 /* ErenMVC */ = {
 			isa = PBXGroup;
 			children = (
+				462D7F0C1DF5875B0060807B /* FlatProfile */,
+				462D7F0B1DF587530060807B /* ListFlat */,
 			);
 			name = ErenMVC;
 			sourceTree = "<group>";
@@ -320,6 +334,74 @@
 				A4632289C74820928EC02E69 /* Pods_iFlat_iFlatUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		462D7F0B1DF587530060807B /* ListFlat */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F121DF587970060807B /* Model */,
+				462D7F111DF587920060807B /* View */,
+				462D7F101DF5878C0060807B /* Controller */,
+			);
+			name = ListFlat;
+			sourceTree = "<group>";
+		};
+		462D7F0C1DF5875B0060807B /* FlatProfile */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F0D1DF587670060807B /* Model */,
+				462D7F0E1DF5876D0060807B /* View */,
+				462D7F0F1DF5877C0060807B /* Controller */,
+			);
+			name = FlatProfile;
+			sourceTree = "<group>";
+		};
+		462D7F0D1DF587670060807B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F171DF589090060807B /* FlatProfileTableViewCell.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		462D7F0E1DF5876D0060807B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F131DF587B80060807B /* FlatProfile.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		462D7F0F1DF5877C0060807B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F151DF588760060807B /* FlatProfileViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		462D7F101DF5878C0060807B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		462D7F111DF587920060807B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F191DF58F040060807B /* ListFlat.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		462D7F121DF587970060807B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		46E8E9AE1DF0A0AF00C265E3 /* Controller */ = {
@@ -456,9 +538,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC48BBE1DE6622100505913 /* Main.storyboard in Resources */,
+				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
 				1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
 				951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */,
+				462D7F1A1DF58F040060807B /* ListFlat.storyboard in Resources */,
 				1AC48B901DE6615100505913 /* Assets.xcassets in Resources */,
 				46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */,
 			);
@@ -623,16 +707,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462D7F181DF589090060807B /* FlatProfileTableViewCell.swift in Sources */,
 				46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */,
 				46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */,
 				1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */,
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
+				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
 				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
+				462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */,
 				951A929A1DF4E22800199B83 /* SearchParameter.swift in Sources */,
 				1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */,
 				1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */,
 				1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */,
+				462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,7 +874,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -801,7 +891,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
