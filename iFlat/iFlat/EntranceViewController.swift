@@ -13,8 +13,9 @@ class EntranceViewController: UIViewController {
     
     var searchParameter = SearchParameter()
     
+    var user = User()
+   
     
-      let dateFormatter = DateFormatter()
     
     @IBOutlet weak var cityTextField: UITextField!{
         
@@ -26,7 +27,7 @@ class EntranceViewController: UIViewController {
     
     @IBOutlet weak var FromDatePicker: UIDatePicker!{
         didSet{
-      
+
             
         }
     }
@@ -63,7 +64,7 @@ class EntranceViewController: UIViewController {
    
     @IBAction func fromDatePickerChanged(_ sender: UIDatePicker) {
         
-      setDateWithString(dateFormatter: dateFormatter, datePicker: FromDatePicker)
+        searchParameter.fromParameter = setDateToString(datePicker: FromDatePicker)
 
     }
     
@@ -74,7 +75,7 @@ class EntranceViewController: UIViewController {
    
     @IBAction func toDatePicker(_ sender: UIDatePicker) {
         
-       setDateWithString(dateFormatter: dateFormatter, datePicker: ToDatePicker)
+      searchParameter.toParameter = setDateToString(datePicker: ToDatePicker)
         
     }
    
@@ -82,41 +83,19 @@ class EntranceViewController: UIViewController {
    
   
     @IBAction func searchWithParameterActionButton(_ sender: Any) {
-      
-        print(searchParameter)
-    }
-    
-    
-    
-    private func setDateWithString(dateFormatter:DateFormatter,datePicker:UIDatePicker){
-        
-        
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        
-        if datePicker.tag  == 1 {
-           
-            
-            searchParameter.toParameter = dateFormatter.string(from: datePicker.date)
-            
 
-            
-        }
+       
         
         
-        if datePicker.tag  == 0 {
-            
-            
-            searchParameter.fromParameter = dateFormatter.string(from: datePicker.date)
-            
-            
-            
-        }
     }
     
+    
+    
+  
 }
 
 
-extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate{
+extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate , DateToString {
     
  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
