@@ -16,10 +16,10 @@ protocol ManipulableUser :class
     var email:String? {get set}
     var password:String? {get set}
     var birthDate:String? {get set}
-    var gender:String? {get set}
-   
-    init(name:String, surname:String, email:String,password:String, birthDate:String, gender:String)
+    var Gender:String? {get set}
+    var DB_ENDPOINT:FIRUSER {get set}
+    init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String)
     init()
 
-
 }
+
