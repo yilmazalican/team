@@ -24,5 +24,6 @@ class FilterModel {
     var elevator : String? = nil
     var parking : String? = nil
     var gateKeeper : String? = nil
-    var price : String? = nil
+    var priceFrom : String? = nil
+    var priceTo : String? = nil
 }

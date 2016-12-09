@@ -10,6 +10,16 @@ import UIKit
 
 class NumberPlusPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var field : UITextField!
+    
+    public func setField( field : UITextField!){
+        self.field = field
+    }
+    
+
+    
+
+    
     var pickerElements = ["1+","2+","3+","4+","5+","6+","7+","8+","9+"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -25,7 +35,7 @@ class NumberPlusPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        field.text = pickerElements[row]
     }
     
 }
