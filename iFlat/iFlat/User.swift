@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class User:ManipulableUser
 {
-
-
+    var profileImg: UIImage
     var id:String?
     var name:String?
     var surname:String?
@@ -23,7 +23,7 @@ class User:ManipulableUser
 
     
     
-    required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String)
+    required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, img:UIImage)
     {
         self.name = name
         self.surname = surname
@@ -31,12 +31,13 @@ class User:ManipulableUser
         self.password = password
         self.birthDate = birthDate
         self.Gender = Gender
+        self.profileImg = img
         DB_ENDPOINT = FIRUSER()
     }
     
     internal required init() {
         self.DB_ENDPOINT = FIRUSER()
-
+        self.profileImg = UIImage()
     }
     
     
