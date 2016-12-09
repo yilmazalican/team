@@ -9,7 +9,9 @@
 import UIKit
 
 class ListFlatCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var flatThumbnail: UIImageView!
+    
+    
+    @IBOutlet var flatThumbnail: UIButton!
     @IBOutlet weak var flatTitle: UILabel!
     @IBOutlet weak var flatPrice: UILabel!
     @IBOutlet weak var flatCity: UILabel!

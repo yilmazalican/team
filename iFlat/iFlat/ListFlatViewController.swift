@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ListFlatViewController: UIViewController {
+class ListFlatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
 
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
@@ -24,14 +25,17 @@ class ListFlatViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell : ListFlatCollectionViewCell = listFlatCollectionView.dequeueReusableCell(withReuseIdentifier: "flatCell", for: indexPath) as! ListFlatCollectionViewCell
+        cell.flatCity.text = "istanbul"
+        cell.flatPrice.text = "500"
+        cell.flatRating.text = "***"
+        
+        return cell
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
 
 }

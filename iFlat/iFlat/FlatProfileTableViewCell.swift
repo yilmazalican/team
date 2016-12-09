@@ -17,6 +17,6 @@ class FlatProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var flatOwnerImage: UIImageView!
     @IBOutlet weak var flatOwner: UILabel!
     @IBOutlet weak var flatRules: UILabel!
-    @IBOutlet weak var flatRules: UILabel!
+
     @IBOutlet weak var flatAbouts: UILabel!
 }
