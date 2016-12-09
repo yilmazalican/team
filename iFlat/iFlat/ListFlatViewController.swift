@@ -13,6 +13,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var flatProfileVC : FlatProfileViewController?
     //var oldFilter : FilterModel?
+    
+    // IMPORTANT -> Search must fill receivedFilter by FilterModel Instance
     var receivedFilter : FilterModel?
     
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
