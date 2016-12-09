@@ -26,11 +26,14 @@ protocol FIRUSERDelegate :class
     func changePassword(newPassword:String, completion: @escaping (Bool) -> ())
     func changeEmail(newEmail:String, completion: @escaping (Bool) -> ())
 
-
 }
 
+
+
 ///This class is the object which connects coder to Db for manipulation.
-class FIRUSER: FIRUSERDelegate{
+class FIRUSER: FIRUSERDelegate {
+    
+    
     internal func changeEmail(newEmail: String, completion: @escaping (Bool) -> ()) {
         FIRAuth.auth()?.currentUser?.updateEmail(newEmail, completion: { (err) in
             if err == nil{
@@ -84,11 +87,11 @@ class FIRUSER: FIRUSERDelegate{
                 let obj = snapshot.children.allObjects[0] as! FIRDataSnapshot
                 let objdict = obj.value as! [String:String]
                 usr.id = obj.key
-                usr.email = objdict["email"]
-                usr.Gender = objdict["gender"]
-                usr.name = objdict["firstName"]
-                usr.birthDate = objdict["birthdate"]
-                usr.surname = objdict["lastName"]
+                usr.email = objdict["email"]!
+                usr.Gender = objdict["gender"]!
+                usr.name = objdict["firstName"]!
+                usr.birthDate = objdict["birthdate"]!
+                usr.surname = objdict["lastName"]!
                 completion(usr)
             }
             else
@@ -152,8 +155,7 @@ class FIRUSER: FIRUSERDelegate{
                         "lastName" : newUsr.surname!,
                         "email": newUsr.email!,
                         "gender": newUsr.Gender!,
-                        "birthdate": newUsr.birthDate!
-                    ]
+                        "birthdate": newUsr.birthDate!	                    ]
                 )
                 completion(true)
             }
@@ -183,12 +185,16 @@ class FIRUSER: FIRUSERDelegate{
                                 completion(true)
                             })
                         }
+                            
                         else
                         {
                             completion(false)
                         }
                 })
 
+            }
+            else {
+                completion(false)
             }
         })
 

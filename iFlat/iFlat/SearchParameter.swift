@@ -18,7 +18,6 @@ class SearchParameter {
      static let sizeNum = [SearchParameter.selectPeopleNum,SearchParameter.onePerson,SearchParameter.twoPeople,SearchParameter.threePeople,SearchParameter.fourPeople,SearchParameter.moreThan4]
     
     
-    
     static let selectPeopleNum = "Kişi Sayısını Seçiniz"
     static let fourPeople = "4 Kişi"
     static let threePeople = "3 Kişi"
