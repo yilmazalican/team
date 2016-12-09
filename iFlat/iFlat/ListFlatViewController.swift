@@ -31,6 +31,10 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.flatPrice.text = "500"
         cell.flatRating.text = "***"
         
+
+        cell.flatThumbnail.setImage(UIImage(named:"image"), for: UIControlState.normal)
+        
+        
         return cell
     }
     

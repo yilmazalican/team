@@ -204,7 +204,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gvL-fN-FMS">
             <objects>
-                <navigationController storyboardIdentifier="selam" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BJg-La-ZZR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="flatProfile" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BJg-La-ZZR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8eP-i8-QfN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
