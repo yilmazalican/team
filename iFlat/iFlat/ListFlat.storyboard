@@ -113,7 +113,7 @@
                                 </constraints>
                                 <state key="normal" title="Filters"/>
                                 <connections>
-                                    <segue destination="pLQ-C7-e2E" kind="popoverPresentation" popoverAnchorView="Kug-7h-4eP" id="VZ2-Ph-4Uz">
+                                    <segue destination="pLQ-C7-e2E" kind="popoverPresentation" identifier="filterSegue" popoverAnchorView="Kug-7h-4eP" id="VZ2-Ph-4Uz">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>

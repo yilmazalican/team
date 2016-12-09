@@ -2,7 +2,7 @@
 //  ListFlatViewController.swift
 //  iFlat
 //
-//  Created by MAC ADMIN on 05/12/16.
+//  Created by Eren AY on 05/12/16.
 //  Copyright © 2016 SE 301. All rights reserved.
 //
 
@@ -12,17 +12,30 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     
     var flatProfileVC : FlatProfileViewController?
+    //var oldFilter : FilterModel?
+    var receivedFilter : FilterModel?
+    
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if receivedFilter == nil{
+            receivedFilter = FilterModel()
+        }
+        getFlatInfoFromFireBase(filter: receivedFilter!)
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getFlatInfoFromFireBase(filter : FilterModel){
+        
+        print("getFlatInfoCalled")
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -55,8 +68,14 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "flatProfileSegue"{
         let navigationController = segue.destination as! UINavigationController
         flatProfileVC = navigationController.topViewController as! FlatProfileViewController
+        }
+        else if segue.identifier == "filterSegue"{
+            let filterVC = segue.destination as! FiltersViewController
+            filterVC.filter = self.receivedFilter
+        }
 
         
         
