@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XMu-ht-3FW">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,13 +12,13 @@
         <!--List Flat View Controller-->
         <scene sceneID="Mwq-3j-okJ">
             <objects>
-                <viewController id="Tqa-ct-4nf" customClass="ListFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tqa-ct-4nf" customClass="ListFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W3X-49-gWM"/>
                         <viewControllerLayoutGuide type="bottom" id="Jnw-fe-fkL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tvc-Dt-Rlr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KIA-SR-tXE">
@@ -33,22 +33,22 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="flatCell" id="ctq-G5-CEX" userLabel="FlatCell" customClass="ListFlatCollectionViewCell" customModule="iFlat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t2P-Se-tQh">
-                                                    <rect key="frame" x="0.0" y="159.33333333333337" width="100" height="40.666666666666657"/>
+                                                    <rect key="frame" x="0.0" y="159" width="100" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdW-XZ-821">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="20.333333333333314"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vno-qR-7E5" userLabel="price">
-                                                            <rect key="frame" x="0.0" y="20.333333333333314" width="100" height="20.333333333333343"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="100" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -59,16 +59,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8JK-Bh-x0M">
-                                                    <rect key="frame" x="285" y="159.33333333333337" width="90" height="40.666666666666657"/>
+                                                    <rect key="frame" x="285" y="159" width="90" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLV-PE-vUi">
-                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="20.333333333333314"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmw-gJ-QQG">
-                                                            <rect key="frame" x="0.0" y="20.333333333333314" width="90" height="20.333333333333343"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="90" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -78,9 +78,8 @@
                                                         <constraint firstAttribute="width" constant="90" id="FoV-tu-0OL"/>
                                                     </constraints>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-7J-Iaj">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-7J-Iaj">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -97,6 +96,8 @@
                                             <constraint firstAttribute="bottom" secondItem="t2P-Se-tQh" secondAttribute="bottom" id="Gk7-xX-rtv"/>
                                             <constraint firstItem="t2P-Se-tQh" firstAttribute="leading" secondItem="ctq-G5-CEX" secondAttribute="leading" id="J84-nP-VV2"/>
                                             <constraint firstAttribute="trailing" secondItem="8JK-Bh-x0M" secondAttribute="trailing" id="ZpX-TZ-Fcl"/>
+                                            <constraint firstItem="ZLk-7J-Iaj" firstAttribute="leading" secondItem="ctq-G5-CEX" secondAttribute="leading" id="cbR-Uk-y39"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZLk-7J-Iaj" secondAttribute="trailing" id="fHS-ad-jJX"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="flatCity" destination="WLV-PE-vUi" id="qsZ-I8-mYR"/>
@@ -113,7 +114,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kug-7h-4eP">
-                                <rect key="frame" x="16" y="706" width="380" height="30"/>
+                                <rect key="frame" x="16" y="637" width="341" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qF2-lM-LeJ"/>
                                 </constraints>
@@ -128,7 +129,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Kug-7h-4eP" secondAttribute="bottom" id="CWn-Go-MZa"/>
-                            <constraint firstAttribute="trailing" secondItem="KIA-SR-tXE" secondAttribute="trailing" id="Klh-Su-yXL"/>
+                            <constraint firstAttribute="trailing" secondItem="KIA-SR-tXE" secondAttribute="trailing" id="UXI-ae-D7E"/>
                             <constraint firstItem="KIA-SR-tXE" firstAttribute="leading" secondItem="tvc-Dt-Rlr" secondAttribute="leading" id="dxG-cz-yp7"/>
                             <constraint firstAttribute="trailing" secondItem="Kug-7h-4eP" secondAttribute="trailing" constant="18" id="ftd-qR-EVF"/>
                             <constraint firstItem="Kug-7h-4eP" firstAttribute="leading" secondItem="tvc-Dt-Rlr" secondAttribute="leading" constant="16" id="j2j-qt-kzZ"/>
@@ -143,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fal-RK-PP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.8" y="-103.89805097451276"/>
+            <point key="canvasLocation" x="1583.2" y="-104.7976011994003"/>
         </scene>
         <!--flatProfile-->
         <scene sceneID="U0w-M8-szE">
