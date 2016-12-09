@@ -13,10 +13,12 @@ class FlatProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var flatPrice: UILabel!
     @IBOutlet weak var flatProfileTable: UITableView!
     
+    var receivedFlatID: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //flatPrice.text =
+        flatPrice.text = receivedFlatID
         
     }
 

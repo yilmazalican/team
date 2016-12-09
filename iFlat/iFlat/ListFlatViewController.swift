@@ -10,7 +10,8 @@ import UIKit
 
 class ListFlatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-
+    
+    var flatProfileVC : FlatProfileViewController?
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -35,9 +36,9 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.flatCity.text = "istanbul"
         cell.flatPrice.text = "500"
         cell.flatRating.text = "***"
-        
+        cell.flatID = String(indexPath.row)
 
-        cell.flatThumbnail.setImage(UIImage(named:"image"), for: UIControlState.normal)
+        
         
         
         return cell
@@ -47,6 +48,19 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         return 10
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var cell = listFlatCollectionView.cellForItem(at: indexPath) as! ListFlatCollectionViewCell
+         flatProfileVC?.receivedFlatID = cell.flatID
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        flatProfileVC = navigationController.topViewController as! FlatProfileViewController
+
+        
+        
+        
+    }
 
 }

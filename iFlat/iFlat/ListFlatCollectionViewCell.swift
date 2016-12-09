@@ -11,7 +11,9 @@ import UIKit
 class ListFlatCollectionViewCell: UICollectionViewCell {
     
     
-    @IBOutlet var flatThumbnail: UIButton!
+    var flatID : String = ""
+    
+    @IBOutlet var flatThumbnail: UIImageView!
     @IBOutlet weak var flatTitle: UILabel!
     @IBOutlet weak var flatPrice: UILabel!
     @IBOutlet weak var flatCity: UILabel!
@@ -20,6 +22,8 @@ class ListFlatCollectionViewCell: UICollectionViewCell {
     @IBAction func flatButtonClicked(_ sender: Any) {
         
     }
+    
+    
     
     
 }

@@ -78,16 +78,10 @@
                                                         <constraint firstAttribute="width" constant="90" id="FoV-tu-0OL"/>
                                                     </constraints>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-7J-Iaj">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYn-OZ-3kS">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="flatButtonClicked:" destination="ctq-G5-CEX" eventType="touchUpInside" id="4fg-Ta-YHO"/>
-                                                        <segue destination="vlb-Qu-Fko" kind="show" id="wQm-Rk-QKi"/>
-                                                    </connections>
-                                                </button>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.25490196079999999" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,15 +90,14 @@
                                             <constraint firstAttribute="bottom" secondItem="t2P-Se-tQh" secondAttribute="bottom" id="Gk7-xX-rtv"/>
                                             <constraint firstItem="t2P-Se-tQh" firstAttribute="leading" secondItem="ctq-G5-CEX" secondAttribute="leading" id="J84-nP-VV2"/>
                                             <constraint firstAttribute="trailing" secondItem="8JK-Bh-x0M" secondAttribute="trailing" id="ZpX-TZ-Fcl"/>
-                                            <constraint firstItem="ZLk-7J-Iaj" firstAttribute="leading" secondItem="ctq-G5-CEX" secondAttribute="leading" id="cbR-Uk-y39"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZLk-7J-Iaj" secondAttribute="trailing" id="fHS-ad-jJX"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="flatCity" destination="WLV-PE-vUi" id="qsZ-I8-mYR"/>
                                             <outlet property="flatPrice" destination="vno-qR-7E5" id="9JO-Pi-wfw"/>
                                             <outlet property="flatRating" destination="kmw-gJ-QQG" id="k8A-jz-hGb"/>
-                                            <outlet property="flatThumbnail" destination="ZLk-7J-Iaj" id="Tjz-vc-1BN"/>
+                                            <outlet property="flatThumbnail" destination="eYn-OZ-3kS" id="86o-7A-krp"/>
                                             <outlet property="flatTitle" destination="GdW-XZ-821" id="HWJ-R4-F9b"/>
+                                            <segue destination="vlb-Qu-Fko" kind="show" id="sQh-dx-OqH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
