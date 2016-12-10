@@ -11,8 +11,8 @@ import UIKit
 
 class User:ManipulableUser
 {
+    internal var id: String?
     var profileImg: UIImage
-    var id:String?
     var name:String?
     var surname:String?
     var email:String?
@@ -39,6 +39,17 @@ class User:ManipulableUser
         self.DB_ENDPOINT = FIRUSER()
         self.profileImg = UIImage()
     }
+    
+    internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
+                  
+        }
+       
+    
+
+    
+    
+    
+
     
     // Meva Added.
     
