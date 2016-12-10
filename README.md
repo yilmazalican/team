@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/yilmazalican/team.svg?branch=master)](https://travis-ci.org/yilmazalican/team)
-[Important] We are using mergepbx for merging Xcode project config file for a comfortable teamwork and version control. Please do;
+[Important]
+We are using mergepbx for merging Xcode project config file for a comfortable teamwork and version control. Please do;
 <pre> brew install mergepbx. </pre>
 # Welcome
 iFlat is a extra space monetizing platform which allows customers to rent their flat easily and showcase it to an audience of millions.
