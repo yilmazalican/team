@@ -37,8 +37,8 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     }
 
     func initGui(){
-        //self.flatPriceTV = flat.price!
-        //self.flatDetailsTV = flat.description!
+        self.flatPriceTV.text = flat.price!
+        self.flatDetailsTV.text = flat.flatDescription!
         
     }
     override func didReceiveMemoryWarning() {
