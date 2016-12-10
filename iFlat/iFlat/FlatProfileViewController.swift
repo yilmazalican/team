@@ -10,8 +10,8 @@ import UIKit
 
 class FlatProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var scroller: UIScrollView!
     @IBOutlet var flatPrice: UILabel!
-    @IBOutlet weak var flatProfileTable: UITableView!
     
     var receivedFlatID: String = ""
     
@@ -19,7 +19,8 @@ class FlatProfileViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
 
 
-        flatPrice.text = receivedFlatID
+        //scroller.contentSize = CGSize(width: 375, height: 1500)
+        //flatPrice.text = receivedFlatID
 
         
     }
