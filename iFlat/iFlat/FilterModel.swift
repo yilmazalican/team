@@ -14,6 +14,7 @@ class FilterModel {
     var dateFrom : String? = nil
     var dateTo : String? = nil
     var flatCapacity : String? = nil
+    
     var bathroomCount : String? = nil
     var bedCount : String? = nil
     var bedroomCount : String? = nil
