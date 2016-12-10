@@ -27,13 +27,13 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //flat = initFlat()
+        flat = initFlat()
         initGui()
         
     }
     
-    func initFlat(){
-        //return FlatModel()
+    func initFlat() -> FlatModel{
+        return FlatModel()
     }
 
     func initGui(){
