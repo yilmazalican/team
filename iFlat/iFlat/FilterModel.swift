@@ -18,6 +18,7 @@ class FilterModel {
     var bathroomCount : String? = nil
     var bedCount : String? = nil
     var bedroomCount : String? = nil
+
     var pool : String? = "false"
     var internet : String? = "false"
     var cooling : String? = "false"
@@ -27,6 +28,7 @@ class FilterModel {
     var elevator : String? = "false"
     var parking : String? = "false"
     var gateKeeper : String? = "false"
+
     var priceFrom : String? = nil
     var priceTo : String? = nil
 }

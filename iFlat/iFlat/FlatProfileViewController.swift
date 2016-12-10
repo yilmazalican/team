@@ -18,7 +18,9 @@ class FlatProfileViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         flatPrice.text = receivedFlatID
+
         
     }
 

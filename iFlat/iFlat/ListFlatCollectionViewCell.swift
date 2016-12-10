@@ -22,8 +22,5 @@ class ListFlatCollectionViewCell: UICollectionViewCell {
     @IBAction func flatButtonClicked(_ sender: Any) {
         
     }
-    
-    
-    
-    
+
 }

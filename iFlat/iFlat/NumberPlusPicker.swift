@@ -11,6 +11,7 @@ import UIKit
 class NumberPlusPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var field : UITextField!
+
     var fieldOldText : String = ""
     var toolBar : UIToolbar!
     var currentSelection : String!
@@ -19,13 +20,16 @@ class NumberPlusPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSour
         self.fieldOldText = field.text!
         createToolBarForPicker()
         
+
     }
     
 
     
 
     
+
     var pickerElements = ["","1+","2+","3+","4+","5+","6+","7+","8+","9+"]
+
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -40,6 +44,7 @@ class NumberPlusPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
         currentSelection = pickerElements[row]
     }
     
@@ -81,6 +86,7 @@ class NumberPlusPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSour
         field.inputAccessoryView?.removeFromSuperview()
         
         
+
     }
     
 }

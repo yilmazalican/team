@@ -27,7 +27,9 @@ class FiltersViewController: UIViewController  {
     @IBOutlet var priceFromTextField: UITextField!    
     @IBOutlet var priceToTextField: UITextField!
     
+
     var filter : FilterModel?
+
     
     var numberPlusPickerObj : NumberPlusPicker!
     override func viewDidLoad() {
@@ -37,6 +39,7 @@ class FiltersViewController: UIViewController  {
         setPickerToFields(field: bedCountTextField)
         setPickerToFields(field: bedroomCountTextField)
         setPickerToFields(field: bathroomCountTextField)
+
         
         initUI()
 
@@ -80,6 +83,7 @@ class FiltersViewController: UIViewController  {
         filter?.washingMachine = String(self.washingMachineSwitch.isOn)
         filter?.priceFrom = self.priceFromTextField.text
         filter?.priceTo = self.priceToTextField.text
+
         
         // send to firebase!!!
         
@@ -88,6 +92,7 @@ class FiltersViewController: UIViewController  {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 
     func setPickerToFields(field : UITextField){
         numberPlusPickerObj = NumberPlusPicker()
