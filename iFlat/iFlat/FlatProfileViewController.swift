@@ -10,7 +10,7 @@ import UIKit
 
 class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-
+//burada eksik var
     var receivedFlatID: String = ""
     var flat : FlatModel!
     
