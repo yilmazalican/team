@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/yilmazalican/team.svg?branch=master)](https://travis-ci.org/yilmazalican/team)
+
 # Welcome
 iFlat is a extra space monetizing platform which allows customers to rent their flat easily and showcase it to an audience of millions.
 
@@ -19,6 +20,9 @@ iFlat is a extra space monetizing platform which allows customers to rent their 
 </ul>
 
 #### Installing Instructions
+[Important]We are using mergepbx for merging Xcode project config file for a comfortable teamwork and version control. Please do;
+<pre> brew install mergepbx </pre>
+then;
 <pre> Install the requirements of the project</pre>
 <pre> Download the project</pre>
 <pre> run $pod install</pre>
