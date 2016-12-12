@@ -10,11 +10,13 @@ import UIKit
 
 class FlatProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var flatPrice: UILabel!
     @IBOutlet weak var flatProfileTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //flatPrice.text =
         
     }
 

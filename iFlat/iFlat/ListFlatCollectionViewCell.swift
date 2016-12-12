@@ -17,4 +17,7 @@ class ListFlatCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var flatCity: UILabel!
     @IBOutlet weak var flatRating: UILabel!
     
+    @IBAction func flatButtonClicked(_ sender: Any) {
+        
+    }
 }
