@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A079AF21DFE14EA001FAF32 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */; };
 		1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5354AC1DE663B400353614 /* GoogleService-Info.plist */; };
+		1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A613D051DFF5A1A0073D4A3 /* Flat.swift */; };
 		1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */; };
 		1A9314521DFCE4CD00A29641 /* ManipulableFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9314511DFCE4CD00A29641 /* ManipulableFlat.swift */; };
 		1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B881DE6615100505913 /* AppDelegate.swift */; };
@@ -27,11 +28,11 @@
 		462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */; };
 		46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Loginn.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
+		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
+		8089402C1DFA566E00D66D33 /* FlatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089402B1DFA566E00D66D33 /* FlatModel.swift */; };
 		80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E17F431DFAB5520020C695 /* FiltersViewController.swift */; };
 		80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E17F471DFABE4C0020C695 /* ListFlat.storyboard */; };
 		80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */; };
-		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
-		8089402C1DFA566E00D66D33 /* FlatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089402B1DFA566E00D66D33 /* FlatModel.swift */; };
 		951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */; };
 		951A929A1DF4E22800199B83 /* SearchParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A92991DF4E22800199B83 /* SearchParameter.swift */; };
 		951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A929B1DF4E23100199B83 /* EntranceViewController.swift */; };
@@ -68,6 +69,7 @@
 		1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
 		1A5354AC1DE663B400353614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A613D051DFF5A1A0073D4A3 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flat.swift; sourceTree = "<group>"; };
 		1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIRREF.swift; path = iFlat/FIRREF.swift; sourceTree = "<group>"; };
 		1A9314511DFCE4CD00A29641 /* ManipulableFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableFlat.swift; sourceTree = "<group>"; };
 		1AC48B851DE6615100505913 /* iFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,13 +96,13 @@
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		595C412138A26C34D75ABA99 /* Pods-iFlat-iFlatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		80E17F431DFAB5520020C695 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
-		80E17F471DFABE4C0020C695 /* ListFlat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListFlat.storyboard; sourceTree = "<group>"; };
-		80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPlusPicker.swift; sourceTree = "<group>"; };
 		754FD5635DE2FCAEA85E3DC4 /* Pods-iFlat-iFlatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75591C1553F467511111B928 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7771EB5A3B04A913699C8FAE /* Pods-iFlat-iFlatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8089402B1DFA566E00D66D33 /* FlatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatModel.swift; sourceTree = "<group>"; };
+		80E17F431DFAB5520020C695 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		80E17F471DFABE4C0020C695 /* ListFlat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListFlat.storyboard; sourceTree = "<group>"; };
+		80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPlusPicker.swift; sourceTree = "<group>"; };
 		8CD3F5AE4D0D6CB95643B835 /* Pods-iFlat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.debug.xcconfig"; sourceTree = "<group>"; };
 		951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TolgaStoryBoard.storyboard; sourceTree = "<group>"; };
 		951A92991DF4E22800199B83 /* SearchParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameter.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				951A92991DF4E22800199B83 /* SearchParameter.swift */,
 				1ADCD0271DF1816600CC08F9 /* User.swift */,
+				1A613D051DFF5A1A0073D4A3 /* Flat.swift */,
 			);
 			name = MODEL_LAYER;
 			sourceTree = "<group>";
@@ -794,6 +797,7 @@
 				957A65681DF5D8EC00844766 /* RenterEditOwnProfileTableViewCell.swift in Sources */,
 				46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */,
 				1A9314521DFCE4CD00A29641 /* ManipulableFlat.swift in Sources */,
+				1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */,
 				46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */,
 				95D9EBB31DF65E690066156F /* ConvertString.swift in Sources */,
 				1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */,

@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 protocol ManipulableFlat :class
 {
-    var id:String {get}
+    var id:String {get set}
     var title:String? {get}
     var flatDescription:String? {get}
+    var city:String? {get}
+    var address:String? {get}
     var flatCapacity:Int? {get}
     var bathroomCount:Int? {get}
     var bedCount:Int? {get}
@@ -27,11 +29,10 @@ protocol ManipulableFlat :class
     var parking:Bool? {get}
     var smoking:Bool? {get}
     var gateKeeper:Bool? {get}
-    var price:Bool? {get}
-    var deleted:Bool {get set}
-    var images:[UIImage] {get set}
+    var price:Int? {get}
+    var images:[UIImage]? {get set}
     var DB_ENDPOINT:FIRFlat {get set}
-    init(title:String,flatDescription:String,flatCapacity:String,bathRoomCount:Int,bedcount:Int,pool:Bool,internet:Bool,cooling:Bool,heating:Bool,tv:Bool,washingMachine:Bool,elevator:Bool,parking:Bool,smoking:Bool,gateKeeper:Bool,price:Int,deleted:Bool, images:[UIImage])
-    
+    init(title:String,flatDescription:String,city:String, address:String,flatCapacity:Int,bathRoomCount:Int,bedcount:Int,pool:Bool,internet:Bool,cooling:Bool,heating:Bool,tv:Bool,washingMachine:Bool,elevator:Bool,parking:Bool,smoking:Bool,gateKeeper:Bool,price:Int,deleted:Bool, images:[UIImage], bedroomCount:Int)
+    init()
     
 }
