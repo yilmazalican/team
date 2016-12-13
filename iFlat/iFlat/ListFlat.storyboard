@@ -12,7 +12,7 @@
         <!--List Flat View Controller-->
         <scene sceneID="Mwq-3j-okJ">
             <objects>
-                <viewController id="Tqa-ct-4nf" customClass="ListFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tqa-ct-4nf" customClass="ListFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W3X-49-gWM"/>
                         <viewControllerLayoutGuide type="bottom" id="Jnw-fe-fkL"/>
@@ -33,7 +33,7 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="flatCell" id="ctq-G5-CEX" userLabel="FlatCell" customClass="ListFlatCollectionViewCell" customModule="iFlat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -78,17 +78,12 @@
                                                         <constraint firstAttribute="width" constant="90" id="FoV-tu-0OL"/>
                                                     </constraints>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-7J-Iaj">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYn-OZ-3kS">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="flatButtonClicked:" destination="ctq-G5-CEX" eventType="touchUpInside" id="4fg-Ta-YHO"/>
-                                                        <segue destination="vlb-Qu-Fko" kind="show" id="wQm-Rk-QKi"/>
-                                                    </connections>
-                                                </button>
+
+                                                </imageView>
+
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.25490196079999999" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,8 +97,9 @@
                                             <outlet property="flatCity" destination="WLV-PE-vUi" id="qsZ-I8-mYR"/>
                                             <outlet property="flatPrice" destination="vno-qR-7E5" id="9JO-Pi-wfw"/>
                                             <outlet property="flatRating" destination="kmw-gJ-QQG" id="k8A-jz-hGb"/>
-                                            <outlet property="flatThumbnail" destination="ZLk-7J-Iaj" id="Tjz-vc-1BN"/>
+                                            <outlet property="flatThumbnail" destination="eYn-OZ-3kS" id="86o-7A-krp"/>
                                             <outlet property="flatTitle" destination="GdW-XZ-821" id="HWJ-R4-F9b"/>
+                                            <segue destination="vlb-Qu-Fko" kind="show" id="sQh-dx-OqH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -119,7 +115,7 @@
                                 </constraints>
                                 <state key="normal" title="Filters"/>
                                 <connections>
-                                    <segue destination="pLQ-C7-e2E" kind="popoverPresentation" popoverAnchorView="Kug-7h-4eP" id="VZ2-Ph-4Uz">
+                                    <segue destination="pLQ-C7-e2E" kind="popoverPresentation" identifier="filterSegue" popoverAnchorView="Kug-7h-4eP" id="VZ2-Ph-4Uz">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -128,7 +124,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Kug-7h-4eP" secondAttribute="bottom" id="CWn-Go-MZa"/>
-                            <constraint firstAttribute="trailing" secondItem="KIA-SR-tXE" secondAttribute="trailing" id="Klh-Su-yXL"/>
+                            <constraint firstAttribute="trailing" secondItem="KIA-SR-tXE" secondAttribute="trailing" id="UXI-ae-D7E"/>
                             <constraint firstItem="KIA-SR-tXE" firstAttribute="leading" secondItem="tvc-Dt-Rlr" secondAttribute="leading" id="dxG-cz-yp7"/>
                             <constraint firstAttribute="trailing" secondItem="Kug-7h-4eP" secondAttribute="trailing" constant="18" id="ftd-qR-EVF"/>
                             <constraint firstItem="Kug-7h-4eP" firstAttribute="leading" secondItem="tvc-Dt-Rlr" secondAttribute="leading" constant="16" id="j2j-qt-kzZ"/>
@@ -143,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fal-RK-PP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.8" y="-103.89805097451276"/>
+            <point key="canvasLocation" x="1583.2" y="-104.7976011994003"/>
         </scene>
         <!--flatProfile-->
         <scene sceneID="U0w-M8-szE">

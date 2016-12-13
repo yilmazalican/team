@@ -2,7 +2,7 @@
 //  FlatProfileViewController.swift
 //  iFlat
 //
-//  Created by MAC ADMIN on 05/12/16.
+//  Created by Eren AY on 05/12/16.
 //  Copyright © 2016 SE 301. All rights reserved.
 //
 
@@ -13,10 +13,14 @@ class FlatProfileViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var flatPrice: UILabel!
     @IBOutlet weak var flatProfileTable: UITableView!
     
+    var receivedFlatID: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //flatPrice.text =
+
+        flatPrice.text = receivedFlatID
+
         
     }
 

@@ -2,7 +2,7 @@
 //  ListFlatCollectionViewCell.swift
 //  iFlat
 //
-//  Created by MAC ADMIN on 05/12/16.
+//  Created by Eren AY on 05/12/16.
 //  Copyright © 2016 SE 301. All rights reserved.
 //
 
@@ -11,7 +11,9 @@ import UIKit
 class ListFlatCollectionViewCell: UICollectionViewCell {
     
     
-    @IBOutlet var flatThumbnail: UIButton!
+    var flatID : String = ""
+    
+    @IBOutlet var flatThumbnail: UIImageView!
     @IBOutlet weak var flatTitle: UILabel!
     @IBOutlet weak var flatPrice: UILabel!
     @IBOutlet weak var flatCity: UILabel!
@@ -20,4 +22,5 @@ class ListFlatCollectionViewCell: UICollectionViewCell {
     @IBAction func flatButtonClicked(_ sender: Any) {
         
     }
+
 }
