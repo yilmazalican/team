@@ -40,6 +40,11 @@ class User:ManipulableUser
         self.profileImg = UIImage()
     }
     
+    // Meva Added.
+    
+    static let staticGender =  ["Female","Male","Other"]
+    
+
     func  validation()-> Bool {
         
         if name == nil || surname == nil || email == nil || password == nil{
@@ -51,6 +56,7 @@ class User:ManipulableUser
         }
         
     }
+
     
     
     // Tolga added.
