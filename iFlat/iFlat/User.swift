@@ -41,6 +41,10 @@ class User:ManipulableUser
     }
     
     
+    func validation() -> Bool{
+      return true
+        
+    }
     
     // Tolga added.
     
