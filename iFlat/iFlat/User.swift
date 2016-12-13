@@ -40,11 +40,18 @@ class User:ManipulableUser
         self.profileImg = UIImage()
     }
     
-    
-    func validation() -> Bool{
-      return true
+    func  validation()-> Bool {
+        
+        if name == nil || surname == nil || email == nil || password == nil{
+            return false
+        }
+            
+        else {
+            return true
+        }
         
     }
+    
     
     // Tolga added.
     
