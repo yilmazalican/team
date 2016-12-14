@@ -8,10 +8,12 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
+class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,ShowAlert,DateToString,UIImagePickerControllerDelegate {
     
     var user = User()
     
+    @IBOutlet weak var takePhotoimgView: UIButton!
+    @IBOutlet weak var takePhotoİmgButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextfield: UITextField!
@@ -21,10 +23,12 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     @IBOutlet weak var genderPickerView: UIPickerView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
-    
+    @IBOutlet weak var uploadİmgButton: UIButton!
+    @IBOutlet weak var imgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
         
         repeatPasswordTextfield.delegate = self
@@ -41,15 +45,31 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         countryPickerView.dataSource = self
         countryPickerView.delegate = self
         
+       
+        
+        
         
     }
-        
+    
+    
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    @IBAction func uploadButtonTapped(_ sender: UIButton) {
+        //select photo
+    }
+    
+    @IBAction func takePhotoİmgView(_ sender: UIButton) {
+        
+        //take photo
+      
+    }
+    
+
     
     @IBAction func nameTextFieldEditingEnd(_ sender: UITextField) {
         
@@ -58,8 +78,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     }
     
     @IBAction func lastNameTextFieldEditingEnd(_ sender: UITextField) {
-        
-        user.surname = sender.text
+       
+                user.surname = sender.text
     }
     
     @IBAction func emailTextFieldEditingEnd(_ sender: UITextField) {
@@ -101,6 +121,46 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
        return 1
     }
     
+    
+    func passwordCheck()->Bool{
+        
+        if user.password == repeatPasswordTextfield.text {
+            
+            return true
+        }
+            
+        else {
+            
+            return false
+        }
+    }
+    
+    
+    
+    func textFieldisEmptyCheck()-> Bool {
+        
+        if (repeatPasswordTextfield.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! || (nameTextField.text?.isEmpty)! || (emailTextField.text?.isEmpty)! || (lastNameTextField.text?.isEmpty)! {
+            
+            return false
+        }
+        
+        return true
+    }
+    
+    @IBAction func RegisterButtonTapped(_ sender: UIButton) {
+
+        if user.validation(){
+            if passwordCheck(){
+                if textFieldisEmptyCheck(){
+                    
+                //insert
+          }
+        }
+      }
+    }
+    
+    
+    
 
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -135,25 +195,6 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         
     }
+ }
     
     
-    
-    func passwordCheck()->Bool{
-        
-        if user.password == repeatPasswordTextfield.text {
-            
-            return true
-        }
-            
-        else {
-            
-            return false
-        }
-    }
-    
-
-   
-    
-}
- 
-
