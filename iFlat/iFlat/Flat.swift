@@ -36,6 +36,13 @@ class Flat: ManipulableFlat {
     var id = FIRREF.instance.getRef().childByAutoId().key
 
 
+    //
+    // Alican bunları ekler misin?
+    // Aynı şekilde aşağısı da düzenlenecek
+    //
+    // var availableDateFrom:String?
+    // var availableDateTo:String?
+    //
 
 
     internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Int, deleted: Bool, images: [UIImage], bedroomCount:Int) {
