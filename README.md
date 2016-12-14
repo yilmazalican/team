@@ -17,7 +17,7 @@ iFlat is a extra space monetizing platform which allows customers to rent their 
 <li>Latest Ruby Native Language</li>
 <li>Ruby gem "CocoaPods"</li>
 <li>Swift 3.0</li>
-<li>Xcode 8+</li>
+<li>Xcode 8.0+</li>
 </ul>
 
 #### Installing Instructions
