@@ -19,6 +19,7 @@ protocol FIRFlatDelegate :class
     func deletePicture()
     func getFlatsofUser(userID:String, completion: @escaping ([ManipulableFlat]?) -> ())
 
+
     
 }
 
@@ -27,14 +28,12 @@ protocol FIRFlatDelegate :class
 class FIRFlat:FIRFlatDelegate
 {
     internal func getFlatsofUser(userID: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
-       
         FIRREF.instance.getRef().child("user_flats/" + userID).observe(.value, with: { (ss) in
-           
-            
         })
 
     }
 
+    
     
     internal func disable(disablingFlat: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let currentUsrID = FIRAuth.auth()?.currentUser?.uid
