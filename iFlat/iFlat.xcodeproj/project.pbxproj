@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A079AF21DFE14EA001FAF32 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */; };
 		1A21E2371E00EB0A004B950A /* denemecontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21E2361E00EB0A004B950A /* denemecontroller.swift */; };
-		1A5303FD1E01E722001CFAEE /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5303FC1E01E722001CFAEE /* ProfileImage.swift */; };
 		1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5303FE1E01E728001CFAEE /* FlatImage.swift */; };
 		1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5354AC1DE663B400353614 /* GoogleService-Info.plist */; };
 		1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A613D051DFF5A1A0073D4A3 /* Flat.swift */; };
@@ -70,7 +69,6 @@
 		1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
 		1A21E2361E00EB0A004B950A /* denemecontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = denemecontroller.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
-		1A5303FC1E01E722001CFAEE /* ProfileImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		1A5303FE1E01E728001CFAEE /* FlatImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImage.swift; sourceTree = "<group>"; };
 		1A5354AC1DE663B400353614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A613D051DFF5A1A0073D4A3 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flat.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */,
-				1A5303FC1E01E722001CFAEE /* ProfileImage.swift */,
 				1A5303FE1E01E728001CFAEE /* FlatImage.swift */,
 			);
 			name = Utilities;
@@ -802,7 +799,6 @@
 				95D9EBB31DF65E690066156F /* ConvertString.swift in Sources */,
 				1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */,
 				1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */,
-				1A5303FD1E01E722001CFAEE /* ProfileImage.swift in Sources */,
 				95D9EBB71DF6668A0066156F /* ShowAlert.swift in Sources */,
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
