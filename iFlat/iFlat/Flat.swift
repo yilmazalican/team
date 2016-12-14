@@ -59,7 +59,6 @@ class Flat: ManipulableFlat {
         self.gateKeeper = gateKeeper
         self.price = price
         self.images = images
-        
         self.DB_ENDPOINT = FIRFlat()
        
         

@@ -28,7 +28,7 @@ protocol FIRUSERDelegate :class
     func changeEmail(newEmail:String, completion: @escaping (Bool) -> ())
     func insertFlat(flt:ManipulableFlat, completion: @escaping(String?) -> ())
     func insertUserProfileImage(user:ManipulableUser, completion: @escaping (String?) -> ())
-    
+    func getUserProfileImg(user:ManipulableUser, completion: @escaping (ProfileImage?) -> ())
 
 }
 
@@ -36,6 +36,18 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func getUserProfileImg(user: ManipulableUser, completion: @escaping (ProfileImage?) -> ()) {
+        FIRREF.instance.getRef().child("user_profile_images/" + user.id!).observeSingleEvent(of: .value, with: { (ss) in
+            let profimage = ProfileImage()
+            let dict = ss.value as! [String:String]
+            profimage.imageID = dict["imageID"]
+            profimage.imgDownloadURL = dict["downloadURL"]
+            completion(profimage)
+        })
+    }
+
+
+
     internal func insertUserProfileImage(user: ManipulableUser, completion: @escaping (String?) -> ()) {
         let imguniqueid = UUID().uuidString
         if let profileImg = user.profileImage
