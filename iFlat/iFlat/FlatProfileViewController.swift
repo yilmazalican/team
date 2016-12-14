@@ -12,7 +12,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
 
 //burada eksik var/time fault
     var receivedFlatID: String = ""
-    var flat : FlatModel!
+    var flat : Flat!
     
     @IBOutlet var flatRating: UILabel!
     @IBOutlet var flatRatingTV: UILabel!
@@ -32,12 +32,13 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         
     }
     
-    func initFlat() -> FlatModel{
-        return FlatModel()
+    func initFlat() -> Flat{
+        return Flat()
     }
 
     func initGui(){
-        self.flatPriceTV.text = flat.price!
+        // check string casting
+        self.flatPriceTV.text = String(describing: flat.price)
         self.flatDetailsTV.text = flat.flatDescription!
         
     }
