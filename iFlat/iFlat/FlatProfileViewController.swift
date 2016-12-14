@@ -8,38 +8,58 @@
 
 import UIKit
 
-class FlatProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    @IBOutlet var scroller: UIScrollView!
-    @IBOutlet var flatPrice: UILabel!
-    
+
     var receivedFlatID: String = ""
+    var flat : FlatModel!
+    
+    @IBOutlet var flatRating: UILabel!
+    @IBOutlet var flatRatingTV: UILabel!
+    @IBOutlet var flatSpecsTV: UILabel!
+    @IBOutlet var flatPriceTV: UILabel!
+    @IBOutlet var flatDetailsTV: UILabel!
+    @IBOutlet var flatOwnerTV: UILabel!
+    @IBOutlet var flatTitleTV: UILabel!
+    @IBOutlet var imageCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        //scroller.contentSize = CGSize(width: 375, height: 1500)
-        //flatPrice.text = receivedFlatID
-
+        flat = initFlat()
+        initGui()
         
     }
+    
+    func initFlat() -> FlatModel{
+        return FlatModel()
+    }
 
+    func initGui(){
+        self.flatPriceTV.text = flat.price!
+        self.flatDetailsTV.text = flat.flatDescription!
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         
         
-        return UITableViewCell()
+        return cell
     }
+    
 
 
 }
