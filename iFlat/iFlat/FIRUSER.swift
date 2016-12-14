@@ -29,6 +29,7 @@ protocol FIRUSERDelegate :class
     func insertFlat(flt:ManipulableFlat, completion: @escaping(String?) -> ())
     func insertUserProfileImage(user:ManipulableUser, completion: @escaping (String?) -> ())
     func getUserProfileImg(user:ManipulableUser, completion: @escaping (String?) -> ())
+    
 
 }
 

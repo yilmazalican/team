@@ -19,14 +19,13 @@ protocol FIRFlatDelegate :class
     func deletePicture()
     func getFlatsofUser(userID:String, completion: @escaping ([ManipulableFlat]?) -> ())
 
-
-    
 }
 
 
 
 class FIRFlat:FIRFlatDelegate
 {
+    //metodu tamamla!
     internal func getFlatsofUser(userID: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
         FIRREF.instance.getRef().child("user_flats/" + userID).observe(.value, with: { (ss) in
         })
@@ -40,6 +39,7 @@ class FIRFlat:FIRFlatDelegate
         FIRREF.instance.getRef().child("allflat/" +  disablingFlat.id).setValue(true, forKey: "disabled")
         FIRREF.instance.getRef().child("user_flats/" + currentUsrID! + "/" + disablingFlat.id).setValue(true, forKey: "disabled")
         FIRREF.instance.getRef().child("filter_flats/" + disablingFlat.city! + "/" + disablingFlat.id).setValue(true, forKey: "disabled")
+
     }
 
    
