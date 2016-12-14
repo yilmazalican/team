@@ -13,8 +13,16 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DB_ENDPOINT = FIRUSER()
+        let img = UIImage()
+        let arr = [img]
+        let usr = User()
+        let flt = Flat(title: "dsadsa", flatDescription: "dsadas", city: "ist", address: "dsadsa", flatCapacity: 2, bathRoomCount: 2, bedcount: 2, pool: true, internet: true, cooling: true, heating: true, tv: true, washingMachine: true, elevator: true, parking: true, smoking: true, gateKeeper: true, price: 3, deleted: true, images:arr , bedroomCount: 3)
 
+        usr.insertFlat(flt: flt) { (dsadsa) in
+            print(dsadsa)
+        }
+        
+        
         
 }
 

@@ -192,6 +192,9 @@
                                                 <rect key="frame" x="128" y="603" width="118" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Register"/>
+                                                <connections>
+                                                    <action selector="RegisterButtonTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="NFE-Au-j44"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZI-2W-IJy">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="28"/>
@@ -226,14 +229,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBS-A8-gTN">
-                                                <rect key="frame" x="189" y="102" width="97" height="30"/>
+                                                <rect key="frame" x="197" y="102" width="111" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Choose photo"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAz-Fh-GgG">
-                                                <rect key="frame" x="94" y="102" width="87" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Take Photo"/>
+                                                <state key="normal" title="Uploaded photo"/>
+                                                <connections>
+                                                    <action selector="uploadButtonTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="aip-eg-fkW"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your last name." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSA-yW-laA">
                                                 <rect key="frame" x="16" y="220" width="343" height="30"/>
@@ -270,6 +271,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAz-Fh-GgG">
+                                                <rect key="frame" x="68" y="102" width="87" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Take Photo"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -280,6 +286,10 @@
                                         <rect key="frame" x="128" y="26" width="118" height="77"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EOG-B4-RTa">
+                                        <rect key="frame" x="177" y="54" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ryA-5H-OOX" firstAttribute="top" secondItem="iE0-P5-UKT" secondAttribute="top" id="k4d-xD-wXP"/>
@@ -310,6 +320,9 @@
                         <outlet property="passwordTextField" destination="LzF-lZ-euQ" id="ZiK-pV-Vnt"/>
                         <outlet property="registerButton" destination="Dy8-dq-ojd" id="dgS-05-1rw"/>
                         <outlet property="repeatPasswordTextfield" destination="Axu-XM-6hC" id="oZA-yz-gl9"/>
+                        <outlet property="takePhotoİmgButton" destination="aAz-Fh-GgG" id="DBE-X2-r5z"/>
+                        <outlet property="takePhotoimgView" destination="aAz-Fh-GgG" id="8Dt-jl-uxA"/>
+                        <outlet property="uploadİmgButton" destination="SBS-A8-gTN" id="Hei-SI-Xog"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh0-jZ-CIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
