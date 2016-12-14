@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A079AF21DFE14EA001FAF32 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */; };
+		1A21E2371E00EB0A004B950A /* denemecontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21E2361E00EB0A004B950A /* denemecontroller.swift */; };
 		1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5354AC1DE663B400353614 /* GoogleService-Info.plist */; };
 		1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A613D051DFF5A1A0073D4A3 /* Flat.swift */; };
 		1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */; };
@@ -23,7 +24,6 @@
 		1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */; };
 		462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462D7F131DF587B80060807B /* FlatProfile.storyboard */; };
 		462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F151DF588760060807B /* FlatProfileViewController.swift */; };
-		462D7F181DF589090060807B /* FlatProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F171DF589090060807B /* FlatProfileTableViewCell.swift */; };
 		462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */; };
 		462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */; };
 		46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Loginn.storyboard */; };
@@ -67,6 +67,7 @@
 /* Begin PBXFileReference section */
 		10BA7B8B0ACD6851D7E5E3D1 /* Pods-iFlat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.release.xcconfig"; sourceTree = "<group>"; };
 		1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
+		1A21E2361E00EB0A004B950A /* denemecontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = denemecontroller.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
 		1A5354AC1DE663B400353614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A613D051DFF5A1A0073D4A3 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flat.swift; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableUser.swift; sourceTree = "<group>"; };
 		462D7F131DF587B80060807B /* FlatProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FlatProfile.storyboard; sourceTree = "<group>"; };
 		462D7F151DF588760060807B /* FlatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatProfileViewController.swift; sourceTree = "<group>"; };
-		462D7F171DF589090060807B /* FlatProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatProfileTableViewCell.swift; sourceTree = "<group>"; };
 		462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatViewController.swift; sourceTree = "<group>"; };
 		462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatCollectionViewCell.swift; sourceTree = "<group>"; };
 		46E8E9981DF09B1900C265E3 /* Loginn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loginn.storyboard; sourceTree = "<group>"; };
@@ -329,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				1AC48BC21DE6625C00505913 /* ViewController.swift */,
+				1A21E2361E00EB0A004B950A /* denemecontroller.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,7 +403,6 @@
 		462D7F0D1DF587670060807B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				462D7F171DF589090060807B /* FlatProfileTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -571,7 +571,6 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 4AZ5F7WC68;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -789,7 +788,6 @@
 			files = (
 				95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */,
 				957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */,
-				462D7F181DF589090060807B /* FlatProfileTableViewCell.swift in Sources */,
 				957A656A1DF5D93B00844766 /* RenterEditOwnProfileTableView.swift in Sources */,
 				8089402C1DFA566E00D66D33 /* FlatModel.swift in Sources */,
 				80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */,
@@ -805,6 +803,7 @@
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
 				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
+				1A21E2371E00EB0A004B950A /* denemecontroller.swift in Sources */,
 				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
 				462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */,
 				951A929A1DF4E22800199B83 /* SearchParameter.swift in Sources */,
@@ -961,7 +960,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
-				DEVELOPMENT_TEAM = 4AZ5F7WC68;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iFlat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
@@ -978,7 +977,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
-				DEVELOPMENT_TEAM = 4AZ5F7WC68;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iFlat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
