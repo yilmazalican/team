@@ -39,11 +39,19 @@ class Flat: ManipulableFlat {
     //
     // Alican bunları ekler misin?
     // Aynı şekilde aşağısı da düzenlenecek
+    // init func
     //
     // var availableDateFrom:String?
     // var availableDateTo:String?
+    // var flatRating:Int?
+    // var flatOwnerID:String?
     //
-
+    // ----------------
+    //
+    // Also,
+    // Can you write a func named getOwnerInfo() that return me flatOwnerName & flatOwnerImage by using flatOwnerID
+    //
+    //
 
     internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Int, deleted: Bool, images: [UIImage], bedroomCount:Int) {
         self.title = title
