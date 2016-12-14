@@ -9,6 +9,7 @@ target 'iFlat' do
   pod ‘Firebase/Core’
   pod ‘Firebase/Database’
   pod ‘Firebase/Auth’
+  pod 'Firebase/Storage'
 
   target 'iFlatTests' do
 

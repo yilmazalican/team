@@ -31,7 +31,9 @@ protocol ManipulableFlat :class
     var gateKeeper:Bool? {get}
     var price:Int? {get}
     var images:[UIImage]? {get set}
+    var disabled:Bool {get set}
     var DB_ENDPOINT:FIRFlat {get set}
+    
     init(title:String,flatDescription:String,city:String, address:String,flatCapacity:Int,bathRoomCount:Int,bedcount:Int,pool:Bool,internet:Bool,cooling:Bool,heating:Bool,tv:Bool,washingMachine:Bool,elevator:Bool,parking:Bool,smoking:Bool,gateKeeper:Bool,price:Int,deleted:Bool, images:[UIImage], bedroomCount:Int)
     init()
     

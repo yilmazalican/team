@@ -17,11 +17,11 @@ protocol ManipulableUser :class
     var password:String? {get set}
     var birthDate:String? {get set}
     var Gender:String? {get set}
-    var profileImg:UIImage {get set}
+    var profileImage:UIImage? {get set}
     var DB_ENDPOINT:FIRUSER {get set}
     
     
-    init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, img:UIImage)
+    init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, profileImage:UIImage)
     init()
     func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ())
     

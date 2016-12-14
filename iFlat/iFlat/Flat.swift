@@ -32,6 +32,7 @@ class Flat: ManipulableFlat {
     var gateKeeper:Bool?
     var price:Int?
     var images:[UIImage]?
+    var disabled = false
     var id = FIRREF.instance.getRef().childByAutoId().key
 
 
@@ -58,6 +59,7 @@ class Flat: ManipulableFlat {
         self.gateKeeper = gateKeeper
         self.price = price
         self.images = images
+        
         self.DB_ENDPOINT = FIRFlat()
        
         

@@ -17,7 +17,7 @@ protocol FIRFlatDelegate :class
     func addPictures(imgs:[UIImage], completion: @escaping(String?) -> ())
     func addPicture(img:UIImage, completion: @escaping(String?) -> ())
     func deletePicture()
-    func getFlats(id:String, completion: @escaping ([ManipulableFlat]?) -> ())
+    func getFlatsofUser(userID:String, completion: @escaping ([ManipulableFlat]?) -> ())
 
     
 }
@@ -26,16 +26,19 @@ protocol FIRFlatDelegate :class
 
 class FIRFlat:FIRFlatDelegate
 {
-    internal func getFlats(id: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
-        
+    internal func getFlatsofUser(userID: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
+       
+        FIRREF.instance.getRef().child("user_flats/" + userID).observe(.value, with: { (ss) in
+           
+            
+        })
+
     }
-
-
 
     
     internal func disable(disablingFlat: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let currentUsrID = FIRAuth.auth()?.currentUser?.uid
-        FIRREF.instance.getRef().child("allflat/" + disablingFlat.id).setValue(true, forKey: "disabled")
+        FIRREF.instance.getRef().child("allflat/" +  disablingFlat.id).setValue(true, forKey: "disabled")
         FIRREF.instance.getRef().child("user_flats/" + currentUsrID! + "/" + disablingFlat.id).setValue(true, forKey: "disabled")
         FIRREF.instance.getRef().child("filter_flats/" + disablingFlat.city! + "/" + disablingFlat.id).setValue(true, forKey: "disabled")
     }

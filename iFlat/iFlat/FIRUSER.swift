@@ -10,6 +10,7 @@
 //Handle Optionals
 import Foundation
 import Firebase
+import FirebaseStorage
 
 ///This protocol is a delegation bridge. When any coder wants to use DB manipulation methods, then the coder must use this bridge instance.
 ///Coder also need to conform the protocol which is ManipulableUser. If want to use the manipulation methods. Manipulation methods only takes objects which conforms ManipulableUser.
@@ -26,6 +27,8 @@ protocol FIRUSERDelegate :class
     func changePassword(newPassword:String, completion: @escaping (Bool) -> ())
     func changeEmail(newEmail:String, completion: @escaping (Bool) -> ())
     func insertFlat(flt:ManipulableFlat, completion: @escaping(String?) -> ())
+    func insertUserProfileImage(user:ManipulableUser, completion: @escaping (String?) -> ())
+    
 
 }
 
@@ -33,6 +36,38 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func insertUserProfileImage(user: ManipulableUser, completion: @escaping (String?) -> ()) {
+        let imguniqueid = UUID().uuidString
+        if let profileImg = user.profileImage
+        {
+            let imagePNGDataConverter = UIImagePNGRepresentation(profileImg)
+            FIRREF.instance.getStorageRef().child("user_profile_images/" + imguniqueid + ".png").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
+                if (error == nil)
+                {
+                    FIRREF.instance.getRef().child("user_profile_images/" + user.id!).setValue(
+                        ["imageID" : imguniqueid, "downloadURL" : metadata?.downloadURL()?.absoluteString]
+                        ,withCompletionBlock: { (err, nil) in
+                            if err == nil{
+                                completion(nil)
+                            }
+                            else
+                            {
+                                completion(err.debugDescription)
+                            }
+                    })
+                }
+            }
+        }
+        else
+        {
+            completion("user profile image is nil!")
+        }
+       
+
+    }
+
+    
+    
     let currentLoggedUserID = FIRAuth.auth()?.currentUser?.uid
     internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         let aFlat = [
@@ -52,6 +87,7 @@ class FIRUSER: FIRUSERDelegate {
                      "tv" : flt.tv!,
                      "washingMachine" : flt.washingMachine!,
                      "capacity" : flt.flatCapacity!,
+                     "disabled": flt.disabled,
                      "title" : flt.title!] as [String : Any]
        
         //Allflats
@@ -224,7 +260,7 @@ class FIRUSER: FIRUSERDelegate {
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
                             usr.id = user?.uid
-                            self.logout(completion: { (c) in
+                            self.logout(completion: { (c) in //Preventing Auto Login!
                                 completion(true)
                             })
                         }
@@ -242,11 +278,6 @@ class FIRUSER: FIRUSERDelegate {
         })
 
     }
-    
-    
-    
-    
-    
-    
 }
+
 
