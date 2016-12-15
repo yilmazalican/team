@@ -12,10 +12,11 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     
     var flatProfileVC : FlatProfileViewController?
-    //var oldFilter : FilterModel?
+
     
     // IMPORTANT -> Search must fill receivedFilter by FilterModel Instance
     var receivedFilter : FilterModel?
+    var flatCells : [ListFlatCollectionViewCell]?
     
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
@@ -27,12 +28,10 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         getFlatInfoFromFireBase(filter: receivedFilter!)
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func getFlatInfoFromFireBase(filter : FilterModel){
@@ -48,19 +47,22 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell : ListFlatCollectionViewCell = listFlatCollectionView.dequeueReusableCell(withReuseIdentifier: "flatCell", for: indexPath) as! ListFlatCollectionViewCell
-        cell.flatCity.text = "istanbul"
-        cell.flatPrice.text = "500"
-        cell.flatRating.text = "***"
-        cell.flatID = String(indexPath.row)
-
+        
+//        cell.flatCity.text = "istanbul"
+//        cell.flatPrice.text = "500"
+//        cell.flatRating.text = "***"
+//        cell.flatID = String(indexPath.row)
+//        
+//        cell.flatThumbnail = flatCells[indexPath.row].flatThumbnail
+//        cell.
         
         
         
-        return cell
+        return flatCells![indexPath.row]
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return flatCells!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
