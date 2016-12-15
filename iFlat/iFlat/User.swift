@@ -57,7 +57,8 @@ class User:ManipulableUser
 
     func  validation()-> Bool {
         
-        if name == nil || surname == nil || email == nil || password == nil{
+        if name == nil || surname == nil || email == nil || password == nil || profileImage == nil
+        {
             return false
         }
             
