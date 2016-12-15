@@ -78,7 +78,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
             
             imgView.contentMode = .scaleAspectFit
             imgView.image =  pickedImage
-            user.profileImg = pickedImage
+            user.profileImage = pickedImage
             
         }
         
@@ -88,7 +88,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
         
-        if user.profileImg == nil {
+        if user.profileImage == nil {
             return
             //popup
         }
