@@ -31,13 +31,12 @@ class User:ManipulableUser
         self.password = password
         self.birthDate = birthDate
         self.Gender = Gender
-        self.profileImg = img
+        self.profileImage = img
         DB_ENDPOINT = FIRUSER()
     }
     
     internal required init() {
         self.DB_ENDPOINT = FIRUSER()
-        self.profileImg = UIImage()
     }
     
     internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
