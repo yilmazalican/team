@@ -13,7 +13,6 @@ class User:ManipulableUser
 {
     var profileImage: UIImage?
     var id: String?
-    var profileImg: UIImage
     var name:String?
     var surname:String?
     var email:String?
