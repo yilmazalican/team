@@ -149,7 +149,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or6-vH-QZx">
-                                                <rect key="frame" x="16" y="124" width="343" height="21"/>
+                                                <rect key="frame" x="15" y="130" width="83" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -286,10 +286,6 @@
                                         <rect key="frame" x="128" y="26" width="118" height="77"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EOG-B4-RTa">
-                                        <rect key="frame" x="177" y="54" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ryA-5H-OOX" firstAttribute="top" secondItem="iE0-P5-UKT" secondAttribute="top" id="k4d-xD-wXP"/>
@@ -315,6 +311,7 @@
                         <outlet property="countryPickerView" destination="EfF-cQ-U8K" id="9hY-Gs-D4J"/>
                         <outlet property="emailTextField" destination="US9-Vy-U9y" id="hqM-CF-VMQ"/>
                         <outlet property="genderPickerView" destination="iBU-NL-zUr" id="e4X-8i-RTu"/>
+                        <outlet property="imgView" destination="RKy-qK-hAx" id="ijq-TY-v3t"/>
                         <outlet property="lastNameTextField" destination="pSA-yW-laA" id="ilh-NH-uKG"/>
                         <outlet property="nameTextField" destination="kqP-qy-swa" id="uZ9-vM-mlH"/>
                         <outlet property="passwordTextField" destination="LzF-lZ-euQ" id="ZiK-pV-Vnt"/>
@@ -327,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh0-jZ-CIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1449" y="-841"/>
+            <point key="canvasLocation" x="-1450.4000000000001" y="-841.07946026986508"/>
         </scene>
     </scenes>
     <resources>

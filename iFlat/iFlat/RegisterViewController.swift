@@ -8,9 +8,11 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,ShowAlert,DateToString,UIImagePickerControllerDelegate {
+class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     var user = User()
+    var myImgPickerController = UIImagePickerController()
+    
     
     @IBOutlet weak var takePhotoimgView: UIButton!
     @IBOutlet weak var takePhotoİmgButton: UIButton!
@@ -25,10 +27,14 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var uploadİmgButton: UIButton!
     @IBOutlet weak var imgView: UIImageView!
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        
+      
         
         
         repeatPasswordTextfield.delegate = self
@@ -45,6 +51,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         countryPickerView.dataSource = self
         countryPickerView.delegate = self
         
+        myImgPickerController.delegate = self
+        myImgPickerController.sourceType = .photoLibrary
+    
+        
        
         
         
@@ -59,8 +69,39 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
     }
     
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+      
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            imgView.contentMode = .scaleAspectFit
+            imgView.image =  pickedImage
+            user.profileImg = pickedImage
+            
+        }
+        
+         dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        
+        if user.profileImg == nil {
+            return
+            //popup
+        }
+    }
+
+    
+    
     @IBAction func uploadButtonTapped(_ sender: UIButton) {
-        //select photo
+        
+      
+        
+       present(myImgPickerController, animated: true, completion: nil)
+        
     }
     
     @IBAction func takePhotoİmgView(_ sender: UIButton) {
