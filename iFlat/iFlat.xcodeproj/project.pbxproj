@@ -151,7 +151,7 @@
 		1A24DADE1E03698900C49269 /* QueryMaster */ = {
 			isa = PBXGroup;
 			children = (
-				1A24DAE11E036A6E00C49269 /* FilteredFlat.swift */,
+				1A6CA5761E0370F7009B4512 /* Flat */,
 			);
 			name = QueryMaster;
 			sourceTree = "<group>";
@@ -163,6 +163,14 @@
 				1A5303FE1E01E728001CFAEE /* FlatImage.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		1A6CA5761E0370F7009B4512 /* Flat */ = {
+			isa = PBXGroup;
+			children = (
+				1A24DAE11E036A6E00C49269 /* FilteredFlat.swift */,
+			);
+			name = Flat;
 			sourceTree = "<group>";
 		};
 		1A79F6F01DFE212800E601A4 /* Wish */ = {
