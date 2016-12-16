@@ -15,7 +15,7 @@ protocol FIRFlatDelegate :class
     func edit(newFlt:ManipulableFlat!, completion: @escaping (String?) -> ())
     func disable(disablingFlat:ManipulableFlat!, completion: @escaping (String?) -> ())
     func getFlat(id:String, completion: @escaping (ManipulableFlat?) -> ())
-    func addPicture(imgs: [FlatImage], flatid:String, completion: @escaping (String?) -> ())
+    func addPicture(imgs: [FlatImage], flat:ManipulableFlat, completion: @escaping (String?) -> ())
     func getFlatsofUser(userID:String, completion: @escaping ([ManipulableFlat]?) -> ())
     func getFlatofUser(userID:String, flatID:String, completion: @escaping (ManipulableFlat) -> ())
     func editFlatThumbImage(flatID: String, oldthumbImageID:String, newthumbImageID: String, completion: @escaping (String?) -> ())
@@ -26,7 +26,7 @@ protocol FIRFlatDelegate :class
 class FIRFlat:FIRFlatDelegate
 {
     internal func getFlatImages(flatID: String, completion: @escaping ([FlatImageDownloaded]?) -> ()) {
-        FIRREF.instance.getRef().observeSingleEvent(of: .value, with: { (ss) in
+        FIRREF.instance.getRef().child("flat_images/" + flatID).observeSingleEvent(of: .value, with: { (ss) in
             var returningArr = [FlatImageDownloaded]()
             if ss.childrenCount <= 0
             {
@@ -38,7 +38,7 @@ class FIRFlat:FIRFlatDelegate
                 {
                     let received = a as! FIRDataSnapshot
                     let obje = received.value as! [String:String]
-                    let flatimage = FlatImageDownloaded(imageID: obje["id"]!, imageDownloadURL: obje["downloadURL"]!)
+                    let flatimage = FlatImageDownloaded(imageID: received.key, imageDownloadURL: obje["downloadURL"]!)
                     returningArr.append(flatimage)
                     
                 }
@@ -85,9 +85,10 @@ class FIRFlat:FIRFlatDelegate
         
     }
     
+    //manipulable or id? for flat arguman
     
-    internal func addPicture(imgs: [FlatImage], flatid:String, completion: @escaping (String?) -> ()) {
-        if (imgs.count <= 0){
+    internal func addPicture(imgs: [FlatImage], flat:ManipulableFlat, completion: @escaping (String?) -> ()) {
+        if (imgs.count >= 0){
             for a in imgs
             {
                 let pngData = UIImagePNGRepresentation(a.image)
@@ -100,20 +101,30 @@ class FIRFlat:FIRFlatDelegate
                     {
                         if let obje = a as? FlatThumbnailImage
                         {
-                            FIRREF.instance.getRef().child("flat_images/" + flatid + "/" + a.id).setValue(
+                            FIRREF.instance.getRef().child("flat_images/" + flat.id + "/" + a.id).setValue(
                                 ["downloadURL": (mdata!.downloadURL()!.absoluteString),"isthumbnail": obje.thumnail], withCompletionBlock: { (err, nil) in
                                     if err != nil
                                     {
                                         completion(err.debugDescription)
                                     }
+                                    else
+                                    {
+                                        completion(nil)
+
+                                    }
                             })
                         }
                         else
                         {
-                            FIRREF.instance.getRef().child("flat_images/" + flatid + "/" + a.id).setValue(["downloadURL": mdata?.downloadURL()!.absoluteString], withCompletionBlock: { (err, nil) in
+                            FIRREF.instance.getRef().child("flat_images/" + flat.id + "/" + a.id).setValue(["downloadURL": mdata?.downloadURL()!.absoluteString], withCompletionBlock: { (err, nil) in
                                 if err != nil
                                 {
                                     completion(err.debugDescription)
+                                }
+                                else
+                                {
+                                    completion(nil)
+                                    
                                 }
                                 
                             })
@@ -122,7 +133,6 @@ class FIRFlat:FIRFlatDelegate
                     }
                 })
             }
-            completion(nil)
         }
     }
     
@@ -135,6 +145,7 @@ class FIRFlat:FIRFlatDelegate
             {
                 let flt = Flat()
                 let objdict = a.value as! [String:Any]
+                flt.id = a.key
                 flt.bathroomCount = objdict["bathroomCount"] as? Int
                 flt.bedCount = objdict["bedCount"] as? Int
                 flt.cooling = objdict["cooling"] as? Bool
