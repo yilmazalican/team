@@ -138,10 +138,6 @@ class RenterEditOwnProfileTableViewCell: UITableViewCell {
 extension RenterEditOwnProfileTableViewCell  : UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate , DateToString{
     
     
-    
-    
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

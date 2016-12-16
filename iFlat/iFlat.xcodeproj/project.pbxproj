@@ -28,6 +28,9 @@
 		462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F151DF588760060807B /* FlatProfileViewController.swift */; };
 		462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */; };
 		462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */; };
+		9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */; };
+		9564AB241DFFD6AA0059DCC6 /* FlatOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */; };
+		9564AB261DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */; };
 		46E8E9991DF09B1900C265E3 /* Loginn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Loginn.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
@@ -91,6 +94,9 @@
 		1ADCD0271DF1816600CC08F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRUSER.swift; sourceTree = "<group>"; };
 		1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableUser.swift; sourceTree = "<group>"; };
+		9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlatViewController.swift; sourceTree = "<group>"; };
+		9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatOptionTableView.swift; sourceTree = "<group>"; };
+		9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatOptionTableViewCell.swift; sourceTree = "<group>"; };
 		462D7F131DF587B80060807B /* FlatProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FlatProfile.storyboard; sourceTree = "<group>"; };
 		462D7F151DF588760060807B /* FlatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatProfileViewController.swift; sourceTree = "<group>"; };
 		462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +300,7 @@
 				951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */,
 				957A656B1DF5D94C00844766 /* Controller */,
 				957A656C1DF5D95E00844766 /* Table View */,
+				95D9EBB11DF65E500066156F /* Protocols&Extension */,
 			);
 			name = TolgaMVC;
 			sourceTree = "<group>";
@@ -366,7 +373,6 @@
 				1AC48BBA1DE661AD00505913 /* MevaMVC */,
 				1AC48BB91DE661A700505913 /* ErenMVC */,
 				1AC48BB81DE661A000505913 /* TolgaMVC */,
-				95D9EBB11DF65E500066156F /* Protocols&Extension */,
 				1AC48BB71DE6619500505913 /* AlicanMVC */,
 			);
 			name = TEAM_MVC_LAYER;
@@ -490,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */,
+				9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */,
 				951A929B1DF4E23100199B83 /* EntranceViewController.swift */,
 			);
 			name = Controller;
@@ -500,6 +507,8 @@
 			children = (
 				957A65691DF5D93B00844766 /* RenterEditOwnProfileTableView.swift */,
 				957A65671DF5D8EC00844766 /* RenterEditOwnProfileTableViewCell.swift */,
+				9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */,
+				9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */,
 			);
 			name = "Table View";
 			sourceTree = "<group>";
@@ -807,7 +816,9 @@
 			files = (
 				95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */,
 				957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */,
+				9564AB261DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift in Sources */,
 				957A656A1DF5D93B00844766 /* RenterEditOwnProfileTableView.swift in Sources */,
+				9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */,
 				80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */,
 				1A079AF21DFE14EA001FAF32 /* FIRFlat.swift in Sources */,
 				957A65681DF5D8EC00844766 /* RenterEditOwnProfileTableViewCell.swift in Sources */,
@@ -819,6 +830,7 @@
 				1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */,
 				1AC48BC31DE6625C00505913 /* ViewController.swift in Sources */,
 				95D9EBB71DF6668A0066156F /* ShowAlert.swift in Sources */,
+				9564AB241DFFD6AA0059DCC6 /* FlatOptionTableView.swift in Sources */,
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
 				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,

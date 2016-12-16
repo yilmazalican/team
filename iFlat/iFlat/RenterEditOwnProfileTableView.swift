@@ -26,7 +26,7 @@ extension RenterEditOwnProfileTableView: UITableViewDelegate,UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
-        if let cell : RenterEditOwnProfileTableViewCell = dequeueReusableCell(withIdentifier: RenterEditOwnProfileTableViewCell.cellId, for: indexPath) as?RenterEditOwnProfileTableViewCell {
+        if let cell : RenterEditOwnProfileTableViewCell = dequeueReusableCell(withIdentifier: RenterEditOwnProfileTableViewCell.cellId, for: indexPath) as? RenterEditOwnProfileTableViewCell {
             
        
            

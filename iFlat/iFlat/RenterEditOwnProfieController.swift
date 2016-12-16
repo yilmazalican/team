@@ -9,11 +9,12 @@
 import UIKit
 
 import AVKit
-import AVFoundation
 import MobileCoreServices
 
 class RenterEditOwnProfieController: UIViewController {
 
+    
+    
     @IBOutlet weak var renterPhotoImageView: UIImageView!
     
     // TODO : CHECK ASPECTFİT,FİLL
@@ -31,10 +32,20 @@ class RenterEditOwnProfieController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
 
-    @IBAction func takePhotoAction(_ sender: Any) {
+    @IBAction func getPhotoFromLibraryAction(_ sender: Any) {
         
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+        }
+      
+
+    }
+   
+    @IBAction func takePhotoAction(_ sender: Any) {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             
@@ -46,6 +57,7 @@ class RenterEditOwnProfieController: UIViewController {
                 imagePicker.sourceType = .camera
                 imagePicker.allowsEditing = false
                 imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: imagePicker.sourceType)!
+                present(imagePicker, animated: true, completion: nil)
             }
         }
         
@@ -69,6 +81,10 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         

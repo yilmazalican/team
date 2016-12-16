@@ -39,6 +39,9 @@ class User:ManipulableUser
     internal required init() {
         self.DB_ENDPOINT = FIRUSER()
     }
+
+       
+
     
     internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
                   
@@ -70,6 +73,7 @@ class User:ManipulableUser
     
     
     // Tolga added.
+
     
     static let allCountryList = ["01 Adana","02 Adıyaman",
                                  "03 Afyon","04 Ağrı",
