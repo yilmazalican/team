@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="43b-0F-0xv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="86T-av-jpr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,6 +12,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--ListFlat-->
+        <scene sceneID="XmP-YY-sZM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListFlat" id="kJw-FL-lbj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FxR-ym-y7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1601" y="-1247"/>
+        </scene>
         <!--Entrance View Controller-->
         <scene sceneID="3hu-QQ-6ks">
             <objects>
@@ -187,6 +195,7 @@
                                         </state>
                                         <connections>
                                             <action selector="searchWithParameterActionButton:" destination="86T-av-jpr" eventType="touchUpInside" id="o2A-LF-hlZ"/>
+                                            <segue destination="kJw-FL-lbj" kind="show" identifier="EntranceToListSegue" id="q9b-16-4xO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -271,7 +280,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="829"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y2B-zc-olD" id="GbC-iV-ZSL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="829"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="828"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uB-TK-f7x" userLabel="Name Surname View">
@@ -659,7 +668,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y94-GI-VAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-743.20000000000005" y="-552.3238380809596"/>
+            <point key="canvasLocation" x="-500" y="-658"/>
         </scene>
         <!--Add Flat View Controller-->
         <scene sceneID="tp2-ee-R94">
@@ -809,7 +818,7 @@
                                     <rect key="frame" x="0.0" y="28" width="300" height="870"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xca-Vc-iTN" id="BYj-td-zyy">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="870"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="869"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-a3-yeH">
@@ -1151,24 +1160,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="454" y="-884"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="c98-EH-cjS">
-            <objects>
-                <viewController id="0lq-ZE-z5v" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4dW-76-F9T"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mzm-jF-rSO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tgP-z4-FHL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EJb-gk-KgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="694" y="-967"/>
         </scene>
     </scenes>
 </document>
