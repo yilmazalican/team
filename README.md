@@ -27,6 +27,12 @@ then;
 <pre> Install the requirements of the project</pre>
 <pre> Download the project</pre>
 <pre> run $pod install</pre>
+[IMPORTANT]For automatic merging of pbxproj file, please add this paramters to your ~/.gitconfig file.
+<pre> 
+[merge "mergepbx"]
+name = Xcode project files merger
+driver = mergepbx %O %A %B 
+</pre>
 
 #### Development
 Currently we are accepting new team members to contribute. Feel free to contact us from eposta.alican@gmail.com or just make a pull request to master branch.

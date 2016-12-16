@@ -21,9 +21,8 @@ extension ShowAlert where Self: UIViewController {
     
     func defaultAlert() {
         
-        let alert = UIAlertController(title:"Hata" , message: "Bu cihaz fotoğraf çekmeye uygun değildir.Lütfen Uygun cihazı seçiniz.",preferredStyle: UIAlertControllerStyle.alert)
-        
-        let action = UIAlertAction(title: "Tamam" , style: UIAlertActionStyle.default,handler :nil)
+        let alert = UIAlertController(title:"Alert" , message: "This device is not available.Try it for another one.",preferredStyle: UIAlertControllerStyle.alert)
+                let action = UIAlertAction(title: "OK" , style: UIAlertActionStyle.default,handler :nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }

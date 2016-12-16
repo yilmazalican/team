@@ -21,6 +21,7 @@ class User:ManipulableUser
     var Gender: String?
     var DB_ENDPOINT: FIRUSER
 
+
     
     
     required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, profileImage img:UIImage)
@@ -38,10 +39,13 @@ class User:ManipulableUser
     internal required init() {
         self.DB_ENDPOINT = FIRUSER()
     }
+
+       
+
     
     internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
                   
-        }
+    }
        
     
 
@@ -53,13 +57,29 @@ class User:ManipulableUser
     // Meva Added.
     
     static let staticGender =  ["Female","Male","Other"]
+<<<<<<< HEAD
     
 
    
+=======
+    func  validation() -> Bool {
+        
+        if name == nil || surname == nil || email == nil || password == nil || profileImage == nil
+        {
+            return false
+        }
+            
+        else {
+            return true
+        }
+        
+    }
+>>>>>>> f635e7ef9624837e18f4e7bccfcd0c91f54f5ace
 
     
     
     // Tolga added.
+
     
     static let allCountryList = ["01 Adana","02 Adıyaman",
                                  "03 Afyon","04 Ağrı",

@@ -12,24 +12,32 @@ class FlatImageDownloaded
 {
     var imageID:String
     var imageDownloadURL:String
-    var imageOrder:Int
     
-    init(imageID:String, imageDownloadURL:String,imageOrder:Int) {
+    init(imageID:String, imageDownloadURL:String) {
         self.imageID = imageID
         self.imageDownloadURL = imageDownloadURL
-        self.imageOrder = imageOrder
     }
     
 }
 
 class FlatImage
 {
-    var imageOrder:Int
+    
+    var id:String
     var image:UIImage
     
-    init(imageOrder:Int, image:UIImage) {
-        self.imageOrder = imageOrder
+    init(image:UIImage) {
+        self.id = UUID().uuidString
         self.image = image
     }
     
+}
+
+class FlatThumbnailImage:FlatImage
+{
+    var thumnail = true
+    
+    override init(image: UIImage) {
+        super.init(image: image)
+    }
 }

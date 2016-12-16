@@ -97,27 +97,25 @@ class FIRUSER: FIRUSERDelegate {
                      "washingMachine" : flt.washingMachine!,
                      "capacity" : flt.flatCapacity!,
                      "disabled": flt.disabled,
+                     "userId" : currentLoggedUserID!,
                      "title" : flt.title!] as [String : Any]
-       
-        //Allflats
-        FIRREF.instance.getRef().child("allflats").child(flt.id).setValue(aFlat) { (err1, nil) in
             //user_flats
             FIRREF.instance.getRef().child("user_flats/" + self.currentLoggedUserID!).child(flt.id).setValue(aFlat) { (err2, nil) in
                 //filter_flats
                 FIRREF.instance.getRef().child("filter_flats/" + flt.city!).child(flt.id).setValue(aFlat) { (err3, nil) in
-                if (err1 == nil || err2 == nil || err3 == nil)
+                if (err2 == nil || err3 == nil)
                 {
                     completion(nil)
                 }
-                    else
+                else
                 {
-                    completion(err1.debugDescription + err2.debugDescription + err3.debugDescription)
+                    completion(err2.debugDescription + err3.debugDescription )
                 }
             }
 
         }
         
-    }
+    
     }
 
     
@@ -243,7 +241,7 @@ class FIRUSER: FIRUSERDelegate {
                         "lastName" : newUsr.surname!,
                         "email": newUsr.email!,
                         "gender": newUsr.Gender!,
-                        "birthdate": newUsr.birthDate!	                    ]
+                        "birthdate": newUsr.birthDate!]
                 )
                 completion(true)
             }

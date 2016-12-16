@@ -15,14 +15,29 @@ class SearchParameter {
     var fromParameter: String?
     var numberOfSize:String?
 
-     static let sizeNum = [SearchParameter.selectPeopleNum,SearchParameter.onePerson,SearchParameter.twoPeople,SearchParameter.threePeople,SearchParameter.fourPeople,SearchParameter.moreThan4]
+     static let sizeNum = [SearchParameter.selectPeopleNum,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.four,SearchParameter.moreThan4]
     
     
-    static let selectPeopleNum = "Kişi Sayısını Seçiniz"
-    static let fourPeople = "4 Kişi"
-    static let threePeople = "3 Kişi"
-    static let twoPeople = "2 Kişi"
-    static let onePerson = "1 Kişi"
+    static let selectPeopleNum = "Select the number of people."
+    static let four = "4"
+    static let three = "3"
+    static let two = "2"
+    static let one = "1"
     static let moreThan4 = "4+"
+    
+    
+    static let   selectBedroom = "Select number of bedroom."
+    
+    static let   selectBed = "Select number of bed."
+    
+    
+    static let bedroomSize = [SearchParameter.selectBedroom,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.moreThan4]
+    
+
+    
+    static let roomSize = [SearchParameter.selectBed,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.moreThan4]
+    
+    
+    
     
 }

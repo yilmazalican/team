@@ -35,7 +35,6 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func getFlatInfoFromFireBase(filter : FilterModel){
-        
         print("getFlatInfoCalled")
     }
     
@@ -46,7 +45,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell : ListFlatCollectionViewCell = listFlatCollectionView.dequeueReusableCell(withReuseIdentifier: "flatCell", for: indexPath) as! ListFlatCollectionViewCell
+        let cell : ListFlatCollectionViewCell = listFlatCollectionView.dequeueReusableCell(withReuseIdentifier: "flatCell", for: indexPath) as! ListFlatCollectionViewCell
         
 //        cell.flatCity.text = "istanbul"
 //        cell.flatPrice.text = "500"
@@ -87,5 +86,6 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         
     }
+    
 
 }
