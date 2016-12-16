@@ -55,18 +55,7 @@ class User:ManipulableUser
     static let staticGender =  ["Female","Male","Other"]
     
 
-    func  validation()-> Bool {
-        
-        if name == nil || surname == nil || email == nil || password == nil || profileImage == nil
-        {
-            return false
-        }
-            
-        else {
-            return true
-        }
-        
-    }
+   
 
     
     

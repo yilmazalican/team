@@ -318,7 +318,6 @@
                         <outlet property="registerButton" destination="Dy8-dq-ojd" id="dgS-05-1rw"/>
                         <outlet property="repeatPasswordTextfield" destination="Axu-XM-6hC" id="oZA-yz-gl9"/>
                         <outlet property="takePhotoİmgButton" destination="aAz-Fh-GgG" id="DBE-X2-r5z"/>
-                        <outlet property="takePhotoimgView" destination="aAz-Fh-GgG" id="8Dt-jl-uxA"/>
                         <outlet property="uploadİmgButton" destination="SBS-A8-gTN" id="Hei-SI-Xog"/>
                     </connections>
                 </viewController>
