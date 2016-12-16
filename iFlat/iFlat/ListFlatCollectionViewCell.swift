@@ -12,6 +12,7 @@ class ListFlatCollectionViewCell: UICollectionViewCell {
     
     
     var flatID : String = ""
+    var flatOwnerID : String = ""
     
     @IBOutlet var flatThumbnail: UIImageView!
     @IBOutlet weak var flatTitle: UILabel!
@@ -19,8 +20,9 @@ class ListFlatCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var flatCity: UILabel!
     @IBOutlet weak var flatRating: UILabel!
     
-    func setFlatListCell(ID : String, thumbnail : UIImage, title : String, price : String, city : String, rating : Int){
+    func setFlatListCell(ID : String, ownerID : String, thumbnail : UIImage, title : String, price : String, city : String, rating : Int){
         flatID = ID
+        flatOwnerID = ownerID
         flatThumbnail.image = thumbnail
         flatTitle.text = title
         flatPrice.text = price
