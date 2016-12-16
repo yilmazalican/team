@@ -57,24 +57,6 @@ class User:ManipulableUser
     // Meva Added.
     
     static let staticGender =  ["Female","Male","Other"]
-<<<<<<< HEAD
-    
-
-   
-=======
-    func  validation() -> Bool {
-        
-        if name == nil || surname == nil || email == nil || password == nil || profileImage == nil
-        {
-            return false
-        }
-            
-        else {
-            return true
-        }
-        
-    }
->>>>>>> f635e7ef9624837e18f4e7bccfcd0c91f54f5ace
 
     
     
