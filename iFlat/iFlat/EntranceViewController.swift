@@ -25,22 +25,25 @@ class EntranceViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var FromDatePicker: UIDatePicker!{
+    @IBOutlet weak var FromDatePicker: UIDatePicker! {
+        
         didSet{
-
             
+              searchParameter.fromParameter = setDateToString(datePicker:FromDatePicker)
         }
     }
     
     @IBOutlet weak var ToDatePicker: UIDatePicker!{
-        didSet{
+        didSet {
+            searchParameter.toParameter = setDateToString(datePicker:ToDatePicker)
             
         }
+        
     }
-    
     @IBOutlet weak var numberPersonPicker: UIPickerView!{
         didSet {
-            
+      
+         	
           numberPersonPicker.delegate = self
             numberPersonPicker.dataSource = self
 
@@ -80,18 +83,14 @@ class EntranceViewController: UIViewController {
     }
    
    
-   
-  
     @IBAction func searchWithParameterActionButton(_ sender: Any) {
 
        
-        
+
         
     }
     
     
-    
-  
 }
 
 
@@ -166,5 +165,6 @@ extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,U
        
 
         }
+
     }
 

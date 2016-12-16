@@ -38,10 +38,7 @@ class User:ManipulableUser
         self.DB_ENDPOINT = FIRUSER()
 
     }
-    
-    
-    
-    // Tolga added.
+        // Tolga added.
     
     static let allCountryList = ["01 Adana","02 Adıyaman",
                                  "03 Afyon","04 Ağrı",
