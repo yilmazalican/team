@@ -31,7 +31,7 @@ class Flat: ManipulableFlat {
     var smoking:Bool?
     var gateKeeper:Bool?
     var price:Double?
-    var images:[UIImage]?
+    var images:[FlatImage]?
     var disabled = false
     var id = FIRREF.instance.getRef().childByAutoId().key
 
@@ -53,7 +53,7 @@ class Flat: ManipulableFlat {
     //
     //
 
-    internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Double, deleted: Bool, images: [UIImage], bedroomCount:Int) {
+    internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Double, deleted: Bool, images: [FlatImage], bedroomCount:Int) {
         self.title = title
         self.flatDescription = flatDescription
         self.city = city

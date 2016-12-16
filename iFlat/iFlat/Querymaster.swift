@@ -10,11 +10,23 @@ import Foundation
 import Firebase
 import FirebaseStorage
 
-protocol QueryMasterDelegate :class
+protocol QuerymasterDelegate :class
 {
     func getFilteredFlats(filter:FilterModel, completion: @escaping ([FilteredFlat]) -> ())
 }
 
+
+
+class Querymaster:QuerymasterDelegate
+{
+    internal func getFilteredFlats(filter: FilterModel, completion: @escaping ([FilteredFlat]) -> ()) {
+        FIRREF.instance.getRef().child("filter_flats" + filter.flatCity!).observe(.value) { (ss) in
+            
+        }
+    }
+
+    
+}
 
 
 class FilteredFlat

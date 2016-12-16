@@ -30,11 +30,11 @@ protocol ManipulableFlat :class
     var smoking:Bool? {get}
     var gateKeeper:Bool? {get}
     var price:Double? {get}
-    var images:[UIImage]? {get set}
+    var images:[FlatImage]? {get set}
     var disabled:Bool {get set}
     var DB_ENDPOINT:FIRFlat {get set}
     
-    init(title:String,flatDescription:String,city:String, address:String,flatCapacity:Int,bathRoomCount:Int,bedcount:Int,pool:Bool,internet:Bool,cooling:Bool,heating:Bool,tv:Bool,washingMachine:Bool,elevator:Bool,parking:Bool,smoking:Bool,gateKeeper:Bool,price:Double,deleted:Bool, images:[UIImage], bedroomCount:Int)
+    init(title:String,flatDescription:String,city:String, address:String,flatCapacity:Int,bathRoomCount:Int,bedcount:Int,pool:Bool,internet:Bool,cooling:Bool,heating:Bool,tv:Bool,washingMachine:Bool,elevator:Bool,parking:Bool,smoking:Bool,gateKeeper:Bool,price:Double,deleted:Bool, images:[FlatImage], bedroomCount:Int)
     init()
     
 }
