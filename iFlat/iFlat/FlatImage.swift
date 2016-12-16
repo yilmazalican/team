@@ -12,12 +12,10 @@ class FlatImageDownloaded
 {
     var imageID:String
     var imageDownloadURL:String
-    var imageOrder:Int
     
     init(imageID:String, imageDownloadURL:String,imageOrder:Int) {
         self.imageID = imageID
         self.imageDownloadURL = imageDownloadURL
-        self.imageOrder = imageOrder
     }
     
 }

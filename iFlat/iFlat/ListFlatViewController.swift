@@ -35,7 +35,6 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func getFlatInfoFromFireBase(filter : FilterModel){
-        
         print("getFlatInfoCalled")
     }
     
@@ -87,5 +86,6 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         
     }
+    
 
 }
