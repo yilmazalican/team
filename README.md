@@ -3,6 +3,7 @@
 # Welcome
 iFlat is a extra space monetizing platform which allows customers to rent their flat easily and showcase it to an audience of millions.
 
+
 #### Team Members
 <ul>
 <li>Eren Ay</li>
@@ -16,10 +17,13 @@ iFlat is a extra space monetizing platform which allows customers to rent their 
 <li>Latest Ruby Native Language</li>
 <li>Ruby gem "CocoaPods"</li>
 <li>Swift 3.0</li>
-<li>Xcode 8+</li>
+<li>Xcode 8.0+</li>
 </ul>
 
 #### Installing Instructions
+[Important]We are using mergepbx for merging Xcode project config file for a comfortable teamwork and version control. Please do;
+<pre> brew install mergepbx </pre>
+then;
 <pre> Install the requirements of the project</pre>
 <pre> Download the project</pre>
 <pre> run $pod install</pre>

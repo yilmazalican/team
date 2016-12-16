@@ -13,8 +13,21 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DB_ENDPOINT = FIRUSER()
-
+        FIRREF.instance.getRef().child("user_flats/" + "user2").observe(.value, with: { (ss) in
+            
+            for a in ss.children
+            {
+                let b = a as! FIRDataSnapshot
+                let objdict = b.value as! [String:String]
+                print(objdict["name"])
+                
+            }
+        })
+   
+   
+   
+        
+        
         
 }
 

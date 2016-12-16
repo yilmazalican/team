@@ -7,12 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 class User:ManipulableUser
 {
-
-
-    var id:String?
+    var profileImage: UIImage?
+    var id: String?
     var name:String?
     var surname:String?
     var email:String?
@@ -21,9 +21,10 @@ class User:ManipulableUser
     var Gender: String?
     var DB_ENDPOINT: FIRUSER
 
+
     
     
-    required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String)
+    required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, profileImage img:UIImage)
     {
         self.name = name
         self.surname = surname
@@ -31,14 +32,48 @@ class User:ManipulableUser
         self.password = password
         self.birthDate = birthDate
         self.Gender = Gender
+        self.profileImage = img
         DB_ENDPOINT = FIRUSER()
     }
     
     internal required init() {
         self.DB_ENDPOINT = FIRUSER()
-
     }
-        // Tolga added.
+
+       
+
+    
+    internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
+                  
+    }
+       
+    
+
+    
+    
+    
+
+    
+    // Meva Added.
+    
+    static let staticGender =  ["Female","Male","Other"]
+    func  validation() -> Bool {
+        
+        if name == nil || surname == nil || email == nil || password == nil || profileImage == nil
+        {
+            return false
+        }
+            
+        else {
+            return true
+        }
+        
+    }
+
+    
+    
+    // Tolga added.
+
     
     static let allCountryList = ["01 Adana","02 Adıyaman",
                                  "03 Afyon","04 Ağrı",

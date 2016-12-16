@@ -2,37 +2,69 @@
 //  FlatProfileViewController.swift
 //  iFlat
 //
-//  Created by MAC ADMIN on 05/12/16.
+//  Created by Eren AY on 05/12/16.
 //  Copyright © 2016 SE 301. All rights reserved.
 //
 
 import UIKit
 
-class FlatProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    @IBOutlet weak var flatProfileTable: UITableView!
+//burada eksik var/time fault
+    var receivedFlatID: String = ""
+    var flat : Flat!
+    
+    //@IBOutlet var flatRating: UILabel!
+    @IBOutlet var flatRatingTV: UILabel!
+    @IBOutlet var flatSpecsTV: UILabel!
+    @IBOutlet var flatPriceTV: UILabel!
+    @IBOutlet var flatDetailsTV: UILabel!
+    @IBOutlet var flatOwnerTV: UILabel!
+    @IBOutlet var flatTitleTV: UILabel!
+    @IBOutlet var imageCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // flat will filled by segue. !!! FIX IT !!!
+        flat = initFlat()
+        initGui()
         
     }
+    
+    func initFlat() -> Flat{
+        return Flat()
+    }
 
+    func initGui(){
+        // check string casting
+        self.flatPriceTV.text = String(describing: flat.price)
+        self.flatDetailsTV.text = flat.flatDescription!
+        //self.flatRatingTV.text = String(describing: flat.flatRating)
+        //self.flatOwnerTV.text = flat
+        self.flatTitleTV.text = flat.title
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         
         
-        return UITableViewCell()
+        return cell
     }
+    
 
 
 }

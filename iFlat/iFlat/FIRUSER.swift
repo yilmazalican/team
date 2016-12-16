@@ -10,6 +10,7 @@
 //Handle Optionals
 import Foundation
 import Firebase
+import FirebaseStorage
 
 ///This protocol is a delegation bridge. When any coder wants to use DB manipulation methods, then the coder must use this bridge instance.
 ///Coder also need to conform the protocol which is ManipulableUser. If want to use the manipulation methods. Manipulation methods only takes objects which conforms ManipulableUser.
@@ -17,7 +18,7 @@ protocol FIRUSERDelegate :class
 {
     func insert(usr:ManipulableUser!,completion: @escaping (Bool) -> ())
     func edit(oldUsrEmail:String, newUsr:ManipulableUser!, completion: @escaping (Bool) -> ())
-    func loginByEmailAndPassword(email:String, password:String, completion:  @escaping (Bool) -> ())
+    func loginByEmailAndPassword(email:String, password:String, completion:  @escaping (String?) -> ())
     func logout(completion: @escaping (Bool) -> ())
     func getCurrentLoggedIn(completion: @escaping (ManipulableUser?) -> ())
     func getByEmail(email:String, completion: @escaping (ManipulableUser?) -> ())
@@ -25,6 +26,10 @@ protocol FIRUSERDelegate :class
     func isUserVerified(completion: @escaping (Bool) -> ())
     func changePassword(newPassword:String, completion: @escaping (Bool) -> ())
     func changeEmail(newEmail:String, completion: @escaping (Bool) -> ())
+    func insertFlat(flt:ManipulableFlat, completion: @escaping(String?) -> ())
+    func insertUserProfileImage(user:ManipulableUser, completion: @escaping (String?) -> ())
+    func getUserProfileImg(user:ManipulableUser, completion: @escaping (String?) -> ())
+    
 
 }
 
@@ -32,6 +37,97 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func getUserProfileImg(user: ManipulableUser, completion: @escaping (String?) -> ()) {
+        FIRREF.instance.getRef().child("user_profile_images/" + user.id!).observeSingleEvent(of: .value, with: { (ss) in
+            let dict = ss.value as! [String:String]
+            completion(dict["downloadURL"])
+        })
+    }
+
+
+
+    internal func insertUserProfileImage(user: ManipulableUser, completion: @escaping (String?) -> ()) {
+        if let profileImg = user.profileImage
+        {
+            let imagePNGDataConverter = UIImagePNGRepresentation(profileImg)
+            FIRREF.instance.getStorageRef().child("user_profile_images/" + user.id! + ".png").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
+                if (error == nil)
+                {
+                    FIRREF.instance.getRef().child("user_profile_images/" + user.id!).setValue(
+                        ["downloadURL" : metadata?.downloadURL()?.absoluteString]
+                        ,withCompletionBlock: { (err, nil) in
+                            if err == nil{
+                                completion(nil)
+                            }
+                            else
+                            {
+                                completion(err.debugDescription)
+                            }
+                    })
+                }
+            }
+        }
+        else
+        {
+            completion("user profile image is nil!")
+        }
+       
+
+    }
+
+    
+    
+    let currentLoggedUserID = FIRAuth.auth()?.currentUser?.uid
+    internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
+        let aFlat = [
+                     "bathroomCount": flt.bathroomCount!,
+                     "bedCount" : flt.bedCount!,
+                     "cooling" : flt.cooling!,
+                     "bedroomCount" : flt.bedroomCount!,
+                     "internet" : flt.internet!,
+                     "elevator" : flt.elevator!,
+                     "description" : flt.flatDescription!,
+                     "heating" : flt.heating!,
+                     "gateKeeper" : flt.gateKeeper!,
+                     "parking" : flt.parking!,
+                     "pool" : flt.pool!,
+                     "smoking" : flt.smoking!,
+                     "price" : flt.price!,
+                     "tv" : flt.tv!,
+                     "washingMachine" : flt.washingMachine!,
+                     "capacity" : flt.flatCapacity!,
+                     "disabled": flt.disabled,
+                     "userId" : currentLoggedUserID!,
+                     "title" : flt.title!] as [String : Any]
+        
+        let bFlat = [
+            "price" : flt.price!,
+            "disabled": flt.disabled,
+            "userId" : currentLoggedUserID!,
+            "title" : flt.title!] as [String : Any]
+            //thumbimg & flatrating
+       
+        //Allflats
+        FIRREF.instance.getRef().child("allflats").child(flt.id).setValue(aFlat) { (err1, nil) in
+            //user_flats
+            FIRREF.instance.getRef().child("user_flats/" + self.currentLoggedUserID!).child(flt.id).setValue(aFlat) { (err2, nil) in
+                //filter_flats
+                FIRREF.instance.getRef().child("filter_flats/" + flt.city!).child(flt.id).setValue(aFlat) { (err3, nil) in
+                if (err1 == nil || err2 == nil || err3 == nil)
+                {
+                    completion(nil)
+                }
+                    else
+                {
+                    completion(err1.debugDescription + err2.debugDescription + err3.debugDescription)
+                }
+            }
+
+        }
+        
+    }
+    }
+
     
     
     internal func changeEmail(newEmail: String, completion: @escaping (Bool) -> ()) {
@@ -129,16 +225,16 @@ class FIRUSER: FIRUSERDelegate {
     ///Logouts user who is logged in already.
     ///If the user exists, returns true. Otherwise, returns false.
     ///Returning parameters are in completion block.
-    internal func loginByEmailAndPassword(email: String, password: String, completion:  @escaping (Bool) -> ()) {
+    internal func loginByEmailAndPassword(email: String, password: String, completion:  @escaping (String?) -> ()) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, err) in
             if err != nil{
-                completion(false)
+                completion(err.debugDescription)
                 print(err.debugDescription)
 
             }
             else
             {
-                completion(true)
+                completion(nil)
             }
         })
     }
@@ -155,7 +251,7 @@ class FIRUSER: FIRUSERDelegate {
                         "lastName" : newUsr.surname!,
                         "email": newUsr.email!,
                         "gender": newUsr.Gender!,
-                        "birthdate": newUsr.birthDate!	                    ]
+                        "birthdate": newUsr.birthDate!]
                 )
                 completion(true)
             }
@@ -181,7 +277,7 @@ class FIRUSER: FIRUSERDelegate {
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
                             usr.id = user?.uid
-                            self.logout(completion: { (c) in
+                            self.logout(completion: { (c) in //Preventing Auto Login!
                                 completion(true)
                             })
                         }
@@ -199,11 +295,6 @@ class FIRUSER: FIRUSERDelegate {
         })
 
     }
-    
-    
-    
-    
-    
-    
 }
+
 
