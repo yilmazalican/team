@@ -12,9 +12,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     var user = User()
     var myImgPickerController = UIImagePickerController()
+    var imagePicker = UIImagePickerController()
     
     
-    @IBOutlet weak var takePhotoimgView: UIButton!
+    
     @IBOutlet weak var takePhotoİmgButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -53,6 +54,11 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         myImgPickerController.delegate = self
         myImgPickerController.sourceType = .photoLibrary
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+
+        
     
         
        
@@ -88,8 +94,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
         
-        if user.profileImage == nil {
+        if user.profileImage == nil  {
+          
             return
+           
             //popup
         }
     }
@@ -106,11 +114,24 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     @IBAction func takePhotoİmgView(_ sender: UIButton) {
         
-        //take photo
-      
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+         
+            imagePicker.allowsEditing = false
+            
+            present(imagePicker, animated: true, completion: nil)
+
+        }
+        
     }
     
 
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func nameTextFieldEditingEnd(_ sender: UITextField) {
         
@@ -142,6 +163,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
@@ -177,6 +199,19 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     }
     
     
+    func  validation()-> Bool {
+        
+        if user.name == nil || user.surname == nil || user.email == nil || user.password == nil || user.profileImage == nil
+        {
+            return false
+        }
+            
+        else {
+            return true
+        }
+        
+    }
+    
     
     func textFieldisEmptyCheck()-> Bool {
         
@@ -188,9 +223,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         return true
     }
     
+    
     @IBAction func RegisterButtonTapped(_ sender: UIButton) {
 
-        if user.validation(){
+        if validation(){
             if passwordCheck(){
                 if textFieldisEmptyCheck(){
                     
@@ -217,6 +253,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         
     }
+    
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
