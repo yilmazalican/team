@@ -97,7 +97,15 @@ class FIRUSER: FIRUSERDelegate {
                      "washingMachine" : flt.washingMachine!,
                      "capacity" : flt.flatCapacity!,
                      "disabled": flt.disabled,
+                     "userId" : currentLoggedUserID!,
                      "title" : flt.title!] as [String : Any]
+        
+        let bFlat = [
+            "price" : flt.price!,
+            "disabled": flt.disabled,
+            "userId" : currentLoggedUserID!,
+            "title" : flt.title!] as [String : Any]
+            //thumbimg & flatrating
        
         //Allflats
         FIRREF.instance.getRef().child("allflats").child(flt.id).setValue(aFlat) { (err1, nil) in
@@ -243,7 +251,7 @@ class FIRUSER: FIRUSERDelegate {
                         "lastName" : newUsr.surname!,
                         "email": newUsr.email!,
                         "gender": newUsr.Gender!,
-                        "birthdate": newUsr.birthDate!	                    ]
+                        "birthdate": newUsr.birthDate!]
                 )
                 completion(true)
             }

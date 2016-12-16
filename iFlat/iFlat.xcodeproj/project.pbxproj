@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A079AF21DFE14EA001FAF32 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */; };
 		1A21E2371E00EB0A004B950A /* denemecontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21E2361E00EB0A004B950A /* denemecontroller.swift */; };
+		1A24DAE21E036A6E00C49269 /* FilteredFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24DAE11E036A6E00C49269 /* FilteredFlat.swift */; };
 		1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5303FE1E01E728001CFAEE /* FlatImage.swift */; };
 		1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5354AC1DE663B400353614 /* GoogleService-Info.plist */; };
 		1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A613D051DFF5A1A0073D4A3 /* Flat.swift */; };
@@ -68,6 +69,7 @@
 		10BA7B8B0ACD6851D7E5E3D1 /* Pods-iFlat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.release.xcconfig"; sourceTree = "<group>"; };
 		1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
 		1A21E2361E00EB0A004B950A /* denemecontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = denemecontroller.swift; sourceTree = "<group>"; };
+		1A24DAE11E036A6E00C49269 /* FilteredFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredFlat.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
 		1A5303FE1E01E728001CFAEE /* FlatImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImage.swift; sourceTree = "<group>"; };
 		1A5354AC1DE663B400353614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A24DADE1E03698900C49269 /* QueryMaster */ = {
+			isa = PBXGroup;
+			children = (
+				1A24DAE11E036A6E00C49269 /* FilteredFlat.swift */,
+			);
+			name = QueryMaster;
+			sourceTree = "<group>";
+		};
 		1A5303FB1E01E715001CFAEE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +311,7 @@
 		1AC48BBB1DE661B300505913 /* MODEL_LAYER */ = {
 			isa = PBXGroup;
 			children = (
+				95AC4F141DFAD82700A7F106 /* FilterModel.swift */,
 				951A92991DF4E22800199B83 /* SearchParameter.swift */,
 				1ADCD0271DF1816600CC08F9 /* User.swift */,
 				1A613D051DFF5A1A0073D4A3 /* Flat.swift */,
@@ -356,6 +367,7 @@
 		1ADCD0261DF1813B00CC08F9 /* FIREBASE_LAYER */ = {
 			isa = PBXGroup;
 			children = (
+				1A24DADE1E03698900C49269 /* QueryMaster */,
 				1A5303FB1E01E715001CFAEE /* Utilities */,
 				1A79F6F11DFE212C00E601A4 /* Reservation */,
 				1A79F6F01DFE212800E601A4 /* Wish */,
@@ -452,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */,
-				95AC4F141DFAD82700A7F106 /* FilterModel.swift */,
 				80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */,
 			);
 			name = Model;
@@ -806,6 +817,7 @@
 				1A21E2371E00EB0A004B950A /* denemecontroller.swift in Sources */,
 				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
 				462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */,
+				1A24DAE21E036A6E00C49269 /* FilteredFlat.swift in Sources */,
 				951A929A1DF4E22800199B83 /* SearchParameter.swift in Sources */,
 				1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */,
 				80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */,
