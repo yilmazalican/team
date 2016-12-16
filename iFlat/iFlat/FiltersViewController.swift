@@ -46,43 +46,43 @@ class FiltersViewController: UIViewController  {
     }
 
     func initUI(){
-        self.bathroomCountTextField.text = filter?.bathroomCount
-        self.bedCountTextField.text = filter?.bedCount
-        self.bedroomCountTextField.text = filter?.bedroomCount
-        self.flatCapacityTextField.text = filter?.flatCapacity
+        self.bathroomCountTextField.text = String(describing: filter?.bathroomCount)
+        self.bedCountTextField.text = String(describing: filter?.bedCount)
+        self.bedroomCountTextField.text = String(describing: filter?.bedroomCount)
+        self.flatCapacityTextField.text = String(describing: filter?.capacity)
         
-        self.coolingSwitch.setOn((NSString(string: (filter?.cooling)!).boolValue), animated: false)
-        self.elevatorSwitch.setOn((NSString(string: (filter?.elevator)!).boolValue), animated: false)
-        self.gateKeeperSwitch.setOn((NSString(string: (filter?.gateKeeper)!).boolValue), animated: false)
-        self.heatingSwitch.setOn((NSString(string: (filter?.heating)!).boolValue), animated: false)
-        self.internetSwitch.setOn((NSString(string: (filter?.internet)!).boolValue), animated: false)
-        self.parkingSwitch.setOn((NSString(string: (filter?.parking)!).boolValue), animated: false)
-        self.poolSwitch.setOn((NSString(string: (filter?.pool)!).boolValue), animated: false)
-        self.televisionSwitch.setOn((NSString(string: (filter?.tv)!).boolValue), animated: false)
-        self.washingMachineSwitch.setOn((NSString(string: (filter?.washingMachine)!).boolValue), animated: false)
+        self.coolingSwitch.setOn((filter?.cooling)!, animated: false)
+        self.elevatorSwitch.setOn((filter?.elevator)!, animated: false)
+        self.gateKeeperSwitch.setOn((filter?.gateKeeper)!, animated: false)
+        self.heatingSwitch.setOn((filter?.heating)!, animated: false)
+        self.internetSwitch.setOn((filter?.internet)!, animated: false)
+        self.parkingSwitch.setOn((filter?.parking)!, animated: false)
+        self.poolSwitch.setOn((filter?.pool)!, animated: false)
+        self.televisionSwitch.setOn((filter?.tv)!, animated: false)
+        self.washingMachineSwitch.setOn((filter?.washingMachine)!, animated: false)
         
-        self.priceFromTextField.text = filter?.priceFrom
-        self.priceToTextField.text = filter?.priceTo
+        self.priceFromTextField.text = String(describing: filter?.priceFrom)
+        self.priceToTextField.text = String(describing: filter?.priceTo)
     }
     
     @IBAction func showFilteredResultsButtonClicked(_ sender: Any) {
         
         //var filter : FilterModel = FilterModel()
-        filter?.bathroomCount = self.bathroomCountTextField.text
-        filter?.bedCount = self.bedCountTextField.text
-        filter?.bedroomCount = self.bedroomCountTextField.text
-        filter?.cooling = String(self.coolingSwitch.isOn)
-        filter?.elevator = String(self.elevatorSwitch.isOn)
-        filter?.flatCapacity = self.flatCapacityTextField.text
-        filter?.gateKeeper = String(self.gateKeeperSwitch.isOn)
-        filter?.heating = String(self.heatingSwitch.isOn)
-        filter?.internet = String(self.internetSwitch.isOn)
-        filter?.parking = String(self.parkingSwitch.isOn)
-        filter?.pool = String(self.poolSwitch.isOn)
-        filter?.tv = String(self.televisionSwitch.isOn)
-        filter?.washingMachine = String(self.washingMachineSwitch.isOn)
-        filter?.priceFrom = self.priceFromTextField.text
-        filter?.priceTo = self.priceToTextField.text
+        filter?.bathroomCount = Int(self.bathroomCountTextField.text!)
+        filter?.bedCount = Int(self.bedCountTextField.text!)
+        filter?.bedroomCount = Int(self.bedroomCountTextField.text!)
+        filter?.cooling = (self.coolingSwitch.isOn)
+        filter?.elevator = (self.elevatorSwitch.isOn)
+        filter?.capacity = Int(self.flatCapacityTextField.text!)
+        filter?.gateKeeper = (self.gateKeeperSwitch.isOn)
+        filter?.heating = (self.heatingSwitch.isOn)
+        filter?.internet = (self.internetSwitch.isOn)
+        filter?.parking = (self.parkingSwitch.isOn)
+        filter?.pool = (self.poolSwitch.isOn)
+        filter?.tv = (self.televisionSwitch.isOn)
+        filter?.washingMachine = (self.washingMachineSwitch.isOn)
+        filter?.priceFrom = Double(self.priceFromTextField.text!)
+        filter?.priceTo = Double(self.priceToTextField.text!)
 
         
         // send to firebase!!!
