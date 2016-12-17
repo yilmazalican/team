@@ -33,6 +33,7 @@ class Flat: ManipulableFlat {
     var price:Double?
     var images:[FlatImage]?
     var disabled = false
+    var userID:String?
     var id = FIRREF.instance.getRef().childByAutoId().key
 
 
