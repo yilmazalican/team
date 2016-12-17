@@ -12,7 +12,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     var user = User()
     var myImgPickerController = UIImagePickerController()
-    var imagePicker = UIImagePickerController()
+    var ImgPickerForCamera = UIImagePickerController()
+  
     
     
     
@@ -55,9 +56,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         myImgPickerController.delegate = self
         myImgPickerController.sourceType = .photoLibrary
         
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-
+        ImgPickerForCamera.delegate = self
+        ImgPickerForCamera.sourceType = .camera
+        
+    
         
     
         
@@ -91,38 +93,41 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
          dismiss(animated: true, completion: nil)
     }
     
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
         
-        if user.profileImage == nil  {
-          
-            return
-           
-            //popup
-        }
+        
     }
 
     
     
     @IBAction func uploadButtonTapped(_ sender: UIButton) {
         
-      
-        
-       present(myImgPickerController, animated: true, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            
+           myImgPickerController.allowsEditing = true
+            present(myImgPickerController, animated: true, completion: nil)
+
+            
+        }
+
+   
         
     }
     
     @IBAction func takePhotoİmgView(_ sender: UIButton) {
         
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-         
-            imagePicker.allowsEditing = false
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
             
-            present(imagePicker, animated: true, completion: nil)
-
+            ImgPickerForCamera.allowsEditing = true
+            present(ImgPickerForCamera, animated: true, completion: nil)
+            
         }
         
-    }
+        
+        
+            }
     
 
     
