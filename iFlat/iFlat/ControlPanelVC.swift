@@ -13,11 +13,21 @@ class ControlPanelVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FIRREF.instance.getRef().child("time_slots").queryStarting(atValue: "1481932800").queryEnding(atValue: "1482105600").observe(.value, with: { (ss) in
-            print(ss)
-        })
         
-}
+        var timedFlats = [String]()
+        var query = Querymaster()
+        var fm = FilterModel(city: "dsa", capacity: nil, bathroomcount: 9, bedcount: 5, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 99999999, smoking: false)
+        
+        query.getFilteredFlats(filter: fm) { (ss) in
+            for a in ss
+            {
+                print(a.flatID)
+            }
+        }
+
+        
+        
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
