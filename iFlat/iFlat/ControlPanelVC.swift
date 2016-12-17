@@ -13,6 +13,10 @@ class ControlPanelVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FIRREF.instance.getRef().child("time_slots").queryStarting(atValue: "1481932800").queryEnding(atValue: "1482105600").observe(.value, with: { (ss) in
+            print(ss)
+        })
+        
 }
 
     override func didReceiveMemoryWarning() {

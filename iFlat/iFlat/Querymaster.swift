@@ -20,9 +20,43 @@ protocol QuerymasterDelegate :class
 class Querymaster:QuerymasterDelegate
 {
     internal func getFilteredFlats(filter: FilterModel, completion: @escaping ([FilteredFlat]) -> ()) {
-        FIRREF.instance.getRef().child("filter_flats" + filter.flatCity!).observe(.value) { (ss) in
+        FIRREF.instance.getRef().child("filter_flats/" + "dsa").observe(.value, with: { (ss) in
+            var MDict = [String:Flat]()
+            for i in ss.children.allObjects
+            {
+                var flt = Flat()
+                var flatObject = i as! FIRDataSnapshot
+                let mainDict = flatObject.value as! [String:Any]
+                flt.id = flatObject.key
+                flt.bathroomCount = mainDict["bathroomCount"] as? Int
+                flt.bedCount = mainDict["bedCount"] as? Int
+                flt.cooling = mainDict["cooling"] as? Bool
+                flt.bedroomCount = mainDict["bedroomCount"] as? Int
+                flt.internet = mainDict["internet"] as? Bool
+                flt.elevator = mainDict["elevator"] as? Bool
+                flt.flatDescription = mainDict["description"] as? String
+                flt.heating = mainDict["heating"] as? Bool
+                flt.gateKeeper = mainDict["gateKeeper"] as?Bool
+                flt.parking = mainDict["parking"] as? Bool
+                flt.pool = mainDict["pool"] as? Bool
+                flt.smoking = mainDict["smoking"] as? Bool
+                flt.price = mainDict["price"] as? Double
+                flt.tv = mainDict["tv"] as? Bool
+                flt.washingMachine = mainDict["washingMachine"] as? Bool
+                flt.flatCapacity = mainDict["capacity"] as? Int
+                flt.title = mainDict["title"] as? String
+                MDict[flt.id] = flt
+            }
             
-        }
+            
+            FIRREF.instance.getRef().child("time_slots").queryStarting(atValue: "1481932800").queryEnding(atValue: "1482105600").observe(.value, with: { (ss) in
+                print(ss)
+            })
+ 
+            
+            
+            
+        })
     }
 
     
