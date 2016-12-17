@@ -47,21 +47,16 @@ class Querymaster:QuerymasterDelegate
                 flt.title = mainDict["title"] as? String
                 MDict[flt.id] = flt
             }
-            
-            
-            FIRREF.instance.getRef().child("time_slots").queryStarting(atValue: "1481932800").queryEnding(atValue: "1482105600").observe(.value, with: { (ss) in
-                print(ss)
-            })
- 
-            
-            
-            
-        })
-    }
-
+ })
+}
     
 }
 
+    
+
+    
+
+    
 
 class FilteredFlat
 {
