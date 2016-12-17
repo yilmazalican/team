@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eNA-zY-p9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eNA-zY-p9b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,6 +68,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
+                                    <action selector="registerButtonTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="bA5-7o-rCi"/>
                                     <segue destination="LvG-aZ-4Dd" kind="show" id="Rjn-Zu-IWr"/>
                                 </connections>
                             </button>
@@ -75,11 +76,21 @@
                                 <rect key="frame" x="61" y="316" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="LoginButtonTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="GF6-xd-RMB"/>
+                                    <action selector="LoginTappedButton:" destination="83N-ms-XfQ" eventType="touchUpInside" id="dbL-pP-miS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0sQ-pU-bdf"/>
+                    <connections>
+                        <outlet property="RegisterButtonTapped" destination="2Ne-Ad-X1Z" id="0h1-Ew-AZU"/>
+                        <outlet property="emailTextField" destination="3fF-Sm-912" id="MIT-QH-G1f"/>
+                        <outlet property="loginTextField" destination="3fF-Sm-912" id="g4d-xf-dEY"/>
+                        <outlet property="passwordTextField" destination="ST9-aY-EcI" id="Uaq-tm-ahE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocF-Gf-bmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
