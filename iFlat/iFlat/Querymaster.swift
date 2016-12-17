@@ -20,7 +20,7 @@ protocol QuerymasterDelegate :class
 class Querymaster:QuerymasterDelegate
 {
     internal func getFilteredFlats(filter: FilterModel, completion: @escaping ([FilteredFlat]) -> ()) {
-        FIRREF.instance.getRef().child("filter_flats" + filter.flatCity!).observe(.value) { (ss) in
+        FIRREF.instance.getRef().child("filter_flats" + filter.city!).observe(.value) { (ss) in
             
         }
     }
