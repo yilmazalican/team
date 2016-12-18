@@ -85,7 +85,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		var isAnonymous = user.isAnonymous;
 		var uid = user.uid;
 		var providerData = user.providerData;
-		console.log(user);
+		//console.log(user);
 		// [START_EXCLUDE silent]
 		//document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
 		//document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -93,6 +93,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 		if (!emailVerified) {
 			//document.getElementById('quickstart-verify-email').disabled = false;
 		}
+
+		document.location = "index2.html";
 		// [END_EXCLUDE]
 	} else {
 		// User is signed out.
