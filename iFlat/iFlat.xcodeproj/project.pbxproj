@@ -1006,7 +1006,7 @@
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1024,7 +1024,7 @@
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
