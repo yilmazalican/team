@@ -15,21 +15,24 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
-        let url = self.filteredFlats[indexPath.row].flatThumbnailImage?.imageDownloadURL
-        let urlURL = URL(string: url!)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: urlURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                cell.imgv.image = UIImage(data:data!)
+        let urle = self.filteredFlats[indexPath.row].flatThumbnailImage?.imageDownloadURL
+        if let url = urle
+        {
+            let urlURL = URL(string: (url))
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: urlURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    cell.imgv.image = UIImage(data:data!)
+                }
             }
         }
+
         return cell
         
 
     
     }
-    
-    
+
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +43,13 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
     @IBOutlet weak var myTV: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let endpoint = FIRFlat()
+        let USERendpoint = FIRUSER()
+
+        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
+            print(str)
+        }
         let qm = Querymaster()
         let fromDate = Date(dateString: "18/12/2016")
         let toDate = Date(dateString: "20/12/2016")

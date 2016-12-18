@@ -29,7 +29,7 @@ class Querymaster:QuerymasterDelegate
         
         var zamanAraliginaUygunFlatlar = [String]()
         
-        FIRREF.instance().getRef().child("time_slots").queryOrderedByKey().queryStarting(atValue: filter.fromDate?.toTimeStamp()).queryEnding(atValue: filter.toDate?.toTimeStamp()).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("time_slots").queryOrderedByKey().queryStarting(atValue: filter.fromDate?.toTimeStamp()).queryEnding(atValue: filter.toDate?.toTimeStamp()).observeSingleEvent(of: .value, with: { (ss) in
             for ts in ss.children.allObjects
             {
                 let timeslotFlatObj = ts as! FIRDataSnapshot
@@ -119,9 +119,6 @@ class Querymaster:QuerymasterDelegate
                                                                                             filteredFlat.flatTitle = flt.title
                                                                                             filteredFlat.userID = flt.userID
                                                                                             self.returningFlats.append(filteredFlat)
-                                                                                     
-                                                                                            
-
                                                                                             
                                                                                         }
                                                                                         
@@ -158,6 +155,7 @@ class Querymaster:QuerymasterDelegate
                             let obj = dict.value as! [String:String]
                             let flatImageDownloaded = FlatImageDownloaded(imageID: dict.key, imageDownloadURL: obj["downloadURL"]!)
                             a.flatThumbnailImage = flatImageDownloaded
+                            print(a.flatThumbnailImage)
                             completion(self.returningFlats)
                             
                         })
