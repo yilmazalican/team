@@ -9,15 +9,62 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
-class ControlPanelVC: UIViewController {
+class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
+    
+    var filteredFlats: [FilteredFlat] = []
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+        let urle = self.filteredFlats[indexPath.row].flatThumbnailImage?.imageDownloadURL
+        if let url = urle
+        {
+            let urlURL = URL(string: (url))
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: urlURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    cell.imgv.image = UIImage(data:data!)
+                }
+            }
+        }
 
+        return cell
+        
+
+    
+    }
+
+    
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredFlats.count
+    }
+
+
+    @IBOutlet weak var myTV: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        FIRREF.instance.getRef().child("time_slots").queryStarting(atValue: "1481932800").queryEnding(atValue: "1482105600").observe(.value, with: { (ss) in
-            print(ss)
-        })
         
-}
+        let endpoint = FIRFlat()
+        let USERendpoint = FIRUSER()
+
+        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
+            print(str)
+        }
+        let qm = Querymaster()
+        let fromDate = Date(dateString: "18/12/2016")
+        let toDate = Date(dateString: "20/12/2016")
+        let filter = FilterModel(city: "Istanbul", capacity: 3, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 125, smoking: false, fromDate:fromDate, toDate: toDate)
+        qm.getFilteredFlats(filter: filter) { (dsa) in
+            self.filteredFlats = dsa
+            self.myTV.reloadData()
+        }
+
+        
+        
+        
+        
+        
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

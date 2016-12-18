@@ -11,16 +11,28 @@ import Firebase
 import FirebaseStorage
 
 class FIRREF
-{   var ref:FIRDatabaseReference!
-    var storageRef:FIRStorageReference!
-    static let instance = FIRREF()
+{   private var ref:FIRDatabaseReference!
+    private var storageRef:FIRStorageReference!
+    private static var singleton = FIRREF()
     
-    func getRef() -> FIRDatabaseReference {
+    
+    private init()
+    {
+        
+    }
+
+    
+    static func instance() -> FIRREF
+    {
+        return singleton
+    }
+    
+    internal func getRef() -> FIRDatabaseReference {
     self.ref = FIRDatabase.database().reference()
     return self.ref
     }
     
-    func getStorageRef() -> FIRStorageReference
+    internal func getStorageRef() -> FIRStorageReference
     {
         self.storageRef = FIRStorage.storage().reference()
         return self.storageRef

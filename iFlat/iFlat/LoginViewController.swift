@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
       
         super.viewDidLoad()
-        FIRREF.instance.getRef().child("user_flats/" + "user2").observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("user_flats/" + "user2").observe(.value, with: { (ss) in
             
             for a in ss.children
             {

@@ -18,7 +18,7 @@ class FilterModel {
     var bathroomCount : Int?
     var bedCount : Int?
     var bedroomCount : Int?
-
+    var smoking: Bool?
     var pool : Bool?
     var internet : Bool?
     var cooling : Bool?
@@ -28,14 +28,21 @@ class FilterModel {
     var elevator : Bool?
     var parking : Bool?
     var gateKeeper : Bool?
-
+    
     var priceFrom : Double?
     var priceTo : Double?
+
+    var fromDate: Date?
+    var toDate: Date?
+    
+    var fromDateTimeStamp:String?
+    var toDateTimeStamp:String?
+    
     
     init(){
         // will be removed
     }
-    init(city:String, capacity:Int, bathroomcount:Int, bedcount:Int, bedroomcount:Int,pool:Bool,internet:Bool,cooling:Bool,heating:Bool,tv:Bool,washingMachine:Bool,elevator:Bool,parking:Bool,gateKeeper:Bool,priceFrom:Double, priceTo:Double) {
+    init(city:String?, capacity:Int?, bathroomcount:Int?, bedcount:Int?, bedroomcount:Int?,pool:Bool?,internet:Bool?,cooling:Bool?,heating:Bool?,tv:Bool?,washingMachine:Bool?,elevator:Bool?,parking:Bool?,gateKeeper:Bool?,priceFrom:Double?, priceTo:Double?, smoking:Bool?, fromDate:Date?, toDate:Date?) {
         
         self.city = city
         self.capacity = capacity
@@ -53,5 +60,8 @@ class FilterModel {
         self.gateKeeper = gateKeeper
         self.priceFrom = priceFrom
         self.priceTo = priceTo
+        self.smoking = smoking
+        self.fromDate = fromDate
+        self.toDate = toDate
     }
 }
