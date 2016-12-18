@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A079AF21DFE14EA001FAF32 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */; };
 		1A24DAE21E036A6E00C49269 /* Querymaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24DAE11E036A6E00C49269 /* Querymaster.swift */; };
+		1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4917BA1E05DC69009E39DF /* Rate.swift */; };
+		1A4917BD1E05EBD6009E39DF /* Datebaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4917BC1E05EBD6009E39DF /* Datebaby.swift */; };
 		1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5303FE1E01E728001CFAEE /* FlatImage.swift */; };
 		1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A5354AC1DE663B400353614 /* GoogleService-Info.plist */; };
 		1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A613D051DFF5A1A0073D4A3 /* Flat.swift */; };
@@ -21,6 +23,7 @@
 		1AC48B9E1DE6615100505913 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B9D1DE6615100505913 /* UserModelTests.swift */; };
 		1AC48BA91DE6615100505913 /* iFlatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BA81DE6615100505913 /* iFlatUITests.swift */; };
 		1AC48BC31DE6625C00505913 /* ControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */; };
+		1AD2C4051E06020B0030FF15 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2C4041E06020B0030FF15 /* TableViewCell.swift */; };
 		1ADCD0281DF1816600CC08F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0271DF1816600CC08F9 /* User.swift */; };
 		1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */; };
 		1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */; };
@@ -73,6 +76,8 @@
 		1A079AF11DFE14EA001FAF32 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
 		1A24DAE11E036A6E00C49269 /* Querymaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Querymaster.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
+		1A4917BA1E05DC69009E39DF /* Rate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		1A4917BC1E05EBD6009E39DF /* Datebaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datebaby.swift; sourceTree = "<group>"; };
 		1A5303FE1E01E728001CFAEE /* FlatImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImage.swift; sourceTree = "<group>"; };
 		1A5354AC1DE663B400353614 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A613D051DFF5A1A0073D4A3 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flat.swift; sourceTree = "<group>"; };
@@ -91,6 +96,7 @@
 		1AC48BA81DE6615100505913 /* iFlatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlatUITests.swift; sourceTree = "<group>"; };
 		1AC48BAA1DE6615100505913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPanelVC.swift; sourceTree = "<group>"; };
+		1AD2C4041E06020B0030FF15 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1ADCD0271DF1816600CC08F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1ADCD0291DF1817200CC08F9 /* FIRUSER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRUSER.swift; sourceTree = "<group>"; };
 		1ADCD02A1DF1817200CC08F9 /* ManipulableUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableUser.swift; sourceTree = "<group>"; };
@@ -330,6 +336,8 @@
 				951A92991DF4E22800199B83 /* SearchParameter.swift */,
 				1ADCD0271DF1816600CC08F9 /* User.swift */,
 				1A613D051DFF5A1A0073D4A3 /* Flat.swift */,
+				1A4917BA1E05DC69009E39DF /* Rate.swift */,
+				1A4917BC1E05EBD6009E39DF /* Datebaby.swift */,
 			);
 			name = MODEL_LAYER;
 			sourceTree = "<group>";
@@ -363,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */,
+				1AD2C4041E06020B0030FF15 /* TableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -818,6 +827,7 @@
 				95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */,
 				957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */,
 				9564AB261DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift in Sources */,
+				1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */,
 				957A656A1DF5D93B00844766 /* RenterEditOwnProfileTableView.swift in Sources */,
 				9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */,
 				80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */,
@@ -831,7 +841,9 @@
 				1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */,
 				1AC48BC31DE6625C00505913 /* ControlPanelVC.swift in Sources */,
 				95D9EBB71DF6668A0066156F /* ShowAlert.swift in Sources */,
+				1AD2C4051E06020B0030FF15 /* TableViewCell.swift in Sources */,
 				9564AB241DFFD6AA0059DCC6 /* FlatOptionTableView.swift in Sources */,
+				1A4917BD1E05EBD6009E39DF /* Datebaby.swift in Sources */,
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
 				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
