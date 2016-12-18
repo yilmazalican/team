@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ShowAlert{
     
     var user = User()
     var myImgPickerController = UIImagePickerController()
@@ -54,10 +54,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         countryPickerView.delegate = self
         
         myImgPickerController.delegate = self
-        myImgPickerController.sourceType = .photoLibrary
+        myImgPickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
         ImgPickerForCamera.delegate = self
-        ImgPickerForCamera.sourceType = .camera
+        ImgPickerForCamera.sourceType = UIImagePickerControllerSourceType.camera
         
     
         
@@ -118,6 +118,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     @IBAction func takePhotoİmgView(_ sender: UIButton) {
         
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             
             ImgPickerForCamera.allowsEditing = true
@@ -130,12 +131,6 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
             }
     
 
-    
-    
-    
-    
-    
-    
     
     
     @IBAction func nameTextFieldEditingEnd(_ sender: UITextField) {
