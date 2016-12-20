@@ -11,7 +11,7 @@ import UIKit
 class FlatImageDownloaded
 {
     var imageID:String?
-    var imageDownloadURL:String?
+    var imageDownloadURL:String!
     
     init(imageID:String, imageDownloadURL:String) {
         self.imageID = imageID

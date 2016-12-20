@@ -12,7 +12,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     var user = User()
     var myImgPickerController = UIImagePickerController()
-    var ImgPickerForCamera = UIImagePickerController()
+    //var ImgPickerForCamera = UIImagePickerController()
   
     
     
@@ -56,8 +56,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         myImgPickerController.delegate = self
         myImgPickerController.sourceType = .photoLibrary
         
-        ImgPickerForCamera.delegate = self
-        ImgPickerForCamera.sourceType = .camera
+//        ImgPickerForCamera.delegate = self
+//        ImgPickerForCamera.sourceType = .camera
         
     
         
@@ -120,9 +120,9 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             
-            ImgPickerForCamera.allowsEditing = true
-            present(ImgPickerForCamera, animated: true, completion: nil)
-            
+//            ImgPickerForCamera.allowsEditing = true
+//            present(ImgPickerForCamera, animated: true, completion: nil)
+//            
         }
         
         
