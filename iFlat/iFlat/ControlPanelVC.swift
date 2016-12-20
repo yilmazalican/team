@@ -30,9 +30,7 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
        return cell
     }
     
-    
-    
-    
+
 
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,10 +45,14 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let endpoint = FIRFlat()
         let USERendpoint = FIRUSER()
 
-        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
+        USERendpoint.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "frozen4192") { (str) in
             print(str)
         }
-//        
+
+
+
+        
+
         
        
     
