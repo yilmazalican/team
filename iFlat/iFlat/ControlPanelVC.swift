@@ -9,34 +9,32 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Kingfisher
+
 class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
-    
+    var imageCache = [String:UIImage]()
     var filteredFlats: [FilteredFlat] = []
-    @available(iOS 2.0, *)
+    var cellArr = [TableViewCell]()
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
-        let urle = self.filteredFlats[indexPath.row].flatThumbnailImage?.imageDownloadURL
-        if let url = urle
-        {
-            let urlURL = URL(string: (url))
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: urlURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                DispatchQueue.main.async {
-                    cell.imgv.image = UIImage(data:data!)
-                }
-            }
-        }
-
-        return cell
         
-
-    
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+        cell.imgv.image = nil
+       
+    if let urlString =  self.filteredFlats[indexPath.row].flatThumbnailImage?.imageDownloadURL
+        {
+            let url = URL(string:urlString)
+            cell.imgv.kf.setImage(with: url)
+        }
+        
+       return cell
     }
+    
+
 
     
-    @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredFlats.count
+        return self.filteredFlats.count
     }
 
 
@@ -47,20 +45,31 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let endpoint = FIRFlat()
         let USERendpoint = FIRUSER()
 
-        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
+        USERendpoint.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "frozen4192") { (str) in
             print(str)
         }
-        let qm = Querymaster()
-        let fromDate = Date(dateString: "18/12/2016")
-        let toDate = Date(dateString: "20/12/2016")
-        let filter = FilterModel(city: "Istanbul", capacity: 3, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 125, smoking: false, fromDate:fromDate, toDate: toDate)
-        qm.getFilteredFlats(filter: filter) { (dsa) in
-            self.filteredFlats = dsa
-            self.myTV.reloadData()
-        }
+
+
 
         
+
         
+       
+    
+        let image1 = FlatImage(image: UIImage(named:"1")!)
+
+        for a in 1...20
+        {
+            var images = [FlatImage]()
+            
+
+            images.append(image1)
+           
+        let f = Flat(title: "dsadsa", flatDescription: "dsadsa", city: "Istanbul", address: "dsadsa", flatCapacity: 3, bathRoomCount: 4, bedcount: 4, pool: true, internet: true, cooling: true, heating: true, tv: true, washingMachine: false, elevator: false, parking: false, smoking: false, gateKeeper: false, price: 120, deleted: false, images: images, bedroomCount: 3)
+            endpoint.insertFlat(flt: f, completion: { (str) in
+                print(str)
+            })
+        }
         
         
         
@@ -70,6 +79,27 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let qm = Querymaster()
+        let fromDate = Date(dateString: "18/12/2016")
+        let toDate = Date(dateString: "20/12/2016")
+        let filter = FilterModel(city: "Istanbul", capacity: 3, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 125, smoking: false, fromDate:fromDate, toDate: toDate)
+        qm.getFilteredFlats(filter: filter) { (dsa) in
+            self.filteredFlats = dsa
+            DispatchQueue.main.async {
+                self.myTV.reloadData()
+                
+            }
+        }
+
+    }
+    
+    
+    
+    
 
 
 }
+
+
+
