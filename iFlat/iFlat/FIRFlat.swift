@@ -5,7 +5,6 @@
 //  Created by Alican Yilmaz on 12/12/2016.
 //  Copyright © 2016 SE 301. All rights reserved.
 //
-
 import Foundation
 import Firebase
 import FirebaseStorage
@@ -20,6 +19,7 @@ protocol FIRFlatDelegate :class
     func setOwnerID() -> String!
     func insertFlat(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func insertTimeSlot(flt:ManipulableFlat, timeslot:[String], completion: @escaping (String?) -> ())
+    
 }
 
 
@@ -41,13 +41,8 @@ class FIRFlat:FIRFlatDelegate
             }
         }
         
-
+        
     }
-
-  
-   
-    
-    
     internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         let aFlat = [
             "bathroomCount": flt.bathroomCount!,
@@ -115,14 +110,10 @@ class FIRFlat:FIRFlatDelegate
         }
         
     }
-    
     internal func setOwnerID() -> String! {
         return (FIRAuth.auth()?.currentUser!.uid)
         
     }
-    
-    
-    
     internal func getFlatImages(flatID: String, completion: @escaping ([FlatImageDownloaded]?) -> ()) {
         FIRREF.instance().getRef().child("flat_images/" + flatID).observeSingleEvent(of: .value, with: { (ss) in
             var returningArr = [FlatImageDownloaded]()
@@ -146,10 +137,6 @@ class FIRFlat:FIRFlatDelegate
         })
         
     }
-    
-    
-    
-    
     internal func getFlatofUser(userID: String, flatID: String, completion: @escaping (ManipulableFlat) -> ()) {
         FIRREF.instance().getRef().child("user_flats/" + userID + "/" + flatID ).observe(.value, with: { (ss) in
             let flt = Flat()
@@ -175,11 +162,6 @@ class FIRFlat:FIRFlatDelegate
         })
         
     }
-    
-    
-    
-
-    
     internal func getFlatsofUser(userID: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
         FIRREF.instance().getRef().child("user_flats/" + userID).observe(.value, with: { (ss) in
             var fltArr = [ManipulableFlat]()
@@ -211,9 +193,6 @@ class FIRFlat:FIRFlatDelegate
         })
         
     }
-    
-    
-    
     internal func disable(disablingFlat: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let currentUsrID = FIRAuth.auth()?.currentUser?.uid
         FIRREF.instance().getRef().child("allflat/" +  disablingFlat.id).setValue(true, forKey: "disabled")
@@ -221,8 +200,6 @@ class FIRFlat:FIRFlatDelegate
         FIRREF.instance().getRef().child("filter_flats/" + disablingFlat.city! + "/" + disablingFlat.id).setValue(true, forKey: "disabled")
         
     }
-    
-    
     internal func edit(newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let db_endpoint = FIRFlat()
         db_endpoint.insertFlat(flt: newFlt, completion: { (str) in
@@ -230,7 +207,7 @@ class FIRFlat:FIRFlatDelegate
         })
     }
     
-
+    
     
     
     
