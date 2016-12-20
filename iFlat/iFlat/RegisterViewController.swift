@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     var user = User()
     var myImgPickerController = UIImagePickerController()
-    //var ImgPickerForCamera = UIImagePickerController()
+//    var ImgPickerForCamera = UIImagePickerController()
     
     
     @IBOutlet weak var imgView_Picker: UIImageView!
@@ -50,15 +50,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         myImgPickerController.delegate = self
         myImgPickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
-        // ImgPickerForCamera.delegate = self
-        // ImgPickerForCamera.sourceType = .camera
-        
-        
-        
-        
-        
-        
-        
+//        ImgPickerForCamera.delegate = self
+//        ImgPickerForCamera.sourceType = .camera
         
         
         
@@ -70,7 +63,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     func validationField() -> Bool {
         
-        if imgView_Picker.image != nil || name_TextField.text != nil || lastName_TextField.text != nil || email_TextField.text != nil || password_TextField.text != nil || repeatPassword_TextField.text != nil && (password_TextField.text?.characters.count)! >= 6  {
+        if imgView_Picker.image != nil && name_TextField.text != nil && lastName_TextField.text != nil && email_TextField.text != nil && password_TextField.text != nil && repeatPassword_TextField.text != nil && (password_TextField.text?.characters.count)! >= 6 && repeatPassword_TextField.text == password_TextField.text  {
             
             return true
         }
@@ -83,22 +76,27 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
+        self.user.name = self.name_TextField.text
+        self.user.surname = self.lastName_TextField.text
+        self.user.email = self.email_TextField.text
+        self.user.password = self.password_TextField.text
+        self.user.birthDate = self.setDateToString(datePicker: self.birthDate_PickerView)
+        self.user.profileImage = UIImage()
         
-        user.DB_ENDPOINT.insert(usr: user) { (error) in
-            
-            if (error != nil || !self.validationField()) {
-               
-            }
+        if (self.validationField())
+        {
+            user.insertUser(user: user) { (error) in
                 
-            else {
-                self.user.name = self.name_TextField.text
-                self.user.surname = self.lastName_TextField.text
-                self.user.email = self.email_TextField.text
-                self.user.password = self.password_TextField.text
-                self.user.birthDate = self.setDateToString(datePicker: self.birthDate_PickerView)
-                self.user.profileImage = self.imgView_Picker.image
+                if (error != nil) {
+                    print(error)
+                }
+                    
+                else {
+                    print(error)
+                }
             }
         }
+        
     }
     
     
@@ -109,7 +107,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
         
         if pickerView.tag == 1{
-           //user.country = User.allCountry
+            user.country = User.allCountryList[row]
         }
     }
     
@@ -121,6 +119,16 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
         else {
             return User.allCountryList.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 0 {
+            
+            return User.staticGender[row]
+        }
+        else {
+            return User.allCountryList[row]
         }
     }
     
@@ -137,22 +145,22 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         
         
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//
-//            imgView.contentMode = .scaleAspectFit
-//            imgView.image =  pickedImage
-//            user.profileImage = pickedImage
-//            
-//        }
-//        
-//        dismiss(animated: true, completion: nil)
-//    }
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+
+            imgView_Picker.contentMode = .scaleAspectFit
+            imgView_Picker.image =  pickedImage
+            user.profileImage = pickedImage
+            
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//        
-//        
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        
+        
   }
     
     
@@ -168,15 +176,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView.tag == 0 {
-            
-            return User.staticGender[row]
-        }
-        else {
-            return User.allCountryList[row]
-        }
-    }
+    
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

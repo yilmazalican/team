@@ -107,6 +107,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="83N-ms-XfQ" kind="relationship" relationship="rootViewController" id="3cc-Xw-PAE"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGW-uv-yEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -335,25 +338,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
-                        <outlet property="birtDarePackerView" destination="5cS-tl-0Dt" id="Yud-SE-WLT"/>
                         <outlet property="birthDate_PickerView" destination="5cS-tl-0Dt" id="uSx-tb-5FH"/>
-                        <outlet property="countryPickerView" destination="EfF-cQ-U8K" id="9hY-Gs-D4J"/>
                         <outlet property="country_PickerView" destination="EfF-cQ-U8K" id="CUm-ke-LAK"/>
-                        <outlet property="emailTextField" destination="US9-Vy-U9y" id="hqM-CF-VMQ"/>
                         <outlet property="email_TextField" destination="US9-Vy-U9y" id="6AJ-JS-qNr"/>
-                        <outlet property="genderPickerView" destination="iBU-NL-zUr" id="e4X-8i-RTu"/>
                         <outlet property="gender_PickerView" destination="iBU-NL-zUr" id="OaP-I1-Juv"/>
-                        <outlet property="imgView" destination="RKy-qK-hAx" id="JfD-ZH-5wT"/>
-                        <outlet property="lastNameTextField" destination="pSA-yW-laA" id="ilh-NH-uKG"/>
+                        <outlet property="imgView_Picker" destination="RKy-qK-hAx" id="OvZ-c1-ScM"/>
                         <outlet property="lastName_TextField" destination="pSA-yW-laA" id="Rkv-he-D4H"/>
-                        <outlet property="nameTextField" destination="kqP-qy-swa" id="t84-Fz-OTs"/>
-                        <outlet property="passwordTextField" destination="LzF-lZ-euQ" id="ZiK-pV-Vnt"/>
+                        <outlet property="name_TextField" destination="kqP-qy-swa" id="bOu-AO-0mA"/>
                         <outlet property="password_TextField" destination="LzF-lZ-euQ" id="ztf-8Q-3kT"/>
-                        <outlet property="registerButton" destination="Dy8-dq-ojd" id="dgS-05-1rw"/>
-                        <outlet property="repeatPasswordTextfield" destination="Axu-XM-6hC" id="oZA-yz-gl9"/>
                         <outlet property="repeatPassword_TextField" destination="Axu-XM-6hC" id="2gr-NJ-yq8"/>
-                        <outlet property="takePhotoİmgButton" destination="aAz-Fh-GgG" id="DBE-X2-r5z"/>
-                        <outlet property="uploadİmgButton" destination="SBS-A8-gTN" id="Hei-SI-Xog"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh0-jZ-CIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
