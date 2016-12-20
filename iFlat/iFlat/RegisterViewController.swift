@@ -8,10 +8,10 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ShowAlert{
+class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ShowAlert {
     
     var user = User()
-    var myImgPickerController = UIImagePickerController()
+    var myImgPickerController = UIImagePickerController() 
     var ImgPickerForCamera = UIImagePickerController()
   
     
