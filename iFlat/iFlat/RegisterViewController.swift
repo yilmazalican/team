@@ -109,7 +109,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
         
         if pickerView.tag == 1{
-            user.country = User.allCountryList[row]
+           //user.country = User.allCountry
         }
     }
     
@@ -138,10 +138,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         
 //        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-////            
-////            imgView.contentMode = .scaleAspectFit
-////            imgView.image =  pickedImage
-////            user.profileImage = pickedImage
+//
+//            imgView.contentMode = .scaleAspectFit
+//            imgView.image =  pickedImage
+//            user.profileImage = pickedImage
 //            
 //        }
 //        
