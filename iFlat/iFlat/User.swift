@@ -23,7 +23,7 @@ class User:ManipulableUser
 
 
     
-    
+    //
     required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, profileImage img:UIImage)
     {
         self.name = name
