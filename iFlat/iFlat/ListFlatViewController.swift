@@ -16,7 +16,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // IMPORTANT -> Search must fill receivedFilter by FilterModel Instance
     var receivedFilter : FilterModel?
-    var flatCells : [ListFlatCollectionViewCell]?
+    //var flatCells : [ListFlatCollectionViewCell]?
+    var filteredFlats: [FilteredFlat] = []
     
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
@@ -28,6 +29,21 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         getFlatInfoFromFireBase(filter: receivedFilter!)
         
+        let endpoint = FIRFlat()
+        let USERendpoint = FIRUSER()
+        
+        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
+            print(str)
+        }
+        
+        let qm = Querymaster()
+        let fromDate = Date(dateString: "18/12/2016")
+        let toDate = Date(dateString: "20/12/2016")
+        let filter = FilterModel(city: "Istanbul", capacity: nil, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 9999, smoking: false, fromDate:fromDate, toDate: toDate)
+        qm.getFilteredFlats(filter: filter) { (dsa) in
+            self.filteredFlats = dsa
+            self.listFlatCollectionView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,23 +61,28 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : ListFlatCollectionViewCell = listFlatCollectionView.dequeueReusableCell(withReuseIdentifier: "flatCell", for: indexPath) as! ListFlatCollectionViewCell
+
         
-//        cell.flatCity.text = "istanbul"
-//        cell.flatPrice.text = "500"
-//        cell.flatRating.text = "***"
-//        cell.flatID = String(indexPath.row)
-//        
-//        cell.flatThumbnail = flatCells[indexPath.row].flatThumbnail
-//        cell.
+        let cell = listFlatCollectionView.dequeueReusableCell(withReuseIdentifier: "flatCell", for: indexPath) as! ListFlatCollectionViewCell
+        let urle = self.filteredFlats[indexPath.row].flatThumbnailImage?.imageDownloadURL
+        if let url = urle
+        {
+            let urlURL = URL(string: (url))
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: urlURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    cell.flatThumbnail.image = UIImage(data:data!)
+                }
+            }
+        }
         
         
         
-        return flatCells![indexPath.row]
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return flatCells!.count
+        return filteredFlats.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -32,6 +32,10 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
 
     
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: TableViewCell, forRowAt indexPath: IndexPath) {
+        //
+    }
 
     
     @available(iOS 2.0, *)
@@ -47,13 +51,14 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let endpoint = FIRFlat()
         let USERendpoint = FIRUSER()
 
-        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
+        USERendpoint.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "frozen4192") { (str) in
             print(str)
         }
+        
         let qm = Querymaster()
         let fromDate = Date(dateString: "18/12/2016")
         let toDate = Date(dateString: "20/12/2016")
-        let filter = FilterModel(city: "Istanbul", capacity: 3, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 125, smoking: false, fromDate:fromDate, toDate: toDate)
+        let filter = FilterModel(city: "Istanbul", capacity: nil, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 9999, smoking: false, fromDate:fromDate, toDate: toDate)
         qm.getFilteredFlats(filter: filter) { (dsa) in
             self.filteredFlats = dsa
             self.myTV.reloadData()
