@@ -41,11 +41,11 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        genderPickerView.delegate = self
-        genderPickerView.dataSource = self
+       gender_PickerView.delegate = self
+       gender_PickerView.dataSource = self
         
-        countryPickerView.dataSource = self
-        countryPickerView.delegate = self
+       country_PickerView.dataSource = self
+        country_PickerView.delegate = self
         
         myImgPickerController.delegate = self
         myImgPickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -70,7 +70,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     func validationField() -> Bool {
         
-        if imgView_Picker.image != nil || name_TextField.text != nil || lastName_TextField.text != nil || email_TextField.text != nil || password_TextField.text != nil || repeatPassword_TextField.text != nil && password_TextField.text?.characters.count >= 6  {
+        if imgView_Picker.image != nil || name_TextField.text != nil || lastName_TextField.text != nil || email_TextField.text != nil || password_TextField.text != nil || repeatPassword_TextField.text != nil && (password_TextField.text?.characters.count)! >= 6  {
             
             return true
         }
@@ -81,23 +81,26 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
     }
     
+    
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         
         user.DB_ENDPOINT.insert(usr: user) { (error) in
             
-            if error != nil || self.!validationField(){
-                
+            if (error != nil || !self.validationField()) {
+               
             }
                 
             else {
-                let profileImg = self.imgView_Picker.image
-                self.user = User(name: self.name_TextField.text, surname: self.lastName_TextField.text, email: self.email_TextField.text, password: self.password_TextField.text, birthDate:DateToString(birthDate_PickerView), Gender:self.gender_PickerView.va, profileImage: UIImage)
+                self.user.name = self.name_TextField.text
+                self.user.surname = self.lastName_TextField.text
+                self.user.email = self.email_TextField.text
+                self.user.password = self.password_TextField.text
+                self.user.birthDate = self.setDateToString(datePicker: self.birthDate_PickerView)
+                self.user.profileImage = self.imgView_Picker.image
             }
-            
         }
-        
-        
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -106,9 +109,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
         
         if pickerView.tag == 1{
-            //user.Gender =
+            user.country = User.allCountryList[row]
         }
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
@@ -133,23 +137,23 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         
         
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
-            imgView.contentMode = .scaleAspectFit
-            imgView.image =  pickedImage
-            user.profileImage = pickedImage
-            
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+////            
+////            imgView.contentMode = .scaleAspectFit
+////            imgView.image =  pickedImage
+////            user.profileImage = pickedImage
+//            
+//        }
+//        
+//        dismiss(animated: true, completion: nil)
+//    }
     
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-        
-        
-    }
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//        
+//        
+  }
     
     
     
