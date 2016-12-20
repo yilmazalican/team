@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class Flat: ManipulableFlat {
 
-    
+    var disabled: Bool?
     var DB_ENDPOINT:FIRFlat
     var title:String?
     var flatDescription:String?
@@ -32,9 +32,8 @@ class Flat: ManipulableFlat {
     var gateKeeper:Bool?
     var price:Double?
     var images:[FlatImage]?
-    var disabled = false
-    var userID:String?
-    var id = FIRREF.instance.getRef().childByAutoId().key
+    var userID:String
+    var id = FIRREF.instance().getRef().childByAutoId().key
 
 
     //
@@ -76,12 +75,17 @@ class Flat: ManipulableFlat {
         self.price = price
         self.images = images
         self.DB_ENDPOINT = FIRFlat()
+        self.disabled = false
+        self.userID = self.DB_ENDPOINT.setOwnerID()
        
         
     }
     
     internal required init() {
+        self.disabled = false
         self.DB_ENDPOINT = FIRFlat()
+        self.userID = self.DB_ENDPOINT.setOwnerID()
+
     }
 
 }

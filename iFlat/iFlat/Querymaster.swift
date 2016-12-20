@@ -19,100 +19,116 @@ protocol QuerymasterDelegate :class
 
 class Querymaster:QuerymasterDelegate
 {
-    var timedFlats = [String]()
+    var flatEndpoint = FIRFlat()
+    
     var returningFlats = [FilteredFlat]()
+    /////////////////////////////////////////////////////////////
+    //MARK: This method pulls all flats with required timeslot.//
+    /////////////////////////////////////////////////////////////
     internal func getFilteredFlats(filter: FilterModel, completion: @escaping ([FilteredFlat]) -> ()) {
         
-        var timedFlats = [String]()
+        var zamanAraliginaUygunFlatlar = [String]()
         
-        FIRREF.instance.getRef().child("timeslots").queryOrderedByKey().queryStarting(atValue: "1481932800").queryEnding(atValue: "1482105600").observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("time_slots").queryOrderedByKey().queryStarting(atValue: filter.fromDate?.toTimeStamp()).queryEnding(atValue: filter.toDate?.toTimeStamp()).observeSingleEvent(of: .value, with: { (ss) in
             for ts in ss.children.allObjects
             {
                 let timeslotFlatObj = ts as! FIRDataSnapshot
                 let timeslotForFlat = timeslotFlatObj.value as! [String:Bool]
                 for x in timeslotForFlat
                 {
-                    timedFlats.append("-" + x.key)
-                }
-            }
-            
-        })
-        
-        
-        FIRREF.instance.getRef().child("filter_flats/" + "dsa").observe(.value, with: { (ss) in
-            var MDict = [String:Flat]()
-            for i in ss.children.allObjects
-            {
-                var flt = Flat()
-                var flatObject = i as! FIRDataSnapshot
-                let mainDict = flatObject.value as! [String:Any]
-                flt.id = flatObject.key
-                flt.city = filter.city
-                flt.title = mainDict["title"] as? String
-                flt.userID = mainDict["userId"] as? String
-                flt.bathroomCount = mainDict["bathroomCount"] as? Int
-                flt.bedCount = mainDict["bedCount"] as? Int
-                flt.bedroomCount = mainDict["bedroomCount"] as? Int
-                flt.internet = mainDict["internet"] as? Bool
-                flt.elevator = mainDict["elevator"] as? Bool
-                flt.heating = mainDict["heating"] as? Bool
-                flt.gateKeeper = mainDict["gateKeeper"] as?Bool
-                flt.parking = mainDict["parking"] as? Bool
-                flt.pool = mainDict["pool"] as? Bool
-                flt.smoking = mainDict["smoking"] as? Bool
-                flt.tv = mainDict["tv"] as? Bool
-                flt.flatCapacity = mainDict["capacity"] as? Int
-                flt.cooling = mainDict["cooling"] as? Bool
-                flt.price = mainDict["price"] as? Double
-                flt.washingMachine = mainDict["washingMachine"] as? Bool
-
-                MDict[flt.id] = flt
-                
-                if((timedFlats).contains(flt.id))
-                {
-                    if(filter.bathroomCount == nil || filter.bathroomCount! <= flt.bathroomCount!)
+                    if (x.value == true && !zamanAraliginaUygunFlatlar.contains(x.key))
                     {
-                        if(filter.bedCount == nil || filter.bedCount! <= flt.bedCount!)
+                        zamanAraliginaUygunFlatlar.append(x.key)
+                    }
+                    
+                }
+                
+                /////////////////////////////////////////////////////////
+                //MARK: This method pulls all flats with filtered city.//
+                /////////////////////////////////////////////////////////
+                
+                FIRREF.instance().getRef().child("filter_flats/" + filter.city!).observe(.value, with: { (ss) in
+                    if self.returningFlats.count <= 0
+                    {
+                    var sehirdekiFlatler = [String:Flat]()
+                    
+                    for i in ss.children.allObjects
+                    {
+                        let flt = Flat()
+                        let flatObject = i as! FIRDataSnapshot
+                        let mainDict = flatObject.value as! [String:Any]
+                        flt.id = flatObject.key
+                        flt.city = filter.city
+                        flt.title = mainDict["title"] as? String
+                        flt.bathroomCount = mainDict["bathroomCount"] as? Int
+                        flt.bedCount = mainDict["bedCount"] as? Int
+                        flt.bedroomCount = mainDict["bedroomCount"] as? Int
+                        flt.internet = mainDict["internet"] as? Bool
+                        flt.elevator = mainDict["elevator"] as? Bool
+                        flt.heating = mainDict["heating"] as? Bool
+                        flt.gateKeeper = mainDict["gateKeeper"] as?Bool
+                        flt.parking = mainDict["parking"] as? Bool
+                        flt.pool = mainDict["pool"] as? Bool
+                        flt.smoking = mainDict["smoking"] as? Bool
+                        flt.tv = mainDict["tv"] as? Bool
+                        flt.flatCapacity = mainDict["capacity"] as? Int
+                        flt.cooling = mainDict["cooling"] as? Bool
+                        flt.price = mainDict["price"] as? Double
+                        flt.washingMachine = mainDict["washingMachine"] as? Bool
+                        
+                        sehirdekiFlatler[flt.id] = flt
+                        
+                        if((zamanAraliginaUygunFlatlar).contains(flt.id))
                         {
-                            if(filter.bedroomCount == nil || filter.bedroomCount! <= flt.bedroomCount!)
+                            if(filter.bathroomCount == nil || filter.bathroomCount! <= flt.bathroomCount!)
                             {
-                                if(filter.internet == false || filter.internet! == flt.internet!)
+                                if(filter.bedCount == nil || filter.bedCount! <= flt.bedCount!)
                                 {
-                                    if(filter.elevator == false || filter.elevator! == flt.elevator!)
+                                    if(filter.bedroomCount == nil || filter.bedroomCount! <= flt.bedroomCount!)
                                     {
-                                        if(filter.heating == false || filter.heating! == flt.heating!)
+                                        if(filter.internet == false || filter.internet! == flt.internet!)
                                         {
-                                            if(filter.gateKeeper == false || filter.gateKeeper! == flt.gateKeeper!)
+                                            if(filter.elevator == false || filter.elevator! == flt.elevator!)
                                             {
-                                                if(filter.parking == false || filter.parking! == flt.parking!)
+                                                if(filter.heating == false || filter.heating! == flt.heating!)
                                                 {
-                                                    if(filter.pool == false || filter.pool! == flt.pool!)
+                                                    if(filter.gateKeeper == false || filter.gateKeeper! == flt.gateKeeper!)
                                                     {
-                                                        if(filter.smoking! == false || filter.smoking! == flt.smoking!)
+                                                        if(filter.parking == false || filter.parking! == flt.parking!)
                                                         {
-                                                            if(filter.tv! == false || filter.tv! == flt.tv!)
+                                                            if(filter.pool == false || filter.pool! == flt.pool!)
                                                             {
-                                                                if(filter.capacity == nil || filter.capacity! <= flt.flatCapacity!)
+                                                                if(filter.smoking! == false || filter.smoking! == flt.smoking!)
                                                                 {
-                                                                    if(filter.cooling == false || filter.cooling! == flt.cooling!)
+                                                                    if(filter.tv! == false || filter.tv! == flt.tv!)
                                                                     {
-                                                                        if(filter.priceFrom == nil || filter.priceFrom! <= flt.price!)
+                                                                        if(filter.capacity == nil || filter.capacity! <= flt.flatCapacity!)
                                                                         {
-                                                                            if(filter.priceTo == nil || filter.priceTo! >= flt.price!)
+                                                                            if(filter.cooling == false || filter.cooling! == flt.cooling!)
                                                                             {
-                                                                                if(filter.washingMachine == false || filter.washingMachine! == flt.washingMachine!)
+                                                                                if(filter.priceFrom == nil || filter.priceFrom! <= flt.price!)
                                                                                 {
-                                                                                    let filteredFlat = FilteredFlat(flatID: flt.id, flatThumbnailImage: "", flatTitle: flt.title!, flatCity: flt.city!, flatRating: 0, flatPrice: flt.price!, userID: flt.userID!)
+                                                                                    if(filter.priceTo == nil || filter.priceTo! >= flt.price!)
+                                                                                    {
+                                                                                        if(filter.washingMachine == false || filter.washingMachine! == flt.washingMachine!)
+                                                                                        {
+                                                                                            let filteredFlat = FilteredFlat()
+                                                                                            filteredFlat.flatCity = flt.city
+                                                                                            filteredFlat.flatID = flt.id
+                                                                                            filteredFlat.flatPrice = flt.price
+                                                                                            filteredFlat.flatTitle = flt.title
+                                                                                            filteredFlat.userID = flt.userID
+                                                                                            self.returningFlats.append(filteredFlat)
+                                                                                            
+                                                                                        }
+                                                                                        
+                                                                                    }
                                                                                     
-                                                                                    self.returningFlats.append(filteredFlat)
-
                                                                                 }
-                                                                                
                                                                             }
                                                                             
                                                                         }
                                                                     }
-                                                                    
                                                                 }
                                                             }
                                                         }
@@ -125,11 +141,38 @@ class Querymaster:QuerymasterDelegate
                             }
                         }
                     }
-                }
-            } //For paranthesis
-           completion(self.returningFlats)
+                    }
+                    ////////////////////////////////////////////////////////////////
+                    //MARK: This method pulls thumbnail image for returning Flats.//
+                    ////////////////////////////////////////////////////////////////
+                    
+
+                    
+                    for a in self.returningFlats
+                    {
+                        FIRREF.instance().getRef().child("flat_images/" + a.flatID!).observeSingleEvent(of: .value, with: { (ss) in
+                            let dict = ss.children.allObjects[0] as! FIRDataSnapshot
+                            let obj = dict.value as! [String:String]
+                            let flatImageDownloaded = FlatImageDownloaded(imageID: dict.key, imageDownloadURL: obj["downloadURL"]!)
+                            a.flatThumbnailImage = flatImageDownloaded
+                            print(a.flatThumbnailImage)
+                            completion(self.returningFlats)
+                            
+                        })
+                    }
+                    
+                    
+                    
+                    
+                })
+                
+                
+            }
             
         })
+        
+        
+
     }
     
 }
@@ -142,22 +185,25 @@ class Querymaster:QuerymasterDelegate
 
 class FilteredFlat
 {
-    var flatID:String
-    var flatThumbnailImage:String
-    var flatTitle:String
-    var flatPrice:Double
-    var flatCity:String
-    var flatRating:Int
-    var userID:String
+    var flatID:String?
+    var flatThumbnailImage:FlatImageDownloaded?
+    var flatTitle:String?
+    var flatPrice:Double?
+    var flatCity:String?
+    var userID:String?
     
-    init(flatID:String, flatThumbnailImage:String, flatTitle:String,flatCity:String,flatRating:Int, flatPrice:Double, userID:String) {
+    init(flatID:String?, flatThumbnailImage:FlatImageDownloaded?, flatTitle:String?,flatCity:String?, flatPrice:Double?, userID:String?) {
         self.flatID = flatID
         self.flatThumbnailImage = flatThumbnailImage
         self.flatTitle = flatTitle
         self.flatPrice = flatPrice
         self.flatCity = flatCity
-        self.flatRating = flatRating
         self.userID = userID
     }
+    init()
+    {
+        
+    }
+
 
 }
