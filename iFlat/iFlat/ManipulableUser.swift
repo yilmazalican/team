@@ -27,3 +27,4 @@ protocol ManipulableUser :class
     
 }
 
+extension Flat
