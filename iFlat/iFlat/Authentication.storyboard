@@ -44,12 +44,17 @@
                                 <rect key="frame" x="252" y="315" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
+                                    <action selector="registerButtonTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="bA5-7o-rCi"/>
                                     <segue destination="LvG-aZ-4Dd" kind="show" id="Rjn-Zu-IWr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePR-gd-rT8">
                                 <rect key="frame" x="66" y="315" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="LoginButtonTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="GF6-xd-RMB"/>
+                                    <action selector="LoginTappedButton:" destination="83N-ms-XfQ" eventType="touchUpInside" id="dbL-pP-miS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to iFlat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="734-df-jyl">
                                 <rect key="frame" x="124" y="112" width="127" height="21"/>
