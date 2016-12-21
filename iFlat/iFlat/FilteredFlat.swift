@@ -2,38 +2,32 @@
 //  FilteredFlat.swift
 //  iFlat
 //
-//  Created by Alican Yilmaz on 16/12/2016.
+//  Created by Alican Yilmaz on 20/12/2016.
 //  Copyright © 2016 SE 301. All rights reserved.
 //
 
 import Foundation
-import Firebase
-import FirebaseStorage
-
-protocol QueryMasterDelegate :class
-{
-    func getFilteredFlats(filter:FilterModel, completion: @escaping ([FilteredFlat]) -> ())
-}
-
-
-
 class FilteredFlat
 {
-    var flatID:String
-    var ownerID:String
-    var flatThumbnailImage:String
-    var flatTitle:String
-    var flatPrice:Double
-    var flatCity:String
-    var flatRating:Int
+    var flatID:String?
+    var flatThumbnailImage:FlatImageDownloaded?
+    var flatTitle:String?
+    var flatPrice:Double?
+    var flatCity:String?
+    var userID:String?
     
-    init(flatID:String, ownerID:String, flatThumbnailImage:String, flatTitle:String,flatCity:String,flatRating:Int, flatPrice:Double) {
+    init(flatID:String?, flatThumbnailImage:FlatImageDownloaded, flatTitle:String?,flatCity:String?, flatPrice:Double?, userID:String?) {
         self.flatID = flatID
-        self.ownerID = ownerID
         self.flatThumbnailImage = flatThumbnailImage
         self.flatTitle = flatTitle
         self.flatPrice = flatPrice
         self.flatCity = flatCity
-        self.flatRating = flatRating
+        self.userID = userID
     }
+    init()
+    {
+        
+    }
+    
+    
 }

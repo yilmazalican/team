@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class Flat: ManipulableFlat {
 
-    
+    var disabled: Bool?
     var DB_ENDPOINT:FIRFlat
     var title:String?
     var flatDescription:String?
@@ -31,9 +31,9 @@ class Flat: ManipulableFlat {
     var smoking:Bool?
     var gateKeeper:Bool?
     var price:Double?
-    var images:[UIImage]?
-    var disabled = false
-    var id = FIRREF.instance.getRef().childByAutoId().key
+    var images:[FlatImage]?
+    var userID:String
+    var id = FIRREF.instance().getRef().childByAutoId().key
 
 
     //
@@ -53,7 +53,7 @@ class Flat: ManipulableFlat {
     //
     //
 
-    internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Double, deleted: Bool, images: [UIImage], bedroomCount:Int) {
+    internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Double, deleted: Bool, images: [FlatImage], bedroomCount:Int) {
         self.title = title
         self.flatDescription = flatDescription
         self.city = city
@@ -75,12 +75,17 @@ class Flat: ManipulableFlat {
         self.price = price
         self.images = images
         self.DB_ENDPOINT = FIRFlat()
+        self.disabled = false
+        self.userID = self.DB_ENDPOINT.setOwnerID()
        
         
     }
     
     internal required init() {
+        self.disabled = false
         self.DB_ENDPOINT = FIRFlat()
+        self.userID = self.DB_ENDPOINT.setOwnerID()
+
     }
 
 }

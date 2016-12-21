@@ -10,12 +10,17 @@ import Foundation
 import UIKit
 class FlatImageDownloaded
 {
-    var imageID:String
-    var imageDownloadURL:String
+    var imageID:String?
+    var imageDownloadURL:String!
     
     init(imageID:String, imageDownloadURL:String) {
         self.imageID = imageID
         self.imageDownloadURL = imageDownloadURL
+    }
+    
+    init()
+    {
+        
     }
     
 }
@@ -31,13 +36,4 @@ class FlatImage
         self.image = image
     }
     
-}
-
-class FlatThumbnailImage:FlatImage
-{
-    var thumnail = true
-    
-    override init(image: UIImage) {
-        super.init(image: image)
-    }
 }

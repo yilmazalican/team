@@ -8,12 +8,22 @@
 
 import UIKit
 import Firebase
+
 class LoginViewController: UIViewController {
     private var DB_ENDPOINT:FIRUSERDelegate?
+    
+   var user = User()
+   
+    @IBOutlet weak var emailTextField: UITextField!
+
+    @IBOutlet weak var passwordTextField:  UITextField!
+    
+    
 
     override func viewDidLoad() {
+      
         super.viewDidLoad()
-        FIRREF.instance.getRef().child("user_flats/" + "user2").observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("user_flats/" + "user2").observe(.value, with: { (ss) in
             
             for a in ss.children
             {
@@ -30,22 +40,61 @@ class LoginViewController: UIViewController {
         
         
 }
-
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func dbLoginValidation() -> Bool {
+        
+        if user.email != nil || user.password != nil {
+            
+            return true
+        }
+        
+        else{
+            
+            return  false
+    }
+    }
+    
+    func LoginValidation() -> Bool {
+        
+        if user.email == emailTextField.text || user.password == passwordTextField.text {
+            
+            return true
+        }
+        
+        else{
+            
+            return false
+        }
+    }
+    
+
+    @IBAction func LoginButtonTapped(_ sender: UIButton) {
+        
+        if LoginValidation(){
+            if dbLoginValidation(){
+                //
+            }
+            
+            //
+        }
+        
+        else{
+            
+        }
+        
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func registerButtonTapped(_ sender: UIButton) {
+    }
+    
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+    }
+    
+   
     
 }
