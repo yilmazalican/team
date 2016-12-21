@@ -100,7 +100,7 @@ class EntranceViewController: UIViewController {
                controller.receivedFilter?.flatCity = searchParameter.whereParameter
                 controller.receivedFilter?.dateFrom = searchParameter.fromParameter
                 controller.receivedFilter?.dateTo = searchParameter.toParameter
-                
+                controller.receivedFilter?.flatCapacity = searchParameter.numberOfSize
                 
             }
             
