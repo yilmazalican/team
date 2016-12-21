@@ -15,7 +15,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     // IMPORTANT -> Search must fill receivedFilter by FilterModel Instance
-    var receivedFilter : FilterModel?
+
+    var receivedFilter : FilterModel? = FilterModel(city: "Istanbul", capacity: 3, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 125, smoking: false, fromDate: Date(dateString: "18/12/2016"), toDate: Date(dateString: "20/12/2016"))
     //var flatCells : [ListFlatCollectionViewCell]?
     var filteredFlats: [FilteredFlat] = []
     
@@ -23,7 +24,6 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if receivedFilter == nil{
             receivedFilter = FilterModel()
         }
@@ -35,17 +35,18 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             print(str)
             
             let qm = Querymaster()
-            let fromDate = Date(dateString: "18/12/2016")
-            let toDate = Date(dateString: "20/12/2016")
-            let filter = FilterModel(city: "Istanbul", capacity: 3, bathroomcount: nil, bedcount: nil, bedroomcount: nil, pool: false, internet: false, cooling: false, heating: false, tv: false, washingMachine: false, elevator: false, parking: false, gateKeeper: false, priceFrom: 0, priceTo: 125, smoking: false, fromDate:fromDate, toDate: toDate)
-            qm.getFilteredFlats(filter: filter) { (dsa) in
+            
+            
+            qm.getFilteredFlats(filter: self.receivedFilter!) { (dsa) in
                 self.filteredFlats = dsa
+                
                 DispatchQueue.main.async {
                     self.listFlatCollectionView.reloadData()
                     
                 }
             }
         }
+        
     }
     
         override func didReceiveMemoryWarning() {
@@ -71,6 +72,10 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let url = URL(string:urlString)
                 cell.flatThumbnail.kf.setImage(with: url)
             }
+            cell.flatID = self.filteredFlats[indexPath.row].flatID!
+            cell.flatOwnerID = self.filteredFlats[indexPath.row].userID!
+            cell.flatTitle.text = self.filteredFlats[indexPath.row].flatTitle
+            cell.flatPrice.text = String(describing: self.filteredFlats[indexPath.row].flatPrice)
             
             
             
@@ -84,6 +89,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             var cell = listFlatCollectionView.cellForItem(at: indexPath) as! ListFlatCollectionViewCell
             flatProfileVC?.receivedFlatID = cell.flatID
+            flatProfileVC?.ownerID = cell.flatOwnerID
             
         }
         
@@ -91,7 +97,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             if segue.identifier == "flatProfileSegue"{
                 let navigationController = segue.destination as! UINavigationController
                 
-                flatProfileVC = navigationController.topViewController as! FlatProfileViewController
+                flatProfileVC = navigationController.topViewController as? FlatProfileViewController
+
                 
             }
             else if segue.identifier == "filterSegue"{
@@ -106,3 +113,5 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         
 }
+
+

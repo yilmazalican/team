@@ -179,7 +179,6 @@
                         <outlet property="flatDetailsTV" destination="C2j-bO-rGr" id="56C-zA-TJI"/>
                         <outlet property="flatOwnerTV" destination="hnR-OC-q9s" id="QQg-ge-PYz"/>
                         <outlet property="flatPriceTV" destination="FeC-yd-4GV" id="ilZ-0y-Hoj"/>
-                        <outlet property="flatRating" destination="bXG-WP-aZB" id="Hun-pq-HWe"/>
                         <outlet property="flatRatingTV" destination="bXG-WP-aZB" id="6uc-mc-WXV"/>
                         <outlet property="flatSpecsTV" destination="45w-hR-bya" id="ZqO-pi-tOM"/>
                         <outlet property="flatTitleTV" destination="PnM-DC-YEy" id="8qY-PB-dvX"/>
