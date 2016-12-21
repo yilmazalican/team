@@ -13,6 +13,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
 //burada eksik var/time fault
     var receivedFlatID: String = ""
     var flat : Flat!
+    var ownerID : String = ""
     
     //@IBOutlet var flatRating: UILabel!
     @IBOutlet var flatRatingTV: UILabel!
@@ -28,23 +29,31 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         super.viewDidLoad()
 
         // flat will filled by segue. !!! FIX IT !!!
-        flat = initFlat()
-        initGui()
+    initFlat { (flt) in
+        self.flat = flt
+        self.initGui()
+        }
+        
         
     }
     
-    func initFlat() -> Flat{
-        return Flat()
+    func initFlat(completion: @escaping (Flat)-> ()){
+        
+        flat = Flat()
+        flat.DB_ENDPOINT.getFlatofUser(userID: ownerID, flatID: receivedFlatID) { (flat) in
+            completion(flat as! Flat)
+            
+        }
+        
     }
 
     func initGui(){
         // check string casting
         self.flatPriceTV.text = String(describing: flat.price)
         self.flatDetailsTV.text = flat.flatDescription!
-        //self.flatRatingTV.text = String(describing: flat.flatRating)
-        //self.flatOwnerTV.text = flat
+        self.flatOwnerTV.text = flat.userID
         self.flatTitleTV.text = flat.title
-        
+        self.flatSpecsTV.text = "Bathroom:" + String(describing: flat.bathroomCount)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -97,7 +97,7 @@
                                             <outlet property="flatRating" destination="kmw-gJ-QQG" id="k8A-jz-hGb"/>
                                             <outlet property="flatThumbnail" destination="eYn-OZ-3kS" id="86o-7A-krp"/>
                                             <outlet property="flatTitle" destination="GdW-XZ-821" id="HWJ-R4-F9b"/>
-                                            <segue destination="vlb-Qu-Fko" kind="show" id="sQh-dx-OqH"/>
+                                            <segue destination="vlb-Qu-Fko" kind="show" identifier="flatProfileSegue" id="sQh-dx-OqH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -404,7 +404,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XMu-ht-3FW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QfL-qC-ByR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QfL-qC-ByR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
