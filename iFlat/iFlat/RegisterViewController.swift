@@ -84,7 +84,9 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         self.user.profileImage = UIImage()
         
         if (self.validationField())
+            
         {
+            
             user.insertUser(user: user) { (error) in
                 
                 if (error != nil) {
