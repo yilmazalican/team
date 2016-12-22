@@ -97,13 +97,25 @@ class EntranceViewController: UIViewController {
             
             if segue.identifier == "EntranceToListSegue" {
                 
-               controller.receivedFilter?.flatCity = searchParameter.whereParameter
-                controller.receivedFilter?.dateFrom = searchParameter.fromParameter
-                controller.receivedFilter?.dateTo = searchParameter.toParameter
-                controller.receivedFilter?.flatCapacity = searchParameter.numberOfSize
                 
-            }
+                controller.receivedFilter?.city = searchParameter.whereParameter
+                if let from = searchParameter.fromParameter {
+                    
+                controller.receivedFilter?.fromDate? = Date(dateString: from)
+                    if let to = searchParameter.toParameter {
+                        
+                        controller.receivedFilter?.toDate = Date(dateString:to)
+                    
+                if let capacity = searchParameter.numberOfSize {
+                    
+                    controller.receivedFilter?.capacity = Int(capacity)
+                    
             
+  }
+            
+                 }
+            }
+            }
         }
         
         

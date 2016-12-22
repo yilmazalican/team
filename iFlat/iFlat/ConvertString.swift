@@ -23,12 +23,13 @@ extension DateToString {
         
           let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
        
        return  dateFormatter.string(from: datePicker.date)
             
       
     }
     
+   
     
 }
