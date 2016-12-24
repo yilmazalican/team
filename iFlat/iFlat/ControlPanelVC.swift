@@ -45,14 +45,17 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let endpoint = FIRFlat()
         let USERendpoint = FIRUSER()
 
-
+        let usr = User(name: "alican", surname: "yilmaz", email: "eposta.alican@gmail.com", password: "123456", birthDate: "18/10/1992", Gender: "m", profileImage: UIImage(named:"1")!, country: "Istanbul")
+        USERendpoint.insert(usr: usr) { (str) in
+            print(str)
+            USERendpoint.insertUserProfileImage(user: usr, completion: { (str) in
+                print(str)
+            })
+        }
       
         
         
         
-//        USERendpoint.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "frozen4192") { (str) in
-//            print(str)
-//        }
 //
 //
 //
