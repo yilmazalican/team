@@ -13,7 +13,7 @@ class AddFlatViewController: UIViewController {
     
 var imageCounter = 1
     
- var menu = MenuLauncher()
+
     
     var imagePicker = UIImagePickerController()
     
