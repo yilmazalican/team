@@ -202,7 +202,11 @@ class FIRUSER: FIRUSERDelegate {
                 completion(usr)
             })
         }
-        completion(nil)
+        else
+        {
+            completion(nil)
+
+        }
     }
     
     ///Logouts user who is logged in already.
