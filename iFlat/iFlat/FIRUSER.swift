@@ -246,12 +246,13 @@ class FIRUSER: FIRUSERDelegate {
         
         getByEmail(email: oldUsrEmail) { (usr) in
             if let user = usr{
+                //email degistir!
                 FIRREF.instance().getRef().child("users").child(user.id!).setValue(
                     [
                         "firstName": newUsr.name!,
                         "lastName" : newUsr.surname!,
-                        "email": newUsr.email!,
-                        "birthdate": newUsr.birthDate!]
+                        "birthdate": newUsr.birthDate!,
+                        "country": newUsr.country!]
                 )
                 completion(nil)
             }
