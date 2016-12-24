@@ -46,10 +46,18 @@ class FiltersViewController: UIViewController  {
     }
 
     func initUI(){
-        self.bathroomCountTextField.text = String(describing: filter?.bathroomCount)
+        if(filter?.bathroomCount != nil){
+            self.bathroomCountTextField.text = String(describing: filter?.bathroomCount)
+        }
+        if(filter?.bedCount != nil){
         self.bedCountTextField.text = String(describing: filter?.bedCount)
+        }
+        if(filter?.bedroomCount != nil){
         self.bedroomCountTextField.text = String(describing: filter?.bedroomCount)
+        }
+        if(filter?.capacity != nil){
         self.flatCapacityTextField.text = String(describing: filter?.capacity)
+        }
         
         self.coolingSwitch.setOn((filter?.cooling)!, animated: false)
         self.elevatorSwitch.setOn((filter?.elevator)!, animated: false)
@@ -61,8 +69,12 @@ class FiltersViewController: UIViewController  {
         self.televisionSwitch.setOn((filter?.tv)!, animated: false)
         self.washingMachineSwitch.setOn((filter?.washingMachine)!, animated: false)
         
+        if(filter?.priceFrom != nil){
         self.priceFromTextField.text = String(describing: filter?.priceFrom)
+        }
+        if(filter?.priceTo != nil){
         self.priceToTextField.text = String(describing: filter?.priceTo)
+        }
     }
     
     @IBAction func showFilteredResultsButtonClicked(_ sender: Any) {
@@ -106,7 +118,7 @@ class FiltersViewController: UIViewController  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
         let listFlatVC = navigationController.topViewController as! ListFlatViewController
-        listFlatVC.receivedFilter = self.filter
+        listFlatVC.receivedFilter = self.filter!
     }
 
 
