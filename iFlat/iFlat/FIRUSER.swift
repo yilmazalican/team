@@ -270,7 +270,8 @@ class FIRUSER: FIRUSERDelegate {
                         "lastName" : newUsr.surname!,
                         "birthdate": newUsr.birthDate!,
                         "country": newUsr.country!,
-                        "email": newUsr.email!
+                        "email": newUsr.email!,
+                        "gender": newUsr.Gender!
                     ]
                 )
                 self.changeEmail(newEmail: newUsr.email!, completion: { (str) in
