@@ -11,12 +11,17 @@ import UIKit
 import AVKit
 import MobileCoreServices
 
+
+
 class RenterEditOwnProfieController: UIViewController {
 
+    
+     var  isImageChanged = false
    
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
    
     var loginUser  = User()
+    
         
         
         var dbFirebase = FIRUSER()
@@ -65,7 +70,15 @@ class RenterEditOwnProfieController: UIViewController {
 
   
     
-    @IBOutlet weak var renterPhotoImageView: UIImageView!
+    @IBOutlet weak var renterPhotoImageView: UIImageView!{
+        didSet{
+         renterPhotoImageView.contentMode = .scaleAspectFill
+            renterPhotoImageView.layer.masksToBounds = true
+            
+         renterPhotoImageView.layer.cornerRadius = renterPhotoImageView.frame.height/2
+          
+        }
+    }
     
     
     
@@ -143,31 +156,44 @@ class RenterEditOwnProfieController: UIViewController {
     }
     
     
+    
+    private func changeEditingUserInformation(){
+        
+        if editProfileUser.isUserEmpty() {
+            
+       
+        }
+    }
+    
     @IBAction func editedProfileButtonAction(_ sender: Any) {
         
+     changeEditingUserInformation()
         
-        if self.loginUser.email! != self.editProfileUser.email {
-            
+        dbFirebase.edit(oldUsrEmail: loginUser.email, newUsr: <#T##ManipulableUser!#>, completion: <#T##(String?) -> ()#>)
+        
             dbFirebase.changeEmail(newEmail: self.editProfileUser.email!, completion: { (err) in
                 print(err)
             })
             
             
-        }
         
-        if self.loginUser.password != self.editProfileUser.password {
-            dbFirebase.changePassword(newPassword: loginUser.password!, completion: { (err) in
-                print(err)
-            })
-            
-        }
+    
+//            dbFirebase.changePassword(newPassword: loginUser.password!, completion: { (err) in
+//                print(err)
+//            })
+        
      
-        if self.loginUser.profileImage != self.editProfileUser.profileImage{
+        if   isImageChanged  {
             
             dbFirebase.changeUserProfileImage(user: loginUser, img: loginUser.profileImage!, completion: { (err) in
                 print(err)
+                
+                 self.isImageChanged = false
             })
+            
+           
         }
+        
 
     
         
@@ -176,7 +202,7 @@ class RenterEditOwnProfieController: UIViewController {
     
   private func setLoginUser(){
         
-        dbFirebase.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "123456", completion: { (err) in
+        dbFirebase.loginByEmailAndPassword(email: "Tolga.taner@gmail.com", password: "123456", completion: { (err) in
             
             print(err)
             
@@ -190,6 +216,11 @@ class RenterEditOwnProfieController: UIViewController {
                 self.nameTextField.placeholder = self.loginUser.name
                 self.surnameTextField.placeholder = self.loginUser.surname
                 self.mailAddressTextField.placeholder = self.loginUser.email
+                
+                self.editProfileUser.email = self.loginUser.email
+                self.editProfileUser.name = self.loginUser.name
+                self.editProfileUser.surname = self.loginUser.surname
+                
                       self.dbFirebase.getUserProfileImg(user: self.loginUser, completion: { (userImageUrl) in
                         
                        
@@ -197,7 +228,6 @@ class RenterEditOwnProfieController: UIViewController {
                         self.urlToImage(url: userImageUrl!, completionHandler: { (image) in
                            self.loginUser.profileImage = image
                             self.renterPhotoImageView.image = image
-                            self.editProfileUser = self.loginUser
 
                             self.loadingIndicator.stopAnimating()
 
@@ -291,7 +321,7 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            
+         self.isImageChanged = true
             
             self.renterPhotoImageView.image = image
             

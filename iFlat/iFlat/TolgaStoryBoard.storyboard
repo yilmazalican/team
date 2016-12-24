@@ -254,15 +254,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hga-pW-JMJ">
-                                                <rect key="frame" x="265" y="0.0" width="80" height="70"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hga-pW-JMJ">
+                                                <rect key="frame" x="275" y="0.0" width="70" height="70"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="CEc-YO-6k6"/>
+                                                    <constraint firstAttribute="width" constant="70" id="CEc-YO-6k6"/>
                                                     <constraint firstAttribute="height" constant="70" id="Ixd-Dx-Cgr"/>
                                                 </constraints>
                                             </imageView>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-0Z-hlE">
-                                                <rect key="frame" x="170" y="0.0" width="37" height="37"/>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-0Z-hlE">
+                                                <rect key="frame" x="170" y="0.0" width="20" height="20"/>
                                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </activityIndicatorView>
                                         </subviews>
@@ -737,7 +737,7 @@
                                     <rect key="frame" x="0.0" y="28" width="300" height="870"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xca-Vc-iTN" id="BYj-td-zyy">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="870"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="869"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-a3-yeH">
