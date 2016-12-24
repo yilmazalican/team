@@ -174,7 +174,7 @@ class RenterEditOwnProfieController: UIViewController {
     }
     
     
-    func setLoginUser(){
+  private func setLoginUser(){
         
         dbFirebase.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "123456", completion: { (err) in
             
@@ -186,14 +186,23 @@ class RenterEditOwnProfieController: UIViewController {
                 
                 self.loginUser = usr as! User
                 
-                self.editProfileUser = self.loginUser
                 
-                self.loadingIndicator.stopAnimating()
-      	          	
                 self.nameTextField.placeholder = self.loginUser.name
                 self.surnameTextField.placeholder = self.loginUser.surname
                 self.mailAddressTextField.placeholder = self.loginUser.email
-                self.renterPhotoImageView.image = self.loginUser.profileImage
+                      self.dbFirebase.getUserProfileImg(user: self.loginUser, completion: { (userImageUrl) in
+                        
+                       
+                        
+                        self.urlToImage(url: userImageUrl!, completionHandler: { (image) in
+                           self.loginUser.profileImage = image
+                            self.renterPhotoImageView.image = image
+                            self.editProfileUser = self.loginUser
+
+                            self.loadingIndicator.stopAnimating()
+
+                        })
+                      })
                 //TODO:SET ALL OBJECT FİELD
                 
                 
@@ -205,7 +214,7 @@ class RenterEditOwnProfieController: UIViewController {
 }
 
 
-extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate{
+extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,imageMaker{
     
     
     
@@ -280,18 +289,18 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-    
-       let mediaType  = info[UIImagePickerControllerMediaType] as! String
-        
-       
-        if mediaType == (kUTTypeImage as String) {
-            
-             self.renterPhotoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-            self.editProfileUser.profileImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             
+            
+            self.renterPhotoImageView.image = image
+            
+            self.editProfileUser.profileImage = image
+
         }
+        
+            
+        
         
         
         picker.dismiss(animated: true, completion: nil)
