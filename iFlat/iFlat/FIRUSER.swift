@@ -102,7 +102,7 @@ class FIRUSER: FIRUSERDelegate {
         if let profileImg = user.profileImage
         {
             let imagePNGDataConverter = UIImageJPEGRepresentation(profileImg, 0.0)
-            FIRREF.instance().getStorageRef().child("user_profile_images/" + user.id! + ".png").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
+            FIRREF.instance().getStorageRef().child("user_profile_images/" + user.id! + ".jpeg").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
                 if (error == nil)
                 {
                     FIRREF.instance().getRef().child("user_profile_images/" + user.id!).setValue(
