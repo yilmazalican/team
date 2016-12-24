@@ -106,7 +106,7 @@ class FiltersViewController: UIViewController  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
         let listFlatVC = navigationController.topViewController as! ListFlatViewController
-        listFlatVC.receivedFilter = self.filter
+        listFlatVC.receivedFilter = self.filter!
     }
 
 

@@ -16,7 +16,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // IMPORTANT -> Search must fill receivedFilter by FilterModel Instance
 
-    var receivedFilter : FilterModel?
+    var receivedFilter = FilterModel()
     //var flatCells : [ListFlatCollectionViewCell]?
     var filteredFlats: [FilteredFlat] = []
     
@@ -24,20 +24,20 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if receivedFilter == nil{
+        
             receivedFilter = FilterModel()
-        }
+        
         
         let endpoint = FIRFlat()
         let USERendpoint = FIRUSER()
         
         USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
-            print(str)
+            //print(str)
             
             let qm = Querymaster()
             
             
-            qm.getFilteredFlats(filter: self.receivedFilter!) { (dsa) in
+            qm.getFilteredFlats(filter: self.receivedFilter) { (dsa) in
                 self.filteredFlats = dsa
                 
                 DispatchQueue.main.async {
@@ -87,7 +87,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            var cell = listFlatCollectionView.cellForItem(at: indexPath) as! ListFlatCollectionViewCell
+            let cell = listFlatCollectionView.cellForItem(at: indexPath) as! ListFlatCollectionViewCell
             flatProfileVC?.receivedFlatID = cell.flatID
             flatProfileVC?.ownerID = cell.flatOwnerID
             
