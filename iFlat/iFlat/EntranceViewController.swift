@@ -116,6 +116,7 @@ class EntranceViewController: UIViewController {
                  }
             }
             }
+            
         }
         
         
