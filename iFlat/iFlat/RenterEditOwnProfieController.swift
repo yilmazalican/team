@@ -162,11 +162,13 @@ class RenterEditOwnProfieController: UIViewController {
             
         }
      
-       /* if self.loginUser.profileImage != self.editProfileUser.profileImage{
+        if self.loginUser.profileImage != self.editProfileUser.profileImage{
             
-            dbFirebase.insertUserProfileImage(user: <#T##ManipulableUser#>, completion: <#T##(String?) -> ()#>)
+            dbFirebase.changeUserProfileImage(user: loginUser, img: loginUser.profileImage!, completion: { (err) in
+                print(err)
+            })
         }
-*/
+
     
         
     }
@@ -174,7 +176,7 @@ class RenterEditOwnProfieController: UIViewController {
     
     func setLoginUser(){
         
-        dbFirebase.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "123456", completion: { (err) in
+        dbFirebase.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "123456", completion: { (err) in
             
             print(err)
             
@@ -187,7 +189,7 @@ class RenterEditOwnProfieController: UIViewController {
                 self.editProfileUser = self.loginUser
                 
                 self.loadingIndicator.stopAnimating()
-                	
+      	          	
                 self.nameTextField.placeholder = self.loginUser.name
                 self.surnameTextField.placeholder = self.loginUser.surname
                 self.mailAddressTextField.placeholder = self.loginUser.email
@@ -286,6 +288,8 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
         if mediaType == (kUTTypeImage as String) {
             
              self.renterPhotoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            self.editProfileUser.profileImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+            
             
         }
         
