@@ -31,7 +31,7 @@ protocol FIRUSERDelegate :class
     func rateUser(toUserID:String,rate:Rate, completion: @escaping (String?) -> ())
     func getUserRates(userID:String, completion: @escaping ([Rate]?) -> ())
     func changeUserProfileImage(user:ManipulableUser,img:UIImage, completion: @escaping (String?) -> ())
-    
+    func getCities(completion: @escaping ([String:String]) -> ())
 
 }
 
@@ -40,6 +40,13 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func getCities(completion: @escaping ([String : String]) -> ()) {
+        FIRREF.instance().getRef().child("cities").observe(.value, with: { (ss) in
+            let cities = ss.value as! [String:String]
+            completion(cities)
+        })
+    }
+
     internal func changeUserProfileImage(user: ManipulableUser, img: UIImage, completion: @escaping (String?) -> ()) {
         user.profileImage = img
         insertUserProfileImage(user: user) { (str) in
