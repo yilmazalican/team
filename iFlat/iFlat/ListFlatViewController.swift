@@ -25,7 +25,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            receivedFilter = FilterModel()
+            //receivedFilter = FilterModel()
         
         
         let endpoint = FIRFlat()
