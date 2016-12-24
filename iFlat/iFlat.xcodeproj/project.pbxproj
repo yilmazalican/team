@@ -48,6 +48,8 @@
 		9535FE281E07CD3F00297E90 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535FE271E07CD3F00297E90 /* MenuCollectionViewCell.swift */; };
 		9535FE2A1E07CD5600297E90 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535FE291E07CD5600297E90 /* BaseCell.swift */; };
 		9535FE2C1E07F6EB00297E90 /* FlatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535FE2B1E07F6EB00297E90 /* FlatExtension.swift */; };
+		953CCFB81E0EDDAE002FC590 /* ConvertUrlToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CCFB71E0EDDAE002FC590 /* ConvertUrlToImage.swift */; };
+		953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CCFB91E0EFE90002FC590 /* UserExtension.swift */; };
 		9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */; };
 		9564AB241DFFD6AA0059DCC6 /* FlatOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */; };
 		9564AB261DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */; };
@@ -117,9 +119,9 @@
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		595C412138A26C34D75ABA99 /* Pods-iFlat-iFlatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		754FD5635DE2FCAEA85E3DC4 /* Pods-iFlat-iFlatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImagesCell.swift; sourceTree = "<group>"; };
 		75591C1553F467511111B928 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7771EB5A3B04A913699C8FAE /* Pods-iFlat-iFlatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImagesCell.swift; sourceTree = "<group>"; };
 		80E17F431DFAB5520020C695 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		80E17F471DFABE4C0020C695 /* ListFlat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListFlat.storyboard; sourceTree = "<group>"; };
 		80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPlusPicker.swift; sourceTree = "<group>"; };
@@ -132,6 +134,8 @@
 		9535FE271E07CD3F00297E90 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		9535FE291E07CD5600297E90 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9535FE2B1E07F6EB00297E90 /* FlatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatExtension.swift; sourceTree = "<group>"; };
+		953CCFB71E0EDDAE002FC590 /* ConvertUrlToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertUrlToImage.swift; sourceTree = "<group>"; };
+		953CCFB91E0EFE90002FC590 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlatViewController.swift; sourceTree = "<group>"; };
 		9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatOptionTableView.swift; sourceTree = "<group>"; };
 		9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatOptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 			children = (
 				9535FE221E07CB0400297E90 /* Menu.swift */,
 				9535FE2B1E07F6EB00297E90 /* FlatExtension.swift */,
+				953CCFB91E0EFE90002FC590 /* UserExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 			children = (
 				95D9EBB21DF65E690066156F /* ConvertString.swift */,
 				95D9EBB61DF6668A0066156F /* ShowAlert.swift */,
+				953CCFB71E0EDDAE002FC590 /* ConvertUrlToImage.swift */,
 			);
 			name = "Protocols&Extension";
 			sourceTree = "<group>";
@@ -634,7 +640,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 97TQ8HBR2G;
+						DevelopmentTeam = 9RDWH786DV;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -867,6 +873,7 @@
 				1AC48BC31DE6625C00505913 /* ControlPanelVC.swift in Sources */,
 				95D9EBB71DF6668A0066156F /* ShowAlert.swift in Sources */,
 				1AD2C4051E06020B0030FF15 /* TableViewCell.swift in Sources */,
+				953CCFB81E0EDDAE002FC590 /* ConvertUrlToImage.swift in Sources */,
 				1AD852481E07E67B00A1F5B3 /* FIRFlat.swift in Sources */,
 				9535FE261E07CCA600297E90 /* MenuLauncher.swift in Sources */,
 				9564AB241DFFD6AA0059DCC6 /* FlatOptionTableView.swift in Sources */,
@@ -874,8 +881,9 @@
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
 				1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */,
-				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
 				803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */,
+				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
+				953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */,
 				9535FE2A1E07CD5600297E90 /* BaseCell.swift in Sources */,
 				9535FE2C1E07F6EB00297E90 /* FlatExtension.swift in Sources */,
 				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
@@ -1038,7 +1046,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97TQ8HBR2G;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1057,7 +1065,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97TQ8HBR2G;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

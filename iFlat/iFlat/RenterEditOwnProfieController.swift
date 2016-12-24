@@ -11,18 +11,24 @@ import UIKit
 import AVKit
 import MobileCoreServices
 
+
+
 class RenterEditOwnProfieController: UIViewController {
 
+    
+    var cities = [String]()
+    
+     var  isImageChanged = false
    
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
    
     var loginUser  = User()
+    
         
         
         var dbFirebase = FIRUSER()
         
-    
-    var editProfileUser = User()
+   
    
     @IBOutlet weak var nameTextField: UITextField!{
         
@@ -65,7 +71,15 @@ class RenterEditOwnProfieController: UIViewController {
 
   
     
-    @IBOutlet weak var renterPhotoImageView: UIImageView!
+    @IBOutlet weak var renterPhotoImageView: UIImageView!{
+        didSet{
+         renterPhotoImageView.contentMode = .scaleAspectFill
+            renterPhotoImageView.layer.masksToBounds = true
+            
+         renterPhotoImageView.layer.cornerRadius = renterPhotoImageView.frame.height/2
+          
+        }
+    }
     
     
     
@@ -73,10 +87,16 @@ class RenterEditOwnProfieController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-	
+        
+        dbFirebase.getCities { (allCities) in
+            self.cities = allCities
+            
+        self.countyPickerView.reloadAllComponents()
+        }
         
   setLoginUser()
       
+       
       
     }
    
@@ -124,59 +144,88 @@ class RenterEditOwnProfieController: UIViewController {
     }
    
     @IBAction func birthdatePickerValueChanged(_ sender: UIDatePicker) {
-        editProfileUser.birthDate = setDateToString(datePicker: sender)
+        loginUser.birthDate = setDateToString(datePicker: sender)
         
     }
    
     @IBAction func nameTextFieldEditingDidEnd(_ sender: UITextField) {
-        editProfileUser.name = sender.text
+        
+        
+        if sender.text != "" {
+         
+        loginUser.name = sender.text
+        }
+        else {
+            
+           loginUser.name = nameTextField.placeholder
+            
+        }
         
     }
    
     
     @IBAction func surnameTextFieldEditingDidEnd(_ sender: UITextField) {
-    editProfileUser.surname = sender.text
+       if sender.text != "" {
+
+    loginUser.surname = sender.text
+        }
+       else {
+        loginUser.surname = surnameTextField.placeholder
+    }
     }
     
     @IBAction func mailAddressTextFieldEditingDidEnd(_ sender: UITextField) {
-        editProfileUser.email = sender.text
+       if sender.text != "" {
+            
+            loginUser.email = sender.text
+        }
+       else{
+        
+        loginUser.email = mailAddressTextField.placeholder
+        }
+       
     }
     
+    
+    
+   
     
     @IBAction func editedProfileButtonAction(_ sender: Any) {
         
-        
-        if self.loginUser.email! != self.editProfileUser.email {
-            
-            dbFirebase.changeEmail(newEmail: self.editProfileUser.email!, completion: { (err) in
-                print(err)
-            })
-            
-            
+     dbFirebase.edit(newUsr: self.loginUser) { (err) in
+        print(err)
         }
         
-        if self.loginUser.password != self.editProfileUser.password {
-            dbFirebase.changePassword(newPassword: loginUser.password!, completion: { (err) in
-                print(err)
-            })
+       
+        
+        
             
-        }
+        
+    
+//            dbFirebase.changePassword(newPassword: loginUser.password!, completion: { (err) in
+//                print(err)
+//            })
+        
      
-        if self.loginUser.profileImage != self.editProfileUser.profileImage{
+        if   isImageChanged  {
             
             dbFirebase.changeUserProfileImage(user: loginUser, img: loginUser.profileImage!, completion: { (err) in
                 print(err)
+                
+                 self.isImageChanged = false
             })
+            
+           
         }
+        
 
-    
         
     }
     
     
-    func setLoginUser(){
+  private func setLoginUser(){
         
-        dbFirebase.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "123456", completion: { (err) in
+        dbFirebase.loginByEmailAndPassword(email: "tolga@gmail.com", password: "123456", completion: { (err) in
             
             print(err)
             
@@ -186,14 +235,23 @@ class RenterEditOwnProfieController: UIViewController {
                 
                 self.loginUser = usr as! User
                 
-                self.editProfileUser = self.loginUser
                 
-                self.loadingIndicator.stopAnimating()
-      	          	
                 self.nameTextField.placeholder = self.loginUser.name
                 self.surnameTextField.placeholder = self.loginUser.surname
                 self.mailAddressTextField.placeholder = self.loginUser.email
-                self.renterPhotoImageView.image = self.loginUser.profileImage
+                self.birthdateDatePicker.setDate(Date(dateString:self.loginUser.birthDate!), animated: false)
+                
+                      self.dbFirebase.getUserProfileImg(user: self.loginUser, completion: { (userImageUrl) in
+                        
+                       
+                        self.urlToImage(url: userImageUrl!, completionHandler: { (image) in
+                           self.loginUser.profileImage = image
+                            self.renterPhotoImageView.image = image
+
+                            self.loadingIndicator.stopAnimating()
+                            
+                        })
+                      })
                 //TODO:SET ALL OBJECT FİELD
                 
                 
@@ -205,7 +263,7 @@ class RenterEditOwnProfieController: UIViewController {
 }
 
 
-extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate{
+extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,imageMaker{
     
     
     
@@ -217,7 +275,7 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return User.allCountryList[row]
+        return cities[row]
         
         
     }
@@ -229,16 +287,16 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return User.allCountryList.count
+        return cities.count
     }
     
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+       
         
-        
-        editProfileUser.country = User.allCountryList[row]
+        loginUser.country = cities[row]
         
     }
     
@@ -258,7 +316,7 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
         }
         
         
-        data = User.allCountryList[row]
+        data = cities[row]
         
         let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
         
@@ -280,18 +338,17 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-    
-       let mediaType  = info[UIImagePickerControllerMediaType] as! String
-        
-       
-        if mediaType == (kUTTypeImage as String) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-             self.renterPhotoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-            self.editProfileUser.profileImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+         self.isImageChanged = true
             
+            self.renterPhotoImageView.image = image
             
+         self.loginUser.profileImage = image
         }
+        
+            
+        
         
         
         picker.dismiss(animated: true, completion: nil)
