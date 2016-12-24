@@ -17,7 +17,7 @@ import FirebaseStorage
 protocol FIRUSERDelegate :class
 {
     func insert(usr:ManipulableUser!,completion: @escaping (String?) -> ())
-    func edit(oldUsrEmail:String, newUsr:ManipulableUser!, completion: @escaping (String?) -> ())
+    func edit(newUsr:ManipulableUser!, completion: @escaping (String?) -> ())
     func loginByEmailAndPassword(email:String, password:String, completion:  @escaping (String?) -> ())
     func logout(completion: @escaping (String?) -> ())
     func getCurrentLoggedIn(completion: @escaping (ManipulableUser?) -> ())
@@ -102,6 +102,7 @@ class FIRUSER: FIRUSERDelegate {
         if let profileImg = user.profileImage
         {
             let imagePNGDataConverter = UIImageJPEGRepresentation(profileImg, 0.1)
+            
             FIRREF.instance().getStorageRef().child("user_profile_images/" + user.id! + ".jpeg").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
                 if (error == nil)
                 {
@@ -134,8 +135,12 @@ class FIRUSER: FIRUSERDelegate {
     
     
     internal func changeEmail(newEmail: String, completion: @escaping (String?) -> ()) {
+        
+        
+        
         FIRAuth.auth()?.currentUser?.updateEmail(newEmail, completion: { (err) in
             if err == nil{
+                
                 completion(nil)
             }
             else
@@ -195,6 +200,7 @@ class FIRUSER: FIRUSERDelegate {
                 usr.name = objdict["firstName"]!
                 usr.birthDate = objdict["birthdate"]!
                 usr.surname = objdict["lastName"]!
+                usr.country = objdict["country"]!
                 
                 completion(usr)
             }
@@ -254,21 +260,41 @@ class FIRUSER: FIRUSERDelegate {
     ///Edit user info. The parameter newUsr is the new user whos info will replaced by the user which is passed by its email.
     ///If the user exists, returns true. Otherwise, returns false.
     ///Returning parameters are in completion block.
-    internal func edit(oldUsrEmail:String, newUsr: ManipulableUser!, completion:  @escaping (String?) -> ()) {
-        
-        getByEmail(email: oldUsrEmail) { (usr) in
-            if let user = usr{
-                //email degistir!
-                FIRREF.instance().getRef().child("users").child(user.id!).setValue(
+    internal func edit(newUsr: ManipulableUser!, completion:  @escaping (String?) -> ()) {
+        getCurrentLoggedIn { (loggedUser) in
+            if loggedUser != nil
+            {
+                FIRREF.instance().getRef().child("users").child((loggedUser?.id!)!).setValue(
                     [
                         "firstName": newUsr.name!,
                         "lastName" : newUsr.surname!,
                         "birthdate": newUsr.birthDate!,
-                        "country": newUsr.country!]
+                        "country": newUsr.country!,
+                        "email": newUsr.email!
+                    ]
                 )
-                completion(nil)
+                self.changeEmail(newEmail: newUsr.email!, completion: { (str) in
+                    if str != nil
+                    {
+                        completion(str)
+                    }
+                    else
+                    {
+                        completion(str)
+                    }
+                })
+
+            }
+            else
+            {
+                completion("No logged in user detected!")
             }
         }
+        
+
+        
+        
+        
     }
     ///Insert user which is manipulableuser.
     ///If the operation is OK, returns true. Otherwise, returns false.
@@ -284,7 +310,8 @@ class FIRUSER: FIRUSERDelegate {
                     "lastName" : usr.surname!,
                     "email": usr.email!,
                     "gender": usr.Gender!,
-                    "birthdate": usr.birthDate!
+                    "birthdate": usr.birthDate!,
+                    "country": usr.country!
                     ],
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
