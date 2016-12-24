@@ -101,7 +101,7 @@ class FIRUSER: FIRUSERDelegate {
     internal func insertUserProfileImage(user: ManipulableUser, completion: @escaping (String?) -> ()) {
         if let profileImg = user.profileImage
         {
-            let imagePNGDataConverter = UIImagePNGRepresentation(profileImg)
+            let imagePNGDataConverter = UIImageJPEGRepresentation(profileImg, 0.0)
             FIRREF.instance().getStorageRef().child("user_profile_images/" + user.id! + ".png").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
                 if (error == nil)
                 {
@@ -183,6 +183,7 @@ class FIRUSER: FIRUSERDelegate {
     ///Returning parameters are in completion block.
     internal func getByEmail(email: String, completion: @escaping (ManipulableUser?) -> ()) {
         let usr = User()
+
         FIRREF.instance().getRef().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value, with: { snapshot in
             
             if(snapshot.childrenCount >= 1){
@@ -194,6 +195,7 @@ class FIRUSER: FIRUSERDelegate {
                 usr.name = objdict["firstName"]!
                 usr.birthDate = objdict["birthdate"]!
                 usr.surname = objdict["lastName"]!
+                
                 completion(usr)
             }
             else
