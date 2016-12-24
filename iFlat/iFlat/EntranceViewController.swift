@@ -96,13 +96,14 @@ class EntranceViewController: UIViewController {
         
             if  segue.identifier == "EntranceToListSegue" {
                 
-                if  let navigation = segue.destination as! UINavigationController {
+                let navigation = segue.destination as! UINavigationController
                     
                
                 
                 if let controller :ListFlatViewController = navigation.topViewController as? ListFlatViewController {
 
                 
+
                 controller.receivedFilter.city = searchParameter.whereParameter!
                 if let from = searchParameter.fromParameter {
                     
@@ -119,8 +120,7 @@ class EntranceViewController: UIViewController {
                             
                         }
                     }
-                }
-                
+               
             }
  }
             }
