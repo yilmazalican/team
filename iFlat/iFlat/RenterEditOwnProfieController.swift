@@ -16,6 +16,8 @@ import MobileCoreServices
 class RenterEditOwnProfieController: UIViewController {
 
     
+    var cities = [String]()
+    
      var  isImageChanged = false
    
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -26,8 +28,7 @@ class RenterEditOwnProfieController: UIViewController {
         
         var dbFirebase = FIRUSER()
         
-    
-    var editProfileUser = User()
+   
    
     @IBOutlet weak var nameTextField: UITextField!{
         
@@ -86,10 +87,16 @@ class RenterEditOwnProfieController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-	
+        
+        dbFirebase.getCities { (allCities) in
+            self.cities = allCities
+            
+        self.countyPickerView.reloadAllComponents()
+        }
         
   setLoginUser()
       
+       
       
     }
    
@@ -137,44 +144,61 @@ class RenterEditOwnProfieController: UIViewController {
     }
    
     @IBAction func birthdatePickerValueChanged(_ sender: UIDatePicker) {
-        editProfileUser.birthDate = setDateToString(datePicker: sender)
+        loginUser.birthDate = setDateToString(datePicker: sender)
         
     }
    
     @IBAction func nameTextFieldEditingDidEnd(_ sender: UITextField) {
-        editProfileUser.name = sender.text
+        
+        
+        if sender.text != "" {
+         
+        loginUser.name = sender.text
+        }
+        else {
+            
+           loginUser.name = nameTextField.placeholder
+            
+        }
         
     }
    
     
     @IBAction func surnameTextFieldEditingDidEnd(_ sender: UITextField) {
-    editProfileUser.surname = sender.text
+       if sender.text != "" {
+
+    loginUser.surname = sender.text
+        }
+       else {
+        loginUser.surname = surnameTextField.placeholder
+    }
     }
     
     @IBAction func mailAddressTextFieldEditingDidEnd(_ sender: UITextField) {
-        editProfileUser.email = sender.text
-    }
-    
-    
-    
-    private func changeEditingUserInformation(){
-        
-        if editProfileUser.isUserEmpty() {
+       if sender.text != "" {
             
-       
+            loginUser.email = sender.text
         }
+       else{
+        
+        loginUser.email = mailAddressTextField.placeholder
+        }
+       
     }
+    
+    
+    
+   
     
     @IBAction func editedProfileButtonAction(_ sender: Any) {
         
-     changeEditingUserInformation()
+     dbFirebase.edit(newUsr: self.loginUser) { (err) in
+        print(err)
+        }
         
-        dbFirebase.edit(oldUsrEmail: loginUser.email, newUsr: <#T##ManipulableUser!#>, completion: <#T##(String?) -> ()#>)
+       
         
-            dbFirebase.changeEmail(newEmail: self.editProfileUser.email!, completion: { (err) in
-                print(err)
-            })
-            
+        
             
         
     
@@ -195,14 +219,13 @@ class RenterEditOwnProfieController: UIViewController {
         }
         
 
-    
         
     }
     
     
   private func setLoginUser(){
         
-        dbFirebase.loginByEmailAndPassword(email: "Tolga.taner@gmail.com", password: "123456", completion: { (err) in
+        dbFirebase.loginByEmailAndPassword(email: "tolga@gmail.com", password: "123456", completion: { (err) in
             
             print(err)
             
@@ -216,21 +239,17 @@ class RenterEditOwnProfieController: UIViewController {
                 self.nameTextField.placeholder = self.loginUser.name
                 self.surnameTextField.placeholder = self.loginUser.surname
                 self.mailAddressTextField.placeholder = self.loginUser.email
-                
-                self.editProfileUser.email = self.loginUser.email
-                self.editProfileUser.name = self.loginUser.name
-                self.editProfileUser.surname = self.loginUser.surname
+                self.birthdateDatePicker.setDate(Date(dateString:self.loginUser.birthDate!), animated: false)
                 
                       self.dbFirebase.getUserProfileImg(user: self.loginUser, completion: { (userImageUrl) in
                         
                        
-                        
                         self.urlToImage(url: userImageUrl!, completionHandler: { (image) in
                            self.loginUser.profileImage = image
                             self.renterPhotoImageView.image = image
 
                             self.loadingIndicator.stopAnimating()
-
+                            
                         })
                       })
                 //TODO:SET ALL OBJECT FİELD
@@ -256,7 +275,7 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return User.allCountryList[row]
+        return cities[row]
         
         
     }
@@ -268,16 +287,16 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return User.allCountryList.count
+        return cities.count
     }
     
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+       
         
-        
-        editProfileUser.country = User.allCountryList[row]
+        loginUser.country = cities[row]
         
     }
     
@@ -297,7 +316,7 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
         }
         
         
-        data = User.allCountryList[row]
+        data = cities[row]
         
         let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
         
@@ -325,8 +344,7 @@ extension RenterEditOwnProfieController : ShowAlert,UIImagePickerControllerDeleg
             
             self.renterPhotoImageView.image = image
             
-            self.editProfileUser.profileImage = image
-
+         self.loginUser.profileImage = image
         }
         
             

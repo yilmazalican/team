@@ -175,10 +175,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
 
         else {
 
-            return User.allCountryList[row]
+            //return User.allCountryList[row]
         }
 
-
+ return User.staticGender[row]
     }
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -248,8 +248,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
 
         else {
-
-            return User.allCountryList.count
+return 1
+            //return User.allCountryList.count
         }
 
 
