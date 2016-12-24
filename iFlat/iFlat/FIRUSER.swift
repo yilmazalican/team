@@ -101,7 +101,7 @@ class FIRUSER: FIRUSERDelegate {
     internal func insertUserProfileImage(user: ManipulableUser, completion: @escaping (String?) -> ()) {
         if let profileImg = user.profileImage
         {
-            let imagePNGDataConverter = UIImageJPEGRepresentation(profileImg, 0.0)
+            let imagePNGDataConverter = UIImageJPEGRepresentation(profileImg, 0.1)
             FIRREF.instance().getStorageRef().child("user_profile_images/" + user.id! + ".jpeg").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
                 if (error == nil)
                 {
