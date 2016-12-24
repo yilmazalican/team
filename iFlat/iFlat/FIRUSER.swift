@@ -251,7 +251,6 @@ class FIRUSER: FIRUSERDelegate {
                         "firstName": newUsr.name!,
                         "lastName" : newUsr.surname!,
                         "email": newUsr.email!,
-                        "gender": newUsr.Gender!,
                         "birthdate": newUsr.birthDate!]
                 )
                 completion(nil)
