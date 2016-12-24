@@ -41,14 +41,15 @@ protocol FIRUSERDelegate :class
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
     internal func getCities(completion: @escaping ([String]) -> ()) {
-        FIRREF.instance().getRef().child("cities").observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("cities").queryOrderedByKey().observe(.value, with: { (ss) in
         var arr = [String]()
         let dict = ss.value as! [String:String]
             for a in dict.values
             {
                 arr.append(a)
             }
-            completion(arr)
+            let sortedArr = arr.sorted(by: { $0 < $1  })
+            completion(sortedArr)
        
         })
     }
