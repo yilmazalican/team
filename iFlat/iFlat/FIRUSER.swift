@@ -30,7 +30,7 @@ protocol FIRUSERDelegate :class
     func getUserProfileImg(user:ManipulableUser, completion: @escaping (String?) -> ())
     func rateUser(toUserID:String,rate:Rate, completion: @escaping (String?) -> ())
     func getUserRates(userID:String, completion: @escaping ([Rate]?) -> ())
-    
+    func changeUserProfileImage(user:ManipulableUser,img:UIImage, completion: @escaping (String?) -> ())
     
 
 }
@@ -40,6 +40,16 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func changeUserProfileImage(user: ManipulableUser, img: UIImage, completion: @escaping (String?) -> ()) {
+        user.profileImage = img
+        insertUserProfileImage(user: user) { (str) in
+            completion(str)
+        }
+    }
+
+
+
+   
     
     
     
