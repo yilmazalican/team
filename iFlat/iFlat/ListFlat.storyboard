@@ -111,6 +111,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qF2-lM-LeJ"/>
                                 </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Filters"/>
                                 <connections>
                                     <segue destination="pLQ-C7-e2E" kind="popoverPresentation" identifier="filterSegue" popoverAnchorView="Kug-7h-4eP" id="VZ2-Ph-4Uz">
