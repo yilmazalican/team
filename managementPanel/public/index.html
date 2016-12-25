@@ -2,189 +2,150 @@
 <html>
 <head>
 
-<!--------------------
-LOGIN FORM
-by: Amit Jakhu
-www.amitjakhu.com
---------------------->
+	<!--META-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Login Form</title>
 
-<!--META-->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login Form</title>
+	<!--STYLESHEETS-->
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
 
-<!--STYLESHEETS-->
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<!--SCRIPTS-->
 
-<!--SCRIPTS-->
-
-<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-<script>
-// Initialize Firebase
-var config = {
-	apiKey: "AIzaSyBrLWilIgjaqQ31pxynV3M_cbfAI1KYcPI",
-	authDomain: "iflatadmin.firebaseapp.com",
-	databaseURL: "https://iflatadmin.firebaseio.com",
-	storageBucket: "iflatadmin.appspot.com",
-	messagingSenderId: "598587369697"
-};
-firebase.initializeApp(config);
-</script>
-<script type="text/javascript">
-/**
-* Handles the sign in button press.
-*/
-function toggleSignIn() {
-if (firebase.auth().currentUser) {
-	// [START signout]
-	firebase.auth().signOut();
-	// [END signout]
-} else {
-	var email = document.getElementById('email').value;
-	var password = document.getElementById('password').value;
-	if (email.length < 4) {
-		alert('Please enter an email address.');
-		return;
-	}
-	if (password.length < 4) {
-		alert('Please enter a password.');
-		return;
-	}
-	// Sign in with email and pass.
-	// [START authwithemail]
-	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-		// Handle Errors here.
-		var errorCode = error.code;
-		var errorMessage = error.message;
-		// [START_EXCLUDE]
-		if (errorCode === 'auth/wrong-password') {
-			alert('Wrong password.');
+	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBrLWilIgjaqQ31pxynV3M_cbfAI1KYcPI",
+		authDomain: "iflatadmin.firebaseapp.com",
+		databaseURL: "https://iflatadmin.firebaseio.com",
+		storageBucket: "iflatadmin.appspot.com",
+		messagingSenderId: "598587369697"
+	};
+	firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript">
+	/**
+	* Handles the sign in button press.
+	*/
+	function toggleSignIn() {
+		if (firebase.auth().currentUser) {
+			// [START signout]
+			firebase.auth().signOut();
+			// [END signout]
 		} else {
-			alert(errorMessage);
+			var email = document.getElementById('email').value;
+			var password = document.getElementById('password').value;
+			if (email.length < 4) {
+				alert('Please enter an email address.');
+				return;
+			}
+			if (password.length < 4) {
+				alert('Please enter a password.');
+				return;
+			}
+			// Sign in with email and pass.
+			// [START authwithemail]
+			firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+				// Handle Errors here.
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				// [START_EXCLUDE]
+				if (errorCode === 'auth/wrong-password') {
+					alert('Wrong password.');
+				} else {
+					alert(errorMessage);
+				}
+				console.log(error);
+				// [END_EXCLUDE]
+			});
+			// [END authwithemail]
 		}
-		console.log(error);
-		//document.getElementById('quickstart-sign-in').disabled = false;
-		// [END_EXCLUDE]
-	});
-	// [END authwithemail]
-}
-//document.getElementById('quickstart-sign-in').disabled = true;
-}
-function initApp() {
-// Listening for auth state changes.
-// [START authstatelistener]
-firebase.auth().onAuthStateChanged(function(user) {
-	// [START_EXCLUDE silent]
-	//document.getElementById('quickstart-verify-email').disabled = true;
-	// [END_EXCLUDE]
-	if (user) {
-		// User is signed in.
-		var displayName = user.displayName;
-		var email = user.email;
-		var emailVerified = user.emailVerified;
-		var photoURL = user.photoURL;
-		var isAnonymous = user.isAnonymous;
-		var uid = user.uid;
-		var providerData = user.providerData;
-		//console.log(user);
-		// [START_EXCLUDE silent]
-		//document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-		//document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-		//document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-		if (!emailVerified) {
-			//document.getElementById('quickstart-verify-email').disabled = false;
-		}
-
-		document.location = "index2.html";
-		// [END_EXCLUDE]
-	} else {
-		// User is signed out.
-		// [START_EXCLUDE silent]
-		//document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-		//document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-		//document.getElementById('quickstart-account-details').textContent = 'null';
-		// [END_EXCLUDE]
 	}
-	// [START_EXCLUDE silent]
-//	document.getElementById('quickstart-sign-in').disabled = false;
-	// [END_EXCLUDE]
-});
-// [END authstatelistener]
-document.getElementsByName('login')[0].addEventListener('click', toggleSignIn, false);
-//document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-//document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-//document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
-}
-window.onload = function() {
-initApp();
-};
-</script>
+	function initApp() {
+		// Listening for auth state changes.
+		// [START authstatelistener]
+		firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				// User is signed in.
+				if (!emailVerified) {
+					alert("Email not verified!");
+				}
+				document.location = "main.html";
+				// [END_EXCLUDE]
+			}
 
+		});
+		// [END authstatelistener]
+		document.getElementsByName('login')[0].addEventListener('click', toggleSignIn, false);
+	}
+	window.onload = function() {
+		initApp();
+	};
+	</script>
 
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+	<!--Slider-in icons-->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".username").focus(function() {
+			$(".user-icon").css("left","-48px");
+		});
+		$(".username").blur(function() {
+			$(".user-icon").css("left","0px");
+		});
 
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-<!--Slider-in icons-->
-<script type="text/javascript">
-$(document).ready(function() {
-	$(".username").focus(function() {
-		$(".user-icon").css("left","-48px");
+		$(".password").focus(function() {
+			$(".pass-icon").css("left","-48px");
+		});
+		$(".password").blur(function() {
+			$(".pass-icon").css("left","0px");
+		});
 	});
-	$(".username").blur(function() {
-		$(".user-icon").css("left","0px");
-	});
-
-	$(".password").focus(function() {
-		$(".pass-icon").css("left","-48px");
-	});
-	$(".password").blur(function() {
-		$(".pass-icon").css("left","0px");
-	});
-});
-</script>
+	</script>
 
 
 
 </head>
 <body>
-<!--WRAPPER-->
-<div id="wrapper">
+	<!--WRAPPER-->
+	<div id="wrapper">
 
-	<!--SLIDE-IN ICONS-->
-    <div class="user-icon"></div>
-    <div class="pass-icon"></div>
-    <!--END SLIDE-IN ICONS-->
+		<!--SLIDE-IN ICONS-->
+		<div class="user-icon"></div>
+		<div class="pass-icon"></div>
+		<!--END SLIDE-IN ICONS-->
 
-<!--LOGIN FORM-->
-<form name="login-form" class="login-form" method="post">
+		<!--LOGIN FORM-->
+		<form name="login-form" class="login-form" method="post">
 
-	<!--HEADER-->
-    <div class="header">
-    <!--TITLE--><h1>iFlat</h1><!--END TITLE-->
-    <!--DESCRIPTION--><span>Management Panel</span><!--END DESCRIPTION-->
-    </div>
-    <!--END HEADER-->
+			<!--HEADER-->
+			<div class="header">
+				<!--TITLE--><h1>iFlat</h1><!--END TITLE-->
+				<!--DESCRIPTION--><span>Management Panel</span><!--END DESCRIPTION-->
+			</div>
+			<!--END HEADER-->
 
-	<!--CONTENT-->
-    <div class="content">
-	<!--USERNAME--><input id="email" name="email" type="text" class="input username" value="Email" onfocus="this.value=''" /><!--END USERNAME-->
-    <!--PASSWORD--><input id="password" name="password" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
-    </div>
-    <!--END CONTENT-->
+			<!--CONTENT-->
+			<div class="content">
+				<!--USERNAME--><input id="email" name="email" type="text" class="input username" value="Email" onfocus="this.value=''" /><!--END USERNAME-->
+				<!--PASSWORD--><input id="password" name="password" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
+			</div>
+			<!--END CONTENT-->
 
-    <!--FOOTER-->
-    <div class="footer">
-    <!--LOGIN BUTTON--><input type="button" name="login" value="Login" class="button"/><!--END LOGIN BUTTON-->
-    <!--REGISTER BUTTON--><!--<input type="submit" name="submit" value="Register" class="register" />--><!--END REGISTER BUTTON-->
-    </div>
-    <!--END FOOTER-->
+			<!--FOOTER-->
+			<div class="footer">
+				<!--LOGIN BUTTON--><input type="button" name="login" value="Login" class="button"/><!--END LOGIN BUTTON-->
+				<!--REGISTER BUTTON--><!--<input type="submit" name="submit" value="Register" class="register" />--><!--END REGISTER BUTTON-->
+			</div>
+			<!--END FOOTER-->
 
-</form>
-<!--END LOGIN FORM-->
+		</form>
+		<!--END LOGIN FORM-->
 
-</div>
-<!--END WRAPPER-->
+	</div>
+	<!--END WRAPPER-->
 
-<!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
+	<!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
 
 </body>
 </html>
