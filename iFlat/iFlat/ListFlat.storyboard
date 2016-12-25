@@ -23,7 +23,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KIA-SR-tXE">
                                 <rect key="frame" x="0.0" y="72" width="375" height="565"/>
-                                <color key="backgroundColor" red="0.16863468300000001" green="0.47026374729999998" blue="0.86172693060000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="tsk-AK-KZb">
                                     <size key="itemSize" width="375" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
