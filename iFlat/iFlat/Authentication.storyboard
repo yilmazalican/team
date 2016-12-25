@@ -32,13 +32,13 @@
                                 <rect key="frame" x="21" y="209" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ST9-aY-EcI">
                                 <rect key="frame" x="16" y="280" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-Ad-X1Z">
                                 <rect key="frame" x="252" y="315" width="57" height="30"/>
@@ -52,6 +52,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="LoginTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="vGY-Mr-evE"/>
+                                    <segue destination="sgW-ri-Gbm" kind="show" id="lAf-cY-gk1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to iFlat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="734-df-jyl">
@@ -144,13 +145,13 @@
                                                 <rect key="frame" x="15" y="181" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="US9-Vy-U9y">
                                                 <rect key="frame" x="15" y="293" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or6-vH-QZx">
                                                 <rect key="frame" x="15" y="160" width="50" height="21"/>
@@ -181,7 +182,7 @@
                                                 <rect key="frame" x="15" y="237" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAz-Fh-GgG">
                                                 <rect key="frame" x="50" y="130" width="77" height="30"/>
@@ -210,8 +211,8 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="502977513.84006202">
                                                     <!--2016-12-09 11:58:33 +0000-->
                                                 </date>
-                                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978314400">
-                                                    <!--1969-12-31 22:00:00 +0000-->
+                                                <date key="maximumDate" timeIntervalSinceReferenceDate="1546254000">
+                                                    <!--2049-12-31 11:00:00 +0000-->
                                                 </date>
                                                 <locale key="locale" localeIdentifier="tr"/>
                                             </datePicker>
@@ -231,7 +232,7 @@
                                                 <rect key="frame" x="15" y="607" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-Hr-VK5">
                                                 <rect key="frame" x="157" y="328" width="61.5" height="21"/>
@@ -249,7 +250,7 @@
                                                 <rect key="frame" x="15" y="674" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEj-1d-65C">
                                                 <rect key="frame" x="119" y="645" width="137" height="21"/>
@@ -352,6 +353,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh0-jZ-CIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1346.4000000000001" y="-1120.8395802098951"/>
+        </scene>
+        <!--TolgaStoryBoard-->
+        <scene sceneID="X34-od-DQg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TolgaStoryBoard" id="sgW-ri-Gbm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mU-6h-261" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2231" y="-1355"/>
         </scene>
     </scenes>
     <resources>
