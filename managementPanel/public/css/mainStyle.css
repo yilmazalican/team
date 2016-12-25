@@ -1,0 +1,15 @@
+div.header{
+  background-color: yellow
+}
+div.footer{
+  background-color: blue
+}
+div.main{
+  background-color: green
+}
+div.main .menu{
+  background-color: red
+}
+div.main .content{
+  background-color: purple
+}
