@@ -14,7 +14,9 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     var receivedFlatID: String = ""
     var flat : Flat!
     var ownerID : String = ""
+    var returnedImagesURLs : [FlatImageDownloaded]?
     
+    @IBOutlet var flatImages: UIImageView!
     //@IBOutlet var flatRating: UILabel!
     @IBOutlet var flatRatingTV: UILabel!
     @IBOutlet var flatSpecsTV: UILabel!
@@ -31,7 +33,13 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         // flat will filled by segue. !!! FIX IT !!!
     initFlat { (flt) in
         self.flat = flt
-        self.initGui()
+        self.flat.DB_ENDPOINT.getFlatImages(flatID: flt.id, completion: { (returnedImages) in
+           
+                self.returnedImagesURLs = returnedImages
+            
+            self.initGui()
+        })
+        
         }
         
         
@@ -42,6 +50,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         flat = Flat()
         flat.DB_ENDPOINT.getFlatofUser(userID: ownerID, flatID: receivedFlatID) { (flat) in
             completion(flat as! Flat)
+            
             
         }
         
@@ -68,8 +77,13 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
+        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! FlatImagesCell
         
+        if let urlString =  self.returnedImagesURLs?[indexPath.row].imageDownloadURL
+        {
+            let url = URL(string:urlString)
+            cell.FlatImage.kf.setImage(with: url)
+        }
         
         return cell
     }
