@@ -44,7 +44,6 @@
                                 <rect key="frame" x="252" y="315" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="registerButtonTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="bA5-7o-rCi"/>
                                     <segue destination="LvG-aZ-4Dd" kind="show" id="Rjn-Zu-IWr"/>
                                 </connections>
                             </button>
@@ -52,8 +51,7 @@
                                 <rect key="frame" x="66" y="315" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="LoginButtonTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="GF6-xd-RMB"/>
-                                    <action selector="LoginTappedButton:" destination="83N-ms-XfQ" eventType="touchUpInside" id="dbL-pP-miS"/>
+                                    <action selector="LoginTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="vGY-Mr-evE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to iFlat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="734-df-jyl">
@@ -90,6 +88,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="0sQ-pU-bdf"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="3fF-Sm-912" id="mmZ-OK-SSb"/>
+                        <outlet property="passwordTextField" destination="ST9-aY-EcI" id="tKt-Oc-PyO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocF-Gf-bmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +108,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="83N-ms-XfQ" kind="relationship" relationship="rootViewController" id="zIY-Dq-vK4"/>
+                        <segue destination="83N-ms-XfQ" kind="relationship" relationship="rootViewController" id="3cc-Xw-PAE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGW-uv-yEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -143,18 +145,12 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                <connections>
-                                                    <action selector="nameTextFieldEditingEnd:" destination="LvG-aZ-4Dd" eventType="editingDidEnd" id="dfz-9D-pmh"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="US9-Vy-U9y">
                                                 <rect key="frame" x="15" y="293" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="emailTextFieldEditingEnd:" destination="LvG-aZ-4Dd" eventType="editingDidEnd" id="Ghv-Ej-Yc8"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or6-vH-QZx">
                                                 <rect key="frame" x="15" y="160" width="50" height="21"/>
@@ -178,7 +174,7 @@
                                                 <rect key="frame" x="214" y="130" width="111" height="30"/>
                                                 <state key="normal" title="Uploaded photo"/>
                                                 <connections>
-                                                    <action selector="uploadButtonTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="aip-eg-fkW"/>
+                                                    <action selector="uploadedPhotoTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="Asp-j3-oJp"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your last name." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSA-yW-laA">
@@ -186,13 +182,13 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="lastNameTextFieldEditingEnd:" destination="LvG-aZ-4Dd" eventType="editingDidEnd" id="fCL-sK-wGn"/>
-                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAz-Fh-GgG">
                                                 <rect key="frame" x="50" y="130" width="77" height="30"/>
                                                 <state key="normal" title="Take Photo"/>
+                                                <connections>
+                                                    <action selector="takePhotoTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="j4p-LO-SXD"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04t-eq-YvE">
                                                 <rect key="frame" x="148.5" y="578" width="78.5" height="21"/>
@@ -236,9 +232,6 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="passwordTextFieldEditingEnd:" destination="LvG-aZ-4Dd" eventType="editingDidEnd" id="jJM-Ll-DX0"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-Hr-VK5">
                                                 <rect key="frame" x="157" y="328" width="61.5" height="21"/>
@@ -268,7 +261,7 @@
                                                 <rect key="frame" x="154" y="712" width="67" height="30"/>
                                                 <state key="normal" title="Register"/>
                                                 <connections>
-                                                    <action selector="RegisterButtonTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="NFE-Au-j44"/>
+                                                    <action selector="registerButtonTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="jAh-iB-4He"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -345,18 +338,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
-                        <outlet property="birtDarePackerView" destination="5cS-tl-0Dt" id="Yud-SE-WLT"/>
-                        <outlet property="countryPickerView" destination="EfF-cQ-U8K" id="9hY-Gs-D4J"/>
-                        <outlet property="emailTextField" destination="US9-Vy-U9y" id="hqM-CF-VMQ"/>
-                        <outlet property="genderPickerView" destination="iBU-NL-zUr" id="e4X-8i-RTu"/>
-                        <outlet property="imgView" destination="RKy-qK-hAx" id="ijq-TY-v3t"/>
-                        <outlet property="lastNameTextField" destination="pSA-yW-laA" id="ilh-NH-uKG"/>
-                        <outlet property="nameTextField" destination="kqP-qy-swa" id="uZ9-vM-mlH"/>
-                        <outlet property="passwordTextField" destination="LzF-lZ-euQ" id="ZiK-pV-Vnt"/>
-                        <outlet property="registerButton" destination="Dy8-dq-ojd" id="dgS-05-1rw"/>
-                        <outlet property="repeatPasswordTextfield" destination="Axu-XM-6hC" id="oZA-yz-gl9"/>
-                        <outlet property="takePhotoİmgButton" destination="aAz-Fh-GgG" id="DBE-X2-r5z"/>
-                        <outlet property="uploadİmgButton" destination="SBS-A8-gTN" id="Hei-SI-Xog"/>
+                        <outlet property="birthDate_PickerView" destination="5cS-tl-0Dt" id="uSx-tb-5FH"/>
+                        <outlet property="country_PickerView" destination="EfF-cQ-U8K" id="CUm-ke-LAK"/>
+                        <outlet property="email_TextField" destination="US9-Vy-U9y" id="6AJ-JS-qNr"/>
+                        <outlet property="gender_PickerView" destination="iBU-NL-zUr" id="OaP-I1-Juv"/>
+                        <outlet property="imgView_Picker" destination="RKy-qK-hAx" id="OvZ-c1-ScM"/>
+                        <outlet property="lastName_TextField" destination="pSA-yW-laA" id="Rkv-he-D4H"/>
+                        <outlet property="name_TextField" destination="kqP-qy-swa" id="bOu-AO-0mA"/>
+                        <outlet property="password_TextField" destination="LzF-lZ-euQ" id="ztf-8Q-3kT"/>
+                        <outlet property="repeatPassword_TextField" destination="Axu-XM-6hC" id="2gr-NJ-yq8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh0-jZ-CIp" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,271 +8,184 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ShowAlert{
 
+class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ShowAlert,DateToString{
+    
     var user = User()
     var myImgPickerController = UIImagePickerController()
-    //var ImgPickerForCamera = UIImagePickerController()
-
-
-
-
-    @IBOutlet weak var takePhotoİmgButton: UIButton!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextfield: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var countryPickerView: UIPickerView!
-    @IBOutlet weak var birtDarePackerView: UIDatePicker!
-    @IBOutlet weak var genderPickerView: UIPickerView!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var uploadİmgButton: UIButton!
-    @IBOutlet weak var imgView: UIImageView!
-
-
-
+//    var ImgPickerForCamera = UIImagePickerController()
+    
+    
+    @IBOutlet weak var imgView_Picker: UIImageView!
+    
+    @IBOutlet weak var name_TextField: UITextField!
+    
+    @IBOutlet weak var lastName_TextField: UITextField!
+    
+    @IBOutlet weak var email_TextField: UITextField!
+    
+    @IBOutlet weak var gender_PickerView: UIPickerView!
+    
+    @IBOutlet weak var birthDate_PickerView: UIDatePicker!
+    
+    @IBOutlet weak var country_PickerView: UIPickerView!
+    
+    @IBOutlet weak var password_TextField: UITextField!
+    
+    @IBOutlet weak var repeatPassword_TextField: UITextField!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-
-
-
-        repeatPasswordTextfield.delegate = self
-
-        passwordTextField.delegate = self
-
-        nameTextField.delegate = self
-
-        lastNameTextField.delegate = self
-
-        genderPickerView.delegate = self
-        genderPickerView.dataSource = self
-
-        countryPickerView.dataSource = self
-        countryPickerView.delegate = self
-
+        
+       gender_PickerView.delegate = self
+       gender_PickerView.dataSource = self
+        
+       country_PickerView.dataSource = self
+        country_PickerView.delegate = self
+        
         myImgPickerController.delegate = self
         myImgPickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
-
+        
 //        ImgPickerForCamera.delegate = self
 //        ImgPickerForCamera.sourceType = .camera
-
+}
+    
+    
+    
+    
+    
+    func validationField() -> Bool {
         
-
-
-
-
-
-
-
-
+        if imgView_Picker.image != nil && name_TextField.text != nil && lastName_TextField.text != nil && email_TextField.text != nil && password_TextField.text != nil && repeatPassword_TextField.text != nil && (password_TextField.text?.characters.count)! >= 6 && repeatPassword_TextField.text == password_TextField.text  {
+            
+            return true
+        }
+            
+        else {
+            
+            return false
+        }
     }
-
-
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
+    
+    
+    @IBAction func registerButtonTapped(_ sender: UIButton) {
+        self.user.name = self.name_TextField.text
+        self.user.surname = self.lastName_TextField.text
+        self.user.email = self.email_TextField.text
+        self.user.password = self.password_TextField.text
+        self.user.birthDate = self.setDateToString(datePicker: self.birthDate_PickerView)
+        self.user.profileImage = UIImage()
+        
+        if (self.validationField())
+            
+        {
+            
+            user.insertUser(user: user) { (error) in
+                
+                if (error != nil) {
+                    print(error)
+                }
+                    
+                else {
+                    print(error)
+                }
+            }
+        }
+        
     }
-
-
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if pickerView.tag == 0{
+            user.Gender  = User.staticGender[row]
+        }
+        
+        if pickerView.tag == 1{
+            user.country = User.allCountryList[row]
+        }
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if pickerView.tag == 0{
+            return User.staticGender.count
+        }
+        else {
+            return User.allCountryList.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 0 {
+            
+            return User.staticGender[row]
+        }
+        else {
+            return User.allCountryList[row]
+        }
+    }
+    
+    
+    
+    @IBAction func takePhotoTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func uploadedPhotoTapped(_ sender: UIButton) {
+    }
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-
-
-
+        
+        
+        
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
-            imgView.contentMode = .scaleAspectFit
-            imgView.image =  pickedImage
+            imgView_Picker.contentMode = .scaleAspectFit
+            imgView_Picker.image =  pickedImage
             user.profileImage = pickedImage
-
+            
         }
-
-         dismiss(animated: true, completion: nil)
+        
+        dismiss(animated: true, completion: nil)
     }
-
-
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
-
-
-    }
-
-
-
-    @IBAction func uploadButtonTapped(_ sender: UIButton) {
-
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-
-           myImgPickerController.allowsEditing = true
-            present(myImgPickerController, animated: true, completion: nil)
-
-
-        }
-
-
-
-    }
-
-    @IBAction func takePhotoİmgView(_ sender: UIButton) {
-
-
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-
-//            ImgPickerForCamera.allowsEditing = true
-//            present(ImgPickerForCamera, animated: true, completion: nil)
-//
-        }
-
-
-
-            }
-
-
-
-
-    @IBAction func nameTextFieldEditingEnd(_ sender: UITextField) {
-
-        user.name = sender.text
-
-    }
-
-    @IBAction func lastNameTextFieldEditingEnd(_ sender: UITextField) {
-
-                user.surname = sender.text
-    }
-
-    @IBAction func emailTextFieldEditingEnd(_ sender: UITextField) {
-
-        user.email = sender.text
-    }
-
-    @IBAction func passwordTextFieldEditingEnd(_ sender: UITextField) {
-
-        user.password = sender.text
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
-
+        
+        
+  }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-
-        if pickerView.tag == 0 {
-
-            return User.staticGender[row]
-        }
-
-        else {
-
-            //return User.allCountryList[row]
-        }
-
- return User.staticGender[row]
-    }
-
+    
+    
+    
+    
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-       return 1
+        return 1
     }
-
-
-    func passwordCheck()->Bool{
-
-        if user.password == repeatPasswordTextfield.text {
-
-            return true
-        }
-
-        else {
-
-            return false
-        }
-    }
-
-
-    func  validation()-> Bool {
-
-        if user.name == nil || user.surname == nil || user.email == nil || user.password == nil || user.profileImage == nil
-        {
-            return false
-        }
-
-        else {
-            return true
-        }
-
-    }
-
-
-    func textFieldisEmptyCheck()-> Bool {
-
-        if (repeatPasswordTextfield.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! || (nameTextField.text?.isEmpty)! || (emailTextField.text?.isEmpty)! || (lastNameTextField.text?.isEmpty)! {
-
-            return false
-        }
-
-        return true
-    }
-
-
-    @IBAction func RegisterButtonTapped(_ sender: UIButton) {
-
-        if validation(){
-            if passwordCheck(){
-                if textFieldisEmptyCheck(){
-
-                //insert
-          }
-        }
-      }
-    }
-
-
-
-
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView.tag == 0{
-
-            return User.staticGender.count
-        }
-
-        else {
-return 1
-            //return User.allCountryList.count
-        }
-
-
-    }
-
-
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-        if pickerView.tag == 0{
-
-            user.Gender  = User.staticGender[row]
-
-
-        }
-
-        if pickerView.tag == 1{
-
-
-            // user.country
-        }
-
-
-
-    }
- }
+    
+    
+    
+    
+    
+    
+    
+    
+}
