@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+
+class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
     
     var user = User()
+    var dbbridge2 = FIRUSER()
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -20,6 +22,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         
     }
@@ -37,29 +42,43 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func LoginTapped(_ sender: UIButton) {
         
-        self.user.email = emailTextField.text
-        self.user.password = passwordTextField.text
-        
-        if (self.validationLoginField()) {
-            
-            
-            
-            
-           
-            
-            
-            
-            
-            
+        if validationLoginField(){
+            dbbridge2.loginByEmailAndPassword(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (err) in
+                if err != nil {
+                    self.showAlert(title: "Error", message: "Fill in the blanks correctly.")
+                }
+                else{
+
+                    
+                    print("sifre dogru")
+                }
+            })
             
         }
+        
+        
+        
+     
+            
+          }
+            
+            
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // logine yalnışsada gidior.
+        return true
+    }
             
         
          }
         
-       }
+
         
         
 
