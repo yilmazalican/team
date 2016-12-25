@@ -356,7 +356,7 @@
                                         <rect key="frame" x="16" y="0.0" width="343" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Show Filtered Results">
-                                            <color key="titleColor" red="0.16863468300000001" green="0.47026374729999998" blue="0.86172693060000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="showFilteredResultsButtonClicked:" destination="pLQ-C7-e2E" eventType="touchUpInside" id="W0n-hp-fkY"/>
