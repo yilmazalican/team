@@ -44,34 +44,40 @@ class ControlPanelVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         let endpoint = FIRFlat()
         let USERendpoint = FIRUSER()
-
-        USERendpoint.loginByEmailAndPassword(email: "eposta.alican@gmail.com", password: "frozen4192") { (str) in
-            print(str)
-        }
-
-
-
-        
-
-        
-       
-    
-        let image1 = FlatImage(image: UIImage(named:"1")!)
-
-        for a in 1...20
-        {
-            var images = [FlatImage]()
-            
-
-            images.append(image1)
-           
-        let f = Flat(title: "dsadsa", flatDescription: "dsadsa", city: "Istanbul", address: "dsadsa", flatCapacity: 3, bathRoomCount: 4, bedcount: 4, pool: true, internet: true, cooling: true, heating: true, tv: true, washingMachine: false, elevator: false, parking: false, smoking: false, gateKeeper: false, price: 120, deleted: false, images: images, bedroomCount: 3)
-            endpoint.insertFlat(flt: f, completion: { (str) in
-                print(str)
-            })
+        USERendpoint.loginByEmailAndPassword(email: "tolga@gmail.com", password: "123456") { (asd) in
+            USERendpoint.getCities { (arr) in
+                print(arr)
+            }
         }
         
+      
         
+        
+        
+//
+//
+//
+//        
+//
+//        
+//       
+//    
+//        let image1 = FlatImage(image: UIImage(named:"1")!)
+//
+//        for a in 1...20
+//        {
+//            var images = [FlatImage]()
+//            
+//
+//            images.append(image1)
+//           
+//        let f = Flat(title: "dsadsa", flatDescription: "dsadsa", city: "Istanbul", address: "dsadsa", flatCapacity: 3, bathRoomCount: 4, bedcount: 4, pool: true, internet: true, cooling: true, heating: true, tv: true, washingMachine: false, elevator: false, parking: false, smoking: false, gateKeeper: false, price: 120, deleted: false, images: images, bedroomCount: 3)
+//            endpoint.insertFlat(flt: f, completion: { (str) in
+//                print(str)
+//            })
+//        }
+//        
+//        
         
         }
 

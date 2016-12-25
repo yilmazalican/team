@@ -52,10 +52,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
 //        ImgPickerForCamera.delegate = self
 //        ImgPickerForCamera.sourceType = .camera
-        
-        
-        
-    }
+}
     
     
     

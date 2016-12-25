@@ -13,7 +13,10 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
 //burada eksik var/time fault
     var receivedFlatID: String = ""
     var flat : Flat!
+    var ownerID : String = ""
+    var returnedImagesURLs : [FlatImageDownloaded]?
     
+    @IBOutlet var flatImages: UIImageView!
     //@IBOutlet var flatRating: UILabel!
     @IBOutlet var flatRatingTV: UILabel!
     @IBOutlet var flatSpecsTV: UILabel!
@@ -28,23 +31,38 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         super.viewDidLoad()
 
         // flat will filled by segue. !!! FIX IT !!!
-        flat = initFlat()
-        initGui()
+    initFlat { (flt) in
+        self.flat = flt
+        self.flat.DB_ENDPOINT.getFlatImages(flatID: flt.id, completion: { (returnedImages) in
+           
+                self.returnedImagesURLs = returnedImages
+            
+            self.initGui()
+        })
+        
+        }
+        
         
     }
     
-    func initFlat() -> Flat{
-        return Flat()
+    func initFlat(completion: @escaping (Flat)-> ()){
+        
+        flat = Flat()
+        flat.DB_ENDPOINT.getFlatofUser(userID: ownerID, flatID: receivedFlatID) { (flat) in
+            completion(flat as! Flat)
+            
+            
+        }
+        
     }
 
     func initGui(){
         // check string casting
         self.flatPriceTV.text = String(describing: flat.price)
         self.flatDetailsTV.text = flat.flatDescription!
-        //self.flatRatingTV.text = String(describing: flat.flatRating)
-        //self.flatOwnerTV.text = flat
+        self.flatOwnerTV.text = flat.userID
         self.flatTitleTV.text = flat.title
-        
+        self.flatSpecsTV.text = "Bathroom:" + String(describing: flat.bathroomCount)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,8 +77,13 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
+        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! FlatImagesCell
         
+        if let urlString =  self.returnedImagesURLs?[indexPath.row].imageDownloadURL
+        {
+            let url = URL(string:urlString)
+            cell.FlatImage.kf.setImage(with: url)
+        }
         
         return cell
     }

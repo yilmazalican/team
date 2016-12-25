@@ -13,7 +13,7 @@ class AddFlatViewController: UIViewController {
     
 var imageCounter = 1
     
- 
+
     
     var imagePicker = UIImagePickerController()
     
@@ -67,6 +67,9 @@ var imageCounter = 1
     
    
   
+    @IBAction func addFlatButtonAction(_ sender: Any) {
+  
+    }
     
   
     

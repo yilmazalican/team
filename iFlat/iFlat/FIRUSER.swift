@@ -17,7 +17,7 @@ import FirebaseStorage
 protocol FIRUSERDelegate :class
 {
     func insert(usr:ManipulableUser!,completion: @escaping (String?) -> ())
-    func edit(oldUsrEmail:String, newUsr:ManipulableUser!, completion: @escaping (String?) -> ())
+    func edit(newUsr:ManipulableUser!, completion: @escaping (String?) -> ())
     func loginByEmailAndPassword(email:String, password:String, completion:  @escaping (String?) -> ())
     func logout(completion: @escaping (String?) -> ())
     func getCurrentLoggedIn(completion: @escaping (ManipulableUser?) -> ())
@@ -30,8 +30,8 @@ protocol FIRUSERDelegate :class
     func getUserProfileImg(user:ManipulableUser, completion: @escaping (String?) -> ())
     func rateUser(toUserID:String,rate:Rate, completion: @escaping (String?) -> ())
     func getUserRates(userID:String, completion: @escaping ([Rate]?) -> ())
-    
-    
+    func changeUserProfileImage(user:ManipulableUser,img:UIImage, completion: @escaping (String?) -> ())
+    func getCities(completion: @escaping ([String]) -> ())
 
 }
 
@@ -40,6 +40,30 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func getCities(completion: @escaping ([String]) -> ()) {
+        FIRREF.instance().getRef().child("cities").queryOrderedByKey().observe(.value, with: { (ss) in
+        var arr = [String]()
+        let dict = ss.value as! [String:String]
+            for a in dict.values
+            {
+                arr.append(a)
+            }
+            let sortedArr = arr.sorted(by: { $0 < $1  })
+            completion(sortedArr)
+       
+        })
+    }
+
+    internal func changeUserProfileImage(user: ManipulableUser, img: UIImage, completion: @escaping (String?) -> ()) {
+        user.profileImage = img
+        insertUserProfileImage(user: user) { (str) in
+            completion(str)
+        }
+    }
+
+
+
+   
     
     
     
@@ -91,8 +115,9 @@ class FIRUSER: FIRUSERDelegate {
     internal func insertUserProfileImage(user: ManipulableUser, completion: @escaping (String?) -> ()) {
         if let profileImg = user.profileImage
         {
-            let imagePNGDataConverter = UIImagePNGRepresentation(profileImg)
-            FIRREF.instance().getStorageRef().child("user_profile_images/" + user.id! + ".png").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
+            let imagePNGDataConverter = UIImageJPEGRepresentation(profileImg, 0.1)
+            
+            FIRREF.instance().getStorageRef().child("user_profile_images/" + user.id! + ".jpeg").put(imagePNGDataConverter!, metadata: nil) { (metadata, error) in
                 if (error == nil)
                 {
                     FIRREF.instance().getRef().child("user_profile_images/" + user.id!).setValue(
@@ -124,8 +149,12 @@ class FIRUSER: FIRUSERDelegate {
     
     
     internal func changeEmail(newEmail: String, completion: @escaping (String?) -> ()) {
+        
+        
+        
         FIRAuth.auth()?.currentUser?.updateEmail(newEmail, completion: { (err) in
             if err == nil{
+                
                 completion(nil)
             }
             else
@@ -173,6 +202,7 @@ class FIRUSER: FIRUSERDelegate {
     ///Returning parameters are in completion block.
     internal func getByEmail(email: String, completion: @escaping (ManipulableUser?) -> ()) {
         let usr = User()
+
         FIRREF.instance().getRef().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value, with: { snapshot in
             
             if(snapshot.childrenCount >= 1){
@@ -184,6 +214,8 @@ class FIRUSER: FIRUSERDelegate {
                 usr.name = objdict["firstName"]!
                 usr.birthDate = objdict["birthdate"]!
                 usr.surname = objdict["lastName"]!
+                usr.country = objdict["country"]!
+                
                 completion(usr)
             }
             else
@@ -202,7 +234,11 @@ class FIRUSER: FIRUSERDelegate {
                 completion(usr)
             })
         }
-        completion(nil)
+        else
+        {
+            completion(nil)
+
+        }
     }
     
     ///Logouts user who is logged in already.
@@ -238,21 +274,42 @@ class FIRUSER: FIRUSERDelegate {
     ///Edit user info. The parameter newUsr is the new user whos info will replaced by the user which is passed by its email.
     ///If the user exists, returns true. Otherwise, returns false.
     ///Returning parameters are in completion block.
-    internal func edit(oldUsrEmail:String, newUsr: ManipulableUser!, completion:  @escaping (String?) -> ()) {
-        
-        getByEmail(email: oldUsrEmail) { (usr) in
-            if let user = usr{
-                FIRREF.instance().getRef().child("users").child(user.id!).setValue(
+    internal func edit(newUsr: ManipulableUser!, completion:  @escaping (String?) -> ()) {
+        getCurrentLoggedIn { (loggedUser) in
+            if loggedUser != nil
+            {
+                FIRREF.instance().getRef().child("users").child((loggedUser?.id!)!).setValue(
                     [
                         "firstName": newUsr.name!,
                         "lastName" : newUsr.surname!,
+                        "birthdate": newUsr.birthDate!,
+                        "country": newUsr.country!,
                         "email": newUsr.email!,
-                        "gender": newUsr.Gender!,
-                        "birthdate": newUsr.birthDate!]
+                        "gender": newUsr.Gender!
+                    ]
                 )
-                completion(nil)
+                self.changeEmail(newEmail: newUsr.email!, completion: { (str) in
+                    if str != nil
+                    {
+                        completion(str)
+                    }
+                    else
+                    {
+                        completion(str)
+                    }
+                })
+
+            }
+            else
+            {
+                completion("No logged in user detected!")
             }
         }
+        
+
+        
+        
+        
     }
     ///Insert user which is manipulableuser.
     ///If the operation is OK, returns true. Otherwise, returns false.
@@ -268,7 +325,8 @@ class FIRUSER: FIRUSERDelegate {
                     "lastName" : usr.surname!,
                     "email": usr.email!,
                     "gender": usr.Gender!,
-                    "birthdate": usr.birthDate!
+                    "birthdate": usr.birthDate!,
+                    "country": usr.country!
                     ],
                     withCompletionBlock: { (err, ref) in
                         if err == nil{

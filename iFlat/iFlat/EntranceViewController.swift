@@ -91,6 +91,46 @@ class EntranceViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+            if  segue.identifier == "EntranceToListSegue" {
+                
+                let navigation = segue.destination as! UINavigationController
+                    
+               
+                
+                if let controller :ListFlatViewController = navigation.topViewController as? ListFlatViewController {
+
+                
+
+                controller.receivedFilter.city = searchParameter.whereParameter!
+                if let from = searchParameter.fromParameter {
+                    
+                    controller.receivedFilter.fromDate = Date(dateString: from)
+                    if let to = searchParameter.toParameter {
+                        
+                        controller.receivedFilter.toDate = Date(dateString:to)
+                        
+                        if let capacity = searchParameter.numberOfSize {
+                            
+                            controller.receivedFilter.capacity = Int(capacity)!
+                            
+                            
+                            
+                        }
+                    }
+               
+            }
+ }
+            }
+            
+                
+            
+        
+    }
+    
+    
 }
 
 
