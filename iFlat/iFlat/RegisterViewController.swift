@@ -9,11 +9,13 @@
 import UIKit
 
 
-class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ShowAlert,DateToString{
-    
+class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString {
+  
+    var cities = [String]()
     var user = User()
+    var dbbridge = FIRUSER()
     var myImgPickerController = UIImagePickerController()
-//    var ImgPickerForCamera = UIImagePickerController()
+    var ImgPickerForCamera = UIImagePickerController()
     
     
     @IBOutlet weak var imgView_Picker: UIImageView!
@@ -45,13 +47,37 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
        gender_PickerView.dataSource = self
         
        country_PickerView.dataSource = self
-        country_PickerView.delegate = self
+       country_PickerView.delegate = self
         
         myImgPickerController.delegate = self
-        myImgPickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
-//        ImgPickerForCamera.delegate = self
-//        ImgPickerForCamera.sourceType = .camera
+        name_TextField.delegate = self
+        
+        lastName_TextField.delegate = self
+        
+        password_TextField.delegate = self
+        
+        repeatPassword_TextField.delegate = self
+        
+        email_TextField.delegate = self
+        
+    
+        
+        dbbridge.getCities { (cities) in
+            self.cities = cities
+            self.country_PickerView.reloadAllComponents()
+            self.user.country = self.cities[0]
+
+            
+        }
+
+        gender_PickerView.selectedRow(inComponent: 0)
+        user.Gender = User.staticGender[0]
+        
+        
+        country_PickerView.selectedRow(inComponent: 0)
+        
+        ImgPickerForCamera.delegate = self
 }
     
     
@@ -78,26 +104,41 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         self.user.email = self.email_TextField.text
         self.user.password = self.password_TextField.text
         self.user.birthDate = self.setDateToString(datePicker: self.birthDate_PickerView)
-        self.user.profileImage = UIImage()
+        
         
         if (self.validationField())
             
         {
             
-            user.insertUser(user: user) { (error) in
+            dbbridge.insert(usr: user) { (error) in
                 
                 if (error != nil) {
                     print(error)
                 }
                     
                 else {
-                    print(error)
+
+                    self.dbbridge.insertUserProfileImage(user: self.user, completion:  { (err) in
+                        if err != nil
+                        {
+                            print(err)
+                        }
+                        else
+                        {
+                            print("success")
+                        }
+                    })
+
                 }
             }
         }
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -106,7 +147,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
         
         if pickerView.tag == 1{
-            user.country = User.allCountryList[row]
+            user.country = self.cities[row]
         }
     }
     
@@ -117,7 +158,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
             return User.staticGender.count
         }
         else {
-            return User.allCountryList.count
+           return self.cities.count
         }
     }
     
@@ -127,16 +168,25 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
             return User.staticGender[row]
         }
         else {
-            return User.allCountryList[row]
+            return self.cities[row]
         }
     }
     
     
     
     @IBAction func takePhotoTapped(_ sender: UIButton) {
+        self.ImgPickerForCamera.allowsEditing = true
+        ImgPickerForCamera.sourceType = .camera
+        present(self.ImgPickerForCamera, animated: true, completion: nil)
+
     }
     
     @IBAction func uploadedPhotoTapped(_ sender: UIButton) {
+        self.myImgPickerController.allowsEditing = true
+        myImgPickerController.sourceType = .photoLibrary
+        present(self.myImgPickerController, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -156,21 +206,14 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     }
     
     
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
         
-        
   }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     

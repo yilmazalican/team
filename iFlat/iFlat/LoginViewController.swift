@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
+
 class LoginViewController: UIViewController {
     
     var user = User()
+    var dbbridge2 = FIRUSER()
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -39,27 +41,29 @@ class LoginViewController: UIViewController {
     
     @IBAction func LoginTapped(_ sender: UIButton) {
         
-        self.user.email = emailTextField.text
-        self.user.password = passwordTextField.text
-        
-        if (self.validationLoginField()) {
-            
-            
-            
-            
-           
-            
-            
-            
-            
-            
-            
+        if validationLoginField(){
+            dbbridge2.loginByEmailAndPassword(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (err) in
+                if err != nil {
+                    print("wrong pass")
+                }
+                else{
+               //     self.navigationController
+                    print("sifre dogru")
+                }
+            })
         }
+     
+            
+          }
+            
+            
+            
+
             
         
          }
         
-       }
+
         
         
 
