@@ -1,3 +1,7 @@
+body {
+	background: url(../images/bg.png) repeat;
+
+}
 .flex-container {
     display: -webkit-flex;
     display: flex;
@@ -21,6 +25,10 @@ header {
 }
 footer {
   background: #aaa;color:white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .nav {
   background:#eee;
