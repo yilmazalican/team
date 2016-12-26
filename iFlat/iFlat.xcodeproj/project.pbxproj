@@ -38,6 +38,12 @@
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
 		803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */; };
+		803DE5831E11727100CCB17E /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5821E11727100CCB17E /* Reservation.storyboard */; };
+		803DE5851E117EAF00CCB17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5841E117EAF00CCB17E /* GoogleService-Info.plist */; };
+		803DE5911E11852300CCB17E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5901E11852300CCB17E /* Info.plist */; };
+		803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5D81E11AE6000CCB17E /* CellView.xib */; };
+		803DE5DE1E11AF2900CCB17E /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE5DD1E11AF2900CCB17E /* CellView.swift */; };
+		803DE5E01E11B00200CCB17E /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE5DF1E11B00200CCB17E /* ReservationViewController.swift */; };
 		80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E17F431DFAB5520020C695 /* FiltersViewController.swift */; };
 		80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E17F471DFABE4C0020C695 /* ListFlat.storyboard */; };
 		80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */; };
@@ -123,6 +129,12 @@
 		75591C1553F467511111B928 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7771EB5A3B04A913699C8FAE /* Pods-iFlat-iFlatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImagesCell.swift; sourceTree = "<group>"; };
+		803DE5821E11727100CCB17E /* Reservation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Reservation.storyboard; path = ../../../../../Documents/Reservation.storyboard; sourceTree = "<group>"; };
+		803DE5841E117EAF00CCB17E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		803DE5901E11852300CCB17E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
+		803DE5D81E11AE6000CCB17E /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		803DE5DD1E11AF2900CCB17E /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		803DE5DF1E11B00200CCB17E /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		80E17F431DFAB5520020C695 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		80E17F471DFABE4C0020C695 /* ListFlat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListFlat.storyboard; sourceTree = "<group>"; };
 		80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPlusPicker.swift; sourceTree = "<group>"; };
@@ -285,6 +297,9 @@
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
 				1AC48B911DE6615100505913 /* LaunchScreen.storyboard */,
+				803DE5901E11852300CCB17E /* Info.plist */,
+				803DE5841E117EAF00CCB17E /* GoogleService-Info.plist */,
+
 			);
 			name = Static;
 			sourceTree = "<group>";
@@ -314,6 +329,7 @@
 		1AC48BB91DE661A700505913 /* ErenMVC */ = {
 			isa = PBXGroup;
 			children = (
+				803DE57E1E11720800CCB17E /* Reservation */,
 				462D7F0C1DF5875B0060807B /* FlatProfile */,
 				462D7F0B1DF587530060807B /* ListFlat */,
 			);
@@ -522,6 +538,41 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		803DE57E1E11720800CCB17E /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				803DE5811E11725800CCB17E /* Model */,
+				803DE5801E11724900CCB17E /* View */,
+				803DE57F1E11721700CCB17E /* Controller */,
+			);
+			name = Reservation;
+			sourceTree = "<group>";
+		};
+		803DE57F1E11721700CCB17E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				803DE5DD1E11AF2900CCB17E /* CellView.swift */,
+				803DE5DF1E11B00200CCB17E /* ReservationViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		803DE5801E11724900CCB17E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				803DE5821E11727100CCB17E /* Reservation.storyboard */,
+				803DE5D81E11AE6000CCB17E /* CellView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		803DE5811E11725800CCB17E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9535FE211E07CAE600297E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +747,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				803DE5851E117EAF00CCB17E /* GoogleService-Info.plist in Resources */,
+				803DE5831E11727100CCB17E /* Reservation.storyboard in Resources */,
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
 				955F425E1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
@@ -704,10 +757,12 @@
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
 				951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */,
-				46C2E1961E11981200612EB8 /* Info.plist in Resources */,
+        46C2E1961E11981200612EB8 /* Info.plist in Resources */,
 				46C2E1941E11980400612EB8 /* GoogleService-Info.plist in Resources */,
+				803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */,
 				1AC48B901DE6615100505913 /* Assets.xcassets in Resources */,
 				46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */,
+				803DE5911E11852300CCB17E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,10 +943,12 @@
 				1AD852481E07E67B00A1F5B3 /* FIRFlat.swift in Sources */,
 				9535FE261E07CCA600297E90 /* MenuLauncher.swift in Sources */,
 				1A4917BD1E05EBD6009E39DF /* Datebaby.swift in Sources */,
+				803DE5DE1E11AF2900CCB17E /* CellView.swift in Sources */,
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
 				1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */,
 				803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */,
+				803DE5E01E11B00200CCB17E /* ReservationViewController.swift in Sources */,
 				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
 				953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */,
 				9535FE2A1E07CD5600297E90 /* BaseCell.swift in Sources */,
@@ -1058,7 +1115,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4AZ5F7WC68;
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1077,7 +1134,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4AZ5F7WC68;
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
