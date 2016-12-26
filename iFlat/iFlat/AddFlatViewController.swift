@@ -11,9 +11,55 @@ import UIKit
 
 class AddFlatViewController: UIViewController {
     
+    
+    var addingFlat = Flat()
+    
+    
 var imageCounter = 1
     
+    @IBOutlet weak var priceTextField: UITextField!{
+        didSet{
+            
+            priceTextField.delegate = self
+        }
+    }
+    
+    
 
+    @IBOutlet weak var addressTextView: UITextView!{
+        
+        didSet{
+            
+             addressTextView.layer.cornerRadius = 10
+            addressTextView.delegate = self
+        }
+    }
+    
+    /*
+     var disabled: Bool?
+     var DB_ENDPOINT:FIRFlat
+     var title:String?
+     var flatDescription:String?
+     var city:String?
+     var address:String?
+     var flatCapacity:Int?
+     var bathroomCount:Int?
+     var bedCount:Int?
+     var bedroomCount:Int?
+     var pool:Bool?
+     var internet:Bool?
+     var cooling:Bool?
+     var heating:Bool?
+     var tv:Bool?
+     var washingMachine:Bool?
+     var elevator:Bool?
+     var parking:Bool?
+     var smoking:Bool?
+     var gateKeeper:Bool?
+     var price:Double?
+     var images:[FlatImage]?
+     var userID:String
+ */
     
     var imagePicker = UIImagePickerController()
     
@@ -40,8 +86,7 @@ var imageCounter = 1
     
     @IBOutlet var popUpView: UIView!
     
-    @IBOutlet weak var flatOptionTableView: FlatOptionTableView!
-    
+       
     @IBOutlet weak var flatTitleTextField: UITextField!{
         
         didSet{
@@ -161,7 +206,20 @@ extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDel
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-     //TODO:FLAT DESCRİPTİON WİLL BE SET.
+       
+        
+        if textView.tag == 0 {
+            
+            
+            addingFlat.address = textView.text
+            
+        }
+        
+        else {
+            
+            addingFlat.flatDescription = textView.text
+            
+        }
     }
     
     
@@ -179,6 +237,7 @@ extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDel
         
         if mediaType == (kUTTypeImage as String) {
            self.defaultHomeImage.insert((info[UIImagePickerControllerOriginalImage] as? UIImage)!, at: imageCounter-1)
+          
             defaultHomeImage.removeLast()
           flatScrollView.willRemoveSubview(flatScrollView.subviews.last!)
             
@@ -203,6 +262,7 @@ extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDel
         
         if text == "\n" {
             flatDescriptionTextView.resignFirstResponder()
+            addressTextView.resignFirstResponder()
             return false
         }
         
