@@ -102,10 +102,12 @@ class EntranceViewController: UIViewController {
                 
                 if let controller :ListFlatViewController = navigation.topViewController as? ListFlatViewController {
 
-                
+                    if let city =   searchParameter.whereParameter {
+                        controller.receivedFilter.city = city
+                    
 
-                controller.receivedFilter.city = searchParameter.whereParameter!
-                if let from = searchParameter.fromParameter {
+
+                               if let from = searchParameter.fromParameter {
                     
                     controller.receivedFilter.fromDate = Date(dateString: from)
                     if let to = searchParameter.toParameter {
@@ -115,7 +117,7 @@ class EntranceViewController: UIViewController {
                         if let capacity = searchParameter.numberOfSize {
                             
                             controller.receivedFilter.capacity = Int(capacity)!
-                            
+                            }
                             
                             
                         }
