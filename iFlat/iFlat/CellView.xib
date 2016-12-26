@@ -12,11 +12,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CellView" customModule="iFlat" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="82" height="87"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuJ-DC-Oxd">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <color key="backgroundColor" red="1" green="0.96008697060000003" blue="0.77073150170000004" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZB-3z-7jV">
-                    <rect key="frame" x="20" y="33" width="42" height="21"/>
+                    <rect key="frame" x="29" y="40" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -25,12 +29,17 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <accessibility key="accessibilityConfiguration" identifier="CellView"/>
             <constraints>
-                <constraint firstItem="GZB-3z-7jV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wi7-Td-JfX"/>
-                <constraint firstItem="GZB-3z-7jV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Z2p-C3-4rr"/>
+                <constraint firstItem="ZuJ-DC-Oxd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="01J-l2-VbW"/>
+                <constraint firstAttribute="trailing" secondItem="ZuJ-DC-Oxd" secondAttribute="trailing" id="7FO-Ur-BLk"/>
+                <constraint firstItem="ZuJ-DC-Oxd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NP9-KI-VCa"/>
+                <constraint firstItem="ZuJ-DC-Oxd" firstAttribute="centerY" secondItem="GZB-3z-7jV" secondAttribute="centerY" id="cdA-sX-pS8"/>
+                <constraint firstAttribute="bottom" secondItem="ZuJ-DC-Oxd" secondAttribute="bottom" id="jBk-wv-Yrp"/>
+                <constraint firstItem="ZuJ-DC-Oxd" firstAttribute="centerX" secondItem="GZB-3z-7jV" secondAttribute="centerX" id="kya-vc-UTO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="GZB-3z-7jV" id="yRs-Kj-UCg"/>
+                <outlet property="selectedView" destination="ZuJ-DC-Oxd" id="0I5-Pc-Bwf"/>
             </connections>
             <point key="canvasLocation" x="-32" y="-62.5"/>
         </view>
