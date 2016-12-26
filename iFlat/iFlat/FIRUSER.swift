@@ -32,6 +32,7 @@ protocol FIRUSERDelegate :class
     func getUserRates(userID:String, completion: @escaping ([Rate]?) -> ())
     func changeUserProfileImage(user:ManipulableUser,img:UIImage, completion: @escaping (String?) -> ())
     func getCities(completion: @escaping ([String]) -> ())
+    func forgotPassword(email:String, completion: @escaping (String?) -> ())
 
 }
 
@@ -40,6 +41,21 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func forgotPassword(email: String, completion: @escaping (String?) -> ()) {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (err) in
+            if err != nil
+            {
+                print(err)
+                return
+            }
+            else
+            {
+                completion(nil)
+                return
+            }
+        })
+    }
+
     internal func getCities(completion: @escaping ([String]) -> ()) {
         FIRREF.instance().getRef().child("cities").queryOrderedByKey().observe(.value, with: { (ss) in
         var arr = [String]()
@@ -192,7 +208,7 @@ class FIRUSER: FIRUSERDelegate {
             else
             {
                 completion(e.debugDescription)
-                return
+                
             }
         })
     }
@@ -331,9 +347,7 @@ class FIRUSER: FIRUSERDelegate {
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
                             usr.id = user?.uid
-                            self.logout(completion: { (c) in //Preventing Auto Login!
-                                completion(nil)
-                            })
+                            completion(nil)
                         }
                             
                         else
