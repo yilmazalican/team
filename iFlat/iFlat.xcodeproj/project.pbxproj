@@ -86,9 +86,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10BA7B8B0ACD6851D7E5E3D1 /* Pods-iFlat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.release.xcconfig"; sourceTree = "<group>"; };
 		1A0A1DB81E11B95300102B42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A0A1DBC1E11BA3800102B42 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
-		10BA7B8B0ACD6851D7E5E3D1 /* Pods-iFlat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.release.xcconfig"; sourceTree = "<group>"; };
 		1A14671A1E093C1900B691EF /* FilteredFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredFlat.swift; sourceTree = "<group>"; };
 		1A24DAE11E036A6E00C49269 /* Querymaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Querymaster.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
@@ -696,7 +696,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 4AZ5F7WC68;
+						DevelopmentTeam = 97TQ8HBR2G;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -1108,7 +1108,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4AZ5F7WC68;
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1127,7 +1127,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4AZ5F7WC68;
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
