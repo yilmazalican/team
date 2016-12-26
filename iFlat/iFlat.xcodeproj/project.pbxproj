@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0A1DB91E11B95300102B42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A0A1DB81E11B95300102B42 /* GoogleService-Info.plist */; };
+		1A0A1DBD1E11BA3800102B42 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A0A1DBC1E11BA3800102B42 /* Info.plist */; };
 		1A14671B1E093C1900B691EF /* FilteredFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14671A1E093C1900B691EF /* FilteredFlat.swift */; };
 		1A24DAE21E036A6E00C49269 /* Querymaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24DAE11E036A6E00C49269 /* Querymaster.swift */; };
 		1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4917BA1E05DC69009E39DF /* Rate.swift */; };
@@ -33,14 +35,11 @@
 		462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */; };
 		462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */; };
 		46C2E1941E11980400612EB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46C2E1931E11980400612EB8 /* GoogleService-Info.plist */; };
-		46C2E1961E11981200612EB8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46C2E1951E11981200612EB8 /* Info.plist */; };
 		46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Authentication.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
 		803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */; };
 		803DE5831E11727100CCB17E /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5821E11727100CCB17E /* Reservation.storyboard */; };
-		803DE5851E117EAF00CCB17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5841E117EAF00CCB17E /* GoogleService-Info.plist */; };
-		803DE5911E11852300CCB17E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5901E11852300CCB17E /* Info.plist */; };
 		803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5D81E11AE6000CCB17E /* CellView.xib */; };
 		803DE5DE1E11AF2900CCB17E /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE5DD1E11AF2900CCB17E /* CellView.swift */; };
 		803DE5E01E11B00200CCB17E /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE5DF1E11B00200CCB17E /* ReservationViewController.swift */; };
@@ -88,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		10BA7B8B0ACD6851D7E5E3D1 /* Pods-iFlat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.release.xcconfig"; sourceTree = "<group>"; };
+		1A0A1DB81E11B95300102B42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A0A1DBC1E11BA3800102B42 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
 		1A14671A1E093C1900B691EF /* FilteredFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredFlat.swift; sourceTree = "<group>"; };
 		1A24DAE11E036A6E00C49269 /* Querymaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Querymaster.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatViewController.swift; sourceTree = "<group>"; };
 		462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatCollectionViewCell.swift; sourceTree = "<group>"; };
 		46C2E1931E11980400612EB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		46C2E1951E11981200612EB8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
 		46E8E9981DF09B1900C265E3 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +130,6 @@
 		7771EB5A3B04A913699C8FAE /* Pods-iFlat-iFlatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImagesCell.swift; sourceTree = "<group>"; };
 		803DE5821E11727100CCB17E /* Reservation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Reservation.storyboard; path = ../../../../../Documents/Reservation.storyboard; sourceTree = "<group>"; };
-		803DE5841E117EAF00CCB17E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		803DE5901E11852300CCB17E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
 		803DE5D81E11AE6000CCB17E /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		803DE5DD1E11AF2900CCB17E /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		803DE5DF1E11B00200CCB17E /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
@@ -291,15 +289,13 @@
 		1AC48BB61DE6616300505913 /* Static */ = {
 			isa = PBXGroup;
 			children = (
-				46C2E1951E11981200612EB8 /* Info.plist */,
 				46C2E1931E11980400612EB8 /* GoogleService-Info.plist */,
 				1A8083611DF1838D009655AD /* UTILITY */,
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
 				1AC48B911DE6615100505913 /* LaunchScreen.storyboard */,
-				803DE5901E11852300CCB17E /* Info.plist */,
-				803DE5841E117EAF00CCB17E /* GoogleService-Info.plist */,
-
+				1A0A1DB81E11B95300102B42 /* GoogleService-Info.plist */,
+				1A0A1DBC1E11BA3800102B42 /* Info.plist */,
 			);
 			name = Static;
 			sourceTree = "<group>";
@@ -747,7 +743,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803DE5851E117EAF00CCB17E /* GoogleService-Info.plist in Resources */,
 				803DE5831E11727100CCB17E /* Reservation.storyboard in Resources */,
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
 				955F425E1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard in Resources */,
@@ -756,13 +751,13 @@
 				1A6CA5781E047A44009B4512 /* ControlPanel.storyboard in Resources */,
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
+				1A0A1DBD1E11BA3800102B42 /* Info.plist in Resources */,
 				951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */,
-        46C2E1961E11981200612EB8 /* Info.plist in Resources */,
+				1A0A1DB91E11B95300102B42 /* GoogleService-Info.plist in Resources */,
 				46C2E1941E11980400612EB8 /* GoogleService-Info.plist in Resources */,
 				803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */,
 				1AC48B901DE6615100505913 /* Assets.xcassets in Resources */,
 				46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */,
-				803DE5911E11852300CCB17E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
