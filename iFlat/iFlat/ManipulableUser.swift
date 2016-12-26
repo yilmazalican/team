@@ -27,4 +27,3 @@ protocol ManipulableUser :class
     func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ())
     
 }
-

@@ -9,92 +9,77 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
-    private var DB_ENDPOINT:FIRUSERDelegate?
+
+class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
     
-   var user = User()
-   
+    var user = User()
+    var dbbridge2 = FIRUSER()
+    
     @IBOutlet weak var emailTextField: UITextField!
-
-    @IBOutlet weak var passwordTextField:  UITextField!
     
+    @IBOutlet weak var passwordTextField: UITextField!
     
-
     override func viewDidLoad() {
-      
+        
         super.viewDidLoad()
-        FIRREF.instance().getRef().child("user_flats/" + "user2").observe(.value, with: { (ss) in
-            
-            for a in ss.children
-            {
-                let b = a as! FIRDataSnapshot
-                let objdict = b.value as! [String:String]
-                print(objdict["name"])
-                
-            }
-        })
-   
-   
-   
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         
-        
-}
+    }
     
-    func dbLoginValidation() -> Bool {
+    func validationLoginField() -> Bool {
         
-        if user.email != nil || user.password != nil {
+        if emailTextField.text != nil && passwordTextField.text != nil {
             
             return true
         }
-        
-        else{
             
-            return  false
-    }
-    }
-    
-    func LoginValidation() -> Bool {
-        
-        if user.email == emailTextField.text || user.password == passwordTextField.text {
-            
-            return true
-        }
-        
-        else{
+        else {
             
             return false
         }
     }
     
-
-    @IBAction func LoginButtonTapped(_ sender: UIButton) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func LoginTapped(_ sender: UIButton) {
         
-        if LoginValidation(){
-            if dbLoginValidation(){
-                //
-            }
+        if validationLoginField(){
+            dbbridge2.loginByEmailAndPassword(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (err) in
+                if err != nil {
+                    self.showAlert(title: "Error", message: "Fill in the blanks correctly.")
+                }
+                else{
+
+                    
+                    print("sifre dogru")
+                }
+            })
             
-            //
         }
         
-        else{
+        
+        
+     
             
-        }
+          }
+            
+            
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // logine yalnışsada gidior.
+        return true
+    }
+            
         
-    }
-    
-    
-    @IBAction func registerButtonTapped(_ sender: UIButton) {
-    }
-    
-    
+         }
+        
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
         
-    }
-    
-   
-    
-}
+        
+
+

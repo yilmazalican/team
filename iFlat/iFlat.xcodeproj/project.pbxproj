@@ -36,6 +36,7 @@
 		46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Authentication.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
+		803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */; };
 		80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E17F431DFAB5520020C695 /* FiltersViewController.swift */; };
 		80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E17F471DFABE4C0020C695 /* ListFlat.storyboard */; };
 		80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */; };
@@ -120,6 +121,7 @@
 		754FD5635DE2FCAEA85E3DC4 /* Pods-iFlat-iFlatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75591C1553F467511111B928 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7771EB5A3B04A913699C8FAE /* Pods-iFlat-iFlatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImagesCell.swift; sourceTree = "<group>"; };
 		80E17F431DFAB5520020C695 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		80E17F471DFABE4C0020C695 /* ListFlat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListFlat.storyboard; sourceTree = "<group>"; };
 		80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPlusPicker.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		1AC48BBA1DE661AD00505913 /* MevaMVC */ = {
 			isa = PBXGroup;
 			children = (
+				46A4EBD61E09D91900DE3B5D /* Model */,
 				46E8E9AE1DF0A0AF00C265E3 /* Controller */,
 				46E8E9981DF09B1900C265E3 /* Authentication.storyboard */,
 			);
@@ -472,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				462D7F151DF588760060807B /* FlatProfileViewController.swift */,
+				803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -498,6 +502,13 @@
 			children = (
 				462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */,
 				80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		46A4EBD61E09D91900DE3B5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -637,7 +648,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 9RDWH786DV;
+						DevelopmentTeam = 4AZ5F7WC68;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -878,6 +889,7 @@
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
 				1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */,
+				803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */,
 				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
 				953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */,
 				9535FE2A1E07CD5600297E90 /* BaseCell.swift in Sources */,
@@ -1042,7 +1054,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9RDWH786DV;
+				DEVELOPMENT_TEAM = 4AZ5F7WC68;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1061,7 +1073,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9RDWH786DV;
+				DEVELOPMENT_TEAM = 4AZ5F7WC68;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
