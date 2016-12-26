@@ -31,7 +31,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
     
     func validationLoginField() -> Bool {
         
-        if emailTextField.text != nil && passwordTextField.text != nil {
+        if !(emailTextField.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)!{
             
             return true
         }
@@ -47,36 +47,82 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
         return true
     }
     
+    @IBAction func forgotPasswordTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Forgot Password", message: "Enter your email", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter your email..."
+        }
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { [weak alert] (_) in
+            if let textField = alert?.textFields![0] {
+                self.dbbridge2.forgotPassword(email: (textField.text)!, completion: { (err) in
+                    if err != nil
+                    {
+                        let alert2 = UIAlertController(title: "Error Password", message: "User not found or Badly Formatted Email", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default) {
+                            UIAlertAction in
+                        }
+                        alert2.addAction(okAction)
+                        self.present(alert2, animated: true, completion: nil)
+                    }
+                    else
+                    {
+                        let alert3 = UIAlertController(title: "Success", message: "Reset password email sent! Check your email.", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default) {
+                            UIAlertAction in
+                        }
+                        alert3.addAction(okAction)
+                        self.present(alert3, animated: true, completion: nil)
+
+                    }
+                })}
+        }))
+        self.present(alert, animated: true, completion: nil)
+
+
+    }
+    
     @IBAction func LoginTapped(_ sender: UIButton) {
         
         if validationLoginField(){
             dbbridge2.loginByEmailAndPassword(email: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (err) in
-                if err != nil {
-                    self.showAlert(title: "Error", message: "Fill in the blanks correctly.")
+                if (err != nil) {
+                    self.showAlert(title: "Error", message: "Wrong Password")
                 }
                 else{
-
-                    
-                    print("sifre dogru")
+                    self.dbbridge2.isUserVerified(completion: { (b) in
+                        if b
+                        {
+                            print("verified")
+                        }
+                        else{
+                            self.showAlert(title: "Error", message: "Please check your email to verify")
+                        }
+                    })
+//                    var storyboard: UIStoryboard = UIStoryboard(name: "TolgaStoryBoard", bundle: nil)
+//                    var vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! EntranceViewController
+//                    self.show(vc, sender: self)
                 }
             })
             
         }
+        else
+        {
+            self.showAlert(title: "Error", message: "Fill in the blanks!")
+
+        }
         
-        
+             
         
      
             
           }
             
             
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        // logine yalnışsada gidior.
-        return true
+    
     }
             
         
-         }
+      
         
 
         

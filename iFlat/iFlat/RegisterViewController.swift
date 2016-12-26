@@ -9,7 +9,7 @@
 import UIKit
 
 
-class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString {
+class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString,ShowAlert {
   
     var cities = [String]()
     var user = User()
@@ -86,7 +86,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     func validationField() -> Bool {
         
-        if imgView_Picker.image != nil && name_TextField.text != nil && lastName_TextField.text != nil && email_TextField.text != nil && password_TextField.text != nil && repeatPassword_TextField.text != nil && (password_TextField.text?.characters.count)! >= 6 && repeatPassword_TextField.text == password_TextField.text  {
+        if imgView_Picker.image != nil && !(name_TextField.text?.isEmpty)! && !(lastName_TextField.text?.isEmpty)! && !(email_TextField.text?.isEmpty)! && !(password_TextField.text?.isEmpty)! && !(repeatPassword_TextField.text?.isEmpty)! && (password_TextField.text?.characters.count)! >= 6 && repeatPassword_TextField.text == password_TextField.text  {
             
             return true
         }
@@ -125,7 +125,17 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                         }
                         else
                         {
-                            print("success")
+                              self.showAlert(title: "Error", message: "Fill in the blanks!")
+                            
+                            self.dbbridge.sendverificationEmail(completion: { (err) in
+                                if err != nil{
+                                    print(err)
+                                }
+                                
+                                else{
+                                    print("email send")
+                                }
+                            })
                         }
                     })
 
