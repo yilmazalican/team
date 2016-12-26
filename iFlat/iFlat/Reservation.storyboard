@@ -22,24 +22,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stW-WP-KDJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4n-6h-13O">
+                                <rect key="frame" x="16" y="107" width="343" height="540"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stW-WP-KDJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                        <rect key="frame" x="33" y="116" width="277" height="308"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzU-sj-ZGV">
+                                        <rect key="frame" x="8" y="29" width="327" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon Tue Wed Thu Fri Sat Sun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-uZ-8pQ">
+                                        <rect key="frame" x="33" y="87" width="277" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="stW-WP-KDJ" firstAttribute="centerY" secondItem="N4n-6h-13O" secondAttribute="centerY" id="3I0-TQ-i0X"/>
+                                    <constraint firstItem="VmN-uZ-8pQ" firstAttribute="top" secondItem="JzU-sj-ZGV" secondAttribute="bottom" constant="37" id="86K-FC-yqx"/>
+                                    <constraint firstItem="stW-WP-KDJ" firstAttribute="top" secondItem="VmN-uZ-8pQ" secondAttribute="bottom" constant="8" symbolic="YES" id="CDj-0H-uKt"/>
+                                    <constraint firstAttribute="trailing" secondItem="JzU-sj-ZGV" secondAttribute="trailing" constant="8" id="EdE-Ac-dbX"/>
+                                    <constraint firstItem="JzU-sj-ZGV" firstAttribute="centerX" secondItem="VmN-uZ-8pQ" secondAttribute="centerX" id="Giq-05-BGh"/>
+                                    <constraint firstItem="JzU-sj-ZGV" firstAttribute="centerX" secondItem="N4n-6h-13O" secondAttribute="centerX" id="PYT-FO-IKF"/>
+                                    <constraint firstItem="VmN-uZ-8pQ" firstAttribute="trailing" secondItem="stW-WP-KDJ" secondAttribute="trailing" id="Y94-Ku-5nb"/>
+                                    <constraint firstItem="JzU-sj-ZGV" firstAttribute="top" secondItem="N4n-6h-13O" secondAttribute="top" constant="29" id="YgU-lV-hp5"/>
+                                    <constraint firstItem="VmN-uZ-8pQ" firstAttribute="leading" secondItem="N4n-6h-13O" secondAttribute="leading" constant="33" id="nAf-YR-bm2"/>
+                                    <constraint firstItem="VmN-uZ-8pQ" firstAttribute="leading" secondItem="stW-WP-KDJ" secondAttribute="leading" id="p2q-h5-wZ8"/>
+                                    <constraint firstItem="JzU-sj-ZGV" firstAttribute="leading" secondItem="N4n-6h-13O" secondAttribute="leading" constant="8" id="uAs-QZ-34s"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="stW-WP-KDJ" firstAttribute="centerY" secondItem="bM7-lv-T32" secondAttribute="centerY" id="2AN-xz-fyV"/>
-                            <constraint firstItem="stW-WP-KDJ" firstAttribute="centerX" secondItem="bM7-lv-T32" secondAttribute="centerX" id="DjS-hF-hCM"/>
-                            <constraint firstItem="stW-WP-KDJ" firstAttribute="leading" secondItem="bM7-lv-T32" secondAttribute="leadingMargin" constant="51" id="FWW-Oe-7d4"/>
-                            <constraint firstItem="stW-WP-KDJ" firstAttribute="top" secondItem="eGC-bM-r4f" secondAttribute="bottom" constant="249" id="qo1-wl-CSo"/>
+                            <constraint firstItem="N4n-6h-13O" firstAttribute="top" secondItem="eGC-bM-r4f" secondAttribute="bottom" constant="87" id="F4W-9r-Ivx"/>
+                            <constraint firstItem="N4n-6h-13O" firstAttribute="leading" secondItem="bM7-lv-T32" secondAttribute="leadingMargin" id="IUC-Mw-cY3"/>
+                            <constraint firstAttribute="bottom" secondItem="N4n-6h-13O" secondAttribute="bottom" constant="20" symbolic="YES" id="cm3-EI-Gxi"/>
+                            <constraint firstItem="N4n-6h-13O" firstAttribute="trailing" secondItem="bM7-lv-T32" secondAttribute="trailingMargin" id="zVd-vN-T4b"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="stW-WP-KDJ" id="kLK-uX-9BU"/>
+                        <outlet property="yearLabel" destination="JzU-sj-ZGV" id="W74-us-ZGQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQF-f7-zbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
