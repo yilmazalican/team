@@ -41,7 +41,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-Ad-X1Z">
-                                <rect key="frame" x="209" y="421" width="150" height="100"/>
+                                <rect key="frame" x="209" y="361" width="150" height="100"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="LvG-aZ-4Dd" kind="show" id="Rjn-Zu-IWr"/>
@@ -60,10 +60,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePR-gd-rT8">
-                                <rect key="frame" x="16" y="421" width="150" height="100"/>
+                                <rect key="frame" x="16" y="361" width="150" height="100"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="LoginTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="vGY-Mr-evE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ur8-j2-CmV">
+                                <rect key="frame" x="130" y="430" width="115" height="30"/>
+                                <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <action selector="forgotPasswordTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="C5a-2h-ACe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,12 +84,14 @@
                             <constraint firstItem="ST9-aY-EcI" firstAttribute="trailing" secondItem="WnG-8Q-vhG" secondAttribute="trailingMargin" id="V35-oA-n1T"/>
                             <constraint firstItem="ST9-aY-EcI" firstAttribute="leading" secondItem="WnG-8Q-vhG" secondAttribute="leadingMargin" id="Vni-a7-yzS"/>
                             <constraint firstItem="akF-Op-GXA" firstAttribute="leading" secondItem="WnG-8Q-vhG" secondAttribute="leadingMargin" id="WYm-1p-WpN"/>
+                            <constraint firstItem="ur8-j2-CmV" firstAttribute="centerX" secondItem="WnG-8Q-vhG" secondAttribute="centerX" id="XoO-3o-HyM"/>
                             <constraint firstItem="ST9-aY-EcI" firstAttribute="top" secondItem="akF-Op-GXA" secondAttribute="bottom" constant="5" id="ZG8-8k-gPn"/>
                             <constraint firstItem="2Ne-Ad-X1Z" firstAttribute="top" secondItem="ST9-aY-EcI" secondAttribute="bottom" constant="5" id="eyj-af-Ueu"/>
                             <constraint firstItem="u7d-eg-7Kw" firstAttribute="leading" secondItem="WnG-8Q-vhG" secondAttribute="leadingMargin" id="fAP-uy-RnI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Ne-Ad-X1Z" secondAttribute="trailing" constant="50" id="qL8-Xx-2rE"/>
                             <constraint firstItem="3fF-Sm-912" firstAttribute="trailing" secondItem="WnG-8Q-vhG" secondAttribute="trailingMargin" constant="5" id="rQT-wX-xMc"/>
                             <constraint firstItem="u7d-eg-7Kw" firstAttribute="top" secondItem="734-df-jyl" secondAttribute="bottom" constant="50" id="sEC-yk-qAr"/>
+                            <constraint firstItem="ur8-j2-CmV" firstAttribute="top" secondItem="ST9-aY-EcI" secondAttribute="bottom" constant="120" id="v6x-9e-hHc"/>
                             <constraint firstItem="3fF-Sm-912" firstAttribute="top" secondItem="u7d-eg-7Kw" secondAttribute="bottom" constant="5" id="zVA-GP-wgL"/>
                             <constraint firstItem="734-df-jyl" firstAttribute="top" secondItem="enP-EV-r4q" secondAttribute="bottom" constant="48" id="zjW-cZ-I1n"/>
                         </constraints>
@@ -133,7 +142,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryA-5H-OOX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultimage" translatesAutoresizingMaskIntoConstraints="NO" id="RKy-qK-hAx">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RKy-qK-hAx">
                                                 <rect key="frame" x="137.5" y="20" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="B97-Se-Uf2"/>
@@ -354,7 +363,4 @@
             <point key="canvasLocation" x="-1346.4000000000001" y="-1120.8395802098951"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="defaultimage" width="225" height="225"/>
-    </resources>
 </document>
