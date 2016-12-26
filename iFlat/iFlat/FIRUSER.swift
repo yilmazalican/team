@@ -331,7 +331,7 @@ class FIRUSER: FIRUSERDelegate {
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
                             usr.id = user?.uid
-
+                            completion(nil)
                         }
                             
                         else
