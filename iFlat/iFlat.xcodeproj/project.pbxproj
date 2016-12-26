@@ -50,9 +50,9 @@
 		9535FE2C1E07F6EB00297E90 /* FlatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535FE2B1E07F6EB00297E90 /* FlatExtension.swift */; };
 		953CCFB81E0EDDAE002FC590 /* ConvertUrlToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CCFB71E0EDDAE002FC590 /* ConvertUrlToImage.swift */; };
 		953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CCFB91E0EFE90002FC590 /* UserExtension.swift */; };
+		955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */; };
+		955F425E1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F425D1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard */; };
 		9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */; };
-		9564AB241DFFD6AA0059DCC6 /* FlatOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */; };
-		9564AB261DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */; };
 		957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */; };
 		95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC4F141DFAD82700A7F106 /* FilterModel.swift */; };
 		95D9EBB31DF65E690066156F /* ConvertString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9EBB21DF65E690066156F /* ConvertString.swift */; };
@@ -136,9 +136,9 @@
 		9535FE2B1E07F6EB00297E90 /* FlatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatExtension.swift; sourceTree = "<group>"; };
 		953CCFB71E0EDDAE002FC590 /* ConvertUrlToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertUrlToImage.swift; sourceTree = "<group>"; };
 		953CCFB91E0EFE90002FC590 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
+		955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfileStoryBoard.storyboard; sourceTree = "<group>"; };
+		955F425D1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFlatStoryBoard.storyboard; sourceTree = "<group>"; };
 		9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlatViewController.swift; sourceTree = "<group>"; };
-		9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatOptionTableView.swift; sourceTree = "<group>"; };
-		9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatOptionTableViewCell.swift; sourceTree = "<group>"; };
 		957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenterEditOwnProfieController.swift; sourceTree = "<group>"; };
 		95AC4F141DFAD82700A7F106 /* FilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		95D9EBB21DF65E690066156F /* ConvertString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertString.swift; sourceTree = "<group>"; };
@@ -301,10 +301,9 @@
 		1AC48BB81DE661A000505913 /* TolgaMVC */ = {
 			isa = PBXGroup;
 			children = (
-				951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */,
+				955F425C1E11305D00A5BA5A /* StoryBoards */,
 				9535FE211E07CAE600297E90 /* Model */,
 				957A656B1DF5D94C00844766 /* Controller */,
-				957A656C1DF5D95E00844766 /* Table View */,
 				9535FE241E07CC8200297E90 /* PopUpMenu */,
 				95D9EBB11DF65E500066156F /* Protocols&Extension */,
 			);
@@ -542,6 +541,16 @@
 			name = PopUpMenu;
 			sourceTree = "<group>";
 		};
+		955F425C1E11305D00A5BA5A /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */,
+				955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */,
+				955F425D1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
 		957A656B1DF5D94C00844766 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,15 +559,6 @@
 				951A929B1DF4E23100199B83 /* EntranceViewController.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		957A656C1DF5D95E00844766 /* Table View */ = {
-			isa = PBXGroup;
-			children = (
-				9564AB231DFFD6AA0059DCC6 /* FlatOptionTableView.swift */,
-				9564AB251DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift */,
-			);
-			name = "Table View";
 			sourceTree = "<group>";
 		};
 		95D9EBB11DF65E500066156F /* Protocols&Extension */ = {
@@ -648,7 +648,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 4AZ5F7WC68;
+						DevelopmentTeam = 9RDWH786DV;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -697,8 +697,10 @@
 			files = (
 				1A43261A1E099B0C00CF9D5C /* DenemeStroyboard.storyboard in Resources */,
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
+				955F425E1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard in Resources */,
 				1A5354AD1DE663B400353614 /* GoogleService-Info.plist in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
+				955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */,
 				1A6CA5781E047A44009B4512 /* ControlPanel.storyboard in Resources */,
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
 				951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */,
@@ -868,7 +870,6 @@
 			files = (
 				95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */,
 				957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */,
-				9564AB261DFFD6B70059DCC6 /* FlatOptionTableViewCell.swift in Sources */,
 				1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */,
 				1A14671B1E093C1900B691EF /* FilteredFlat.swift in Sources */,
 				9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */,
@@ -884,7 +885,6 @@
 				953CCFB81E0EDDAE002FC590 /* ConvertUrlToImage.swift in Sources */,
 				1AD852481E07E67B00A1F5B3 /* FIRFlat.swift in Sources */,
 				9535FE261E07CCA600297E90 /* MenuLauncher.swift in Sources */,
-				9564AB241DFFD6AA0059DCC6 /* FlatOptionTableView.swift in Sources */,
 				1A4917BD1E05EBD6009E39DF /* Datebaby.swift in Sources */,
 				1ADCD02C1DF1817200CC08F9 /* ManipulableUser.swift in Sources */,
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
@@ -993,7 +993,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1038,7 +1038,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1054,9 +1054,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4AZ5F7WC68;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1073,9 +1073,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4AZ5F7WC68;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
