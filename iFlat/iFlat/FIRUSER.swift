@@ -331,9 +331,7 @@ class FIRUSER: FIRUSERDelegate {
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
                             usr.id = user?.uid
-                            self.logout(completion: { (c) in //Preventing Auto Login!
-                                completion(nil)
-                            })
+
                         }
                             
                         else
