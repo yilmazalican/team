@@ -23,6 +23,7 @@
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="CellView"/>
             <constraints>
                 <constraint firstItem="GZB-3z-7jV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wi7-Td-JfX"/>
                 <constraint firstItem="GZB-3z-7jV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Z2p-C3-4rr"/>
