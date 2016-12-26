@@ -45,7 +45,7 @@ class FIRUSER: FIRUSERDelegate {
         FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (err) in
             if err != nil
             {
-                completion(err)
+                completion(err.debugDescription)
                 return
             }
             else
