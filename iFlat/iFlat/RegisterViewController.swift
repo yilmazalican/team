@@ -114,6 +114,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                 
                 if (error != nil) {
                     print(error)
+                    self.showAlert(title: "Error", message: "Error occured")
+
                 }
                     
                 else {
@@ -122,10 +124,12 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                         if err != nil
                         {
                             print(err)
+                             self.showAlert(title: "Error", message: "Error occured")
                         }
                         else
                         {
-                              self.showAlert(title: "Error", message: "Fill in the blanks!")
+                           
+                            print("success")
                             
                             self.dbbridge.sendverificationEmail(completion: { (err) in
                                 if err != nil{
@@ -133,6 +137,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                                 }
                                 
                                 else{
+                                    self.showAlert(title: "Success", message: "Registration is completed,check your email")
                                     print("email send")
                                 }
                             })
