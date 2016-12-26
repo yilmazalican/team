@@ -19,6 +19,8 @@ class ReservationViewController: UIViewController {
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView") // Registering your cell is manditory
         
+        calendarView.registerHeaderView(xibFileNames: ["CalendarHeader"])
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +38,18 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        let startDate = formatter.date(from: "2016 12 26")! // You can use date generated from a formatter
-        let endDate = Date()                                // You can also use dates created from this function
+        let startDate = Date()
+        let endDate = startDate.addingTimeInterval(TimeInterval(31536000))
+        
+        //let startDate = formatter.date(from: "2016 01 26")! // You can use date generated from a formatter
+        //let endDate = Date()                                // You can also use dates created from this function
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
             calendar: Calendar.current,
             generateInDates: .forAllMonths,
             generateOutDates: .tillEndOfGrid,
-            firstDayOfWeek: .sunday)
+            firstDayOfWeek: .monday)
         return parameters
     }
     
@@ -60,5 +65,25 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         } else {
             myCustomCell.dayLabel.textColor = UIColor.gray
         }
+        
+        
     }
+    // This sets the height of your header
+    func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
+        return CGSize(width: 200, height: 50)
+    }
+    // This setups the display of your header
+    func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let middleDay = (Int(range.start.toTimeStamp())! + Int(range.end.toTimeStamp())!)/2
+        
+        let intMonth = calendar.component(.month, from: Date(timeIntervalSinceNow: TimeInterval(middleDay)))
+        let monthName = DateFormatter().monthSymbols[(intMonth-1)%12]
+        let headerCell = (header as? CalendarHeader)
+        headerCell?.calendarHeaderLabel.text = String(monthName)
+    }
+    
+    
 }
