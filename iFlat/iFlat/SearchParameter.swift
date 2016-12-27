@@ -23,19 +23,26 @@ class SearchParameter {
     static let three = "3"
     static let two = "2"
     static let one = "1"
-    static let moreThan4 = "4+"
+    static let moreThan4 = "5"
     
     
     static let   selectBedroom = "Select number of bedroom."
     
     static let   selectBed = "Select number of bed."
     
+    static let selectCapacity = "Select number of capacity."
+    
+    static let selectBathroom = "Select number of bathroom"
+    
+    static let bathroomSize = [SearchParameter.selectBathroom,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.moreThan4]
     
     static let bedroomSize = [SearchParameter.selectBedroom,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.moreThan4]
     
+    
+    static let capacity = [SearchParameter.selectCapacity,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.moreThan4]
 
     
-    static let roomSize = [SearchParameter.selectBed,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.moreThan4]
+    static let bedSize = [SearchParameter.selectBed,SearchParameter.one,SearchParameter.two,SearchParameter.three,SearchParameter.moreThan4]
     
     
     

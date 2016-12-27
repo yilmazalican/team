@@ -32,6 +32,7 @@
 		462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F151DF588760060807B /* FlatProfileViewController.swift */; };
 		462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */; };
 		462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */; };
+		467258AD1E13036A00EF6FAE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 467258AC1E13036A00EF6FAE /* Info.plist */; };
 		46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Authentication.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
@@ -44,7 +45,6 @@
 		80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E17F471DFABE4C0020C695 /* ListFlat.storyboard */; };
 		80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */; };
 		951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */; };
-		951A929A1DF4E22800199B83 /* SearchParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A92991DF4E22800199B83 /* SearchParameter.swift */; };
 		951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A929B1DF4E23100199B83 /* EntranceViewController.swift */; };
 		9535FE231E07CB0400297E90 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535FE221E07CB0400297E90 /* Menu.swift */; };
 		9535FE261E07CCA600297E90 /* MenuLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535FE251E07CCA600297E90 /* MenuLauncher.swift */; };
@@ -54,12 +54,13 @@
 		953CCFB81E0EDDAE002FC590 /* ConvertUrlToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CCFB71E0EDDAE002FC590 /* ConvertUrlToImage.swift */; };
 		953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CCFB91E0EFE90002FC590 /* UserExtension.swift */; };
 		955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */; };
-		955F425E1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F425D1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard */; };
-		9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */; };
 		957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */; };
 		95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC4F141DFAD82700A7F106 /* FilterModel.swift */; };
 		95D9EBB31DF65E690066156F /* ConvertString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9EBB21DF65E690066156F /* ConvertString.swift */; };
 		95D9EBB71DF6668A0066156F /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9EBB61DF6668A0066156F /* ShowAlert.swift */; };
+		95DDDC951E12EE1A00106F24 /* AddFlatStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95DDDC941E12EE1A00106F24 /* AddFlatStoryBoard.storyboard */; };
+		95DDDC971E12EE3D00106F24 /* AddFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */; };
+		95DDDC991E12EE9400106F24 /* SearchParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC981E12EE9400106F24 /* SearchParameter.swift */; };
 		CAC80CFAC22E50234666C498 /* Pods_iFlat_iFlatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609E4EE1E699D81BDDB632E /* Pods_iFlat_iFlatTests.framework */; };
 		E740683D51927E87205255CE /* Pods_iFlat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75591C1553F467511111B928 /* Pods_iFlat.framework */; };
 		FD884EC629F5F52179629B36 /* Pods_iFlat_iFlatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4632289C74820928EC02E69 /* Pods_iFlat_iFlatUITests.framework */; };
@@ -115,6 +116,7 @@
 		462D7F151DF588760060807B /* FlatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatProfileViewController.swift; sourceTree = "<group>"; };
 		462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatViewController.swift; sourceTree = "<group>"; };
 		462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatCollectionViewCell.swift; sourceTree = "<group>"; };
+		467258AC1E13036A00EF6FAE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E8E9981DF09B1900C265E3 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +134,6 @@
 		80E17F4D1DFAC9550020C695 /* NumberPlusPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPlusPicker.swift; sourceTree = "<group>"; };
 		8CD3F5AE4D0D6CB95643B835 /* Pods-iFlat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.debug.xcconfig"; sourceTree = "<group>"; };
 		951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TolgaStoryBoard.storyboard; sourceTree = "<group>"; };
-		951A92991DF4E22800199B83 /* SearchParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameter.swift; sourceTree = "<group>"; };
 		951A929B1DF4E23100199B83 /* EntranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
 		9535FE221E07CB0400297E90 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		9535FE251E07CCA600297E90 /* MenuLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLauncher.swift; sourceTree = "<group>"; };
@@ -142,12 +143,13 @@
 		953CCFB71E0EDDAE002FC590 /* ConvertUrlToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertUrlToImage.swift; sourceTree = "<group>"; };
 		953CCFB91E0EFE90002FC590 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfileStoryBoard.storyboard; sourceTree = "<group>"; };
-		955F425D1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFlatStoryBoard.storyboard; sourceTree = "<group>"; };
-		9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlatViewController.swift; sourceTree = "<group>"; };
 		957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenterEditOwnProfieController.swift; sourceTree = "<group>"; };
 		95AC4F141DFAD82700A7F106 /* FilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		95D9EBB21DF65E690066156F /* ConvertString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertString.swift; sourceTree = "<group>"; };
 		95D9EBB61DF6668A0066156F /* ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		95DDDC941E12EE1A00106F24 /* AddFlatStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFlatStoryBoard.storyboard; sourceTree = "<group>"; };
+		95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlatViewController.swift; sourceTree = "<group>"; };
+		95DDDC981E12EE9400106F24 /* SearchParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameter.swift; sourceTree = "<group>"; };
 		9609E4EE1E699D81BDDB632E /* Pods_iFlat_iFlatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A260F6D625F1875657F4E425 /* Pods-iFlat-iFlatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4632289C74820928EC02E69 /* Pods_iFlat_iFlatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +285,7 @@
 		1AC48BB61DE6616300505913 /* Static */ = {
 			isa = PBXGroup;
 			children = (
+				467258AC1E13036A00EF6FAE /* Info.plist */,
 				1A8083611DF1838D009655AD /* UTILITY */,
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
@@ -337,9 +340,9 @@
 			isa = PBXGroup;
 			children = (
 				1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */,
+				95DDDC981E12EE9400106F24 /* SearchParameter.swift */,
 				1A5303FE1E01E728001CFAEE /* FlatImage.swift */,
 				95AC4F141DFAD82700A7F106 /* FilterModel.swift */,
-				951A92991DF4E22800199B83 /* SearchParameter.swift */,
 				1ADCD0271DF1816600CC08F9 /* User.swift */,
 				1A613D051DFF5A1A0073D4A3 /* Flat.swift */,
 				1A4917BA1E05DC69009E39DF /* Rate.swift */,
@@ -583,9 +586,9 @@
 		955F425C1E11305D00A5BA5A /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				95DDDC941E12EE1A00106F24 /* AddFlatStoryBoard.storyboard */,
 				951A92971DF4E21800199B83 /* TolgaStoryBoard.storyboard */,
 				955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */,
-				955F425D1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -593,8 +596,8 @@
 		957A656B1DF5D94C00844766 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */,
 				957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */,
-				9564AB211DFF9CB70059DCC6 /* AddFlatViewController.swift */,
 				951A929B1DF4E23100199B83 /* EntranceViewController.swift */,
 			);
 			name = Controller;
@@ -687,7 +690,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 97TQ8HBR2G;
+						DevelopmentTeam = 9RDWH786DV;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -735,11 +738,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
-				955F425E1E11308E00A5BA5A /* AddFlatStoryBoard.storyboard in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
 				955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */,
 				1A6CA5781E047A44009B4512 /* ControlPanel.storyboard in Resources */,
+				95DDDC951E12EE1A00106F24 /* AddFlatStoryBoard.storyboard in Resources */,
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
+				467258AD1E13036A00EF6FAE /* Info.plist in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
 				951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */,
 				803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */,
@@ -910,9 +914,9 @@
 			files = (
 				95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */,
 				957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */,
+				95DDDC971E12EE3D00106F24 /* AddFlatViewController.swift in Sources */,
 				1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */,
 				1A14671B1E093C1900B691EF /* FilteredFlat.swift in Sources */,
-				9564AB221DFF9CB70059DCC6 /* AddFlatViewController.swift in Sources */,
 				80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */,
 				46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */,
 				1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */,
@@ -941,9 +945,9 @@
 				462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */,
 				9535FE231E07CB0400297E90 /* Menu.swift in Sources */,
 				1A24DAE21E036A6E00C49269 /* Querymaster.swift in Sources */,
-				951A929A1DF4E22800199B83 /* SearchParameter.swift in Sources */,
 				1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */,
 				80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */,
+				95DDDC991E12EE9400106F24 /* SearchParameter.swift in Sources */,
 				1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */,
 				1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */,
 				462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */,
@@ -1096,7 +1100,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97TQ8HBR2G;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1115,7 +1119,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 97TQ8HBR2G;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
 				INFOPLIST_FILE = iFlat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
