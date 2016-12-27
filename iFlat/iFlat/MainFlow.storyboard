@@ -379,11 +379,11 @@
             </objects>
             <point key="canvasLocation" x="-305" y="27"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="wJQ-l0-08p">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="00M-CM-aNQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7hY-Yn-ebl"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="7hY-Yn-ebl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BqE-20-Aug">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
