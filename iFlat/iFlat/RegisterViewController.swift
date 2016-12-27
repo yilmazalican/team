@@ -36,13 +36,18 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     @IBOutlet weak var repeatPassword_TextField: UITextField!
     
+    @IBOutlet weak var loading: UIActivityIndicatorView! {
+        didSet{
+            loading.stopAnimating()
+        }
+    }
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
        gender_PickerView.delegate = self
        gender_PickerView.dataSource = self
         
@@ -99,6 +104,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
+
         self.user.name = self.name_TextField.text
         self.user.surname = self.lastName_TextField.text
         self.user.email = self.email_TextField.text
@@ -109,12 +115,16 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         if (self.validationField())
             
         {
+            loading.startAnimating()
+            self.view.isUserInteractionEnabled = false
             
             dbbridge.insert(usr: user) { (error) in
                 
                 if (error != nil) {
                     print(error)
                     self.showAlert(title: "Error", message: "Error occured")
+                    self.loading.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
 
                 }
                     
@@ -125,6 +135,9 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                         {
                             print(err)
                              self.showAlert(title: "Error", message: "Error occured")
+                            self.loading.stopAnimating()
+                            self.view.isUserInteractionEnabled = true
+
                         }
                         else
                         {
@@ -134,11 +147,28 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                             self.dbbridge.sendverificationEmail(completion: { (err) in
                                 if err != nil{
                                     print(err)
+                                    self.loading.stopAnimating()
+                                    self.view.isUserInteractionEnabled = true
+
                                 }
                                 
                                 else{
-                                    self.showAlert(title: "Success", message: "Registration is completed,check your email")
-                                    print("email send")
+                                    DispatchQueue.main.async {
+                                        print("email send")
+                                        self.loading.stopAnimating()
+                                        let alert = UIAlertController(title: "Success", message: "Registration is successful.", preferredStyle: .alert)
+                                        let action = UIAlertAction(title: "Okay", style: .default, handler: { (action) in
+                                            self.navigationController?.popViewController(animated: true)
+                                            
+                                        })
+                                        alert.addAction(action)
+                                        self.present(alert, animated: true, completion: nil)
+                                        
+ 
+                                    }
+                                    
+                                    
+                                   
                                 }
                             })
                         }
@@ -146,6 +176,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
 
                 }
             }
+        }
+        else
+        {
+            self.showAlert(title: "Warning", message: "Fill in the blanks correctly, including email format.")
         }
         
     }

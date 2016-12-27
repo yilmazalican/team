@@ -124,6 +124,14 @@
             </objects>
             <point key="canvasLocation" x="-3362.4000000000001" y="-840.62968515742136"/>
         </scene>
+        <!--MainFlow-->
+        <scene sceneID="WGH-wb-faS">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mainFlow" storyboardName="MainFlow" id="gMk-4U-v9r" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wok-Ee-0Un" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-891" y="-1076"/>
+        </scene>
         <!--Register-->
         <scene sceneID="i5a-RA-RlZ">
             <objects>
@@ -273,6 +281,16 @@
                                                     <action selector="registerButtonTapped:" destination="LvG-aZ-4Dd" eventType="touchUpInside" id="jAh-iB-4He"/>
                                                 </connections>
                                             </button>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VYE-k0-62Z">
+                                                <rect key="frame" x="138" y="350" width="100" height="100"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="4tR-cG-NQR"/>
+                                                    <constraint firstAttribute="height" constant="100" id="faM-lf-bC4"/>
+                                                </constraints>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -289,6 +307,7 @@
                                             <constraint firstItem="Y57-8h-MAa" firstAttribute="top" secondItem="kqP-qy-swa" secondAttribute="bottom" constant="5" id="Kam-l6-oNA"/>
                                             <constraint firstItem="pSA-yW-laA" firstAttribute="leading" secondItem="ryA-5H-OOX" secondAttribute="leading" constant="15" id="Ki9-bC-HYh"/>
                                             <constraint firstItem="US9-Vy-U9y" firstAttribute="leading" secondItem="ryA-5H-OOX" secondAttribute="leading" constant="15" id="Kla-MY-KnP"/>
+                                            <constraint firstItem="VYE-k0-62Z" firstAttribute="centerX" secondItem="ryA-5H-OOX" secondAttribute="centerX" id="L52-GY-LnY"/>
                                             <constraint firstItem="Axu-XM-6hC" firstAttribute="top" secondItem="YEj-1d-65C" secondAttribute="bottom" constant="8" id="N1d-Hq-pY8"/>
                                             <constraint firstAttribute="trailing" secondItem="Axu-XM-6hC" secondAttribute="trailing" constant="15" id="Oho-5o-YoA"/>
                                             <constraint firstAttribute="trailing" secondItem="pSA-yW-laA" secondAttribute="trailing" constant="15" id="PrU-gq-9YM"/>
@@ -298,6 +317,7 @@
                                             <constraint firstItem="SBS-A8-gTN" firstAttribute="top" secondItem="RKy-qK-hAx" secondAttribute="bottom" constant="10" id="RVq-VU-ILa"/>
                                             <constraint firstItem="YEj-1d-65C" firstAttribute="centerX" secondItem="ryA-5H-OOX" secondAttribute="centerX" id="SNe-Ah-yrd"/>
                                             <constraint firstItem="04t-eq-YvE" firstAttribute="centerX" secondItem="ryA-5H-OOX" secondAttribute="centerX" id="UwA-Fq-bS9"/>
+                                            <constraint firstItem="VYE-k0-62Z" firstAttribute="centerY" secondItem="ryA-5H-OOX" secondAttribute="centerY" id="XqR-ns-GhI"/>
                                             <constraint firstItem="1tM-4M-Ia7" firstAttribute="top" secondItem="pSA-yW-laA" secondAttribute="bottom" constant="5" id="Z8s-3t-crB"/>
                                             <constraint firstAttribute="trailing" secondItem="kqP-qy-swa" secondAttribute="trailing" constant="15" id="aeS-IH-pge"/>
                                             <constraint firstItem="kqP-qy-swa" firstAttribute="top" secondItem="or6-vH-QZx" secondAttribute="bottom" id="axh-g2-hON"/>
@@ -353,6 +373,7 @@
                         <outlet property="gender_PickerView" destination="iBU-NL-zUr" id="OaP-I1-Juv"/>
                         <outlet property="imgView_Picker" destination="RKy-qK-hAx" id="OvZ-c1-ScM"/>
                         <outlet property="lastName_TextField" destination="pSA-yW-laA" id="Rkv-he-D4H"/>
+                        <outlet property="loading" destination="VYE-k0-62Z" id="zfu-wx-3YV"/>
                         <outlet property="name_TextField" destination="kqP-qy-swa" id="bOu-AO-0mA"/>
                         <outlet property="password_TextField" destination="LzF-lZ-euQ" id="ztf-8Q-3kT"/>
                         <outlet property="repeatPassword_TextField" destination="Axu-XM-6hC" id="2gr-NJ-yq8"/>
