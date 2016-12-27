@@ -137,6 +137,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                                 }
                                 
                                 else{
+                                    
+                                    
                                     self.showAlert(title: "Success", message: "Registration is completed,check your email")
                                     print("email send")
                                 }
