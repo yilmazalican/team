@@ -11,11 +11,95 @@ import UIKit
 
 class AddFlatViewController: UIViewController {
     
+ 
+    @IBOutlet weak var choosePhotoButton: UIButton!
+    var cities = [String]()
     
-    var addingFlat = Flat()
+    var imageCounter = 0
+    
+    var dbFirebase = FIRUSER()
+    
+    var dbFirebaseFlat = FIRFlat()
+
+    var flatImage = [FlatImage]()
+    
+    @IBOutlet weak var firstCancelButton: UIButton!{
+        didSet{
+            firstCancelButton.isHidden = true
+        }
+    }
+    
+    @IBOutlet weak var secondCancelButton: UIButton!{
+        didSet{
+            secondCancelButton.isHidden = true
+        }
+    }
+    
+    @IBOutlet weak var thirdCancelButton: UIButton!{
+        didSet{
+            thirdCancelButton.isHidden = true
+        }
+    }
+    
+    @IBOutlet weak var fourthCancelButton: UIButton!{
+        didSet{
+            fourthCancelButton.isHidden = true
+        }
+    }
+    
+
+    @IBOutlet weak var firstImageView: UIImageView!
     
     
-var imageCounter = 1
+    @IBOutlet weak var secondImageView: UIImageView!
+    
+    
+    @IBOutlet weak var thirdImageView: UIImageView!
+    
+    @IBOutlet weak var fourthImageView: UIImageView!
+    
+    var addingFlat : Flat = {
+        
+        var flat = Flat()
+        
+        
+        flat.heating = false
+        flat.cooling = false
+        flat.washingMachine = false
+        flat.elevator = false
+        flat.internet = false
+        flat.parking = false
+        flat.pool = false
+        flat.smoking = false
+        flat.tv = false
+        flat.gateKeeper = false
+        
+        
+        return flat
+        
+    }()
+    @IBOutlet weak var capacityPickerView: UIPickerView!{
+        didSet{
+            
+            
+            capacityPickerView.delegate = self
+            
+            capacityPickerView.dataSource = self
+        }
+    }
+    
+    
+
+    @IBOutlet weak var bathroomPickerView: UIPickerView!{
+        
+        didSet{
+            
+            
+            bathroomPickerView.delegate = self
+            
+            bathroomPickerView.dataSource = self
+        }
+    }
     
     @IBOutlet weak var priceTextField: UITextField!{
         didSet{
@@ -25,6 +109,15 @@ var imageCounter = 1
     }
     
     
+    @IBOutlet weak var bedPickerView: UIPickerView!{
+        didSet{
+            
+            bedPickerView.delegate = self
+            
+            bedPickerView.dataSource = self
+
+        }
+    }
 
     @IBOutlet weak var addressTextView: UITextView!{
         
@@ -35,44 +128,50 @@ var imageCounter = 1
         }
     }
     
-    /*
-     var disabled: Bool?
-     var DB_ENDPOINT:FIRFlat
-     var title:String?
-     var flatDescription:String?
-     var city:String?
-     var address:String?
-     var flatCapacity:Int?
-     var bathroomCount:Int?
-     var bedCount:Int?
-     var bedroomCount:Int?
-     var pool:Bool?
-     var internet:Bool?
-     var cooling:Bool?
-     var heating:Bool?
-     var tv:Bool?
-     var washingMachine:Bool?
-     var elevator:Bool?
-     var parking:Bool?
-     var smoking:Bool?
-     var gateKeeper:Bool?
-     var price:Double?
-     var images:[FlatImage]?
-     var userID:String
- */
-    
+ 
     var imagePicker = UIImagePickerController()
+    
+    
     
     var  defaultHomeImage : [UIImage] = {
         
         return [#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome")]
         
     }()
+    @IBOutlet weak var internetSwitch: UISwitch!
     
+    @IBOutlet weak var elevatorSwitch: UISwitch!
    
+    @IBOutlet weak var coolingSwitch: UISwitch!
     
-    @IBOutlet weak var flatScrollView: UIScrollView!
+    @IBOutlet weak var smokingSwitch: UISwitch!
+    @IBOutlet weak var cityPickerView: UIPickerView!{
+        didSet{
+            
+            cityPickerView.delegate = self
+            
+            cityPickerView.dataSource = self
+        }
+    }
     
+    @IBOutlet weak var parkingSwitch: UISwitch!
+    @IBOutlet weak var washingSwitch: UISwitch!
+    @IBOutlet weak var poolSwitch: UISwitch!
+    @IBOutlet weak var bedroomPickerView: UIPickerView!{
+        didSet{
+            bedroomPickerView.delegate = self
+            
+            bedroomPickerView.dataSource = self
+            
+        }
+    }
+    
+    
+    
+    @IBOutlet weak var gateKeeperSwitch: UILabel!
+    
+    
+    @IBOutlet weak var heatingSwitch: UISwitch!
     @IBOutlet weak var flatDescriptionTextView: UITextView!{
         
         didSet {
@@ -97,10 +196,16 @@ var imageCounter = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
        
-        
-        setImage()
+
+        dbFirebase.getCities { (allCities) in
+            self.cities = allCities
+            
+            self.cityPickerView.reloadAllComponents()
+        }
+
+       
+      
         
     }
 
@@ -110,73 +215,108 @@ var imageCounter = 1
     }
     
     
+    @IBAction func titleTextFieldEditingEnd(_ sender: UITextField) {
+        addingFlat.title = sender.text
+    }
    
-  
-    @IBAction func addFlatButtonAction(_ sender: Any) {
-  
+    @IBAction func priceTextFieldDidEnding(_ sender: UITextField) {
+        addingFlat.price = Double(sender.text!)
     }
-    
   
-    
-     func setImage(){
-            for  i in  0..<defaultHomeImage.count {
-            
-            let imageView = UIImageView()
-            imageView.image = defaultHomeImage[i]
-                imageView.contentMode = .scaleAspectFit
-            let xPosition =  self.flatScrollView.frame.width * CGFloat(i)
-            imageView.frame = CGRect(x:xPosition,y:0,width: self.flatScrollView.frame.width,height: self.flatScrollView.frame.height)
-            flatScrollView.contentSize.width =  flatScrollView.contentSize.width + imageView.frame.width
-            flatScrollView.addSubview(imageView)
-            
-        }
-       
 
-    }
-    
-    func changeImageWithBefore(){
-        for  i in  0..<defaultHomeImage.count {
-            
-            let imageView = UIImageView()
-            imageView.image = defaultHomeImage[i]
-            imageView.contentMode = .scaleAspectFit
-            let xPosition =  self.flatScrollView.frame.width * CGFloat(i)
-            imageView.frame = CGRect(x:xPosition,y:0,width: self.flatScrollView.frame.width,height: self.flatScrollView.frame.height)
-    
-            flatScrollView.addSubview(imageView)
-            
-        }
-        
-        
-    }
  
 
     @IBAction func openFlatOptionButtonAction(_ sender: Any) {
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
-             self.showFlatOptionsPopUp()
-        }, completion: nil)
+                     self.showFlatOptionsPopUp()
+       
     }
    
 
+    @IBAction func deleteImageAction(_ sender: UIButton) {
+        
+        choosePhotoButton.isHidden = false
+        switch sender.tag {
+        case 0:
+            
+            firstImageView.image = #imageLiteral(resourceName: "defaulthome")
+            sender.isHidden = true
+
+            return
+        case 1:
+            secondImageView.image = #imageLiteral(resourceName: "defaulthome")
+            sender.isHidden = true
+            
+            return
+        case 2:
+            thirdImageView.image = #imageLiteral(resourceName: "defaulthome")
+            sender.isHidden = true
+            return
+        case 3:
+            fourthImageView.image = #imageLiteral(resourceName: "defaulthome")
+            sender.isHidden = true
+            return
+            
+        default: break
+            
+        }
+        
+    }
+    
+   
     
     
-    @IBAction func titleTextFieldEditingEnd(_ sender: UITextField) {
-     //TODO:FLAT TİTLE WİL BE SET.
+    
+    @IBAction func elevatorValueChanged(_ sender: UISwitch) {
+        addingFlat.elevator = sender.isOn
+    }
+    
+    @IBAction func internetValueChanged(_ sender: UISwitch) {
+        
+        addingFlat.internet = sender.isOn
+        
+    }
+    
+    @IBAction func coolingValueChanged(_ sender: UISwitch) {
+    addingFlat.cooling = sender.isOn
+    }
+   
+    @IBAction func gateKeeperValueChanged(_ sender: UISwitch) {
+        addingFlat.gateKeeper = sender.isOn
+    }
+    
+    @IBAction func smokingValueChanged(_ sender: UISwitch) {
+       addingFlat.smoking = sender.isOn
+        
+    }
+    
+    @IBAction func poolValueChanged(_ sender: UISwitch) {
+        addingFlat.pool = sender.isOn
+    }
+    @IBAction func washingValueChanged(_ sender: UISwitch) {
+        addingFlat.washingMachine = sender.isOn
+    }
+    @IBAction func parkingValueChanged(_ sender: UISwitch) {
+       addingFlat.parking = sender.isOn
     }
     
     
+    @IBAction func heatingValueChanged(_ sender: UISwitch) {
+        addingFlat.heating = sender.isOn
+    }
     private func showFlatOptionsPopUp() {
         
         self.view.addSubview(popUpView)
         
         popUpView.center = self.view.center
-        
+  
         
     }
     
     @IBAction func optionActionFinished(_ sender: Any) {
+        
+        
         popUpView.removeFromSuperview()
+        
 
         
     }
@@ -195,11 +335,155 @@ defaultAlert()
         }
         
     }
+    @IBAction func addFlatButtonAction(_ sender: Any) {
+        dbFirebaseFlat.insertFlat(flt: addingFlat) { (err) in
+            print(err)
+            
+        }
+    }
     
 }
 
 
-extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate,ShowAlert{
+extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate,ShowAlert,UIPickerViewDelegate,UIPickerViewDataSource{
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var data:String!
+       
+        
+        if pickerView.tag == 0 {
+             data =  cities[row]
+            
+        }
+        
+        if pickerView.tag == 1 {
+            
+            data = SearchParameter.bedroomSize[row]
+
+            
+        }
+        
+        if pickerView.tag == 2 {
+             data = SearchParameter.bathroomSize[row]
+            
+        }
+        
+        if pickerView.tag == 3 {
+            
+             data = SearchParameter.bedSize[row]
+        }
+        if pickerView.tag == 4 {
+             data = SearchParameter.capacity[row]
+            
+        }
+      
+        
+        
+        var label = view as! UILabel!
+        if label == nil {
+            label = UILabel()
+        }
+        
+        
+     
+        
+        let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
+        
+        label?.attributedText = title
+        label?.textAlignment = .center
+        
+        if data == SearchParameter.selectBedroom || data == SearchParameter.selectBed || data == SearchParameter.selectBathroom || data == SearchParameter.selectCapacity || data == SearchParameter.selectPeopleNum {
+            
+            label?.textColor = UIColor.red
+            
+            
+            
+        }
+        return label!
+        
+        
+    }
+
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if pickerView.tag == 0 {
+            
+             return cities.count
+            
+        }
+        
+        
+      if   pickerView.tag == 1  {
+            
+            return SearchParameter.bedroomSize.count
+        }
+        if   pickerView.tag == 2 {
+            
+            return SearchParameter.bathroomSize.count
+        }
+        if pickerView.tag == 3 {
+            
+            return SearchParameter.bedSize.count
+        }
+        else {
+            
+            return SearchParameter.capacity.count
+        }
+
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+       
+        
+        if pickerView.tag == 0 {
+            
+            
+       addingFlat.city = cities[row]
+            
+        }
+        
+        if pickerView.tag == 1 {
+            if SearchParameter.bedroomSize[row] != SearchParameter.selectBedroom {
+                addingFlat.bedroomCount = Int(SearchParameter.bedroomSize[row])
+                
+            }
+            
+        }
+        
+        if pickerView.tag == 2 {
+            if SearchParameter.bathroomSize[row] != SearchParameter.selectBathroom {
+             addingFlat.bathroomCount = Int(SearchParameter.bathroomSize[row])
+            }
+        }
+        
+        if pickerView.tag == 3{
+            if SearchParameter.bedSize[row] != SearchParameter.selectBed {
+
+            addingFlat.bedCount =  Int(SearchParameter.bedSize[row])
+            }
+        }
+        if pickerView.tag == 4 {
+            if SearchParameter.capacity[row] != SearchParameter.selectCapacity {
+        
+             addingFlat.flatCapacity =  Int(SearchParameter.capacity[row])
+            }
+        }
+       
+        
+    }
+
+  
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
@@ -236,21 +520,39 @@ extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDel
         
         
         if mediaType == (kUTTypeImage as String) {
-           self.defaultHomeImage.insert((info[UIImagePickerControllerOriginalImage] as? UIImage)!, at: imageCounter-1)
-          
-            defaultHomeImage.removeLast()
-          flatScrollView.willRemoveSubview(flatScrollView.subviews.last!)
             
-            if imageCounter == 5 {
-                imageCounter = 1
+        flatImage.append(FlatImage(image: (info[UIImagePickerControllerOriginalImage] as? UIImage)!))
                 
+                switch  imageCounter {
+                case 0:
+                    firstImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+                    firstCancelButton.isHidden = false
+                    break
+                case 1 :
+                    secondImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+                    secondCancelButton.isHidden = false
+                    break
+                case 2:
+                    thirdImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+                    thirdCancelButton.isHidden = false
+                    break
+                case 3:
+                    fourthImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+                    fourthCancelButton.isHidden = false
+                    break
+                    
+                default:
+                    break
+                    
+                }
+
             }
-            else {
-                imageCounter += 1
-                
-            }
-                 changeImageWithBefore()
-         
+        
+        imageCounter += 1
+        if imageCounter == 4 {
+            
+            imageCounter = 0
+            choosePhotoButton.isHidden = true
         }
         
         

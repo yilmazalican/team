@@ -92,15 +92,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
                     self.dbbridge2.isUserVerified(completion: { (b) in
                         if b
                         {
-                            print("verified")
+                            let viewControllerYouWantToPresent = self.storyboard?.instantiateViewController(withIdentifier: "mainFlow")
+                            self.present(viewControllerYouWantToPresent!, animated: true, completion: nil)
                         }
                         else{
                             self.showAlert(title: "Error", message: "Please check your email to verify")
                         }
                     })
-//                    var storyboard: UIStoryboard = UIStoryboard(name: "TolgaStoryBoard", bundle: nil)
-//                    var vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! EntranceViewController
-//                    self.show(vc, sender: self)
+
                 }
             })
             
