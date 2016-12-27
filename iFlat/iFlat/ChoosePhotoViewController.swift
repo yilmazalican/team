@@ -8,12 +8,18 @@
 
 import UIKit
 import Photos
-
+import BSImagePicker
 class ChoosePhotoViewController: UIViewController {
 
     @IBOutlet weak var choosePhotoCollectionView: ChoosePhotoCollectionView!
     
-    
+    var imagePicker = BSImagePickerViewController() {
+        
+        didSet{
+            
+            imagePicker.maxNumberOfSelections = 4
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

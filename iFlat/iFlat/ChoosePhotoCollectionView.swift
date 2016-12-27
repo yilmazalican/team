@@ -8,6 +8,20 @@
 
 import UIKit
 
+protocol FetchPhotoDelegate {
+ 
+    func fetchPhotosFromLibrary()
+    
+}
+
+var selectedImage : [UIImage] = {
+    
+    return [#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome")]
+    
+    
+}()
+
+
 class ChoosePhotoCollectionView: UICollectionView {
 
     override func awakeFromNib() {
@@ -37,7 +51,7 @@ extension ChoosePhotoCollectionView : UICollectionViewDelegate,UICollectionViewD
         if let cell : ChoosePhotoCollectionViewCell  = dequeueReusableCell(withReuseIdentifier: ChoosePhotoCollectionViewCell.cellId, for: indexPath) as? ChoosePhotoCollectionViewCell {
             
             
-            //cell
+            cell.photoImageView.image = selectedImage[indexPath.row]
             
             
             

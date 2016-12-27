@@ -1,4 +1,8 @@
 PODS:
+  - BSGridCollectionViewLayout (1.2.0)
+  - BSImagePicker (2.5.1):
+    - BSGridCollectionViewLayout (~> 1.2.0)
+    - UIImageViewModeScaleAspect (= 1.5)
   - Firebase/Auth (3.10.0):
     - Firebase/Core
     - FirebaseAuth (= 3.0.6)
@@ -46,8 +50,10 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - JTAppleCalendar (6.0.5)
   - Kingfisher (3.2.2)
+  - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
+  - BSImagePicker (~> 2.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -56,6 +62,8 @@ DEPENDENCIES:
   - Kingfisher (~> 3.0)
 
 SPEC CHECKSUMS:
+  BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
+  BSImagePicker: 1f98e14efddf550494ef08c560422505456d4058
   Firebase: 387f37c7dca894a02708da9ff35ba147040eae9e
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseAuth: 96e9674ff31d6e1f826d53e26aa003a57cab0295
@@ -69,7 +77,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   JTAppleCalendar: 7ea3f3e66fcbbb62978a01a58e3a3ae88fdad7cc
   Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
+  UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: a3dee5a15d2c98467661767f067c1275e476f16e
+PODFILE CHECKSUM: c59d747a58cd344619e5e1c95a00cb9df312d1cc
 
 COCOAPODS: 1.1.1
