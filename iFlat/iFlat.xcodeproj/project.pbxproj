@@ -23,6 +23,8 @@
 		1AC48BC31DE6625C00505913 /* ControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */; };
 		1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACDDC521E11775E00E34629 /* MainFlow.storyboard */; };
 		1AD2C4051E06020B0030FF15 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2C4041E06020B0030FF15 /* TableViewCell.swift */; };
+		1AD826501E1311040021EF4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */; };
+		1AD826521E13110C0021EF4F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD826511E13110C0021EF4F /* Info.plist */; };
 		1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */; };
 		1AD852481E07E67B00A1F5B3 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD852471E07E67B00A1F5B3 /* FIRFlat.swift */; };
 		1ADCD0281DF1816600CC08F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0271DF1816600CC08F9 /* User.swift */; };
@@ -32,7 +34,6 @@
 		462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F151DF588760060807B /* FlatProfileViewController.swift */; };
 		462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */; };
 		462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */; };
-		467258AD1E13036A00EF6FAE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 467258AC1E13036A00EF6FAE /* Info.plist */; };
 		46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Authentication.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
@@ -107,6 +108,8 @@
 		1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPanelVC.swift; sourceTree = "<group>"; };
 		1ACDDC521E11775E00E34629 /* MainFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainFlow.storyboard; sourceTree = "<group>"; };
 		1AD2C4041E06020B0030FF15 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1AD826511E13110C0021EF4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
 		1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableFlat.swift; sourceTree = "<group>"; };
 		1AD852471E07E67B00A1F5B3 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
 		1ADCD0271DF1816600CC08F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -116,7 +119,6 @@
 		462D7F151DF588760060807B /* FlatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatProfileViewController.swift; sourceTree = "<group>"; };
 		462D7F1B1DF58F7D0060807B /* ListFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatViewController.swift; sourceTree = "<group>"; };
 		462D7F1D1DF590F80060807B /* ListFlatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFlatCollectionViewCell.swift; sourceTree = "<group>"; };
-		467258AC1E13036A00EF6FAE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E8E9981DF09B1900C265E3 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -285,7 +287,8 @@
 		1AC48BB61DE6616300505913 /* Static */ = {
 			isa = PBXGroup;
 			children = (
-				467258AC1E13036A00EF6FAE /* Info.plist */,
+				1AD826511E13110C0021EF4F /* Info.plist */,
+				1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */,
 				1A8083611DF1838D009655AD /* UTILITY */,
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
@@ -737,13 +740,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD826501E1311040021EF4F /* GoogleService-Info.plist in Resources */,
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
 				955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */,
 				1A6CA5781E047A44009B4512 /* ControlPanel.storyboard in Resources */,
 				95DDDC951E12EE1A00106F24 /* AddFlatStoryBoard.storyboard in Resources */,
+				1AD826521E13110C0021EF4F /* Info.plist in Resources */,
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
-				467258AD1E13036A00EF6FAE /* Info.plist in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
 				951A92981DF4E21800199B83 /* TolgaStoryBoard.storyboard in Resources */,
 				803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */,
