@@ -11,7 +11,8 @@ import UIKit
 
 class AddFlatViewController: UIViewController {
     
- 
+    
+    
     var cities = [String]()
     
     var dbFirebase = FIRUSER()
@@ -20,40 +21,7 @@ class AddFlatViewController: UIViewController {
 
     var flatImage = [FlatImage]()
     
-    @IBOutlet weak var firstCancelButton: UIButton!{
-        didSet{
-            firstCancelButton.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var secondCancelButton: UIButton!{
-        didSet{
-            secondCancelButton.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var thirdCancelButton: UIButton!{
-        didSet{
-            thirdCancelButton.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var fourthCancelButton: UIButton!{
-        didSet{
-            fourthCancelButton.isHidden = true
-        }
-    }
-    
-
-    @IBOutlet weak var firstImageView: UIImageView!
-    
-    
-    @IBOutlet weak var secondImageView: UIImageView!
-    
-    
-    @IBOutlet weak var thirdImageView: UIImageView!
-    
-    @IBOutlet weak var fourthImageView: UIImageView!
+   
     
     var addingFlat : Flat = {
         

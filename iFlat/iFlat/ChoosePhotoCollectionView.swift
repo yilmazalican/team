@@ -14,14 +14,6 @@ protocol FetchPhotoDelegate {
     
 }
 
-var selectedImage : [UIImage] = {
-    
-    return [#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome")]
-    
-    
-}()
-
-
 class ChoosePhotoCollectionView: UICollectionView {
 
     override func awakeFromNib() {
@@ -31,6 +23,14 @@ class ChoosePhotoCollectionView: UICollectionView {
     }
     
     
+    var selectedImage : [UIImage] = {
+        
+        return [#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome")]
+        
+        
+    }()
+    
+
 
 
 
