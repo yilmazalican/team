@@ -84,7 +84,7 @@ class FIRFlat:FIRFlatDelegate
                     for iterator in flt.images!
                     {
                         let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
-                        FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id).put(pngREP!, metadata: nil, completion: { (mdata, err3) in
+                        FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
                             if err3 != nil
                             {
                                 completion(err3.debugDescription)
