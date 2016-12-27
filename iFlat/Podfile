@@ -12,6 +12,7 @@ target 'iFlat' do
   pod 'Firebase/Storage'
   pod 'Kingfisher', '~> 3.0'
   pod 'JTAppleCalendar', '~> 6.0'
+  pod "BSImagePicker", "~> 2.4"
 
   target 'iFlatTests' do
 
