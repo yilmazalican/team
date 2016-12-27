@@ -511,7 +511,7 @@
                                 </constraints>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="GVW-gj-Ql5" kind="show" id="WKg-kd-En0"/>
+                                    <segue destination="GVW-gj-Ql5" kind="show" identifier="photoSegue" id="WKg-kd-En0"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zvD-tu-2Cq" customClass="ChoosePhotoCollectionView" customModule="iFlat" customModuleProvider="target">

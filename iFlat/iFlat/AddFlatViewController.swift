@@ -251,10 +251,13 @@ class AddFlatViewController: UIViewController {
     
  
     @IBAction func addFlatButtonAction(_ sender: Any) {
+        addingFlat.images = flatImage
         dbFirebaseFlat.insertFlat(flt: addingFlat) { (err) in
             print(err)
             
+            
         }
+        
     }
     
     

@@ -28,10 +28,18 @@ class ChoosePhotoViewController: UIViewController,ShowAlert {
     
 
     
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        
-    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "photoSegue" {
+            if let controller : AddFlatViewController = segue.destination as? AddFlatViewController {
+                for image in choosePhotoCollectionView.selectedImage {
+                controller.flatImage.append(FlatImage(image: image))
+                }
+                
+            }
+            
+        }
+    }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if choosePhotoCollectionView.selectedImage.contains(#imageLiteral(resourceName: "defaulthome")) {
         showAlert(title: "Error", message: "Choose Photo before passing.")
