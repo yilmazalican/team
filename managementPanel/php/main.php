@@ -1,6 +1,11 @@
 <?php
-//include_once 'auth.php';
+include_once 'auth.php';
 include_once 'curl.php';
+
+if($_GET['logout']){
+  $auth = new auth();
+  $auth->logout();
+}
 
 if(isset($_SESSION['login'])){
 $curl = new curl();

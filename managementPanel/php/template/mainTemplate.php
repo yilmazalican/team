@@ -27,7 +27,7 @@
 	<div>Firebase auth <code>currentUser</code> object value:</div>
 	<pre><code id="quickstart-account-details">null</code></pre>
 </div>
-<button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+<a href="?logout=true"><button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign Out</button></a>
 </nav>
 
 <article class="article">

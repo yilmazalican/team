@@ -32,7 +32,7 @@ class auth {
 
     if(isset($_SESSION['login'])){
       echo "Logged in!";
-      header("Refresh: 1; url=php/main.php");
+      header("Refresh: 1");
     }else{
       echo "Login failed!";
 
@@ -52,6 +52,7 @@ class auth {
         session_start();
     session_destroy();
     echo "Logged out!";
+    header("Refresh: 0; url=index.php");
   }
 
 
