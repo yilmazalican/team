@@ -3,15 +3,16 @@
 
 class auth {
 
+  public $dbUrl = "https://iflat-3b499.firebaseio.com";
+
   public function __construct(){
-    echo "cont";
-    $this->url = "https://iflat-3b499.firebaseio.com/admins.json";
+
+    $this->url = $this->dbUrl . "/admins.json";
     $this->curlHandler = curl_init($this->url);
 
   }
 
   public function login($mail, $pass) {
-    echo "login";
     curl_setopt($this->curlHandler, CURLOPT_NOBODY, false);
     curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
     $dataJson =  curl_exec($this->curlHandler);
@@ -31,6 +32,7 @@ class auth {
 
     if(isset($_SESSION['login'])){
       echo "Logged in!";
+      header("Refresh: 1; url=main.php");
     }else{
       echo "Login failed!";
     }
@@ -43,6 +45,15 @@ class auth {
     echo "Logged out!";
   }
 
+  public function handleLogin($class){
+    if(!isset($_SESSION['login'])){
+      echo "Please login!";
+      header("Refresh: 2; url=../index.php");
+      $class.die();
+    }
+  }
+
 
 }
+
 ?>

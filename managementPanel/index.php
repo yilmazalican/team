@@ -1,6 +1,6 @@
 <?php
   include 'php/curl.php';
-  include 'php/auth.php';
+  include_once 'php/auth.php';
 
   $curl = new curl();
   $curl->deneme();
