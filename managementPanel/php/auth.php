@@ -54,14 +54,7 @@ class auth {
     echo "Logged out!";
   }
 
-  public function handleLogin($class){
-    echo "asdasd";
-    if(!isset($_SESSION['login'])){
-      echo "Please login!";
-      header("Refresh: 2; url=../index.php");
-      $class.die();
-    }
-  }
+
 
 
 }

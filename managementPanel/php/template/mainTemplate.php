@@ -17,9 +17,9 @@
 	<strong>Menu</strong>
 	<hr>
 <ul>
-  <li><a href="#">Issue Management</a></li>
-  <li><a href="#">User Management</a></li>
-  <li><a href="#">Flat Management</a></li>
+  <li><a href="?route=issue">Issue Management</a></li>
+  <li><a href="?route=uman">User Management</a></li>
+  <li><a href="?route=fman">Flat Management</a></li>
 </ul>
 <hr>
 <div class="quickstart-user-details-container">
@@ -31,8 +31,9 @@
 </nav>
 
 <article class="article">
-  <h1>Issue Management</h1>
-  <p><strong>Closing issue</strong></p>
+  <h1><? echo $pageTitle; ?></h1>
+  <p><strong><? echo $pageSubTitle; ?></strong></p>
+  <p><? echo $data; ?></p>
 </article>
 
 <footer>iFlat</footer>
