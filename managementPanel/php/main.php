@@ -2,6 +2,6 @@
 //include_once 'auth.php';
 //include 'curl.php';
 
-echo "main";
+require_once('template/mainTemplate.php');
 
  ?>
