@@ -11,11 +11,9 @@ import UIKit
 
 class AddFlatViewController: UIViewController {
     
- 
-    @IBOutlet weak var choosePhotoButton: UIButton!
-    var cities = [String]()
     
-    var imageCounter = 0
+    
+    var cities = [String]()
     
     var dbFirebase = FIRUSER()
     
@@ -23,40 +21,7 @@ class AddFlatViewController: UIViewController {
 
     var flatImage = [FlatImage]()
     
-    @IBOutlet weak var firstCancelButton: UIButton!{
-        didSet{
-            firstCancelButton.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var secondCancelButton: UIButton!{
-        didSet{
-            secondCancelButton.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var thirdCancelButton: UIButton!{
-        didSet{
-            thirdCancelButton.isHidden = true
-        }
-    }
-    
-    @IBOutlet weak var fourthCancelButton: UIButton!{
-        didSet{
-            fourthCancelButton.isHidden = true
-        }
-    }
-    
-
-    @IBOutlet weak var firstImageView: UIImageView!
-    
-    
-    @IBOutlet weak var secondImageView: UIImageView!
-    
-    
-    @IBOutlet weak var thirdImageView: UIImageView!
-    
-    @IBOutlet weak var fourthImageView: UIImageView!
+   
     
     var addingFlat : Flat = {
         
@@ -73,7 +38,7 @@ class AddFlatViewController: UIViewController {
         flat.smoking = false
         flat.tv = false
         flat.gateKeeper = false
-        
+        flat.city = "Adana"
         
         return flat
         
@@ -129,15 +94,8 @@ class AddFlatViewController: UIViewController {
     }
     
  
-    var imagePicker = UIImagePickerController()
-    
-    
-    
-    var  defaultHomeImage : [UIImage] = {
-        
-        return [#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome"),#imageLiteral(resourceName: "defaulthome")]
-        
-    }()
+  
+  
     @IBOutlet weak var internetSwitch: UISwitch!
     
     @IBOutlet weak var elevatorSwitch: UISwitch!
@@ -198,6 +156,7 @@ class AddFlatViewController: UIViewController {
         super.viewDidLoad()
        
 
+       
         dbFirebase.getCities { (allCities) in
             self.cities = allCities
             
@@ -226,41 +185,11 @@ class AddFlatViewController: UIViewController {
 
  
 
-    @IBAction func openFlatOptionButtonAction(_ sender: Any) {
-                     self.showFlatOptionsPopUp()
-       
+    @IBAction func showOptionButtonAction(_ sender: Any) {
+              self.showFlatOptionsPopUp()
     }
    
-
-    @IBAction func deleteImageAction(_ sender: UIButton) {
-        
-        choosePhotoButton.isHidden = false
-        switch sender.tag {
-        case 0:
-            
-            firstImageView.image = #imageLiteral(resourceName: "defaulthome")
-            sender.isHidden = true
-
-            return
-        case 1:
-            secondImageView.image = #imageLiteral(resourceName: "defaulthome")
-            sender.isHidden = true
-            
-            return
-        case 2:
-            thirdImageView.image = #imageLiteral(resourceName: "defaulthome")
-            sender.isHidden = true
-            return
-        case 3:
-            fourthImageView.image = #imageLiteral(resourceName: "defaulthome")
-            sender.isHidden = true
-            return
-            
-        default: break
-            
-        }
-        
-    }
+  
     
    
     
@@ -320,32 +249,42 @@ class AddFlatViewController: UIViewController {
 
         
     }
-    @IBAction func choosePhotoAction(_ sender: Any) {
-        
-        
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            present(imagePicker, animated: true, completion: nil)
-            
-        }
-        else {
-defaultAlert()
-            
-        }
-        
-    }
+    
+ 
     @IBAction func addFlatButtonAction(_ sender: Any) {
-        dbFirebaseFlat.insertFlat(flt: addingFlat) { (err) in
-            print(err)
+        addingFlat.images = flatImage
+        
+        if addingFlat.isEmpty() {
             
+            showAlert(title: "Error", message: "Fill in the all blanks.")
+            
+        }
+
+        else {
+            
+            dbFirebase.getCurrentLoggedIn(completion: { (currentUser) in
+               self.addingFlat.userID = (currentUser?.id)!
+                
+                self.dbFirebaseFlat.insertFlat(flt: self.addingFlat) { (err) in
+                    print(err)
+                    
+                    
+                }
+
+            })
+            
+
         }
     }
     
-}
+    
+
+    }
+    
 
 
-extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate,ShowAlert,UIPickerViewDelegate,UIPickerViewDataSource{
+
+extension AddFlatViewController : UITextFieldDelegate,UITextViewDelegate,ShowAlert,UIPickerViewDelegate,UIPickerViewDataSource{
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -485,9 +424,6 @@ extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDel
 
   
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     func textViewDidEndEditing(_ textView: UITextView) {
        
@@ -513,52 +449,7 @@ extension AddFlatViewController : UITextFieldDelegate,UIImagePickerControllerDel
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        
-        let mediaType  = info[UIImagePickerControllerMediaType] as! String
-        
-        
-        if mediaType == (kUTTypeImage as String) {
-            
-        flatImage.append(FlatImage(image: (info[UIImagePickerControllerOriginalImage] as? UIImage)!))
-                
-                switch  imageCounter {
-                case 0:
-                    firstImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-                    firstCancelButton.isHidden = false
-                    break
-                case 1 :
-                    secondImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-                    secondCancelButton.isHidden = false
-                    break
-                case 2:
-                    thirdImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-                    thirdCancelButton.isHidden = false
-                    break
-                case 3:
-                    fourthImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-                    fourthCancelButton.isHidden = false
-                    break
-                    
-                default:
-                    break
-                    
-                }
 
-            }
-        
-        imageCounter += 1
-        if imageCounter == 4 {
-            
-            imageCounter = 0
-            choosePhotoButton.isHidden = true
-        }
-        
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
