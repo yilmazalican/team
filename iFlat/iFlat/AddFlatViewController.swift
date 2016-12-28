@@ -38,7 +38,7 @@ class AddFlatViewController: UIViewController {
         flat.smoking = false
         flat.tv = false
         flat.gateKeeper = false
-        
+        flat.city = "Adana"
         
         return flat
         
@@ -156,6 +156,7 @@ class AddFlatViewController: UIViewController {
         super.viewDidLoad()
        
 
+       
         dbFirebase.getCities { (allCities) in
             self.cities = allCities
             
@@ -252,12 +253,28 @@ class AddFlatViewController: UIViewController {
  
     @IBAction func addFlatButtonAction(_ sender: Any) {
         addingFlat.images = flatImage
-        dbFirebaseFlat.insertFlat(flt: addingFlat) { (err) in
-            print(err)
+        
+        if addingFlat.isEmpty() {
             
+            showAlert(title: "Error", message: "Fill in the all blanks.")
             
         }
-        
+
+        else {
+            
+            dbFirebase.getCurrentLoggedIn(completion: { (currentUser) in
+               self.addingFlat.userID = (currentUser?.id)!
+                
+                self.dbFirebaseFlat.insertFlat(flt: self.addingFlat) { (err) in
+                    print(err)
+                    
+                    
+                }
+
+            })
+            
+
+        }
     }
     
     
