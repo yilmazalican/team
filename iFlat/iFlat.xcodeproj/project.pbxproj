@@ -25,6 +25,7 @@
 		1AD2C4051E06020B0030FF15 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2C4041E06020B0030FF15 /* TableViewCell.swift */; };
 		1AD826501E1311040021EF4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */; };
 		1AD826521E13110C0021EF4F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD826511E13110C0021EF4F /* Info.plist */; };
+		1AD826541E13362B0021EF4F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD826531E13362B0021EF4F /* SettingsVC.swift */; };
 		1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */; };
 		1AD852481E07E67B00A1F5B3 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD852471E07E67B00A1F5B3 /* FIRFlat.swift */; };
 		1ADCD0281DF1816600CC08F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCD0271DF1816600CC08F9 /* User.swift */; };
@@ -110,6 +111,7 @@
 		1AD2C4041E06020B0030FF15 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AD826511E13110C0021EF4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
+		1AD826531E13362B0021EF4F /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableFlat.swift; sourceTree = "<group>"; };
 		1AD852471E07E67B00A1F5B3 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
 		1ADCD0271DF1816600CC08F9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			children = (
 				1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */,
 				1AD2C4041E06020B0030FF15 /* TableViewCell.swift */,
+				1AD826531E13362B0021EF4F /* SettingsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -945,6 +948,7 @@
 				9535FE2A1E07CD5600297E90 /* BaseCell.swift in Sources */,
 				9535FE2C1E07F6EB00297E90 /* FlatExtension.swift in Sources */,
 				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
+				1AD826541E13362B0021EF4F /* SettingsVC.swift in Sources */,
 				9535FE281E07CD3F00297E90 /* MenuCollectionViewCell.swift in Sources */,
 				462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */,
 				9535FE231E07CB0400297E90 /* Menu.swift in Sources */,

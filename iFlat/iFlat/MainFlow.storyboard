@@ -50,7 +50,7 @@
         <!--Settings-->
         <scene sceneID="bNt-0X-ZZU">
             <objects>
-                <viewController id="YVi-0w-k8C" sceneMemberID="viewController">
+                <viewController id="YVi-0w-k8C" customClass="SettingsVC" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D7J-6h-VVa"/>
                         <viewControllerLayoutGuide type="bottom" id="9Bm-n2-rC0"/>
@@ -115,6 +115,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="DV8-hZ-YjO"/>
+                    <connections>
+                        <outlet property="nameLbl" destination="5mR-cN-DML" id="JUp-6F-ygl"/>
+                        <outlet property="profileIV" destination="RsS-Em-vse" id="NZx-77-dy8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ets-gx-7Yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -353,12 +357,34 @@
                     <view key="view" contentMode="scaleToFill" id="T02-DI-SaD">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="642"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K3K-as-pdw">
+                                <rect key="frame" x="0.0" y="44" width="400" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="t6z-Gk-WMS">
+                                        <rect key="frame" x="0.0" y="28" width="400" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t6z-Gk-WMS" id="EPm-9Y-GhF">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K3K-as-pdw" firstAttribute="top" secondItem="SR4-RC-Pyx" secondAttribute="bottom" constant="44" id="5AG-Bi-jlP"/>
+                            <constraint firstItem="L9B-bR-A8x" firstAttribute="top" secondItem="K3K-as-pdw" secondAttribute="bottom" id="6NI-B9-BOZ"/>
+                            <constraint firstAttribute="trailing" secondItem="K3K-as-pdw" secondAttribute="trailing" id="eOB-dB-kXY"/>
+                            <constraint firstItem="K3K-as-pdw" firstAttribute="leading" secondItem="T02-DI-SaD" secondAttribute="leading" id="pDb-Jf-DE6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Flats" id="8aq-ts-xrk"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="5602" y="25"/>
+            <point key="canvasLocation" x="5601.6000000000004" y="24.287856071964018"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JfM-xp-DOv">
