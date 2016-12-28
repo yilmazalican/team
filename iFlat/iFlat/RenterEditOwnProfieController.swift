@@ -252,8 +252,7 @@ class RenterEditOwnProfieController: UIViewController {
                             
                         })
                       })
-                //TODO:SET ALL OBJECT FİELD
-                
+                              
                 
             })
             

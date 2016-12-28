@@ -13,20 +13,19 @@ import Foundation
 extension Flat {
     
     
-    func isImageListEmpty() ->Bool{
-       if self.images?.count == 5 {
-            
-            return false
+ 
+    func isEmpty()->Bool {
+        
+        if self.address == nil || self.bathroomCount == nil || self.bedCount == nil || self.bedroomCount == nil || self.city == nil || self.flatCapacity == nil || self.price == nil  {
+            return true
         }
         else {
             
-            return true
+return false
         }
         
         
     }
-    
-    
-    
-    
+
 }
+    
