@@ -23,9 +23,8 @@
 </ul>
 <hr>
 <div class="quickstart-user-details-container">
-	Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-	<div>Firebase auth <code>currentUser</code> object value:</div>
-	<pre><code id="quickstart-account-details">null</code></pre>
+	Logged user :
+	<pre><code id="quickstart-account-details"><? session_start(); echo $_SESSION['login']['mail']; ?></code></pre>
 </div>
 <a href="?logout=true"><button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign Out</button></a>
 </nav>
