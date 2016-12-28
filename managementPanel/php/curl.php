@@ -21,7 +21,7 @@ public function __destruct(){
 
 
     public function deneme(){
-      echo"deneme";
+      //echo"deneme";
     }
 
 

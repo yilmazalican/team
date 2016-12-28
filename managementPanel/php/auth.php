@@ -32,11 +32,20 @@ class auth {
 
     if(isset($_SESSION['login'])){
       echo "Logged in!";
-      header("Refresh: 1; url=main.php");
+      header("Refresh: 1; url=php/main.php");
     }else{
       echo "Login failed!";
+
     }
 
+  }
+
+  public function loginForm(){
+    //$data ="eren";
+    require_once("template/loginTemplate.php");
+    if(isset($_POST['email'])&&isset($_POST['password'])){
+    $this->login($_POST['email'],$_POST['password']);
+  }
   }
 
   public function logout(){
@@ -46,6 +55,7 @@ class auth {
   }
 
   public function handleLogin($class){
+    echo "asdasd";
     if(!isset($_SESSION['login'])){
       echo "Please login!";
       header("Refresh: 2; url=../index.php");
