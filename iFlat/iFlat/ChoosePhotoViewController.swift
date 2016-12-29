@@ -109,6 +109,10 @@ class ChoosePhotoViewController: UIViewController,ShowAlert {
                         self.imagePicker.takePhotos = true
         }, completion: nil)
     }
+    
+ 
+    
+   
         
     }
 
