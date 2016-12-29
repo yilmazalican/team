@@ -13,7 +13,8 @@ class ReservationViewController: UIViewController {
     @IBOutlet var calendarView: JTAppleCalendarView!
     
     @IBOutlet var yearLabel: UILabel!
-    var selectedDayCount = 0;
+    var selectedDayRange : [Date]?
+    var selectedExactDates : [Date]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -137,6 +138,23 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         handleCellSelection(view: cell, cellState: cellState)
         print("--->")
         print(calendarView.selectedDates)
+        if calendarView.selectedDates.count == 2 {
+           selectedDayRange = calendarView.selectedDates
+//            for var mydate = calendarView.selectedDates.first?.timeIntervalSince1970; mydate <= calendarView.selectedDates.last?.timeIntervalSince1970; mydate += 86400{
+//                
+//            }
+            
+        }else if calendarView.selectedDates.count > 2 {
+            var currentSelectedDates = calendarView.selectedDates
+            for loopdate in selectedDayRange!{
+                if currentSelectedDates.contains(loopdate){
+                    currentSelectedDates.remove(at: currentSelectedDates.index(of: loopdate)!)
+                }
+            }
+            calendarView.deselectAllDates()
+            calendarView.selectDates(currentSelectedDates)
+            
+        }
 //        if calendarView.selectedDates.count == 2 {
 //            var first = calendarView.selectedDates.first
 //            var last = calendarView.selectedDates.last
