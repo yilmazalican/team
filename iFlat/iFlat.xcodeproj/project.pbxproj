@@ -334,8 +334,8 @@
 			children = (
 				955F425C1E11305D00A5BA5A /* StoryBoards */,
 				9535FE211E07CAE600297E90 /* Model */,
-				95DDDC9C1E1315D600106F24 /* CollectionView */,
 				957A656B1DF5D94C00844766 /* Controller */,
+				95DDDC9C1E1315D600106F24 /* CollectionView */,
 				95D9EBB11DF65E500066156F /* Protocols&Extension */,
 			);
 			name = TolgaMVC;

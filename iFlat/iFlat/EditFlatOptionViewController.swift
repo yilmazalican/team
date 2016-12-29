@@ -9,15 +9,27 @@
 import UIKit
 
 class EditFlatOptionViewController: UIViewController {
+    @IBOutlet weak var heatingSwitch: UISwitch!
+    @IBOutlet weak var washingMachineSwitch: UISwitch!
+    @IBOutlet weak var smokingSwitch: UISwitch!
 
+    @IBOutlet weak var gateKeeperSwitch: UISwitch!
+    @IBOutlet weak var parkingSwitch: UISwitch!
+    @IBOutlet weak var elevatorSwitch: UISwitch!
     
-    @IBOutlet weak var popUpView: UIView!{
+    @IBOutlet weak var coolingSwitch: UISwitch!
+    
+    @IBOutlet weak var poolSwitch: UISwitch!
+   
+    
+    @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
-            popUpView.layer.cornerRadius = 10
-            popUpView.layer.masksToBounds = true
+            
+         
+            
+            scrollView.contentSize.height = 1280
         }
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
