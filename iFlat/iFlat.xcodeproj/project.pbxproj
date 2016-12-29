@@ -27,7 +27,6 @@
 		1AC48BC31DE6625C00505913 /* ControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */; };
 		1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACDDC521E11775E00E34629 /* MainFlow.storyboard */; };
 		1AD2C4051E06020B0030FF15 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2C4041E06020B0030FF15 /* TableViewCell.swift */; };
-		1AD826501E1311040021EF4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */; };
 		1AD826521E13110C0021EF4F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD826511E13110C0021EF4F /* Info.plist */; };
 		1AD826541E13362B0021EF4F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD826531E13362B0021EF4F /* SettingsVC.swift */; };
 		1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */; };
@@ -42,6 +41,7 @@
 		46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8E9981DF09B1900C265E3 /* Authentication.storyboard */; };
 		46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9AF1DF0A0F100C265E3 /* RegisterViewController.swift */; };
 		46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8E9B11DF0A0FB00C265E3 /* LoginViewController.swift */; };
+		80032CF91E157B7900093914 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80032CF81E157B7900093914 /* GoogleService-Info.plist */; };
 		803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */; };
 		803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803DE5D81E11AE6000CCB17E /* CellView.xib */; };
 		803DE5DE1E11AF2900CCB17E /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DE5DD1E11AF2900CCB17E /* CellView.swift */; };
@@ -63,6 +63,12 @@
 		95DDDC951E12EE1A00106F24 /* AddFlatStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95DDDC941E12EE1A00106F24 /* AddFlatStoryBoard.storyboard */; };
 		95DDDC971E12EE3D00106F24 /* AddFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */; };
 		95DDDC991E12EE9400106F24 /* SearchParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC981E12EE9400106F24 /* SearchParameter.swift */; };
+		95FEEDB11E15782B004448F1 /* EditFlatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */; };
+		95FEEDB31E158769004448F1 /* EditFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB21E158769004448F1 /* EditFlatViewController.swift */; };
+		95FEEDB51E15879C004448F1 /* EditFlatOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */; };
+		95FEEDB71E158D39004448F1 /* EditPhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB61E158D39004448F1 /* EditPhotoCollectionView.swift */; };
+		95FEEDB91E158D4A004448F1 /* EditPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */; };
+		95FEEDBB1E1594D6004448F1 /* EditPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */; };
 		95DDDC9B1E1315D100106F24 /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */; };
 		95DDDC9E1E13161400106F24 /* ChoosePhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9D1E13161400106F24 /* ChoosePhotoCollectionView.swift */; };
 		95DDDCA01E13162100106F24 /* ChoosePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */; };
@@ -95,6 +101,7 @@
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
 		1A4917BA1E05DC69009E39DF /* Rate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		1A4917BC1E05EBD6009E39DF /* Datebaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datebaby.swift; sourceTree = "<group>"; };
+		1A9037621E15C7D200DFE510 /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		1A5303FE1E01E728001CFAEE /* FlatImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImage.swift; sourceTree = "<group>"; };
 		1A613D051DFF5A1A0073D4A3 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flat.swift; sourceTree = "<group>"; };
 		1A6A1F8E1E1526D800D644BD /* SpacesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacesVC.swift; sourceTree = "<group>"; };
@@ -102,7 +109,6 @@
 		1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRREF.swift; sourceTree = "<group>"; };
 		1A90375D1E15A77700DFE510 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		1A90375F1E15C31300DFE510 /* ReservationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
-		1A9037621E15C7D200DFE510 /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		1AC48B851DE6615100505913 /* iFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48B881DE6615100505913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = iFlat/AppDelegate.swift; sourceTree = "<group>"; };
 		1AC48B8F1DE6615100505913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iFlat/Assets.xcassets; sourceTree = "<group>"; };
@@ -115,7 +121,6 @@
 		1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPanelVC.swift; sourceTree = "<group>"; };
 		1ACDDC521E11775E00E34629 /* MainFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainFlow.storyboard; sourceTree = "<group>"; };
 		1AD2C4041E06020B0030FF15 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AD826511E13110C0021EF4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
 		1AD826531E13362B0021EF4F /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableFlat.swift; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 		754FD5635DE2FCAEA85E3DC4 /* Pods-iFlat-iFlatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatUITests/Pods-iFlat-iFlatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75591C1553F467511111B928 /* Pods_iFlat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7771EB5A3B04A913699C8FAE /* Pods-iFlat-iFlatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		80032CF81E157B7900093914 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "iFlat/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		803DE57C1E0F410300CCB17E /* FlatImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatImagesCell.swift; sourceTree = "<group>"; };
 		803DE5D81E11AE6000CCB17E /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		803DE5DD1E11AF2900CCB17E /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -153,6 +159,12 @@
 		95AC4F141DFAD82700A7F106 /* FilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		95D9EBB21DF65E690066156F /* ConvertString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertString.swift; sourceTree = "<group>"; };
 		95D9EBB61DF6668A0066156F /* ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditFlatStoryboard.storyboard; sourceTree = "<group>"; };
+		95FEEDB21E158769004448F1 /* EditFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatViewController.swift; sourceTree = "<group>"; };
+		95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatOptionViewController.swift; sourceTree = "<group>"; };
+		95FEEDB61E158D39004448F1 /* EditPhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoCollectionView.swift; sourceTree = "<group>"; };
+		95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoViewController.swift; sourceTree = "<group>"; };
 		95DDDC941E12EE1A00106F24 /* AddFlatStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFlatStoryBoard.storyboard; sourceTree = "<group>"; };
 		95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlatViewController.swift; sourceTree = "<group>"; };
 		95DDDC981E12EE9400106F24 /* SearchParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameter.swift; sourceTree = "<group>"; };
@@ -294,9 +306,9 @@
 			isa = PBXGroup;
 			children = (
 				1AD826511E13110C0021EF4F /* Info.plist */,
-				1AD8264F1E1311040021EF4F /* GoogleService-Info.plist */,
 				1A8083611DF1838D009655AD /* UTILITY */,
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
+				80032CF81E157B7900093914 /* GoogleService-Info.plist */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
 				1AC48B911DE6615100505913 /* LaunchScreen.storyboard */,
 			);
@@ -569,6 +581,25 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		95FEEDBC1E1595DE004448F1 /* Add Flat */ = {
+			isa = PBXGroup;
+			children = (
+				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
+				95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */,
+			);
+			name = "Add Flat";
+			sourceTree = "<group>";
+		};
+		95FEEDBD1E1595E8004448F1 /* Edit Flat */ = {
+			isa = PBXGroup;
+			children = (
+				95FEEDB21E158769004448F1 /* EditFlatViewController.swift */,
+				95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */,
+				95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */,
+			);
+			name = "Edit Flat";
+			sourceTree = "<group>";
+		};
 		803DE5811E11725800CCB17E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +623,7 @@
 				95DDDC941E12EE1A00106F24 /* AddFlatStoryBoard.storyboard */,
 				951A92971DF4E21800199B83 /* EntranceStoryBoard.storyboard */,
 				955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */,
+				95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -599,10 +631,10 @@
 		957A656B1DF5D94C00844766 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */,
+				95FEEDBD1E1595E8004448F1 /* Edit Flat */,
+				95FEEDBC1E1595DE004448F1 /* Add Flat */,
 				957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */,
 				951A929B1DF4E23100199B83 /* EntranceViewController.swift */,
-				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -622,6 +654,8 @@
 			children = (
 				95DDDC9D1E13161400106F24 /* ChoosePhotoCollectionView.swift */,
 				95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */,
+				95FEEDB61E158D39004448F1 /* EditPhotoCollectionView.swift */,
+				95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */,
 			);
 			name = CollectionView;
 			sourceTree = "<group>";
@@ -750,7 +784,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AD826501E1311040021EF4F /* GoogleService-Info.plist in Resources */,
+				80032CF91E157B7900093914 /* GoogleService-Info.plist in Resources */,
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
 				955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */,
@@ -759,6 +793,7 @@
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
 				951A92981DF4E21800199B83 /* EntranceStoryBoard.storyboard in Resources */,
+				95FEEDB11E15782B004448F1 /* EditFlatStoryboard.storyboard in Resources */,
 				803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */,
 				1AC48B901DE6615100505913 /* Assets.xcassets in Resources */,
 				46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */,
@@ -934,6 +969,7 @@
 				46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */,
 				1A6A1F921E15285600D644BD /* spacescell.swift in Sources */,
 				1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */,
+				95FEEDBB1E1594D6004448F1 /* EditPhotoViewController.swift in Sources */,
 				46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */,
 				95D9EBB31DF65E690066156F /* ConvertString.swift in Sources */,
 				1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */,
@@ -944,6 +980,7 @@
 				953CCFB81E0EDDAE002FC590 /* ConvertUrlToImage.swift in Sources */,
 				1AD852481E07E67B00A1F5B3 /* FIRFlat.swift in Sources */,
 				1A6A1F8F1E1526D800D644BD /* SpacesVC.swift in Sources */,
+				95FEEDB71E158D39004448F1 /* EditPhotoCollectionView.swift in Sources */,
 				95DDDCA01E13162100106F24 /* ChoosePhotoCollectionViewCell.swift in Sources */,
 				1A4917BD1E05EBD6009E39DF /* Datebaby.swift in Sources */,
 				803DE5DE1E11AF2900CCB17E /* CellView.swift in Sources */,
@@ -953,20 +990,23 @@
 				1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */,
 				803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */,
 				1A9037601E15C31300DFE510 /* ReservationRequest.swift in Sources */,
+				95FEEDB91E158D4A004448F1 /* EditPhotoCollectionViewCell.swift in Sources */,
 				803DE5E01E11B00200CCB17E /* ReservationViewController.swift in Sources */,
 				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
 				1A90375E1E15A77700DFE510 /* Issue.swift in Sources */,
+				95FEEDB31E158769004448F1 /* EditFlatViewController.swift in Sources */,
 				1AD826541E13362B0021EF4F /* SettingsVC.swift in Sources */,
 				953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */,
 				9535FE2C1E07F6EB00297E90 /* FlatExtension.swift in Sources */,
 				1ADCD0281DF1816600CC08F9 /* User.swift in Sources */,
+				95FEEDB51E15879C004448F1 /* EditFlatOptionViewController.swift in Sources */,
 				462D7F161DF588760060807B /* FlatProfileViewController.swift in Sources */,
+				1A9037631E15C7D200DFE510 /* Promotion.swift in Sources */,
 				1A24DAE21E036A6E00C49269 /* Querymaster.swift in Sources */,
 				1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */,
 				80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */,
 				95DDDC991E12EE9400106F24 /* SearchParameter.swift in Sources */,
 				1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */,
-				1A9037631E15C7D200DFE510 /* Promotion.swift in Sources */,
 				1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */,
 				462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */,
 			);
