@@ -68,6 +68,7 @@
 		95FEEDB51E15879C004448F1 /* EditFlatOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */; };
 		95FEEDB71E158D39004448F1 /* EditPhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB61E158D39004448F1 /* EditPhotoCollectionView.swift */; };
 		95FEEDB91E158D4A004448F1 /* EditPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */; };
+		95FEEDBB1E1594D6004448F1 /* EditPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */; };
 		CAC80CFAC22E50234666C498 /* Pods_iFlat_iFlatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609E4EE1E699D81BDDB632E /* Pods_iFlat_iFlatTests.framework */; };
 		E740683D51927E87205255CE /* Pods_iFlat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75591C1553F467511111B928 /* Pods_iFlat.framework */; };
 		FD884EC629F5F52179629B36 /* Pods_iFlat_iFlatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4632289C74820928EC02E69 /* Pods_iFlat_iFlatUITests.framework */; };
@@ -164,6 +165,7 @@
 		95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatOptionViewController.swift; sourceTree = "<group>"; };
 		95FEEDB61E158D39004448F1 /* EditPhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoCollectionView.swift; sourceTree = "<group>"; };
 		95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoViewController.swift; sourceTree = "<group>"; };
 		9609E4EE1E699D81BDDB632E /* Pods_iFlat_iFlatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A260F6D625F1875657F4E425 /* Pods-iFlat-iFlatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4632289C74820928EC02E69 /* Pods_iFlat_iFlatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -611,12 +613,10 @@
 		957A656B1DF5D94C00844766 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */,
+				95FEEDBD1E1595E8004448F1 /* Edit Flat */,
+				95FEEDBC1E1595DE004448F1 /* Add Flat */,
 				957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */,
 				951A929B1DF4E23100199B83 /* EntranceViewController.swift */,
-				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
-				95FEEDB21E158769004448F1 /* EditFlatViewController.swift */,
-				95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -640,6 +640,25 @@
 				95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */,
 			);
 			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		95FEEDBC1E1595DE004448F1 /* Add Flat */ = {
+			isa = PBXGroup;
+			children = (
+				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
+				95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */,
+			);
+			name = "Add Flat";
+			sourceTree = "<group>";
+		};
+		95FEEDBD1E1595E8004448F1 /* Edit Flat */ = {
+			isa = PBXGroup;
+			children = (
+				95FEEDB21E158769004448F1 /* EditFlatViewController.swift */,
+				95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */,
+				95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */,
+			);
+			name = "Edit Flat";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -951,6 +970,7 @@
 				46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */,
 				1A6A1F921E15285600D644BD /* spacescell.swift in Sources */,
 				1A613D061DFF5A1A0073D4A3 /* Flat.swift in Sources */,
+				95FEEDBB1E1594D6004448F1 /* EditPhotoViewController.swift in Sources */,
 				46E8E9B01DF0A0F100C265E3 /* RegisterViewController.swift in Sources */,
 				95D9EBB31DF65E690066156F /* ConvertString.swift in Sources */,
 				1A5303FF1E01E728001CFAEE /* FlatImage.swift in Sources */,
