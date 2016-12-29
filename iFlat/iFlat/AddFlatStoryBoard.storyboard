@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GVW-gj-Ql5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Ys-1A-eEw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,18 +60,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price:Per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-qp-NDG">
-                                <rect key="frame" x="169" y="625" width="117" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bwy-86-vlS"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="priceTextFieldDidEnding:" destination="GVW-gj-Ql5" eventType="editingDidEnd" id="5F5-yR-bVx"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bI-XW-7PO">
                                 <rect key="frame" x="229" y="440" width="120" height="50"/>
                                 <constraints>
@@ -91,10 +79,23 @@
                                     <segue destination="1Ys-1A-eEw" kind="show" id="BVg-l6-Mzd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price:Per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-qp-NDG">
+                                <rect key="frame" x="36" y="510" width="303" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bwy-86-vlS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="priceTextFieldDidEnding:" destination="GVW-gj-Ql5" eventType="editingDidEnd" id="5F5-yR-bVx"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vKD-pW-W2z" secondAttribute="trailing" constant="10" id="1kC-AP-0Jd"/>
+                            <constraint firstItem="pMo-qp-NDG" firstAttribute="top" secondItem="6bI-XW-7PO" secondAttribute="bottom" constant="20" id="2CG-2J-gHt"/>
                             <constraint firstItem="h9S-rH-xAG" firstAttribute="top" secondItem="MDI-9h-tz9" secondAttribute="bottom" constant="50" id="5oi-bB-ALH"/>
                             <constraint firstItem="kII-ag-Gj0" firstAttribute="top" secondItem="ZYF-rC-V3y" secondAttribute="bottom" id="AnG-7N-qrt"/>
                             <constraint firstItem="6bI-XW-7PO" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="AvH-a8-TG5"/>
@@ -112,6 +113,7 @@
                             <constraint firstItem="PyS-wS-dC5" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="10" id="n56-TG-719"/>
                             <constraint firstAttribute="trailing" secondItem="MDI-9h-tz9" secondAttribute="trailing" constant="20" id="nTR-ax-E5D"/>
                             <constraint firstItem="PyS-wS-dC5" firstAttribute="width" secondItem="6bI-XW-7PO" secondAttribute="width" id="puc-2q-c1e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pMo-qp-NDG" secondAttribute="trailing" constant="20" id="uId-i7-NGA"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="top" secondItem="vKD-pW-W2z" secondAttribute="bottom" constant="50" id="wcm-RN-UfI"/>
                             <constraint firstItem="ZYF-rC-V3y" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" id="xPb-92-it2"/>
                         </constraints>
