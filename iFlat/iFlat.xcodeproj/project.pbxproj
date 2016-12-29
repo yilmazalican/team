@@ -18,6 +18,7 @@
 		1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */; };
 		1A90375E1E15A77700DFE510 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A90375D1E15A77700DFE510 /* Issue.swift */; };
 		1A9037601E15C31300DFE510 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A90375F1E15C31300DFE510 /* ReservationRequest.swift */; };
+		1A9037631E15C7D200DFE510 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9037621E15C7D200DFE510 /* Promotion.swift */; };
 		1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B881DE6615100505913 /* AppDelegate.swift */; };
 		1AC48B901DE6615100505913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B8F1DE6615100505913 /* Assets.xcassets */; };
 		1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B911DE6615100505913 /* LaunchScreen.storyboard */; };
@@ -101,6 +102,7 @@
 		1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRREF.swift; sourceTree = "<group>"; };
 		1A90375D1E15A77700DFE510 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		1A90375F1E15C31300DFE510 /* ReservationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
+		1A9037621E15C7D200DFE510 /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		1AC48B851DE6615100505913 /* iFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48B881DE6615100505913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = iFlat/AppDelegate.swift; sourceTree = "<group>"; };
 		1AC48B8F1DE6615100505913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iFlat/Assets.xcassets; sourceTree = "<group>"; };
@@ -193,7 +195,7 @@
 		1A24DADE1E03698900C49269 /* QueryMaster */ = {
 			isa = PBXGroup;
 			children = (
-				1A6CA5761E0370F7009B4512 /* Flat */,
+				1A24DAE11E036A6E00C49269 /* Querymaster.swift */,
 			);
 			name = QueryMaster;
 			sourceTree = "<group>";
@@ -204,14 +206,6 @@
 				1A6A1F911E15285600D644BD /* spacescell.swift */,
 			);
 			name = cells;
-			sourceTree = "<group>";
-		};
-		1A6CA5761E0370F7009B4512 /* Flat */ = {
-			isa = PBXGroup;
-			children = (
-				1A24DAE11E036A6E00C49269 /* Querymaster.swift */,
-			);
-			name = Flat;
 			sourceTree = "<group>";
 		};
 		1A79F6F01DFE212800E601A4 /* Wish */ = {
@@ -365,6 +359,7 @@
 				1A14671A1E093C1900B691EF /* FilteredFlat.swift */,
 				1A90375D1E15A77700DFE510 /* Issue.swift */,
 				1A90375F1E15C31300DFE510 /* ReservationRequest.swift */,
+				1A9037621E15C7D200DFE510 /* Promotion.swift */,
 			);
 			name = MODEL_LAYER;
 			sourceTree = "<group>";
@@ -971,6 +966,7 @@
 				80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */,
 				95DDDC991E12EE9400106F24 /* SearchParameter.swift in Sources */,
 				1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */,
+				1A9037631E15C7D200DFE510 /* Promotion.swift in Sources */,
 				1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */,
 				462D7F1C1DF58F7D0060807B /* ListFlatViewController.swift in Sources */,
 			);

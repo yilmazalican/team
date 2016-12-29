@@ -10,10 +10,20 @@ import Foundation
 
 class ReservationRequest
 {
-    var from:ManipulableUser
-    var to:ManipulableUser
+    var fromU:ManipulableUser
+    var toU:ManipulableUser
     var flat:ManipulableFlat
     var from:Date
     var to:Date
     var accepted:Bool
+    
+    init(fromU:ManipulableUser, toU:ManipulableUser,flat:ManipulableFlat,from:Date,to:Date) {
+        self.accepted = false
+        self.fromU = fromU
+        self.toU = toU
+        self.flat = flat
+        self.from = from
+        self.to = to
+    }
+    
 }

@@ -36,8 +36,8 @@ protocol FIRUSERDelegate :class
     func openIssue(toUser:ManipulableUser, issue:Issue, completion: @escaping (String?) -> ())
     func getISsue(user:ManipulableUser, completion: @escaping([Issue]) -> ())
     func getUserByID(id:String, completion: @escaping(ManipulableUser?) -> ())
-    func sendReservationRequest()
-
+    func sendReservationRequest(req:ReservationRequest, completion: @escaping(String?) -> ())
+    
 }
 
 
@@ -45,6 +45,11 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func sendReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
+        
+    }
+
+
     internal func getUserByID(id: String, completion: @escaping (ManipulableUser?) -> ()) {
         let usr = User()
         
