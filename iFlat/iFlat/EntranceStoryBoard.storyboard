@@ -163,13 +163,6 @@
                                             <constraint firstItem="jnU-v3-1mm" firstAttribute="leading" secondItem="Fno-r3-uI2" secondAttribute="leading" id="h81-sk-2z6"/>
                                         </constraints>
                                     </view>
-                                    <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qD9-1o-lTw">
-                                        <rect key="frame" x="0.0" y="627" width="375" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <items>
-                                            <tabBarItem systemItem="search" id="Fbb-jQ-44E"/>
-                                        </items>
-                                    </tabBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -180,18 +173,15 @@
                                     <constraint firstItem="iDn-Ou-Zvj" firstAttribute="top" secondItem="For-NF-reC" secondAttribute="top" constant="20" id="O7M-i9-XVV"/>
                                     <constraint firstItem="pDn-z5-t3e" firstAttribute="leading" secondItem="For-NF-reC" secondAttribute="leading" id="Z0F-S5-ahQ"/>
                                     <constraint firstItem="pDn-z5-t3e" firstAttribute="top" secondItem="7o4-Lh-6aL" secondAttribute="bottom" constant="20" id="a23-xN-eWj"/>
-                                    <constraint firstAttribute="bottom" secondItem="qD9-1o-lTw" secondAttribute="bottom" id="bns-Mg-lyj"/>
                                     <constraint firstAttribute="trailing" secondItem="Fno-r3-uI2" secondAttribute="trailing" id="eJy-Lf-OtW"/>
                                     <constraint firstAttribute="trailing" secondItem="iDn-Ou-Zvj" secondAttribute="trailing" id="if9-Px-gei"/>
                                     <constraint firstItem="iDn-Ou-Zvj" firstAttribute="leading" secondItem="For-NF-reC" secondAttribute="leading" id="kpv-9Y-DZG"/>
-                                    <constraint firstItem="qD9-1o-lTw" firstAttribute="leading" secondItem="For-NF-reC" secondAttribute="leading" id="okI-oE-MOZ"/>
                                     <constraint firstAttribute="trailing" secondItem="pDn-z5-t3e" secondAttribute="trailing" id="uQo-A9-MIh"/>
                                     <constraint firstItem="Fno-r3-uI2" firstAttribute="leading" secondItem="For-NF-reC" secondAttribute="leading" id="vc4-mN-2zd"/>
-                                    <constraint firstAttribute="trailing" secondItem="qD9-1o-lTw" secondAttribute="trailing" id="xQj-ia-RTV"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXM-gG-aR7">
-                                <rect key="frame" x="50" y="587" width="275" height="40"/>
+                                <rect key="frame" x="50" y="538" width="275" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pv-YU-ePs">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
@@ -221,13 +211,14 @@
                             <constraint firstAttribute="trailing" secondItem="For-NF-reC" secondAttribute="trailing" id="3Qi-uE-EsJ"/>
                             <constraint firstAttribute="bottom" secondItem="For-NF-reC" secondAttribute="bottom" id="PsR-Ew-5QA"/>
                             <constraint firstItem="P1n-xJ-Q5M" firstAttribute="top" secondItem="NXM-gG-aR7" secondAttribute="bottom" constant="40" id="TaK-37-qNv"/>
-                            <constraint firstItem="qD9-1o-lTw" firstAttribute="top" secondItem="1pv-YU-ePs" secondAttribute="bottom" id="UKP-ji-9F2"/>
                             <constraint firstItem="For-NF-reC" firstAttribute="top" secondItem="znw-HO-7K8" secondAttribute="top" id="h1o-H2-jFU"/>
                             <constraint firstItem="NXM-gG-aR7" firstAttribute="leading" secondItem="znw-HO-7K8" secondAttribute="leading" constant="50" id="p9c-lJ-PU4"/>
                             <constraint firstItem="For-NF-reC" firstAttribute="leading" secondItem="znw-HO-7K8" secondAttribute="leading" id="uiq-m7-wRc"/>
                             <constraint firstAttribute="trailing" secondItem="NXM-gG-aR7" secondAttribute="trailing" constant="50" id="ynD-uW-JGV"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="ajU-cu-Ps9"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="FromDatePicker" destination="bEH-Tm-upR" id="u8n-vd-d7p"/>
                         <outlet property="ToDatePicker" destination="U2J-nK-v5Q" id="JC3-s8-Xbb"/>
