@@ -33,6 +33,10 @@ protocol FIRUSERDelegate :class
     func changeUserProfileImage(user:ManipulableUser,img:UIImage, completion: @escaping (String?) -> ())
     func getCities(completion: @escaping ([String]) -> ())
     func forgotPassword(email:String, completion: @escaping (String?) -> ())
+    func openIssue(toUser:ManipulableUser, issue:Issue, completion: @escaping (String?) -> ())
+    func getISsue(user:ManipulableUser, completion: @escaping([Issue]) -> ())
+    func getUserByID(id:String, completion: @escaping(ManipulableUser?) -> ())
+    func sendReservationRequest()
 
 }
 
@@ -41,6 +45,75 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func getUserByID(id: String, completion: @escaping (ManipulableUser?) -> ()) {
+        let usr = User()
+        
+        FIRREF.instance().getRef().child("users/" + id).observeSingleEvent(of: .value, with: { snapshot in
+            
+            if(snapshot.childrenCount >= 1){
+                let obj = snapshot.children.allObjects[0] as! FIRDataSnapshot
+                let objdict = obj.value as! [String:String]
+                usr.id = obj.key
+                usr.email = objdict["email"]!
+                usr.Gender = objdict["gender"]!
+                usr.name = objdict["firstName"]!
+                usr.birthDate = objdict["birthdate"]!
+                usr.surname = objdict["lastName"]!
+                usr.country = objdict["country"]!
+                completion(usr)
+            }
+            else
+            {
+                completion(nil)
+            }
+        })
+    }
+
+    internal func openIssue(toUser: ManipulableUser, issue: Issue, completion: @escaping (String?) -> ()) {
+        let insertingDict = [
+            "content": issue.content,
+            "isopen": issue.isOpen,
+            "issued": toUser.id!,
+            "title": issue.title,
+            "issuer": issue.issuer] as [String : Any]
+        FIRREF.instance().getRef().child("Issues/" + toUser.id! + "/" + issue.ID).setValue(insertingDict) { (err, nil) in
+            if err == nil
+            {
+                completion(nil)
+            }
+            else
+            {
+                completion(err.debugDescription)
+            }
+        }
+    }
+
+    internal func getISsue(user: ManipulableUser, completion: @escaping ([Issue]) -> ()) {
+        var issues = [Issue]()
+        FIRREF.instance().getRef().observe(.value, with: { (ss) in
+            let obj = ss.children.allObjects
+            for a in obj
+            {
+                let key = a as! FIRDataSnapshot
+                let value = key.value as! [String:Any]
+
+                let title = value["title"] as! String
+                let content = value["content"] as! String
+                let issued = value["issued"] as! User
+                let isOpen = value["isopen"] as! Bool
+                let answer = value["answer"] as? String
+                let issue = Issue(title: title, content: content, issued: issued)
+                issue.isOpen = isOpen
+                issue.answer = answer
+                issues.append(issue)
+                
+            }
+            completion(issues)
+        })
+    }
+
+   
+
     internal func forgotPassword(email: String, completion: @escaping (String?) -> ()) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (err) in
             if err != nil
@@ -222,7 +295,7 @@ class FIRUSER: FIRUSERDelegate {
         FIRREF.instance().getRef().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value, with: { snapshot in
             
             if(snapshot.childrenCount >= 1){
-                let obj = snapshot.children.allObjects[0] as! FIRDataSnapshot
+            let obj = snapshot.children.allObjects[0] as! FIRDataSnapshot
                 let objdict = obj.value as! [String:String]
                 usr.id = obj.key
                 usr.email = objdict["email"]!

@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import MessageUI
 import Firebase
 import FirebaseDatabase
 import Kingfisher
 
 
-class ControlPanelVC: UITableViewController, ShowAlert {
+class ControlPanelVC: UITableViewController, ShowAlert, MFMailComposeViewControllerDelegate {
     var dbUser = FIRUSER()
 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 3{
-            UIApplication.shared.open(URL(string:"mailto:\"support@iflat.com")!, options: [:], completionHandler: nil)
+        let mailComposeViewController = configuredMailComposeViewController()
+        if indexPath.row == 3 && MFMailComposeViewController.canSendMail(){
+            self.present(mailComposeViewController, animated: true, completion: nil)
+
+        
         }
         if indexPath.row == 4{
                     let alert = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: .alert)
@@ -36,7 +40,28 @@ class ControlPanelVC: UITableViewController, ShowAlert {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    private func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["tolga.taner@isik.edu.tr","alican.yilmaz@isik.edu.tr","tolgataner43@gmail.com"])
+        mailComposerVC.setSubject("")
+        mailComposerVC.setMessageBody("", isHTML: false)
+        
+        return mailComposerVC
+        
+    }
+    
+    
+    
 
 }
 

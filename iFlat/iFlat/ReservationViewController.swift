@@ -11,11 +11,17 @@ import JTAppleCalendar
 
 class ReservationViewController: UIViewController {
     @IBOutlet var calendarView: JTAppleCalendarView!
-
+    
     @IBOutlet var yearLabel: UILabel!
+    var selectedDayRange : [Date]?
+    var selectedExactDates : [Date]?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        calendarView.allowsMultipleSelection = true
+        calendarView.rangeSelectionWillBeUsed = true
+        
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView") // Registering your cell is manditory
@@ -27,15 +33,15 @@ class ReservationViewController: UIViewController {
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
-
+    
+    
+    
 }
 
 extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
@@ -65,6 +71,7 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         // Setup Cell text
         dayCell.dayLabel.text = cellState.text
         
+        dayCell.selectedView.isHidden = true;
         // Setup text color
         if cellState.dateBelongsTo == .thisMonth {
             dayCell.dayLabel.textColor = UIColor.black
@@ -106,9 +113,21 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         guard let dayCell = view as? CellView else {
             return
         }
+//        if cellState.isSelected{
+//            if dayCell.isSelected{
+//                
+//                dayCell.selectedView.isHidden = true
+//                dayCell.isSelected = false
+//            }else{
+//                dayCell.selectedView.isHidden = false
+//                dayCell.selectedView.layer.cornerRadius = 20
+//                dayCell.isSelected=true
+//            }
+//        }
+        
         if cellState.isSelected{
-            dayCell.selectedView.layer.cornerRadius = 20
             dayCell.selectedView.isHidden = false
+            
         }else{
             dayCell.selectedView.isHidden = true
         }
@@ -117,10 +136,46 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
+        print("--->")
+        print(calendarView.selectedDates)
+        if calendarView.selectedDates.count == 2 {
+           selectedDayRange = calendarView.selectedDates
+//            for var mydate = calendarView.selectedDates.first?.timeIntervalSince1970; mydate <= calendarView.selectedDates.last?.timeIntervalSince1970; mydate += 86400{
+//                
+//            }
+            
+        }else if calendarView.selectedDates.count > 2 {
+            var currentSelectedDates = calendarView.selectedDates
+            for loopdate in selectedDayRange!{
+                if currentSelectedDates.contains(loopdate){
+                    currentSelectedDates.remove(at: currentSelectedDates.index(of: loopdate)!)
+                }
+            }
+            calendarView.deselectAllDates()
+            calendarView.selectDates(currentSelectedDates)
+            
+        }
+//        if calendarView.selectedDates.count == 2 {
+//            var first = calendarView.selectedDates.first
+//            var last = calendarView.selectedDates.last
+//            //first?.addTimeInterval(86400)
+//            //last?.addTimeInterval(-86400)
+//            calendarView.deselectAllDates()
+//                .selectDates(calendarView.generateDateRange(from: first!, to: last!))
+//            //calendarView.deselectAllDates()
+//            //calendarView.selectDates(from: first!, to: last!)
+//            //selectedDayCount = calendarView.selectedDates.count
+//            
+//        }
     }
+    
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
     }
+    
+
+    
+    
     
 }
