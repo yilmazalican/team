@@ -19,12 +19,36 @@ protocol FIRFlatDelegate :class
     func setOwnerID() -> String!
     func insertFlat(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func insertTimeSlot(flt:ManipulableFlat, timeslot:[String], completion: @escaping (String?) -> ())
+    func addWishList(flt:ManipulableFlat, completion: @escaping (String?) -> ())
+    func deleteWish(flt:ManipulableFlat, completion: @escaping (String?) -> ())
+    
     
 }
 
 
 class FIRFlat:FIRFlatDelegate
 {
+    internal func deleteWish(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
+        
+        FIRREF.instance().getRef().child("Wishes/" + flt.userID + "/" + flt.id).removeValue()
+        completion(nil)
+    }
+
+    internal func addWishList(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
+        let insertingDict = [flt.id: true]
+        FIRREF.instance().getRef().child("Wishes/" + flt.userID).setValue(insertingDict) { (err, nil) in
+            if err == nil
+            {
+                completion(err.debugDescription)
+            }
+            else
+            {
+                completion(nil)
+            }
+        }
+        
+    }
+
     internal func insertTimeSlot(flt: ManipulableFlat, timeslot: [String], completion: @escaping (String?) -> ()) {
         for a in timeslot
         {

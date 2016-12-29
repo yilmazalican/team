@@ -16,6 +16,8 @@
 		1A6A1F8F1E1526D800D644BD /* SpacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F8E1E1526D800D644BD /* SpacesVC.swift */; };
 		1A6A1F921E15285600D644BD /* spacescell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A1F911E15285600D644BD /* spacescell.swift */; };
 		1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */; };
+		1A90375E1E15A77700DFE510 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A90375D1E15A77700DFE510 /* Issue.swift */; };
+		1A9037601E15C31300DFE510 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A90375F1E15C31300DFE510 /* ReservationRequest.swift */; };
 		1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B881DE6615100505913 /* AppDelegate.swift */; };
 		1AC48B901DE6615100505913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B8F1DE6615100505913 /* Assets.xcassets */; };
 		1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B911DE6615100505913 /* LaunchScreen.storyboard */; };
@@ -97,13 +99,14 @@
 		1A6A1F8E1E1526D800D644BD /* SpacesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacesVC.swift; sourceTree = "<group>"; };
 		1A6A1F911E15285600D644BD /* spacescell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = spacescell.swift; sourceTree = "<group>"; };
 		1A8A8ADA1DF2B31200AD2378 /* FIRREF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRREF.swift; sourceTree = "<group>"; };
+		1A90375D1E15A77700DFE510 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		1A90375F1E15C31300DFE510 /* ReservationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
 		1AC48B851DE6615100505913 /* iFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48B881DE6615100505913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = iFlat/AppDelegate.swift; sourceTree = "<group>"; };
 		1AC48B8F1DE6615100505913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iFlat/Assets.xcassets; sourceTree = "<group>"; };
 		1AC48B921DE6615100505913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AC48B991DE6615100505913 /* iFlatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFlatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48B9D1DE6615100505913 /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
-		1AC48B9F1DE6615100505913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC48BA41DE6615100505913 /* iFlatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFlatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48BA81DE6615100505913 /* iFlatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlatUITests.swift; sourceTree = "<group>"; };
 		1AC48BAA1DE6615100505913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				1AC48B9D1DE6615100505913 /* UserModelTests.swift */,
-				1AC48B9F1DE6615100505913 /* Info.plist */,
 			);
 			name = ModelTests;
 			path = iFlatTests;
@@ -361,6 +363,8 @@
 				1A4917BA1E05DC69009E39DF /* Rate.swift */,
 				1A4917BC1E05EBD6009E39DF /* Datebaby.swift */,
 				1A14671A1E093C1900B691EF /* FilteredFlat.swift */,
+				1A90375D1E15A77700DFE510 /* Issue.swift */,
+				1A90375F1E15C31300DFE510 /* ReservationRequest.swift */,
 			);
 			name = MODEL_LAYER;
 			sourceTree = "<group>";
@@ -704,6 +708,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 97TQ8HBR2G;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -952,8 +957,10 @@
 				951A929C1DF4E23100199B83 /* EntranceViewController.swift in Sources */,
 				1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */,
 				803DE57D1E0F410300CCB17E /* FlatImagesCell.swift in Sources */,
+				1A9037601E15C31300DFE510 /* ReservationRequest.swift in Sources */,
 				803DE5E01E11B00200CCB17E /* ReservationViewController.swift in Sources */,
 				462D7F1E1DF590F80060807B /* ListFlatCollectionViewCell.swift in Sources */,
+				1A90375E1E15A77700DFE510 /* Issue.swift in Sources */,
 				1AD826541E13362B0021EF4F /* SettingsVC.swift in Sources */,
 				953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */,
 				9535FE2C1E07F6EB00297E90 /* FlatExtension.swift in Sources */,
@@ -1115,9 +1122,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1134,9 +1141,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = iFlat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
