@@ -13,7 +13,7 @@
         <!--Login-->
         <scene sceneID="tal-uf-D9K">
             <objects>
-                <viewController id="83N-ms-XfQ" customClass="LoginViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="83N-ms-XfQ" customClass="LoginViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="enP-EV-r4q"/>
                         <viewControllerLayoutGuide type="bottom" id="XAA-X7-gdt"/>
@@ -130,7 +130,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="mainFlow" storyboardName="MainFlow" id="gMk-4U-v9r" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wok-Ee-0Un" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-891" y="-1076"/>
+            <point key="canvasLocation" x="-810" y="-1069"/>
         </scene>
         <!--Register-->
         <scene sceneID="i5a-RA-RlZ">

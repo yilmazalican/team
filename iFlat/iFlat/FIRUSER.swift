@@ -264,9 +264,10 @@ class FIRUSER: FIRUSERDelegate {
         do {
             try FIRAuth.auth()?.signOut()
         } catch {
-            completion(nil)
+            completion("ERROR OCCURED DURING SIGN OUT!")
         }
-        completion("ERROR OCCURED DURING SIGN OUT!")
+        completion(nil)
+        
         return
 
     }

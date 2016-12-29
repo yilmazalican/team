@@ -22,8 +22,8 @@ class SettingsVC: UIViewController {
                 self.profileIV.kf.setImage(with: url)
                 self.nameLbl.text = (usr?.name)! + " " + (usr?.surname)!
             })
+            
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
