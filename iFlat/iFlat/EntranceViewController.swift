@@ -101,11 +101,31 @@ class EntranceViewController: UIViewController {
                
                 
                 if let controller :ListFlatViewController = navigation.topViewController as? ListFlatViewController {
-
+                  controller.receivedFilter.pool = false
+                      controller.receivedFilter.city = ""
+               controller.receivedFilter.bedroomCount = 0
+                       controller.receivedFilter.capacity = 0
+                    controller.receivedFilter.smoking = false
+                    controller.receivedFilter.bathroomCount = 0
+                    controller.receivedFilter.smoking = false
+                    controller.receivedFilter.internet = false
+                    controller.receivedFilter.tv = false
+                    controller.receivedFilter.washingMachine = false
+                    controller.receivedFilter.gateKeeper = false
+                    controller.receivedFilter.priceTo = 0
+                    controller.receivedFilter.fromDateTimeStamp = ""
+                    controller.receivedFilter.toDateTimeStamp = ""
+                    controller.receivedFilter.parking = false
+                    controller.receivedFilter.elevator = false
+                    controller.receivedFilter.heating = false
+                    controller.receivedFilter.priceFrom = 0
+                    controller.receivedFilter.bedCount = 0
+                    controller.receivedFilter.cooling = nil
+                    
                     if let city =   searchParameter.whereParameter {
                         controller.receivedFilter.city = city
-                    
-
+        
+                       
 
                                if let from = searchParameter.fromParameter {
                     
