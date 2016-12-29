@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class Flat: ManipulableFlat {
 
+    var published: Bool?
     var disabled: Bool?
     var DB_ENDPOINT:FIRFlat
     var title:String?
@@ -53,7 +54,7 @@ class Flat: ManipulableFlat {
     //
     //
 
-    internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Double, deleted: Bool, images: [FlatImage], bedroomCount:Int) {
+    internal required init(title: String, flatDescription: String, city: String, address: String, flatCapacity: Int, bathRoomCount: Int, bedcount: Int, pool: Bool, internet: Bool, cooling: Bool, heating: Bool, tv: Bool, washingMachine: Bool, elevator: Bool, parking: Bool, smoking: Bool, gateKeeper: Bool, price: Double, deleted: Bool, images: [FlatImage], bedroomCount: Int, disabled: Bool, published: Bool) {
         self.title = title
         self.flatDescription = flatDescription
         self.city = city
@@ -76,17 +77,20 @@ class Flat: ManipulableFlat {
         self.images = images
         self.DB_ENDPOINT = FIRFlat()
         self.disabled = false
+        self.published = true
         self.userID = self.DB_ENDPOINT.setOwnerID()
        
         
     }
     
     internal required init() {
+        self.published = true
         self.disabled = false
         self.DB_ENDPOINT = FIRFlat()
         self.userID = self.DB_ENDPOINT.setOwnerID()
 
     }
+    
 
 }
 

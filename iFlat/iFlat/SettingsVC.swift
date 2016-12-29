@@ -15,14 +15,15 @@ class SettingsVC: UIViewController {
     var dbuser = FIRUSER()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dbuser.getCurrentLoggedIn { (usr) in
             self.dbuser.getUserProfileImg(user: usr!, completion: { (img) in
                 let url = URL(string: img!)
                 self.profileIV.kf.setImage(with: url)
                 self.nameLbl.text = (usr?.name)! + " " + (usr?.surname)!
             })
+            
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
