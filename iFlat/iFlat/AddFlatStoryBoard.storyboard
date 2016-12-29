@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of your flat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKD-pW-W2z">
-                                <rect key="frame" x="26" y="114" width="323" height="50"/>
+                                <rect key="frame" x="26" y="70" width="323" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Knh-Za-mr6"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" text="Address of your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="h9S-rH-xAG">
-                                <rect key="frame" x="20" y="364" width="335" height="100"/>
+                                <rect key="frame" x="20" y="320" width="335" height="100"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="GqS-BO-ofz"/>
@@ -55,13 +55,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="Describe your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="MDI-9h-tz9">
-                                <rect key="frame" x="20" y="214" width="335" height="100"/>
+                                <rect key="frame" x="20" y="170" width="335" height="100"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price:Per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-qp-NDG">
-                                <rect key="frame" x="36" y="484" width="117" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price:Per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-qp-NDG">
+                                <rect key="frame" x="169" y="625" width="117" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bwy-86-vlS"/>
                                 </constraints>
@@ -73,7 +73,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bI-XW-7PO">
-                                <rect key="frame" x="229" y="484" width="120" height="50"/>
+                                <rect key="frame" x="229" y="440" width="120" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Hho-8U-fmj"/>
                                     <constraint firstAttribute="height" constant="50" id="cHq-sb-EXc"/>
@@ -84,6 +84,13 @@
                                     <action selector="showOptionButtonAction:" destination="GVW-gj-Ql5" eventType="touchUpInside" id="kTn-ZE-yTA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-wS-dC5">
+                                <rect key="frame" x="10" y="440" width="120" height="50"/>
+                                <state key="normal" title="Flat Photos"/>
+                                <connections>
+                                    <segue destination="1Ys-1A-eEw" kind="show" id="BVg-l6-Mzd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -92,16 +99,19 @@
                             <constraint firstItem="kII-ag-Gj0" firstAttribute="top" secondItem="ZYF-rC-V3y" secondAttribute="bottom" id="AnG-7N-qrt"/>
                             <constraint firstItem="6bI-XW-7PO" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="AvH-a8-TG5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6bI-XW-7PO" secondAttribute="trailing" constant="10" id="EqY-I7-nCy"/>
+                            <constraint firstItem="PyS-wS-dC5" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="FRE-Mm-xVj"/>
                             <constraint firstItem="vKD-pW-W2z" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" constant="10" id="Nq9-qD-wt9"/>
                             <constraint firstItem="vKD-pW-W2z" firstAttribute="top" secondItem="oQm-V3-1Cy" secondAttribute="bottom" constant="50" id="PhT-Tf-oJP"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="20" id="XC1-Av-nHW"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="height" secondItem="h9S-rH-xAG" secondAttribute="height" id="XOL-hJ-Iq0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZYF-rC-V3y" secondAttribute="trailing" id="au8-qQ-pyv"/>
                             <constraint firstItem="pMo-qp-NDG" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" constant="20" id="eiG-mc-pE8"/>
-                            <constraint firstItem="pMo-qp-NDG" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="llM-iZ-n2N"/>
+                            <constraint firstItem="PyS-wS-dC5" firstAttribute="height" secondItem="6bI-XW-7PO" secondAttribute="height" id="fIw-6Y-eYO"/>
                             <constraint firstItem="h9S-rH-xAG" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="20" id="mLr-c4-L6x"/>
                             <constraint firstAttribute="trailing" secondItem="h9S-rH-xAG" secondAttribute="trailing" constant="20" id="n06-gD-AtV"/>
+                            <constraint firstItem="PyS-wS-dC5" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="10" id="n56-TG-719"/>
                             <constraint firstAttribute="trailing" secondItem="MDI-9h-tz9" secondAttribute="trailing" constant="20" id="nTR-ax-E5D"/>
+                            <constraint firstItem="PyS-wS-dC5" firstAttribute="width" secondItem="6bI-XW-7PO" secondAttribute="width" id="puc-2q-c1e"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="top" secondItem="vKD-pW-W2z" secondAttribute="bottom" constant="50" id="wcm-RN-UfI"/>
                             <constraint firstItem="ZYF-rC-V3y" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" id="xPb-92-it2"/>
                         </constraints>
@@ -490,7 +500,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="541.60000000000002" y="-949.02548725637189"/>
+            <point key="canvasLocation" x="644" y="-859"/>
         </scene>
         <!--Choose Photo View Controller-->
         <scene sceneID="mcg-GY-JDy">
@@ -501,11 +511,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cAz-J9-eut"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="69l-eo-Trc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-jY-D14">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="750" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gCc-o8-8CY"/>
                                 </constraints>
@@ -515,7 +525,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zvD-tu-2Cq" customClass="ChoosePhotoCollectionView" customModule="iFlat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="Yrb-W2-nGK"/>
@@ -556,7 +566,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBn-NL-nz4">
-                                <rect key="frame" x="112.5" y="504" width="150" height="50"/>
+                                <rect key="frame" x="112.5" y="460" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="D78-R4-hu8"/>
                                     <constraint firstAttribute="width" constant="150" id="fgY-5U-ry9"/>
@@ -586,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdt-Rh-n8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-1027"/>
+            <point key="canvasLocation" x="1526" y="-1105"/>
         </scene>
     </scenes>
     <resources>
