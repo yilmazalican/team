@@ -9,26 +9,64 @@
 import UIKit
 
 class EditFlatOptionViewController: UIViewController {
-    @IBOutlet weak var heatingSwitch: UISwitch!
-    @IBOutlet weak var washingMachineSwitch: UISwitch!
-    @IBOutlet weak var smokingSwitch: UISwitch!
+    
+    
+    var editingFlatOptions = Flat()
+    
+    
+    @IBOutlet weak var heatingSwitch: UISwitch!{
+        didSet{
+            heatingSwitch.isOn = editingFlatOptions.heating!
+            
+        }
+    }
+    @IBOutlet weak var washingMachineSwitch: UISwitch!{
+        didSet{
+            washingMachineSwitch.isOn = editingFlatOptions.washingMachine!
+            
+        }
+    }
+    @IBOutlet weak var smokingSwitch: UISwitch!{
+        didSet{
+            
+            smokingSwitch.isOn = editingFlatOptions.smoking!
+        }
+    }
 
-    @IBOutlet weak var gateKeeperSwitch: UISwitch!
-    @IBOutlet weak var parkingSwitch: UISwitch!
-    @IBOutlet weak var elevatorSwitch: UISwitch!
+    @IBOutlet weak var gateKeeperSwitch: UISwitch!{
+        didSet{
+            
+        gateKeeperSwitch.isOn = editingFlatOptions.gateKeeper!
+        }
+    }
+    @IBOutlet weak var parkingSwitch: UISwitch!{
+        didSet{
+            
+            parkingSwitch.isOn = editingFlatOptions.parking!
+        }
+    }
+    @IBOutlet weak var elevatorSwitch: UISwitch!{
+        didSet{
+            elevatorSwitch.isOn = editingFlatOptions.elevator!
+            
+        }
+    }
     
-    @IBOutlet weak var coolingSwitch: UISwitch!
+    @IBOutlet weak var coolingSwitch: UISwitch!{
+        didSet{
+            
+           coolingSwitch.isOn =  editingFlatOptions.cooling!
+        }
+    }
     
-    @IBOutlet weak var poolSwitch: UISwitch!
+    @IBOutlet weak var poolSwitch: UISwitch!{
+        didSet{
+            
+            poolSwitch.isOn = editingFlatOptions.pool!
+        }
+    }
    
-    @IBOutlet weak var cityPicker: UIPickerView!
-    @IBOutlet weak var capacityPicker: UIPickerView!
-    
-    @IBOutlet weak var bedroomPicker: UIPickerView!
-    
-    @IBOutlet weak var bathroomPicker: UIPickerView!
- 
-    @IBOutlet weak var bedPicker: UIPickerView!
+   
     
     
     @IBOutlet weak var scrollView: UIScrollView!{
@@ -36,13 +74,51 @@ class EditFlatOptionViewController: UIViewController {
             
          
             
-            scrollView.contentSize.height = 1280
+            scrollView.contentSize.height = 1400
         }
     }
     
+ 
+    @IBAction func heatingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.heating = sender.isOn
+    }
+    
+    
+    @IBAction func elevatorValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.elevator = sender.isOn
+    }
+    
+    
+    @IBAction func parkingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.parking = sender.isOn
+    }
+    
+    
+    @IBAction func poolValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.pool = sender.isOn
+    }
+    
+    
+    @IBAction func coolingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.cooling = sender.isOn
+    }
+    
+    @IBAction func gateKeeperValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.gateKeeper = sender.isOn
+    }
+    
+    @IBAction func smokingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.smoking = sender.isOn
+    }
+    
+    @IBAction func washingMachineValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.washingMachine = sender.isOn
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -52,5 +128,25 @@ class EditFlatOptionViewController: UIViewController {
     }
     
 
-  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        
+        if let controller :EditFlatViewController = segue.destination as? EditFlatViewController {
+            
+            controller.editingFlat = editingFlatOptions
+            
+    }
+    }
 }

@@ -35,7 +35,7 @@ class EditFlatViewController: UIViewController {
             
             flatPriceTextField.delegate = self
            
-            flatPriceTextField.placeholder =  String(Int(editingFlat.price!))
+           // flatPriceTextField.placeholder =  String(Int(editingFlat.price!))
         }
     }
     @IBOutlet weak var flatDescriptionTextView: UITextView!{
@@ -94,16 +94,23 @@ class EditFlatViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flatPhotoSegue" {
-            let navigation = segue.destination as! UINavigationController
             
-            if let controller :EditPhotoViewController = navigation.topViewController as? EditPhotoViewController {
+            if let controller :EditPhotoViewController = segue.destination as? EditPhotoViewController {
                 
-controller.editPhotoCollectionView.flatImages  = editingFlat.images!
+// controller.editPhotoCollectionView.flatImages  = editingFlat.images!
             
         }
         }
         if segue.identifier == "flatOptionSegue" {
             
+            
+            
+            if let controller :EditFlatOptionViewController = segue.destination as? EditFlatOptionViewController {
+                controller.editingFlatOptions = editingFlat
+             
+                
+            }
+
         }
         
     }
