@@ -12,7 +12,11 @@ class EditPhotoViewController: UIViewController {
 
     @IBOutlet weak var editPhotoCollectionView: EditPhotoCollectionView!
     
+    var editingFlatID = String()
+    
+    var flatImage = [FlatImage]()
   
+    var firebase = FIRFlat()
     
     @IBOutlet weak var popUpView: UIView!{
         didSet{
@@ -24,7 +28,27 @@ class EditPhotoViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
+        
+        firebase.getFlatImages(flatID:editingFlatID) { (urlImages) in
+            
+            for url in urlImages! {
+                
+                let tmpImage: UIImageView = UIImageView()
+                
+                tmpImage.kf.setImage(with: URL(string:url.imageDownloadURL))
+                self.flatImage.append(FlatImage(image: tmpImage.image!))
+              
+                
+          //  self.editPhotoCollectionView.flatImages.insert(FlatImage(image: tmpImage.image!), at: 0)
+                
+            }
+            self.editPhotoCollectionView.reloadData()
+         
+        }
+        
+   
         // Do any additional setup after loading the view.
     }
 
@@ -37,7 +61,7 @@ class EditPhotoViewController: UIViewController {
         
         if let controller : EditFlatViewController = segue.destination as? EditFlatViewController {
             
-           controller.editingFlat.images = editPhotoCollectionView.flatImages
+         //  controller.editingFlat.images = editPhotoCollectionView.flatImages
         }
         
         

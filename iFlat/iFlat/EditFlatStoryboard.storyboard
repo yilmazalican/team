@@ -36,7 +36,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editPhotoCell" id="hUG-I9-Hia" customClass="EditPhotoCollectionViewCell" customModule="iFlat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-19" width="375" height="414"/>
+                                                <rect key="frame" x="0.0" y="-18.5" width="375" height="414"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
@@ -351,7 +351,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-dn-Wie">
-                                        <rect key="frame" x="50" y="1169" width="200" height="30"/>
+                                        <rect key="frame" x="50" y="1219" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="EYE-ZF-dDD"/>
                                             <constraint firstAttribute="height" constant="30" id="Uev-zm-inw"/>
@@ -562,6 +562,16 @@
                                             <constraint firstItem="vDa-zR-Axv" firstAttribute="top" secondItem="mH5-mC-aAR" secondAttribute="top" id="rF9-Eh-nqU"/>
                                         </constraints>
                                     </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQ8-uk-5uU">
+                                        <rect key="frame" x="-10" y="1049" width="320" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="9Tb-e6-4wP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="cga-a2-s0H" id="qzI-YL-aPs"/>
+                                            <outlet property="delegate" destination="cga-a2-s0H" id="g6T-86-hhr"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -569,10 +579,11 @@
                                     <constraint firstItem="Pxf-la-pXl" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="0z0-z3-d0U"/>
                                     <constraint firstItem="Vnj-7z-yvK" firstAttribute="top" secondItem="Pxf-la-pXl" secondAttribute="bottom" constant="20" id="37z-rm-jee"/>
                                     <constraint firstItem="Pxf-la-pXl" firstAttribute="top" secondItem="yC4-ez-N0w" secondAttribute="bottom" constant="20" id="3I2-hH-crG"/>
-                                    <constraint firstItem="S1P-dn-Wie" firstAttribute="top" secondItem="qxw-2j-pcK" secondAttribute="bottom" constant="150" id="7eF-fj-5H6"/>
                                     <constraint firstItem="yC4-ez-N0w" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="Dow-Me-aJd"/>
+                                    <constraint firstItem="LQ8-uk-5uU" firstAttribute="top" secondItem="qxw-2j-pcK" secondAttribute="bottom" constant="30" id="Ehd-oH-GlD"/>
                                     <constraint firstItem="6aa-og-fAc" firstAttribute="top" secondItem="TbK-HO-Jio" secondAttribute="bottom" constant="30" id="ILJ-eD-63x"/>
                                     <constraint firstItem="TbK-HO-Jio" firstAttribute="top" secondItem="mH5-mC-aAR" secondAttribute="bottom" constant="40" id="JoE-VV-w0t"/>
+                                    <constraint firstItem="LQ8-uk-5uU" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="K8b-Yu-0xA"/>
                                     <constraint firstItem="63P-rn-QKR" firstAttribute="top" secondItem="QWK-pN-WsU" secondAttribute="bottom" constant="20" id="LGG-iv-WN0"/>
                                     <constraint firstItem="QWK-pN-WsU" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="Nb7-fQ-pVJ"/>
                                     <constraint firstItem="ay3-3d-jbK" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="Or6-vZ-4g3"/>
@@ -586,6 +597,7 @@
                                     <constraint firstItem="oFf-us-AgE" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="hP5-Cg-vEQ"/>
                                     <constraint firstItem="nB3-aj-GJw" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="mUb-fF-NoF"/>
                                     <constraint firstItem="63P-rn-QKR" firstAttribute="centerX" secondItem="Lvp-XI-x6H" secondAttribute="centerX" id="nsB-hg-5Rd"/>
+                                    <constraint firstItem="S1P-dn-Wie" firstAttribute="top" secondItem="LQ8-uk-5uU" secondAttribute="bottom" constant="30" id="qB3-jk-iZo"/>
                                     <constraint firstItem="nB3-aj-GJw" firstAttribute="top" secondItem="ay3-3d-jbK" secondAttribute="bottom" constant="20" id="qsZ-JB-Xc8"/>
                                     <constraint firstItem="ay3-3d-jbK" firstAttribute="top" secondItem="Lvp-XI-x6H" secondAttribute="top" constant="50" id="yUA-ZM-9rP"/>
                                     <constraint firstItem="INL-UY-M9m" firstAttribute="top" secondItem="6aa-og-fAc" secondAttribute="bottom" constant="30" id="zmm-e4-nFU"/>
@@ -611,6 +623,7 @@
                         <outlet property="bedLabel" destination="AF0-pd-sdd" id="kvW-Up-pcL"/>
                         <outlet property="bedroomLabel" destination="h1J-u6-iPh" id="Xyd-AM-p13"/>
                         <outlet property="capacityLabel" destination="pu5-EI-eOF" id="vmw-zd-54K"/>
+                        <outlet property="cityPicker" destination="LQ8-uk-5uU" id="WE6-IG-kmS"/>
                         <outlet property="coolingSwitch" destination="DfU-jn-Uha" id="G4f-BR-a8S"/>
                         <outlet property="elevatorSwitch" destination="Zy7-Xo-oBv" id="WiG-76-nyY"/>
                         <outlet property="gateKeeperSwitch" destination="wXZ-SQ-aXi" id="cnU-js-kug"/>

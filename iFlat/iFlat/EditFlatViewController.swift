@@ -12,6 +12,7 @@ class EditFlatViewController: UIViewController {
 
     var editingFlat = Flat()
     
+   
     @IBOutlet weak var flatTitleTextField: UITextField!{
         didSet{
             flatTitleTextField.delegate = self
@@ -87,7 +88,6 @@ class EditFlatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         
         addressTextView.text = editingFlat.address
         flatDescriptionTextView.text = editingFlat.flatDescription
@@ -105,8 +105,10 @@ class EditFlatViewController: UIViewController {
         if segue.identifier == "flatPhotoSegue" {
             
             if let controller :EditPhotoViewController = segue.destination as? EditPhotoViewController {
+             
                 
-// controller.editPhotoCollectionView.flatImages  = editingFlat.images!
+    controller.editingFlatID = editingFlat.id
+                
             
         }
         }

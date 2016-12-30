@@ -90,10 +90,17 @@ class RenterEditOwnProfieController: UIViewController {
         
         dbFirebase.getCities { (allCities) in
             self.cities = allCities
-            
-        self.countyPickerView.reloadAllComponents()
+        
         }
         
+        for  index in 1...cities.count{
+            if cities[index] == loginUser.country  {
+                countyPickerView.selectedRow(inComponent: index)
+            }
+        }
+        
+       self.countyPickerView.reloadAllComponents()
+
   setLoginUser()
       
        
