@@ -1,4 +1,4 @@
-//
+ //
 //  SpacesVC.swift
 //  iFlat
 //
@@ -24,8 +24,11 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
                 for a in flats!
                 {
                     self.dbFlat.getFlatImages(flatID: a.id, completion: { (imgs) in
-                        self.flatImgArr.append((imgs?.first?.imageDownloadURL)!)
-                        self.spacesTV.reloadData()
+                        if let firstimg = imgs?.first?.imageDownloadURL{
+                            self.flatImgArr.append((firstimg))
+                            self.spacesTV.reloadData()
+                        }
+                       
                     })
                 }
             }
@@ -42,11 +45,15 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = spacesTV.dequeueReusableCell(withIdentifier: "spacescell", for: indexPath) as! spacescell
-        let url = URL(string:self.flatImgArr[indexPath.row])
-        cell.flatThumbImg.kf.setImage(with: url)
-        cell.flatPricesLbl.text = String(describing: self.flatsArr[indexPath.row].price!) + "₺"
-        cell.flatTitleLbl.text = self.flatsArr[indexPath.row].title
-        cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        if self.flatImgArr.count - 1 >= indexPath.row{
+            let url = URL(string:self.flatImgArr[indexPath.row])
+            cell.flatThumbImg.kf.setImage(with: url)
+            cell.flatPricesLbl.text = String(describing: self.flatsArr[indexPath.row].price!) + "₺"
+            cell.flatTitleLbl.text = self.flatsArr[indexPath.row].title
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            
+        }
+        
         return cell
         
     }
