@@ -13,12 +13,34 @@ import FirebaseStorage
 protocol QuerymasterDelegate :class
 {
     func getFilteredFlats(filter:FilterModel, completion: @escaping ([FilteredFlat]) -> ())
+    func getPromotions(completion: @escaping ([Promotion]) -> ())
 }
 
 
 
 class Querymaster:QuerymasterDelegate
 {
+    internal func getPromotions(completion: @escaping ([Promotion]) -> ()) {
+
+        var promotions = [Promotion]()
+        FIRREF.instance().getRef().child("promotions").queryOrdered(byChild: "isActive").queryEqual(toValue: true).observe(.value, with: { (ss) in
+            for ts in ss.children.allObjects
+            {
+                let promotionObject = ts as! FIRDataSnapshot
+                let object = promotionObject.value as! [String:Any]
+                let title = object["title"] as! String
+                let discountRate = object["discountRate"] as! Double
+                let description = object["description"] as! String
+                let isActive = object["isActive"] as! Bool
+                let promotion = Promotion(title: title, discountRate: discountRate, description: description, isActive: isActive)
+                promotions.append(promotion)
+                
+            }
+            completion(promotions)
+        })
+        
+    }
+
     var flatEndpoint = FIRFlat()
     
     var returningFlats = [FilteredFlat]()

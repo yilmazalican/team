@@ -9,5 +9,19 @@
 import Foundation
 class Promotion
 {
+    var ID:String
+    var title:String
+    var discountRate:Double
+    var description:String
+    var isActive:Bool
+    
+    
+    init(title:String,discountRate:Double,description:String,isActive:Bool) {
+        self.ID = UUID().uuidString
+        self.title = title
+        self.discountRate = discountRate
+        self.description = description
+        self.isActive = isActive
+    }
     
 }
