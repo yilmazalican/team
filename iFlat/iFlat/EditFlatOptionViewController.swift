@@ -20,19 +20,19 @@ class EditFlatOptionViewController: UIViewController {
     
     var cities = [String](){
         didSet{
-            
-            if cities.count != 0 {
-                
-                for  index in 0...cities.count{
-                    if cities[index] == editingFlatOptions.city  {
-                        cityPicker.selectedRow(inComponent: index)
-                    }
-                }
-            }
+           
+//            if cities.count != 0 {
+//                
+//                for  index in 0...cities.count{
+//                    if cities[index] == editingFlatOptions.city  {
+//                        cityPicker.selectedRow(inComponent: index)
+//                    }
+//                }
+          }
            
 
         }
-    }
+    
     
     var editingFlatOptions = Flat()
     
