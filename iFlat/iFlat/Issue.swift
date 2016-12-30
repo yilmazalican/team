@@ -38,6 +38,12 @@ class Issue
         }
     }
     
+    init() {
+        
+    }
+    
+    
+    
     
     
 

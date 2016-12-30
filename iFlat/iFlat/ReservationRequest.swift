@@ -10,16 +10,16 @@ import Foundation
 class ReservationRequest
 {
     private let dbEndpoint = FIRUSER()
-    let id = UUID().uuidString
+    var id = UUID().uuidString
     var toU:String?
     var fromU:String?
     var flat:String?
-    var from:Date?
-    var to:Date?
+    var from:Int?
+    var to:Int?
     var accepted:Int?
     var date:String?
     
-    init(fromU:String, toU:String,flat:String,from:Date,to:Date) {
+    init(fromU:String, toU:String,flat:String,from:Int,to:Int) {
         self.accepted = 0
         self.toU = toU
         self.flat = flat

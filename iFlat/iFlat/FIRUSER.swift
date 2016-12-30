@@ -5,8 +5,7 @@
 //  Created by Alican Yilmaz on 02/12/2016.
 //  Copyright © 2016 SE 301. All rights reserved.
 //
-//Change password and change email not included.
-//This class is wroted though FIREBASvarser authendication framework!
+//This class is wroted though FIREBASE authendication framework!
 //Handle Optionals
 import Foundation
 import Firebase
@@ -39,6 +38,7 @@ protocol FIRUSERDelegate :class
     func sendReservationRequest(req:ReservationRequest, completion: @escaping(String?) -> ())
     func acceptReservationRequest(req:ReservationRequest,completion: @escaping(String?) -> ())
     func rejectReservationRequest(req:ReservationRequest,completion: @escaping(String?) -> ())
+    func getFlatByID(id:String, completion: @escaping(ManipulableFlat?) -> ())
     func getUsersReservationRequests(usr:ManipulableUser, completion: @escaping([ReservationRequest]) -> ())
     
 }
@@ -48,31 +48,59 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func getFlatByID(id: String, completion: @escaping (ManipulableFlat?) -> ()) {
+        FIRREF.instance().getRef().child("filter_flats/" + id).observe(.value, with: { (ss) in
+            let flt = Flat()
+            let objdict = ss.value as! [String:Any]
+            flt.bathroomCount = objdict["bathroomCount"] as? Int
+            flt.bedCount = objdict["bedCount"] as? Int
+            flt.cooling = objdict["cooling"] as? Bool
+            flt.bedroomCount = objdict["bedroomCount"] as? Int
+            flt.internet = objdict["internet"] as? Bool
+            flt.elevator = objdict["elevator"] as? Bool
+            flt.flatDescription = objdict["description"] as? String
+            flt.heating = objdict["heating"] as? Bool
+            flt.gateKeeper = objdict["gateKeeper"] as? Bool
+            flt.parking = objdict["parking"] as? Bool
+            flt.pool = objdict["pool"] as? Bool
+            flt.smoking = objdict["smoking"] as? Bool
+            flt.price = objdict["price"] as? Double
+            flt.tv = objdict["tv"] as? Bool
+            flt.washingMachine = objdict["washingMachine"] as? Bool
+            flt.flatCapacity = objdict["capacity"] as? Int
+            flt.title = objdict["title"] as? String
+            flt.address = objdict["adress"] as? String
+            flt.id = ss.key
+            flt.userID = (objdict["userId"] as? String)!
+            flt.disabled = objdict["disabled"] as? Bool
+            flt.published = objdict["published"] as? Bool
+            completion(flt)
+        })
+    }
+
     internal func getUsersReservationRequests(usr:ManipulableUser,completion: @escaping([ReservationRequest]) -> ()) {
-        var req = ReservationRequest()
+        var returningReqs = [ReservationRequest]()
         FIRREF.instance().getRef().child("reservationRequests").queryOrdered(byChild: "toU").queryEqual(toValue: usr.id).observe(.value, with: { (ss) in
             let obj = ss.children.allObjects
             for a in obj
             {
                 let key = a as! FIRDataSnapshot
                 let value = key.value as! [String:Any]
-                
-                let title = value["title"] as! String
-                let content = value["content"] as! String
-                let issued = value["issued"] as! String
-                let isOpen = value["isopen"] as! Bool
-                let answer = value["answer"] as? String
-                let issue = Issue(title: title, content: content, issued: issued)
-                issue.isOpen = isOpen
-                issue.answer = answer
-               
-                
-            }
+                var req = ReservationRequest()
+                req.accepted = Int(value["accepted"] as! String)
+                req.date = value["date"] as? String
+                req.flat = value["flat"] as? String
+                req.from = value["from"] as? Int
+                req.to = value["to"] as? Int
+                req.id = key.key
+                req.fromU = value["fromU"] as? String
+                req.toU = value["toU"] as? String
+                returningReqs.append(req)
+        }
+            completion(returningReqs)
+    })
         
-        
-        })
     }
-
 
 
 
@@ -89,8 +117,8 @@ class FIRUSER: FIRUSERDelegate {
             [
             "toU": req.toU! as String,
             "flat" : req.flat!,
-            "from": req.from!.toTimeStamp(),
-            "to" : req.to!.toTimeStamp(),
+            "from": req.from!,
+            "to" : req.to!,
             "accepted": req.accepted!,
             "date": req.date!
             ]
@@ -132,6 +160,8 @@ class FIRUSER: FIRUSERDelegate {
             }
         })
     }
+    
+    //MARK:BUGGY?
 
     internal func openIssue(toUser: ManipulableUser, issue: Issue, completion: @escaping (String?) -> ()) {
         let insertingDict = [
@@ -152,6 +182,7 @@ class FIRUSER: FIRUSERDelegate {
         }
     }
 
+    //MARK : BUGGY?
     internal func getISsue(user: ManipulableUser, completion: @escaping ([Issue]) -> ()) {
         var issues = [Issue]()
         FIRREF.instance().getRef().observe(.value, with: { (ss) in
