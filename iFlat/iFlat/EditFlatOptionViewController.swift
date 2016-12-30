@@ -11,7 +11,39 @@ import UIKit
 class EditFlatOptionViewController: UIViewController {
     
     
+    var count : Int = 0
+    
     var editingFlatOptions = Flat()
+    
+    @IBOutlet weak var capacityLabel: UILabel!{
+        didSet{
+            
+            capacityLabel.text = String(editingFlatOptions.flatCapacity!)
+        }
+    }
+    
+    @IBOutlet weak var bedroomLabel: UILabel!{
+        didSet{
+            bedroomLabel.text = String(editingFlatOptions.bedroomCount!)
+            
+        }
+    }
+   
+    
+    @IBOutlet weak var bathroomLabel: UILabel!{
+        didSet{
+            
+            bathroomLabel.text = String(editingFlatOptions.bathroomCount!)
+        }
+    }
+    
+    @IBOutlet weak var bedLabel: UILabel!{
+        didSet{
+            
+             bedLabel.text = String(editingFlatOptions.bedCount!)
+        }
+    }
+    
     
     
     @IBOutlet weak var heatingSwitch: UISwitch!{
@@ -67,6 +99,12 @@ class EditFlatOptionViewController: UIViewController {
     }
    
    
+    @IBOutlet weak var internetSwitch: UISwitch!{
+        didSet{
+            
+            internetSwitch.isOn = editingFlatOptions.internet!
+        }
+    }
     
     
     @IBOutlet weak var scrollView: UIScrollView!{
@@ -133,9 +171,65 @@ class EditFlatOptionViewController: UIViewController {
     
     
     
+    @IBAction func countUp(_ sender: UIButton) {
+        if  sender.tag == 0 {
+            
+           count = editingFlatOptions.flatCapacity!
+            
+            count = count + 1
+            
+            capacityLabel.text = String(count)
+
+              editingFlatOptions.flatCapacity = count
+            
+        }
+        
+        if  sender.tag == 1 {
+            count = editingFlatOptions.bedroomCount!
+            
+            count = count + 1
+            
+            bedroomLabel.text = String(count)
+            
+            editingFlatOptions.bedroomCount = count
+            
+
+
+        }
+        
+    }
     
     
     
+    
+    @IBAction func countDown(_ sender: UIButton) {
+        if  sender.tag == 0 {
+            
+            count = editingFlatOptions.flatCapacity!
+            
+            count = count - 1
+            
+            capacityLabel.text = String(count)
+            
+            editingFlatOptions.flatCapacity = count
+            
+        }
+        
+        if  sender.tag == 1 {
+            
+            count = editingFlatOptions.bedroomCount!
+            
+            count = count - 1
+            
+            bedroomLabel.text = String(count)
+            
+            editingFlatOptions.bedroomCount = count
+            
+            
+            
+        }
+
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
