@@ -240,8 +240,7 @@ class RenterEditOwnProfieController: UIViewController {
                 self.surnameTextField.placeholder = self.loginUser.surname
                 self.mailAddressTextField.placeholder = self.loginUser.email
                 self.birthdateDatePicker.setDate(Date(dateString:self.loginUser.birthDate!), animated: false)
-                //country_PickerView.selectedRow(inComponent: 0)
-                
+                                
                       self.dbFirebase.getUserProfileImg(user: self.loginUser, completion: { (userImageUrl) in
                         
                        

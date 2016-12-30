@@ -7,23 +7,49 @@
 //
 
 import Foundation
-
 class ReservationRequest
 {
-    var fromU:ManipulableUser
-    var toU:ManipulableUser
-    var flat:ManipulableFlat
-    var from:Date
-    var to:Date
-    var accepted:Bool
+    private let dbEndpoint = FIRUSER()
+    let id = UUID().uuidString
+    var toU:String?
+    var fromU:String?
+    var flat:String?
+    var from:Date?
+    var to:Date?
+    var accepted:Int?
+    var date:String?
     
-    init(fromU:ManipulableUser, toU:ManipulableUser,flat:ManipulableFlat,from:Date,to:Date) {
-        self.accepted = false
-        self.fromU = fromU
+    init(fromU:String, toU:String,flat:String,from:Date,to:Date) {
+        self.accepted = 0
         self.toU = toU
         self.flat = flat
         self.from = from
         self.to = to
+        let date = Date()
+        let locale = Locale(identifier: "tr-TR")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm:ss:SSSS"
+        formatter.locale = locale
+        let result = formatter.string(from: date)
+        self.date = result
+        self.fromU = ""
+        dbEndpoint.getCurrentLoggedIn { (usr) in
+            if usr == nil
+            {
+                fatalError()
+            }
+            else
+            {
+                self.fromU = usr!.id!
+            }
+        }
+        
+        
+    }
+    
+    init()
+    {
+        
     }
     
 }

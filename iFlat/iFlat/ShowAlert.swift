@@ -31,7 +31,7 @@ extension ShowAlert where Self: UIViewController {
         
         let alert = UIAlertController(title:title, message: message ,preferredStyle: UIAlertControllerStyle.alert)
         
-        let action = UIAlertAction(title: "Tamam" , style: UIAlertActionStyle.default,handler :nil)
+        let action = UIAlertAction(title: "OK" , style: UIAlertActionStyle.default,handler :nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }

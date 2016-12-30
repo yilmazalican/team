@@ -10,7 +10,7 @@ import UIKit
 
 class EditPhotoCollectionView: UICollectionView {
 
-    
+      var flatImages = [FlatImage]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +27,7 @@ extension EditPhotoCollectionView:UICollectionViewDelegate,UICollectionViewDataS
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return flatImages.count
     }
     
     
@@ -38,7 +38,7 @@ extension EditPhotoCollectionView:UICollectionViewDelegate,UICollectionViewDataS
         if let cell : EditPhotoCollectionViewCell  = dequeueReusableCell(withReuseIdentifier: EditPhotoCollectionViewCell.cellId, for: indexPath) as? EditPhotoCollectionViewCell {
             
             
-          
+          cell.photoImage.image = flatImages[indexPath.row].image
             
             return cell
             

@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol FetchPhotoDelegate {
- 
-    func fetchPhotosFromLibrary()
-    
-}
+
 
 class ChoosePhotoCollectionView: UICollectionView {
 

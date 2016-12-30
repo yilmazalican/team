@@ -87,6 +87,8 @@ class FIRFlat:FIRFlatDelegate
             "capacity" : flt.flatCapacity!,
             "disabled": flt.disabled!,
             "userId" : flt.userID,
+            "city" : flt.city!,
+            "address": flt.address!,
             "title" : flt.title!] as [String : Any]
         //user_flats
         FIRREF.instance().getRef().child("user_flats/" + flt.userID).child(flt.id).setValue(aFlat) { (err1, nil) in
@@ -182,12 +184,13 @@ class FIRFlat:FIRFlatDelegate
             flt.washingMachine = objdict["washingMachine"] as? Bool
             flt.flatCapacity = objdict["capacity"] as? Int
             flt.title = objdict["title"] as? String
+            flt.address = objdict["adress"] as? String
             completion(flt)
         })
         
     }
     internal func getFlatsofUser(userID: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
-        FIRREF.instance().getRef().child("user_flats/" + userID).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("user_flats/" + userID).queryOrdered(byChild: "disabled").queryEqual(toValue: false).observe(.value, with: { (ss) in
             var fltArr = [ManipulableFlat]()
             for a in ss.children.allObjects as! [FIRDataSnapshot]
             {
@@ -211,6 +214,8 @@ class FIRFlat:FIRFlatDelegate
                 flt.washingMachine = objdict["washingMachine"] as? Bool
                 flt.flatCapacity = objdict["capacity"] as? Int
                 flt.title = objdict["title"] as? String
+                flt.city = objdict["city"] as? String
+                
                 fltArr.append(flt)
             }
             completion(fltArr)
@@ -218,10 +223,9 @@ class FIRFlat:FIRFlatDelegate
         
     }
     internal func disable(disablingFlat: ManipulableFlat!, completion: @escaping (String?) -> ()) {
-        let currentUsrID = FIRAuth.auth()?.currentUser?.uid
-        FIRREF.instance().getRef().child("allflat/" +  disablingFlat.id).setValue(true, forKey: "disabled")
-        FIRREF.instance().getRef().child("user_flats/" + currentUsrID! + "/" + disablingFlat.id).setValue(true, forKey: "disabled")
-        FIRREF.instance().getRef().child("filter_flats/" + disablingFlat.city! + "/" + disablingFlat.id).setValue(true, forKey: "disabled")
+        FIRREF.instance().getRef().child("user_flats/" + disablingFlat.userID + "/" + disablingFlat.id + "/disabled").setValue(true)
+        FIRREF.instance().getRef().child("filter_flats/" + disablingFlat.city! + "/" + disablingFlat.id + "/disabled").setValue(true)
+        completion(nil)
         
     }
     internal func edit(newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {

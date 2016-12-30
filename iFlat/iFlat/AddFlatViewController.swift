@@ -273,7 +273,12 @@ class AddFlatViewController: UIViewController {
 
             })
             
-
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+            for vc in viewControllers {
+                if(vc is SpacesVC){
+                    self.navigationController!.popToViewController(vc, animated: true)
+                }
+            }
         }
     }
     
