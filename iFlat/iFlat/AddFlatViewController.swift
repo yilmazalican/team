@@ -273,7 +273,8 @@ class AddFlatViewController: UIViewController {
 
             })
             
-
+              self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
         }
     }
     

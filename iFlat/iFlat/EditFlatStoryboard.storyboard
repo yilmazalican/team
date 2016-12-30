@@ -36,7 +36,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editPhotoCell" id="hUG-I9-Hia" customClass="EditPhotoCollectionViewCell" customModule="iFlat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-18.5" width="375" height="414"/>
+                                                <rect key="frame" x="0.0" y="-19" width="375" height="414"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
@@ -419,6 +419,11 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="500" height="1400"/>
                     <connections>
+                        <outlet property="bathroomPicker" destination="JQE-KO-Xgl" id="rfs-F0-bYi"/>
+                        <outlet property="bedPicker" destination="vHl-eb-CcI" id="DXp-fy-fad"/>
+                        <outlet property="bedroomPicker" destination="FdV-3D-JDp" id="KR4-Qn-n2O"/>
+                        <outlet property="capacityPicker" destination="b0i-j0-zOc" id="gnu-OZ-VSB"/>
+                        <outlet property="cityPicker" destination="9zj-WK-Aat" id="yp8-7P-Hac"/>
                         <outlet property="coolingSwitch" destination="DfU-jn-Uha" id="G4f-BR-a8S"/>
                         <outlet property="elevatorSwitch" destination="Zy7-Xo-oBv" id="WiG-76-nyY"/>
                         <outlet property="gateKeeperSwitch" destination="wXZ-SQ-aXi" id="cnU-js-kug"/>

@@ -21,6 +21,15 @@ class EditFlatOptionViewController: UIViewController {
     
     @IBOutlet weak var poolSwitch: UISwitch!
    
+    @IBOutlet weak var cityPicker: UIPickerView!
+    @IBOutlet weak var capacityPicker: UIPickerView!
+    
+    @IBOutlet weak var bedroomPicker: UIPickerView!
+    
+    @IBOutlet weak var bathroomPicker: UIPickerView!
+ 
+    @IBOutlet weak var bedPicker: UIPickerView!
+    
     
     @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
