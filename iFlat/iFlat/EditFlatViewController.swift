@@ -26,6 +26,8 @@ class EditFlatViewController: UIViewController {
             addressTextView.delegate = self
             addressTextView.layer.cornerRadius = 10
             addressTextView.delegate = self
+            
+
         }
     }
     
@@ -34,8 +36,13 @@ class EditFlatViewController: UIViewController {
         didSet{
             
             flatPriceTextField.delegate = self
-           
-            flatPriceTextField.placeholder =  String(Int(editingFlat.price!))
+        
+            if  let  price = editingFlat.price {
+                
+                 flatPriceTextField.placeholder =  String(Int(price))
+            }
+            
+        
         }
     }
     @IBOutlet weak var flatDescriptionTextView: UITextView!{
@@ -44,7 +51,6 @@ class EditFlatViewController: UIViewController {
             flatDescriptionTextView.delegate = self
             flatDescriptionTextView.layer.cornerRadius = 10
             flatDescriptionTextView.delegate = self
-
             
         }
     }
@@ -82,6 +88,9 @@ class EditFlatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        
+        addressTextView.text = editingFlat.address
+        flatDescriptionTextView.text = editingFlat.flatDescription
 
         // Do any additional setup after loading the view.
     }
@@ -94,16 +103,23 @@ class EditFlatViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flatPhotoSegue" {
-            let navigation = segue.destination as! UINavigationController
             
-            if let controller :EditPhotoViewController = navigation.topViewController as? EditPhotoViewController {
+            if let controller :EditPhotoViewController = segue.destination as? EditPhotoViewController {
                 
-controller.editPhotoCollectionView.flatImages  = editingFlat.images!
+// controller.editPhotoCollectionView.flatImages  = editingFlat.images!
             
         }
         }
         if segue.identifier == "flatOptionSegue" {
             
+            
+            
+            if let controller :EditFlatOptionViewController = segue.destination as? EditFlatOptionViewController {
+                controller.editingFlatOptions = editingFlat
+             
+                
+            }
+
         }
         
     }

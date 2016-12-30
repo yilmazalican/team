@@ -556,13 +556,13 @@
                                     <outlet property="delegate" destination="1Ys-1A-eEw" id="M1t-h3-bC8"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBn-NL-nz4">
-                                <rect key="frame" x="112.5" y="460" width="150" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBn-NL-nz4">
+                                <rect key="frame" x="299" y="460" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="D78-R4-hu8"/>
-                                    <constraint firstAttribute="width" constant="150" id="fgY-5U-ry9"/>
+                                    <constraint firstAttribute="height" constant="40" id="D78-R4-hu8"/>
+                                    <constraint firstAttribute="width" constant="40" id="fgY-5U-ry9"/>
                                 </constraints>
-                                <state key="normal" title="Choose Photo"/>
+                                <state key="normal" image="camera"/>
                                 <connections>
                                     <action selector="choosePhotoActionButton:" destination="1Ys-1A-eEw" eventType="touchUpInside" id="SXS-ii-oCy"/>
                                 </connections>
@@ -574,7 +574,7 @@
                             <constraint firstAttribute="trailing" secondItem="hZ8-jY-D14" secondAttribute="trailing" id="2yr-An-OaJ"/>
                             <constraint firstItem="cAz-J9-eut" firstAttribute="top" secondItem="hZ8-jY-D14" secondAttribute="bottom" id="6ti-SE-hS4"/>
                             <constraint firstItem="hZ8-jY-D14" firstAttribute="leading" secondItem="69l-eo-Trc" secondAttribute="leading" id="9Ml-lr-MMJ"/>
-                            <constraint firstItem="kBn-NL-nz4" firstAttribute="centerX" secondItem="69l-eo-Trc" secondAttribute="centerX" id="Kfl-pU-jMz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kBn-NL-nz4" secondAttribute="trailing" constant="20" id="D4K-Hq-cNh"/>
                             <constraint firstItem="zvD-tu-2Cq" firstAttribute="leading" secondItem="69l-eo-Trc" secondAttribute="leading" id="dL7-In-FU6"/>
                             <constraint firstItem="zvD-tu-2Cq" firstAttribute="top" secondItem="XIR-rj-wMJ" secondAttribute="bottom" constant="20" id="fQj-rg-aGw"/>
                             <constraint firstAttribute="trailing" secondItem="zvD-tu-2Cq" secondAttribute="trailing" id="yKz-OV-oLo"/>
@@ -591,6 +591,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="50" height="50"/>
         <image name="defaulthome" width="622" height="415"/>
     </resources>
 </document>

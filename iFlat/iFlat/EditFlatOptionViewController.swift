@@ -9,26 +9,112 @@
 import UIKit
 
 class EditFlatOptionViewController: UIViewController {
-    @IBOutlet weak var heatingSwitch: UISwitch!
-    @IBOutlet weak var washingMachineSwitch: UISwitch!
-    @IBOutlet weak var smokingSwitch: UISwitch!
-
-    @IBOutlet weak var gateKeeperSwitch: UISwitch!
-    @IBOutlet weak var parkingSwitch: UISwitch!
-    @IBOutlet weak var elevatorSwitch: UISwitch!
     
-    @IBOutlet weak var coolingSwitch: UISwitch!
+    @IBOutlet weak var minusCapacityButton: UIButton!
     
-    @IBOutlet weak var poolSwitch: UISwitch!
+    @IBOutlet weak var plusCapacityButton: UIButton!
+    
+    var count : Int = 0
+    
+    var editingFlatOptions = Flat()
+    
+    @IBOutlet weak var plusBathroomButton: UIButton!
+    @IBOutlet weak var minusBathroomButton: UIButton!
+    
+    @IBOutlet weak var plusBedButton: UIButton!
+    @IBOutlet weak var minusBedButton: UIButton!
+    @IBOutlet weak var plusBedroomButton: UIButton!
+    @IBOutlet weak var minusBedroomButton: UIButton!
+    @IBOutlet weak var capacityLabel: UILabel!{
+        didSet{
+            
+            capacityLabel.text = String(editingFlatOptions.flatCapacity!)
+        }
+    }
+    
+    @IBOutlet weak var bedroomLabel: UILabel!{
+        didSet{
+            bedroomLabel.text = String(editingFlatOptions.bedroomCount!)
+            
+        }
+    }
    
-    @IBOutlet weak var cityPicker: UIPickerView!
-    @IBOutlet weak var capacityPicker: UIPickerView!
     
-    @IBOutlet weak var bedroomPicker: UIPickerView!
+    @IBOutlet weak var bathroomLabel: UILabel!{
+        didSet{
+            
+            bathroomLabel.text = String(editingFlatOptions.bathroomCount!)
+        }
+    }
     
-    @IBOutlet weak var bathroomPicker: UIPickerView!
- 
-    @IBOutlet weak var bedPicker: UIPickerView!
+    @IBOutlet weak var bedLabel: UILabel!{
+        didSet{
+            
+             bedLabel.text = String(editingFlatOptions.bedCount!)
+        }
+    }
+    
+    
+    
+    @IBOutlet weak var heatingSwitch: UISwitch!{
+        didSet{
+            heatingSwitch.isOn = editingFlatOptions.heating!
+            
+        }
+    }
+    @IBOutlet weak var washingMachineSwitch: UISwitch!{
+        didSet{
+            washingMachineSwitch.isOn = editingFlatOptions.washingMachine!
+            
+        }
+    }
+    @IBOutlet weak var smokingSwitch: UISwitch!{
+        didSet{
+            
+            smokingSwitch.isOn = editingFlatOptions.smoking!
+        }
+    }
+
+    @IBOutlet weak var gateKeeperSwitch: UISwitch!{
+        didSet{
+            
+        gateKeeperSwitch.isOn = editingFlatOptions.gateKeeper!
+        }
+    }
+    @IBOutlet weak var parkingSwitch: UISwitch!{
+        didSet{
+            
+            parkingSwitch.isOn = editingFlatOptions.parking!
+        }
+    }
+    @IBOutlet weak var elevatorSwitch: UISwitch!{
+        didSet{
+            elevatorSwitch.isOn = editingFlatOptions.elevator!
+            
+        }
+    }
+    
+    @IBOutlet weak var coolingSwitch: UISwitch!{
+        didSet{
+            
+           coolingSwitch.isOn =  editingFlatOptions.cooling!
+        }
+    }
+    
+    @IBOutlet weak var poolSwitch: UISwitch!{
+        didSet{
+            
+            poolSwitch.isOn = editingFlatOptions.pool!
+        }
+    }
+   
+   
+    @IBOutlet weak var internetSwitch: UISwitch!{
+        didSet{
+            
+            internetSwitch.isOn = editingFlatOptions.internet!
+        }
+    }
     
     
     @IBOutlet weak var scrollView: UIScrollView!{
@@ -36,13 +122,51 @@ class EditFlatOptionViewController: UIViewController {
             
          
             
-            scrollView.contentSize.height = 1280
+            scrollView.contentSize.height = 1300
         }
     }
     
+ 
+    @IBAction func heatingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.heating = sender.isOn
+    }
+    
+    
+    @IBAction func elevatorValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.elevator = sender.isOn
+    }
+    
+    
+    @IBAction func parkingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.parking = sender.isOn
+    }
+    
+    
+    @IBAction func poolValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.pool = sender.isOn
+    }
+    
+    
+    @IBAction func coolingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.cooling = sender.isOn
+    }
+    
+    @IBAction func gateKeeperValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.gateKeeper = sender.isOn
+    }
+    
+    @IBAction func smokingValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.smoking = sender.isOn
+    }
+    
+    @IBAction func washingMachineValueChanged(_ sender: UISwitch) {
+              editingFlatOptions.washingMachine = sender.isOn
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -52,5 +176,201 @@ class EditFlatOptionViewController: UIViewController {
     }
     
 
-  
+    
+    
+    
+    
+    
+    @IBAction func countUp(_ sender: UIButton) {
+        if  sender.tag == 0 {
+            
+           count = editingFlatOptions.flatCapacity!
+            
+            
+            if count == 5 {
+                plusCapacityButton.isEnabled = false
+                
+            }
+            else {
+                   minusCapacityButton.isEnabled = true
+              count = count + 1
+                
+                capacityLabel.text = String(count)
+                
+                editingFlatOptions.flatCapacity = count
+
+            }
+            
+        }
+        
+        if  sender.tag == 1 {
+            
+            count = editingFlatOptions.bedroomCount!
+            
+            if count == 5 {
+                plusBedroomButton.isEnabled = false
+                
+            }
+            else {
+                minusBedroomButton.isEnabled = true
+                
+                
+            
+            
+            count = count + 1
+            
+            bedroomLabel.text = String(count)
+            
+            editingFlatOptions.bedroomCount = count
+            }
+
+
+        }
+        if  sender.tag == 2 {
+            
+            count = editingFlatOptions.bedCount!
+            if count == 5 {
+                plusBedButton.isEnabled = false
+                
+            }
+            else {
+                minusBedButton.isEnabled = true
+            
+            
+            count = count + 1
+            
+            bedLabel.text = String(count)
+            
+            editingFlatOptions.bedCount = count
+            
+            }
+            
+        }
+        if  sender.tag == 3 {
+             count = editingFlatOptions.bathroomCount!
+            if count == 5 {
+                plusBathroomButton.isEnabled = false
+                
+            }
+            else {
+                minusBathroomButton.isEnabled = true
+           
+            
+            count = count + 1
+            
+            bathroomLabel.text = String(count)
+            
+            editingFlatOptions.bathroomCount = count
+            
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    @IBAction func countDown(_ sender: UIButton) {
+        
+       
+        
+        
+        if  sender.tag == 0 {
+            
+            count = editingFlatOptions.flatCapacity!
+            
+            if count == 1 {
+                minusCapacityButton.isEnabled = false
+                
+            }
+            else {
+                plusCapacityButton.isEnabled = true
+                
+         
+            
+            count = count - 1
+            
+            capacityLabel.text = String(count)
+            
+            editingFlatOptions.flatCapacity = count
+               }
+        }
+        
+        if  sender.tag == 1 {
+            count = editingFlatOptions.bedroomCount!
+
+            if count == 1 {
+                minusBedroomButton.isEnabled = false
+                
+            }
+            else {
+                plusBedroomButton.isEnabled = true
+                
+
+                
+            count = count - 1
+            
+            bedroomLabel.text = String(count)
+            
+            editingFlatOptions.bedroomCount = count
+            }
+            
+            
+        }
+        if  sender.tag == 2 {
+            count = editingFlatOptions.bedCount!
+
+            if count == 1 {
+                minusBedButton.isEnabled = false
+                
+            }
+            else {
+                plusBedButton.isEnabled = true
+                
+
+                
+            count = count - 1
+            
+            bedLabel.text = String(count)
+            
+            editingFlatOptions.bedCount = count
+            
+            }
+            
+            
+        }
+        if  sender.tag == 3 {
+             count = editingFlatOptions.bathroomCount!
+            if count == 1 {
+                minusBathroomButton.isEnabled = false
+                
+            }
+            else {
+                plusBathroomButton.isEnabled = true
+                
+
+            count = count - 1
+            
+            bathroomLabel.text = String(count)
+            
+            editingFlatOptions.bathroomCount = count
+            
+            
+            }
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        
+        if let controller :EditFlatViewController = segue.destination as? EditFlatViewController {
+            
+            controller.editingFlat = editingFlatOptions
+            
+    }
+    }
 }
