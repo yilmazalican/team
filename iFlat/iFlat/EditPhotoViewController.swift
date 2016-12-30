@@ -10,6 +10,10 @@ import UIKit
 
 class EditPhotoViewController: UIViewController {
 
+    @IBOutlet weak var editPhotoCollectionView: EditPhotoCollectionView!
+    
+  
+    
     @IBOutlet weak var popUpView: UIView!{
         didSet{
             popUpView.layer.cornerRadius = 10

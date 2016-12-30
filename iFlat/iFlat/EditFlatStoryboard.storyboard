@@ -13,7 +13,7 @@
         <!--Edit Photo View Controller-->
         <scene sceneID="oVP-aq-x4U">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Fft-3V-1hO" customClass="EditPhotoViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditPhotoViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fft-3V-1hO" customClass="EditPhotoViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jlI-yf-yrt"/>
                         <viewControllerLayoutGuide type="bottom" id="lwy-Vb-W66"/>
@@ -99,6 +99,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="editPhotoCollectionView" destination="rgF-tR-Y9R" id="epm-fh-QNq"/>
                         <outlet property="popUpView" destination="6Q4-y9-stk" id="U8c-fQ-hCj"/>
                     </connections>
                 </viewController>
@@ -109,7 +110,7 @@
         <!--Edit Flat Option View Controller-->
         <scene sceneID="UKn-1j-Z4K">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="cga-a2-s0H" customClass="EditFlatOptionViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditFlatOptionViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cga-a2-s0H" customClass="EditFlatOptionViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Pa-Kp-yfd"/>
                         <viewControllerLayoutGuide type="bottom" id="vrx-LE-2e5"/>
@@ -507,7 +508,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Flat Options"/>
                                 <connections>
-                                    <segue destination="cga-a2-s0H" kind="popoverPresentation" popoverAnchorView="fEz-W4-gDI" id="oXa-Ts-t2I">
+                                    <segue destination="cga-a2-s0H" kind="popoverPresentation" identifier="flatOptionSegue" popoverAnchorView="fEz-W4-gDI" id="oXa-Ts-t2I">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -562,10 +563,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6X-Pv-sM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-345" y="341"/>
+            <point key="canvasLocation" x="-367" y="434"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nrG-hO-2VX"/>
+        <segue reference="gYt-iF-0nE"/>
     </inferredMetricsTieBreakers>
 </document>

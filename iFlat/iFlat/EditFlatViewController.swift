@@ -15,6 +15,7 @@ class EditFlatViewController: UIViewController {
     @IBOutlet weak var flatTitleTextField: UITextField!{
         didSet{
             flatTitleTextField.delegate = self
+            flatTitleTextField.placeholder = editingFlat.title
             
         }
         
@@ -25,7 +26,6 @@ class EditFlatViewController: UIViewController {
             addressTextView.delegate = self
             addressTextView.layer.cornerRadius = 10
             addressTextView.delegate = self
-
         }
     }
     
@@ -33,7 +33,9 @@ class EditFlatViewController: UIViewController {
         
         didSet{
             
-            flatPriceTextField.delegate = self 
+            flatPriceTextField.delegate = self
+           
+            flatPriceTextField.placeholder =  String(Int(editingFlat.price!))
         }
     }
     @IBOutlet weak var flatDescriptionTextView: UITextView!{
@@ -49,14 +51,37 @@ class EditFlatViewController: UIViewController {
     
     
     @IBAction func flatTitleTextEditing(_ sender: UITextField) {
+        
+        
+        
+        if sender.text != "" {
+            
+            editingFlat.title = sender.text
+        }
+        else {
+            
+            editingFlat.title = sender.placeholder
+            
+        }
+
     }
     
     @IBAction func flatPriceTitleTextEditing(_ sender: UITextField) {
         
+        if sender.text != "" {
+            
+            editingFlat.title = sender.text
+        }
+        else {
+            
+            editingFlat.price = Double(sender.placeholder!)
+            
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
 
         // Do any additional setup after loading the view.
     }
@@ -68,12 +93,16 @@ class EditFlatViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "flatOptionSegue" {
+        if segue.identifier == "flatPhotoSegue" {
+            let navigation = segue.destination as! UINavigationController
             
+            if let controller :EditPhotoViewController = navigation.topViewController as? EditPhotoViewController {
+                
+controller.editPhotoCollectionView.flatImages  = editingFlat.images!
             
         }
-        
-        if segue.identifier == "flatPhotoSegue" {
+        }
+        if segue.identifier == "flatOptionSegue" {
             
         }
         
@@ -90,7 +119,16 @@ extension EditFlatViewController:UITextViewDelegate,UITextFieldDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.tag == 0 {
+            
+           editingFlat.flatDescription = textView.text
+            
+        }
         
+        else {
+            editingFlat.address = textView.text
+            
+        }
     }
     
     
