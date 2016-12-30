@@ -442,7 +442,7 @@
         <!--Edit Flat View Controller-->
         <scene sceneID="wVq-xH-k4i">
             <objects>
-                <viewController id="AoD-Ru-LvQ" customClass="EditFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditFlatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AoD-Ru-LvQ" customClass="EditFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lSA-ic-eJm"/>
                         <viewControllerLayoutGuide type="bottom" id="PJZ-I6-0im"/>

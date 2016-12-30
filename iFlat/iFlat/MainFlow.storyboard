@@ -130,37 +130,48 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L5Z-s3-PMa">
-                                                    <rect key="frame" x="8" y="5" width="100" height="100"/>
+                                                    <rect key="frame" x="8" y="5" width="384" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="N7p-wf-C4f"/>
-                                                        <constraint firstAttribute="width" constant="100" id="R1S-8I-8qr"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPz-CB-ojf">
+                                                    <rect key="frame" x="8" y="5" width="384" height="43.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My beautiful Flat" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ez-jn-TWc">
-                                                    <rect key="frame" x="118" y="3" width="166" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="13" width="225" height="25.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="225" id="8U4-Us-f88"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100₺" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuD-Ag-npc">
-                                                    <rect key="frame" x="284" y="8" width="100" height="100"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100₺" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuD-Ag-npc">
+                                                    <rect key="frame" x="284" y="8" width="100" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="5hY-Vm-pm8"/>
-                                                        <constraint firstAttribute="height" constant="100" id="hdF-RN-k2M"/>
+                                                        <constraint firstAttribute="height" constant="50" id="hdF-RN-k2M"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="SuD-Ag-npc" secondAttribute="trailing" constant="8" id="3Ir-NX-GmC"/>
-                                                <constraint firstItem="SuD-Ag-npc" firstAttribute="leading" secondItem="0ez-jn-TWc" secondAttribute="trailing" id="EtQ-MF-h0i"/>
-                                                <constraint firstItem="0ez-jn-TWc" firstAttribute="leading" secondItem="L5Z-s3-PMa" secondAttribute="trailing" constant="10" id="GlO-1L-gKA"/>
+                                                <constraint firstItem="LPz-CB-ojf" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="top" constant="5" id="GqP-e7-siD"/>
                                                 <constraint firstItem="SuD-Ag-npc" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="topMargin" id="L9H-ag-AHV"/>
                                                 <constraint firstItem="L5Z-s3-PMa" firstAttribute="leading" secondItem="fYr-Vp-UbV" secondAttribute="leading" constant="8" id="N6M-bi-5VO"/>
-                                                <constraint firstItem="0ez-jn-TWc" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="topMargin" constant="-5" id="q01-2k-VNi"/>
+                                                <constraint firstAttribute="bottom" secondItem="0ez-jn-TWc" secondAttribute="bottom" constant="5" id="R59-mx-M2H"/>
+                                                <constraint firstItem="LPz-CB-ojf" firstAttribute="height" secondItem="fYr-Vp-UbV" secondAttribute="height" id="UmF-gZ-a7V"/>
+                                                <constraint firstItem="0ez-jn-TWc" firstAttribute="leading" secondItem="fYr-Vp-UbV" secondAttribute="leading" constant="20" id="bj7-jD-XEp"/>
+                                                <constraint firstAttribute="trailing" secondItem="L5Z-s3-PMa" secondAttribute="trailing" constant="8" id="diz-Jr-Yud"/>
+                                                <constraint firstItem="0ez-jn-TWc" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="topMargin" constant="5" id="kqW-Qo-tmh"/>
+                                                <constraint firstItem="LPz-CB-ojf" firstAttribute="leading" secondItem="fYr-Vp-UbV" secondAttribute="leading" constant="8" id="ooJ-4F-S1f"/>
                                                 <constraint firstItem="L5Z-s3-PMa" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="top" constant="5" id="uod-hi-CQt"/>
+                                                <constraint firstAttribute="trailing" secondItem="LPz-CB-ojf" secondAttribute="trailing" constant="8" id="vaY-ko-Lgm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
