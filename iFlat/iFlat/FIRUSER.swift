@@ -59,18 +59,17 @@ class FIRUSER: FIRUSERDelegate {
                 
                 let title = value["title"] as! String
                 let content = value["content"] as! String
-                let issued = value["issued"] as! User
+                let issued = value["issued"] as! String
                 let isOpen = value["isopen"] as! Bool
                 let answer = value["answer"] as? String
                 let issue = Issue(title: title, content: content, issued: issued)
                 issue.isOpen = isOpen
                 issue.answer = answer
-                issues.append(issue)
+               
                 
             }
         
         
-        }
         })
     }
 
@@ -88,12 +87,12 @@ class FIRUSER: FIRUSERDelegate {
     internal func sendReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(
             [
-            "toU": req.toU,
-            "flat" : req.flat,
+            "toU": req.toU! as String,
+            "flat" : req.flat!,
             "from": req.from!.toTimeStamp(),
             "to" : req.to!.toTimeStamp(),
-            "accepted": req.accepted,
-            "date": req.date
+            "accepted": req.accepted!,
+            "date": req.date!
             ]
             
             ) { (err, nil) in
@@ -136,12 +135,12 @@ class FIRUSER: FIRUSERDelegate {
 
     internal func openIssue(toUser: ManipulableUser, issue: Issue, completion: @escaping (String?) -> ()) {
         let insertingDict = [
-            "content": issue.content,
-            "isopen": issue.isOpen,
+            "content": issue.content!,
+            "isopen": issue.isOpen!,
             "issued": toUser.id!,
-            "title": issue.title,
-            "issuer": issue.issuer] as [String : Any]
-        FIRREF.instance().getRef().child("Issues/" + toUser.id! + "/" + issue.ID).setValue(insertingDict) { (err, nil) in
+            "title": issue.title!,
+            "issuer": issue.issuer!] as [String : Any]
+        FIRREF.instance().getRef().child("Issues/" + toUser.id! + "/" + issue.ID!).setValue(insertingDict) { (err, nil) in
             if err == nil
             {
                 completion(nil)
@@ -164,7 +163,7 @@ class FIRUSER: FIRUSERDelegate {
 
                 let title = value["title"] as! String
                 let content = value["content"] as! String
-                let issued = value["issued"] as! User
+                let issued = value["issued"] as! String
                 let isOpen = value["isopen"] as! Bool
                 let answer = value["answer"] as? String
                 var issue = Issue(title: title, content: content, issued: issued)
