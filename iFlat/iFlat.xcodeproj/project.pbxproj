@@ -57,6 +57,10 @@
 		953CCFBA1E0EFE90002FC590 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CCFB91E0EFE90002FC590 /* UserExtension.swift */; };
 		955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */; };
 		957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */; };
+		958FB14C1E1714FA00744E59 /* OpenIssueStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958FB14B1E1714FA00744E59 /* OpenIssueStoryBoard.storyboard */; };
+		958FB1501E1716BB00744E59 /* OpenIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958FB14F1E1716BB00744E59 /* OpenIssueViewController.swift */; };
+		958FB1521E171CDE00744E59 /* ShowUserProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958FB1511E171CDE00744E59 /* ShowUserProfileStoryboard.storyboard */; };
+		958FB1541E17239900744E59 /* ShowUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958FB1531E17239900744E59 /* ShowUserProfileViewController.swift */; };
 		95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC4F141DFAD82700A7F106 /* FilterModel.swift */; };
 		95D9EBB31DF65E690066156F /* ConvertString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9EBB21DF65E690066156F /* ConvertString.swift */; };
 		95D9EBB71DF6668A0066156F /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9EBB61DF6668A0066156F /* ShowAlert.swift */; };
@@ -157,6 +161,10 @@
 		953CCFB91E0EFE90002FC590 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfileStoryBoard.storyboard; sourceTree = "<group>"; };
 		957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenterEditOwnProfieController.swift; sourceTree = "<group>"; };
+		958FB14B1E1714FA00744E59 /* OpenIssueStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OpenIssueStoryBoard.storyboard; sourceTree = "<group>"; };
+		958FB14F1E1716BB00744E59 /* OpenIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenIssueViewController.swift; sourceTree = "<group>"; };
+		958FB1511E171CDE00744E59 /* ShowUserProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowUserProfileStoryboard.storyboard; sourceTree = "<group>"; };
+		958FB1531E17239900744E59 /* ShowUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowUserProfileViewController.swift; sourceTree = "<group>"; };
 		95AC4F141DFAD82700A7F106 /* FilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		95D9EBB21DF65E690066156F /* ConvertString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertString.swift; sourceTree = "<group>"; };
 		95D9EBB61DF6668A0066156F /* ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
@@ -608,6 +616,8 @@
 				951A92971DF4E21800199B83 /* EntranceStoryBoard.storyboard */,
 				955F425A1E11300900A5BA5A /* EditProfileStoryBoard.storyboard */,
 				95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */,
+				958FB14B1E1714FA00744E59 /* OpenIssueStoryBoard.storyboard */,
+				958FB1511E171CDE00744E59 /* ShowUserProfileStoryboard.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -615,12 +625,22 @@
 		957A656B1DF5D94C00844766 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				958FB14F1E1716BB00744E59 /* OpenIssueViewController.swift */,
+				951A929B1DF4E23100199B83 /* EntranceViewController.swift */,
 				95FEEDBD1E1595E8004448F1 /* Edit Flat */,
 				95FEEDBC1E1595DE004448F1 /* Add Flat */,
-				957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */,
-				951A929B1DF4E23100199B83 /* EntranceViewController.swift */,
+				958FB14E1E17165500744E59 /* EditUser */,
+				958FB1531E17239900744E59 /* ShowUserProfileViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		958FB14E1E17165500744E59 /* EditUser */ = {
+			isa = PBXGroup;
+			children = (
+				957A65651DF5D8A500844766 /* RenterEditOwnProfieController.swift */,
+			);
+			name = EditUser;
 			sourceTree = "<group>";
 		};
 		95D9EBB11DF65E500066156F /* Protocols&Extension */ = {
@@ -647,7 +667,6 @@
 		95FEEDBC1E1595DE004448F1 /* Add Flat */ = {
 			isa = PBXGroup;
 			children = (
-				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
 				95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */,
 			);
 			name = "Add Flat";
@@ -656,6 +675,7 @@
 		95FEEDBD1E1595E8004448F1 /* Edit Flat */ = {
 			isa = PBXGroup;
 			children = (
+				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
 				95FEEDB21E158769004448F1 /* EditFlatViewController.swift */,
 				95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */,
 				95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */,
@@ -791,6 +811,8 @@
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
 				955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */,
 				95DDDC951E12EE1A00106F24 /* AddFlatStoryBoard.storyboard in Resources */,
+				958FB14C1E1714FA00744E59 /* OpenIssueStoryBoard.storyboard in Resources */,
+				958FB1521E171CDE00744E59 /* ShowUserProfileStoryboard.storyboard in Resources */,
 				1AD826521E13110C0021EF4F /* Info.plist in Resources */,
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
@@ -968,6 +990,8 @@
 				95DDDC971E12EE3D00106F24 /* AddFlatViewController.swift in Sources */,
 				1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */,
 				1A14671B1E093C1900B691EF /* FilteredFlat.swift in Sources */,
+				958FB1501E1716BB00744E59 /* OpenIssueViewController.swift in Sources */,
+				958FB1541E17239900744E59 /* ShowUserProfileViewController.swift in Sources */,
 				80E17F4E1DFAC9550020C695 /* NumberPlusPicker.swift in Sources */,
 				46E8E9B21DF0A0FB00C265E3 /* LoginViewController.swift in Sources */,
 				1A6A1F921E15285600D644BD /* spacescell.swift in Sources */,
