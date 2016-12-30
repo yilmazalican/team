@@ -167,6 +167,9 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="gZj-bY-Yek" kind="show" identifier="reservationSegue" id="xeR-Pb-UT3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,6 +211,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k73-hN-OLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2141.5999999999999" y="398.50074962518744"/>
+        </scene>
+        <!--Reservation-->
+        <scene sceneID="dEO-D0-Ix3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reservation" id="gZj-bY-Yek" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQK-G5-G4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2735" y="674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gvL-fN-FMS">

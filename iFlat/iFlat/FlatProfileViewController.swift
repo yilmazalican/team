@@ -89,5 +89,14 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "reservationSegue"{
+            let navigationController = segue.destination as! UINavigationController
+            
+            let reservationVC = navigationController.topViewController as? ReservationViewController
+            
+            reservationVC?.flatID = self.receivedFlatID
+        }
+    }
 
 }

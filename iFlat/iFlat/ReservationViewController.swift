@@ -13,6 +13,7 @@ class ReservationViewController: UIViewController {
     @IBOutlet var calendarView: JTAppleCalendarView!
     
     @IBOutlet var yearLabel: UILabel!
+    var flatID : String!
     var selectedDayRange : [Date]?
     var selectedExactDates : [Date] = []
     override func viewDidLoad() {
