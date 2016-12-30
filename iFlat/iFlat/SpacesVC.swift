@@ -71,7 +71,11 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexpath) in
-            
+            self.dbFlat.disable(disablingFlat: self.flatsArr[indexPath.row], completion: { (err) in
+                self.flatsArr.remove(at: indexPath.row)
+                self.spacesTV.deleteRows(at: [indexPath], with: .left)
+                self.spacesTV.reloadData()
+            })
         }
         delete.backgroundColor = UIColor.red
         
