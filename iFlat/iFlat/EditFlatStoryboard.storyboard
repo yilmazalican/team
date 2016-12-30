@@ -616,7 +616,15 @@
                         <outlet property="gateKeeperSwitch" destination="wXZ-SQ-aXi" id="cnU-js-kug"/>
                         <outlet property="heatingSwitch" destination="Dao-VU-eZq" id="rr9-rr-FsZ"/>
                         <outlet property="internetSwitch" destination="vDa-zR-Axv" id="sw3-eu-zk8"/>
+                        <outlet property="minusBathroomButton" destination="ymG-TB-RM9" id="NL1-7c-gn7"/>
+                        <outlet property="minusBedButton" destination="TMS-ZK-6D5" id="JQV-0Y-a3E"/>
+                        <outlet property="minusBedroomButton" destination="HB1-Es-jND" id="HRA-d8-eJc"/>
+                        <outlet property="minusCapacityButton" destination="Iyj-Vw-9Fa" id="kPR-1L-LiJ"/>
                         <outlet property="parkingSwitch" destination="ZDk-Ey-ghv" id="mdQ-dV-4jl"/>
+                        <outlet property="plusBathroomButton" destination="hHD-e5-CLR" id="dxV-9w-iJt"/>
+                        <outlet property="plusBedButton" destination="heE-l7-UXh" id="dPG-1C-5yp"/>
+                        <outlet property="plusBedroomButton" destination="9rP-6x-mQa" id="avr-jh-PwE"/>
+                        <outlet property="plusCapacityButton" destination="3Ot-Ll-pIK" id="p3O-MR-cRK"/>
                         <outlet property="poolSwitch" destination="lwa-db-9Od" id="tZN-RB-sle"/>
                         <outlet property="scrollView" destination="Lvp-XI-x6H" id="2Rz-dW-7xV"/>
                         <outlet property="smokingSwitch" destination="V2b-0R-bYT" id="gmE-ei-MOZ"/>

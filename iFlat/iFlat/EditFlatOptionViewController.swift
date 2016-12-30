@@ -10,11 +10,21 @@ import UIKit
 
 class EditFlatOptionViewController: UIViewController {
     
+    @IBOutlet weak var minusCapacityButton: UIButton!
+    
+    @IBOutlet weak var plusCapacityButton: UIButton!
     
     var count : Int = 0
     
     var editingFlatOptions = Flat()
     
+    @IBOutlet weak var plusBathroomButton: UIButton!
+    @IBOutlet weak var minusBathroomButton: UIButton!
+    
+    @IBOutlet weak var plusBedButton: UIButton!
+    @IBOutlet weak var minusBedButton: UIButton!
+    @IBOutlet weak var plusBedroomButton: UIButton!
+    @IBOutlet weak var minusBedroomButton: UIButton!
     @IBOutlet weak var capacityLabel: UILabel!{
         didSet{
             
@@ -112,7 +122,7 @@ class EditFlatOptionViewController: UIViewController {
             
          
             
-            scrollView.contentSize.height = 1400
+            scrollView.contentSize.height = 1100
         }
     }
     
@@ -176,25 +186,84 @@ class EditFlatOptionViewController: UIViewController {
             
            count = editingFlatOptions.flatCapacity!
             
-            count = count + 1
             
-            capacityLabel.text = String(count)
+            if count == 5 {
+                plusCapacityButton.isEnabled = false
+                
+            }
+            else {
+                   minusCapacityButton.isEnabled = true
+              count = count + 1
+                
+                capacityLabel.text = String(count)
+                
+                editingFlatOptions.flatCapacity = count
 
-              editingFlatOptions.flatCapacity = count
+            }
             
         }
         
         if  sender.tag == 1 {
+            
             count = editingFlatOptions.bedroomCount!
+            
+            if count == 5 {
+                plusBedroomButton.isEnabled = false
+                
+            }
+            else {
+                minusBedroomButton.isEnabled = true
+                
+                
+            
             
             count = count + 1
             
             bedroomLabel.text = String(count)
             
             editingFlatOptions.bedroomCount = count
+            }
+
+
+        }
+        if  sender.tag == 2 {
             
-
-
+            count = editingFlatOptions.bedCount!
+            if count == 5 {
+                plusBedButton.isEnabled = false
+                
+            }
+            else {
+                minusBedButton.isEnabled = true
+            
+            
+            count = count + 1
+            
+            bedLabel.text = String(count)
+            
+            editingFlatOptions.bedCount = count
+            
+            }
+            
+        }
+        if  sender.tag == 3 {
+             count = editingFlatOptions.bathroomCount!
+            if count == 5 {
+                plusBathroomButton.isEnabled = false
+                
+            }
+            else {
+                minusBathroomButton.isEnabled = true
+           
+            
+            count = count + 1
+            
+            bathroomLabel.text = String(count)
+            
+            editingFlatOptions.bathroomCount = count
+            
+            }
+            
         }
         
     }
@@ -203,32 +272,93 @@ class EditFlatOptionViewController: UIViewController {
     
     
     @IBAction func countDown(_ sender: UIButton) {
+        
+       
+        
+        
         if  sender.tag == 0 {
             
             count = editingFlatOptions.flatCapacity!
+            
+            if count == 1 {
+                minusCapacityButton.isEnabled = false
+                
+            }
+            else {
+                plusCapacityButton.isEnabled = true
+                
+         
             
             count = count - 1
             
             capacityLabel.text = String(count)
             
             editingFlatOptions.flatCapacity = count
-            
+               }
         }
         
         if  sender.tag == 1 {
-            
             count = editingFlatOptions.bedroomCount!
-            
+
+            if count == 1 {
+                minusBedroomButton.isEnabled = false
+                
+            }
+            else {
+                plusBedroomButton.isEnabled = true
+                
+
+                
             count = count - 1
             
             bedroomLabel.text = String(count)
             
             editingFlatOptions.bedroomCount = count
-            
+            }
             
             
         }
+        if  sender.tag == 2 {
+            count = editingFlatOptions.bedCount!
 
+            if count == 1 {
+                minusBedButton.isEnabled = false
+                
+            }
+            else {
+                plusBedButton.isEnabled = true
+                
+
+                
+            count = count - 1
+            
+            bedLabel.text = String(count)
+            
+            editingFlatOptions.bedCount = count
+            
+            }
+            
+            
+        }
+        if  sender.tag == 3 {
+             count = editingFlatOptions.bathroomCount!
+            if count == 1 {
+                minusBathroomButton.isEnabled = false
+                
+            }
+            else {
+                plusBathroomButton.isEnabled = true
+                
+
+            count = count - 1
+            
+            bathroomLabel.text = String(count)
+            
+            editingFlatOptions.bathroomCount = count
+            
+            
+            }
+        }
     }
     
     

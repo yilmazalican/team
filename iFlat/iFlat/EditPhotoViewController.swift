@@ -33,5 +33,14 @@ class EditPhotoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let controller : EditFlatViewController = segue.destination as? EditFlatViewController {
+            
+           controller.editingFlat.images = editPhotoCollectionView.flatImages
+        }
+        
+        
+        
+    }
 }
