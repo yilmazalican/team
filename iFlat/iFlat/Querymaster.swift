@@ -162,10 +162,7 @@ class Querymaster:QuerymasterDelegate
     
     
     
-    func getActivePromotion()
-    {
-        
-    }
+    
 }
 
 
