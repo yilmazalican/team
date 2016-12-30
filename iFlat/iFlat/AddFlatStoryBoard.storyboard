@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tnX-AV-sLL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Ys-1A-eEw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of your flat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKD-pW-W2z">
-                                <rect key="frame" x="26" y="114" width="323" height="50"/>
+                                <rect key="frame" x="26" y="20" width="323" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Knh-Za-mr6"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" text="Address of your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="h9S-rH-xAG">
-                                <rect key="frame" x="20" y="364" width="335" height="100"/>
+                                <rect key="frame" x="20" y="220" width="335" height="100"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="GqS-BO-ofz"/>
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYF-rC-V3y">
-                                <rect key="frame" x="16" y="750" width="343" height="50"/>
+                                <rect key="frame" x="16" y="490" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XvW-rO-mBb"/>
                                 </constraints>
@@ -55,25 +55,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="Describe your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="MDI-9h-tz9">
-                                <rect key="frame" x="20" y="214" width="335" height="100"/>
+                                <rect key="frame" x="20" y="90" width="335" height="100"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price:Per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-qp-NDG">
-                                <rect key="frame" x="36" y="484" width="117" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bwy-86-vlS"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="priceTextFieldDidEnding:" destination="GVW-gj-Ql5" eventType="editingDidEnd" id="5F5-yR-bVx"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bI-XW-7PO">
-                                <rect key="frame" x="229" y="484" width="120" height="50"/>
+                                <rect key="frame" x="229" y="340" width="120" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Hho-8U-fmj"/>
                                     <constraint firstAttribute="height" constant="50" id="cHq-sb-EXc"/>
@@ -84,25 +72,38 @@
                                     <action selector="showOptionButtonAction:" destination="GVW-gj-Ql5" eventType="touchUpInside" id="kTn-ZE-yTA"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price:Per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-qp-NDG">
+                                <rect key="frame" x="36" y="410" width="303" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bwy-86-vlS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="priceTextFieldDidEnding:" destination="GVW-gj-Ql5" eventType="editingDidEnd" id="5F5-yR-bVx"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vKD-pW-W2z" secondAttribute="trailing" constant="10" id="1kC-AP-0Jd"/>
-                            <constraint firstItem="h9S-rH-xAG" firstAttribute="top" secondItem="MDI-9h-tz9" secondAttribute="bottom" constant="50" id="5oi-bB-ALH"/>
-                            <constraint firstItem="kII-ag-Gj0" firstAttribute="top" secondItem="ZYF-rC-V3y" secondAttribute="bottom" id="AnG-7N-qrt"/>
+                            <constraint firstItem="pMo-qp-NDG" firstAttribute="top" secondItem="6bI-XW-7PO" secondAttribute="bottom" constant="20" id="2CG-2J-gHt"/>
+                            <constraint firstItem="h9S-rH-xAG" firstAttribute="top" secondItem="MDI-9h-tz9" secondAttribute="bottom" constant="30" id="5oi-bB-ALH"/>
                             <constraint firstItem="6bI-XW-7PO" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="AvH-a8-TG5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6bI-XW-7PO" secondAttribute="trailing" constant="10" id="EqY-I7-nCy"/>
                             <constraint firstItem="vKD-pW-W2z" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" constant="10" id="Nq9-qD-wt9"/>
-                            <constraint firstItem="vKD-pW-W2z" firstAttribute="top" secondItem="oQm-V3-1Cy" secondAttribute="bottom" constant="50" id="PhT-Tf-oJP"/>
+                            <constraint firstItem="vKD-pW-W2z" firstAttribute="top" secondItem="oQm-V3-1Cy" secondAttribute="bottom" id="PhT-Tf-oJP"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="20" id="XC1-Av-nHW"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="height" secondItem="h9S-rH-xAG" secondAttribute="height" id="XOL-hJ-Iq0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZYF-rC-V3y" secondAttribute="trailing" id="au8-qQ-pyv"/>
                             <constraint firstItem="pMo-qp-NDG" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" constant="20" id="eiG-mc-pE8"/>
-                            <constraint firstItem="pMo-qp-NDG" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="llM-iZ-n2N"/>
                             <constraint firstItem="h9S-rH-xAG" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="20" id="mLr-c4-L6x"/>
+                            <constraint firstItem="ZYF-rC-V3y" firstAttribute="top" secondItem="pMo-qp-NDG" secondAttribute="bottom" constant="30" id="mVi-9a-sO0"/>
                             <constraint firstAttribute="trailing" secondItem="h9S-rH-xAG" secondAttribute="trailing" constant="20" id="n06-gD-AtV"/>
                             <constraint firstAttribute="trailing" secondItem="MDI-9h-tz9" secondAttribute="trailing" constant="20" id="nTR-ax-E5D"/>
-                            <constraint firstItem="MDI-9h-tz9" firstAttribute="top" secondItem="vKD-pW-W2z" secondAttribute="bottom" constant="50" id="wcm-RN-UfI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pMo-qp-NDG" secondAttribute="trailing" constant="20" id="uId-i7-NGA"/>
+                            <constraint firstItem="MDI-9h-tz9" firstAttribute="top" secondItem="vKD-pW-W2z" secondAttribute="bottom" constant="20" id="wcm-RN-UfI"/>
                             <constraint firstItem="ZYF-rC-V3y" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" id="xPb-92-it2"/>
                         </constraints>
                     </view>
@@ -490,7 +491,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="541.60000000000002" y="-949.02548725637189"/>
+            <point key="canvasLocation" x="644" y="-859"/>
         </scene>
         <!--Choose Photo View Controller-->
         <scene sceneID="mcg-GY-JDy">
@@ -515,7 +516,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zvD-tu-2Cq" customClass="ChoosePhotoCollectionView" customModule="iFlat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="Yrb-W2-nGK"/>
@@ -556,7 +557,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBn-NL-nz4">
-                                <rect key="frame" x="112.5" y="504" width="150" height="50"/>
+                                <rect key="frame" x="112.5" y="460" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="D78-R4-hu8"/>
                                     <constraint firstAttribute="width" constant="150" id="fgY-5U-ry9"/>
@@ -586,25 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdt-Rh-n8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2239.1999999999998" y="-925.18740629685169"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9eQ-Oo-faC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tnX-AV-sLL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vsn-XB-ijR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1Ys-1A-eEw" kind="relationship" relationship="rootViewController" id="EZY-zb-3pe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w9w-ma-yzn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1582" y="-265"/>
+            <point key="canvasLocation" x="1526" y="-1105"/>
         </scene>
     </scenes>
     <resources>
