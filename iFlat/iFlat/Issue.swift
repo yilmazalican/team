@@ -12,12 +12,12 @@ class Issue
 
 {
     private let dbEndpoint = FIRUSER()
-    let ID:String
-    let title:String
-    let content:String
-    var isOpen:Bool
-    var issued:String
-    var issuer:String
+    var ID:String?
+    var title:String?
+    var content:String?
+    var isOpen:Bool?
+    var issued:String?
+    var issuer:String?
     var answer:String?
     
     
@@ -34,7 +34,7 @@ class Issue
     func setIssuer()
     {
         dbEndpoint.getCurrentLoggedIn { (usr) in
-            self.issuer = usr.id
+            self.issuer = usr!.id!
         }
     }
     
