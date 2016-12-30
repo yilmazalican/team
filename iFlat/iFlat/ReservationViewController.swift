@@ -13,8 +13,9 @@ class ReservationViewController: UIViewController {
     @IBOutlet var calendarView: JTAppleCalendarView!
     
     @IBOutlet var yearLabel: UILabel!
+    var flatID : String!
     var selectedDayRange : [Date]?
-    var selectedExactDates : [Date]?
+    var selectedExactDates : [Date] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +48,7 @@ class ReservationViewController: UIViewController {
 extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
+        formatter.dateFormat = "dd/MM/yyyy"
         
         let startDate = Date()
         // add one year
@@ -71,7 +72,7 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         // Setup Cell text
         dayCell.dayLabel.text = cellState.text
         
-        dayCell.selectedView.isHidden = true;
+        //dayCell.selectedView.isHidden = true;
         // Setup text color
         if cellState.dateBelongsTo == .thisMonth {
             dayCell.dayLabel.textColor = UIColor.black
@@ -79,7 +80,9 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
             dayCell.dayLabel.textColor = UIColor.gray
         }
         
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, date: date)
+        
+        
         
         
     }
@@ -109,72 +112,89 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         self.yearLabel.text = monthName + " " + String(intYear)
     }
     
-    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState){
+    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, date: Date) {
         guard let dayCell = view as? CellView else {
             return
         }
-//        if cellState.isSelected{
-//            if dayCell.isSelected{
-//                
-//                dayCell.selectedView.isHidden = true
-//                dayCell.isSelected = false
-//            }else{
-//                dayCell.selectedView.isHidden = false
-//                dayCell.selectedView.layer.cornerRadius = 20
-//                dayCell.isSelected=true
-//            }
-//        }
         
-        if cellState.isSelected{
-            dayCell.selectedView.isHidden = false
+        // add selected range's dates to selectedExactDates array
+        
+        if calendarView.selectedDates.count < 2 {
+            if cellState.isSelected{
+                dayCell.selectedView.isHidden = false
+                
+            }else{
+                dayCell.selectedView.isHidden = true
+            }
+        }
+        else if calendarView.selectedDates.count == 2 {
+            let first = calendarView.selectedDates.first
+            let last = calendarView.selectedDates.last
+            var iterator = first
+            while(iterator != last?.addingTimeInterval(24*60*60)){
+                selectedExactDates.append(iterator!)
+                
+                calendarView.selectDates([iterator!], triggerSelectionDelegate: false, keepSelectionIfMultiSelectionAllowed: true)
+                iterator?.addTimeInterval(24*60*60)
+                
+            }
             
+            
+            
+        }else {
+        
+        
+        
+        
+        
+        // check cell, is it in selectedExactDates array?
+        if (selectedExactDates.contains(date)){
+            dayCell.selectedView.isHidden = false
         }else{
             dayCell.selectedView.isHidden = true
+        }
+
+            //print("selected dates>")
+            //print(selectedExactDates)
+        
+        
         }
         
     }
     
+    
+    
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, date: date)
         print("--->")
         print(calendarView.selectedDates)
         if calendarView.selectedDates.count == 2 {
-           selectedDayRange = calendarView.selectedDates
-//            for var mydate = calendarView.selectedDates.first?.timeIntervalSince1970; mydate <= calendarView.selectedDates.last?.timeIntervalSince1970; mydate += 86400{
-//                
-//            }
+            selectedDayRange = calendarView.selectedDates
             
-        }else if calendarView.selectedDates.count > 2 {
+            
+        }else if (calendarView.selectedDates.count > 2 && calendarView.selectedDates.count > selectedExactDates.count) {
             var currentSelectedDates = calendarView.selectedDates
-            for loopdate in selectedDayRange!{
+            for loopdate in selectedExactDates{
                 if currentSelectedDates.contains(loopdate){
                     currentSelectedDates.remove(at: currentSelectedDates.index(of: loopdate)!)
                 }
             }
             calendarView.deselectAllDates()
             calendarView.selectDates(currentSelectedDates)
+            selectedExactDates.removeAll()
             
         }
-//        if calendarView.selectedDates.count == 2 {
-//            var first = calendarView.selectedDates.first
-//            var last = calendarView.selectedDates.last
-//            //first?.addTimeInterval(86400)
-//            //last?.addTimeInterval(-86400)
-//            calendarView.deselectAllDates()
-//                .selectDates(calendarView.generateDateRange(from: first!, to: last!))
-//            //calendarView.deselectAllDates()
-//            //calendarView.selectDates(from: first!, to: last!)
-//            //selectedDayCount = calendarView.selectedDates.count
-//            
-//        }
+        
     }
     
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        
+        let dayCell = cell as? CellView
+        dayCell?.selectedView.isHidden = true
     }
     
-
+    
     
     
     
