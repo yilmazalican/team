@@ -6,7 +6,7 @@
 //  Copyright © 2016 SE 301. All rights reserved.
 //
 //Change password and change email not included.
-//This class is wroted though FIREBASE user authendication framework!
+//This class is wroted though FIREBASvarser authendication framework!
 //Handle Optionals
 import Foundation
 import Firebase
@@ -37,6 +37,9 @@ protocol FIRUSERDelegate :class
     func getISsue(user:ManipulableUser, completion: @escaping([Issue]) -> ())
     func getUserByID(id:String, completion: @escaping(ManipulableUser?) -> ())
     func sendReservationRequest(req:ReservationRequest, completion: @escaping(String?) -> ())
+    func acceptReservationRequest(req:ReservationRequest,completion: @escaping(String?) -> ())
+    func rejectReservationRequest(req:ReservationRequest,completion: @escaping(String?) -> ())
+    func getUsersReservationRequests(usr:ManipulableUser, completion: @escaping([ReservationRequest]) -> ())
     
 }
 
@@ -45,10 +48,67 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
-    internal func sendReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
+    internal func getUsersReservationRequests(usr:ManipulableUser,completion: @escaping([ReservationRequest]) -> ()) {
+        var req = ReservationRequest()
+        FIRREF.instance().getRef().child("reservationRequests").queryOrdered(byChild: "toU").queryEqual(toValue: usr.id).observe(.value, with: { (ss) in
+            let obj = ss.children.allObjects
+            for a in obj
+            {
+                let key = a as! FIRDataSnapshot
+                let value = key.value as! [String:Any]
+                
+                let title = value["title"] as! String
+                let content = value["content"] as! String
+                let issued = value["issued"] as! User
+                let isOpen = value["isopen"] as! Bool
+                let answer = value["answer"] as? String
+                let issue = Issue(title: title, content: content, issued: issued)
+                issue.isOpen = isOpen
+                issue.answer = answer
+                issues.append(issue)
+                
+            }
         
+        
+        }
+        })
     }
 
+
+
+
+    internal func acceptReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
+        FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(1, forKey: "accepted")
+    }
+    
+    internal func rejectReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
+        FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(2, forKey: "accepted")
+    }
+
+    internal func sendReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
+        FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(
+            [
+            "toU": req.toU,
+            "flat" : req.flat,
+            "from": req.from!.toTimeStamp(),
+            "to" : req.to!.toTimeStamp(),
+            "accepted": req.accepted,
+            "date": req.date
+            ]
+            
+            ) { (err, nil) in
+                if err == nil
+                {
+                    completion(nil)
+                }
+                else
+                {
+                    completion(err.debugDescription)
+                }
+        }
+    }
+
+    
 
     internal func getUserByID(id: String, completion: @escaping (ManipulableUser?) -> ()) {
         let usr = User()
@@ -107,7 +167,9 @@ class FIRUSER: FIRUSERDelegate {
                 let issued = value["issued"] as! User
                 let isOpen = value["isopen"] as! Bool
                 let answer = value["answer"] as? String
-                let issue = Issue(title: title, content: content, issued: issued)
+                var issue = Issue(title: title, content: content, issued: issued)
+                issue.ID = key.key
+                issue.issuer = value["issuer"] as! String
                 issue.isOpen = isOpen
                 issue.answer = answer
                 issues.append(issue)

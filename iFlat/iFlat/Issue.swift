@@ -16,25 +16,25 @@ class Issue
     let title:String
     let content:String
     var isOpen:Bool
-    var issued:User
-    var issuer:User
+    var issued:String
+    var issuer:String
     var answer:String?
     
     
-    init(title:String,content:String,issued:User){
+    init(title:String,content:String,issued:String){
         self.ID = UUID().uuidString
         self.isOpen = true
         self.title = title
         self.content = content
         self.issued = issued
-        self.issuer = User()
+        self.issuer = ""
         setIssuer()
     }
     
     func setIssuer()
     {
         dbEndpoint.getCurrentLoggedIn { (usr) in
-            self.issuer = usr as! User
+            self.issuer = usr.id
         }
     }
     
