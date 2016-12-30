@@ -254,7 +254,7 @@ class AddFlatViewController: UIViewController {
     @IBAction func addFlatButtonAction(_ sender: Any) {
         addingFlat.images = flatImage
         
-        if addingFlat.isEmpty() {
+        if addingFlat.isEmpty(){
             
             showAlert(title: "Error", message: "Fill in the all blanks.")
             

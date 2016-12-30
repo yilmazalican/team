@@ -35,7 +35,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" text="Address of your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="h9S-rH-xAG">
-                                <rect key="frame" x="20" y="250" width="335" height="100"/>
+                                <rect key="frame" x="20" y="220" width="335" height="100"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="GqS-BO-ofz"/>
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYF-rC-V3y">
-                                <rect key="frame" x="16" y="520" width="343" height="50"/>
+                                <rect key="frame" x="16" y="490" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XvW-rO-mBb"/>
                                 </constraints>
@@ -55,13 +55,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="Describe your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="MDI-9h-tz9">
-                                <rect key="frame" x="20" y="120" width="335" height="100"/>
+                                <rect key="frame" x="20" y="90" width="335" height="100"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bI-XW-7PO">
-                                <rect key="frame" x="229" y="370" width="120" height="50"/>
+                                <rect key="frame" x="229" y="340" width="120" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Hho-8U-fmj"/>
                                     <constraint firstAttribute="height" constant="50" id="cHq-sb-EXc"/>
@@ -72,15 +72,8 @@
                                     <action selector="showOptionButtonAction:" destination="GVW-gj-Ql5" eventType="touchUpInside" id="kTn-ZE-yTA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-wS-dC5">
-                                <rect key="frame" x="10" y="370" width="120" height="50"/>
-                                <state key="normal" title="Flat Photos"/>
-                                <connections>
-                                    <segue destination="1Ys-1A-eEw" kind="show" id="BVg-l6-Mzd"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price:Per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-qp-NDG">
-                                <rect key="frame" x="36" y="440" width="303" height="50"/>
+                                <rect key="frame" x="36" y="410" width="303" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bwy-86-vlS"/>
                                 </constraints>
@@ -99,22 +92,18 @@
                             <constraint firstItem="h9S-rH-xAG" firstAttribute="top" secondItem="MDI-9h-tz9" secondAttribute="bottom" constant="30" id="5oi-bB-ALH"/>
                             <constraint firstItem="6bI-XW-7PO" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="AvH-a8-TG5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6bI-XW-7PO" secondAttribute="trailing" constant="10" id="EqY-I7-nCy"/>
-                            <constraint firstItem="PyS-wS-dC5" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="FRE-Mm-xVj"/>
                             <constraint firstItem="vKD-pW-W2z" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" constant="10" id="Nq9-qD-wt9"/>
                             <constraint firstItem="vKD-pW-W2z" firstAttribute="top" secondItem="oQm-V3-1Cy" secondAttribute="bottom" id="PhT-Tf-oJP"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="20" id="XC1-Av-nHW"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="height" secondItem="h9S-rH-xAG" secondAttribute="height" id="XOL-hJ-Iq0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZYF-rC-V3y" secondAttribute="trailing" id="au8-qQ-pyv"/>
                             <constraint firstItem="pMo-qp-NDG" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" constant="20" id="eiG-mc-pE8"/>
-                            <constraint firstItem="PyS-wS-dC5" firstAttribute="height" secondItem="6bI-XW-7PO" secondAttribute="height" id="fIw-6Y-eYO"/>
                             <constraint firstItem="h9S-rH-xAG" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="20" id="mLr-c4-L6x"/>
                             <constraint firstItem="ZYF-rC-V3y" firstAttribute="top" secondItem="pMo-qp-NDG" secondAttribute="bottom" constant="30" id="mVi-9a-sO0"/>
                             <constraint firstAttribute="trailing" secondItem="h9S-rH-xAG" secondAttribute="trailing" constant="20" id="n06-gD-AtV"/>
-                            <constraint firstItem="PyS-wS-dC5" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="10" id="n56-TG-719"/>
                             <constraint firstAttribute="trailing" secondItem="MDI-9h-tz9" secondAttribute="trailing" constant="20" id="nTR-ax-E5D"/>
-                            <constraint firstItem="PyS-wS-dC5" firstAttribute="width" secondItem="6bI-XW-7PO" secondAttribute="width" id="puc-2q-c1e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pMo-qp-NDG" secondAttribute="trailing" constant="20" id="uId-i7-NGA"/>
-                            <constraint firstItem="MDI-9h-tz9" firstAttribute="top" secondItem="vKD-pW-W2z" secondAttribute="bottom" constant="50" id="wcm-RN-UfI"/>
+                            <constraint firstItem="MDI-9h-tz9" firstAttribute="top" secondItem="vKD-pW-W2z" secondAttribute="bottom" constant="20" id="wcm-RN-UfI"/>
                             <constraint firstItem="ZYF-rC-V3y" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" id="xPb-92-it2"/>
                         </constraints>
                     </view>
@@ -513,11 +502,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cAz-J9-eut"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="69l-eo-Trc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-jY-D14">
-                                <rect key="frame" x="0.0" y="750" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gCc-o8-8CY"/>
                                 </constraints>
