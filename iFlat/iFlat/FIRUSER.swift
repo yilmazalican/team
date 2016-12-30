@@ -79,7 +79,6 @@ class FIRUSER: FIRUSERDelegate {
     }
 
     internal func getUsersReservationRequests(usr:ManipulableUser,completion: @escaping([ReservationRequest]) -> ()) {
-        var req = ReservationRequest()
         var returningReqs = [ReservationRequest]()
         FIRREF.instance().getRef().child("reservationRequests").queryOrdered(byChild: "toU").queryEqual(toValue: usr.id).observe(.value, with: { (ss) in
             let obj = ss.children.allObjects
