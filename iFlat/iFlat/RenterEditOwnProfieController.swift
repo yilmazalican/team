@@ -93,11 +93,7 @@ class RenterEditOwnProfieController: UIViewController {
         
         }
         
-        for  index in 1...cities.count{
-            if cities[index] == loginUser.country  {
-                countyPickerView.selectedRow(inComponent: index)
-            }
-        }
+      
         
        self.countyPickerView.reloadAllComponents()
 

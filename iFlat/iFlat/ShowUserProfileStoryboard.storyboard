@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ipp-sN-19P">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Renter Edit Own Profie Controller-->
+        <!--Show User Profile View Controller-->
         <scene sceneID="0Lb-j2-q2k">
             <objects>
-                <viewController id="ipp-sN-19P" customClass="RenterEditOwnProfieController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ipp-sN-19P" customClass="ShowUserProfileViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sKQ-KT-P24"/>
                         <viewControllerLayoutGuide type="bottom" id="uFe-vC-voo"/>
@@ -56,13 +56,12 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thU-8S-wjn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <state key="normal" title="Edit">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Open Issue"/>
                                                 <connections>
-                                                    <action selector="editedProfileButtonAction:" destination="ipp-sN-19P" eventType="touchUpInside" id="KUv-eL-jFL"/>
+                                                    <segue destination="mfc-bw-Cfo" kind="popoverPresentation" popoverAnchorView="thU-8S-wjn" id="u0l-35-R6Q">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -199,12 +198,24 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="renterPhotoImageView" destination="lrs-0e-iqN" id="SOJ-VA-to3"/>
+                        <outlet property="birthdateLabel" destination="1u1-Di-nAY" id="MPI-Qc-O0B"/>
+                        <outlet property="countryLabel" destination="A3x-JR-fSK" id="PRl-fZ-MXJ"/>
+                        <outlet property="mailAdressLabel" destination="Vx4-MJ-D4F" id="QM2-03-r14"/>
+                        <outlet property="nameSurnameLabel" destination="DiM-w2-fvr" id="Xzp-ff-6sl"/>
+                        <outlet property="userProfileImageView" destination="lrs-0e-iqN" id="06V-eJ-ORf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8e-HS-R7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-590" y="-652"/>
+            <point key="canvasLocation" x="-938" y="-576"/>
+        </scene>
+        <!--OpenIssueStoryBoard-->
+        <scene sceneID="NOe-9i-oOi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OpenIssueStoryBoard" id="mfc-bw-Cfo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsn-KY-4Bq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="-589"/>
         </scene>
     </scenes>
 </document>

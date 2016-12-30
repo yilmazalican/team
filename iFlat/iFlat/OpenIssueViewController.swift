@@ -10,6 +10,13 @@ import UIKit
 
 class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,ShowAlert {
 
+    @IBOutlet weak var popUpView: UIView!{
+        didSet{
+            
+            popUpView.layer.cornerRadius = 10
+            popUpView.layer.masksToBounds = true
+        }
+    }
     
     var firebase = FIRUSER()
     

@@ -86,7 +86,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DRR-F3-gAL" firstAttribute="centerX" secondItem="9c2-uW-sTD" secondAttribute="centerX" id="0TC-dk-XUd"/>
                             <constraint firstItem="DRR-F3-gAL" firstAttribute="centerY" secondItem="9c2-uW-sTD" secondAttribute="centerY" id="lxJ-yU-Gus"/>
@@ -94,6 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="jTK-6D-qtJ" id="6VZ-kI-awc"/>
+                        <outlet property="popUpView" destination="DRR-F3-gAL" id="T7V-Jz-hDI"/>
                         <outlet property="titleTextField" destination="3lX-zl-d0t" id="t7T-Xh-jnM"/>
                     </connections>
                 </viewController>
