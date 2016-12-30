@@ -41,6 +41,7 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         dbUser.getCurrentLoggedIn { (usr) in
             self.currentUsr = usr as? User
         }
+        self.spacesTV.separatorStyle = .none
 
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,10 +49,9 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         if self.flatImgArr.count - 1 >= indexPath.row{
             let url = URL(string:self.flatImgArr[indexPath.row])
             cell.flatThumbImg.kf.setImage(with: url)
-            cell.flatPricesLbl.text = String(describing: self.flatsArr[indexPath.row].price!) + "₺"
+            cell.flatPricesLbl.text = String(describing: self.flatsArr[indexPath.row].price!) + "₺" + "\n per night"
             cell.flatTitleLbl.text = self.flatsArr[indexPath.row].title
             cell.accessoryType = UITableViewCellAccessoryType.checkmark
-            
         }
         
         return cell
@@ -76,6 +76,10 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         delete.backgroundColor = UIColor.red
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexpath) in
+            let storyboard = UIStoryboard(name: "EditFlatStoryboard", bundle: nil)
+            let viewControllerYouWantToPresent = storyboard.instantiateViewController(withIdentifier: "EditFlatViewController") as! EditFlatViewController
+            viewControllerYouWantToPresent.editingFlat = self.flatsArr[indexpath.row]
+            self.navigationController?.pushViewController(viewControllerYouWantToPresent, animated: true)
         }
         edit.backgroundColor = UIColor.blue
         

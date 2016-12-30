@@ -36,7 +36,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editPhotoCell" id="hUG-I9-Hia" customClass="EditPhotoCollectionViewCell" customModule="iFlat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-18.5" width="375" height="414"/>
+                                                <rect key="frame" x="0.0" y="-19" width="375" height="414"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
@@ -437,7 +437,7 @@
         <!--Edit Flat View Controller-->
         <scene sceneID="wVq-xH-k4i">
             <objects>
-                <viewController id="AoD-Ru-LvQ" customClass="EditFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditFlatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AoD-Ru-LvQ" customClass="EditFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lSA-ic-eJm"/>
                         <viewControllerLayoutGuide type="bottom" id="PJZ-I6-0im"/>
