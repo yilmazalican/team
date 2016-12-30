@@ -10,11 +10,10 @@ import UIKit
 
 class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,ShowAlert {
 
-    var currentUser = User()
     
     var firebase = FIRUSER()
     
-    var issue : Issue?
+    var issue = Issue()
     
     @IBOutlet weak var contentTextView: UITextView!{
         
@@ -35,11 +34,10 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
         super.viewDidLoad()
         
         firebase.getCurrentLoggedIn { (currentUser) in
-            self.currentUser = currentUser as! User
             
-            self.issue?.issuer = self.currentUser.id
+            self.issue.issuer = currentUser?.id
             
-            self.issue?.isOpen = true
+            self.issue.isOpen = true
 
             
         }
@@ -59,12 +57,12 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
 
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        issue?.title = textField.text
+        issue.title = textField.text
         
     }
   
     func textViewDidEndEditing(_ textView: UITextView) {
-        issue?.content  = textView.text
+        issue.content  = textView.text
     }
     
     
