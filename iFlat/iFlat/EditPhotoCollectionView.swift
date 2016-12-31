@@ -27,7 +27,7 @@ extension EditPhotoCollectionView:UICollectionViewDelegate,UICollectionViewDataS
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return flatImages.count
+        return flatImages.count ?? 4
     }
     
     
