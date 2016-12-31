@@ -47,16 +47,16 @@ class FiltersViewController: UIViewController  {
 
     func initUI(){
         if(filter?.bathroomCount != nil){
-            self.bathroomCountTextField.text = String(describing: filter?.bathroomCount)
+            self.bathroomCountTextField.text = String(describing: (filter?.bathroomCount)!)
         }
         if(filter?.bedCount != nil){
-        self.bedCountTextField.text = String(describing: filter?.bedCount)
+        self.bedCountTextField.text = String(describing: (filter?.bedCount)!)
         }
         if(filter?.bedroomCount != nil){
-        self.bedroomCountTextField.text = String(describing: filter?.bedroomCount)
+        self.bedroomCountTextField.text = String(describing: (filter?.bedroomCount)!)
         }
         if(filter?.capacity != nil){
-        self.flatCapacityTextField.text = String(describing: filter?.capacity)
+        self.flatCapacityTextField.text = String(describing: (filter?.capacity)!)
         }
         
         self.coolingSwitch.setOn((filter?.cooling)!, animated: false)
@@ -70,10 +70,10 @@ class FiltersViewController: UIViewController  {
         self.washingMachineSwitch.setOn((filter?.washingMachine)!, animated: false)
         
         if(filter?.priceFrom != nil){
-        self.priceFromTextField.text = String(describing: filter?.priceFrom)
+        self.priceFromTextField.text = String(describing: (filter?.priceFrom)!)
         }
         if(filter?.priceTo != nil){
-        self.priceToTextField.text = String(describing: filter?.priceTo)
+        self.priceToTextField.text = String(describing: (filter?.priceTo)!)
         }
     }
     
