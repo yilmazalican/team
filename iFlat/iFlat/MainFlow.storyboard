@@ -58,6 +58,9 @@
                                         <state key="normal" title="View and edit profile">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="6pu-jv-sjU" kind="show" id="hHT-Vv-FXf"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultimage" translatesAutoresizingMaskIntoConstraints="NO" id="RsS-Em-vse">
                                         <rect key="frame" x="285" y="10" width="60" height="60"/>
@@ -238,6 +241,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ank-c0-KOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4706" y="49"/>
+        </scene>
+        <!--EditProfileStoryBoard-->
+        <scene sceneID="rDz-4T-fGu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditProfileStoryBoard" id="6pu-jv-sjU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6kN-Tr-l07" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3001" y="-433"/>
         </scene>
         <!--Control PanelVC-->
         <scene sceneID="Nwi-na-iLw">

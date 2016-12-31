@@ -19,7 +19,7 @@ extension Date
         let d = dateStringFormatter.date(from: dateString)!
         
         self.init(timeInterval: 0, since:d)
-        Date(dateString: "12/05/2016")
+
         
     }
     
