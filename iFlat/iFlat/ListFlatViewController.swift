@@ -109,9 +109,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "flatProfileSegue"{
-                let navigationController = segue.destination as! UINavigationController
                 
-                flatProfileVC = navigationController.topViewController as? FlatProfileViewController
+                flatProfileVC = segue.destination as! FlatProfileViewController
 
                 
             }
