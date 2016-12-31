@@ -13,7 +13,9 @@ class ReservationViewController: UIViewController {
     @IBOutlet var calendarView: JTAppleCalendarView!
     
     @IBOutlet var yearLabel: UILabel!
-    var flatID : String!
+
+    var unavailableDates : [Date]?
+    var receivedFlat : Flat!
     var selectedDayRange : [Date]?
     var selectedExactDates : [Date] = []
     override func viewDidLoad() {
@@ -33,12 +35,21 @@ class ReservationViewController: UIViewController {
             self.updateMonthYearLabel(visibleDates: visibleDates)
         }
         
+        var firFlat = FIRFlat()
+        firFlat.getAvailableTimeSlots(flt: (receivedFlat as? ManipulableFlat)!) { (arr) in
+            for arrElem in arr {
+            self.unavailableDates?.append(Date.init(timeIntervalSince1970: TimeInterval(arrElem!)))
+            }
+            print(self.unavailableDates)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
     

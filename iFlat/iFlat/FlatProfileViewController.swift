@@ -95,7 +95,14 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             
             let reservationVC = navigationController.topViewController as? ReservationViewController
             
-            reservationVC?.flatID = self.receivedFlatID
+            reservationVC?.receivedFlat = self.flat
+        }
+        if segue.identifier == "showUserProfile"{
+            
+            let showUserVC = segue.destination as! ShowUserProfileViewController
+            showUserVC.strUserID = self.ownerID
+            
+
         }
     }
 

@@ -31,19 +31,31 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         let endpoint = FIRFlat()
         let USERendpoint = FIRUSER()
         
-        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
-            //print(str)
+//        USERendpoint.loginByEmailAndPassword(email: "yilmazalican92@gmail.com", password: "frozen4192") { (str) in
+//            //print(str)
+//            
+//            let qm = Querymaster()
+//            
+//            
+//            qm.getFilteredFlats(filter: self.receivedFilter) { (dsa) in
+//                self.filteredFlats = dsa
+//                
+//                DispatchQueue.main.async {
+//                    self.listFlatCollectionView.reloadData()
+//                    
+//                }
+//            }
+//        }
+        
+        let qm = Querymaster()
+        
+        
+        qm.getFilteredFlats(filter: self.receivedFilter) { (dsa) in
+            self.filteredFlats = dsa
             
-            let qm = Querymaster()
-            
-            
-            qm.getFilteredFlats(filter: self.receivedFilter) { (dsa) in
-                self.filteredFlats = dsa
+            DispatchQueue.main.async {
+                self.listFlatCollectionView.reloadData()
                 
-                DispatchQueue.main.async {
-                    self.listFlatCollectionView.reloadData()
-                    
-                }
             }
         }
         
