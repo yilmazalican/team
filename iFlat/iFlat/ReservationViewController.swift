@@ -9,33 +9,42 @@
 
 import JTAppleCalendar
 
+// Controls Reservation view and calendar that is used in Reservation view
 class ReservationViewController: UIViewController {
+    // Outlet of calendar
     @IBOutlet var calendarView: JTAppleCalendarView!
-    
+    // Outlet of label which shows currently viewing month and year on the calendar
     @IBOutlet var yearLabel: UILabel!
-
+    // Date Array that stores unavailable dates of selected flat
     var unavailableDates : [Date]?
+    // Flat object that received from flat profile which is wanted to be reserved
     var receivedFlat : Flat!
+    // Date Array that stores 2 date object which are selected range's first and last day on calendar
     var selectedDayRange : [Date]?
+    // Date Array that stores selected dates one by one
     var selectedExactDates : [Date] = []
+    
+    // function that inits gui when the view loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // property for calendar to allow multiple selections
         calendarView.allowsMultipleSelection = true
+        // property for calendar to allqw range selection
         calendarView.rangeSelectionWillBeUsed = true
-        
+        // calendar's dataSource
         calendarView.dataSource = self
+        //calendar's delegate
         calendarView.delegate = self
+        // loads calendar's cells from CellView.xib file
         calendarView.registerCellViewXib(file: "CellView") // Registering your cell is manditory
-        
-        //calendarView.registerHeaderView(xibFileNames: ["CalendarHeader"])
-        
+        // sets visibleDates of calendar
         calendarView.visibleDates { (visibleDates: DateSegmentInfo) in
             self.updateMonthYearLabel(visibleDates: visibleDates)
         }
-        
+        // DB connector
         var firFlat = FIRFlat()
+        // loads flat's available dates from DB
         firFlat.getAvailableTimeSlots(flt: (receivedFlat as? ManipulableFlat)!) { (arr) in
             for arrElem in arr {
             self.unavailableDates?.append(Date.init(timeIntervalSince1970: TimeInterval(arrElem!)))
