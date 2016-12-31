@@ -15,6 +15,7 @@ import MobileCoreServices
 
 class RenterEditOwnProfieController: UIViewController {
 
+  
     
     var cities = [String]()
     
@@ -90,13 +91,13 @@ class RenterEditOwnProfieController: UIViewController {
         
         dbFirebase.getCities { (allCities) in
             self.cities = allCities
-        
+            self.countyPickerView.reloadAllComponents()
+
         }
         
       
         
-       self.countyPickerView.reloadAllComponents()
-
+      
   setLoginUser()
       
        
@@ -197,6 +198,7 @@ class RenterEditOwnProfieController: UIViewController {
         
      dbFirebase.edit(newUsr: self.loginUser) { (err) in
         print(err)
+      self.navigationController?.popViewController(animated: true)
         }
         
        
@@ -227,11 +229,7 @@ class RenterEditOwnProfieController: UIViewController {
     
     
   private func setLoginUser(){
-        
-        dbFirebase.loginByEmailAndPassword(email: "tolga@gmail.com", password: "123456", completion: { (err) in
-            
-            print(err)
-            
+    
             self.dbFirebase.getCurrentLoggedIn(completion: { (usr) in
                 print(usr?.email)
                 
@@ -253,7 +251,7 @@ class RenterEditOwnProfieController: UIViewController {
 
                             self.loadingIndicator.stopAnimating()
                             
-                        })
+                      
                       })
                               
                 
