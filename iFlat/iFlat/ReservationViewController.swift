@@ -14,6 +14,7 @@ class ReservationViewController: UIViewController {
     
     @IBOutlet var yearLabel: UILabel!
     var flatID : String!
+    var flatsUserID : String!
     var selectedDayRange : [Date]?
     var selectedExactDates : [Date] = []
     override func viewDidLoad() {
@@ -40,6 +41,7 @@ class ReservationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var firFlat = FIRFlat()
     
     
     
