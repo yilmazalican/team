@@ -21,14 +21,14 @@ protocol FIRFlatDelegate :class
     func insertTimeSlot(flt:ManipulableFlat, timeslot:[Int], completion: @escaping (String?) -> ())
     func addWishList(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func deleteWish(flt:ManipulableFlat, completion: @escaping (String?) -> ())
-    func getAvailableTimeSlots(flt:ManipulableFlat, completion: @escaping ([String?]) -> ())
+    func getAvailableTimeSlots(flt:ManipulableFlat, completion: @escaping ([Int?]) -> ())
     
 }
 
 
 class FIRFlat:FIRFlatDelegate
 {
-    internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([String?]) -> ()) {
+    internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([Int?]) -> ()) {
         FIRREF.instance().getRef().child("time_slots").queryOrdered(byChild: flt.id).queryEqual(toValue: true).observe(.value, with: { (ss) in
             var timeSlots = [Int]()
             for a in ss.children.allObjects
@@ -36,6 +36,7 @@ class FIRFlat:FIRFlatDelegate
                 let received = a as! FIRDataSnapshot
                 timeSlots.append(Int(received.key)!)
             }
+            completion(timeSlots)
         })
     }
 
