@@ -9,6 +9,10 @@
 import UIKit
 
 class ShowUserProfileViewController: UIViewController {
+    
+    
+    var strUserID = String()
+    
     @IBOutlet weak var userProfileImageView: UIImageView!
 
     @IBOutlet weak var nameSurnameLabel: UILabel!
