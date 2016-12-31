@@ -32,7 +32,7 @@ protocol ManipulableFlat :class
     var images:[FlatImage]? {get}
     var published:Bool? {get}
     var disabled:Bool? {get}
-    var userID:String {get}
+    var userID:String? {get}
     var DB_ENDPOINT:FIRFlat {get}
     
     init(title:String,flatDescription:String,city:String, address:String,flatCapacity:Int,bathRoomCount:Int,bedcount:Int,pool:Bool,internet:Bool,cooling:Bool,heating:Bool,tv:Bool,washingMachine:Bool,elevator:Bool,parking:Bool,smoking:Bool,gateKeeper:Bool,price:Double,deleted:Bool, images:[FlatImage], bedroomCount:Int, disabled:Bool, published:Bool)
