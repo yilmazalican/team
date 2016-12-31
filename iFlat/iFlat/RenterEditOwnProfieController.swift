@@ -228,10 +228,6 @@ class RenterEditOwnProfieController: UIViewController {
     
   private func setLoginUser(){
         
-        dbFirebase.loginByEmailAndPassword(email: "tolga@gmail.com", password: "123456", completion: { (err) in
-            
-            print(err)
-            
             self.dbFirebase.getCurrentLoggedIn(completion: { (usr) in
                 print(usr?.email)
                 
@@ -253,7 +249,7 @@ class RenterEditOwnProfieController: UIViewController {
 
                             self.loadingIndicator.stopAnimating()
                             
-                        })
+                      
                       })
                               
                 
