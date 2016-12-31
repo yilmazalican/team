@@ -98,16 +98,17 @@ class Querymaster:QuerymasterDelegate
                     flt.cooling = mainDict["cooling"] as? Bool
                     flt.price = mainDict["price"] as? Double
                     flt.washingMachine = mainDict["washingMachine"] as? Bool
+                    flt.address = mainDict["adress"] as? String
                     
                     sehirdekiFlatler[flt.id] = flt
                     
                     if(!(zamanAraliginaUygunFlatlar).contains(flt.id))
                     {
-                        if(filter.bathroomCount == nil || filter.bathroomCount! <= flt.bathroomCount!)
+                        if(filter.bathroomCount == 0 || filter.bathroomCount! <= flt.bathroomCount!)
                         {
-                            if(filter.bedCount == nil || filter.bedCount! <= flt.bedCount!)
+                            if(filter.bedCount == 0 || filter.bedCount! <= flt.bedCount!)
                             {
-                                if(filter.bedroomCount == nil || filter.bedroomCount! <= flt.bedroomCount!)
+                                if(filter.bedroomCount == 0 || filter.bedroomCount! <= flt.bedroomCount!)
                                 {
                                     if(filter.internet == false || filter.internet! == flt.internet!)
                                     {
@@ -125,13 +126,13 @@ class Querymaster:QuerymasterDelegate
                                                             {
                                                                 if(filter.tv! == false || filter.tv! == flt.tv!)
                                                                 {
-                                                                    if(filter.capacity == nil || filter.capacity! <= flt.flatCapacity!)
+                                                                    if(filter.capacity == 0 || filter.capacity! <= flt.flatCapacity!)
                                                                     {
                                                                         if(filter.cooling == false || filter.cooling! == flt.cooling!)
                                                                         {
-                                                                            if(filter.priceFrom == nil || filter.priceFrom! <= flt.price!)
+                                                                            if(filter.priceFrom == 0.0 || filter.priceFrom! <= flt.price!)
                                                                             {
-                                                                                if(filter.priceTo == nil || filter.priceTo! >= flt.price!)
+                                                                                if(filter.priceTo == 0.0 || filter.priceTo! >= flt.price!)
                                                                                 {
                                                                                     if(filter.washingMachine == false || filter.washingMachine! == flt.washingMachine!)
                                                                                     {

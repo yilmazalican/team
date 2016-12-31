@@ -14,14 +14,14 @@ class EntranceViewController: UIViewController {
     var searchParameter = SearchParameter()
     
     var user = User()
-   
+    
     
     
     @IBOutlet weak var cityTextField: UITextField!{
         
         didSet{
             
-   cityTextField.delegate = self
+            cityTextField.delegate = self
         }
     }
     
@@ -29,7 +29,7 @@ class EntranceViewController: UIViewController {
         
         didSet{
             
-              searchParameter.fromParameter = setDateToString(datePicker:FromDatePicker)
+            searchParameter.fromParameter = setDateToString(datePicker:FromDatePicker)
         }
     }
     
@@ -42,51 +42,51 @@ class EntranceViewController: UIViewController {
     }
     @IBOutlet weak var numberPersonPicker: UIPickerView!{
         didSet {
-      
-         	
-          numberPersonPicker.delegate = self
+            
+            
+            numberPersonPicker.delegate = self
             numberPersonPicker.dataSource = self
-
+            
         }
     }
-
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
     }
     
-   
+    
     @IBAction func fromDatePickerChanged(_ sender: UIDatePicker) {
         
         searchParameter.fromParameter = setDateToString(datePicker: FromDatePicker)
-
+        
     }
     
     @IBAction func whereTextFieldEnd(_ sender: UITextField) {
         
         searchParameter.whereParameter = sender.text
     }
-   
+    
     @IBAction func toDatePicker(_ sender: UIDatePicker) {
         
-      searchParameter.toParameter = setDateToString(datePicker: ToDatePicker)
+        searchParameter.toParameter = setDateToString(datePicker: ToDatePicker)
         
     }
-   
-   
+    
+    
     @IBAction func searchWithParameterActionButton(_ sender: Any) {
-
-       
-
+        
+        
+        
         
     }
     
@@ -94,61 +94,56 @@ class EntranceViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
-            if  segue.identifier == "EntranceToListSegue" {
+        if  segue.identifier == "EntranceToListSegue" {
+            
+            let navigation = segue.destination as! UINavigationController
+            
+            
+            
+            if let controller :ListFlatViewController = navigation.topViewController as? ListFlatViewController {
+                controller.receivedFilter.pool = false
+                controller.receivedFilter.city = ""
+                controller.receivedFilter.bedroomCount = 0
+                controller.receivedFilter.capacity = 0
+                controller.receivedFilter.smoking = false
+                controller.receivedFilter.bathroomCount = 0
+                controller.receivedFilter.smoking = false
+                controller.receivedFilter.internet = false
+                controller.receivedFilter.tv = false
+                controller.receivedFilter.washingMachine = false
+                controller.receivedFilter.gateKeeper = false
+                controller.receivedFilter.priceTo = 0
+                controller.receivedFilter.fromDateTimeStamp = ""
+                controller.receivedFilter.toDateTimeStamp = ""
+                controller.receivedFilter.parking = false
+                controller.receivedFilter.elevator = false
+                controller.receivedFilter.heating = false
+                controller.receivedFilter.priceFrom = 0
+                controller.receivedFilter.bedCount = 0
+                controller.receivedFilter.cooling = false
                 
-                let navigation = segue.destination as! UINavigationController
-                    
-               
-                
-                if let controller :ListFlatViewController = navigation.topViewController as? ListFlatViewController {
-                  controller.receivedFilter.pool = false
-                      controller.receivedFilter.city = ""
-               controller.receivedFilter.bedroomCount = 0
-                       controller.receivedFilter.capacity = 0
-                    controller.receivedFilter.smoking = false
-                    controller.receivedFilter.bathroomCount = 0
-                    controller.receivedFilter.smoking = false
-                    controller.receivedFilter.internet = false
-                    controller.receivedFilter.tv = false
-                    controller.receivedFilter.washingMachine = false
-                    controller.receivedFilter.gateKeeper = false
-                    controller.receivedFilter.priceTo = 0
-                    controller.receivedFilter.fromDateTimeStamp = ""
-                    controller.receivedFilter.toDateTimeStamp = ""
-                    controller.receivedFilter.parking = false
-                    controller.receivedFilter.elevator = false
-                    controller.receivedFilter.heating = false
-                    controller.receivedFilter.priceFrom = 0
-                    controller.receivedFilter.bedCount = 0
-                    controller.receivedFilter.cooling = nil
-                    
-                    if let city =   searchParameter.whereParameter {
-                        controller.receivedFilter.city = city
-        
-                       
-
-                               if let from = searchParameter.fromParameter {
+                if let city =   searchParameter.whereParameter {
+                    controller.receivedFilter.city = city
+                }
+                if let from = searchParameter.fromParameter {
                     
                     controller.receivedFilter.fromDate = Date(dateString: from)
-                    if let to = searchParameter.toParameter {
-                        
-                        controller.receivedFilter.toDate = Date(dateString:to)
-                        
-                        if let capacity = searchParameter.numberOfSize {
-                            
-                            controller.receivedFilter.capacity = Int(capacity)!
-                            }
-                            
-                            
-                        }
-                    }
-               
-            }
- }
-            }
-            
+                }
+                if let to = searchParameter.toParameter {
+                    
+                    controller.receivedFilter.toDate = Date(dateString:to)
+                }
+                if let capacity = searchParameter.numberOfSize {
+                    
+                    controller.receivedFilter.capacity = Int(capacity)!
+                }
                 
-            
+
+            }
+        }
+        
+        
+        
         
     }
     
@@ -158,7 +153,7 @@ class EntranceViewController: UIViewController {
 
 extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate , DateToString {
     
- 
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -166,23 +161,23 @@ extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,U
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-      
+        
         return SearchParameter.sizeNum[row]
-     
+        
         
     }
- 
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-            return SearchParameter.sizeNum.count
-           }
-
+        return SearchParameter.sizeNum.count
+    }
     
-   
+    
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if SearchParameter.sizeNum[row] != SearchParameter.selectPeopleNum {
@@ -192,9 +187,9 @@ extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,U
         }
         
         
-        }
-      
-        
+    }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -208,25 +203,25 @@ extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,U
             label = UILabel()
         }
         
-       
-            data = SearchParameter.sizeNum[row]
+        
+        data = SearchParameter.sizeNum[row]
+        
+        let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
+        
+        label?.attributedText = title
+        label?.textAlignment = .center
+        
+        if data == SearchParameter.selectPeopleNum {
             
-            let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
-            
-            label?.attributedText = title
-            label?.textAlignment = .center
-            
-            if data == SearchParameter.selectPeopleNum {
-                
-                label?.textColor = UIColor.red
-                
+            label?.textColor = UIColor.red
             
             
-             }
-            return label!
-       
-
+            
         }
-
+        return label!
+        
+        
     }
+    
+}
 
