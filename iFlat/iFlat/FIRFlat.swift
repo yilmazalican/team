@@ -18,16 +18,27 @@ protocol FIRFlatDelegate :class
     func getFlatImages(flatID:String, completion: @escaping ([FlatImageDownloaded]?) -> ())
     func setOwnerID() -> String!
     func insertFlat(flt:ManipulableFlat, completion: @escaping (String?) -> ())
-    func insertTimeSlot(flt:ManipulableFlat, timeslot:[String], completion: @escaping (String?) -> ())
+    func insertTimeSlot(flt:ManipulableFlat, timeslot:[Int], completion: @escaping (String?) -> ())
     func addWishList(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func deleteWish(flt:ManipulableFlat, completion: @escaping (String?) -> ())
-    
+    func getAvailableTimeSlots(flt:ManipulableFlat, completion: @escaping ([String?]) -> ())
     
 }
 
 
 class FIRFlat:FIRFlatDelegate
 {
+    internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([String?]) -> ()) {
+        FIRREF.instance().getRef().child("time_slots").queryOrdered(byChild: flt.id).queryEqual(toValue: true).observe(.value, with: { (ss) in
+            var timeSlots = [Int]()
+            for a in ss.children.allObjects
+            {
+                let received = a as! FIRDataSnapshot
+                timeSlots.append(Int(received.key)!)
+            }
+        })
+    }
+
     internal func deleteWish(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         
         FIRREF.instance().getRef().child("Wishes/" + flt.userID + "/" + flt.id).removeValue()
@@ -49,11 +60,10 @@ class FIRFlat:FIRFlatDelegate
         
     }
 
-    internal func insertTimeSlot(flt: ManipulableFlat, timeslot: [String], completion: @escaping (String?) -> ()) {
+    internal func insertTimeSlot(flt: ManipulableFlat, timeslot: [Int], completion: @escaping (String?) -> ()) {
         for a in timeslot
         {
-            let timeStamp = Date(dateString: a).toTimeStamp()
-            FIRREF.instance().getRef().child("time_slots/" + String(timeStamp)).setValue([flt.id: true]) { (err, nil) in
+            FIRREF.instance().getRef().child("time_slots/" + String(a)).setValue([flt.id: true]) { (err, nil) in
                 if err == nil
                 {
                     completion(nil)

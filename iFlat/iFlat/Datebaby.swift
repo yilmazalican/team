@@ -23,10 +23,10 @@ extension Date
         
     }
     
-    func toTimeStamp() -> String
+    func toTimeStamp() -> Int
     {
         let a = Int(self.timeIntervalSince1970)
-        return String(a)
+        return a
     }
     
     
