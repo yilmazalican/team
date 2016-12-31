@@ -198,6 +198,7 @@ class RenterEditOwnProfieController: UIViewController {
         
      dbFirebase.edit(newUsr: self.loginUser) { (err) in
         print(err)
+      self.navigationController?.popViewController(animated: true)
         }
         
        
