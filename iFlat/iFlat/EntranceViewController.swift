@@ -96,11 +96,10 @@ class EntranceViewController: UIViewController {
         
         if  segue.identifier == "EntranceToListSegue" {
             
-            let navigation = segue.destination as! UINavigationController
             
             
             
-            if let controller :ListFlatViewController = navigation.topViewController as? ListFlatViewController {
+            if let controller :ListFlatViewController = segue.destination as? ListFlatViewController {
                 controller.receivedFilter.pool = false
                 controller.receivedFilter.city = ""
                 controller.receivedFilter.bedroomCount = 0
