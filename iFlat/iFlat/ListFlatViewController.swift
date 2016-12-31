@@ -75,7 +75,9 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             cell.flatID = self.filteredFlats[indexPath.row].flatID!
             cell.flatOwnerID = self.filteredFlats[indexPath.row].userID!
             cell.flatTitle.text = self.filteredFlats[indexPath.row].flatTitle
-            cell.flatPrice.text = String(describing: self.filteredFlats[indexPath.row].flatPrice)
+            cell.flatPrice.text = "₺" + String(describing: self.filteredFlats[indexPath.row].flatPrice!)
+            cell.flatCity.text = self.filteredFlats[indexPath.row].flatCity
+            cell.flatRating.text = "****"
             
             
             

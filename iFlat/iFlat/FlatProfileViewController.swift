@@ -58,11 +58,11 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
 
     func initGui(){
         // check string casting
-        self.flatPriceTV.text = String(describing: flat.price)
-        self.flatDetailsTV.text = flat.flatDescription!
+        self.flatPriceTV.text = String(describing: (flat.price)!)
+        self.flatDetailsTV.text = (flat.flatDescription)!
         self.flatOwnerTV.text = flat.userID
-        self.flatTitleTV.text = flat.title
-        self.flatSpecsTV.text = "Bathroom:" + String(describing: flat.bathroomCount)
+        self.flatTitleTV.text = (flat.title)!
+        self.flatSpecsTV.text = "Bathroom:" + String(describing: (flat.bathroomCount)!)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
