@@ -51,7 +51,7 @@ class Querymaster:QuerymasterDelegate
         
         var zamanAraliginaUygunFlatlar = [String]()
         
-        FIRREF.instance().getRef().child("time_slots").queryOrderedByKey().queryStarting(atValue: filter.fromDate?.toTimeStamp()).queryEnding(atValue: filter.toDate?.toTimeStamp()).observeSingleEvent(of: .value, with: { (ss) in
+        FIRREF.instance().getRef().child("timeslots").queryOrderedByKey().queryStarting(atValue: filter.fromDate?.toTimeStamp()).queryEnding(atValue: filter.toDate?.toTimeStamp()).observeSingleEvent(of: .value, with: { (ss) in
             for ts in ss.children.allObjects
             {
                 let timeslotFlatObj = ts as! FIRDataSnapshot
