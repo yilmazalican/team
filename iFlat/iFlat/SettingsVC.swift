@@ -23,7 +23,6 @@ class SettingsVC: UIViewController {
         dbuser.getCurrentLoggedIn { (usr) in
             self.dbuser.getUserProfileImg(user: usr!, completion: { (img) in
                 let url = URL(string: img!)
-                self.profileIV = UIImageView()
                 self.profileIV.kf.setImage(with: url)
                 self.nameLbl.text = (usr?.name)! + " " + (usr?.surname)!
             })
