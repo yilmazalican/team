@@ -39,12 +39,6 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="flatOwner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnR-OC-q9s">
-                                                <rect key="frame" x="8" y="309" width="75" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YD9-Tg-M4b">
                                                 <rect key="frame" x="0.0" y="402" width="375" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,11 +102,24 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-wK-reH">
+                                                <rect key="frame" x="8" y="282" width="359" height="112"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <segue destination="vG5-6B-AII" kind="show" identifier="showUserProfile" id="5bG-Za-Uma"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="flatOwner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnR-OC-q9s">
+                                                <rect key="frame" x="150" y="328" width="75" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="45w-hR-bya" firstAttribute="centerY" secondItem="KZq-5L-I9j" secondAttribute="centerY" id="9vS-dJ-rda"/>
-                                            <constraint firstItem="hnR-OC-q9s" firstAttribute="centerY" secondItem="KZq-5L-I9j" secondAttribute="centerY" id="EHb-4U-upt"/>
+                                            <constraint firstItem="hnR-OC-q9s" firstAttribute="centerY" secondItem="KZq-5L-I9j" secondAttribute="centerY" constant="-365.5" id="WAN-mz-ZhH"/>
                                             <constraint firstItem="8e6-1Q-hg9" firstAttribute="centerY" secondItem="KZq-5L-I9j" secondAttribute="centerY" id="YFu-mo-0ye"/>
                                             <constraint firstItem="C2j-bO-rGr" firstAttribute="centerY" secondItem="KZq-5L-I9j" secondAttribute="centerY" id="hLi-bl-CWg"/>
                                             <constraint firstItem="PnM-DC-YEy" firstAttribute="centerY" secondItem="KZq-5L-I9j" secondAttribute="centerY" id="wx9-TD-xhF"/>
@@ -177,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k73-hN-OLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141.5999999999999" y="398.50074962518744"/>
+            <point key="canvasLocation" x="2140" y="397.60119940029989"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="TP6-j6-o56">
