@@ -221,7 +221,7 @@ class FIRFlat:FIRFlatDelegate
                 flt.washingMachine = objdict["washingMachine"] as? Bool
                 flt.flatCapacity = objdict["capacity"] as? Int
                 flt.title = objdict["title"] as? String
-                flt.address = objdict["adress"] as? String
+                flt.address = objdict["address"] as? String
                 flt.disabled = objdict["disabled"] as? Bool
                 flt.published = objdict["published"] as? Bool
                 flt.userID = (objdict["userId"] as? String)!
