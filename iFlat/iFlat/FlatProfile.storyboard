@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Flat Profile View Controller-->
+        <!--Flat Profile-->
         <scene sceneID="hrJ-gE-3gx">
             <objects>
                 <viewController storyboardIdentifier="flatProfile" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="56G-d5-NvH" customClass="FlatProfileViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +178,7 @@
                             <constraint firstItem="gLM-ap-eTw" firstAttribute="top" secondItem="CRZ-by-gpI" secondAttribute="bottom" constant="44" id="jRa-p3-Rhi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WC6-oE-ejc"/>
+                    <navigationItem key="navigationItem" title="Flat Profile" id="WC6-oE-ejc"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1264"/>
                     <connections>

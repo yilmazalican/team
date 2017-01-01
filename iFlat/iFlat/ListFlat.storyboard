@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Flat View Controller-->
+        <!--List Flat-->
         <scene sceneID="Mwq-3j-okJ">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tqa-ct-4nf" customClass="ListFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KIA-SR-tXE">
-                                <rect key="frame" x="0.0" y="72" width="375" height="565"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KIA-SR-tXE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="tsk-AK-KZb">
                                     <size key="itemSize" width="375" height="200"/>
@@ -105,7 +105,6 @@
                                             <outlet property="flatRating" destination="kmw-gJ-QQG" id="k8A-jz-hGb"/>
                                             <outlet property="flatThumbnail" destination="eYn-OZ-3kS" id="86o-7A-krp"/>
                                             <outlet property="flatTitle" destination="GdW-XZ-821" id="HWJ-R4-F9b"/>
-                                            <segue destination="vlb-Qu-Fko" kind="show" identifier="flatProfileSegue" id="sQh-dx-OqH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -137,12 +136,13 @@
                             <constraint firstAttribute="trailing" secondItem="Kug-7h-4eP" secondAttribute="trailing" constant="18" id="ftd-qR-EVF"/>
                             <constraint firstItem="Kug-7h-4eP" firstAttribute="leading" secondItem="tvc-Dt-Rlr" secondAttribute="leading" constant="16" id="j2j-qt-kzZ"/>
                             <constraint firstItem="Jnw-fe-fkL" firstAttribute="top" secondItem="KIA-SR-tXE" secondAttribute="bottom" constant="30" id="oaq-3r-D3u"/>
-                            <constraint firstItem="KIA-SR-tXE" firstAttribute="top" secondItem="W3X-49-gWM" secondAttribute="bottom" id="yws-6d-F9f"/>
+                            <constraint firstItem="KIA-SR-tXE" firstAttribute="top" secondItem="W3X-49-gWM" secondAttribute="bottom" constant="44" id="yws-6d-F9f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="U2f-zB-ELl"/>
+                    <navigationItem key="navigationItem" title="List Flat" id="jFc-XB-5Zh"/>
                     <connections>
                         <outlet property="listFlatCollectionView" destination="KIA-SR-tXE" id="SE3-ms-R3N"/>
+                        <segue destination="vlb-Qu-Fko" kind="show" identifier="flatProfileSegue" id="2D1-WZ-LPM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fal-RK-PP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,7 +155,7 @@
                 <viewControllerPlaceholder storyboardName="FlatProfile" referencedIdentifier="flatProfile" id="vlb-Qu-Fko" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRN-kC-oY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="-573"/>
+            <point key="canvasLocation" x="2122" y="112"/>
         </scene>
         <!--Filters View Controller-->
         <scene sceneID="j0H-nL-zSD">
@@ -436,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZQ-9f-36z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2721" y="-337"/>
+            <point key="canvasLocation" x="2922" y="-232"/>
         </scene>
     </scenes>
 </document>
