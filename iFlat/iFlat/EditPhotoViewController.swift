@@ -139,11 +139,15 @@ class EditPhotoViewController: UIViewController,imageMaker {
                     
                     self.editPhotoCollectionView.flatImages.insert(FlatImage(image: image!), at: count)
                     self.editPhotoCollectionView.flatImages.removeLast()
-                    self.editPhotoCollectionView.reloadData()
+
+                    self.flat.images?.insert(FlatImage(image:image!), at: count)
+                    self.flat.images?.removeLast()
+                   self.editPhotoCollectionView.reloadData()
                                          })
                 
                 
             }
+       
             
             self.imagePicker.doneButton.isEnabled = true
             count = 0
