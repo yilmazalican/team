@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Custom Picker Class for Filter
 class NumberPlusPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var field : UITextField!
