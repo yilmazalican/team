@@ -237,20 +237,6 @@
 			name = cells;
 			sourceTree = "<group>";
 		};
-		1A79F6F01DFE212800E601A4 /* Wish */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Wish;
-			sourceTree = "<group>";
-		};
-		1A79F6F11DFE212C00E601A4 /* Reservation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Reservation;
-			sourceTree = "<group>";
-		};
 		1A8083601DF18368009655AD /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,8 +444,6 @@
 			children = (
 				1AD852441E07E66F00A1F5B3 /* Flat */,
 				1A24DADE1E03698900C49269 /* QueryMaster */,
-				1A79F6F11DFE212C00E601A4 /* Reservation */,
-				1A79F6F01DFE212800E601A4 /* Wish */,
 				1AB50DC51DF31E9900DC7CCF /* User */,
 			);
 			name = FIREBASE_LAYER;
