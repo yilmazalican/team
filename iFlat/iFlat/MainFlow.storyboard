@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ets-gx-7Yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="27"/>
+            <point key="canvasLocation" x="3172" y="26.53673163418291"/>
         </scene>
         <!--My Spaces-->
         <scene sceneID="x2v-qK-rkf">
@@ -129,7 +129,7 @@
                                         <rect key="frame" x="0.0" y="28" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7WZ-sJ-leH" id="fYr-Vp-UbV">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L5Z-s3-PMa">
@@ -287,11 +287,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fsc-zj-bZr" id="JW1-Xm-ShW">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My spaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RdH-ga-T1d">
-                                                    <rect key="frame" x="15" y="0.0" width="350" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="350" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -307,11 +307,11 @@
                                         <rect key="frame" x="0.0" y="44" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SPt-d5-jWT" id="2LS-F3-KPc">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Reservation Requests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Ip-yH-x17">
-                                                    <rect key="frame" x="15" y="0.0" width="350" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="350" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -327,11 +327,11 @@
                                         <rect key="frame" x="0.0" y="88" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H62-G9-p8k" id="X3h-85-zh4">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Reservations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6np-aC-4bC">
-                                                    <rect key="frame" x="15" y="0.0" width="350" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="350" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -347,11 +347,11 @@
                                         <rect key="frame" x="0.0" y="132" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I5H-8x-O7i" id="WoR-AE-nDG">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Payment methods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Czk-v9-v9F">
-                                                    <rect key="frame" x="15" y="0.0" width="350" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="350" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -367,11 +367,11 @@
                                         <rect key="frame" x="0.0" y="176" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w0K-cz-uRc" id="9Y8-Gj-kSo">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Help and Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cDK-tw-o4u">
-                                                    <rect key="frame" x="15" y="0.0" width="350" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="350" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -387,11 +387,11 @@
                                         <rect key="frame" x="0.0" y="220" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQA-kv-oIL" id="czV-Ny-Xvn">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Give feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ewk-1P-dUl">
-                                                    <rect key="frame" x="15" y="0.0" width="350" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="350" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -404,11 +404,11 @@
                                         <rect key="frame" x="0.0" y="264" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yp6-Mi-bC2" id="SEo-No-h2o">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z5N-Mp-SYB">
-                                                    <rect key="frame" x="15" y="0.0" width="350" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="350" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -431,7 +431,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wt2-lp-5Vi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3123" y="24"/>
+            <point key="canvasLocation" x="4060.8000000000002" y="23.388305847076463"/>
         </scene>
         <!--Help and Support-->
         <scene sceneID="ILm-Q8-Lu1">
@@ -593,7 +593,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
-                        <segue destination="koX-2E-oJ2" kind="relationship" relationship="viewControllers" id="tTg-Fv-YLy"/>
+                        <segue destination="Ahx-xP-tMy" kind="relationship" relationship="viewControllers" id="tTg-Fv-YLy"/>
                         <segue destination="ddq-ta-XJO" kind="relationship" relationship="viewControllers" id="Vpf-1a-7vH"/>
                         <segue destination="00M-CM-aNQ" kind="relationship" relationship="viewControllers" id="hUi-Rd-mFJ"/>
                     </connections>
@@ -606,11 +606,11 @@
         <scene sceneID="IKN-Fp-TAC">
             <objects>
                 <viewControllerPlaceholder storyboardName="EntranceStoryBoard" id="koX-2E-oJ2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pJG-rG-iag"/>
+                    <navigationItem key="navigationItem" id="Uys-oj-Qvf"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vma-sB-gkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="-258"/>
+            <point key="canvasLocation" x="1309.5999999999999" y="-265.36731634182911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wJQ-l0-08p">
@@ -629,7 +629,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rll-EV-Dn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1362" y="26"/>
+            <point key="canvasLocation" x="2300" y="25.637181409295355"/>
         </scene>
         <!--Reservation Requests-->
         <scene sceneID="tjD-Ih-KAF">
@@ -711,7 +711,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3r-9s-hMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5380" y="29"/>
+            <point key="canvasLocation" x="6318.3999999999996" y="28.785607196401802"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="98k-hr-me0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ahx-xP-tMy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="pJG-rG-iag"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="71m-ra-L9v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="koX-2E-oJ2" kind="relationship" relationship="rootViewController" id="s05-rG-oiv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxH-rk-e9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="-241"/>
         </scene>
     </scenes>
     <resources>

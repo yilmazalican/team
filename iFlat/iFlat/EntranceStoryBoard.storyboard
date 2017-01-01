@@ -17,7 +17,7 @@
             </objects>
             <point key="canvasLocation" x="-643" y="-816"/>
         </scene>
-        <!--Entrance View Controller-->
+        <!--Search-->
         <scene sceneID="3hu-QQ-6ks">
             <objects>
                 <viewController id="86T-av-jpr" customClass="EntranceViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDn-Ou-Zvj" userLabel="v1">
-                                        <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrE-mR-4aT" userLabel="Nerede">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -66,7 +66,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7o4-Lh-6aL" userLabel="v2">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="144" width="375" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa6-TR-gqH">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -101,7 +101,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDn-z5-t3e" userLabel="v3">
-                                        <rect key="frame" x="0.0" y="260" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="284" width="375" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlU-3B-tjM">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -136,7 +136,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fno-r3-uI2" userLabel="v4">
-                                        <rect key="frame" x="0.0" y="400" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="424" width="375" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdG-c7-WSn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -170,7 +170,7 @@
                                     <constraint firstItem="7o4-Lh-6aL" firstAttribute="top" secondItem="iDn-Ou-Zvj" secondAttribute="bottom" constant="20" id="45v-T3-4BC"/>
                                     <constraint firstItem="7o4-Lh-6aL" firstAttribute="leading" secondItem="For-NF-reC" secondAttribute="leading" id="AqQ-s1-dQn"/>
                                     <constraint firstAttribute="trailing" secondItem="7o4-Lh-6aL" secondAttribute="trailing" id="LbC-ot-MjP"/>
-                                    <constraint firstItem="iDn-Ou-Zvj" firstAttribute="top" secondItem="For-NF-reC" secondAttribute="top" constant="20" id="O7M-i9-XVV"/>
+                                    <constraint firstItem="iDn-Ou-Zvj" firstAttribute="top" secondItem="For-NF-reC" secondAttribute="top" constant="44" id="O7M-i9-XVV"/>
                                     <constraint firstItem="pDn-z5-t3e" firstAttribute="leading" secondItem="For-NF-reC" secondAttribute="leading" id="Z0F-S5-ahQ"/>
                                     <constraint firstItem="pDn-z5-t3e" firstAttribute="top" secondItem="7o4-Lh-6aL" secondAttribute="bottom" constant="20" id="a23-xN-eWj"/>
                                     <constraint firstAttribute="trailing" secondItem="Fno-r3-uI2" secondAttribute="trailing" id="eJy-Lf-OtW"/>
@@ -216,6 +216,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="ajU-cu-Ps9"/>
+                    <navigationItem key="navigationItem" title="Search" id="OJW-fI-yFC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="FromDatePicker" destination="bEH-Tm-upR" id="u8n-vd-d7p"/>

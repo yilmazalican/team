@@ -108,7 +108,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             let flatProfileVC = storyboard.instantiateViewController(withIdentifier: "flatProfile") as! FlatProfileViewController
 
 
-            self.navigationController?.pushViewController(flatProfileVC, animated: true)
+            performSegue(withIdentifier: "flatProfileSegue", sender: cell)
             
         }
         
@@ -124,7 +124,6 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             let vc = segue.destination as! FlatProfileViewController
             vc.ownerID = self.filteredFlats[(indexPath?.row)!].userID!
             vc.receivedFlatID = self.filteredFlats[(indexPath?.row)!].flatID!
-            
             }
             
             

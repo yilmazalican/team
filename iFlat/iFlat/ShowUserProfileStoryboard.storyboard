@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Show User Profile View Controller-->
+        <!--Show User Flat Profile-->
         <scene sceneID="0Lb-j2-q2k">
             <objects>
                 <viewController id="ipp-sN-19P" customClass="ShowUserProfileViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,6 +195,7 @@
                             <constraint firstItem="xqg-jD-Uyg" firstAttribute="top" secondItem="sKQ-KT-P24" secondAttribute="bottom" id="zOU-uc-4hN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Show User Flat Profile" id="I2L-10-yt5"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
