@@ -30,7 +30,7 @@ protocol FIRFlatDelegate :class
 class FIRFlat:FIRFlatDelegate
 {
     internal func deleteFlat(flt: ManipulableFlat) {
-        FIRREF.instance().getRef().child("filter_flats/" + flt.city! + "/" + flt.userID!).removeValue()
+        FIRREF.instance().getRef().child("filter_flats/" + flt.city! + "/" + flt.id).removeValue()
     }
 
     internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([Int?]) -> ()) {
@@ -263,7 +263,7 @@ class FIRFlat:FIRFlatDelegate
     }
     internal func edit(newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let db_endpoint = FIRFlat()
-        db_endpoint.deleteFlat(flt: newFlt)
+    db_endpoint.deleteFlat(flt: newFlt)
         db_endpoint.insertFlat(flt: newFlt, completion: { (str) in
             completion(str)
         })
