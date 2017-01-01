@@ -29,12 +29,21 @@ class ShowUserProfileViewController: UIViewController {
             
             self.showedUser = user as! User
             
-            self.nameSurnameLabel.text = self.showedUser.name! + self.showedUser.surname!
+            self.nameSurnameLabel.text = self.showedUser.name! + " " + self.showedUser.surname!
             self.countryLabel.text = self.showedUser.country
             self.birthdateLabel.text = self.showedUser.birthDate
+            self.mailAdressLabel.text = self.showedUser.email
         }
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let controller :OpenIssueViewController = segue.destination as? OpenIssueViewController {
+            controller.reportedUser = showedUser
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

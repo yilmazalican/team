@@ -18,6 +18,9 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
         }
     }
     
+       
+    var reportedUser = User()
+    
     var firebase = FIRUSER()
     
     var issue = Issue()
@@ -42,12 +45,14 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
         
         firebase.getCurrentLoggedIn { (currentUser) in
             
+            
             self.issue.issuer = currentUser?.id
             
             self.issue.isOpen = true
 
-            
+            self.issue.issued = self.reportedUser.id
         }
+        
         }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +62,19 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
     
     @IBAction func openIssueActionButton(_ sender: Any) {
         
+        if self.issue.issued == issue.issuer || issue.content == nil  || issue.title == nil {
+           showAlert(title: "Error", message: "You opened a issue about yourself or fill in the blanks.")
+            
+        }
         
+        else {
+            
+            firebase.openIssue(toUser: reportedUser, issue: issue) { (err) in
+                print("err")
+            }
+        }
+        
+       
     }
 
     
