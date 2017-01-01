@@ -16,6 +16,9 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     var flatsArr = [Flat]()
     var flatImgArr = [String]()
+    
+    var oldCity:String?
+    var oldFlat:ManipulableFlat?
 
     var currentUsr:User? {
         didSet{
@@ -79,8 +82,9 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexpath) in
             let storyboard = UIStoryboard(name: "EditFlatStoryboard", bundle: nil)
             let viewControllerYouWantToPresent = storyboard.instantiateViewController(withIdentifier: "EditFlatViewController") as! EditFlatViewController
-            viewControllerYouWantToPresent.editingFlat = self.flatsArr[indexpath.row]
-            self.navigationController?.pushViewController(viewControllerYouWantToPresent, animated: true)
+            self.oldFlat = self.flatsArr[indexPath.row]
+            self.oldCity = self.flatsArr[indexPath.row].city
+            self.performSegue(withIdentifier: "editFlatsegue", sender: self)
         }
         edit.backgroundColor = UIColor.blue
         
@@ -98,6 +102,14 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }
         self.spacesTV.separatorStyle = .none
         self.spacesTV.reloadData()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let storyboard = UIStoryboard(name: "EditFlatStoryboard", bundle: nil)
+        let navigation = segue.destination as! EditFlatViewController
+        navigation.oldCity = self.oldCity!
+        navigation.editingFlat = self.oldFlat as! Flat
+
     }
     
     
