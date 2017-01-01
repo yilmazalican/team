@@ -66,6 +66,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-5F-1Wh">
                                         <rect key="frame" x="20" y="397" width="71" height="30"/>
                                         <state key="normal" title="Edit Photo"/>
+                                        <connections>
+                                            <action selector="editPhotoButtonAction:" destination="Fft-3V-1hO" eventType="touchUpInside" id="mXX-jw-bjU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-eQ-jtg">
                                         <rect key="frame" x="284" y="397" width="71" height="30"/>
@@ -105,6 +108,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="QUe-eQ-jtg" id="U6P-lp-McZ"/>
+                        <outlet property="editPhotoButton" destination="1TN-5F-1Wh" id="leC-8f-oLQ"/>
                         <outlet property="editPhotoCollectionView" destination="rgF-tR-Y9R" id="epm-fh-QNq"/>
                         <outlet property="indicator" destination="2ot-9A-Idg" id="2dU-2f-bBQ"/>
                         <outlet property="popUpView" destination="6Q4-y9-stk" id="U8c-fQ-hCj"/>
