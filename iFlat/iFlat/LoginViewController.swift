@@ -81,6 +81,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
 
     }
     
+    
+    
     @IBAction func LoginTapped(_ sender: UIButton) {
         
         if validationLoginField(){
@@ -109,6 +111,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
             self.showAlert(title: "Error", message: "Fill in the blanks!")
 
         }
+        
         
              
         
