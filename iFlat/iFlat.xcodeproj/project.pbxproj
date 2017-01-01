@@ -74,6 +74,7 @@
 		95DDDCA01E13162100106F24 /* ChoosePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */; };
 		95E9C1991E194C1C0089ED2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E9C1981E194C1C0089ED2A /* GoogleService-Info.plist */; };
 		95ECDFBC1E1992D400B97265 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95ECDFBB1E1992D400B97265 /* Info.plist */; };
+		95ECDFBE1E199F6E00B97265 /* WishListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECDFBD1E199F6E00B97265 /* WishListTableView.swift */; };
 		95FEEDB11E15782B004448F1 /* EditFlatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */; };
 		95FEEDB31E158769004448F1 /* EditFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB21E158769004448F1 /* EditFlatViewController.swift */; };
 		95FEEDB51E15879C004448F1 /* EditFlatOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */; };
@@ -181,6 +182,7 @@
 		95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9C1981E194C1C0089ED2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95ECDFBB1E1992D400B97265 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95ECDFBD1E199F6E00B97265 /* WishListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableView.swift; sourceTree = "<group>"; };
 		95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditFlatStoryboard.storyboard; sourceTree = "<group>"; };
 		95FEEDB21E158769004448F1 /* EditFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatViewController.swift; sourceTree = "<group>"; };
 		95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatOptionViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				1A6A1F911E15285600D644BD /* spacescell.swift */,
 				1A6EF8301E18BA9100E7AA2E /* Wishcell.swift */,
+				95ECDFBD1E199F6E00B97265 /* WishListTableView.swift */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -1027,6 +1030,7 @@
 				1A9037631E15C7D200DFE510 /* Promotion.swift in Sources */,
 				1A24DAE21E036A6E00C49269 /* Querymaster.swift in Sources */,
 				1A8A8ADB1DF2B31200AD2378 /* FIRREF.swift in Sources */,
+				95ECDFBE1E199F6E00B97265 /* WishListTableView.swift in Sources */,
 				80E17F441DFAB5520020C695 /* FiltersViewController.swift in Sources */,
 				95DDDC991E12EE9400106F24 /* SearchParameter.swift in Sources */,
 				1ADCD02B1DF1817200CC08F9 /* FIRUSER.swift in Sources */,
