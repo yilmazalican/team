@@ -11,7 +11,13 @@ import UIKit
 // This class controls ListFlatView
 class ListFlatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    // Variable for filter model which is received from Search
+
+    
+    
+    
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+
     var receivedFilter = FilterModel()
     // Array for filtered flats
     var filteredFlats: [FilteredFlat] = []
@@ -27,6 +33,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
         
         
         let qm = Querymaster()
@@ -37,6 +45,11 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             DispatchQueue.main.async {
                 self.listFlatCollectionView.reloadData()
+                self.indicator.stopAnimating()
+                self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                self.view.isUserInteractionEnabled = true
+
+
                 
             }
         }
