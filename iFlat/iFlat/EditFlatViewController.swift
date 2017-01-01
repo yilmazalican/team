@@ -95,7 +95,7 @@ class EditFlatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        oldCity = editingFlat.city
+        oldCity = editingFlat.city!
         
         addressTextView.text = editingFlat.address
         flatDescriptionTextView.text = editingFlat.flatDescription
