@@ -22,12 +22,17 @@ protocol FIRFlatDelegate :class
     func addWishList(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func deleteWish(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func getAvailableTimeSlots(flt:ManipulableFlat, completion: @escaping ([Int?]) -> ())
+    func deleteFlat(flt:ManipulableFlat)
     
 }
 
 
 class FIRFlat:FIRFlatDelegate
 {
+    internal func deleteFlat(flt: ManipulableFlat) {
+        FIRREF.instance().getRef().child("filter_flats/" + flt.city! + "/" + flt.userID!).removeValue()
+    }
+
     internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([Int?]) -> ()) {
         FIRREF.instance().getRef().child("time_slots").queryOrdered(byChild: flt.id).queryEqual(toValue: true).observe(.value, with: { (ss) in
             var timeSlots = [Int]()
@@ -96,7 +101,6 @@ class FIRFlat:FIRFlatDelegate
             "tv" : flt.tv!,
             "washingMachine" : flt.washingMachine!,
             "capacity" : flt.flatCapacity!,
-            "disabled": flt.disabled!,
             "userId" : flt.userID,
             "city" : flt.city!,
             "address": flt.address!,
@@ -119,7 +123,7 @@ class FIRFlat:FIRFlatDelegate
                 //flat_images with non-async way :(
                 if flt.images!.count > 0
                 {
-                    for iterator in flt.images!
+                    for (index,iterator) in (flt.images?.enumerated())!
                     {
                         let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
                         FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
@@ -140,6 +144,7 @@ class FIRFlat:FIRFlatDelegate
                         
                     }
                     completion(nil)
+                    
                     
                 }
                 
@@ -257,6 +262,7 @@ class FIRFlat:FIRFlatDelegate
     }
     internal func edit(newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let db_endpoint = FIRFlat()
+        db_endpoint.deleteFlat(flt: newFlt)
         db_endpoint.insertFlat(flt: newFlt, completion: { (str) in
             completion(str)
         })

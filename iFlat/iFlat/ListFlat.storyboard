@@ -127,10 +127,15 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="39s-T9-Daa">
+                                <rect key="frame" x="0.0" y="25" width="375" height="617"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Kug-7h-4eP" secondAttribute="bottom" id="CWn-Go-MZa"/>
+                            <constraint firstItem="39s-T9-Daa" firstAttribute="centerX" secondItem="tvc-Dt-Rlr" secondAttribute="centerX" id="OhW-2T-ENq"/>
+                            <constraint firstItem="39s-T9-Daa" firstAttribute="centerY" secondItem="tvc-Dt-Rlr" secondAttribute="centerY" id="S4y-IO-IS3"/>
                             <constraint firstAttribute="trailing" secondItem="KIA-SR-tXE" secondAttribute="trailing" id="UXI-ae-D7E"/>
                             <constraint firstItem="KIA-SR-tXE" firstAttribute="leading" secondItem="tvc-Dt-Rlr" secondAttribute="leading" id="dxG-cz-yp7"/>
                             <constraint firstAttribute="trailing" secondItem="Kug-7h-4eP" secondAttribute="trailing" constant="18" id="ftd-qR-EVF"/>
@@ -141,6 +146,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="List Flat" id="jFc-XB-5Zh"/>
                     <connections>
+                        <outlet property="indicator" destination="39s-T9-Daa" id="uqw-MM-itk"/>
                         <outlet property="listFlatCollectionView" destination="KIA-SR-tXE" id="SE3-ms-R3N"/>
                         <segue destination="vlb-Qu-Fko" kind="show" identifier="flatProfileSegue" id="2D1-WZ-LPM"/>
                     </connections>
