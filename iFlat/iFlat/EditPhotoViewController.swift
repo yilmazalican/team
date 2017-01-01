@@ -59,7 +59,7 @@ class EditPhotoViewController: UIViewController,imageMaker {
             self.urlToImage(url: url.imageDownloadURL, completionHandler: { (image) in
                 
                 self.editPhotoCollectionView.flatImages.append(FlatImage(image: image))
-                self.flat.images?.append(FlatImage(image: image))
+               self.flatImage.append(FlatImage(image: image))
                 
             })
             }
@@ -67,11 +67,16 @@ class EditPhotoViewController: UIViewController,imageMaker {
                 self.doneButton.isEnabled = true
             self.editPhotoButton.isEnabled = true
          
+            
+            
             self.editPhotoCollectionView.reloadData()
+            
+            
+            
+
          
         }
         
-   
         // Do any additional setup after loading the view.
     }
 
@@ -82,9 +87,10 @@ class EditPhotoViewController: UIViewController,imageMaker {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+       
         if let controller : EditFlatViewController = segue.destination as? EditFlatViewController {
-            
-      controller.editingFlat = flat
+            controller.editingFlat = self.flat
+          controller.editingFlat.images = self.flatImage
             
         }
         
@@ -139,9 +145,10 @@ class EditPhotoViewController: UIViewController,imageMaker {
                     
                     self.editPhotoCollectionView.flatImages.insert(FlatImage(image: image!), at: count)
                     self.editPhotoCollectionView.flatImages.removeLast()
-
-                    self.flat.images?.insert(FlatImage(image:image!), at: count)
-                    self.flat.images?.removeLast()
+                    self.flat.images?.append(FlatImage(image:image!))
+                   
+                    
+                    
                    self.editPhotoCollectionView.reloadData()
                                          })
                 

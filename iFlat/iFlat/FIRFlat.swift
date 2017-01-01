@@ -100,7 +100,6 @@ class FIRFlat:FIRFlatDelegate
             "userId" : flt.userID,
             "city" : flt.city!,
             "address": flt.address!,
-            "disabled": flt.disabled!,
             "published": flt.published!,
             "title" : flt.title!] as [String : Any]
         //user_flats

@@ -11,8 +11,13 @@ import UIKit
 class EditFlatViewController: UIViewController {
 
     var editingFlat = Flat()
-    
+    var firebase = FIRFlat()
    
+    @IBOutlet weak var flatPhotoButton: UIButton!{
+        didSet{
+            flatPhotoButton.isHidden = true 
+        }
+    }
     @IBOutlet weak var flatTitleTextField: UITextField!{
         didSet{
             flatTitleTextField.delegate = self
@@ -122,6 +127,11 @@ class EditFlatViewController: UIViewController {
 
         }
         
+    }
+    @IBAction func editFlatActionButton(_ sender: Any) {
+        firebase.edit(newFlt: editingFlat) { (err) in
+            print("err")
+        }
     }
 
 }

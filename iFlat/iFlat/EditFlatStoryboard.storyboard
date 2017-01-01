@@ -700,6 +700,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Edit Flat"/>
+                                <connections>
+                                    <action selector="editFlatActionButton:" destination="AoD-Ru-LvQ" eventType="touchUpInside" id="lj6-iX-DB2"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBO-sd-luR">
                                 <rect key="frame" x="20" y="170" width="335" height="100"/>
@@ -777,6 +780,7 @@
                     <connections>
                         <outlet property="addressTextView" destination="MBO-sd-luR" id="nTC-Sl-imc"/>
                         <outlet property="flatDescriptionTextView" destination="xIu-Sn-8Fs" id="fKT-CC-vui"/>
+                        <outlet property="flatPhotoButton" destination="rSR-BY-RwA" id="nYG-M5-J4R"/>
                         <outlet property="flatPriceTextField" destination="YGv-IN-ZDS" id="lUc-JH-Wkk"/>
                         <outlet property="flatTitleTextField" destination="uQ0-Uu-1eq" id="BGh-Jr-Ese"/>
                     </connections>
