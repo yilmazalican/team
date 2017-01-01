@@ -12,6 +12,8 @@ class EditFlatViewController: UIViewController {
 
     var editingFlat = Flat()
     var firebase = FIRFlat()
+    
+    var oldCity:String = ""
    
     @IBOutlet weak var flatPhotoButton: UIButton!{
         didSet{
@@ -93,6 +95,7 @@ class EditFlatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        oldCity = editingFlat.city
         
         addressTextView.text = editingFlat.address
         flatDescriptionTextView.text = editingFlat.flatDescription
@@ -129,8 +132,8 @@ class EditFlatViewController: UIViewController {
         
     }
     @IBAction func editFlatActionButton(_ sender: Any) {
-        firebase.edit(newFlt: editingFlat) { (err) in
-            print("err")
+        firebase.edit(oldcity: oldCity, newFlt: editingFlat) { (err) in
+            print(err)
         }
     }
 
