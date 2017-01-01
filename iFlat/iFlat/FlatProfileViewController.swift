@@ -12,14 +12,12 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     
     @IBOutlet weak var userProfileIV: UIImageView!
     @IBOutlet weak var flatImagesCV: UICollectionView!
-    
     @IBOutlet weak var flatTitleLb: UILabel!
     @IBOutlet weak var flatDesclb: UILabel!
     @IBOutlet weak var flatCapLb: UILabel!
     @IBOutlet weak var bedroomCLb: UILabel!
     @IBOutlet weak var bedCLb: UILabel!
     @IBOutlet weak var bathroomCLb: UILabel!
-    
     @IBOutlet weak var pool: UILabel!
     @IBOutlet weak var internet: UILabel!
     @IBOutlet weak var cooling: UILabel!
@@ -30,10 +28,8 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var parking: UILabel!
     @IBOutlet weak var smoking: UILabel!
     @IBOutlet weak var gateKeeper: UILabel!
-    
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var address: UILabel!
-    
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var price: UILabel!
     
@@ -52,6 +48,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         
     }
 
+    // This function adds flat to whishlist
     @IBAction func addtoWish(_ sender: UIButton) {
         self.flatEP.getFlatofUser(userID: self.receivedFlat!.userID!, flatID: self.receivedFlat!.flatID!) { (flt) in
             self.flatEP.addWishList(flt: flt!) { (err) in
@@ -82,6 +79,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             })
         }
         
+        // This function loads flat which is clicked at ListFlat, from DB
         flatEP.getFlatofUser(userID: self.ownerID!, flatID: self.receivedFlat!.flatID!) { (flt) in
             self.flatTitleLb.text = flt?.title!
             self.flatDesclb.text = flt?.flatDescription!
@@ -114,6 +112,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         
     }
 
+    // This function generates tick or cross for true or false
     func assignTrueOrFalse(sender:UILabel, what:Bool)
     {
         switch what
@@ -125,7 +124,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             sender.text = "𐄂"
         }
     }
-    
+    // This function generates stars for rating
     func assignRate(sender:UILabel, star:Int)
     {
         switch star
