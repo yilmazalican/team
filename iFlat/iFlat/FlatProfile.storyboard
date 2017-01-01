@@ -195,13 +195,13 @@
             </objects>
             <point key="canvasLocation" x="2140" y="397.60119940029989"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--ShowUserProfileStoryboard-->
         <scene sceneID="TP6-j6-o56">
             <objects>
-                <viewControllerPlaceholder id="vG5-6B-AII" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ShowUserProfileStoryboard" id="vG5-6B-AII" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZN-eF-cYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2735" y="3"/>
+            <point key="canvasLocation" x="2795" y="3"/>
         </scene>
         <!--Reservation-->
         <scene sceneID="dEO-D0-Ix3">
