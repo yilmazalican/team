@@ -25,9 +25,16 @@ class ShowUserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        firebase.getUserByID(id: strUserID) { (user) in
+            
+            self.showedUser = user as! User
+            
+            self.nameSurnameLabel.text = self.showedUser.name! + self.showedUser.surname!
+            self.countryLabel.text = self.showedUser.country
+            self.birthdateLabel.text = self.showedUser.birthDate
+        }
         
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
