@@ -36,7 +36,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editPhotoCell" id="hUG-I9-Hia" customClass="EditPhotoCollectionViewCell" customModule="iFlat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-18.5" width="375" height="414"/>
+                                                <rect key="frame" x="0.0" y="-19" width="375" height="414"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
@@ -370,7 +370,7 @@
                                         </constraints>
                                         <state key="normal" title="Done"/>
                                         <connections>
-                                            <segue destination="AoD-Ru-LvQ" kind="show" id="nrG-hO-2VX"/>
+                                            <segue destination="AoD-Ru-LvQ" kind="show" id="0Nx-kC-FAh"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aa-og-fAc">
@@ -799,6 +799,6 @@
         <image name="plus" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nrG-hO-2VX"/>
+        <segue reference="0Nx-kC-FAh"/>
     </inferredMetricsTieBreakers>
 </document>

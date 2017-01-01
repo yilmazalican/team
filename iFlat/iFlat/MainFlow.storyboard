@@ -260,11 +260,20 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="spacesTV" destination="kuI-24-kcG" id="RCX-WB-E0Q"/>
+                        <segue destination="rK9-xe-2Bk" kind="show" identifier="editFlatsegue" id="UCl-Ks-NOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70k-I8-1mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5380" y="-635"/>
+        </scene>
+        <!--EditFlatStoryboard-->
+        <scene sceneID="KO4-6o-n9E">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditFlatStoryboard" id="rK9-xe-2Bk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLq-Po-HSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6105" y="-911"/>
         </scene>
         <!--AddFlatStoryBoard-->
         <scene sceneID="XXO-5v-g5a">

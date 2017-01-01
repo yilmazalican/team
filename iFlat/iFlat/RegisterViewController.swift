@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DateToString,ShowAlert {
   
     var cities = [String]()
@@ -16,7 +15,6 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     var dbbridge = FIRUSER()
     var myImgPickerController = UIImagePickerController()
     var ImgPickerForCamera = UIImagePickerController()
-    
     
     @IBOutlet weak var imgView_Picker: UIImageView!
     
@@ -42,9 +40,6 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,13 +61,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         email_TextField.delegate = self
         
-    
-        
         dbbridge.getCities { (cities) in
             self.cities = cities
             self.country_PickerView.reloadAllComponents()
             self.user.country = self.cities[0]
-
             
         }
 
@@ -85,10 +77,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         ImgPickerForCamera.delegate = self
 }
     
-    
-    
-    
-    
+    /// This method is check text fiels , image view and password char size written by users
+    /// Return value is boolean,if text fields or image view empty or password char size less then six or empty return false,otherwise return true
     func validationField() -> Bool {
         
         if imgView_Picker.image != nil && !(name_TextField.text?.isEmpty)! && !(lastName_TextField.text?.isEmpty)! && !(email_TextField.text?.isEmpty)! && !(password_TextField.text?.isEmpty)! && !(repeatPassword_TextField.text?.isEmpty)! && (password_TextField.text?.characters.count)! >= 6 && repeatPassword_TextField.text == password_TextField.text  {
@@ -102,7 +92,9 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
     }
     
-    
+    /// This method is user information saving to firebase and provide to register to iFlat system.
+    /// also method is sending verification email into users mail box for check correct email,
+    /// if user is not reigster or user is not register in iFlat system,this method send warning message.
     @IBAction func registerButtonTapped(_ sender: UIButton) {
 
         self.user.name = self.name_TextField.text
@@ -134,7 +126,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                         if err != nil
                         {
                             print(err)
-                             self.showAlert(title: "Error", message: "Error occured")
+                            self.showAlert(title: "Error", message: "Error occured")
                             self.loading.stopAnimating()
                             self.view.isUserInteractionEnabled = true
 
@@ -181,6 +173,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
     }
     
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -218,8 +211,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
     }
     
-    
-    
+    /// This method provides take photo with mobile camera
+    /// if users tapped button image picker becomes source camera.
     @IBAction func takePhotoTapped(_ sender: UIButton) {
         self.ImgPickerForCamera.allowsEditing = true
         ImgPickerForCamera.sourceType = .camera
@@ -227,6 +220,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
 
     }
     
+    /// This method user provides to select photo from user's phone
+    /// if users tapped button image picker becomes source photo library.
     @IBAction func uploadedPhotoTapped(_ sender: UIButton) {
         self.myImgPickerController.allowsEditing = true
         myImgPickerController.sourceType = .photoLibrary
@@ -234,7 +229,6 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         
         
     }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -251,30 +245,17 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
         
   }
     
-      override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    
-    
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
-    
-    
-    
-    
-    
-    
     
 }
