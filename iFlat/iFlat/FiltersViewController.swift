@@ -106,6 +106,11 @@ class FiltersViewController: UIViewController  {
     }
 
 
+    /** This function returns image container cell to collection view which is delegate function of Collection View
+     
+     
+     - returns: void
+     */
     func setPickerToFields(field : UITextField){
         numberPlusPickerObj = NumberPlusPicker()
         numberPlusPickerObj.setField(field: field)
