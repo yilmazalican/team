@@ -11,7 +11,7 @@ import FirebaseStorage
 // deletepicture yap!
 protocol FIRFlatDelegate :class
 {
-    func edit(newFlt:ManipulableFlat!, completion: @escaping (String?) -> ())
+    func edit(oldcity:String,newFlt:ManipulableFlat!, completion: @escaping (String?) -> ())
     func disable(disablingFlat:ManipulableFlat!, completion: @escaping (String?) -> ())
     func getFlatsofUser(userID:String, completion: @escaping ([ManipulableFlat]?) -> ())
     func getFlatofUser(userID:String, flatID:String, completion: @escaping (ManipulableFlat?) -> ())
@@ -22,15 +22,15 @@ protocol FIRFlatDelegate :class
     func addWishList(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func deleteWish(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func getAvailableTimeSlots(flt:ManipulableFlat, completion: @escaping ([Int?]) -> ())
-    func deleteFlat(flt:ManipulableFlat)
+    func deleteFlat(flt:ManipulableFlat,oldcity:String)
     
 }
 
 
 class FIRFlat:FIRFlatDelegate
 {
-    internal func deleteFlat(flt: ManipulableFlat) {
-        FIRREF.instance().getRef().child("filter_flats/" + flt.city! + "/" + flt.userID!).removeValue()
+    internal func deleteFlat(flt:ManipulableFlat,oldcity: String) {
+        FIRREF.instance().getRef().child("filter_flats/" + oldcity + "/" + flt.id).removeValue()
     }
 
     internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([Int?]) -> ()) {
@@ -105,6 +105,7 @@ class FIRFlat:FIRFlatDelegate
             "city" : flt.city!,
             "address": flt.address!,
             "published": flt.published!,
+            "disabled": flt.disabled!,
             "title" : flt.title!] as [String : Any]
         //user_flats
         FIRREF.instance().getRef().child("user_flats/" + flt.userID!).child(flt.id).setValue(aFlat) { (err1, nil) in
@@ -260,9 +261,9 @@ class FIRFlat:FIRFlatDelegate
         completion(nil)
         
     }
-    internal func edit(newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
+    internal func edit(oldcity:String,newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let db_endpoint = FIRFlat()
-        db_endpoint.deleteFlat(flt: newFlt)
+    db_endpoint.deleteFlat(flt: newFlt, oldcity: oldcity)
         db_endpoint.insertFlat(flt: newFlt, completion: { (str) in
             completion(str)
         })
