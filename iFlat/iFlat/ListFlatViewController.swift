@@ -8,11 +8,16 @@
 
 import UIKit
 
+// This class controls ListFlatView
 class ListFlatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // Variable for filter model which is received from Search
     var receivedFilter = FilterModel()
+    // Array for filtered flats
     var filteredFlats: [FilteredFlat] = []
+    // Varible for ownerId of selected flat to pass data to flat profile
     var ownerID:String?
+    // Variable for flatID of selected flat to pass data to flat profile
     var flatID:String?
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
@@ -41,6 +46,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     func getFlatInfoFromFireBase(filter : FilterModel){
         print("getFlatInfoCalled")
