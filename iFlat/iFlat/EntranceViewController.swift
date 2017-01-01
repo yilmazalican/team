@@ -12,19 +12,15 @@ class EntranceViewController: UIViewController {
     
     
     var searchParameter = SearchParameter()
+    var firuser = FIRUSER()
+    var cities = [String]()
     
+    @IBOutlet weak var locationPV: UIPickerView!
     var user = User()
     
     
     
-    @IBOutlet weak var cityTextField: UITextField!{
-        
-        didSet{
-            
-            cityTextField.delegate = self
-        }
-    }
-    
+   
     @IBOutlet weak var FromDatePicker: UIDatePicker! {
         
         didSet{
@@ -54,8 +50,12 @@ class EntranceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.firuser.getCities { (cities) in
+            self.cities = cities
+            self.locationPV.reloadAllComponents()
+            self.searchParameter.whereParameter = cities[0]
+        }
+        self.locationPV.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,10 +71,7 @@ class EntranceViewController: UIViewController {
         
     }
     
-    @IBAction func whereTextFieldEnd(_ sender: UITextField) {
-        
-        searchParameter.whereParameter = sender.text
-    }
+   
     
     @IBAction func toDatePicker(_ sender: UIDatePicker) {
         
@@ -86,6 +83,7 @@ class EntranceViewController: UIViewController {
     @IBAction func searchWithParameterActionButton(_ sender: Any) {
         
         
+       //searchParameter.whereParameter = self.locationPV.selectedRow(inComponent: 1).description
         
         
     }
@@ -160,30 +158,54 @@ extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,U
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
+        if pickerView.tag == 0{
         return SearchParameter.sizeNum[row]
-        
+        }
+        else
+        {
+            return self.cities[row]
+
+        }
         
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        if pickerView.tag == 0{
+              return 1
+        }
+        else
+        {
+            return 1
+        }
+    
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        return SearchParameter.sizeNum.count
+        if pickerView.tag == 0{
+            return SearchParameter.sizeNum.count
+
+        }
+        else
+        {
+            return self.cities.count
+        }
     }
     
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if SearchParameter.sizeNum[row] != SearchParameter.selectPeopleNum {
-            
-            searchParameter.numberOfSize  = SearchParameter.sizeNum[row]
-            
+        if(pickerView.tag == 0)
+        {
+            if SearchParameter.sizeNum[row] != SearchParameter.selectPeopleNum {
+                
+                searchParameter.numberOfSize  = SearchParameter.sizeNum[row]
+                
+            }
         }
+        else{
+            searchParameter.whereParameter = self.cities[row]
+        }
+
         
         
     }
@@ -195,32 +217,42 @@ extension EntranceViewController : UIPickerViewDelegate,UIPickerViewDataSource,U
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var data:String!
-        
-        var label = view as! UILabel!
-        if label == nil {
-            label = UILabel()
+        if pickerView.tag == 0{
+            var data:String!
+            
+            var label = view as! UILabel!
+            if label == nil {
+                label = UILabel()
+            }
+            
+            
+            data = SearchParameter.sizeNum[row]
+            
+            let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
+            
+            label?.attributedText = title
+            label?.textAlignment = .center
+            
+            if data == SearchParameter.selectPeopleNum {
+                
+                label?.textColor = UIColor.red
+                
+                
+                
+            }
+            return label!
+            
+            
         }
-        
-        
-        data = SearchParameter.sizeNum[row]
-        
-        let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
-        
-        label?.attributedText = title
-        label?.textAlignment = .center
-        
-        if data == SearchParameter.selectPeopleNum {
-            
-            label?.textColor = UIColor.red
-            
-            
-            
+        else
+        {
+            let label = UILabel()
+            label.text = cities[row]
+            label.textAlignment = .center
+            return label
         }
-        return label!
-        
-        
-    }
+        }
+
     
 }
 

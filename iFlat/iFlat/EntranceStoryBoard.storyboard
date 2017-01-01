@@ -35,34 +35,27 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDn-Ou-Zvj" userLabel="v1">
                                         <rect key="frame" x="0.0" y="44" width="375" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrE-mR-4aT" userLabel="Nerede">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrE-mR-4aT" userLabel="Nerede">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s9I-Cq-qPQ">
-                                                <rect key="frame" x="88" y="30" width="200" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="vFP-SX-lwH"/>
-                                                    <constraint firstAttribute="width" constant="200" id="wba-bx-wah"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                                                <connections>
-                                                    <action selector="whereTextFieldEnd:" destination="86T-av-jpr" eventType="editingDidEnd" id="Nrp-eI-uji"/>
-                                                </connections>
-                                            </textField>
+                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7h-sF-Hk3">
+                                                <rect key="frame" x="0.0" y="21" width="375" height="80"/>
+                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="RrE-mR-4aT" secondAttribute="trailing" id="17V-Y0-VH0"/>
                                             <constraint firstItem="RrE-mR-4aT" firstAttribute="top" secondItem="iDn-Ou-Zvj" secondAttribute="top" id="2uF-nO-INa"/>
-                                            <constraint firstItem="s9I-Cq-qPQ" firstAttribute="top" secondItem="RrE-mR-4aT" secondAttribute="bottom" constant="10" id="8sC-9G-CLY"/>
+                                            <constraint firstItem="P7h-sF-Hk3" firstAttribute="top" secondItem="RrE-mR-4aT" secondAttribute="bottom" id="9pn-p4-gwo"/>
+                                            <constraint firstItem="P7h-sF-Hk3" firstAttribute="width" secondItem="iDn-Ou-Zvj" secondAttribute="width" id="EkS-gS-Nr8"/>
+                                            <constraint firstItem="P7h-sF-Hk3" firstAttribute="height" secondItem="iDn-Ou-Zvj" secondAttribute="height" id="Fww-qG-QbA"/>
                                             <constraint firstAttribute="height" constant="80" id="PNq-U5-ssV"/>
+                                            <constraint firstItem="P7h-sF-Hk3" firstAttribute="centerX" secondItem="iDn-Ou-Zvj" secondAttribute="centerX" id="Wle-OU-JGa"/>
                                             <constraint firstItem="RrE-mR-4aT" firstAttribute="leading" secondItem="iDn-Ou-Zvj" secondAttribute="leading" id="Zuq-Fe-fms"/>
-                                            <constraint firstItem="s9I-Cq-qPQ" firstAttribute="centerX" secondItem="iDn-Ou-Zvj" secondAttribute="centerX" id="bV1-Mz-nsd"/>
+                                            <constraint firstItem="P7h-sF-Hk3" firstAttribute="top" secondItem="RrE-mR-4aT" secondAttribute="bottom" id="pmq-My-UyY"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7o4-Lh-6aL" userLabel="v2">
@@ -221,13 +214,13 @@
                     <connections>
                         <outlet property="FromDatePicker" destination="bEH-Tm-upR" id="u8n-vd-d7p"/>
                         <outlet property="ToDatePicker" destination="U2J-nK-v5Q" id="JC3-s8-Xbb"/>
-                        <outlet property="cityTextField" destination="s9I-Cq-qPQ" id="jGw-b6-M3O"/>
+                        <outlet property="locationPV" destination="P7h-sF-Hk3" id="dc4-3Q-PSV"/>
                         <outlet property="numberPersonPicker" destination="jnU-v3-1mm" id="6pK-Af-8SJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3w-Fp-8Pv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1639" y="-815"/>
+            <point key="canvasLocation" x="-1639.2" y="-815.44227886056979"/>
         </scene>
     </scenes>
 </document>

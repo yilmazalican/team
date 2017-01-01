@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KIA-SR-tXE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="tsk-AK-KZb">
                                     <size key="itemSize" width="375" height="200"/>
@@ -136,7 +136,7 @@
                             <constraint firstAttribute="trailing" secondItem="Kug-7h-4eP" secondAttribute="trailing" constant="18" id="ftd-qR-EVF"/>
                             <constraint firstItem="Kug-7h-4eP" firstAttribute="leading" secondItem="tvc-Dt-Rlr" secondAttribute="leading" constant="16" id="j2j-qt-kzZ"/>
                             <constraint firstItem="Jnw-fe-fkL" firstAttribute="top" secondItem="KIA-SR-tXE" secondAttribute="bottom" constant="30" id="oaq-3r-D3u"/>
-                            <constraint firstItem="KIA-SR-tXE" firstAttribute="top" secondItem="W3X-49-gWM" secondAttribute="bottom" constant="44" id="yws-6d-F9f"/>
+                            <constraint firstItem="KIA-SR-tXE" firstAttribute="top" secondItem="W3X-49-gWM" secondAttribute="bottom" id="yws-6d-F9f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List Flat" id="jFc-XB-5Zh"/>
