@@ -11,7 +11,7 @@ import UIKit
 class ListFlatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-    var flatProfileVC : FlatProfileViewController?
+    
     
     
     // IMPORTANT -> Search must fill receivedFilter by FilterModel Instance
@@ -19,7 +19,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     var receivedFilter = FilterModel()
     //var flatCells : [ListFlatCollectionViewCell]?
     var filteredFlats: [FilteredFlat] = []
-    
+    var ownerID:String?
+    var flatID:String?
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -102,21 +103,28 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let cell = listFlatCollectionView.cellForItem(at: indexPath) as! ListFlatCollectionViewCell
-            flatProfileVC?.receivedFlatID = cell.flatID
-            flatProfileVC?.ownerID = cell.flatOwnerID
+            let storyboard = UIStoryboard(name: "FlatProfile", bundle: nil)
+
+            let flatProfileVC = storyboard.instantiateViewController(withIdentifier: "flatProfile") as! FlatProfileViewController
+
+
+            self.navigationController?.pushViewController(flatProfileVC, animated: true)
             
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "flatProfileSegue"{
-                
-                flatProfileVC = segue.destination as! FlatProfileViewController
-
-                
-            }
-            else if segue.identifier == "filterSegue"{
+          
+          if segue.identifier == "filterSegue"{
                 let filterVC = segue.destination as! FiltersViewController
                 filterVC.filter = self.receivedFilter
+            }
+          else if(segue.identifier == "flatProfileSegue"){
+          
+            let indexPath = listFlatCollectionView.indexPath(for: sender as! ListFlatCollectionViewCell)
+            let vc = segue.destination as! FlatProfileViewController
+            vc.ownerID = self.filteredFlats[(indexPath?.row)!].userID!
+            vc.receivedFlatID = self.filteredFlats[(indexPath?.row)!].flatID!
+            
             }
             
             
