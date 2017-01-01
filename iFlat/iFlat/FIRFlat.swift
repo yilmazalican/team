@@ -14,7 +14,7 @@ protocol FIRFlatDelegate :class
     func edit(newFlt:ManipulableFlat!, completion: @escaping (String?) -> ())
     func disable(disablingFlat:ManipulableFlat!, completion: @escaping (String?) -> ())
     func getFlatsofUser(userID:String, completion: @escaping ([ManipulableFlat]?) -> ())
-    func getFlatofUser(userID:String, flatID:String, completion: @escaping (ManipulableFlat) -> ())
+    func getFlatofUser(userID:String, flatID:String, completion: @escaping (ManipulableFlat?) -> ())
     func getFlatImages(flatID:String, completion: @escaping ([FlatImageDownloaded]?) -> ())
     func setOwnerID() -> String!
     func insertFlat(flt:ManipulableFlat, completion: @escaping (String?) -> ())
@@ -42,13 +42,13 @@ class FIRFlat:FIRFlatDelegate
 
     internal func deleteWish(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         
-        FIRREF.instance().getRef().child("Wishes/" + flt.userID + "/" + flt.id).removeValue()
+        FIRREF.instance().getRef().child("Wishes/" + flt.userID! + "/" + flt.id).removeValue()
         completion(nil)
     }
 
     internal func addWishList(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         let insertingDict = [flt.id: true]
-        FIRREF.instance().getRef().child("Wishes/" + flt.userID).setValue(insertingDict) { (err, nil) in
+        FIRREF.instance().getRef().child("Wishes/" + flt.userID!).setValue(insertingDict) { (err, nil) in
             if err == nil
             {
                 completion(err.debugDescription)
@@ -104,7 +104,7 @@ class FIRFlat:FIRFlatDelegate
             "published": flt.published!,
             "title" : flt.title!] as [String : Any]
         //user_flats
-        FIRREF.instance().getRef().child("user_flats/" + flt.userID).child(flt.id).setValue(aFlat) { (err1, nil) in
+        FIRREF.instance().getRef().child("user_flats/" + flt.userID!).child(flt.id).setValue(aFlat) { (err1, nil) in
             if(err1 != nil)
             {
                 completion(err1.debugDescription)
@@ -176,34 +176,41 @@ class FIRFlat:FIRFlatDelegate
         })
         
     }
-    internal func getFlatofUser(userID: String, flatID: String, completion: @escaping (ManipulableFlat) -> ()) {
+    internal func getFlatofUser(userID: String, flatID: String, completion: @escaping (ManipulableFlat?) -> ()) {
         FIRREF.instance().getRef().child("user_flats/" + userID + "/" + flatID ).observe(.value, with: { (ss) in
-            let flt = Flat()
-            let objdict = ss.value as! [String:Any]
-            flt.bathroomCount = objdict["bathroomCount"] as? Int
-            flt.bedCount = objdict["bedCount"] as? Int
-            flt.cooling = objdict["cooling"] as? Bool
-            flt.bedroomCount = objdict["bedroomCount"] as? Int
-            flt.internet = objdict["internet"] as? Bool
-            flt.elevator = objdict["elevator"] as? Bool
-            flt.flatDescription = objdict["description"] as? String
-            flt.heating = objdict["heating"] as? Bool
-            flt.gateKeeper = objdict["gateKeeper"] as? Bool
-            flt.parking = objdict["parking"] as? Bool
-            flt.pool = objdict["pool"] as? Bool
-            flt.smoking = objdict["smoking"] as? Bool
-            flt.price = objdict["price"] as? Double
-            flt.tv = objdict["tv"] as? Bool
-            flt.washingMachine = objdict["washingMachine"] as? Bool
-            flt.flatCapacity = objdict["capacity"] as? Int
-            flt.title = objdict["title"] as? String
-            flt.address = objdict["adress"] as? String
-            flt.disabled = objdict["disabled"] as? Bool
-            flt.published = objdict["published"] as? Bool
-            flt.userID = (objdict["userId"] as? String)!
-            flt.city = objdict["city"] as? String
-            flt.id = ss.key
-            completion(flt)
+            if ss.childrenCount >= 1 && userID != "" && flatID != ""{
+                let flt = Flat()
+                let objdict = ss.value as! [String:Any]
+                flt.bathroomCount = objdict["bathroomCount"] as? Int
+                flt.bedCount = objdict["bedCount"] as? Int
+                flt.cooling = objdict["cooling"] as? Bool
+                flt.bedroomCount = objdict["bedroomCount"] as? Int
+                flt.internet = objdict["internet"] as? Bool
+                flt.elevator = objdict["elevator"] as? Bool
+                flt.flatDescription = objdict["description"] as? String
+                flt.heating = objdict["heating"] as? Bool
+                flt.gateKeeper = objdict["gateKeeper"] as? Bool
+                flt.parking = objdict["parking"] as? Bool
+                flt.pool = objdict["pool"] as? Bool
+                flt.smoking = objdict["smoking"] as? Bool
+                flt.price = objdict["price"] as? Double
+                flt.tv = objdict["tv"] as? Bool
+                flt.washingMachine = objdict["washingMachine"] as? Bool
+                flt.flatCapacity = objdict["capacity"] as? Int
+                flt.title = objdict["title"] as? String
+                flt.address = objdict["adress"] as? String
+                flt.disabled = objdict["disabled"] as? Bool
+                flt.published = objdict["published"] as? Bool
+                flt.userID = objdict["userId"] as? String
+                flt.city = objdict["city"] as? String
+                flt.id = ss.key
+                completion(flt)
+            }
+            else
+            {
+                completion(nil)
+            }
+            
         })
         
     }
@@ -244,7 +251,7 @@ class FIRFlat:FIRFlatDelegate
         
     }
     internal func disable(disablingFlat: ManipulableFlat!, completion: @escaping (String?) -> ()) {
-        FIRREF.instance().getRef().child("user_flats/" + disablingFlat.userID + "/" + disablingFlat.id + "/disabled").setValue(true)
+        FIRREF.instance().getRef().child("user_flats/" + disablingFlat.userID! + "/" + disablingFlat.id + "/disabled").setValue(true)
         FIRREF.instance().getRef().child("filter_flats/" + disablingFlat.city! + "/" + disablingFlat.id + "/disabled").setValue(true)
         completion(nil)
         
