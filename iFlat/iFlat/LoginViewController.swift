@@ -30,6 +30,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
     }
     /// This method is check password text field and password text field written by users,
     /// if user do not write in this area,method is return value false.
+    /// This methos is return value boolean.
     func validationLoginField() -> Bool {
         
         if !(emailTextField.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)!{
