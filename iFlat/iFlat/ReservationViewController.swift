@@ -122,6 +122,7 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         updateMonthYearLabel(visibleDates: visibleDates)
     }
     
+    // Updates Mont and Year label when user scroll calendar
     func updateMonthYearLabel(visibleDates: DateSegmentInfo){
         
         let calendar = Calendar.current
@@ -132,6 +133,9 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         self.yearLabel.text = monthName + " " + String(intYear)
     }
     
+    
+    // This function handles selection of cell
+    // such as range selection, highligts selected days
     func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, date: Date) {
         guard let dayCell = view as? CellView else {
             return

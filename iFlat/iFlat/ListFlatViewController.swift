@@ -10,16 +10,16 @@ import UIKit
 
 class ListFlatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    
-    
-    
     var receivedFilter = FilterModel()
     var filteredFlats: [FilteredFlat] = []
     var ownerID:String?
     var flatID:String?
     @IBOutlet weak var listFlatCollectionView: UICollectionView!
     
+    /** This function initialize filtered flats when view loaded
+     
+     - returns: Void
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +52,11 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: (UIScreen.main.bounds.width),height: 200)
     }
     
+    /** This function returns ListFlatCollectionViewCell to collection view which is delegate function of Collection View
+     
+     
+     - returns: ListFlatCollectionViewCell
+     */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
@@ -85,7 +90,10 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
 
 
-
+    /** This function performs segue when user clicks to collection view
+     
+     - returns: Void
+     */
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let cell = listFlatCollectionView.cellForItem(at: indexPath) as! ListFlatCollectionViewCell
             let storyboard = UIStoryboard(name: "FlatProfile", bundle: nil)
@@ -97,7 +105,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             
         }
         
-    // Segue function for passing variable to 'FlatProfileViewController' and 'FiltersViewController'
+    // Segue function for passing variable to 'FiltersViewController' and 'ListFlatCollectionViewCell'
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           
           if segue.identifier == "filterSegue"{

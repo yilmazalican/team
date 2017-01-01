@@ -20,6 +20,7 @@ class ListFlatCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var flatCity: UILabel!
     @IBOutlet weak var flatRating: UILabel!
     
+    // constructor
     func setFlatListCell(ID : String, ownerID : String, thumbnail : UIImage, title : String, price : String, city : String, rating : Int){
         flatID = ID
         flatOwnerID = ownerID
