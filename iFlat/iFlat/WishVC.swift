@@ -16,12 +16,11 @@ class WishVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var imgsArr = [String:Flat]()
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Wishcell") as! Wishcell
-        let url = URL(enumerate(self.imgsArr.index(forKey: <#T##Hashable#>)
-        cell.imageView?.kf.setImage(with:
+        return UITableViewCell()
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return 1
     }
 
 
