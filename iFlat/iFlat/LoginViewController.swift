@@ -87,9 +87,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
     }
     
     
-    /// This method compare users information in the firebase and entered users information.
-    /// if user information same firebase user information which information password and email,user can enter the system.
-    /// Also if user can be login or can not login in this system,method send warning message.
+
+    
     @IBAction func LoginTapped(_ sender: UIButton) {
         
         if validationLoginField(){
