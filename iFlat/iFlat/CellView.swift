@@ -7,8 +7,11 @@
 //
 
 import JTAppleCalendar
+// Calendar dayCell
 class CellView: JTAppleDayCellView {
+    // Outlet of day
     @IBOutlet var dayLabel: UILabel!
+    // Outlet of highlight for selecting
     @IBOutlet var selectedView: UIView!
     var isSelected = false;
     
