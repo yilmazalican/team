@@ -14,6 +14,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     var receivedFilter = FilterModel()
     var filteredFlats: [FilteredFlat] = []
     var ownerID:String?
@@ -22,6 +23,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
         
         
         let qm = Querymaster()
@@ -32,6 +35,11 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             DispatchQueue.main.async {
                 self.listFlatCollectionView.reloadData()
+                self.indicator.stopAnimating()
+                self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                self.view.isUserInteractionEnabled = true
+
+
                 
             }
         }
