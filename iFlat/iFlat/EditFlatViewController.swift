@@ -106,9 +106,7 @@ class EditFlatViewController: UIViewController {
             
             if let controller :EditPhotoViewController = segue.destination as? EditPhotoViewController {
              
-                
-    controller.editingFlatID = editingFlat.id
-                
+                controller.flat = editingFlat
             
         }
         }

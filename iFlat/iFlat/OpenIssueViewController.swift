@@ -48,9 +48,7 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
 
             
         }
-     //    issue.
-        // Do any additional setup after loading the view.
-    }
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

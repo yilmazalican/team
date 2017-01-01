@@ -8,15 +8,17 @@
 
 import UIKit
 
-class EditPhotoViewController: UIViewController {
+class EditPhotoViewController: UIViewController,imageMaker {
 
     @IBOutlet weak var editPhotoCollectionView: EditPhotoCollectionView!
     
-    var editingFlatID = String()
+   
     
     var flatImage = [FlatImage]()
   
     var firebase = FIRFlat()
+    
+    var flat = Flat()
     
     @IBOutlet weak var popUpView: UIView!{
         didSet{
@@ -29,21 +31,23 @@ class EditPhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+   
         
-        firebase.getFlatImages(flatID:editingFlatID) { (urlImages) in
+        firebase.getFlatImages(flatID:flat.id) { (urlImagesURL) in
             
-            for url in urlImages! {
+            for url in urlImagesURL! {
                 
-                let tmpImage: UIImageView = UIImageView()
+            self.urlToImage(url: url.imageDownloadURL, completionHandler: { (image) in
                 
-                tmpImage.kf.setImage(with: URL(string:url.imageDownloadURL))
-                self.flatImage.append(FlatImage(image: tmpImage.image!))
-              
+                self.editPhotoCollectionView.flatImages.append(FlatImage(image: image))
+                
+            })
+            }
+            
                 
           //  self.editPhotoCollectionView.flatImages.insert(FlatImage(image: tmpImage.image!), at: 0)
                 
-            }
+         
             self.editPhotoCollectionView.reloadData()
          
         }
