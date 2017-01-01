@@ -10,6 +10,8 @@ import UIKit
 
 class ShowUserProfileViewController: UIViewController {
     
+    var showedUser = User()
+    var firebase = FIRUSER()
     
     var strUserID = String()
     
@@ -23,6 +25,8 @@ class ShowUserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
 

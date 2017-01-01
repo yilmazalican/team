@@ -66,6 +66,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-5F-1Wh">
                                         <rect key="frame" x="20" y="397" width="71" height="30"/>
                                         <state key="normal" title="Edit Photo"/>
+                                        <connections>
+                                            <action selector="editPhotoButtonAction:" destination="Fft-3V-1hO" eventType="touchUpInside" id="mXX-jw-bjU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-eQ-jtg">
                                         <rect key="frame" x="284" y="397" width="71" height="30"/>
@@ -74,6 +77,10 @@
                                             <segue destination="AoD-Ru-LvQ" kind="show" id="gYt-iF-0nE"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-9A-Idg">
+                                        <rect key="frame" x="169" y="205" width="37" height="37"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -84,7 +91,9 @@
                                     <constraint firstAttribute="trailing" secondItem="rgF-tR-Y9R" secondAttribute="trailing" id="Uxm-71-4g0"/>
                                     <constraint firstItem="rgF-tR-Y9R" firstAttribute="leading" secondItem="6Q4-y9-stk" secondAttribute="leading" id="ZcC-sw-efF"/>
                                     <constraint firstAttribute="trailing" secondItem="QUe-eQ-jtg" secondAttribute="trailing" constant="20" id="al6-Cc-XRd"/>
+                                    <constraint firstItem="2ot-9A-Idg" firstAttribute="centerX" secondItem="6Q4-y9-stk" secondAttribute="centerX" id="evB-ms-gBW"/>
                                     <constraint firstItem="rgF-tR-Y9R" firstAttribute="top" secondItem="6Q4-y9-stk" secondAttribute="top" id="ss5-Oc-ZCa"/>
+                                    <constraint firstItem="2ot-9A-Idg" firstAttribute="centerY" secondItem="6Q4-y9-stk" secondAttribute="centerY" id="vvj-dU-spi"/>
                                     <constraint firstAttribute="bottom" secondItem="1TN-5F-1Wh" secondAttribute="bottom" constant="20" id="xvA-4T-lO9"/>
                                     <constraint firstItem="1TN-5F-1Wh" firstAttribute="top" secondItem="rgF-tR-Y9R" secondAttribute="bottom" constant="20" id="xyK-u6-uZO"/>
                                 </constraints>
@@ -99,7 +108,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="QUe-eQ-jtg" id="U6P-lp-McZ"/>
+                        <outlet property="editPhotoButton" destination="1TN-5F-1Wh" id="leC-8f-oLQ"/>
                         <outlet property="editPhotoCollectionView" destination="rgF-tR-Y9R" id="epm-fh-QNq"/>
+                        <outlet property="indicator" destination="2ot-9A-Idg" id="2dU-2f-bBQ"/>
                         <outlet property="popUpView" destination="6Q4-y9-stk" id="U8c-fQ-hCj"/>
                     </connections>
                 </viewController>
@@ -688,6 +700,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Edit Flat"/>
+                                <connections>
+                                    <action selector="editFlatActionButton:" destination="AoD-Ru-LvQ" eventType="touchUpInside" id="lj6-iX-DB2"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBO-sd-luR">
                                 <rect key="frame" x="20" y="170" width="335" height="100"/>
@@ -765,6 +780,7 @@
                     <connections>
                         <outlet property="addressTextView" destination="MBO-sd-luR" id="nTC-Sl-imc"/>
                         <outlet property="flatDescriptionTextView" destination="xIu-Sn-8Fs" id="fKT-CC-vui"/>
+                        <outlet property="flatPhotoButton" destination="rSR-BY-RwA" id="nYG-M5-J4R"/>
                         <outlet property="flatPriceTextField" destination="YGv-IN-ZDS" id="lUc-JH-Wkk"/>
                         <outlet property="flatTitleTextField" destination="uQ0-Uu-1eq" id="BGh-Jr-Ese"/>
                     </connections>

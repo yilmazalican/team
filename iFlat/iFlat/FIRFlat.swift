@@ -11,7 +11,7 @@ import FirebaseStorage
 // deletepicture yap!
 protocol FIRFlatDelegate :class
 {
-    func edit(newFlt:ManipulableFlat!, completion: @escaping (String?) -> ())
+    func edit(oldcity:String,newFlt:ManipulableFlat!, completion: @escaping (String?) -> ())
     func disable(disablingFlat:ManipulableFlat!, completion: @escaping (String?) -> ())
     func getFlatsofUser(userID:String, completion: @escaping ([ManipulableFlat]?) -> ())
     func getFlatofUser(userID:String, flatID:String, completion: @escaping (ManipulableFlat?) -> ())
@@ -22,12 +22,17 @@ protocol FIRFlatDelegate :class
     func addWishList(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func deleteWish(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func getAvailableTimeSlots(flt:ManipulableFlat, completion: @escaping ([Int?]) -> ())
+    func deleteFlat(flt:ManipulableFlat,oldcity:String)
     
 }
 
 
 class FIRFlat:FIRFlatDelegate
 {
+    internal func deleteFlat(flt:ManipulableFlat,oldcity: String) {
+        FIRREF.instance().getRef().child("filter_flats/" + oldcity + "/" + flt.id).removeValue()
+    }
+
     internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([Int?]) -> ()) {
         FIRREF.instance().getRef().child("time_slots").queryOrdered(byChild: flt.id).queryEqual(toValue: true).observe(.value, with: { (ss) in
             var timeSlots = [Int]()
@@ -96,12 +101,11 @@ class FIRFlat:FIRFlatDelegate
             "tv" : flt.tv!,
             "washingMachine" : flt.washingMachine!,
             "capacity" : flt.flatCapacity!,
-            "disabled": flt.disabled!,
             "userId" : flt.userID,
             "city" : flt.city!,
             "address": flt.address!,
-            "disabled": flt.disabled!,
             "published": flt.published!,
+            "disabled": flt.disabled!,
             "title" : flt.title!] as [String : Any]
         //user_flats
         FIRREF.instance().getRef().child("user_flats/" + flt.userID!).child(flt.id).setValue(aFlat) { (err1, nil) in
@@ -120,7 +124,7 @@ class FIRFlat:FIRFlatDelegate
                 //flat_images with non-async way :(
                 if flt.images!.count > 0
                 {
-                    for iterator in flt.images!
+                    for (index,iterator) in (flt.images?.enumerated())!
                     {
                         let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
                         FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
@@ -141,6 +145,7 @@ class FIRFlat:FIRFlatDelegate
                         
                     }
                     completion(nil)
+                    
                     
                 }
                 
@@ -256,8 +261,9 @@ class FIRFlat:FIRFlatDelegate
         completion(nil)
         
     }
-    internal func edit(newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
+    internal func edit(oldcity:String,newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let db_endpoint = FIRFlat()
+    db_endpoint.deleteFlat(flt: newFlt, oldcity: oldcity)
         db_endpoint.insertFlat(flt: newFlt, completion: { (str) in
             completion(str)
         })

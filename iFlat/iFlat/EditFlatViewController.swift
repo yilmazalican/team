@@ -11,8 +11,15 @@ import UIKit
 class EditFlatViewController: UIViewController {
 
     var editingFlat = Flat()
+    var firebase = FIRFlat()
     
+    var oldCity:String = ""
    
+    @IBOutlet weak var flatPhotoButton: UIButton!{
+        didSet{
+            flatPhotoButton.isHidden = true 
+        }
+    }
     @IBOutlet weak var flatTitleTextField: UITextField!{
         didSet{
             flatTitleTextField.delegate = self
@@ -88,6 +95,7 @@ class EditFlatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        oldCity = editingFlat.city!
         
         addressTextView.text = editingFlat.address
         flatDescriptionTextView.text = editingFlat.flatDescription
@@ -106,9 +114,7 @@ class EditFlatViewController: UIViewController {
             
             if let controller :EditPhotoViewController = segue.destination as? EditPhotoViewController {
              
-                
-    controller.editingFlatID = editingFlat.id
-                
+                controller.flat = editingFlat
             
         }
         }
@@ -124,6 +130,11 @@ class EditFlatViewController: UIViewController {
 
         }
         
+    }
+    @IBAction func editFlatActionButton(_ sender: Any) {
+        firebase.edit(oldcity: oldCity, newFlt: editingFlat) { (err) in
+            print(err)
+        }
     }
 
 }

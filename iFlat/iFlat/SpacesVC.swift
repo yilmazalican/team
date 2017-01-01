@@ -38,10 +38,7 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dbUser.getCurrentLoggedIn { (usr) in
-            self.currentUsr = usr as? User
-        }
-        self.spacesTV.separatorStyle = .none
+
 
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,6 +90,14 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         
 
         return [delete, publish, edit]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        dbUser.getCurrentLoggedIn { (usr) in
+            self.currentUsr = usr as? User
+        }
+        self.spacesTV.separatorStyle = .none
+        self.spacesTV.reloadData()
     }
     
     

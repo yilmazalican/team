@@ -118,10 +118,14 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         
     }
     
+    /** This function calls updateMontYearLabel when user scrolle calendar which is delegate function of JTAppleCalendar
+     
+     */
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         updateMonthYearLabel(visibleDates: visibleDates)
     }
     
+    // Updates Mont and Year label when user scroll calendar
     func updateMonthYearLabel(visibleDates: DateSegmentInfo){
         
         let calendar = Calendar.current
@@ -132,6 +136,9 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         self.yearLabel.text = monthName + " " + String(intYear)
     }
     
+    
+    // This function handles selection of cell
+    // such as range selection, highligts selected days
     func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, date: Date) {
         guard let dayCell = view as? CellView else {
             return
@@ -183,7 +190,9 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
     }
     
     
-    
+    /** This function selects day when user clicked at the day which is delegate function of JTAppleCalendar
+     
+     */
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState, date: date)
         print("--->")
@@ -207,7 +216,9 @@ extension ReservationViewController: JTAppleCalendarViewDataSource, JTAppleCalen
         
     }
     
-    
+    /** This function DEselects day when user clicked at the day which is delegate function of JTAppleCalendar
+     
+     */
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         
         let dayCell = cell as? CellView

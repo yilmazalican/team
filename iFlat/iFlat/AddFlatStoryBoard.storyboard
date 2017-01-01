@@ -84,16 +84,23 @@
                                     <action selector="priceTextFieldDidEnding:" destination="GVW-gj-Ql5" eventType="editingDidEnd" id="5F5-yR-bVx"/>
                                 </connections>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-pS-Vhq">
+                                <rect key="frame" x="169.5" y="382" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vKD-pW-W2z" secondAttribute="trailing" constant="10" id="1kC-AP-0Jd"/>
                             <constraint firstItem="pMo-qp-NDG" firstAttribute="top" secondItem="6bI-XW-7PO" secondAttribute="bottom" constant="20" id="2CG-2J-gHt"/>
                             <constraint firstItem="h9S-rH-xAG" firstAttribute="top" secondItem="MDI-9h-tz9" secondAttribute="bottom" constant="30" id="5oi-bB-ALH"/>
+                            <constraint firstItem="ZWa-pS-Vhq" firstAttribute="centerY" secondItem="TLD-Km-98l" secondAttribute="centerY" id="8pG-jv-X7D"/>
                             <constraint firstItem="6bI-XW-7PO" firstAttribute="top" secondItem="h9S-rH-xAG" secondAttribute="bottom" constant="20" id="AvH-a8-TG5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6bI-XW-7PO" secondAttribute="trailing" constant="10" id="EqY-I7-nCy"/>
                             <constraint firstItem="vKD-pW-W2z" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leadingMargin" constant="10" id="Nq9-qD-wt9"/>
                             <constraint firstItem="vKD-pW-W2z" firstAttribute="top" secondItem="oQm-V3-1Cy" secondAttribute="bottom" id="PhT-Tf-oJP"/>
+                            <constraint firstItem="ZWa-pS-Vhq" firstAttribute="centerX" secondItem="TLD-Km-98l" secondAttribute="centerX" id="QHJ-ID-YvF"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="leading" secondItem="TLD-Km-98l" secondAttribute="leading" constant="20" id="XC1-Av-nHW"/>
                             <constraint firstItem="MDI-9h-tz9" firstAttribute="height" secondItem="h9S-rH-xAG" secondAttribute="height" id="XOL-hJ-Iq0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZYF-rC-V3y" secondAttribute="trailing" id="au8-qQ-pyv"/>
@@ -122,6 +129,7 @@
                         <outlet property="flatTitleTextField" destination="vKD-pW-W2z" id="870-tQ-VE5"/>
                         <outlet property="gateKeeperSwitch" destination="nFC-Ba-1qs" id="S34-vj-22W"/>
                         <outlet property="heatingSwitch" destination="FP0-Y5-lIv" id="gnm-af-wES"/>
+                        <outlet property="indicator" destination="ZWa-pS-Vhq" id="6ql-DL-yWo"/>
                         <outlet property="internetSwitch" destination="1QW-PH-tNF" id="fBQ-Ga-fCN"/>
                         <outlet property="parkingSwitch" destination="5oL-78-6nY" id="Fa8-iY-du0"/>
                         <outlet property="poolSwitch" destination="nmm-UD-wl6" id="gf9-Pc-f7t"/>
@@ -216,7 +224,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-61-seI">
-                                    <rect key="frame" x="50.5" y="822" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="822" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevator:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osU-qC-Eca">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -264,7 +272,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gBt-qd-9Mz">
-                                    <rect key="frame" x="50.5" y="1077" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="1077" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooling:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTM-GF-sCV">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -299,7 +307,7 @@
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5ar-V3-1C5">
-                                    <rect key="frame" x="50.5" y="720" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="720" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoking:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kX-9Y-0zM">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -323,7 +331,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I1j-GX-RYR">
-                                    <rect key="frame" x="50.5" y="771" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="771" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pool:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI2-jC-Rkp">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -347,7 +355,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tuW-j2-nV8">
-                                    <rect key="frame" x="50.5" y="873" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="873" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Washing Machine:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evN-Xd-EYu">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -371,7 +379,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dia-Jf-NBA">
-                                    <rect key="frame" x="50.5" y="924" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="924" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-fG-Yrb">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -395,7 +403,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="apa-ls-8mK">
-                                    <rect key="frame" x="50.5" y="975" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="975" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gate Keeper:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFC-Ba-1qs">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>

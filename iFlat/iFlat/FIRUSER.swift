@@ -152,9 +152,9 @@ class FIRUSER: FIRUSERDelegate {
         FIRREF.instance().getRef().child("users/" + id).observeSingleEvent(of: .value, with: { snapshot in
             
             if(snapshot.childrenCount >= 1){
-                let obj = snapshot.children.allObjects[0] as! FIRDataSnapshot
-                let objdict = obj.value as! [String:String]
-                usr.id = obj.key
+                
+                let objdict = snapshot.value as! [String:String]
+                usr.id = snapshot.key
                 usr.email = objdict["email"]!
                 usr.Gender = objdict["gender"]!
                 usr.name = objdict["firstName"]!

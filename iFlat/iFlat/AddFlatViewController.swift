@@ -154,6 +154,7 @@ class AddFlatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.indicator.stopAnimating()
        
 
        
@@ -250,8 +251,11 @@ class AddFlatViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
  
     @IBAction func addFlatButtonAction(_ sender: Any) {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+
         addingFlat.images = flatImage
         
         if addingFlat.isEmpty(){
@@ -261,24 +265,32 @@ class AddFlatViewController: UIViewController {
         }
 
         else {
+            self.indicator.startAnimating()
+
             
             dbFirebase.getCurrentLoggedIn(completion: { (currentUser) in
                self.addingFlat.userID = (currentUser?.id)!
                 
                 self.dbFirebaseFlat.insertFlat(flt: self.addingFlat) { (err) in
-                    print(err)
                     
+                    self.dbFirebaseFlat.getFlatImages(flatID: self.addingFlat.id, completion: { (imgs) in
+                 
+                            self.indicator.stopAnimating()
+                            
+                            for vc in viewControllers {
+                                if(vc is SpacesVC){
+                                    self.navigationController!.popToViewController(vc, animated: true)
+                                }
+                            }
+                        
+                    })
+
+
                     
                 }
 
             })
             
-            let viewControllers: [UIViewController] = self.navigationController!.viewControllers
-            for vc in viewControllers {
-                if(vc is SpacesVC){
-                    self.navigationController!.popToViewController(vc, animated: true)
-                }
-            }
         }
     }
     
