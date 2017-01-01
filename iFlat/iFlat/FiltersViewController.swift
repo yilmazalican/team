@@ -14,7 +14,6 @@ class FiltersViewController: UIViewController  {
     @IBOutlet var flatCapacityTextField: UITextField!
     @IBOutlet var bedroomCountTextField: UITextField!
     @IBOutlet var bathroomCountTextField: UITextField!
-    
     @IBOutlet var poolSwitch: UISwitch!
     @IBOutlet var internetSwitch: UISwitch!
     @IBOutlet var coolingSwitch: UISwitch!
@@ -26,12 +25,13 @@ class FiltersViewController: UIViewController  {
     @IBOutlet var washingMachineSwitch: UISwitch!
     @IBOutlet var priceFromTextField: UITextField!    
     @IBOutlet var priceToTextField: UITextField!
-    
-
     var filter : FilterModel?
-
-    
     var numberPlusPickerObj : NumberPlusPicker!
+    
+    /** This function initialize pickers and UI when view loaded
+     
+     - returns: Void
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +45,7 @@ class FiltersViewController: UIViewController  {
 
     }
 
+    // This fuction inits UI, loads filter model's values to UI
     func initUI(){
         if(filter?.bathroomCount != nil){
             self.bathroomCountTextField.text = String(describing: (filter?.bathroomCount)!)
@@ -77,9 +78,9 @@ class FiltersViewController: UIViewController  {
         }
     }
     
+    // This function loads filter view properties to filter model when clicked at showFilterButton
     @IBAction func showFilteredResultsButtonClicked(_ sender: Any) {
         
-        //var filter : FilterModel = FilterModel()
         filter?.bathroomCount = Int(self.bathroomCountTextField.text!)
         filter?.bedCount = Int(self.bedCountTextField.text!)
         filter?.bedroomCount = Int(self.bedroomCountTextField.text!)
@@ -97,7 +98,6 @@ class FiltersViewController: UIViewController  {
         filter?.priceTo = Double(self.priceToTextField.text!)
 
         
-        // send to firebase!!!
         
     }
     override func didReceiveMemoryWarning() {
@@ -119,7 +119,7 @@ class FiltersViewController: UIViewController  {
         field.inputView = numberPlusPickerObj
     }
 
-
+    /// Segue function for passing variable to 'ListFlatViewController'
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! ListFlatViewController
         navigationController.receivedFilter = self.filter!

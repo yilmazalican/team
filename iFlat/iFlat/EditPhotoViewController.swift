@@ -7,16 +7,36 @@
 //
 
 import UIKit
+import Photos
+import BSImagePicker
 
-class EditPhotoViewController: UIViewController {
+class EditPhotoViewController: UIViewController,imageMaker {
 
+    
+    var imagePicker = BSImagePickerViewController()
+
+    
+    @IBOutlet weak var editPhotoButton: UIButton!{
+        didSet{
+            
+            editPhotoButton.isEnabled = false
+        }
+    }
+    @IBOutlet weak var doneButton: UIButton!{
+        didSet{
+            doneButton.isEnabled = false
+        }
+    }
     @IBOutlet weak var editPhotoCollectionView: EditPhotoCollectionView!
     
-    var editingFlatID = String()
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+   
     
     var flatImage = [FlatImage]()
   
     var firebase = FIRFlat()
+    
+    var flat = Flat()
     
     @IBOutlet weak var popUpView: UIView!{
         didSet{
@@ -29,26 +49,34 @@ class EditPhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.maxNumberOfSelections = 4
 
         
-        firebase.getFlatImages(flatID:editingFlatID) { (urlImages) in
+        firebase.getFlatImages(flatID:flat.id) { (urlImagesURL) in
             
-            for url in urlImages! {
+            for url in urlImagesURL! {
                 
-                let tmpImage: UIImageView = UIImageView()
+            self.urlToImage(url: url.imageDownloadURL, completionHandler: { (image) in
                 
-                tmpImage.kf.setImage(with: URL(string:url.imageDownloadURL))
-                self.flatImage.append(FlatImage(image: tmpImage.image!))
-              
+                self.editPhotoCollectionView.flatImages.append(FlatImage(image: image))
+               self.flatImage.append(FlatImage(image: image))
                 
-          //  self.editPhotoCollectionView.flatImages.insert(FlatImage(image: tmpImage.image!), at: 0)
-                
+            })
             }
+            self.indicator.stopAnimating()
+                self.doneButton.isEnabled = true
+            self.editPhotoButton.isEnabled = true
+         
+            
+            
             self.editPhotoCollectionView.reloadData()
+            
+            
+            
+
          
         }
         
-   
         // Do any additional setup after loading the view.
     }
 
@@ -59,12 +87,83 @@ class EditPhotoViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+       
         if let controller : EditFlatViewController = segue.destination as? EditFlatViewController {
+            controller.editingFlat = self.flat
+          controller.editingFlat.images = self.flatImage
             
-         //  controller.editingFlat.images = editPhotoCollectionView.flatImages
         }
         
         
         
     }
-}
+    @IBAction func editPhotoButtonAction(_ sender: Any) {
+             
+        
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        
+        var count = 0
+        
+        imagePicker.doneButton.isEnabled = false
+        
+        if imagePicker.takePhotos {
+            count = 4
+        }
+        
+        bs_presentImagePickerController(imagePicker, animated: true,
+                                        select: { (asset: PHAsset) -> Void in
+                                            count = count + 1
+                                            if count == 4{
+                                                self.imagePicker.doneButton.isEnabled = true
+                                            }
+                                            else
+                                            {
+                                                self.imagePicker.doneButton.isEnabled = false
+                                                
+                                            }
+                                            
+                                            
+        }, deselect: { (asset: PHAsset) -> Void in
+            count = count - 1
+            if count == 4{
+                self.imagePicker.doneButton.isEnabled = true
+            }
+            else
+            {
+                self.imagePicker.doneButton.isEnabled = false
+                
+            }
+            
+        }, cancel: { (assets: [PHAsset]) -> Void in
+            count = 0
+            
+        }, finish: { (assets: [PHAsset]) -> Void in
+            for image in assets {
+                manager.requestImage(for: image, targetSize: CGSize(width:self.editPhotoCollectionView.frame.width,height:self.editPhotoCollectionView.frame.height), contentMode: .aspectFill, options: option, resultHandler: { (image, nil) in
+                    
+                    
+                    self.editPhotoCollectionView.flatImages.insert(FlatImage(image: image!), at: count)
+                    self.editPhotoCollectionView.flatImages.removeLast()
+                    self.flat.images?.append(FlatImage(image:image!))
+                   
+                    
+                    
+                   self.editPhotoCollectionView.reloadData()
+                                         })
+                
+                
+            }
+       
+            
+            self.imagePicker.doneButton.isEnabled = true
+            count = 0
+            self.imagePicker.takePhotos = true
+        }, completion: nil)
+    }
+    
+    
+    
+
+    }
+

@@ -30,7 +30,6 @@
 		1AC48BC31DE6625C00505913 /* ControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */; };
 		1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACDDC521E11775E00E34629 /* MainFlow.storyboard */; };
 		1AD2C4051E06020B0030FF15 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2C4041E06020B0030FF15 /* TableViewCell.swift */; };
-		1AD826521E13110C0021EF4F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD826511E13110C0021EF4F /* Info.plist */; };
 		1AD826541E13362B0021EF4F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD826531E13362B0021EF4F /* SettingsVC.swift */; };
 		1AD852461E07E67500A1F5B3 /* ManipulableFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */; };
 		1AD852481E07E67B00A1F5B3 /* FIRFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD852471E07E67B00A1F5B3 /* FIRFlat.swift */; };
@@ -72,13 +71,14 @@
 		95DDDC9B1E1315D100106F24 /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */; };
 		95DDDC9E1E13161400106F24 /* ChoosePhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9D1E13161400106F24 /* ChoosePhotoCollectionView.swift */; };
 		95DDDCA01E13162100106F24 /* ChoosePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */; };
+		95E9C1991E194C1C0089ED2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E9C1981E194C1C0089ED2A /* GoogleService-Info.plist */; };
+		95E9C19D1E194D100089ED2A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E9C19C1E194D100089ED2A /* Info.plist */; };
 		95FEEDB11E15782B004448F1 /* EditFlatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */; };
 		95FEEDB31E158769004448F1 /* EditFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB21E158769004448F1 /* EditFlatViewController.swift */; };
 		95FEEDB51E15879C004448F1 /* EditFlatOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */; };
 		95FEEDB71E158D39004448F1 /* EditPhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB61E158D39004448F1 /* EditPhotoCollectionView.swift */; };
 		95FEEDB91E158D4A004448F1 /* EditPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */; };
 		95FEEDBB1E1594D6004448F1 /* EditPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */; };
-		95FF3E061E15CD58007155A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95FF3E051E15CD58007155A6 /* GoogleService-Info.plist */; };
 		CAC80CFAC22E50234666C498 /* Pods_iFlat_iFlatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9609E4EE1E699D81BDDB632E /* Pods_iFlat_iFlatTests.framework */; };
 		E740683D51927E87205255CE /* Pods_iFlat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75591C1553F467511111B928 /* Pods_iFlat.framework */; };
 		FD884EC629F5F52179629B36 /* Pods_iFlat_iFlatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4632289C74820928EC02E69 /* Pods_iFlat_iFlatUITests.framework */; };
@@ -131,7 +131,6 @@
 		1AC48BC21DE6625C00505913 /* ControlPanelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPanelVC.swift; sourceTree = "<group>"; };
 		1ACDDC521E11775E00E34629 /* MainFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainFlow.storyboard; sourceTree = "<group>"; };
 		1AD2C4041E06020B0030FF15 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		1AD826511E13110C0021EF4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iFlat/Info.plist; sourceTree = "<group>"; };
 		1AD826531E13362B0021EF4F /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1AD852451E07E67500A1F5B3 /* ManipulableFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManipulableFlat.swift; sourceTree = "<group>"; };
 		1AD852471E07E67B00A1F5B3 /* FIRFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFlat.swift; sourceTree = "<group>"; };
@@ -178,13 +177,14 @@
 		95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoViewController.swift; sourceTree = "<group>"; };
 		95DDDC9D1E13161400106F24 /* ChoosePhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoCollectionView.swift; sourceTree = "<group>"; };
 		95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		95E9C1981E194C1C0089ED2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95E9C19C1E194D100089ED2A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditFlatStoryboard.storyboard; sourceTree = "<group>"; };
 		95FEEDB21E158769004448F1 /* EditFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatViewController.swift; sourceTree = "<group>"; };
 		95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatOptionViewController.swift; sourceTree = "<group>"; };
 		95FEEDB61E158D39004448F1 /* EditPhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoCollectionView.swift; sourceTree = "<group>"; };
 		95FEEDB81E158D4A004448F1 /* EditPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoViewController.swift; sourceTree = "<group>"; };
-		95FF3E051E15CD58007155A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9609E4EE1E699D81BDDB632E /* Pods_iFlat_iFlatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A260F6D625F1875657F4E425 /* Pods-iFlat-iFlatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat-iFlatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat-iFlatTests/Pods-iFlat-iFlatTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4632289C74820928EC02E69 /* Pods_iFlat_iFlatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iFlat_iFlatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +261,7 @@
 		1A8083611DF1838D009655AD /* UTILITY */ = {
 			isa = PBXGroup;
 			children = (
+				95E9C1981E194C1C0089ED2A /* GoogleService-Info.plist */,
 				1AC48B861DE6615100505913 /* Products */,
 			);
 			name = UTILITY;
@@ -320,9 +321,8 @@
 		1AC48BB61DE6616300505913 /* Static */ = {
 			isa = PBXGroup;
 			children = (
-				1AD826511E13110C0021EF4F /* Info.plist */,
+				95E9C19C1E194D100089ED2A /* Info.plist */,
 				1A8083611DF1838D009655AD /* UTILITY */,
-				95FF3E051E15CD58007155A6 /* GoogleService-Info.plist */,
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
 				1AC48B911DE6615100505913 /* LaunchScreen.storyboard */,
@@ -673,6 +673,7 @@
 		95FEEDBC1E1595DE004448F1 /* Add Flat */ = {
 			isa = PBXGroup;
 			children = (
+				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
 				95DDDC961E12EE3D00106F24 /* AddFlatViewController.swift */,
 			);
 			name = "Add Flat";
@@ -681,7 +682,6 @@
 		95FEEDBD1E1595E8004448F1 /* Edit Flat */ = {
 			isa = PBXGroup;
 			children = (
-				95DDDC9A1E1315D100106F24 /* ChoosePhotoViewController.swift */,
 				95FEEDB21E158769004448F1 /* EditFlatViewController.swift */,
 				95FEEDB41E15879C004448F1 /* EditFlatOptionViewController.swift */,
 				95FEEDBA1E1594D6004448F1 /* EditPhotoViewController.swift */,
@@ -766,6 +766,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 9RDWH786DV;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -812,13 +813,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E9C19D1E194D100089ED2A /* Info.plist in Resources */,
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
+				95E9C1991E194C1C0089ED2A /* GoogleService-Info.plist in Resources */,
 				955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */,
 				95DDDC951E12EE1A00106F24 /* AddFlatStoryBoard.storyboard in Resources */,
 				958FB14C1E1714FA00744E59 /* OpenIssueStoryBoard.storyboard in Resources */,
 				958FB1521E171CDE00744E59 /* ShowUserProfileStoryboard.storyboard in Resources */,
-				1AD826521E13110C0021EF4F /* Info.plist in Resources */,
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
 				951A92981DF4E21800199B83 /* EntranceStoryBoard.storyboard in Resources */,
@@ -827,7 +829,6 @@
 				1AC48B901DE6615100505913 /* Assets.xcassets in Resources */,
 				46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */,
 				803DE5E21E11B9AB00CCB17E /* Reservation.storyboard in Resources */,
-				95FF3E061E15CD58007155A6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,8 +1194,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iFlat/Info.plist;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
@@ -1212,8 +1213,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iFlat/Info.plist;
+				DEVELOPMENT_TEAM = 9RDWH786DV;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.se301.iFlat.iFlat;
