@@ -175,6 +175,11 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             break
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let segue = segue.destination as! ShowUserProfileViewController
+        segue.strUserID = self.ownerID!
+    }
 
     
     

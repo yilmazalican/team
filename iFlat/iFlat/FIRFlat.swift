@@ -105,6 +105,7 @@ class FIRFlat:FIRFlatDelegate
             "city" : flt.city!,
             "address": flt.address!,
             "published": flt.published!,
+            "disabled": flt.disabled!,
             "title" : flt.title!] as [String : Any]
         //user_flats
         FIRREF.instance().getRef().child("user_flats/" + flt.userID!).child(flt.id).setValue(aFlat) { (err1, nil) in
