@@ -8,6 +8,7 @@
 
 import UIKit
 
+// That class controls FlatProfile View
 class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
 //burada eksik var/time fault
@@ -45,6 +46,8 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         
     }
     
+    
+    
     func initFlat(completion: @escaping (Flat)-> ()){
         
         flat = Flat()
@@ -55,27 +58,42 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         }
         
     }
-
+    
+    /** This is an initializer function that initialize Gui (fills the views of flat variables)
+     
+     - parameters:  No parameter
+     - returns:     void
+     - throws:      Nothing
+     */
     func initGui(){
         // check string casting
         self.flatPriceTV.text = String(describing: (flat.price)!)
         self.flatDetailsTV.text = (flat.flatDescription)!
         self.flatOwnerTV.text = flat.userID
-        self.flatTitleTV.text = (flat.title)!
+        //self.flatTitleTV.text = (flat.title)!
+        self.flatTitleTV.text = (receivedFlatID)
         self.flatSpecsTV.text = "Bathroom:" + String(describing: (flat.bathroomCount)!)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
+    /** This function returns flat image quantity to collection view (flatImage quantity is constant, 5) which is delegate function of Collection View
+     
+     - returns: int (5)
+     */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     
-    
+    /** This function returns image container cell to collection view which is delegate function of Collection View
+     
+     - returns: FlatImagesCell
+     */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! FlatImagesCell
         
@@ -87,8 +105,8 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         
         return cell
     }
-    
 
+    // Segue function for passing variable to 'ReservationViewController' and 'ShowUSerProfileViewController'
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "reservationSegue"{
             

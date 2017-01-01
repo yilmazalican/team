@@ -8,7 +8,9 @@
 
 import UIKit
 
+// UICollectionViewCell which is show flat image at FlatImagesCollectionView
 class FlatImagesCell: UICollectionViewCell {
+    // Outlet of Flat Image that contains image of flat
     @IBOutlet var FlatImage: UIImageView!
     
 }
