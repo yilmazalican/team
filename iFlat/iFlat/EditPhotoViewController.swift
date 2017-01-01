@@ -12,6 +12,7 @@ class EditPhotoViewController: UIViewController,imageMaker {
 
     @IBOutlet weak var editPhotoCollectionView: EditPhotoCollectionView!
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
    
     
     var flatImage = [FlatImage]()
@@ -43,10 +44,9 @@ class EditPhotoViewController: UIViewController,imageMaker {
                 
             })
             }
+            self.indicator.stopAnimating()
+                
             
-                
-          //  self.editPhotoCollectionView.flatImages.insert(FlatImage(image: tmpImage.image!), at: 0)
-                
          
             self.editPhotoCollectionView.reloadData()
          

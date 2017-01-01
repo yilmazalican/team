@@ -74,6 +74,10 @@
                                             <segue destination="AoD-Ru-LvQ" kind="show" id="gYt-iF-0nE"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-9A-Idg">
+                                        <rect key="frame" x="169" y="205" width="37" height="37"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -84,7 +88,9 @@
                                     <constraint firstAttribute="trailing" secondItem="rgF-tR-Y9R" secondAttribute="trailing" id="Uxm-71-4g0"/>
                                     <constraint firstItem="rgF-tR-Y9R" firstAttribute="leading" secondItem="6Q4-y9-stk" secondAttribute="leading" id="ZcC-sw-efF"/>
                                     <constraint firstAttribute="trailing" secondItem="QUe-eQ-jtg" secondAttribute="trailing" constant="20" id="al6-Cc-XRd"/>
+                                    <constraint firstItem="2ot-9A-Idg" firstAttribute="centerX" secondItem="6Q4-y9-stk" secondAttribute="centerX" id="evB-ms-gBW"/>
                                     <constraint firstItem="rgF-tR-Y9R" firstAttribute="top" secondItem="6Q4-y9-stk" secondAttribute="top" id="ss5-Oc-ZCa"/>
+                                    <constraint firstItem="2ot-9A-Idg" firstAttribute="centerY" secondItem="6Q4-y9-stk" secondAttribute="centerY" id="vvj-dU-spi"/>
                                     <constraint firstAttribute="bottom" secondItem="1TN-5F-1Wh" secondAttribute="bottom" constant="20" id="xvA-4T-lO9"/>
                                     <constraint firstItem="1TN-5F-1Wh" firstAttribute="top" secondItem="rgF-tR-Y9R" secondAttribute="bottom" constant="20" id="xyK-u6-uZO"/>
                                 </constraints>
@@ -100,6 +106,7 @@
                     </view>
                     <connections>
                         <outlet property="editPhotoCollectionView" destination="rgF-tR-Y9R" id="epm-fh-QNq"/>
+                        <outlet property="indicator" destination="2ot-9A-Idg" id="2dU-2f-bBQ"/>
                         <outlet property="popUpView" destination="6Q4-y9-stk" id="U8c-fQ-hCj"/>
                     </connections>
                 </viewController>
