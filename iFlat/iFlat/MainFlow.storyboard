@@ -294,11 +294,20 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="spacesTV" destination="kuI-24-kcG" id="RCX-WB-E0Q"/>
+                        <segue destination="rK9-xe-2Bk" kind="show" identifier="editFlatsegue" id="UCl-Ks-NOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70k-I8-1mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5380" y="-635"/>
+        </scene>
+        <!--EditFlatStoryboard-->
+        <scene sceneID="KO4-6o-n9E">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditFlatStoryboard" id="rK9-xe-2Bk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLq-Po-HSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6105" y="-911"/>
         </scene>
         <!--AddFlatStoryBoard-->
         <scene sceneID="XXO-5v-g5a">
@@ -544,7 +553,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGf-ts-g1l">
-                                                <rect key="frame" x="20" y="112" width="360" height="82"/>
+                                                <rect key="frame" x="20" y="112" width="360" height="81.5"/>
                                                 <string key="text">Customers can reserve flats by searching and filtering them. For reserving, Customers must have to an active payment method and satisfying balance.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -557,50 +566,50 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etF-0Y-5RQ">
-                                                <rect key="frame" x="20" y="225" width="360" height="82"/>
+                                                <rect key="frame" x="20" y="224.5" width="360" height="81.5"/>
                                                 <string key="text">Customers can add flat by tapping become an Host. Then adding a flat is easy by tapping the "+" button. Then following the instructors will end the process.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can i add a flat?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kL-Al-KpY">
-                                                <rect key="frame" x="20" y="199" width="360" height="21"/>
+                                                <rect key="frame" x="20" y="198.5" width="360" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The reservation cost will be blocked from your credit card. And billed when your host approve your reservation." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WZ-U7-ByX">
-                                                <rect key="frame" x="20" y="338" width="360" height="61"/>
+                                                <rect key="frame" x="20" y="337" width="360" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When i will billed after reserving a flat?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu2-gE-f4M">
-                                                <rect key="frame" x="20" y="312" width="360" height="21"/>
+                                                <rect key="frame" x="20" y="311" width="360" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The reservation cost will be blocked from your credit card. And billed when your host approve your reservation." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCW-SA-l6O">
-                                                <rect key="frame" x="20" y="430" width="360" height="61"/>
+                                                <rect key="frame" x="20" y="429" width="360" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When i will billed after reserving a flat?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd8-Ni-KeB">
-                                                <rect key="frame" x="20" y="404" width="360" height="21"/>
+                                                <rect key="frame" x="20" y="403" width="360" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When i will receive my earnings after reservation process of my flats?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-Rd-dnu">
-                                                <rect key="frame" x="20" y="496" width="360" height="41"/>
+                                                <rect key="frame" x="20" y="495" width="360" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The reservation cost will be blocked from your credit card. And billed when your host approve your reservation." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM7-ni-abS">
-                                                <rect key="frame" x="20" y="542" width="360" height="61"/>
+                                                <rect key="frame" x="20" y="541" width="360" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
