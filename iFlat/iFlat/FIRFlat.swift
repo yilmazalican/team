@@ -198,7 +198,7 @@ class FIRFlat:FIRFlatDelegate
                 flt.washingMachine = objdict["washingMachine"] as? Bool
                 flt.flatCapacity = objdict["capacity"] as? Int
                 flt.title = objdict["title"] as? String
-                flt.address = objdict["adress"] as? String
+                flt.address = objdict["address"] as? String
                 flt.disabled = objdict["disabled"] as? Bool
                 flt.published = objdict["published"] as? Bool
                 flt.userID = objdict["userId"] as? String
@@ -221,7 +221,6 @@ class FIRFlat:FIRFlatDelegate
             {
                 let flt = Flat()
                 let objdict = a.value as! [String:Any]
-                flt.id = a.key
                 flt.bathroomCount = objdict["bathroomCount"] as? Int
                 flt.bedCount = objdict["bedCount"] as? Int
                 flt.cooling = objdict["cooling"] as? Bool
@@ -242,8 +241,9 @@ class FIRFlat:FIRFlatDelegate
                 flt.address = objdict["address"] as? String
                 flt.disabled = objdict["disabled"] as? Bool
                 flt.published = objdict["published"] as? Bool
-                flt.userID = (objdict["userId"] as? String)!
+                flt.userID = objdict["userId"] as? String
                 flt.city = objdict["city"] as? String
+                flt.id = a.key
                 fltArr.append(flt)
             }
             completion(fltArr)

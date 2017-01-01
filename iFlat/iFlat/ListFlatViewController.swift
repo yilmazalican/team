@@ -109,8 +109,8 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             let indexPath = listFlatCollectionView.indexPath(for: sender as! ListFlatCollectionViewCell)
 
             let flatProfileVC = segue.destination as! FlatProfileViewController
-            flatProfileVC.ownerID = self.filteredFlats[(indexPath?.row)!].userID!
-            flatProfileVC.receivedFlatID = self.filteredFlats[(indexPath?.row)!].flatID!
+            flatProfileVC.ownerID = self.filteredFlats[(indexPath?.row)!].userID
+            flatProfileVC.receivedFlat = self.filteredFlats[(indexPath?.row)!] as! FilteredFlat
             
 
             }
