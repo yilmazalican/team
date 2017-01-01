@@ -40,6 +40,7 @@ protocol FIRUSERDelegate :class
     func rejectReservationRequest(req:ReservationRequest,completion: @escaping(String?) -> ())
     func getFlatByID(id:String, completion: @escaping(ManipulableFlat?) -> ())
     func getUsersReservationRequests(usr:ManipulableUser, completion: @escaping([ReservationRequest]) -> ())
+    func getWishes(usrID:String, completion: @escaping([String:Bool]) -> ())
     
 }
 
@@ -48,6 +49,14 @@ protocol FIRUSERDelegate :class
 
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
+    internal func getWishes(usrID: String, completion: @escaping ([String:Bool]) -> ()) {
+        FIRREF.instance().getRef().child("Wishes/" + usrID).observe(.value, with: { (ss) in
+            let wishes = [String:Bool]()
+                let value = ss.value as! [String:Bool]
+                completion(value)
+        })
+    }
+
     internal func getFlatByID(id: String, completion: @escaping (ManipulableFlat?) -> ()) {
         FIRREF.instance().getRef().child("filter_flats/" + id).observe(.value, with: { (ss) in
             let flt = Flat()

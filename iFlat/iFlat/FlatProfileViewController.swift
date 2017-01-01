@@ -8,119 +8,149 @@
 
 import UIKit
 
-// That class controls FlatProfile View
 class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    @IBOutlet weak var userProfileIV: UIImageView!
+    @IBOutlet weak var flatImagesCV: UICollectionView!
+    
+    @IBOutlet weak var flatTitleLb: UILabel!
+    @IBOutlet weak var flatDesclb: UILabel!
+    @IBOutlet weak var flatCapLb: UILabel!
+    @IBOutlet weak var bedroomCLb: UILabel!
+    @IBOutlet weak var bedCLb: UILabel!
+    @IBOutlet weak var bathroomCLb: UILabel!
+    
+    @IBOutlet weak var pool: UILabel!
+    @IBOutlet weak var internet: UILabel!
+    @IBOutlet weak var cooling: UILabel!
+    @IBOutlet weak var heating: UILabel!
+    @IBOutlet weak var television: UILabel!
+    @IBOutlet weak var washingMachine: UILabel!
+    @IBOutlet weak var elevator: UILabel!
+    @IBOutlet weak var parking: UILabel!
+    @IBOutlet weak var smoking: UILabel!
+    @IBOutlet weak var gateKeeper: UILabel!
+    
+    @IBOutlet weak var city: UILabel!
+    @IBOutlet weak var address: UILabel!
+    
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var price: UILabel!
+    
+    var ownerID:String?
+    var receivedFlat:FilteredFlat?
+    var flatEP = FIRFlat()
+    var userRP = FIRUSER()
+    var flatImagesArr = [FlatImageDownloaded]()
+    
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "flatImagesCell", for: indexPath) as! FlatImagesCell
+        let url = URL(string:self.flatImagesArr[indexPath.row].imageDownloadURL)
+        cell.FlatImage.kf.setImage(with: url)
+        return cell
+        
+    }
 
-//burada eksik var/time fault
-    var receivedFlatID: String = ""
-    var flat : Flat!
-    var ownerID : String = ""
-    var returnedImagesURLs : [FlatImageDownloaded]?
-    
-    @IBOutlet var flatImages: UIImageView!
-    //@IBOutlet var flatRating: UILabel!
-    @IBOutlet var flatRatingTV: UILabel!
-    @IBOutlet var flatSpecsTV: UILabel!
-    @IBOutlet var flatPriceTV: UILabel!
-    @IBOutlet var flatDetailsTV: UILabel!
-    @IBOutlet var flatOwnerTV: UILabel!
-    @IBOutlet var flatTitleTV: UILabel!
-    @IBOutlet var imageCollectionView: UICollectionView!
-    
+    @IBAction func addtoWish(_ sender: UIButton) {
+        self.flatEP.getFlatofUser(userID: self.receivedFlat!.userID!, flatID: self.receivedFlat!.flatID!) { (flt) in
+            self.flatEP.addWishList(flt: flt!) { (err) in
+        }
+        
+        }
+    }
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.flatImagesArr.count
+    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // flat will filled by segue. !!! FIX IT !!!
-    initFlat { (flt) in
-        self.flat = flt
-        self.flat.DB_ENDPOINT.getFlatImages(flatID: flt.id, completion: { (returnedImages) in
-           
-                self.returnedImagesURLs = returnedImages
+        flatEP.getFlatImages(flatID: (self.receivedFlat?.flatID)!) { (images) in
+            self.flatImagesArr = images!
+            self.flatImagesCV.reloadData()
+            self.userProfileIV.translatesAutoresizingMaskIntoConstraints = true
             
-            self.initGui()
-        })
+            
+
+
+        }
         
+        userRP.getCurrentLoggedIn { (usr) in
+            self.userRP.getUserProfileImg(user: usr!, completion: { (img) in
+                let url = URL(string:img!)
+                self.userProfileIV.kf.setImage(with: url)
+
+            })
+        }
+        
+        flatEP.getFlatofUser(userID: self.ownerID!, flatID: self.receivedFlat!.flatID!) { (flt) in
+            self.flatTitleLb.text = flt?.title!
+            self.flatDesclb.text = flt?.flatDescription!
+            self.flatCapLb.text = String(describing: flt!.flatCapacity!)
+            self.bedroomCLb.text = String(describing:flt!.bedroomCount!)
+            self.bedroomCLb.text = String(describing:flt!.bedCount!)
+            self.bathroomCLb.text = String(describing:flt!.bathroomCount!)
+
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.pool)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.internet)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.cooling)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.heating)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.tv)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.washingMachine)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.elevator)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.parking)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.smoking)!)
+            self.assignTrueOrFalse(sender: self.pool, what: (flt?.gateKeeper)!)
+
+            self.city.text = flt?.city
+            self.address.text = flt?.address
+            
+            //RATE?
+            //self.assignRate(sender: self.rating, star: flt.)
+            
+            
         }
         
         
-    }
-    
-    
-    
-    func initFlat(completion: @escaping (Flat)-> ()){
-        
-        flat = Flat()
-        flat.DB_ENDPOINT.getFlatofUser(userID: ownerID, flatID: receivedFlatID) { (flat) in
-            completion(flat as! Flat)
-            
-            
-        }
         
     }
-    
-    /** This is an initializer function that initialize Gui (fills the views of flat variables)
-     
-     - parameters:  No parameter
-     - returns:     void
-     - throws:      Nothing
-     */
-    func initGui(){
-        // check string casting
-        self.flatPriceTV.text = String(describing: (flat.price)!)
-        self.flatDetailsTV.text = (flat.flatDescription)!
-        self.flatOwnerTV.text = flat.userID
-        //self.flatTitleTV.text = (flat.title)!
-        self.flatTitleTV.text = (receivedFlatID)
-        self.flatSpecsTV.text = "Bathroom:" + String(describing: (flat.bathroomCount)!)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    /** This function returns flat image quantity to collection view (flatImage quantity is constant, 5) which is delegate function of Collection View
-     
-     - returns: int (5)
-     */
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    
-    /** This function returns image container cell to collection view which is delegate function of Collection View
-     
-     - returns: FlatImagesCell
-     */
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! FlatImagesCell
-        
-        if let urlString =  self.returnedImagesURLs?[indexPath.row].imageDownloadURL
+    func assignTrueOrFalse(sender:UILabel, what:Bool)
+    {
+        switch what
         {
-            let url = URL(string:urlString)
-            cell.FlatImage.kf.setImage(with: url)
-        }
-        
-        return cell
-    }
-
-    // Segue function for passing variable to 'ReservationViewController' and 'ShowUSerProfileViewController'
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "reservationSegue"{
-            
-            let reservationVC = segue.destination as? ReservationViewController
-            
-            reservationVC?.receivedFlat = self.flat
-        }
-        if segue.identifier == "showUserProfile"{
-            
-            let showUserVC = segue.destination as! ShowUserProfileViewController
-            showUserVC.strUserID = self.ownerID
-            
-
+        case true:
+            sender.text = "✔︎"
+            break
+        case false:
+            sender.text = "𐄂"
         }
     }
+    
+    func assignRate(sender:UILabel, star:Int)
+    {
+        switch star
+        {
+        case 1:
+            sender.text = "★"
+            break
+        case 2:
+            sender.text = "★★"
+        case 3:
+            sender.text = "★★★"
+            break
+        case 4:
+            sender.text = "★★★★"
+            break
+        case 5:
+            sender.text = "★★★★★"
+            break
+        default:
+            break
+        }
+    }
+
+    
+    
+
 
 }
