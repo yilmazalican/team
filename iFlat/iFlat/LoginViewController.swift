@@ -28,7 +28,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
         
         
     }
-    
+    /// This method is check password text field and password text field written by users,
+    /// if user do not write in this area,method is return value false.
+    /// This methos is return value boolean.
     func validationLoginField() -> Bool {
         
         if !(emailTextField.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)!{
@@ -47,6 +49,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
         return true
     }
     
+    /// This method provides to send verify email in the user's email.
+    /// if user own forgot password,send reset password by the system to users email box.
+    /// also this method sends warning message to user.
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Forgot Password", message: "Enter your email", preferredStyle: .alert)
         alert.addTextField { (textField) in
@@ -82,6 +87,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
     }
     
     
+
     
     @IBAction func LoginTapped(_ sender: UIButton) {
         
