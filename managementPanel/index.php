@@ -11,6 +11,6 @@ $auth = new auth();
   //$auth->login("erEn.ay@isik.edu.tr","123");
 echo  $auth->loginForm();
 }else{
-  require_once('php/main.php?route=issue');
+  require_once('php/main.php');
 }
 ?>

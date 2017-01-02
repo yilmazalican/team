@@ -59,7 +59,13 @@ class curl {
     return ($openData . "<hr>" . $closedData);
   }
 
-public function closeIssueForm(){
+public function closeIssueForm($iid){
+	$form = "<form action=POST>";
+	$form .= "<label>Answer</label>";
+	$form .= "<input type=textbox name=answertext />";
+	$form .= "<input type=hidden name=answertext value=" . $iid . " />";
+	$form .= "<input type=submit value= submit />";
+	$form .= "</form>";
 	
 	return $form;
 }

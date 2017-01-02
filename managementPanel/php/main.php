@@ -17,7 +17,7 @@ if($_GET['route'] === "issue"){
 if(isset($_GET['iid'])){
   $pageTitle = "Issue Closing";
   $pageSubTitle = "Write answer to issue";
-  $data = $curl->closeIssueForm();
+  $data = $curl->closeIssueForm($_GET['iid']);
 }
 require_once("template/mainTemplate.php");
 
