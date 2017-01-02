@@ -15,7 +15,7 @@ class Issue
     var ID:String?
     var title:String?
     var content:String?
-    var isOpen:Bool?
+    var isOpen:String?
     var issued:String?
     var issuer:String?
     var answer:String?
@@ -23,7 +23,7 @@ class Issue
     
     init(title:String,content:String,issued:String){
         self.ID = UUID().uuidString
-        self.isOpen = true
+        self.isOpen = "true"
         self.title = title
         self.content = content
         self.issued = issued

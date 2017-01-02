@@ -111,7 +111,8 @@ class RenterEditOwnProfieController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    /// This method provides take photo with photo library for renter
+    /// if users tapped button image picker becomes source photolibrary for renter.
     @IBAction func getPhotoFromLibraryAction(_ sender: Any) {
         
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -123,7 +124,9 @@ class RenterEditOwnProfieController: UIViewController {
       
 
     }
-   
+    
+    /// This method provides take photo with mobile camera for renter.
+    /// if users tapped button image picker becomes source camera for renter.
     @IBAction func takePhotoAction(_ sender: Any) {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -147,11 +150,17 @@ class RenterEditOwnProfieController: UIViewController {
         
     }
    
+    
+    /// This method extend setDateToStirng methods.
+    /// This method provide to edit birthdate information.
+    /// if the renter has logged in the system,this method is renter's birthdate condert to string.
     @IBAction func birthdatePickerValueChanged(_ sender: UIDatePicker) {
         loginUser.birthDate = setDateToString(datePicker: sender)
         
     }
    
+    /// This method provides to edit renter's name.
+    /// if renter has logged in the system,renter can change own name with this method.
     @IBAction func nameTextFieldEditingDidEnd(_ sender: UITextField) {
         
         
@@ -167,7 +176,8 @@ class RenterEditOwnProfieController: UIViewController {
         
     }
    
-    
+    /// This method provides to edit renter's surname.
+    /// if renter has logged in the system,renter can change own surname with this method.
     @IBAction func surnameTextFieldEditingDidEnd(_ sender: UITextField) {
        if sender.text != "" {
 
@@ -178,6 +188,8 @@ class RenterEditOwnProfieController: UIViewController {
     }
     }
     
+    /// This method provides to edit renter's email address.
+    /// if renter has logged in the system,renter can change own email address with this method.
     @IBAction func mailAddressTextFieldEditingDidEnd(_ sender: UITextField) {
        if sender.text != "" {
             
@@ -193,7 +205,8 @@ class RenterEditOwnProfieController: UIViewController {
     
     
    
-    
+    /// This method is edit user profile's information in firebase.
+    /// This method change from old user's information to new user's information in firebase.
     @IBAction func editedProfileButtonAction(_ sender: Any) {
         
      dbFirebase.edit(newUsr: self.loginUser) { (err) in
@@ -227,7 +240,7 @@ class RenterEditOwnProfieController: UIViewController {
         
     }
     
-    
+  
   private func setLoginUser(){
     
             self.dbFirebase.getCurrentLoggedIn(completion: { (usr) in

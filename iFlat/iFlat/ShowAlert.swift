@@ -15,7 +15,8 @@ protocol ShowAlert {
     
 }
 
-
+/// This extension has two alert methods which extend apple alert method.
+/// This extension is sending warning message.
 extension ShowAlert where Self: UIViewController {
     
     
