@@ -16,7 +16,8 @@ protocol DateToString {
     
 }
 
-
+/// This  method is date picker convert "/" to string
+/// Return value is string from date picker.
 extension DateToString {
     
      func setDateToString(datePicker:UIDatePicker)->String{

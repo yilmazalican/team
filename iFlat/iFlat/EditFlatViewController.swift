@@ -63,7 +63,8 @@ class EditFlatViewController: UIViewController {
         }
     }
     
-    
+    /// This method provide is edit flat title by user.
+    /// Old flat information change new information by user.
     @IBAction func flatTitleTextEditing(_ sender: UITextField) {
         
         
@@ -79,7 +80,8 @@ class EditFlatViewController: UIViewController {
         }
 
     }
-    
+    /// This method provide is edit flat price by user.
+    /// Old flat price information change new price information by user.
     @IBAction func flatPriceTitleTextEditing(_ sender: UITextField) {
         
         if sender.text != "" {
@@ -132,6 +134,7 @@ class EditFlatViewController: UIViewController {
         }
         
     }
+    /// This method  edit flat's information in the firebase when users click button.
     @IBAction func editFlatActionButton(_ sender: Any) {
         firebase.edit(oldcity: oldCity, newFlt: editingFlat) { (err) in
             print(err)
