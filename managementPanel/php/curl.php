@@ -10,11 +10,7 @@ class curl {
 
   public function getIssues (){
     echo"Issue";
-    $this->curlHandler = curl_init($this->url . "/issues.json");
-    curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($this->curlHandler, CURLOPT_SSL_VERIFYPEER,false);
-    $result = curl_exec($this->curlHandler);
-    curl_close($this->curlHandler);
+    $result = $this->getNodeCurl("issues.json");
 
     $data = json_decode($result, TRUE);
 	
@@ -74,36 +70,36 @@ public function closeIssueForm($iid){
 public function closeIssue($iid, $answer){
   echo"Close Issue";
 
-  //$data = array('isOpen'=>'false');
-$data_json = json_encode("false");
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
-curl_setopt($ch, CURLOPT_URL, $this->url . "/issues" . "/" . $iid . "/isOpen.json");
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$result  = curl_exec($ch);
-curl_close($ch);
+$node = "/issues" . "/" . $iid . "/isOpen.json";
+$result = $this->updateNodeCurl($node, "false");
 
-//$data = array('answer'=>$answer);
-$data_json = json_encode($answer);
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
-curl_setopt($ch, CURLOPT_URL, $this->url . "/issues" . "/" . $iid . "/answer.json");
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$result  = curl_exec($ch);
-curl_close($ch);
+$node = "/issues" . "/" . $iid . "/answer.json";
+$result .= $this->updateNodeCurl($node, $answer);
 
   return $result;
 }
 
-  public function deneme(){
-    //echo"deneme";
+  public function getNodeCurl($requestingNode){
+        $this->curlHandler = curl_init($this->url . "/" . $requestingNode);
+    curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($this->curlHandler, CURLOPT_SSL_VERIFYPEER,false);
+    $result = curl_exec($this->curlHandler);
+    curl_close($this->curlHandler);
+	return $result;
+  }
+    public function updateNodeCurl($updatingNode, $value){
+    $data_json = json_encode($value);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+curl_setopt($ch, CURLOPT_URL, $this->url . $updatingNode);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result  = curl_exec($ch);
+curl_close($ch);
+return $result;
   }
 
 
