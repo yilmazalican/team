@@ -161,6 +161,56 @@ $result = $this->insertNodeCurl($node, $data);
 echo $result;
 return $result;
 		  }
+		  
+		  
+		  public function getUsers (){
+    //echo"Issue";
+    $result = $this->getNodeCurl("users.json");
+
+    $data = json_decode($result, TRUE);
+	
+    $tableGen = "<table border=1><td>Status</td><td>ID</td><td>First Name</td><td>Last Name</td><td>Email</td><td>Change Status</td>";
+    $closedData = "<p>Passive Users<br>" . $tableGen;
+    $openData = "<p>Active Users<br>" . $tableGen;
+    foreach ($data as $key => $value) {
+      $issueOutput = "";
+        if($data[$key]['isActive'] == "true"){
+          $issueOutput .= "<tr bgcolor='#22ff22'>";
+          $issueOutput .= "<td>Active</td>";
+        }
+        else{
+          $issueOutput .= "<tr bgcolor='#ff3311'>";
+          $issueOutput .= "<td>Passive</td>";
+        }
+
+      //$issueOutput .= "id: " . $key;
+      $issueOutput .= "<td>" . $key . "</td>";
+      $issueOutput .= "<td>" . $data[$key]['firstName'] . "</td>";
+      $issueOutput .= "<td>" . $data[$key]['lastName'] . "</td>";
+	  $issueOutput .= "<td>" . $data[$key]['email'] . "</td>";
+      
+      if($data[$key]['isActive'] == "true"){
+        $issueOutput .= "<td><a href=?userState=false&changeUserStatus=" . $key . ">Make Passive</a></td>";
+      }
+      else{
+        $issueOutput .= "<td><a href=?userState=true&changeUserStatus=" . $key . ">Make Active</a></td>";
+      }
+
+      $issueOutput .= "</tr>";
+
+      if($data[$key]['isActive'] == "true"){
+        $openData .= $issueOutput;
+      }
+      else{
+        $closedData .= $issueOutput;
+      }
+    }
+    $openData .= "</table>";
+    $closedData .= "</table>";
+
+    return ($openData . "<hr>" . $closedData);
+  }
+		  
 	  
 	  public function getNodeCurl($requestingNode){
         $this->curlHandler = curl_init($this->url . "/" . $requestingNode);

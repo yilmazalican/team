@@ -17,6 +17,10 @@ if($_GET['route'] === "issue"){
   $pageTitle = "Promotion Management";
   $pageSubTitle = "Listing Promotions<hr>";
   $data = $curl->getPromotions();
+}else if($_GET['route'] === "uman"){
+$pageTitle = "User Management";
+  $pageSubTitle = "Listing Users<hr>";
+  $data = $curl->getUsers();
 }else if(isset($_GET['promoState'])&&isset($_GET['changePromoStatus'])){
 	$curl->changeStatusOfPromo($_GET['changePromoStatus'], $_GET['promoState']);
   $pageTitle = "Promotion Management";
