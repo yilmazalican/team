@@ -52,6 +52,7 @@
                                 <state key="normal" title="Add Flat"/>
                                 <connections>
                                     <action selector="addFlatButtonAction:" destination="GVW-gj-Ql5" eventType="touchUpInside" id="QDA-DC-v5M"/>
+                                    <segue destination="mUX-pl-p7k" kind="show" id="TFk-da-juU"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="Describe your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="MDI-9h-tz9">
@@ -86,8 +87,8 @@
                             </textField>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-pS-Vhq">
                                 <rect key="frame" x="169.5" y="382" width="37" height="37"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,7 +225,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-61-seI">
-                                    <rect key="frame" x="51" y="822" width="200" height="31"/>
+                                    <rect key="frame" x="50" y="822" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevator:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osU-qC-Eca">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -272,7 +273,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gBt-qd-9Mz">
-                                    <rect key="frame" x="51" y="1077" width="200" height="31"/>
+                                    <rect key="frame" x="50" y="1077" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooling:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTM-GF-sCV">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -307,7 +308,7 @@
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5ar-V3-1C5">
-                                    <rect key="frame" x="51" y="720" width="200" height="31"/>
+                                    <rect key="frame" x="50" y="720" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoking:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kX-9Y-0zM">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -331,7 +332,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I1j-GX-RYR">
-                                    <rect key="frame" x="51" y="771" width="200" height="31"/>
+                                    <rect key="frame" x="50" y="771" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pool:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI2-jC-Rkp">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -355,7 +356,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tuW-j2-nV8">
-                                    <rect key="frame" x="51" y="873" width="200" height="31"/>
+                                    <rect key="frame" x="50" y="873" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Washing Machine:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evN-Xd-EYu">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -379,7 +380,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dia-Jf-NBA">
-                                    <rect key="frame" x="51" y="924" width="200" height="31"/>
+                                    <rect key="frame" x="50" y="924" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-fG-Yrb">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -403,7 +404,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="apa-ls-8mK">
-                                    <rect key="frame" x="51" y="975" width="200" height="31"/>
+                                    <rect key="frame" x="50" y="975" width="200" height="31"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gate Keeper:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFC-Ba-1qs">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -500,6 +501,14 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="644" y="-859"/>
+        </scene>
+        <!--MainFlow-->
+        <scene sceneID="dqh-2P-5aC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainFlow" id="mUX-pl-p7k" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjK-He-PUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427" y="-472"/>
         </scene>
         <!--Choose Photo View Controller-->
         <scene sceneID="mcg-GY-JDy">

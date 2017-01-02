@@ -86,7 +86,7 @@ class EditFlatViewController: UIViewController {
         
         if sender.text != "" {
             
-            editingFlat.title = sender.text
+            editingFlat.price = Double(sender.text!)
         }
         else {
             
@@ -136,10 +136,11 @@ class EditFlatViewController: UIViewController {
     }
     /// This method  edit flat's information in the firebase when users click button.
     @IBAction func editFlatActionButton(_ sender: Any) {
+        
         firebase.edit(oldcity: oldCity, newFlt: editingFlat) { (err) in
             print(err)
         }
-    }
+          }
 
 }
 

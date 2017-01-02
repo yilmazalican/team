@@ -80,6 +80,9 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     /// This function adds flat to whishlist
     @IBAction func addtoWish(_ sender: UIButton) {
         self.flatEP.getFlatofUser(userID: self.receivedFlat!.userID!, flatID: self.receivedFlat!.flatID!) { (flt) in
+            
+      
+            
             self.flatEP.addWishList(flt: flt!) { (err) in
                 
                 self.wishListButton.isEnabled = false 

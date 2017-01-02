@@ -261,7 +261,9 @@ class FIRUSER: FIRUSERDelegate {
             "issued": toUser.id!,
             "title": issue.title!,
             "issuer": issue.issuer!] as [String : Any]
+
         FIRREF.instance().getRef().child("issues/"  + issue.ID!).setValue(insertingDict) { (err, nil) in
+
             if err == nil
             {
                 completion(nil)
