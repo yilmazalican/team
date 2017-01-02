@@ -8,41 +8,55 @@
 
 import UIKit
 
-class WishVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class WishVC: UIViewController,imageMaker {
     
     let dbflat = FIRFlat()
     let dbusr = FIRUSER()
-   
-    var imgsArr = [String:Flat]()
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Wishcell") as! Wishcell
-        return UITableViewCell()
-    }
+    
+      @IBOutlet weak var wishListTV: WishListTableView!
+  
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-
-
-    @IBOutlet weak var wishTV: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+wishList()
+        
+    }
+
+    
+ 
+    
+    
+    func wishList() {
+        
         dbusr.getCurrentLoggedIn { (usr) in
-            self.dbusr.getWishes(usrID: (usr?.id)!, completion: { (dict) in
-                for a in dict{
-                    self.dbflat.getFlatImages(flatID: a.key, completion: { (imgs) in
-                        self.dbflat.getFlatofUser(userID: (usr?.id)!, flatID: a.key, completion: { (flt) in
-                            self.imgsArr[(imgs?.first?.imageDownloadURL!)!] = flt as! Flat?
-                            self.wishTV.reloadData()
+            
+            self.dbusr.getWishes(usrID: (usr?.id!)!, completion: { (dict) in
+                
+                if let dicti = dict {
+                    
+                    for item in dicti {
+                        
+                        self.dbflat.getFlatImages(flatID: item.key, completion: { (downloadedImages) in
+                                self.wishListTV.flatImages.append((downloadedImages?.first?.imageDownloadURL)!)
+                            self.wishListTV.reloadData()
                         })
-                    })
+                        
+                        
+                    }
 
                 }
+                
+                else {
+                    
+                    print("no flat ")
+                }
+                
+                
             })
-
         }
 
     }
-
 
 }

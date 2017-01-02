@@ -9,9 +9,9 @@
 import UIKit
 
 class Wishcell: UITableViewCell {
-    @IBOutlet weak var flatTitleLv: UILabel!
+   
     @IBOutlet weak var flatIV: UIImageView!
-    @IBOutlet weak var flatDescLb: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

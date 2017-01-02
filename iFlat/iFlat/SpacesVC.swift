@@ -105,12 +105,19 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let storyboard = UIStoryboard(name: "EditFlatStoryboard", bundle: nil)
-        let navigation = segue.destination as! EditFlatViewController
-        navigation.oldCity = self.oldCity!
-        navigation.editingFlat = self.oldFlat as! Flat
-
-    }
+        if segue.identifier == "editFlatsegue" {
+            
+            let targetController = segue.destination as! EditFlatViewController
+            
+            targetController.oldCity = self.oldCity!
+            targetController.editingFlat = self.oldFlat as! Flat
+        }
+        else {
+            
+            
+        }
+        
+         }
     
     
 

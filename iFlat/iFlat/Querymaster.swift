@@ -183,6 +183,10 @@ class Querymaster:QuerymasterDelegate
                         })
                     }
                 }
+                else
+                {
+                    completion(self.returningFlats)
+                }
             })
         })
     }
