@@ -18,6 +18,7 @@
 	<hr>
 <ul>
   <li><a href="?route=issue">Issue Management</a></li>
+  <li><a href="?route=promo">Promotion Management</a></li>
   <li><a href="?route=uman">User Management</a></li>
 </ul>
 <hr>

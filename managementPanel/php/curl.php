@@ -14,7 +14,7 @@ class curl {
 
     $data = json_decode($result, TRUE);
 	
-    $tableGen = "<table><td>Status</td><td>Issuer</td><td>Issued</td><td>Title</td><td>Content</td><td>Answer</td>";
+    $tableGen = "<table border=1><td>Status</td><td>Issuer</td><td>Issued</td><td>Title</td><td>Content</td><td>Answer</td>";
     $closedData = "<p>Closed Issues<br>" . $tableGen;
     $openData = "<p>Open Issues<br>" . $tableGen;
     foreach ($data as $key => $value) {
@@ -79,6 +79,55 @@ $result .= $this->updateNodeCurl($node, $answer);
 
   return $result;
 }
+
+
+public function getPromotions (){
+    echo"Issue";
+    $result = $this->getNodeCurl("promotions.json");
+
+    $data = json_decode($result, TRUE);
+	
+    $tableGen = "<table border=1><td>Status</td><td>Title</td><td>Discount Rate</td><td>Description</td><td>Change Status</td>";
+    $closedData = "<p>Passive Promotions<br>" . $tableGen;
+    $openData = "<p>Active Promotions<br>" . $tableGen;
+    foreach ($data as $key => $value) {
+      $issueOutput = "";
+        if($data[$key]['isActive'] == "true"){
+          $issueOutput .= "<tr bgcolor='#22ff22'>";
+          $issueOutput .= "<td>Active</td>";
+        }
+        else{
+          $issueOutput .= "<tr bgcolor='#ff3311'>";
+          $issueOutput .= "<td>Passive</td>";
+        }
+
+      //$issueOutput .= "id: " . $key;
+      $issueOutput .= "<td>" . $data[$key]['title'] . "</td>";
+      $issueOutput .= "<td>" . $data[$key]['discountRate'] . "</td>";
+      $issueOutput .= "<td>%" . ($data[$key]['description']*100) . "</td>";
+      
+      if(isset($data[$key]['isActive'])){
+        $issueOutput .= "<td><a href=?promoState=true&changePromoStatus=" . $key . ">Make Passive</a></td>";
+      }
+      else{
+        $issueOutput .= "<td><a href=?promoState=false&changePromoStatus=" . $key . ">Make Active</a></td>";
+      }
+
+      $issueOutput .= "</tr>";
+
+      if($data[$key]['isActive'] == "true"){
+        $openData .= $issueOutput;
+      }
+      else{
+        $closedData .= $issueOutput;
+      }
+    }
+    $openData .= "</table>";
+    $closedData .= "</table>";
+
+    return ($openData . "<hr>" . $closedData);
+  }
+
 
   public function getNodeCurl($requestingNode){
         $this->curlHandler = curl_init($this->url . "/" . $requestingNode);
