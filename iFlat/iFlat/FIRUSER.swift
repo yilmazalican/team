@@ -79,7 +79,7 @@ class FIRUSER: FIRUSERDelegate {
      
      */
     internal func getWishes(usrID: String, completion: @escaping ([String:Bool]?) -> ()) {
-        FIRREF.instance().getRef().child("wishes/" + usrID).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("Wishes/" + usrID).observe(.value, with: { (ss) in
             if ss.childrenCount == 0{
                 completion(nil)
             }
