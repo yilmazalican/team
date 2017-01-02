@@ -40,6 +40,7 @@ class ControlPanelVC: UITableViewController, ShowAlert, MFMailComposeViewControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.reloadData()
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

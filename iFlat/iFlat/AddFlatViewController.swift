@@ -277,13 +277,13 @@ class AddFlatViewController: UIViewController {
                  
                             self.indicator.stopAnimating()
                             
-                            for vc in viewControllers {
-                                if(vc is SpacesVC){
-                                    self.navigationController!.popToViewController(vc, animated: true)
-                                }
-                            }
                         
                     })
+                    for vc in viewControllers {
+                        if(vc is SpacesVC){
+                            self.navigationController!.popToViewController(vc, animated: true)
+                        }
+                    }
 
 
                     

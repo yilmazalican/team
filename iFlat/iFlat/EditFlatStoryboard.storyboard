@@ -726,7 +726,6 @@
                                 <state key="normal" title="Edit Flat"/>
                                 <connections>
                                     <action selector="editFlatActionButton:" destination="AoD-Ru-LvQ" eventType="touchUpInside" id="lj6-iX-DB2"/>
-                                    <segue destination="tRe-Og-6Dn" kind="show" id="vbS-wY-Tsa"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBO-sd-luR">
@@ -742,7 +741,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
                                 <connections>
                                     <action selector="flatPriceTitleTextEditing:" destination="AoD-Ru-LvQ" eventType="editingDidEnd" id="UKR-qj-63h"/>
                                 </connections>
@@ -813,14 +812,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6X-Pv-sM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-367" y="434"/>
-        </scene>
-        <!--MainFlow-->
-        <scene sceneID="FDS-G5-BWm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MainFlow" id="tRe-Og-6Dn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w90-Fs-u7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="467" y="820"/>
         </scene>
     </scenes>
     <resources>
