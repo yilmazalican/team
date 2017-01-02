@@ -47,8 +47,21 @@ protocol FIRUSERDelegate :class
 
 
 
-///This class is the object which connects coder to Db for manipulation.
+    /**
+     This class is the object which connects coder to Db for manipulation.
+    Developers can use this class at their controller classes. This class **usage** directly in model is not **allowed.**
+    This class' methods only takes parameters of User,Flat and other models which conforms related protocols i.e. ManipulableUser
+     */
 class FIRUSER: FIRUSERDelegate {
+    
+    /**
+        This method returns its completion closure paramter, the users which have wishes. The returning wishes returns as flatID.
+     - parameters:
+            - usrID: The userID which is ID of user whose wishes requested.
+            - completion: This parameter is a callback closure block which returns the wishes as dictionary String:Bool.
+                            key of the dictionary is the id of user, value is always true.
+     
+     */
     internal func getWishes(usrID: String, completion: @escaping ([String:Bool]?) -> ()) {
         FIRREF.instance().getRef().child("Wishes/" + usrID).observe(.value, with: { (ss) in
             if ss.childrenCount == 0{
@@ -63,10 +76,18 @@ class FIRUSER: FIRUSERDelegate {
         })
     }
 
-    /// This function loads flat by flatID from DB
-    ///
-    ///  - Parameter id: (String) flat ID
-    ///  - Parameter completion: Completion Block
+   
+    
+
+    
+    /**
+      Get flat by its id as ManipulableFlat object
+     - parameters:
+        - id: The id which is ID of flat whose requested.
+        - completion: This parameter is a callback closure block which returns flats as ManipulableFlat object.
+     - returns:Void
+     - throws:FIRERROR
+     */
     internal func getFlatByID(id: String, completion: @escaping (ManipulableFlat?) -> ()) {
         FIRREF.instance().getRef().child("filter_flats/" + id).observe(.value, with: { (ss) in
             let flt = Flat()
@@ -101,6 +122,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter usr: (ManipubleUser)
     ///  - Parameter completion: Completion Block
+    ///  - throws: FIRERROR?
+    ///  - returns void
     internal func getUsersReservationRequests(usr:ManipulableUser,completion: @escaping([ReservationRequest]) -> ()) {
         var returningReqs = [ReservationRequest]()
         FIRREF.instance().getRef().child("reservationRequests").queryOrdered(byChild: "toU").queryEqual(toValue: usr.id).observe(.value, with: { (ss) in
@@ -131,6 +154,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter req: (ReservationRequest)
     ///  - Parameter completion: Completion Block
+    ///  - throws: FIRERRIR
+    ///  - returns: void
     internal func acceptReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(1, forKey: "accepted")
     }
@@ -139,6 +164,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter req: (ReservationRequest)
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func rejectReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(2, forKey: "accepted")
     }
@@ -147,6 +174,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter req: (ReservationRequest)
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func sendReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(
             [
@@ -176,6 +205,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter id: (String) UserID
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getUserByID(id: String, completion: @escaping (ManipulableUser?) -> ()) {
         let usr = User()
         
@@ -200,8 +231,13 @@ class FIRUSER: FIRUSERDelegate {
         })
     }
     
-    //MARK:BUGGY?
 
+    /// This function opens issue to specific user.
+    ///
+    ///  - Parameter toUser: (ManipulableUser) User
+    ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func openIssue(toUser: ManipulableUser, issue: Issue, completion: @escaping (String?) -> ()) {
         let insertingDict = [
             "content": issue.content!,
@@ -209,7 +245,7 @@ class FIRUSER: FIRUSERDelegate {
             "issued": toUser.id!,
             "title": issue.title!,
             "issuer": issue.issuer!] as [String : Any]
-        FIRREF.instance().getRef().child("Issues/" + toUser.id! + "/" + issue.ID!).setValue(insertingDict) { (err, nil) in
+        FIRREF.instance().getRef().child("issues/"  + issue.ID!).setValue(insertingDict) { (err, nil) in
             if err == nil
             {
                 completion(nil)
@@ -221,7 +257,12 @@ class FIRUSER: FIRUSERDelegate {
         }
     }
 
-    //MARK : BUGGY?
+    /// This function gets issue of user.
+    ///
+    ///  - Parameter user: (ManipulableUser) User object
+    ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getISsue(user: ManipulableUser, completion: @escaping ([Issue]) -> ()) {
         var issues = [Issue]()
         FIRREF.instance().getRef().observe(.value, with: { (ss) in
@@ -234,7 +275,7 @@ class FIRUSER: FIRUSERDelegate {
                 let title = value["title"] as! String
                 let content = value["content"] as! String
                 let issued = value["issued"] as! String
-                let isOpen = value["isopen"] as! Bool
+                let isOpen = value["isopen"] as! String
                 let answer = value["answer"] as? String
                 var issue = Issue(title: title, content: content, issued: issued)
                 issue.ID = key.key
@@ -254,6 +295,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter email: (String) UserEmail
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func forgotPassword(email: String, completion: @escaping (String?) -> ()) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (err) in
             if err != nil
@@ -268,8 +311,11 @@ class FIRUSER: FIRUSERDelegate {
             }
         })
     }
-
-    /// This function loads cities from DB
+    /// This function gets cities from the db.
+    ///
+    ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getCities(completion: @escaping ([String]) -> ()) {
         FIRREF.instance().getRef().child("cities").queryOrderedByKey().observe(.value, with: { (ss) in
         var arr = [String]()
@@ -290,6 +336,8 @@ class FIRUSER: FIRUSERDelegate {
     ///  - Parameter user: (ManipubleUser) that currently logged
     ///  - Parameter img: (UIImage) new profile image
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func changeUserProfileImage(user: ManipulableUser, img: UIImage, completion: @escaping (String?) -> ()) {
         user.profileImage = img
         insertUserProfileImage(user: user) { (str) in
@@ -306,6 +354,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter userID: (String) User ID of requesting one
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getUserRates(userID: String, completion: @escaping ([Rate]?) -> ()) {
         var allRates = [Rate]()
         FIRREF.instance().getRef().child("user_rates/" + userID).observe(.value, with:  { (ss) in
@@ -329,6 +379,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter toUserID: (String) User ID of rating user
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func rateUser(toUserID:String, rate: Rate, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("user_rates/" + toUserID + "/" + rate.rateID!).setValue(["from" : rate.from_userID!, "rate": rate.rate!]) { (err, nil) in
             if err == nil
@@ -349,6 +401,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter user: ManipubleUSer
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getUserProfileImg(user: ManipulableUser, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("user_profile_images/" + user.id!).observeSingleEvent(of: .value, with: { (ss) in
             let dict = ss.value as! [String:String]
@@ -362,6 +416,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter user: ManipubleUser
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func insertUserProfileImage(user: ManipulableUser, completion: @escaping (String?) -> ()) {
         if let profileImg = user.profileImage
         {
@@ -401,6 +457,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter newEmail: UserEmail
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func changeEmail(newEmail: String, completion: @escaping (String?) -> ()) {
         
         
@@ -422,6 +480,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter newPassword: UserEmail
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func changePassword(newPassword:String,completion: @escaping (String?) -> ()) {
             FIRAuth.auth()?.currentUser?.updatePassword(newPassword, completion: { (err) in
                 if err == nil
@@ -438,6 +498,8 @@ class FIRUSER: FIRUSERDelegate {
     /// This function checks is user verified
     ///
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func isUserVerified(completion: @escaping (Bool) -> ()) {
             let isVerified = FIRAuth.auth()?.currentUser?.isEmailVerified
             completion(isVerified!)
@@ -447,6 +509,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter completion: Completion Block that gets String
     ///  - Returns: Void
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func sendverificationEmail(completion: @escaping (String?) -> ()) {
         FIRAuth.auth()?.currentUser?.sendEmailVerification(completion: { (e) in
             if e == nil
@@ -467,6 +531,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter email: UserEmail
     ///  - Parameter completion: Completion Block that gets ManipubleUser
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getByEmail(email: String, completion: @escaping (ManipulableUser?) -> ()) {
         let usr = User()
 
@@ -497,6 +563,8 @@ class FIRUSER: FIRUSERDelegate {
     ///Returning parameters are in completion block.
     ///
     ///  - Parameter completion: Completion Block that gets ManipubleUser
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getCurrentLoggedIn(completion:  @escaping (ManipulableUser?) -> ()) {
         if let loggedUsr = FIRAuth.auth()?.currentUser{
             getByEmail(email: loggedUsr.email!, completion: { (usr) in
@@ -553,6 +621,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter newUsr: ManipubleUser object that edited
     ///  - Parameter completion: Completion Block that gets String
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func edit(newUsr: ManipulableUser!, completion:  @escaping (String?) -> ()) {
         getCurrentLoggedIn { (loggedUser) in
             if loggedUser != nil
@@ -597,6 +667,8 @@ class FIRUSER: FIRUSERDelegate {
     ///
     ///  - Parameter usr: New Manipuble User
     ///  - Parameter completion: Completion Block that get String
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func insert( usr: ManipulableUser!, completion: @escaping (String?) -> ()) {
         FIRAuth.auth()?.createUser(withEmail: usr.email!, password: usr.password!, completion: { (user, err) in
             if err == nil
