@@ -12,9 +12,8 @@ class WishVC: UIViewController,imageMaker {
     
     let dbflat = FIRFlat()
     let dbusr = FIRUSER()
-   
-
-    @IBOutlet weak var wishListTV: WishListTableView!
+    
+      @IBOutlet weak var wishListTV: WishListTableView!
   
 
     
@@ -22,6 +21,7 @@ class WishVC: UIViewController,imageMaker {
         super.viewDidLoad()
         
 wishList()
+        
     }
 
     
@@ -33,25 +33,36 @@ wishList()
         dbusr.getCurrentLoggedIn { (usr) in
             
             self.dbusr.getWishes(usrID: (usr?.id!)!, completion: { (dict) in
-                for item in dict {
+                
+                if let dicti = dict {
                     
-                    self.dbflat.getFlatImages(flatID: item.key, completion: { (downloadedImages) in
+                    for item in dicti {
                         
-                        
-                        self.urlToImage(url: (downloadedImages?.first?.imageDownloadURL)!, completionHandler: { (image) in
+                        self.dbflat.getFlatImages(flatID: item.key, completion: { (downloadedImages) in
                             
                             
-                            self.wishListTV.flatImages.append( FlatImage(image:image))
+                            self.urlToImage(url: (downloadedImages?.first?.imageDownloadURL)!, completionHandler: { (image) in
+                                
+                                
+                                self.wishListTV.flatImages.append( FlatImage(image:image))
+                                
+                            })
+                            
+                            self.wishListTV.reloadData()
+                            
                             
                         })
                         
-                        self.wishListTV.reloadData()
                         
-                        
-                    })
-                    
-                    
+                    }
+
                 }
+                
+                else {
+                    
+                    print("no flat ")
+                }
+                
                 
             })
         }

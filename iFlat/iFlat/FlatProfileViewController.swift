@@ -11,6 +11,7 @@ import UIKit
 // This class controls flat profile view
 class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var wishListButton: UIButton!
     // Outlet for UserProfileImage whose flats user
     @IBOutlet weak var userProfileIV: UIImageView!
     // Outlet for flatImages
@@ -78,6 +79,8 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     @IBAction func addtoWish(_ sender: UIButton) {
         self.flatEP.getFlatofUser(userID: self.receivedFlat!.userID!, flatID: self.receivedFlat!.flatID!) { (flt) in
             self.flatEP.addWishList(flt: flt!) { (err) in
+                
+                self.wishListButton.isEnabled = false 
         }
         
         }
