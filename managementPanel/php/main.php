@@ -2,7 +2,7 @@
 include_once 'auth.php';
 include_once 'curl.php';
 
-if($_GET['logout']){
+if(isset($_GET['logout'])){
   $auth = new auth();
   $auth->logout();
 }
@@ -18,9 +18,21 @@ if($_GET['route'] === "issue"){
   $pageSubTitle = "Listing Promotions<hr>";
   $data = $curl->getPromotions();
 }else if(isset($_GET['promoState'])&&isset($_GET['changePromoStatus'])){
-
+	$curl->changeStatusOfPromo($_GET['changePromoStatus'], $_GET['promoState']);
+  $pageTitle = "Promotion Management";
+  $pageSubTitle = "Listing Promotions<hr>";
+  $data = $curl->getPromotions();
 }
-
+else if($_GET['route'] === "addPromo"){
+  $pageTitle = "Promotion Management";
+  $pageSubTitle = "Add Promotion<hr>";
+  $data = $curl->addPromotionForm();
+  if(isset($_POST['promoTitle'])&&isset($_POST['promoRatio'])&&isset($_POST['promoDesc'])){
+  $pageTitle = "Promotion Management";
+  $pageSubTitle = "Added Promotion<hr>";
+  $data = $curl->addPromotion($_POST['promoTitle'], $_POST['promoRatio'], $_POST['promoDesc']);
+}
+}
 
 else if(isset($_GET['iid'])){
   $pageTitle = "Issue Closing";
