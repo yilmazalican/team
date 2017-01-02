@@ -133,7 +133,7 @@ public function getPromotions (){
 	  
 	  
 	  $node = "/promotions" . "/" . $pid . "/isActive.json";
-$result .= $this->updateNodeCurl($node, $status);
+$result = $this->updateNodeCurl($node, $status);
 
   return $result;
 	  }
@@ -215,7 +215,7 @@ return $result;
 	  
 	  
 	  $node = "/users" . "/" . $pid . "/isActive.json";
-$result .= $this->updateNodeCurl($node, $status);
+$result = $this->updateNodeCurl($node, $status);
 
   return $result;
 	  }

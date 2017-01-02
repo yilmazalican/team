@@ -19,7 +19,7 @@ class auth {
     curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($this->curlHandler, CURLOPT_SSL_VERIFYPEER,false);
     $dataJson =  curl_exec($this->curlHandler);
-	echo "json" . $dataJson;
+	//echo "json" . $dataJson;
     curl_close($this->curlHandler);
 	
     $data = json_decode($dataJson, TRUE);
@@ -30,7 +30,9 @@ class auth {
         if(strcmp($data[$key]['pass'],$pass) == 0){
           if(strcmp($data[$key]['activated'],"1") == 0){
             $_SESSION['login'] = $data[$key];
-          }
+          }else{
+		  echo"Account Disabled!<br>";
+		  }
         }
       }
     }
