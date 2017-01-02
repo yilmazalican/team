@@ -19,7 +19,7 @@ class curl {
     $openData = "<p>Open Issues<br>" . $tableGen;
     foreach ($data as $key => $value) {
       $issueOutput = "";
-        if($data[$key]['isOpen'] == 1){
+        if($data[$key]['isOpen'] == "true"){
           $issueOutput .= "<tr bgcolor='#22ff22'>";
           $issueOutput .= "<td>OPEN</td>";
         }
@@ -42,7 +42,7 @@ class curl {
 
       $issueOutput .= "</tr>";
 
-      if($data[$key]['isOpen'] == 1){
+      if($data[$key]['isOpen'] == "true"){
         $openData .= $issueOutput;
       }
       else{
