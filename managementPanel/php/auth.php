@@ -41,7 +41,7 @@ class auth {
       echo "Logged in!";
       header("Refresh: 1");
     }else{
-      echo "Login failed!";
+      echo"<script language=javascript>alert('Login Failed! Email or Password wrong!');</script><br>";
 
     }
 
@@ -58,7 +58,7 @@ class auth {
   public function logout(){
         session_start();
     session_destroy();
-    echo "Logged out!";
+    echo"<script language=javascript>alert('Logout successfully!');</script><br>";
     header("Refresh: 0; url=index.php");
   }
 
