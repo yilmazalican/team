@@ -7,25 +7,32 @@ class auth {
 
   public function __construct(){
 
-    $this->url = $this->dbUrl . "/admins.json";
-    $this->curlHandler = curl_init($this->url);
+
 
   }
 
   public function login($mail, $pass) {
+      $this->url = $this->dbUrl . "/admins.json";
+	  
+    $this->curlHandler = curl_init($this->url);
     curl_setopt($this->curlHandler, CURLOPT_NOBODY, false);
     curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($this->curlHandler, CURLOPT_SSL_VERIFYPEER,false);
     $dataJson =  curl_exec($this->curlHandler);
+	//echo "json" . $dataJson;
     curl_close($this->curlHandler);
-
+	
     $data = json_decode($dataJson, TRUE);
-    session_start();
+    //session_start();
+	
     foreach ($data as $key => $value) {
       if(strcasecmp($data[$key]['mail'],$mail) == 0){
         if(strcmp($data[$key]['pass'],$pass) == 0){
           if(strcmp($data[$key]['activated'],"1") == 0){
             $_SESSION['login'] = $data[$key];
-          }
+          }else{
+		  echo"<script language=javascript>alert('Account Disabled!');</script><br>";
+		  }
         }
       }
     }
@@ -34,7 +41,7 @@ class auth {
       echo "Logged in!";
       header("Refresh: 1");
     }else{
-      echo "Login failed!";
+      echo"<script language=javascript>alert('Login Failed! Email or Password wrong!');</script><br>";
 
     }
 
@@ -51,7 +58,7 @@ class auth {
   public function logout(){
         session_start();
     session_destroy();
-    echo "Logged out!";
+    echo"Logout successfully!";
     header("Refresh: 0; url=index.php");
   }
 
