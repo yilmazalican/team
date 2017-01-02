@@ -22,16 +22,20 @@ body {
 
 header {
   background: black;color:white;
+
 }
 footer {
   background: #aaa;color:white;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
 }
 .nav {
   background:#eee;
+  height: 80%;
+  top: 0;
+  bottom: 0;
 }
 
 .nav ul {
