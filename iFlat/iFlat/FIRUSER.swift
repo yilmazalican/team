@@ -241,7 +241,7 @@ class FIRUSER: FIRUSERDelegate {
     internal func openIssue(toUser: ManipulableUser, issue: Issue, completion: @escaping (String?) -> ()) {
         let insertingDict = [
             "content": issue.content!,
-            "isopen": issue.isOpen!,
+            "isOpen": issue.isOpen!,
             "issued": toUser.id!,
             "title": issue.title!,
             "issuer": issue.issuer!] as [String : Any]
