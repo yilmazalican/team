@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,ShowAlert {
+public class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate,ShowAlert {
 
     @IBOutlet weak var popUpView: UIView!{
         didSet{
@@ -40,7 +40,7 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
             titleTextField.delegate = self
         }
     }
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         firebase.getCurrentLoggedIn { (currentUser) in
@@ -48,14 +48,14 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
             
             self.issue.issuer = currentUser?.id
             
-            self.issue.isOpen = true
+            self.issue.isOpen = "true"
 
             self.issue.issued = self.reportedUser.id
         }
         
         }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -78,23 +78,23 @@ class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITextViewDe
     }
 
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         issue.title = textField.text
         
     }
   
-    func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
         issue.content  = textView.text
     }
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
         
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if text == "\n" {
             contentTextView.resignFirstResponder()
