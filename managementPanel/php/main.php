@@ -27,6 +27,12 @@ $pageTitle = "User Management";
   $pageSubTitle = "Listing Promotions<hr>";
   $data = $curl->getPromotions();
 }
+else if(isset($_GET['userState'])&&isset($_GET['changeUserStatus'])){
+	$curl->changeStatusOfUser($_GET['changeUserStatus'], $_GET['userState']);
+  $pageTitle = "User Management";
+  $pageSubTitle = "Listing Users<hr>";
+  $data = $curl->getUsers();
+}
 else if($_GET['route'] === "addPromo"){
   $pageTitle = "Promotion Management";
   $pageSubTitle = "Add Promotion<hr>";
@@ -42,10 +48,11 @@ else if(isset($_GET['iid'])){
   $pageTitle = "Issue Closing";
   $pageSubTitle = "Write answer to issue";
   $data = $curl->closeIssueForm($_GET['iid']);
-}else if(isset($_POST['answertext'])&&isset($_POST['iid'])){
+  if(isset($_POST['answertext'])&&isset($_POST['iid'])){
 	  $pageTitle = "Issue Closing Result";
 	$pageSubTitle = "Issue closed and the answer is,";
 	$data = $curl->closeIssue($_POST['iid'], $_POST['answertext']);
+}
 }
 require_once("template/mainTemplate.php");
 

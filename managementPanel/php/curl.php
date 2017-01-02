@@ -211,7 +211,14 @@ return $result;
     return ($openData . "<hr>" . $closedData);
   }
 		  
+	  public function changeStatusOfUser($pid,$status){
 	  
+	  
+	  $node = "/users" . "/" . $pid . "/isActive.json";
+$result .= $this->updateNodeCurl($node, $status);
+
+  return $result;
+	  }
 	  public function getNodeCurl($requestingNode){
         $this->curlHandler = curl_init($this->url . "/" . $requestingNode);
     curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
