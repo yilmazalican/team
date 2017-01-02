@@ -227,8 +227,8 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="502977513.84006202">
                                                     <!--2016-12-09 11:58:33 +0000-->
                                                 </date>
-                                                <date key="maximumDate" timeIntervalSinceReferenceDate="1546254000">
-                                                    <!--2049-12-31 11:00:00 +0000-->
+                                                <date key="maximumDate" timeIntervalSinceReferenceDate="504874800">
+                                                    <!--2016-12-31 11:00:00 +0000-->
                                                 </date>
                                                 <locale key="locale" localeIdentifier="tr"/>
                                             </datePicker>
