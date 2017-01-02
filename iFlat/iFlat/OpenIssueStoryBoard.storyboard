@@ -32,6 +32,7 @@
                                         <state key="normal" title="Open Issue"/>
                                         <connections>
                                             <action selector="openIssueActionButton:" destination="QdU-5Z-pRT" eventType="touchUpInside" id="0ew-ZV-CeE"/>
+                                            <segue destination="nyl-iD-RcZ" kind="show" id="tKc-SC-Pz9"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jTK-6D-qtJ">
@@ -101,6 +102,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwt-vj-yCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55.200000000000003" y="124.58770614692655"/>
+        </scene>
+        <!--MainFlow-->
+        <scene sceneID="PQi-1Q-8bw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainFlow" id="nyl-iD-RcZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gWV-SN-dzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="165"/>
         </scene>
     </scenes>
 </document>
