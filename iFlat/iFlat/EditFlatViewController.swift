@@ -84,7 +84,7 @@ class EditFlatViewController: UIViewController {
         
         if sender.text != "" {
             
-            editingFlat.title = sender.text
+            editingFlat.price = Double(sender.text!)
         }
         else {
             
@@ -133,13 +133,11 @@ class EditFlatViewController: UIViewController {
         
     }
     @IBAction func editFlatActionButton(_ sender: Any) {
+        
         firebase.edit(oldcity: oldCity, newFlt: editingFlat) { (err) in
             print(err)
         }
-        let storyBoard : UIStoryboard = UIStoryboard(name: "MainFlow", bundle:nil)
-        let vc = (storyBoard.instantiateViewController(withIdentifier: "mainFlow")) as UIViewController
-        self.navigationController?.pushViewController(vc, animated: false)
-    }
+          }
 
 }
 

@@ -39,7 +39,7 @@ class Issue
     }
     
     init() {
-        
+         self.ID = UUID().uuidString
     }
     
     

@@ -50,7 +50,7 @@ protocol FIRUSERDelegate :class
 ///This class is the object which connects coder to Db for manipulation.
 class FIRUSER: FIRUSERDelegate {
     internal func getWishes(usrID: String, completion: @escaping ([String:Bool]?) -> ()) {
-        FIRREF.instance().getRef().child("Wishes/" + usrID).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("wishes/" + usrID).observe(.value, with: { (ss) in
             if ss.childrenCount == 0{
                 completion(nil)
             }
@@ -185,7 +185,7 @@ class FIRUSER: FIRUSERDelegate {
             "issued": toUser.id!,
             "title": issue.title!,
             "issuer": issue.issuer!] as [String : Any]
-        FIRREF.instance().getRef().child("Issues/" + toUser.id! + "/" + issue.ID!).setValue(insertingDict) { (err, nil) in
+        FIRREF.instance().getRef().child("issues/" + toUser.id! + "/" + issue.ID!).setValue(insertingDict) { (err, nil) in
             if err == nil
             {
                 completion(nil)
