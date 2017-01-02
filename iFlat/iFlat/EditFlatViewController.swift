@@ -142,9 +142,15 @@ class EditFlatViewController: UIViewController {
     }
     /// This method  edit flat's information in the firebase when users click button.
     @IBAction func editFlatActionButton(_ sender: Any) {
-        
+         let viewControllers: [UIViewController] = self.navigationController!.viewControllers
         firebase.edit(oldcity: oldCity, newFlt: editingFlat) { (err) in
             print(err)
+        }
+        
+        for vc in viewControllers {
+            if(vc is SpacesVC){
+                self.navigationController!.popToViewController(vc, animated: true)
+            }
         }
           }
 
