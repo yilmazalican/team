@@ -105,7 +105,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         }
         /// This function retrieve user Image
         userRP.getUserByID(id: ownerID!) { (usr) in
-            self.userRP.getUserProfileImg(user: self.ownerID as! ManipulableUser, completion: { (url) in
+            self.userRP.getUserProfileImg(user: usr!, completion: { (url) in
                 self.userProfileIV.kf.setImage(with: URL(string:url!))
             })
         }
@@ -124,15 +124,15 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             self.bathroomCLb.text = String(describing:flt!.bathroomCount!)
 
             self.assignTrueOrFalse(sender: self.pool, what: (flt?.pool)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.internet)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.cooling)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.heating)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.tv)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.washingMachine)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.elevator)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.parking)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.smoking)!)
-            self.assignTrueOrFalse(sender: self.pool, what: (flt?.gateKeeper)!)
+            self.assignTrueOrFalse(sender: self.internet, what: (flt?.internet)!)
+            self.assignTrueOrFalse(sender: self.cooling, what: (flt?.cooling)!)
+            self.assignTrueOrFalse(sender: self.heating, what: (flt?.heating)!)
+            self.assignTrueOrFalse(sender: self.television, what: (flt?.tv)!)
+            self.assignTrueOrFalse(sender: self.washingMachine, what: (flt?.washingMachine)!)
+            self.assignTrueOrFalse(sender: self.elevator, what: (flt?.elevator)!)
+            self.assignTrueOrFalse(sender: self.parking, what: (flt?.parking)!)
+            self.assignTrueOrFalse(sender: self.smoking, what: (flt?.smoking)!)
+            self.assignTrueOrFalse(sender: self.gateKeeper, what: (flt?.gateKeeper)!)
 
             self.city.text = flt?.city
             self.address.text = flt?.address
