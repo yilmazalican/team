@@ -1,0 +1,8 @@
+Eren selamlar,
+
+Biz projemizi bazı teknik kısıtlardan dolayı beta klasörüne alamadık.
+Projeyi direk klonlabilirsin. Içerisinde ODDFINAL’da var.
+
+Kolay gelsin,
+
+team.
