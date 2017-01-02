@@ -29,6 +29,7 @@ protocol FIRFlatDelegate :class
 
 class FIRFlat:FIRFlatDelegate
 {
+    var endp = FIRUSER()
     /// This function deletes flat
     ///
     ///  - Parameter flt: (ManipubleFlat) flat that is wanted to be deleted
@@ -76,16 +77,10 @@ class FIRFlat:FIRFlatDelegate
     ///  - returns void
     ///  - throws: FIRERROR
     internal func addWishList(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
-        let insertingDict = [flt.id: true]
-        FIRREF.instance().getRef().child("Wishes/" + (FIRAuth.auth()?.currentUser?.uid)!).setValue(insertingDict) { (err, nil) in
-            if err == nil
-            {
-                completion(err.debugDescription)
-            }
-            else
-            {
-                completion(nil)
-            }
+     
+        endp.getCurrentLoggedIn { (usr) in
+            FIRREF.instance().getRef().child("Wishes/" + (usr?.id!)! + "/" + flt.id).setValue(true)
+
         }
         
     }
