@@ -11,7 +11,7 @@ import UIKit
 class WishListTableView: UITableView , UITableViewDelegate,UITableViewDataSource {
 
 
-    var flatImages = [FlatImage]()
+    var flatImages = [String]()
     
     
     override func awakeFromNib() {
@@ -33,7 +33,7 @@ class WishListTableView: UITableView , UITableViewDelegate,UITableViewDataSource
         
         if let cell: Wishcell = dequeueReusableCell(withIdentifier: "Wishcell", for: indexPath) as? Wishcell{
             
-            cell.flatIV.image = flatImages[indexPath.row].image
+            cell.flatIV.kf.setImage(with: URL(string:self.flatImages[indexPath.row]))
             return cell
         }
                 else {

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WishVC-->
+        <!--Favorites-->
         <scene sceneID="rbA-IP-zaa">
             <objects>
                 <viewController id="ddq-ta-XJO" customClass="WishVC" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,20 +65,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RBV-aG-aaq" firstAttribute="top" secondItem="nuj-dE-BXT" secondAttribute="bottom" constant="-20" id="JHM-rL-M5E"/>
+                            <constraint firstItem="RBV-aG-aaq" firstAttribute="top" secondItem="nuj-dE-BXT" secondAttribute="bottom" constant="-64" id="JHM-rL-M5E"/>
                             <constraint firstItem="YTS-mc-Nwf" firstAttribute="top" secondItem="RBV-aG-aaq" secondAttribute="bottom" id="K9p-bK-ZiS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RBV-aG-aaq" secondAttribute="trailing" constant="-16" id="bQm-U1-yHz"/>
                             <constraint firstItem="RBV-aG-aaq" firstAttribute="leading" secondItem="C4w-ro-sHu" secondAttribute="leadingMargin" constant="-16" id="nhk-WW-KNG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="yJM-51-G6x"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="YhH-9V-Rbv"/>
                     <connections>
                         <outlet property="wishListTV" destination="RBV-aG-aaq" id="xoS-C4-otU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re2-Zs-yyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511.19999999999999" y="427.73613193403304"/>
+            <point key="canvasLocation" x="1450.4000000000001" y="427.73613193403304"/>
         </scene>
         <!--Settings-->
         <scene sceneID="bNt-0X-ZZU">
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ets-gx-7Yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3172" y="26.53673163418291"/>
+            <point key="canvasLocation" x="4111.1999999999998" y="26.53673163418291"/>
         </scene>
         <!--My Spaces-->
         <scene sceneID="x2v-qK-rkf">
@@ -491,7 +491,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wt2-lp-5Vi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4060.8000000000002" y="23.388305847076463"/>
+            <point key="canvasLocation" x="5000" y="23.388305847076463"/>
         </scene>
         <!--Help and Support-->
         <scene sceneID="ILm-Q8-Lu1">
@@ -642,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jL-gH-EY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5131" y="783"/>
+            <point key="canvasLocation" x="6068.8000000000002" y="782.60869565217399"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JfM-xp-DOv">
@@ -654,7 +654,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ahx-xP-tMy" kind="relationship" relationship="viewControllers" id="tTg-Fv-YLy"/>
-                        <segue destination="ddq-ta-XJO" kind="relationship" relationship="viewControllers" id="Vpf-1a-7vH"/>
+                        <segue destination="kGd-1I-Iiz" kind="relationship" relationship="viewControllers" id="Vpf-1a-7vH"/>
                         <segue destination="00M-CM-aNQ" kind="relationship" relationship="viewControllers" id="hUi-Rd-mFJ"/>
                     </connections>
                 </tabBarController>
@@ -689,7 +689,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rll-EV-Dn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2300" y="25.637181409295355"/>
+            <point key="canvasLocation" x="3239.1999999999998" y="25.637181409295355"/>
         </scene>
         <!--Reservation Requests-->
         <scene sceneID="tjD-Ih-KAF">
@@ -771,7 +771,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3r-9s-hMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6318.3999999999996" y="28.785607196401802"/>
+            <point key="canvasLocation" x="7257.6000000000004" y="28.785607196401802"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="98k-hr-me0">
@@ -791,6 +791,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxH-rk-e9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="-241"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0zr-d8-4K3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kGd-1I-Iiz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="yJM-51-G6x"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HzC-2D-WXd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ddq-ta-XJO" kind="relationship" relationship="rootViewController" id="Xp2-17-SqK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GR8-Tg-vbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="511.19999999999999" y="427.73613193403304"/>
         </scene>
     </scenes>
     <resources>
