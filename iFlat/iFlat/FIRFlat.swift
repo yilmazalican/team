@@ -122,32 +122,35 @@ class FIRFlat:FIRFlatDelegate
                     return
                 }
                 //flat_images with non-async way :(
-                if flt.images!.count > 0
-                {
-                    for (index,iterator) in (flt.images?.enumerated())!
+                if flt.images != nil{
+                    if flt.images!.count > 0
                     {
-                        let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
-                        FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
-                            if err3 != nil
-                            {
-                                completion(err3.debugDescription)
-                                return
-                            } else {
-                                FIRREF.instance().getRef().child("flat_images/" + flt.id + "/" + iterator.id).setValue(["downloadURL": (mdata!.downloadURL()!.absoluteString)], withCompletionBlock: { (err4, nil) in
-                                    if err4 != nil
-                                    {
-                                        completion(err4.debugDescription)
-                                        return
-                                    }
-                                })
-                            }
-                        })
+                        for (index,iterator) in (flt.images?.enumerated())!
+                        {
+                            let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
+                            FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
+                                if err3 != nil
+                                {
+                                    completion(err3.debugDescription)
+                                    return
+                                } else {
+                                    FIRREF.instance().getRef().child("flat_images/" + flt.id + "/" + iterator.id).setValue(["downloadURL": (mdata!.downloadURL()!.absoluteString)], withCompletionBlock: { (err4, nil) in
+                                        if err4 != nil
+                                        {
+                                            completion(err4.debugDescription)
+                                            return
+                                        }
+                                    })
+                                }
+                            })
+                            
+                        }
+                        completion(nil)
                         
-                    }
-                    completion(nil)
-                    
-                    
+                        
+                    }  
                 }
+
                 
             }
             

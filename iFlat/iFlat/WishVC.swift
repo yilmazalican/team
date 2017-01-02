@@ -39,18 +39,8 @@ wishList()
                     for item in dicti {
                         
                         self.dbflat.getFlatImages(flatID: item.key, completion: { (downloadedImages) in
-                            
-                            
-                            self.urlToImage(url: (downloadedImages?.first?.imageDownloadURL)!, completionHandler: { (image) in
-                                
-                                
-                                self.wishListTV.flatImages.append( FlatImage(image:image))
-                                
-                            })
-                            
+                                self.wishListTV.flatImages.append((downloadedImages?.first?.imageDownloadURL)!)
                             self.wishListTV.reloadData()
-                            
-                            
                         })
                         
                         
