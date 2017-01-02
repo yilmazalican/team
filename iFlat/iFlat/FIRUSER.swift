@@ -41,6 +41,7 @@ protocol FIRUSERDelegate :class
     func getFlatByID(id:String, completion: @escaping(ManipulableFlat?) -> ())
     func getUsersReservationRequests(usr:ManipulableUser, completion: @escaping([ReservationRequest]) -> ())
     func getWishes(usrID:String, completion: @escaping([String:Bool]?) -> ())
+    func isUserBanned(usrID:String, completion: @escaping(Bool) -> ())
     
 }
 
@@ -53,6 +54,21 @@ protocol FIRUSERDelegate :class
     This class' methods only takes parameters of User,Flat and other models which conforms related protocols i.e. ManipulableUser
      */
 class FIRUSER: FIRUSERDelegate {
+    internal func isUserBanned(usrID: String, completion: @escaping (Bool) -> ()) {
+        let value = FIRREF.instance().getRef().child("users/" + usrID + "/" + "isActive").observe(.value, with: { (ss) in
+            let val = ss.value as! String
+            if val == "true"
+            {
+                completion(true)
+            }
+            else
+            {
+                completion(false)
+            }
+        })
+        
+    }
+
     
     /**
         This method returns its completion closure paramter, the users which have wishes. The returning wishes returns as flatID.
@@ -319,8 +335,8 @@ class FIRUSER: FIRUSERDelegate {
     internal func getCities(completion: @escaping ([String]) -> ()) {
         FIRREF.instance().getRef().child("cities").queryOrderedByKey().observe(.value, with: { (ss) in
         var arr = [String]()
-        let dict = ss.value as! [String:String]
-            for a in dict.values
+        let dict = ss.value as! [String]
+            for a in dict
             {
                 arr.append(a)
             }
@@ -549,6 +565,7 @@ class FIRUSER: FIRUSERDelegate {
                 usr.surname = objdict["lastName"]!
                 usr.country = objdict["country"]!
                 
+                
                 completion(usr)
             }
             else
@@ -680,7 +697,8 @@ class FIRUSER: FIRUSERDelegate {
                     "email": usr.email!,
                     "gender": usr.Gender!,
                     "birthdate": usr.birthDate!,
-                    "country": usr.country!
+                    "country": usr.country!,
+                    "isActive": "true"
                     ],
                     withCompletionBlock: { (err, ref) in
                         if err == nil{

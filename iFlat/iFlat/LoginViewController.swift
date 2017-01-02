@@ -98,14 +98,16 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
                 }
                 else{
                     self.dbbridge2.isUserVerified(completion: { (b) in
-                        if b
-                        {
-                            let viewControllerYouWantToPresent = self.storyboard?.instantiateViewController(withIdentifier: "mainFlow")
-                            self.present(viewControllerYouWantToPresent!, animated: true, completion: nil)
-                        }
-                        else{
-                            self.showAlert(title: "Error", message: "Please check your email to verify")
-                        }
+                        self.dbbridge2.isUserBanned(usrID: (FIRAuth.auth()?.currentUser?.uid)!, completion: { (b) in
+                            if b
+                            {
+                                let viewControllerYouWantToPresent = self.storyboard?.instantiateViewController(withIdentifier: "mainFlow")
+                                self.present(viewControllerYouWantToPresent!, animated: true, completion: nil)
+                            }
+                            else{
+                                self.showAlert(title: "Error", message: "Your email has not been verified or you are banned.")
+                            }
+                        })
                     })
 
                 }
