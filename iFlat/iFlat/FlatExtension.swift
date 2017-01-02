@@ -13,7 +13,9 @@ import Foundation
 extension Flat {
     
     
- 
+    /// This method provide control to entered value by flats.
+    /// if flat do not enter information , this method return true.
+    /// Return value is boolean.
     func isEmpty()->Bool {
         
         if self.address == nil || self.bathroomCount == nil || self.bedCount == nil || self.bedroomCount == nil || self.city == nil || self.flatCapacity == nil || self.price == nil  {

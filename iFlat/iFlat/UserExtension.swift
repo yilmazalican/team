@@ -12,7 +12,9 @@ import UIKit
 extension User {
     
     
-    
+    /// This method provide control to entered value by users like email,name,surname.
+    /// if user do not enter information , this method return true.
+    /// Return value is boolean.
     func isUserEmpty() ->Bool{
         
         if self.email == ""  || self.name == "" || self.surname == "" {

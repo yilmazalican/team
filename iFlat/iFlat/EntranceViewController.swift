@@ -64,7 +64,8 @@ class EntranceViewController: UIViewController {
         
     }
     
-    
+    /// This method provide users availabe flats at certain intervals.
+    /// this method has start date.
     @IBAction func fromDatePickerChanged(_ sender: UIDatePicker) {
         
         searchParameter.fromParameter = setDateToString(datePicker: FromDatePicker)
@@ -72,7 +73,8 @@ class EntranceViewController: UIViewController {
     }
     
    
-    
+    /// This method provide users availabe flats at certain intervals.
+    /// this method has end date.
     @IBAction func toDatePicker(_ sender: UIDatePicker) {
         
         searchParameter.toParameter = setDateToString(datePicker: ToDatePicker)
