@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This class controls filter view
 class FiltersViewController: UIViewController  {
 
     @IBOutlet var bedCountTextField: UITextField!
@@ -45,7 +46,7 @@ class FiltersViewController: UIViewController  {
 
     }
 
-    // This fuction inits UI, loads filter model's values to UI
+    /// This fuction inits UI, loads filter model's values to UI
     func initUI(){
         if(filter?.bathroomCount != nil){
             self.bathroomCountTextField.text = String(describing: (filter?.bathroomCount)!)
@@ -78,7 +79,7 @@ class FiltersViewController: UIViewController  {
         }
     }
     
-    // This function loads filter view properties to filter model when clicked at showFilterButton
+    /// This function loads filter view properties to filter model when clicked at showFilterButton
     @IBAction func showFilteredResultsButtonClicked(_ sender: Any) {
         
         filter?.bathroomCount = Int(self.bathroomCountTextField.text!)
