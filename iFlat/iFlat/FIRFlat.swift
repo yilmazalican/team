@@ -77,7 +77,7 @@ class FIRFlat:FIRFlatDelegate
     ///  - throws: FIRERROR
     internal func addWishList(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         let insertingDict = [flt.id: true]
-        FIRREF.instance().getRef().child("Wishes/" + flt.userID!).setValue(insertingDict) { (err, nil) in
+        FIRREF.instance().getRef().child("Wishes/" + (FIRAuth.auth()?.currentUser?.uid)!).setValue(insertingDict) { (err, nil) in
             if err == nil
             {
                 completion(err.debugDescription)
