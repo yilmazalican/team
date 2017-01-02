@@ -60,7 +60,9 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.didReceiveMemoryWarning()
     }
     
-    
+    /// This function gets flat infor from DB
+    ///
+    ///  - Parameter filter: (FilterModel) Applied Search Filter by user
     func getFlatInfoFromFireBase(filter : FilterModel){
         print("getFlatInfoCalled")
     }
