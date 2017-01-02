@@ -97,6 +97,7 @@ class EditPhotoViewController: UIViewController,imageMaker {
         
         
     }
+    
     @IBAction func editPhotoButtonAction(_ sender: Any) {
              
         
