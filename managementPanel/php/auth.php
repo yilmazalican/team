@@ -31,7 +31,7 @@ class auth {
           if(strcmp($data[$key]['activated'],"1") == 0){
             $_SESSION['login'] = $data[$key];
           }else{
-		  echo"Account Disabled!<br>";
+		  echo"<script language=javascript>alert('Account Disabled!');</script><br>";
 		  }
         }
       }
