@@ -16,10 +16,12 @@ protocol QuerymasterDelegate :class
     func getPromotions(completion: @escaping ([Promotion]) -> ())
 }
 
-
-
+/// This class is responsible for querying flats that matched to filter that applied by user, from DB
 class Querymaster:QuerymasterDelegate
 {
+    /// This function gets promotions from DB
+    ///
+    ///  - Parameter completion: Completion Block
     internal func getPromotions(completion: @escaping ([Promotion]) -> ()) {
 
         var promotions = [Promotion]()
@@ -44,9 +46,11 @@ class Querymaster:QuerymasterDelegate
     var flatEndpoint = FIRFlat()
     
     var returningFlats = [FilteredFlat]()
-    /////////////////////////////////////////////////////////////
-    //MARK: This method pulls all flats with required timeslot.//
-    /////////////////////////////////////////////////////////////
+
+    /// This function pulls all flats with required timeslot.
+    ///
+    ///  - Parameter filter: (FilterModel) Applied Search Filter by user
+    ///  - Parameter completion: Completion Block
     internal func getFilteredFlats(filter: FilterModel, completion: @escaping ([FilteredFlat]) -> ()) {
         
         var zamanAraliginaUygunFlatlar = [String]()
@@ -178,6 +182,10 @@ class Querymaster:QuerymasterDelegate
                             completion(self.returningFlats)
                         })
                     }
+                }
+                else
+                {
+                    completion(self.returningFlats)
                 }
             })
         })

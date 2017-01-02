@@ -42,16 +42,10 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         qm.getFilteredFlats(filter: self.receivedFilter) { (dsa) in
             self.filteredFlats = dsa
-            
-            DispatchQueue.main.async {
-                self.listFlatCollectionView.reloadData()
+                        self.listFlatCollectionView.reloadData()
                 self.indicator.stopAnimating()
                 self.tabBarController?.tabBar.isUserInteractionEnabled = true
                 self.view.isUserInteractionEnabled = true
-
-
-                
-            }
         }
         
     }
@@ -60,7 +54,9 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.didReceiveMemoryWarning()
     }
     
-    
+    /// This function gets flat infor from DB
+    ///
+    ///  - Parameter filter: (FilterModel) Applied Search Filter by user
     func getFlatInfoFromFireBase(filter : FilterModel){
         print("getFlatInfoCalled")
     }

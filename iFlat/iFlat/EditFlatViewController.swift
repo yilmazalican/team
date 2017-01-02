@@ -12,7 +12,7 @@ class EditFlatViewController: UIViewController {
 
     var editingFlat = Flat()
     var firebase = FIRFlat()
-    
+   
     var oldCity = String()
    
     @IBOutlet weak var flatPhotoButton: UIButton!{
@@ -98,6 +98,8 @@ class EditFlatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         addressTextView.text = editingFlat.address
         flatDescriptionTextView.text = editingFlat.flatDescription
 
@@ -125,7 +127,7 @@ class EditFlatViewController: UIViewController {
             
             if let controller :EditFlatOptionViewController = segue.destination as? EditFlatOptionViewController {
                 controller.editingFlatOptions = editingFlat
-             
+                 controller.oldCity = self.oldCity
                 
             }
 

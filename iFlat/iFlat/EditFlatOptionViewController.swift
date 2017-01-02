@@ -18,20 +18,7 @@ class EditFlatOptionViewController: UIViewController {
     
       var dbFirebase = FIRUSER()
     
-    var cities = [String](){
-        didSet{
-           
-//            if cities.count != 0 {
-//                
-//                for  index in 0...cities.count{
-//                    if cities[index] == editingFlatOptions.city  {
-//                        cityPicker.selectedRow(inComponent: index)
-//                    }
-//                }
-          }
-           
-
-        }
+    var cities = [String]()
     
     
     var editingFlatOptions = Flat()
@@ -186,6 +173,10 @@ class EditFlatOptionViewController: UIViewController {
     @IBAction func washingMachineValueChanged(_ sender: UISwitch) {
               editingFlatOptions.washingMachine = sender.isOn
     }
+    
+    
+    var oldCity = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -196,14 +187,7 @@ class EditFlatOptionViewController: UIViewController {
             self.cityPicker.reloadAllComponents()
         }
         
-        /*
-         
-         for  index in 0...cities.count{
-         if cities[index] == editingFlatOptions.city  {
-         cityPicker.selectedRow(inComponent: index)
-         }
-         }
- */
+      
        
               // Do any additional setup after loading the view.
     }
@@ -406,7 +390,7 @@ class EditFlatOptionViewController: UIViewController {
         
         
         if let controller :EditFlatViewController = segue.destination as? EditFlatViewController {
-            
+            controller.oldCity = oldCity
             controller.editingFlat = editingFlatOptions
             
     }

@@ -29,10 +29,18 @@ protocol FIRFlatDelegate :class
 
 class FIRFlat:FIRFlatDelegate
 {
+    /// This function deletes flat
+    ///
+    ///  - Parameter flt: (ManipubleFlat) flat that is wanted to be deleted
+    ///  - Parameter oldcity: (String) flats city
     internal func deleteFlat(flt:ManipulableFlat,oldcity: String) {
         FIRREF.instance().getRef().child("filter_flats/" + oldcity + "/" + flt.id).removeValue()
     }
 
+    /// This function gets available time slots of flat from DB
+    ///
+    ///  - Parameter flt: (ManipubleFlat) Requesting flat
+    ///  - Parameter completion: Completion Block
     internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([Int?]) -> ()) {
         FIRREF.instance().getRef().child("time_slots").queryOrdered(byChild: flt.id).queryEqual(toValue: true).observe(.value, with: { (ss) in
             var timeSlots = [Int]()
@@ -45,12 +53,20 @@ class FIRFlat:FIRFlatDelegate
         })
     }
 
+    /// This function deletes wish of flat from DB
+    ///
+    ///  - Parameter flt: (ManipubleFlat) Requesting flat
+    ///  - Parameter completion: Completion Block
     internal func deleteWish(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         
         FIRREF.instance().getRef().child("Wishes/" + flt.userID! + "/" + flt.id).removeValue()
         completion(nil)
     }
 
+    /// This function adds wish for flat to DB
+    ///
+    ///  - Parameter flt: (ManipubleFlat) Requesting flat
+    ///  - Parameter completion: Completion Block
     internal func addWishList(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         let insertingDict = [flt.id: true]
         FIRREF.instance().getRef().child("Wishes/" + flt.userID!).setValue(insertingDict) { (err, nil) in
@@ -66,6 +82,11 @@ class FIRFlat:FIRFlatDelegate
         
     }
 
+    /// This function inserts time slot to DB for flat
+    ///
+    ///  - Parameter flt: (ManipubleFlat) Requesting flat
+    ///  - Parameter timeslot: ([Int]) Time slot array for flat
+    ///  - Parameter completion: Completion Block
     internal func insertTimeSlot(flt: ManipulableFlat, timeslot: [Int], completion: @escaping (String?) -> ()) {
         for a in timeslot
         {
@@ -83,6 +104,10 @@ class FIRFlat:FIRFlatDelegate
         
         
     }
+    /// This function inserts flat to DB
+    ///
+    ///  - Parameter flt: (ManipubleFlat) Flat to insert
+    ///  - Parameter completion: Completion Block
     internal func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         let aFlat = [
             "bathroomCount": flt.bathroomCount!,
@@ -122,42 +147,52 @@ class FIRFlat:FIRFlatDelegate
                     return
                 }
                 //flat_images with non-async way :(
-                if flt.images!.count > 0
-                {
-                    for (index,iterator) in (flt.images?.enumerated())!
+                if flt.images != nil{
+                    if flt.images!.count > 0
                     {
-                        let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
-                        FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
-                            if err3 != nil
-                            {
-                                completion(err3.debugDescription)
-                                return
-                            } else {
-                                FIRREF.instance().getRef().child("flat_images/" + flt.id + "/" + iterator.id).setValue(["downloadURL": (mdata!.downloadURL()!.absoluteString)], withCompletionBlock: { (err4, nil) in
-                                    if err4 != nil
-                                    {
-                                        completion(err4.debugDescription)
-                                        return
-                                    }
-                                })
-                            }
-                        })
+                        for (index,iterator) in (flt.images?.enumerated())!
+                        {
+                            let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
+                            FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
+                                if err3 != nil
+                                {
+                                    completion(err3.debugDescription)
+                                    return
+                                } else {
+                                    FIRREF.instance().getRef().child("flat_images/" + flt.id + "/" + iterator.id).setValue(["downloadURL": (mdata!.downloadURL()!.absoluteString)], withCompletionBlock: { (err4, nil) in
+                                        if err4 != nil
+                                        {
+                                            completion(err4.debugDescription)
+                                            return
+                                        }
+                                    })
+                                }
+                            })
+                            
+                        }
+                        completion(nil)
                         
-                    }
-                    completion(nil)
-                    
-                    
+                        
+                    }  
                 }
+
                 
             }
             
         }
         
     }
+    /// This function sets ownerID by currentLoggedUser
+    ///
+    ///  - Parameter completion: Completion Block
     internal func setOwnerID() -> String! {
         return (FIRAuth.auth()?.currentUser!.uid)
         
     }
+    /// This function pulls all images of flat
+    ///
+    ///  - Parameter flatID: (String) Requesting flat
+    ///  - Parameter completion: Completion Block
     internal func getFlatImages(flatID: String, completion: @escaping ([FlatImageDownloaded]?) -> ()) {
         FIRREF.instance().getRef().child("flat_images/" + flatID).observeSingleEvent(of: .value, with: { (ss) in
             var returningArr = [FlatImageDownloaded]()
@@ -181,6 +216,11 @@ class FIRFlat:FIRFlatDelegate
         })
         
     }
+    /// This function gets requesting flat by UserID and FlatID
+    ///
+    ///  - Parameter userID: (String) Flat's owner ID
+    ///  - Parameter flatID: (String) Flat ID
+    ///  - Parameter completion: Completion Block
     internal func getFlatofUser(userID: String, flatID: String, completion: @escaping (ManipulableFlat?) -> ()) {
         FIRREF.instance().getRef().child("user_flats/" + userID + "/" + flatID ).observe(.value, with: { (ss) in
             if ss.childrenCount >= 1 && userID != "" && flatID != ""{
@@ -219,6 +259,10 @@ class FIRFlat:FIRFlatDelegate
         })
         
     }
+    /// This function pulls all flats of user
+    ///
+    ///  - Parameter userID: (String) Requesting User ID
+    ///  - Parameter completion: Completion Block
     internal func getFlatsofUser(userID: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
         FIRREF.instance().getRef().child("user_flats/" + userID).queryOrdered(byChild: "disabled").queryEqual(toValue: false).observe(.value, with: { (ss) in
             var fltArr = [ManipulableFlat]()
@@ -255,12 +299,21 @@ class FIRFlat:FIRFlatDelegate
         })
         
     }
+    /// This function disables flat
+    ///
+    ///  - Parameter disablingFlat: (ManipubleFlat) Disabling flat
+    ///  - Parameter completion: Completion Block
     internal func disable(disablingFlat: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("user_flats/" + disablingFlat.userID! + "/" + disablingFlat.id + "/disabled").setValue(true)
         FIRREF.instance().getRef().child("filter_flats/" + disablingFlat.city! + "/" + disablingFlat.id + "/disabled").setValue(true)
         completion(nil)
         
     }
+    /// This function edits flat
+    ///
+    ///  - Parameter oldCity: (String) Old city of flat
+    ///  - Parameter newFlt: (ManipubleFlat) Edited flat
+    ///  - Parameter completion: Completion Block
     internal func edit(oldcity:String,newFlt: ManipulableFlat!, completion: @escaping (String?) -> ()) {
         let db_endpoint = FIRFlat()
     db_endpoint.deleteFlat(flt: newFlt, oldcity: oldcity)
