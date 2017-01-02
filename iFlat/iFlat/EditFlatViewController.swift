@@ -136,6 +136,9 @@ class EditFlatViewController: UIViewController {
         firebase.edit(oldcity: oldCity, newFlt: editingFlat) { (err) in
             print(err)
         }
+        let storyBoard : UIStoryboard = UIStoryboard(name: "MainFlow", bundle:nil)
+        let vc = (storyBoard.instantiateViewController(withIdentifier: "mainFlow")) as UIViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 
 }
