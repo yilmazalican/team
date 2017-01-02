@@ -52,6 +52,7 @@
                                 <state key="normal" title="Add Flat"/>
                                 <connections>
                                     <action selector="addFlatButtonAction:" destination="GVW-gj-Ql5" eventType="touchUpInside" id="QDA-DC-v5M"/>
+                                    <segue destination="mUX-pl-p7k" kind="show" id="TFk-da-juU"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="Describe your flat.." translatesAutoresizingMaskIntoConstraints="NO" id="MDI-9h-tz9">
@@ -500,6 +501,14 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="644" y="-859"/>
+        </scene>
+        <!--MainFlow-->
+        <scene sceneID="dqh-2P-5aC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainFlow" id="mUX-pl-p7k" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjK-He-PUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427" y="-472"/>
         </scene>
         <!--Choose Photo View Controller-->
         <scene sceneID="mcg-GY-JDy">
