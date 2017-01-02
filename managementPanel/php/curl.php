@@ -1,40 +1,104 @@
 <?php
 include_once 'auth.php';
 class curl {
-public function __construct(){
-  $auth = new auth();
-$this->url = $auth->dbUrl;
-}
+  public function __construct(){
+    $auth = new auth();
+    $this->url = $auth->dbUrl;
+  }
 
 
 
-    public function getIssues (){
-      echo"Issue";
-      $this->curlHandler = curl_init($this->url . "/issues.json");
-      curl_setopt($this->curlHandler, CURLOPT_NOBODY, false);
-      curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
-      $result = curl_exec($this->curlHandler);
-      curl_close($this->curlHandler);
+  public function getIssues (){
+    echo"Issue";
+    $this->curlHandler = curl_init($this->url . "/issues.json");
+    curl_setopt($this->curlHandler, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($this->curlHandler, CURLOPT_SSL_VERIFYPEER,false);
+    $result = curl_exec($this->curlHandler);
+    curl_close($this->curlHandler);
 
-      $data = json_decode($result, TRUE);
+    $data = json_decode($result, TRUE);
+	
+    $tableGen = "<table><td>Status</td><td>Issuer</td><td>Issued</td><td>Title</td><td>Content</td><td>Answer</td>";
+    $closedData = "<p>Closed Issues<br>" . $tableGen;
+    $openData = "<p>Open Issues<br>" . $tableGen;
+    foreach ($data as $key => $value) {
+      $issueOutput = "";
+        if($data[$key]['isOpen'] == 1){
+          $issueOutput .= "<tr bgcolor='#22ff22'>";
+          $issueOutput .= "<td>OPEN</td>";
+        }
+        else{
+          $issueOutput .= "<tr bgcolor='#ff3311'>";
+          $issueOutput .= "<td>CLOSED</td>";
+        }
 
-      $issueOutput = "<p>";
-      foreach ($data as $key => $value) {
-        $issueOutput .= "id: " . $key;
-        $issueOutput .= " title: " . $data[$key]['title'];
-        $issueOutput .= " content: " . $data[$key]['content'];
-        $issueOutput .= " isOpen: " . $data[$key]['isOpen'];
-        $issueOutput .= " answer: " . $data[$key]['answer'];
-        $issueOutput .= "<br>";
+      //$issueOutput .= "id: " . $key;
+      $issueOutput .= "<td>" . $data[$key]['issuer'] . "</td>";
+      $issueOutput .= "<td>" . $data[$key]['issued'] . "</td>";
+      $issueOutput .= "<td>" . $data[$key]['title'] . "</td>";
+      $issueOutput .= "<td>" . $data[$key]['content'] . "</td>";
+      if(isset($data[$key]['answer'])){
+        $issueOutput .= "<td>" . $data[$key]['answer'] . "</td>";
+      }
+      else{
+        $issueOutput .= "<td><a href=/?iid=" . $key . ">Give Answer</a></td>";
       }
 
-      return $issueOutput;
-    }
+      $issueOutput .= "</tr>";
 
-
-    public function deneme(){
-      //echo"deneme";
+      if($data[$key]['isOpen'] == 1){
+        $openData .= $issueOutput;
+      }
+      else{
+        $closedData .= $issueOutput;
+      }
     }
+    $openData .= "</table>";
+    $closedData .= "</table>";
+
+    return ($openData . "<hr>" . $closedData);
+  }
+
+public function closeIssueForm(){
+	
+	return $form;
+}
+  
+  
+public function closeIssue($iid, $answer){
+  echo"Close Issue";
+
+  //$data = array('isOpen'=>'false');
+$data_json = json_encode("false");
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+curl_setopt($ch, CURLOPT_URL, $this->url . "/issues" . "/" . $iid . "/isOpen.json");
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result  = curl_exec($ch);
+curl_close($ch);
+
+//$data = array('answer'=>$answer);
+$data_json = json_encode($answer);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+curl_setopt($ch, CURLOPT_URL, $this->url . "/issues" . "/" . $iid . "/answer.json");
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result  = curl_exec($ch);
+curl_close($ch);
+
+  return $result;
+}
+
+  public function deneme(){
+    //echo"deneme";
+  }
 
 
 
