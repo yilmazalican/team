@@ -22,6 +22,8 @@ class Querymaster:QuerymasterDelegate
     /// This function gets promotions from DB
     ///
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getPromotions(completion: @escaping ([Promotion]) -> ()) {
 
         var promotions = [Promotion]()
@@ -51,6 +53,8 @@ class Querymaster:QuerymasterDelegate
     ///
     ///  - Parameter filter: (FilterModel) Applied Search Filter by user
     ///  - Parameter completion: Completion Block
+    ///  - returns void
+    ///  - throws: FIRERROR
     internal func getFilteredFlats(filter: FilterModel, completion: @escaping ([FilteredFlat]) -> ()) {
         
         var zamanAraliginaUygunFlatlar = [String]()

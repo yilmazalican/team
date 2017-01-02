@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FIRUSERDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/FIRUSERDelegate" class="dashAnchor"></a>
+    <a title="FIRUSERDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (14% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        FIRUSERDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AddFlatViewController.html">AddFlatViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CellView.html">CellView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChoosePhotoCollectionView.html">ChoosePhotoCollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChoosePhotoCollectionViewCell.html">ChoosePhotoCollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChoosePhotoViewController.html">ChoosePhotoViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ControlPanelVC.html">ControlPanelVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EditFlatOptionViewController.html">EditFlatOptionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EditFlatViewController.html">EditFlatViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EditPhotoCollectionView.html">EditPhotoCollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EditPhotoCollectionViewCell.html">EditPhotoCollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EditPhotoViewController.html">EditPhotoViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EntranceViewController.html">EntranceViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FIRFlat.html">FIRFlat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FIRREF.html">FIRREF</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FIRUSER.html">FIRUSER</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FilterModel.html">FilterModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FilteredFlat.html">FilteredFlat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FiltersViewController.html">FiltersViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Flat.html">Flat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FlatImage.html">FlatImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FlatImageDownloaded.html">FlatImageDownloaded</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FlatImagesCell.html">FlatImagesCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FlatProfileViewController.html">FlatProfileViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Issue.html">Issue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ListFlatCollectionViewCell.html">ListFlatCollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ListFlatViewController.html">ListFlatViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NumberPlusPicker.html">NumberPlusPicker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OpenIssueViewController.html">OpenIssueViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Promotion.html">Promotion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Querymaster.html">Querymaster</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Rate.html">Rate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RegisterViewController.html">RegisterViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RenterEditOwnProfieController.html">RenterEditOwnProfieController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReservationRequest.html">ReservationRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReservationViewController.html">ReservationViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SearchParameter.html">SearchParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsVC.html">SettingsVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ShowUserProfileViewController.html">ShowUserProfileViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpacesVC.html">SpacesVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TableViewCell.html">TableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WishListTableView.html">WishListTableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WishVC.html">WishVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Wishcell.html">Wishcell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/spacescell.html">spacescell</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/DateToString.html">DateToString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FIRFlatDelegate.html">FIRFlatDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FIRUSERDelegate.html">FIRUSERDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ManipulableFlat.html">ManipulableFlat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ManipulableUser.html">ManipulableUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/QuerymasterDelegate.html">QuerymasterDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ShowAlert.html">ShowAlert</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/imageMaker.html">imageMaker</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>FIRUSERDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                </div>
+              </div>
+            <p>This protocol is a delegation bridge. When any coder wants to use DB manipulation methods, then the coder must use this bridge instance.
+Coder also need to conform the protocol which is ManipulableUser. If want to use the manipulation methods. Manipulation methods only takes objects which conforms ManipulableUser.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate6insertFT3usrGSQPS_15ManipulableUser__10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/insert(usr:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate6insertFT3usrGSQPS_15ManipulableUser__10completionFGSqSS_T__T_">insert(usr:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate4editFT6newUsrGSQPS_15ManipulableUser__10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/edit(newUsr:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate4editFT6newUsrGSQPS_15ManipulableUser__10completionFGSqSS_T__T_">edit(newUsr:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate23loginByEmailAndPasswordFT5emailSS8passwordSS10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/loginByEmailAndPassword(email:password:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate23loginByEmailAndPasswordFT5emailSS8passwordSS10completionFGSqSS_T__T_">loginByEmailAndPassword(email:password:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate6logoutFT10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/logout(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate6logoutFT10completionFGSqSS_T__T_">logout(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate18getCurrentLoggedInFT10completionFGSqPS_15ManipulableUser__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getCurrentLoggedIn(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate18getCurrentLoggedInFT10completionFGSqPS_15ManipulableUser__T__T_">getCurrentLoggedIn(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate10getByEmailFT5emailSS10completionFGSqPS_15ManipulableUser__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getByEmail(email:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate10getByEmailFT5emailSS10completionFGSqPS_15ManipulableUser__T__T_">getByEmail(email:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate21sendverificationEmailFT10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/sendverificationEmail(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate21sendverificationEmailFT10completionFGSqSS_T__T_">sendverificationEmail(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate14isUserVerifiedFT10completionFSbT__T_"></a>
+                    <a name="//apple_ref/swift/Method/isUserVerified(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate14isUserVerifiedFT10completionFSbT__T_">isUserVerified(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate14changePasswordFT11newPasswordSS10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/changePassword(newPassword:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate14changePasswordFT11newPasswordSS10completionFGSqSS_T__T_">changePassword(newPassword:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate11changeEmailFT8newEmailSS10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/changeEmail(newEmail:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate11changeEmailFT8newEmailSS10completionFGSqSS_T__T_">changeEmail(newEmail:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate22insertUserProfileImageFT4userPS_15ManipulableUser_10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/insertUserProfileImage(user:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate22insertUserProfileImageFT4userPS_15ManipulableUser_10completionFGSqSS_T__T_">insertUserProfileImage(user:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate17getUserProfileImgFT4userPS_15ManipulableUser_10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getUserProfileImg(user:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate17getUserProfileImgFT4userPS_15ManipulableUser_10completionFGSqSS_T__T_">getUserProfileImg(user:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate8rateUserFT8toUserIDSS4rateCS_4Rate10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/rateUser(toUserID:rate:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate8rateUserFT8toUserIDSS4rateCS_4Rate10completionFGSqSS_T__T_">rateUser(toUserID:rate:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate12getUserRatesFT6userIDSS10completionFGSqGSaCS_4Rate__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getUserRates(userID:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate12getUserRatesFT6userIDSS10completionFGSqGSaCS_4Rate__T__T_">getUserRates(userID:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate22changeUserProfileImageFT4userPS_15ManipulableUser_3imgCSo7UIImage10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/changeUserProfileImage(user:img:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate22changeUserProfileImageFT4userPS_15ManipulableUser_3imgCSo7UIImage10completionFGSqSS_T__T_">changeUserProfileImage(user:img:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate9getCitiesFT10completionFGSaSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getCities(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate9getCitiesFT10completionFGSaSS_T__T_">getCities(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate14forgotPasswordFT5emailSS10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/forgotPassword(email:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate14forgotPasswordFT5emailSS10completionFGSqSS_T__T_">forgotPassword(email:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate9openIssueFT6toUserPS_15ManipulableUser_5issueCS_5Issue10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/openIssue(toUser:issue:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate9openIssueFT6toUserPS_15ManipulableUser_5issueCS_5Issue10completionFGSqSS_T__T_">openIssue(toUser:issue:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate8getISsueFT4userPS_15ManipulableUser_10completionFGSaCS_5Issue_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getISsue(user:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate8getISsueFT4userPS_15ManipulableUser_10completionFGSaCS_5Issue_T__T_">getISsue(user:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate11getUserByIDFT2idSS10completionFGSqPS_15ManipulableUser__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getUserByID(id:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate11getUserByIDFT2idSS10completionFGSqPS_15ManipulableUser__T__T_">getUserByID(id:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate22sendReservationRequestFT3reqCS_18ReservationRequest10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/sendReservationRequest(req:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate22sendReservationRequestFT3reqCS_18ReservationRequest10completionFGSqSS_T__T_">sendReservationRequest(req:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate24acceptReservationRequestFT3reqCS_18ReservationRequest10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/acceptReservationRequest(req:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate24acceptReservationRequestFT3reqCS_18ReservationRequest10completionFGSqSS_T__T_">acceptReservationRequest(req:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate24rejectReservationRequestFT3reqCS_18ReservationRequest10completionFGSqSS_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/rejectReservationRequest(req:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate24rejectReservationRequestFT3reqCS_18ReservationRequest10completionFGSqSS_T__T_">rejectReservationRequest(req:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate11getFlatByIDFT2idSS10completionFGSqPS_15ManipulableFlat__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getFlatByID(id:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate11getFlatByIDFT2idSS10completionFGSqPS_15ManipulableFlat__T__T_">getFlatByID(id:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate27getUsersReservationRequestsFT3usrPS_15ManipulableUser_10completionFGSaCS_18ReservationRequest_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getUsersReservationRequests(usr:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate27getUsersReservationRequestsFT3usrPS_15ManipulableUser_10completionFGSaCS_18ReservationRequest_T__T_">getUsersReservationRequests(usr:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP5iFlat15FIRUSERDelegate9getWishesFT5usrIDSS10completionFGSqGVs10DictionarySSSb__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getWishes(usrID:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP5iFlat15FIRUSERDelegate9getWishesFT5usrIDSS10completionFGSqGVs10DictionarySSSb__T__T_">getWishes(usrID:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">FIRUSERDelegate</span> <span class="p">:</span><span class="kd">class</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-01-02)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

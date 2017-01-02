@@ -1,0 +1,4569 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": null,
+      "symbol": "AddFlatViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 12,
+      "symbol": "AddFlatViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 16,
+      "symbol": "AddFlatViewController.cities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 18,
+      "symbol": "AddFlatViewController.dbFirebase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 20,
+      "symbol": "AddFlatViewController.dbFirebaseFlat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 22,
+      "symbol": "AddFlatViewController.flatImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 26,
+      "symbol": "AddFlatViewController.addingFlat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 46,
+      "symbol": "AddFlatViewController.capacityPickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 58,
+      "symbol": "AddFlatViewController.bathroomPickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 69,
+      "symbol": "AddFlatViewController.priceTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 77,
+      "symbol": "AddFlatViewController.bedPickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 87,
+      "symbol": "AddFlatViewController.addressTextView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 99,
+      "symbol": "AddFlatViewController.internetSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 101,
+      "symbol": "AddFlatViewController.elevatorSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 103,
+      "symbol": "AddFlatViewController.coolingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 105,
+      "symbol": "AddFlatViewController.smokingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 106,
+      "symbol": "AddFlatViewController.cityPickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 115,
+      "symbol": "AddFlatViewController.parkingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 116,
+      "symbol": "AddFlatViewController.washingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 117,
+      "symbol": "AddFlatViewController.poolSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 118,
+      "symbol": "AddFlatViewController.bedroomPickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 129,
+      "symbol": "AddFlatViewController.gateKeeperSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 132,
+      "symbol": "AddFlatViewController.heatingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 133,
+      "symbol": "AddFlatViewController.flatDescriptionTextView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 144,
+      "symbol": "AddFlatViewController.popUpView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 147,
+      "symbol": "AddFlatViewController.flatTitleTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 155,
+      "symbol": "AddFlatViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 172,
+      "symbol": "AddFlatViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 178,
+      "symbol": "AddFlatViewController.titleTextFieldEditingEnd(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 182,
+      "symbol": "AddFlatViewController.priceTextFieldDidEnding(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 189,
+      "symbol": "AddFlatViewController.showOptionButtonAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 199,
+      "symbol": "AddFlatViewController.elevatorValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 203,
+      "symbol": "AddFlatViewController.internetValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 209,
+      "symbol": "AddFlatViewController.coolingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 213,
+      "symbol": "AddFlatViewController.gateKeeperValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 217,
+      "symbol": "AddFlatViewController.smokingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 222,
+      "symbol": "AddFlatViewController.poolValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 225,
+      "symbol": "AddFlatViewController.washingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 228,
+      "symbol": "AddFlatViewController.parkingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 233,
+      "symbol": "AddFlatViewController.heatingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 236,
+      "symbol": "AddFlatViewController.showFlatOptionsPopUp()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 245,
+      "symbol": "AddFlatViewController.optionActionFinished(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 254,
+      "symbol": "AddFlatViewController.indicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 256,
+      "symbol": "AddFlatViewController.addFlatButtonAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 306,
+      "symbol": "AddFlatViewController.numberOfComponents(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 311,
+      "symbol": "AddFlatViewController.pickerView(_:viewForRow:forComponent:reusing:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 370,
+      "symbol": "AddFlatViewController.pickerView(_:numberOfRowsInComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 400,
+      "symbol": "AddFlatViewController.pickerView(_:didSelectRow:inComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 445,
+      "symbol": "AddFlatViewController.textViewDidEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 463,
+      "symbol": "AddFlatViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AddFlatViewController.swift",
+      "line": 471,
+      "symbol": "AddFlatViewController.textView(_:shouldChangeTextIn:replacementText:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 13,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 15,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 19,
+      "symbol": "AppDelegate.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 25,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 29,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 34,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 39,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 43,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/AppDelegate.swift",
+      "line": 47,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/CellView.swift",
+      "line": 11,
+      "symbol": "CellView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/CellView.swift",
+      "line": 13,
+      "symbol": "CellView.dayLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/CellView.swift",
+      "line": 15,
+      "symbol": "CellView.selectedView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/CellView.swift",
+      "line": 16,
+      "symbol": "CellView.isSelected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionView.swift",
+      "line": null,
+      "symbol": "ChoosePhotoCollectionView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionView.swift",
+      "line": 13,
+      "symbol": "ChoosePhotoCollectionView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionView.swift",
+      "line": 15,
+      "symbol": "ChoosePhotoCollectionView.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionView.swift",
+      "line": 22,
+      "symbol": "ChoosePhotoCollectionView.selectedImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionView.swift",
+      "line": 38,
+      "symbol": "ChoosePhotoCollectionView.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionView.swift",
+      "line": 44,
+      "symbol": "ChoosePhotoCollectionView.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionViewCell.swift",
+      "line": 11,
+      "symbol": "ChoosePhotoCollectionViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionViewCell.swift",
+      "line": 15,
+      "symbol": "ChoosePhotoCollectionViewCell.cellId",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionViewCell.swift",
+      "line": 17,
+      "symbol": "ChoosePhotoCollectionViewCell.photoImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoCollectionViewCell.swift",
+      "line": 19,
+      "symbol": "ChoosePhotoCollectionViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 12,
+      "symbol": "ChoosePhotoViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 14,
+      "symbol": "ChoosePhotoViewController.choosePhotoCollectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 16,
+      "symbol": "ChoosePhotoViewController.imagePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 18,
+      "symbol": "ChoosePhotoViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 24,
+      "symbol": "ChoosePhotoViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 32,
+      "symbol": "ChoosePhotoViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 43,
+      "symbol": "ChoosePhotoViewController.shouldPerformSegue(withIdentifier:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ChoosePhotoViewController.swift",
+      "line": 56,
+      "symbol": "ChoosePhotoViewController.choosePhotoActionButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ControlPanelVC.swift",
+      "line": 16,
+      "symbol": "ControlPanelVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ControlPanelVC.swift",
+      "line": 17,
+      "symbol": "ControlPanelVC.dbUser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ControlPanelVC.swift",
+      "line": 20,
+      "symbol": "ControlPanelVC.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ControlPanelVC.swift",
+      "line": 41,
+      "symbol": "ControlPanelVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ControlPanelVC.swift",
+      "line": 45,
+      "symbol": "ControlPanelVC.mailComposeController(_:didFinishWith:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ControlPanelVC.swift",
+      "line": 52,
+      "symbol": "ControlPanelVC.configuredMailComposeViewController()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ConvertString.swift",
+      "line": null,
+      "symbol": "DateToString",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ConvertString.swift",
+      "line": 14,
+      "symbol": "DateToString",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ConvertString.swift",
+      "line": 23,
+      "symbol": "DateToString.setDateToString(datePicker:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ConvertUrlToImage.swift",
+      "line": null,
+      "symbol": "imageMaker",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ConvertUrlToImage.swift",
+      "line": 12,
+      "symbol": "imageMaker",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ConvertUrlToImage.swift",
+      "line": 22,
+      "symbol": "imageMaker.urlToImage(url:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Datebaby.swift",
+      "line": 13,
+      "symbol": "Date.init(dateString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Datebaby.swift",
+      "line": 26,
+      "symbol": "Date.toTimeStamp()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": null,
+      "symbol": "EditFlatOptionViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 11,
+      "symbol": "EditFlatOptionViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 13,
+      "symbol": "EditFlatOptionViewController.minusCapacityButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 15,
+      "symbol": "EditFlatOptionViewController.plusCapacityButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 17,
+      "symbol": "EditFlatOptionViewController.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 19,
+      "symbol": "EditFlatOptionViewController.dbFirebase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 21,
+      "symbol": "EditFlatOptionViewController.cities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 24,
+      "symbol": "EditFlatOptionViewController.editingFlatOptions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 26,
+      "symbol": "EditFlatOptionViewController.plusBathroomButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 27,
+      "symbol": "EditFlatOptionViewController.minusBathroomButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 29,
+      "symbol": "EditFlatOptionViewController.plusBedButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 30,
+      "symbol": "EditFlatOptionViewController.minusBedButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 31,
+      "symbol": "EditFlatOptionViewController.plusBedroomButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 32,
+      "symbol": "EditFlatOptionViewController.minusBedroomButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 33,
+      "symbol": "EditFlatOptionViewController.capacityLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 40,
+      "symbol": "EditFlatOptionViewController.bedroomLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 48,
+      "symbol": "EditFlatOptionViewController.bathroomLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 55,
+      "symbol": "EditFlatOptionViewController.bedLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 64,
+      "symbol": "EditFlatOptionViewController.heatingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 70,
+      "symbol": "EditFlatOptionViewController.washingMachineSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 76,
+      "symbol": "EditFlatOptionViewController.smokingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 83,
+      "symbol": "EditFlatOptionViewController.gateKeeperSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 89,
+      "symbol": "EditFlatOptionViewController.parkingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 95,
+      "symbol": "EditFlatOptionViewController.elevatorSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 102,
+      "symbol": "EditFlatOptionViewController.coolingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 109,
+      "symbol": "EditFlatOptionViewController.poolSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 117,
+      "symbol": "EditFlatOptionViewController.internetSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 125,
+      "symbol": "EditFlatOptionViewController.scrollView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 134,
+      "symbol": "EditFlatOptionViewController.cityPicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 141,
+      "symbol": "EditFlatOptionViewController.heatingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 146,
+      "symbol": "EditFlatOptionViewController.elevatorValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 151,
+      "symbol": "EditFlatOptionViewController.parkingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 156,
+      "symbol": "EditFlatOptionViewController.poolValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 161,
+      "symbol": "EditFlatOptionViewController.coolingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 165,
+      "symbol": "EditFlatOptionViewController.gateKeeperValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 169,
+      "symbol": "EditFlatOptionViewController.smokingValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 173,
+      "symbol": "EditFlatOptionViewController.washingMachineValueChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 178,
+      "symbol": "EditFlatOptionViewController.oldCity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 180,
+      "symbol": "EditFlatOptionViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 195,
+      "symbol": "EditFlatOptionViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 206,
+      "symbol": "EditFlatOptionViewController.countUp(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 296,
+      "symbol": "EditFlatOptionViewController.countDown(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 387,
+      "symbol": "EditFlatOptionViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 403,
+      "symbol": "EditFlatOptionViewController.numberOfComponents(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 407,
+      "symbol": "EditFlatOptionViewController.pickerView(_:numberOfRowsInComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 413,
+      "symbol": "EditFlatOptionViewController.pickerView(_:didSelectRow:inComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatOptionViewController.swift",
+      "line": 418,
+      "symbol": "EditFlatOptionViewController.pickerView(_:viewForRow:forComponent:reusing:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": null,
+      "symbol": "EditFlatViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 11,
+      "symbol": "EditFlatViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 13,
+      "symbol": "EditFlatViewController.editingFlat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 14,
+      "symbol": "EditFlatViewController.firebase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 16,
+      "symbol": "EditFlatViewController.oldCity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 18,
+      "symbol": "EditFlatViewController.flatPhotoButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 23,
+      "symbol": "EditFlatViewController.flatTitleTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 32,
+      "symbol": "EditFlatViewController.addressTextView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 42,
+      "symbol": "EditFlatViewController.flatPriceTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 56,
+      "symbol": "EditFlatViewController.flatDescriptionTextView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 98,
+      "symbol": "EditFlatViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 109,
+      "symbol": "EditFlatViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 115,
+      "symbol": "EditFlatViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 148,
+      "symbol": "EditFlatViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 154,
+      "symbol": "EditFlatViewController.textViewDidEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditFlatViewController.swift",
+      "line": 168,
+      "symbol": "EditFlatViewController.textView(_:shouldChangeTextIn:replacementText:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionView.swift",
+      "line": null,
+      "symbol": "EditPhotoCollectionView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionView.swift",
+      "line": 11,
+      "symbol": "EditPhotoCollectionView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionView.swift",
+      "line": 13,
+      "symbol": "EditPhotoCollectionView.flatImages",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionView.swift",
+      "line": 15,
+      "symbol": "EditPhotoCollectionView.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionView.swift",
+      "line": 29,
+      "symbol": "EditPhotoCollectionView.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionView.swift",
+      "line": 35,
+      "symbol": "EditPhotoCollectionView.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionViewCell.swift",
+      "line": 11,
+      "symbol": "EditPhotoCollectionViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionViewCell.swift",
+      "line": 13,
+      "symbol": "EditPhotoCollectionViewCell.photoImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoCollectionViewCell.swift",
+      "line": 15,
+      "symbol": "EditPhotoCollectionViewCell.cellId",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 13,
+      "symbol": "EditPhotoViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 16,
+      "symbol": "EditPhotoViewController.imagePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 19,
+      "symbol": "EditPhotoViewController.editPhotoButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 25,
+      "symbol": "EditPhotoViewController.doneButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 30,
+      "symbol": "EditPhotoViewController.editPhotoCollectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 32,
+      "symbol": "EditPhotoViewController.indicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 35,
+      "symbol": "EditPhotoViewController.flatImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 37,
+      "symbol": "EditPhotoViewController.firebase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 39,
+      "symbol": "EditPhotoViewController.flat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 41,
+      "symbol": "EditPhotoViewController.popUpView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 49,
+      "symbol": "EditPhotoViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 83,
+      "symbol": "EditPhotoViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 88,
+      "symbol": "EditPhotoViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EditPhotoViewController.swift",
+      "line": 101,
+      "symbol": "EditPhotoViewController.editPhotoButtonAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": null,
+      "symbol": "EntranceViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 11,
+      "symbol": "EntranceViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 14,
+      "symbol": "EntranceViewController.searchParameter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 15,
+      "symbol": "EntranceViewController.firuser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 16,
+      "symbol": "EntranceViewController.cities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 18,
+      "symbol": "EntranceViewController.locationPV",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 19,
+      "symbol": "EntranceViewController.user",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 24,
+      "symbol": "EntranceViewController.FromDatePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 32,
+      "symbol": "EntranceViewController.ToDatePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 39,
+      "symbol": "EntranceViewController.numberPersonPicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 51,
+      "symbol": "EntranceViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 61,
+      "symbol": "EntranceViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 85,
+      "symbol": "EntranceViewController.searchWithParameterActionButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 94,
+      "symbol": "EntranceViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 156,
+      "symbol": "EntranceViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 162,
+      "symbol": "EntranceViewController.pickerView(_:titleForRow:forComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 174,
+      "symbol": "EntranceViewController.numberOfComponents(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 185,
+      "symbol": "EntranceViewController.pickerView(_:numberOfRowsInComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 198,
+      "symbol": "EntranceViewController.pickerView(_:didSelectRow:inComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 217,
+      "symbol": "EntranceViewController.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/EntranceViewController.swift",
+      "line": 221,
+      "symbol": "EntranceViewController.pickerView(_:viewForRow:forComponent:reusing:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 12,
+      "symbol": "FIRFlatDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 14,
+      "symbol": "FIRFlatDelegate.edit(oldcity:newFlt:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 15,
+      "symbol": "FIRFlatDelegate.disable(disablingFlat:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 16,
+      "symbol": "FIRFlatDelegate.getFlatsofUser(userID:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 17,
+      "symbol": "FIRFlatDelegate.getFlatofUser(userID:flatID:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 18,
+      "symbol": "FIRFlatDelegate.getFlatImages(flatID:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 19,
+      "symbol": "FIRFlatDelegate.setOwnerID()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 20,
+      "symbol": "FIRFlatDelegate.insertFlat(flt:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 21,
+      "symbol": "FIRFlatDelegate.insertTimeSlot(flt:timeslot:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 22,
+      "symbol": "FIRFlatDelegate.addWishList(flt:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 23,
+      "symbol": "FIRFlatDelegate.deleteWish(flt:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 24,
+      "symbol": "FIRFlatDelegate.getAvailableTimeSlots(flt:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 25,
+      "symbol": "FIRFlatDelegate.deleteFlat(flt:oldcity:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRFlat.swift",
+      "line": 30,
+      "symbol": "FIRFlat",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 13,
+      "symbol": "FIRREF",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 14,
+      "symbol": "FIRREF.ref",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 15,
+      "symbol": "FIRREF.storageRef",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 16,
+      "symbol": "FIRREF.singleton",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 19,
+      "symbol": "FIRREF.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 25,
+      "symbol": "FIRREF.instance()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 30,
+      "symbol": "FIRREF.getRef()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRREF.swift",
+      "line": 35,
+      "symbol": "FIRREF.getStorageRef()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 18,
+      "symbol": "FIRUSERDelegate.insert(usr:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 19,
+      "symbol": "FIRUSERDelegate.edit(newUsr:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 20,
+      "symbol": "FIRUSERDelegate.loginByEmailAndPassword(email:password:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 21,
+      "symbol": "FIRUSERDelegate.logout(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 22,
+      "symbol": "FIRUSERDelegate.getCurrentLoggedIn(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 23,
+      "symbol": "FIRUSERDelegate.getByEmail(email:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 24,
+      "symbol": "FIRUSERDelegate.sendverificationEmail(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 25,
+      "symbol": "FIRUSERDelegate.isUserVerified(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 26,
+      "symbol": "FIRUSERDelegate.changePassword(newPassword:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 27,
+      "symbol": "FIRUSERDelegate.changeEmail(newEmail:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 28,
+      "symbol": "FIRUSERDelegate.insertUserProfileImage(user:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 29,
+      "symbol": "FIRUSERDelegate.getUserProfileImg(user:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 30,
+      "symbol": "FIRUSERDelegate.rateUser(toUserID:rate:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 31,
+      "symbol": "FIRUSERDelegate.getUserRates(userID:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 32,
+      "symbol": "FIRUSERDelegate.changeUserProfileImage(user:img:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 33,
+      "symbol": "FIRUSERDelegate.getCities(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 34,
+      "symbol": "FIRUSERDelegate.forgotPassword(email:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 35,
+      "symbol": "FIRUSERDelegate.openIssue(toUser:issue:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 36,
+      "symbol": "FIRUSERDelegate.getISsue(user:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 37,
+      "symbol": "FIRUSERDelegate.getUserByID(id:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 38,
+      "symbol": "FIRUSERDelegate.sendReservationRequest(req:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 39,
+      "symbol": "FIRUSERDelegate.acceptReservationRequest(req:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 40,
+      "symbol": "FIRUSERDelegate.rejectReservationRequest(req:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 41,
+      "symbol": "FIRUSERDelegate.getFlatByID(id:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 42,
+      "symbol": "FIRUSERDelegate.getUsersReservationRequests(usr:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FIRUSER.swift",
+      "line": 43,
+      "symbol": "FIRUSERDelegate.getWishes(usrID:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 11,
+      "symbol": "FilterModel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 13,
+      "symbol": "FilterModel.city",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 16,
+      "symbol": "FilterModel.capacity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 18,
+      "symbol": "FilterModel.bathroomCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 19,
+      "symbol": "FilterModel.bedCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 20,
+      "symbol": "FilterModel.bedroomCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 21,
+      "symbol": "FilterModel.smoking",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 22,
+      "symbol": "FilterModel.pool",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 23,
+      "symbol": "FilterModel.internet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 24,
+      "symbol": "FilterModel.cooling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 25,
+      "symbol": "FilterModel.heating",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 26,
+      "symbol": "FilterModel.tv",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 27,
+      "symbol": "FilterModel.washingMachine",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 28,
+      "symbol": "FilterModel.elevator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 29,
+      "symbol": "FilterModel.parking",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 30,
+      "symbol": "FilterModel.gateKeeper",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 32,
+      "symbol": "FilterModel.priceFrom",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 33,
+      "symbol": "FilterModel.priceTo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 35,
+      "symbol": "FilterModel.fromDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 36,
+      "symbol": "FilterModel.toDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 38,
+      "symbol": "FilterModel.fromDateTimeStamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 39,
+      "symbol": "FilterModel.toDateTimeStamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 42,
+      "symbol": "FilterModel.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilterModel.swift",
+      "line": 45,
+      "symbol": "FilterModel.init(city:capacity:bathroomcount:bedcount:bedroomcount:pool:internet:cooling:heating:tv:washingMachine:elevator:parking:gateKeeper:priceFrom:priceTo:smoking:fromDate:toDate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 10,
+      "symbol": "FilteredFlat",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 12,
+      "symbol": "FilteredFlat.flatID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 13,
+      "symbol": "FilteredFlat.flatThumbnailImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 14,
+      "symbol": "FilteredFlat.flatTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 15,
+      "symbol": "FilteredFlat.flatPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 16,
+      "symbol": "FilteredFlat.flatCity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 17,
+      "symbol": "FilteredFlat.userID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 19,
+      "symbol": "FilteredFlat.init(flatID:flatThumbnailImage:flatTitle:flatCity:flatPrice:userID:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FilteredFlat.swift",
+      "line": 27,
+      "symbol": "FilteredFlat.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 14,
+      "symbol": "FiltersViewController.bedCountTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 15,
+      "symbol": "FiltersViewController.flatCapacityTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 16,
+      "symbol": "FiltersViewController.bedroomCountTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 17,
+      "symbol": "FiltersViewController.bathroomCountTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 18,
+      "symbol": "FiltersViewController.poolSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 19,
+      "symbol": "FiltersViewController.internetSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 20,
+      "symbol": "FiltersViewController.coolingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 21,
+      "symbol": "FiltersViewController.heatingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 22,
+      "symbol": "FiltersViewController.televisionSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 23,
+      "symbol": "FiltersViewController.elevatorSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 24,
+      "symbol": "FiltersViewController.parkingSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 25,
+      "symbol": "FiltersViewController.gateKeeperSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 26,
+      "symbol": "FiltersViewController.washingMachineSwitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 27,
+      "symbol": "FiltersViewController.priceFromTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 28,
+      "symbol": "FiltersViewController.priceToTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 29,
+      "symbol": "FiltersViewController.filter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 30,
+      "symbol": "FiltersViewController.numberPlusPickerObj",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FiltersViewController.swift",
+      "line": 104,
+      "symbol": "FiltersViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": null,
+      "symbol": "Flat",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 11,
+      "symbol": "Flat",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 13,
+      "symbol": "Flat.published",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 14,
+      "symbol": "Flat.disabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 15,
+      "symbol": "Flat.DB_ENDPOINT",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 16,
+      "symbol": "Flat.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 17,
+      "symbol": "Flat.flatDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 18,
+      "symbol": "Flat.city",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 19,
+      "symbol": "Flat.address",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 20,
+      "symbol": "Flat.flatCapacity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 21,
+      "symbol": "Flat.bathroomCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 22,
+      "symbol": "Flat.bedCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 23,
+      "symbol": "Flat.bedroomCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 24,
+      "symbol": "Flat.pool",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 25,
+      "symbol": "Flat.internet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 26,
+      "symbol": "Flat.cooling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 27,
+      "symbol": "Flat.heating",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 28,
+      "symbol": "Flat.tv",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 29,
+      "symbol": "Flat.washingMachine",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 30,
+      "symbol": "Flat.elevator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 31,
+      "symbol": "Flat.parking",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 32,
+      "symbol": "Flat.smoking",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 33,
+      "symbol": "Flat.gateKeeper",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 34,
+      "symbol": "Flat.price",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 35,
+      "symbol": "Flat.images",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 36,
+      "symbol": "Flat.userID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 37,
+      "symbol": "Flat.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 41,
+      "symbol": "Flat.init(title:flatDescription:city:address:flatCapacity:bathRoomCount:bedcount:pool:internet:cooling:heating:tv:washingMachine:elevator:parking:smoking:gateKeeper:price:deleted:images:bedroomCount:disabled:published:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Flat.swift",
+      "line": 70,
+      "symbol": "Flat.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 11,
+      "symbol": "FlatImageDownloaded",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 13,
+      "symbol": "FlatImageDownloaded.imageID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 14,
+      "symbol": "FlatImageDownloaded.imageDownloadURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 16,
+      "symbol": "FlatImageDownloaded.init(imageID:imageDownloadURL:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 21,
+      "symbol": "FlatImageDownloaded.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 28,
+      "symbol": "FlatImage",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 31,
+      "symbol": "FlatImage.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 32,
+      "symbol": "FlatImage.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImage.swift",
+      "line": 34,
+      "symbol": "FlatImage.init(image:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImagesCell.swift",
+      "line": 12,
+      "symbol": "FlatImagesCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatImagesCell.swift",
+      "line": 14,
+      "symbol": "FlatImagesCell.FlatImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatProfileViewController.swift",
+      "line": 18,
+      "symbol": "FlatProfileViewController.userProfileIV",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatProfileViewController.swift",
+      "line": 66,
+      "symbol": "FlatProfileViewController.flatEP",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatProfileViewController.swift",
+      "line": 67,
+      "symbol": "FlatProfileViewController.userRP",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatProfileViewController.swift",
+      "line": 72,
+      "symbol": "FlatProfileViewController.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatProfileViewController.swift",
+      "line": 90,
+      "symbol": "FlatProfileViewController.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/FlatProfileViewController.swift",
+      "line": 188,
+      "symbol": "FlatProfileViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 11,
+      "symbol": "Issue",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 14,
+      "symbol": "Issue.dbEndpoint",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 15,
+      "symbol": "Issue.ID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 16,
+      "symbol": "Issue.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 17,
+      "symbol": "Issue.content",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 18,
+      "symbol": "Issue.isOpen",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 19,
+      "symbol": "Issue.issued",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 20,
+      "symbol": "Issue.issuer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 21,
+      "symbol": "Issue.answer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 24,
+      "symbol": "Issue.init(title:content:issued:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 34,
+      "symbol": "Issue.setIssuer()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Issue.swift",
+      "line": 41,
+      "symbol": "Issue.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 12,
+      "symbol": "ListFlatCollectionViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 15,
+      "symbol": "ListFlatCollectionViewCell.flatID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 17,
+      "symbol": "ListFlatCollectionViewCell.flatOwnerID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 19,
+      "symbol": "ListFlatCollectionViewCell.flatThumbnail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 21,
+      "symbol": "ListFlatCollectionViewCell.flatTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 23,
+      "symbol": "ListFlatCollectionViewCell.flatPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 25,
+      "symbol": "ListFlatCollectionViewCell.flatCity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 27,
+      "symbol": "ListFlatCollectionViewCell.flatRating",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatCollectionViewCell.swift",
+      "line": 30,
+      "symbol": "ListFlatCollectionViewCell.setFlatListCell(ID:ownerID:thumbnail:title:price:city:rating:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 12,
+      "symbol": "ListFlatViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 19,
+      "symbol": "ListFlatViewController.indicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 21,
+      "symbol": "ListFlatViewController.receivedFilter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 23,
+      "symbol": "ListFlatViewController.filteredFlats",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 25,
+      "symbol": "ListFlatViewController.ownerID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 27,
+      "symbol": "ListFlatViewController.flatID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 28,
+      "symbol": "ListFlatViewController.listFlatCollectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 53,
+      "symbol": "ListFlatViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 64,
+      "symbol": "ListFlatViewController.collectionView(_:layout:sizeForItemAtIndexPath:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ListFlatViewController.swift",
+      "line": 124,
+      "symbol": "ListFlatViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 13,
+      "symbol": "LoginViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 15,
+      "symbol": "LoginViewController.user",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 16,
+      "symbol": "LoginViewController.dbbridge2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 18,
+      "symbol": "LoginViewController.emailTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 20,
+      "symbol": "LoginViewController.passwordTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 22,
+      "symbol": "LoginViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 47,
+      "symbol": "LoginViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/LoginViewController.swift",
+      "line": 92,
+      "symbol": "LoginViewController.LoginTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 10,
+      "symbol": "ManipulableFlat",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 12,
+      "symbol": "ManipulableFlat.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 13,
+      "symbol": "ManipulableFlat.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 14,
+      "symbol": "ManipulableFlat.flatDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 15,
+      "symbol": "ManipulableFlat.city",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 16,
+      "symbol": "ManipulableFlat.address",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 17,
+      "symbol": "ManipulableFlat.flatCapacity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 18,
+      "symbol": "ManipulableFlat.bathroomCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 19,
+      "symbol": "ManipulableFlat.bedCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 20,
+      "symbol": "ManipulableFlat.bedroomCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 21,
+      "symbol": "ManipulableFlat.pool",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 22,
+      "symbol": "ManipulableFlat.internet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 23,
+      "symbol": "ManipulableFlat.cooling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 24,
+      "symbol": "ManipulableFlat.heating",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 25,
+      "symbol": "ManipulableFlat.tv",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 26,
+      "symbol": "ManipulableFlat.washingMachine",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 27,
+      "symbol": "ManipulableFlat.elevator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 28,
+      "symbol": "ManipulableFlat.parking",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 29,
+      "symbol": "ManipulableFlat.smoking",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 30,
+      "symbol": "ManipulableFlat.gateKeeper",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 31,
+      "symbol": "ManipulableFlat.price",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 32,
+      "symbol": "ManipulableFlat.images",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 33,
+      "symbol": "ManipulableFlat.published",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 34,
+      "symbol": "ManipulableFlat.disabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 35,
+      "symbol": "ManipulableFlat.userID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 36,
+      "symbol": "ManipulableFlat.DB_ENDPOINT",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 38,
+      "symbol": "ManipulableFlat.init(title:flatDescription:city:address:flatCapacity:bathRoomCount:bedcount:pool:internet:cooling:heating:tv:washingMachine:elevator:parking:smoking:gateKeeper:price:deleted:images:bedroomCount:disabled:published:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableFlat.swift",
+      "line": 39,
+      "symbol": "ManipulableFlat.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 11,
+      "symbol": "ManipulableUser",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 13,
+      "symbol": "ManipulableUser.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 14,
+      "symbol": "ManipulableUser.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 15,
+      "symbol": "ManipulableUser.surname",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 16,
+      "symbol": "ManipulableUser.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 17,
+      "symbol": "ManipulableUser.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 18,
+      "symbol": "ManipulableUser.birthDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 19,
+      "symbol": "ManipulableUser.Gender",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 20,
+      "symbol": "ManipulableUser.profileImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 21,
+      "symbol": "ManipulableUser.country",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 22,
+      "symbol": "ManipulableUser.DB_ENDPOINT",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 25,
+      "symbol": "ManipulableUser.init(name:surname:email:password:birthDate:Gender:profileImage:country:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 26,
+      "symbol": "ManipulableUser.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ManipulableUser.swift",
+      "line": 27,
+      "symbol": "ManipulableUser.insertFlat(flt:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 12,
+      "symbol": "NumberPlusPicker",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 14,
+      "symbol": "NumberPlusPicker.field",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 16,
+      "symbol": "NumberPlusPicker.fieldOldText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 17,
+      "symbol": "NumberPlusPicker.toolBar",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 18,
+      "symbol": "NumberPlusPicker.currentSelection",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 19,
+      "symbol": "NumberPlusPicker.setField(field:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 35,
+      "symbol": "NumberPlusPicker.numberOfComponents(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 39,
+      "symbol": "NumberPlusPicker.pickerView(_:numberOfRowsInComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 43,
+      "symbol": "NumberPlusPicker.pickerView(_:titleForRow:forComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 47,
+      "symbol": "NumberPlusPicker.pickerView(_:didSelectRow:inComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 52,
+      "symbol": "NumberPlusPicker.createToolBarForPicker()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 70,
+      "symbol": "NumberPlusPicker.doneFilterPicker(sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 77,
+      "symbol": "NumberPlusPicker.clearFilterPicker(sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/NumberPlusPicker.swift",
+      "line": 84,
+      "symbol": "NumberPlusPicker.cancelFilterPicker(sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 11,
+      "symbol": "OpenIssueViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 13,
+      "symbol": "OpenIssueViewController.popUpView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 22,
+      "symbol": "OpenIssueViewController.reportedUser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 24,
+      "symbol": "OpenIssueViewController.firebase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 26,
+      "symbol": "OpenIssueViewController.issue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 28,
+      "symbol": "OpenIssueViewController.contentTextView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 37,
+      "symbol": "OpenIssueViewController.titleTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 43,
+      "symbol": "OpenIssueViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 58,
+      "symbol": "OpenIssueViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 63,
+      "symbol": "OpenIssueViewController.openIssueActionButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 81,
+      "symbol": "OpenIssueViewController.textFieldDidEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 86,
+      "symbol": "OpenIssueViewController.textViewDidEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 91,
+      "symbol": "OpenIssueViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/OpenIssueViewController.swift",
+      "line": 97,
+      "symbol": "OpenIssueViewController.textView(_:shouldChangeTextIn:replacementText:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Promotion.swift",
+      "line": 10,
+      "symbol": "Promotion",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Promotion.swift",
+      "line": 12,
+      "symbol": "Promotion.ID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Promotion.swift",
+      "line": 13,
+      "symbol": "Promotion.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Promotion.swift",
+      "line": 14,
+      "symbol": "Promotion.discountRate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Promotion.swift",
+      "line": 15,
+      "symbol": "Promotion.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Promotion.swift",
+      "line": 16,
+      "symbol": "Promotion.isActive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Promotion.swift",
+      "line": 19,
+      "symbol": "Promotion.init(title:discountRate:description:isActive:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Querymaster.swift",
+      "line": 13,
+      "symbol": "QuerymasterDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Querymaster.swift",
+      "line": 15,
+      "symbol": "QuerymasterDelegate.getFilteredFlats(filter:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Querymaster.swift",
+      "line": 16,
+      "symbol": "QuerymasterDelegate.getPromotions(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Querymaster.swift",
+      "line": 48,
+      "symbol": "Querymaster.flatEndpoint",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Querymaster.swift",
+      "line": 50,
+      "symbol": "Querymaster.returningFlats",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Rate.swift",
+      "line": 11,
+      "symbol": "Rate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Rate.swift",
+      "line": 13,
+      "symbol": "Rate.rateID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Rate.swift",
+      "line": 14,
+      "symbol": "Rate.from_userID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Rate.swift",
+      "line": 15,
+      "symbol": "Rate.rate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Rate.swift",
+      "line": 17,
+      "symbol": "Rate.init(from_UserID:rate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/Rate.swift",
+      "line": 23,
+      "symbol": "Rate.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 11,
+      "symbol": "RegisterViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 13,
+      "symbol": "RegisterViewController.cities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 14,
+      "symbol": "RegisterViewController.user",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 15,
+      "symbol": "RegisterViewController.dbbridge",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 16,
+      "symbol": "RegisterViewController.myImgPickerController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 17,
+      "symbol": "RegisterViewController.ImgPickerForCamera",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 19,
+      "symbol": "RegisterViewController.imgView_Picker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 21,
+      "symbol": "RegisterViewController.name_TextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 23,
+      "symbol": "RegisterViewController.lastName_TextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 25,
+      "symbol": "RegisterViewController.email_TextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 27,
+      "symbol": "RegisterViewController.gender_PickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 29,
+      "symbol": "RegisterViewController.birthDate_PickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 31,
+      "symbol": "RegisterViewController.country_PickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 33,
+      "symbol": "RegisterViewController.password_TextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 35,
+      "symbol": "RegisterViewController.repeatPassword_TextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 37,
+      "symbol": "RegisterViewController.loading",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 43,
+      "symbol": "RegisterViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 177,
+      "symbol": "RegisterViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 182,
+      "symbol": "RegisterViewController.pickerView(_:didSelectRow:inComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 194,
+      "symbol": "RegisterViewController.pickerView(_:numberOfRowsInComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 204,
+      "symbol": "RegisterViewController.pickerView(_:titleForRow:forComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 233,
+      "symbol": "RegisterViewController.imagePickerController(_:didFinishPickingMediaWithInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 248,
+      "symbol": "RegisterViewController.imagePickerControllerDidCancel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 253,
+      "symbol": "RegisterViewController.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RegisterViewController.swift",
+      "line": 257,
+      "symbol": "RegisterViewController.numberOfComponents(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": null,
+      "symbol": "RenterEditOwnProfieController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 16,
+      "symbol": "RenterEditOwnProfieController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 20,
+      "symbol": "RenterEditOwnProfieController.cities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 22,
+      "symbol": "RenterEditOwnProfieController.isImageChanged",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 24,
+      "symbol": "RenterEditOwnProfieController.loadingIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 26,
+      "symbol": "RenterEditOwnProfieController.loginUser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 30,
+      "symbol": "RenterEditOwnProfieController.dbFirebase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 34,
+      "symbol": "RenterEditOwnProfieController.nameTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 41,
+      "symbol": "RenterEditOwnProfieController.surnameTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 49,
+      "symbol": "RenterEditOwnProfieController.birthdateDatePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 57,
+      "symbol": "RenterEditOwnProfieController.countyPickerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 65,
+      "symbol": "RenterEditOwnProfieController.mailAddressTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 75,
+      "symbol": "RenterEditOwnProfieController.renterPhotoImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 87,
+      "symbol": "RenterEditOwnProfieController.imagePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 89,
+      "symbol": "RenterEditOwnProfieController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 109,
+      "symbol": "RenterEditOwnProfieController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 244,
+      "symbol": "RenterEditOwnProfieController.setLoginUser()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 283,
+      "symbol": "RenterEditOwnProfieController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 289,
+      "symbol": "RenterEditOwnProfieController.pickerView(_:titleForRow:forComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 296,
+      "symbol": "RenterEditOwnProfieController.numberOfComponents(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 301,
+      "symbol": "RenterEditOwnProfieController.pickerView(_:numberOfRowsInComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 308,
+      "symbol": "RenterEditOwnProfieController.pickerView(_:didSelectRow:inComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 318,
+      "symbol": "RenterEditOwnProfieController.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 323,
+      "symbol": "RenterEditOwnProfieController.pickerView(_:viewForRow:forComponent:reusing:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 347,
+      "symbol": "RenterEditOwnProfieController.imagePickerControllerDidCancel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/RenterEditOwnProfieController.swift",
+      "line": 353,
+      "symbol": "RenterEditOwnProfieController.imagePickerController(_:didFinishPickingMediaWithInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 10,
+      "symbol": "ReservationRequest",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 12,
+      "symbol": "ReservationRequest.dbEndpoint",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 13,
+      "symbol": "ReservationRequest.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 14,
+      "symbol": "ReservationRequest.toU",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 15,
+      "symbol": "ReservationRequest.fromU",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 16,
+      "symbol": "ReservationRequest.flat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 17,
+      "symbol": "ReservationRequest.from",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 18,
+      "symbol": "ReservationRequest.to",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 19,
+      "symbol": "ReservationRequest.accepted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 20,
+      "symbol": "ReservationRequest.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 22,
+      "symbol": "ReservationRequest.init(fromU:toU:flat:from:to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationRequest.swift",
+      "line": 50,
+      "symbol": "ReservationRequest.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": null,
+      "symbol": "ReservationViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 13,
+      "symbol": "ReservationViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 15,
+      "symbol": "ReservationViewController.calendarView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 17,
+      "symbol": "ReservationViewController.yearLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 19,
+      "symbol": "ReservationViewController.unavailableDates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 21,
+      "symbol": "ReservationViewController.receivedFlat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 23,
+      "symbol": "ReservationViewController.selectedDayRange",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 25,
+      "symbol": "ReservationViewController.selectedExactDates",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 28,
+      "symbol": "ReservationViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 57,
+      "symbol": "ReservationViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 69,
+      "symbol": "ReservationViewController.configureCalendar(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 89,
+      "symbol": "ReservationViewController.calendar(_:willDisplayCell:date:cellState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 110,
+      "symbol": "ReservationViewController.calendar(_:sectionHeaderSizeFor:belongingTo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 114,
+      "symbol": "ReservationViewController.calendar(_:willDisplaySectionHeader:range:identifier:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 129,
+      "symbol": "ReservationViewController.updateMonthYearLabel(visibleDates:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ReservationViewController.swift",
+      "line": 142,
+      "symbol": "ReservationViewController.handleCellSelection(view:cellState:date:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 11,
+      "symbol": "SearchParameter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 13,
+      "symbol": "SearchParameter.whereParameter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 14,
+      "symbol": "SearchParameter.toParameter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 15,
+      "symbol": "SearchParameter.fromParameter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 16,
+      "symbol": "SearchParameter.numberOfSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 18,
+      "symbol": "SearchParameter.sizeNum",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 21,
+      "symbol": "SearchParameter.selectPeopleNum",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 22,
+      "symbol": "SearchParameter.four",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 23,
+      "symbol": "SearchParameter.three",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 24,
+      "symbol": "SearchParameter.two",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 25,
+      "symbol": "SearchParameter.one",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 26,
+      "symbol": "SearchParameter.moreThan4",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 29,
+      "symbol": "SearchParameter.selectBedroom",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 31,
+      "symbol": "SearchParameter.selectBed",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 33,
+      "symbol": "SearchParameter.selectCapacity",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 35,
+      "symbol": "SearchParameter.selectBathroom",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 37,
+      "symbol": "SearchParameter.bathroomSize",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 39,
+      "symbol": "SearchParameter.bedroomSize",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 42,
+      "symbol": "SearchParameter.capacity",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SearchParameter.swift",
+      "line": 45,
+      "symbol": "SearchParameter.bedSize",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SettingsVC.swift",
+      "line": 11,
+      "symbol": "SettingsVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SettingsVC.swift",
+      "line": 13,
+      "symbol": "SettingsVC.nameLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SettingsVC.swift",
+      "line": 14,
+      "symbol": "SettingsVC.profileIV",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SettingsVC.swift",
+      "line": 15,
+      "symbol": "SettingsVC.dbuser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SettingsVC.swift",
+      "line": 16,
+      "symbol": "SettingsVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SettingsVC.swift",
+      "line": 22,
+      "symbol": "SettingsVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowAlert.swift",
+      "line": null,
+      "symbol": "ShowAlert",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowAlert.swift",
+      "line": 14,
+      "symbol": "ShowAlert",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowAlert.swift",
+      "line": 23,
+      "symbol": "ShowAlert.defaultAlert()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowAlert.swift",
+      "line": 31,
+      "symbol": "ShowAlert.showAlert(title:message:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 11,
+      "symbol": "ShowUserProfileViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 13,
+      "symbol": "ShowUserProfileViewController.showedUser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 14,
+      "symbol": "ShowUserProfileViewController.firebase",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 16,
+      "symbol": "ShowUserProfileViewController.strUserID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 18,
+      "symbol": "ShowUserProfileViewController.userProfileImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 20,
+      "symbol": "ShowUserProfileViewController.nameSurnameLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 21,
+      "symbol": "ShowUserProfileViewController.countryLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 22,
+      "symbol": "ShowUserProfileViewController.birthdateLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 24,
+      "symbol": "ShowUserProfileViewController.mailAdressLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 25,
+      "symbol": "ShowUserProfileViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 41,
+      "symbol": "ShowUserProfileViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/ShowUserProfileViewController.swift",
+      "line": 49,
+      "symbol": "ShowUserProfileViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 11,
+      "symbol": "SpacesVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 13,
+      "symbol": "SpacesVC.spacesTV",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 14,
+      "symbol": "SpacesVC.dbFlat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 15,
+      "symbol": "SpacesVC.dbUser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 17,
+      "symbol": "SpacesVC.flatsArr",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 18,
+      "symbol": "SpacesVC.flatImgArr",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 20,
+      "symbol": "SpacesVC.oldCity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 21,
+      "symbol": "SpacesVC.oldFlat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 23,
+      "symbol": "SpacesVC.currentUsr",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 42,
+      "symbol": "SpacesVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 47,
+      "symbol": "SpacesVC.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 63,
+      "symbol": "SpacesVC.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 68,
+      "symbol": "SpacesVC.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 72,
+      "symbol": "SpacesVC.tableView(_:editActionsForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 99,
+      "symbol": "SpacesVC.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/SpacesVC.swift",
+      "line": 106,
+      "symbol": "SpacesVC.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/TableViewCell.swift",
+      "line": 11,
+      "symbol": "TableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/TableViewCell.swift",
+      "line": 13,
+      "symbol": "TableViewCell.imgv",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/TableViewCell.swift",
+      "line": 14,
+      "symbol": "TableViewCell.index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/TableViewCell.swift",
+      "line": 16,
+      "symbol": "TableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/TableViewCell.swift",
+      "line": 21,
+      "symbol": "TableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": null,
+      "symbol": "User",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 12,
+      "symbol": "User",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 14,
+      "symbol": "User.country",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 15,
+      "symbol": "User.profileImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 16,
+      "symbol": "User.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 17,
+      "symbol": "User.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 18,
+      "symbol": "User.surname",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 19,
+      "symbol": "User.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 20,
+      "symbol": "User.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 21,
+      "symbol": "User.birthDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 22,
+      "symbol": "User.Gender",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 23,
+      "symbol": "User.DB_ENDPOINT",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 28,
+      "symbol": "User.init(name:surname:email:password:birthDate:Gender:profileImage:country:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 41,
+      "symbol": "User.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 48,
+      "symbol": "User.insertFlat(flt:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/User.swift",
+      "line": 61,
+      "symbol": "User.staticGender",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishListTableView.swift",
+      "line": 11,
+      "symbol": "WishListTableView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishListTableView.swift",
+      "line": 14,
+      "symbol": "WishListTableView.flatImages",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishListTableView.swift",
+      "line": 17,
+      "symbol": "WishListTableView.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishListTableView.swift",
+      "line": 27,
+      "symbol": "WishListTableView.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishListTableView.swift",
+      "line": 32,
+      "symbol": "WishListTableView.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishVC.swift",
+      "line": 11,
+      "symbol": "WishVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishVC.swift",
+      "line": 13,
+      "symbol": "WishVC.dbflat",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishVC.swift",
+      "line": 14,
+      "symbol": "WishVC.dbusr",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishVC.swift",
+      "line": 16,
+      "symbol": "WishVC.wishListTV",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishVC.swift",
+      "line": 20,
+      "symbol": "WishVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/WishVC.swift",
+      "line": 31,
+      "symbol": "WishVC.wishList()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/spacescell.swift",
+      "line": 11,
+      "symbol": "spacescell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/spacescell.swift",
+      "line": 13,
+      "symbol": "spacescell.flatPricesLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/spacescell.swift",
+      "line": 14,
+      "symbol": "spacescell.flatTitleLbl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/spacescell.swift",
+      "line": 15,
+      "symbol": "spacescell.flatThumbImg",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/wishcell.swift",
+      "line": 11,
+      "symbol": "Wishcell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/wishcell.swift",
+      "line": 13,
+      "symbol": "Wishcell.flatIV",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/wishcell.swift",
+      "line": 16,
+      "symbol": "Wishcell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alicanyilmaz/Desktop/team/iFlat/iFlat/wishcell.swift",
+      "line": 21,
+      "symbol": "Wishcell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/alicanyilmaz/Desktop/team/iFlat"
+}

@@ -104,11 +104,9 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
 
         }
         /// This function retrieve user Image
-        userRP.getCurrentLoggedIn { (usr) in
-            self.userRP.getUserProfileImg(user: usr!, completion: { (img) in
-                let url = URL(string:img!)
-                self.userProfileIV.kf.setImage(with: url)
-
+        userRP.getUserByID(id: ownerID!) { (usr) in
+            self.userRP.getUserProfileImg(user: self.ownerID as! ManipulableUser, completion: { (url) in
+                self.userProfileIV.kf.setImage(with: URL(string:url!))
             })
         }
         
