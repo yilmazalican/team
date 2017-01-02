@@ -58,7 +58,7 @@ class auth {
   public function logout(){
         session_start();
     session_destroy();
-    echo"<script language=javascript>alert('Logout successfully!');</script><br>";
+    echo"Logout successfully!";
     header("Refresh: 0; url=index.php");
   }
 
