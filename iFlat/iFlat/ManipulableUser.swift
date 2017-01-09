@@ -22,6 +22,7 @@ protocol ManipulableUser :class
     var DB_ENDPOINT:FIRUSER {get set}
     
     
+    
     init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, profileImage:UIImage, country:String)
     init()
     func insertFlat(flt: ManipulableFlat, completion: @escaping (String?) -> ())

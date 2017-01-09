@@ -73,9 +73,14 @@
                                     <action selector="forgotPasswordTapped:" destination="83N-ms-XfQ" eventType="touchUpInside" id="C5a-2h-ACe"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-hv-bnh">
+                                <rect key="frame" x="169.5" y="315.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PtO-hv-bnh" firstAttribute="centerY" secondItem="WnG-8Q-vhG" secondAttribute="centerY" id="0vp-3s-asV"/>
                             <constraint firstItem="ePR-gd-rT8" firstAttribute="top" secondItem="ST9-aY-EcI" secondAttribute="bottom" constant="5" id="4a5-YG-CtE"/>
                             <constraint firstItem="3fF-Sm-912" firstAttribute="leading" secondItem="WnG-8Q-vhG" secondAttribute="leadingMargin" constant="5" id="CRK-qA-Ssv"/>
                             <constraint firstItem="734-df-jyl" firstAttribute="centerX" secondItem="WnG-8Q-vhG" secondAttribute="centerX" id="Fnb-5t-OWS"/>
@@ -89,6 +94,7 @@
                             <constraint firstItem="2Ne-Ad-X1Z" firstAttribute="top" secondItem="ST9-aY-EcI" secondAttribute="bottom" constant="5" id="eyj-af-Ueu"/>
                             <constraint firstItem="u7d-eg-7Kw" firstAttribute="leading" secondItem="WnG-8Q-vhG" secondAttribute="leadingMargin" id="fAP-uy-RnI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Ne-Ad-X1Z" secondAttribute="trailing" constant="50" id="qL8-Xx-2rE"/>
+                            <constraint firstItem="PtO-hv-bnh" firstAttribute="centerX" secondItem="WnG-8Q-vhG" secondAttribute="centerX" id="qOm-q8-B09"/>
                             <constraint firstItem="3fF-Sm-912" firstAttribute="trailing" secondItem="WnG-8Q-vhG" secondAttribute="trailingMargin" constant="5" id="rQT-wX-xMc"/>
                             <constraint firstItem="u7d-eg-7Kw" firstAttribute="top" secondItem="734-df-jyl" secondAttribute="bottom" constant="50" id="sEC-yk-qAr"/>
                             <constraint firstItem="ur8-j2-CmV" firstAttribute="top" secondItem="ST9-aY-EcI" secondAttribute="bottom" constant="120" id="v6x-9e-hHc"/>
@@ -99,6 +105,7 @@
                     <navigationItem key="navigationItem" title="Login" id="0sQ-pU-bdf"/>
                     <connections>
                         <outlet property="emailTextField" destination="3fF-Sm-912" id="mmZ-OK-SSb"/>
+                        <outlet property="indicator" destination="PtO-hv-bnh" id="Ivl-8k-gUJ"/>
                         <outlet property="passwordTextField" destination="ST9-aY-EcI" id="tKt-Oc-PyO"/>
                     </connections>
                 </viewController>
@@ -109,7 +116,7 @@
         <!--Navigation Controller-->
         <scene sceneID="lSs-Iq-ShN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eNA-zY-p9b" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthNVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eNA-zY-p9b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNG-rb-RHB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -244,7 +251,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="9pz-3X-6p5"/>
                                                 </constraints>
                                             </pickerView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LzF-lZ-euQ">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" your password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LzF-lZ-euQ">
                                                 <rect key="frame" x="15" y="607" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -262,7 +269,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="EWE-EP-7sJ"/>
                                                 </constraints>
                                             </pickerView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axu-XM-6hC">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Axu-XM-6hC">
                                                 <rect key="frame" x="15" y="674" width="345" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

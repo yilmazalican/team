@@ -14,21 +14,12 @@ class EditPhotoViewController: UIViewController,imageMaker {
 
     
     var imagePicker = BSImagePickerViewController()
+    var parentVC : EditFlatViewController?
 
     
-    @IBOutlet weak var editPhotoButton: UIButton!{
-        didSet{
-            
-            editPhotoButton.isEnabled = false
-        }
-    }
-    @IBOutlet weak var doneButton: UIButton!{
-        didSet{
-            doneButton.isEnabled = false
-        }
-    }
+    @IBOutlet weak var editPhotoButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var editPhotoCollectionView: EditPhotoCollectionView!
-    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
    
     
@@ -38,6 +29,13 @@ class EditPhotoViewController: UIViewController,imageMaker {
     
     var flat = Flat()
     
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
+
+        self.parentVC?.editingFlat = self.flat
+        self.dismiss(animated: true, completion: nil)
+
+
+    }
     @IBOutlet weak var popUpView: UIView!{
         didSet{
             popUpView.layer.cornerRadius = 10
@@ -48,7 +46,7 @@ class EditPhotoViewController: UIViewController,imageMaker {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.flat.images = [FlatImage]()
         imagePicker.maxNumberOfSelections = 4
 
         
@@ -85,18 +83,7 @@ class EditPhotoViewController: UIViewController,imageMaker {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-       
-        if let controller : EditFlatViewController = segue.destination as? EditFlatViewController {
-            controller.editingFlat = self.flat
-          controller.editingFlat.images = self.flatImage
-            
-        }
-        
-        
-        
-    }
+
     
     @IBAction func editPhotoButtonAction(_ sender: Any) {
              
@@ -151,7 +138,7 @@ class EditPhotoViewController: UIViewController,imageMaker {
                     
                     
                    self.editPhotoCollectionView.reloadData()
-                                         })
+                })
                 
                 
             }

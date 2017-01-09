@@ -55,6 +55,7 @@ class AddFlatViewController: UIViewController {
     
     
 
+
     @IBOutlet weak var bathroomPickerView: UIPickerView!{
         
         didSet{

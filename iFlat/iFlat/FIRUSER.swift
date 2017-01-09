@@ -42,7 +42,9 @@ protocol FIRUSERDelegate :class
     func getUsersReservationRequests(usr:ManipulableUser, completion: @escaping([ReservationRequest]) -> ())
     func getWishes(usrID:String, completion: @escaping([String:Bool]?) -> ())
     func isUserBanned(usrID:String, completion: @escaping(Bool) -> ())
-    
+    func insertObject(object:DenemeObje, completion: @escaping (String) -> ())
+
+
 }
 
 
@@ -54,20 +56,31 @@ protocol FIRUSERDelegate :class
     This class' methods only takes parameters of User,Flat and other models which conforms related protocols i.e. ManipulableUser
      */
 class FIRUSER: FIRUSERDelegate {
+    internal func insertObject(object: DenemeObje, completion: @escaping (String) -> ()) {
+        FIRREF.instance().getRef().child("denemeobje").setValue(object)
+
+    }
+
     internal func isUserBanned(usrID: String, completion: @escaping (Bool) -> ()) {
-        let value = FIRREF.instance().getRef().child("users/" + usrID + "/" + "isActive").observe(.value, with: { (ss) in
-            let val = ss.value as! String
-            if val == "true"
-            {
-                completion(true)
-            }
-            else
-            {
-                completion(false)
-            }
-        })
+        if usrID != nil{
+            let value = FIRREF.instance().getRef().child("users/" + usrID + "/" + "isActive").observe(.value, with: { (ss) in
+                let val = ss.value as! String
+                if val == "true"
+                {
+                    completion(true)
+                }
+                else
+                {
+                    completion(false)
+                }
+            })
+        }
+
         
     }
+
+
+
 
     
     /**
@@ -653,7 +666,8 @@ class FIRUSER: FIRUSERDelegate {
                         "birthdate": newUsr.birthDate!,
                         "country": newUsr.country!,
                         "email": newUsr.email!,
-                        "gender": newUsr.Gender!
+                        "gender": newUsr.Gender!,
+                        "isActive": "true"
                     ]
                 )
                 self.changeEmail(newEmail: newUsr.email!, completion: { (str) in
@@ -710,14 +724,14 @@ class FIRUSER: FIRUSERDelegate {
                             
                         else
                         {
-                            completion(err.debugDescription)
+                            completion(err?.localizedDescription)
                             return
                         }
                 })
 
             }
             else {
-                completion(err.debugDescription)
+                completion(err?.localizedDescription)
                 return
             }
         })

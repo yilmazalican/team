@@ -21,10 +21,11 @@ class User:ManipulableUser
     var birthDate:String?
     var Gender: String?
     var DB_ENDPOINT: FIRUSER
+    
 
 
     
-    //
+
     required init(name:String, surname:String, email:String,password:String, birthDate:String, Gender:String, profileImage img:UIImage, country:String)
     {
         self.name = name

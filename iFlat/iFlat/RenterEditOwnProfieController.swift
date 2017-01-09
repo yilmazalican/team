@@ -210,7 +210,6 @@ class RenterEditOwnProfieController: UIViewController {
     @IBAction func editedProfileButtonAction(_ sender: Any) {
         
      dbFirebase.edit(newUsr: self.loginUser) { (err) in
-        print(err)
       self.navigationController?.popViewController(animated: true)
         }
         
@@ -266,6 +265,11 @@ class RenterEditOwnProfieController: UIViewController {
                             
                       
                       })
+                        for (index,city) in self.cities.enumerated(){
+                            if city == self.loginUser.country{
+                                self.countyPickerView.selectRow(index, inComponent: 0, animated: true)
+                            }
+                        }
                               
                 
             })

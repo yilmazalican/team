@@ -10,16 +10,15 @@ import UIKit
 
 class EditFlatViewController: UIViewController {
 
+  
+
+
     var editingFlat = Flat()
     var firebase = FIRFlat()
-   
+    
     var oldCity = String()
    
-    @IBOutlet weak var flatPhotoButton: UIButton!{
-        didSet{
-            flatPhotoButton.isHidden = true 
-        }
-    }
+    @IBOutlet weak var flatPhotoButton: UIButton!
     @IBOutlet weak var flatTitleTextField: UITextField!{
         didSet{
             flatTitleTextField.delegate = self
@@ -103,7 +102,7 @@ class EditFlatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let vc = EditPhotoViewController()
         
         
         addressTextView.text = editingFlat.address

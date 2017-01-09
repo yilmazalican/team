@@ -212,14 +212,22 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Istanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwn-ai-qoV">
+                                                    <rect key="frame" x="8" y="14.5" width="61" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="0ez-jn-TWc" firstAttribute="leading" secondItem="wwn-ai-qoV" secondAttribute="leading" id="1XO-K2-2xp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="SuD-Ag-npc" secondAttribute="trailing" constant="8" id="3Ir-NX-GmC"/>
                                                 <constraint firstItem="LPz-CB-ojf" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="top" constant="5" id="GqP-e7-siD"/>
                                                 <constraint firstItem="SuD-Ag-npc" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="topMargin" id="L9H-ag-AHV"/>
                                                 <constraint firstItem="L5Z-s3-PMa" firstAttribute="leading" secondItem="fYr-Vp-UbV" secondAttribute="leading" constant="8" id="N6M-bi-5VO"/>
                                                 <constraint firstAttribute="bottom" secondItem="0ez-jn-TWc" secondAttribute="bottom" constant="5" id="R59-mx-M2H"/>
                                                 <constraint firstItem="LPz-CB-ojf" firstAttribute="height" secondItem="fYr-Vp-UbV" secondAttribute="height" id="UmF-gZ-a7V"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wwn-ai-qoV" secondAttribute="bottom" id="amJ-Yq-djY"/>
                                                 <constraint firstItem="0ez-jn-TWc" firstAttribute="leading" secondItem="fYr-Vp-UbV" secondAttribute="leading" constant="20" id="bj7-jD-XEp"/>
                                                 <constraint firstAttribute="trailing" secondItem="L5Z-s3-PMa" secondAttribute="trailing" constant="8" id="diz-Jr-Yud"/>
                                                 <constraint firstItem="0ez-jn-TWc" firstAttribute="top" secondItem="fYr-Vp-UbV" secondAttribute="topMargin" constant="5" id="kqW-Qo-tmh"/>
@@ -229,6 +237,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cityCell" destination="wwn-ai-qoV" id="7f9-Hm-X8t"/>
                                             <outlet property="flatPricesLbl" destination="SuD-Ag-npc" id="Jry-z1-OUH"/>
                                             <outlet property="flatThumbImg" destination="L5Z-s3-PMa" id="lD8-eX-k5W"/>
                                             <outlet property="flatTitleLbl" destination="0ez-jn-TWc" id="rGz-vS-mOK"/>

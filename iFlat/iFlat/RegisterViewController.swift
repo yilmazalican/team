@@ -113,8 +113,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
             dbbridge.insert(usr: user) { (error) in
                 
                 if (error != nil) {
-                    print(error)
-                    self.showAlert(title: "Error", message: "Error occured")
+                    self.showAlert(title: "Error", message: (error)!)
                     self.loading.stopAnimating()
                     self.view.isUserInteractionEnabled = true
 
@@ -126,7 +125,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                         if err != nil
                         {
                             print(err)
-                            self.showAlert(title: "Error", message: "Error occured")
+                            self.showAlert(title: "Error", message: error.debugDescription)
                             self.loading.stopAnimating()
                             self.view.isUserInteractionEnabled = true
 
@@ -139,6 +138,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                             self.dbbridge.sendverificationEmail(completion: { (err) in
                                 if err != nil{
                                     print(err)
+                                    self.showAlert(title: "Error", message: error.debugDescription)
                                     self.loading.stopAnimating()
                                     self.view.isUserInteractionEnabled = true
 
@@ -168,7 +168,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         }
         else
         {
-            self.showAlert(title: "Warning", message: "Fill in the blanks correctly, including email format.")
+            self.showAlert(title: "Warning", message: "Fill in the blanks correctly, including email format, password maching...")
         }
         
     }
@@ -258,4 +258,10 @@ class RegisterViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         return 1
     }
     
+}
+
+extension NSError{
+    func getDescription() -> String{
+        return self.localizedDescription
+    }
 }

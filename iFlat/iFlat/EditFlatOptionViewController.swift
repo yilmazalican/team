@@ -200,6 +200,9 @@ class EditFlatOptionViewController: UIViewController {
 
     
     
+    @IBAction func DoneButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     

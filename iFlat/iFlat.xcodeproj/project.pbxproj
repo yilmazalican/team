@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A142FCF1E219B8C009A13FE /* DenemeObje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A142FCE1E219B8C009A13FE /* DenemeObje.swift */; };
 		1A14671B1E093C1900B691EF /* FilteredFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14671A1E093C1900B691EF /* FilteredFlat.swift */; };
-		1A19484F1E198C8E0009583C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A19484E1E198C8E0009583C /* GoogleService-Info.plist */; };
 		1A24DAE21E036A6E00C49269 /* Querymaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24DAE11E036A6E00C49269 /* Querymaster.swift */; };
 		1A3440971E16E106006D2F25 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3440961E16E106006D2F25 /* Reservation.swift */; };
 		1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4917BA1E05DC69009E39DF /* Rate.swift */; };
@@ -23,6 +23,9 @@
 		1A90375E1E15A77700DFE510 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A90375D1E15A77700DFE510 /* Issue.swift */; };
 		1A9037601E15C31300DFE510 /* ReservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A90375F1E15C31300DFE510 /* ReservationRequest.swift */; };
 		1A9037631E15C7D200DFE510 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9037621E15C7D200DFE510 /* Promotion.swift */; };
+		1A9334D01E217D6D00340C45 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A9334CF1E217D6D00340C45 /* Info.plist */; };
+		1A9334D31E217DA400340C45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A9334D11E217DA400340C45 /* GoogleService-Info.plist */; };
+		1A9334D41E217DA400340C45 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A9334D21E217DA400340C45 /* Info.plist */; };
 		1AC48B891DE6615100505913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC48B881DE6615100505913 /* AppDelegate.swift */; };
 		1AC48B901DE6615100505913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B8F1DE6615100505913 /* Assets.xcassets */; };
 		1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC48B911DE6615100505913 /* LaunchScreen.storyboard */; };
@@ -73,7 +76,6 @@
 		95DDDC9E1E13161400106F24 /* ChoosePhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9D1E13161400106F24 /* ChoosePhotoCollectionView.swift */; };
 		95DDDCA01E13162100106F24 /* ChoosePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */; };
 		95E9C1991E194C1C0089ED2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E9C1981E194C1C0089ED2A /* GoogleService-Info.plist */; };
-		95ECDFBC1E1992D400B97265 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95ECDFBB1E1992D400B97265 /* Info.plist */; };
 		95ECDFBE1E199F6E00B97265 /* WishListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECDFBD1E199F6E00B97265 /* WishListTableView.swift */; };
 		95FEEDB11E15782B004448F1 /* EditFlatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */; };
 		95FEEDB31E158769004448F1 /* EditFlatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEEDB21E158769004448F1 /* EditFlatViewController.swift */; };
@@ -105,8 +107,8 @@
 
 /* Begin PBXFileReference section */
 		10BA7B8B0ACD6851D7E5E3D1 /* Pods-iFlat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iFlat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iFlat/Pods-iFlat.release.xcconfig"; sourceTree = "<group>"; };
+		1A142FCE1E219B8C009A13FE /* DenemeObje.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenemeObje.swift; sourceTree = "<group>"; };
 		1A14671A1E093C1900B691EF /* FilteredFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredFlat.swift; sourceTree = "<group>"; };
-		1A19484E1E198C8E0009583C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A24DAE11E036A6E00C49269 /* Querymaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Querymaster.swift; sourceTree = "<group>"; };
 		1A257C081DF1DA3100F08B61 /* iFlat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFlat.entitlements; sourceTree = "<group>"; };
 		1A3440961E16E106006D2F25 /* Reservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -122,6 +124,9 @@
 		1A90375D1E15A77700DFE510 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		1A90375F1E15C31300DFE510 /* ReservationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationRequest.swift; sourceTree = "<group>"; };
 		1A9037621E15C7D200DFE510 /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		1A9334CF1E217D6D00340C45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A9334D11E217DA400340C45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A9334D21E217DA400340C45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC48B851DE6615100505913 /* iFlat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC48B881DE6615100505913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = iFlat/AppDelegate.swift; sourceTree = "<group>"; };
 		1AC48B8F1DE6615100505913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iFlat/Assets.xcassets; sourceTree = "<group>"; };
@@ -181,7 +186,6 @@
 		95DDDC9D1E13161400106F24 /* ChoosePhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoCollectionView.swift; sourceTree = "<group>"; };
 		95DDDC9F1E13162100106F24 /* ChoosePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		95E9C1981E194C1C0089ED2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		95ECDFBB1E1992D400B97265 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95ECDFBD1E199F6E00B97265 /* WishListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableView.swift; sourceTree = "<group>"; };
 		95FEEDB01E15782B004448F1 /* EditFlatStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditFlatStoryboard.storyboard; sourceTree = "<group>"; };
 		95FEEDB21E158769004448F1 /* EditFlatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFlatViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		1A8083601DF18368009655AD /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A9334CF1E217D6D00340C45 /* Info.plist */,
 				1AC48B9D1DE6615100505913 /* UserModelTests.swift */,
 			);
 			name = ModelTests;
@@ -312,8 +317,8 @@
 		1AC48BB61DE6616300505913 /* Static */ = {
 			isa = PBXGroup;
 			children = (
-				95ECDFBB1E1992D400B97265 /* Info.plist */,
-				1A19484E1E198C8E0009583C /* GoogleService-Info.plist */,
+				1A9334D11E217DA400340C45 /* GoogleService-Info.plist */,
+				1A9334D21E217DA400340C45 /* Info.plist */,
 				1A8083611DF1838D009655AD /* UTILITY */,
 				1AC48B881DE6615100505913 /* AppDelegate.swift */,
 				1AC48B8F1DE6615100505913 /* Assets.xcassets */,
@@ -380,6 +385,7 @@
 				1A90375F1E15C31300DFE510 /* ReservationRequest.swift */,
 				1A9037621E15C7D200DFE510 /* Promotion.swift */,
 				1A3440961E16E106006D2F25 /* Reservation.swift */,
+				1A142FCE1E219B8C009A13FE /* DenemeObje.swift */,
 			);
 			name = MODEL_LAYER;
 			sourceTree = "<group>";
@@ -756,7 +762,7 @@
 				TargetAttributes = {
 					1AC48B841DE6615100505913 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 9RDWH786DV;
+						DevelopmentTeam = 97TQ8HBR2G;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -804,6 +810,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				462D7F141DF587B80060807B /* FlatProfile.storyboard in Resources */,
+				1A9334D01E217D6D00340C45 /* Info.plist in Resources */,
+				1A9334D41E217DA400340C45 /* Info.plist in Resources */,
 				1AC48B931DE6615100505913 /* LaunchScreen.storyboard in Resources */,
 				95E9C1991E194C1C0089ED2A /* GoogleService-Info.plist in Resources */,
 				955F425B1E11300900A5BA5A /* EditProfileStoryBoard.storyboard in Resources */,
@@ -812,10 +820,9 @@
 				958FB1521E171CDE00744E59 /* ShowUserProfileStoryboard.storyboard in Resources */,
 				80E17F481DFABE4C0020C695 /* ListFlat.storyboard in Resources */,
 				1ACDDC531E11775E00E34629 /* MainFlow.storyboard in Resources */,
-				1A19484F1E198C8E0009583C /* GoogleService-Info.plist in Resources */,
-				95ECDFBC1E1992D400B97265 /* Info.plist in Resources */,
 				951A92981DF4E21800199B83 /* EntranceStoryBoard.storyboard in Resources */,
 				95FEEDB11E15782B004448F1 /* EditFlatStoryboard.storyboard in Resources */,
+				1A9334D31E217DA400340C45 /* GoogleService-Info.plist in Resources */,
 				803DE5D91E11AE6000CCB17E /* CellView.xib in Resources */,
 				1AC48B901DE6615100505913 /* Assets.xcassets in Resources */,
 				46E8E9991DF09B1900C265E3 /* Authentication.storyboard in Resources */,
@@ -983,6 +990,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95AC4F151DFAD82700A7F106 /* FilterModel.swift in Sources */,
+				1A142FCF1E219B8C009A13FE /* DenemeObje.swift in Sources */,
 				957A65661DF5D8A500844766 /* RenterEditOwnProfieController.swift in Sources */,
 				95DDDC971E12EE3D00106F24 /* AddFlatViewController.swift in Sources */,
 				1A4917BB1E05DC69009E39DF /* Rate.swift in Sources */,
@@ -1186,7 +1194,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9RDWH786DV;
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1205,7 +1213,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iFlat/iFlat.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9RDWH786DV;
+				DEVELOPMENT_TEAM = 97TQ8HBR2G;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

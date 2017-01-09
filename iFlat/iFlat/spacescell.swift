@@ -13,6 +13,7 @@ class spacescell: TableViewCell {
     @IBOutlet weak var flatPricesLbl: UILabel!
     @IBOutlet weak var flatTitleLbl: UILabel!
     @IBOutlet weak var flatThumbImg: UIImageView!
+    @IBOutlet weak var cityCell: UILabel!
     
     
     

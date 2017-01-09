@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Renter Edit Own Profie Controller-->
+        <!--View & Edit Profile-->
         <scene sceneID="jgk-0j-Qzs">
             <objects>
                 <viewController id="DDj-4Y-YfO" customClass="RenterEditOwnProfieController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
@@ -343,6 +343,7 @@
                             <constraint firstItem="Kbc-Ue-qKw" firstAttribute="top" secondItem="fWQ-ad-Utz" secondAttribute="bottom" id="naQ-P6-eCe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="View &amp; Edit Profile" id="Hq7-o3-kgl"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>

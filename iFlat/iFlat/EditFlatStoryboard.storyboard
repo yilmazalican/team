@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Q4-y9-stk">
                                 <rect key="frame" x="0.0" y="20" width="375" height="447"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rgF-tR-Y9R" customClass="EditPhotoCollectionView" customModule="iFlat" customModuleProvider="target">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rgF-tR-Y9R" customClass="EditPhotoCollectionView" customModule="iFlat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="377"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dPz-td-OAw">
@@ -36,7 +36,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editPhotoCell" id="hUG-I9-Hia" customClass="EditPhotoCollectionViewCell" customModule="iFlat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-19" width="375" height="414"/>
+                                                <rect key="frame" x="0.0" y="-18.5" width="375" height="414"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
@@ -74,7 +74,7 @@
                                         <rect key="frame" x="284" y="397" width="71" height="30"/>
                                         <state key="normal" title="Done"/>
                                         <connections>
-                                            <segue destination="AoD-Ru-LvQ" kind="show" id="gYt-iF-0nE"/>
+                                            <action selector="doneButtonTapped:" destination="Fft-3V-1hO" eventType="touchUpInside" id="pAJ-ih-bDg"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-9A-Idg">
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRW-gj-Uin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-603"/>
+            <point key="canvasLocation" x="206" y="-663"/>
         </scene>
         <!--Edit Flat Option View Controller-->
         <scene sceneID="UKn-1j-Z4K">
@@ -394,7 +394,7 @@
                                         </constraints>
                                         <state key="normal" title="Done"/>
                                         <connections>
-                                            <segue destination="AoD-Ru-LvQ" kind="show" id="0Nx-kC-FAh"/>
+                                            <action selector="DoneButtonTapped:" destination="cga-a2-s0H" eventType="touchUpInside" id="QID-Ac-ccP"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aa-og-fAc">
@@ -684,7 +684,7 @@
             </objects>
             <point key="canvasLocation" x="966.39999999999998" y="-127.736131934033"/>
         </scene>
-        <!--Edit Flat View Controller-->
+        <!--Edit Flat-->
         <scene sceneID="wVq-xH-k4i">
             <objects>
                 <viewController storyboardIdentifier="EditFlatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AoD-Ru-LvQ" customClass="EditFlatViewController" customModule="iFlat" customModuleProvider="target" sceneMemberID="viewController">
@@ -718,7 +718,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXb-mc-ORL">
-                                <rect key="frame" x="16" y="750" width="343" height="50"/>
+                                <rect key="frame" x="154" y="750" width="67" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Lda-PY-xFc"/>
                                 </constraints>
@@ -778,8 +778,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uQ0-Uu-1eq" firstAttribute="leading" secondItem="Kkj-Zd-iak" secondAttribute="leadingMargin" constant="10" id="2dP-QT-nIG"/>
-                            <constraint firstItem="FXb-mc-ORL" firstAttribute="leading" secondItem="Kkj-Zd-iak" secondAttribute="leadingMargin" id="37P-V1-dZL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FXb-mc-ORL" secondAttribute="trailing" id="6Na-gu-BeH"/>
                             <constraint firstAttribute="trailing" secondItem="MBO-sd-luR" secondAttribute="trailing" constant="20" id="7Sd-LR-eKQ"/>
                             <constraint firstItem="YGv-IN-ZDS" firstAttribute="top" secondItem="xIu-Sn-8Fs" secondAttribute="bottom" constant="20" id="BAR-8j-TM9"/>
                             <constraint firstItem="MBO-sd-luR" firstAttribute="height" secondItem="xIu-Sn-8Fs" secondAttribute="height" id="DU5-dl-OUP"/>
@@ -796,9 +794,11 @@
                             <constraint firstItem="rSR-BY-RwA" firstAttribute="leading" secondItem="Kkj-Zd-iak" secondAttribute="leading" constant="20" id="rAT-El-jrC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YGv-IN-ZDS" secondAttribute="trailing" constant="20" id="s1t-re-y1u"/>
                             <constraint firstItem="MBO-sd-luR" firstAttribute="top" secondItem="uQ0-Uu-1eq" secondAttribute="bottom" constant="50" id="vDj-Sn-JWR"/>
+                            <constraint firstItem="FXb-mc-ORL" firstAttribute="centerX" secondItem="Kkj-Zd-iak" secondAttribute="centerX" id="wFA-91-ikk"/>
                             <constraint firstAttribute="trailing" secondItem="xIu-Sn-8Fs" secondAttribute="trailing" constant="20" id="wGY-l7-jeU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit Flat" id="nMK-uK-cDe"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
@@ -822,7 +822,4 @@
         <image name="minus" width="50" height="50"/>
         <image name="plus" width="50" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="0Nx-kC-FAh"/>
-    </inferredMetricsTieBreakers>
 </document>

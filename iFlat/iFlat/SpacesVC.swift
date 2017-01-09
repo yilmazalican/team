@@ -51,6 +51,7 @@ class SpacesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
             cell.flatThumbImg.kf.setImage(with: url)
             cell.flatPricesLbl.text = String(describing: self.flatsArr[indexPath.row].price!) + "₺" + "\n per night"
             cell.flatTitleLbl.text = self.flatsArr[indexPath.row].title
+            cell.cityCell.text = self.flatsArr[indexPath.row].city
             cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         
