@@ -15,7 +15,8 @@ extension Date
         
         let dateStringFormatter = DateFormatter()
         dateStringFormatter.dateFormat = "dd/MM/yyyy"
-        dateStringFormatter.locale = Locale(identifier: "tr_TR")
+        dateStringFormatter.locale = Locale(identifier: "TR_TR")
+        dateStringFormatter.timeZone = TimeZone(secondsFromGMT: 3)
         let d = dateStringFormatter.date(from: dateString)!
         
         self.init(timeInterval: 0, since:d)
@@ -25,7 +26,9 @@ extension Date
     
     func toTimeStamp() -> Int
     {
-        let a = Int(self.timeIntervalSince1970)
+        var a = Int(self.timeIntervalSince1970)
+        let b = a % (60*60*24)
+        a = a - b
         return a
     }
     

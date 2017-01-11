@@ -40,30 +40,89 @@ protocol FIRUSERDelegate :class
     func rejectReservationRequest(req:ReservationRequest,completion: @escaping(String?) -> ())
     func getFlatByID(id:String, completion: @escaping(ManipulableFlat?) -> ())
     func getUsersReservationRequests(usr:ManipulableUser, completion: @escaping([ReservationRequest]) -> ())
+    func getFlatReservations(fltID:String, completion: @escaping([ReservationRequest]?) -> ())
     func getWishes(usrID:String, completion: @escaping([String:Bool]?) -> ())
     func isUserBanned(usrID:String, completion: @escaping(Bool) -> ())
     func insertObject(object:DenemeObje, completion: @escaping (String) -> ())
-
-
+    func insertReservationTimeSlot(req: ReservationRequest, completion: @escaping (String?) -> ())
+    func insertReservationIDToUserFlat(req:ReservationRequest, completion: @escaping (String?) -> ())
+    func getRenterReservations(completion: @escaping([ReservationRequest]) -> ())
+    func insertAvailableTimeSlotsToFlat(flt: ManipulableFlat, timeslot:[Int], completion: @escaping (String?) -> ()) 
+    func getAvailableTimeSlotsOfFlat(userID:String,fltID:String, completion: @escaping ([Int]?) -> ())
 }
 
 
 
 
-    /**
-     This class is the object which connects coder to Db for manipulation.
-    Developers can use this class at their controller classes. This class **usage** directly in model is not **allowed.**
-    This class' methods only takes parameters of User,Flat and other models which conforms related protocols i.e. ManipulableUser
-     */
+/**
+ This class is the object which connects coder to Db for manipulation.
+ Developers can use this class at their controller classes. This class **usage** directly in model is not **allowed.**
+ This class' methods only takes parameters of User,Flat and other models which conforms related protocols i.e. ManipulableUser
+ */
 class FIRUSER: FIRUSERDelegate {
-    internal func insertObject(object: DenemeObje, completion: @escaping (String) -> ()) {
-        FIRREF.instance().getRef().child("denemeobje").setValue(object)
-
+    internal func getAvailableTimeSlotsOfFlat(userID:String, fltID: String, completion: @escaping ([Int]?) -> ()) {
+        FIRREF.instance().getRef().child("user_flats/" + userID + "/" + fltID).child("available_timeslots").observeSingleEvent(of: .value, with: { (ss) in
+            let val = ss.value as! [String:Bool]
+            var returningDict = [Int]()
+            if val.count > 0{
+                for a in val{
+                    if(a.value)
+                    {
+                        returningDict.append(Int(a.key)!)
+                    }
+                }
+                completion(returningDict)
+            }
+            else{
+                completion(nil)
+            }
+          
+        })
     }
 
+
+
+
+    internal func insertAvailableTimeSlotsToFlat(flt: ManipulableFlat, timeslot:[Int], completion: @escaping (String?) -> ()) {
+        var timeSlotDict = [String:Bool]()
+        for a in timeslot{
+            timeSlotDict[String(describing:a)] = true
+        }
+        FIRREF.instance().getRef().child("user_flats").child(flt.userID!  + "/" + flt.id + "/" + "available_timeslots/").setValue(timeSlotDict)
+        completion(nil)
+    }
+    
+    
+
+    internal func insertReservationIDToUserFlat(req: ReservationRequest, completion: @escaping (String?) -> ()) {
+        FIRREF.instance().getRef().child("user_flats").child(req.hostUID!).child(req.flatID!).child("reservations/").child(req.id).setValue(true)
+        FIRREF.instance().getRef().child("users").child(req.renterUID!).child("reservations/").child(req.id).setValue(true)
+        completion(nil)
+        
+    }
+    
+    
+    internal func insertReservationTimeSlot(req: ReservationRequest, completion: @escaping (String?) -> ()) {
+        var dict = [String:Bool]()
+        var first = req.timeSlots.first!
+        let last = req.timeSlots.last!
+        while(first <= last){ 
+            dict[String(describing:first)] = true
+            first = first + (60*60*24)
+            
+        }
+       FIRREF.instance().getRef().child("reservationRequests/" + req.id + "/time_slots").setValue(dict) 
+        completion(nil)
+    }
+    
+    internal func insertObject(object: DenemeObje, completion: @escaping (String) -> ()) {
+        FIRREF.instance().getRef().child("denemeobje").setValue(object)
+        
+    }
+    
     internal func isUserBanned(usrID: String, completion: @escaping (Bool) -> ()) {
-        if usrID != nil{
-            let value = FIRREF.instance().getRef().child("users/" + usrID + "/" + "isActive").observe(.value, with: { (ss) in
+        let ref =  FIRDatabase.database().reference().child("users/" + usrID + "/" + "isActive")
+            ref.observe(.value, with: { (ss) in
                 let val = ss.value as! String
                 if val == "true"
                 {
@@ -72,27 +131,21 @@ class FIRUSER: FIRUSERDelegate {
                 else
                 {
                     completion(false)
+                    ref.removeAllObservers()
                 }
             })
-        }
-
-        
     }
-
-
-
-
     
     /**
-        This method returns its completion closure paramter, the users which have wishes. The returning wishes returns as flatID.
+     This method returns its completion closure paramter, the users which have wishes. The returning wishes returns as flatID.
      - parameters:
-            - usrID: The userID which is ID of user whose wishes requested.
-            - completion: This parameter is a callback closure block which returns the wishes as dictionary String:Bool.
-                            key of the dictionary is the id of user, value is always true.
+     - usrID: The userID which is ID of user whose wishes requested.
+     - completion: This parameter is a callback closure block which returns the wishes as dictionary String:Bool.
+     key of the dictionary is the id of user, value is always true.
      
      */
     internal func getWishes(usrID: String, completion: @escaping ([String:Bool]?) -> ()) {
-        FIRREF.instance().getRef().child("Wishes/" + usrID).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("wishes/" + usrID).observeSingleEvent(of: .value, with: { (ss) in
             if ss.childrenCount == 0{
                 completion(nil)
             }
@@ -100,25 +153,22 @@ class FIRUSER: FIRUSERDelegate {
             {
                 let value = ss.value as! [String:Bool]
                 completion(value)
-
+                
             }
         })
     }
-
-   
     
-
     
     /**
-      Get flat by its id as ManipulableFlat object
+     Get flat by its id as ManipulableFlat object
      - parameters:
-        - id: The id which is ID of flat whose requested.
-        - completion: This parameter is a callback closure block which returns flats as ManipulableFlat object.
+     - id: The id which is ID of flat whose requested.
+     - completion: This parameter is a callback closure block which returns flats as ManipulableFlat object.
      - returns:Void
      - throws:FIRERROR
      */
     internal func getFlatByID(id: String, completion: @escaping (ManipulableFlat?) -> ()) {
-        FIRREF.instance().getRef().child("filter_flats/" + id).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("filter_flats/" + id).observeSingleEvent(of: .value, with: { (ss) in
             let flt = Flat()
             let objdict = ss.value as! [String:Any]
             flt.bathroomCount = objdict["bathroomCount"] as? Int
@@ -146,7 +196,7 @@ class FIRUSER: FIRUSERDelegate {
             completion(flt)
         })
     }
-
+    
     /// This functions loads logged user's reservation request
     ///
     ///  - Parameter usr: (ManipubleUser)
@@ -155,30 +205,95 @@ class FIRUSER: FIRUSERDelegate {
     ///  - returns void
     internal func getUsersReservationRequests(usr:ManipulableUser,completion: @escaping([ReservationRequest]) -> ()) {
         var returningReqs = [ReservationRequest]()
-        FIRREF.instance().getRef().child("reservationRequests").queryOrdered(byChild: "toU").queryEqual(toValue: usr.id).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("reservationRequests").queryOrdered(byChild: "hostUID").queryEqual(toValue: usr.id).observeSingleEvent(of: .value, with: { (ss) in
             let obj = ss.children.allObjects
             for a in obj
             {
                 let key = a as! FIRDataSnapshot
                 let value = key.value as! [String:Any]
-                var req = ReservationRequest()
-                req.accepted = Int(value["accepted"] as! String)
+                let req = ReservationRequest()
+                req.accepted = Int(value["status"] as! String)
                 req.date = value["date"] as? String
-                req.flat = value["flat"] as? String
-                req.from = value["from"] as? Int
-                req.to = value["to"] as? Int
+                req.flatID = value["flatID"] as? String
                 req.id = key.key
-                req.fromU = value["fromU"] as? String
-                req.toU = value["toU"] as? String
+                req.renterUID = value["renterUID"] as? String
+                req.hostUID = value["hostUID"] as? String
+                req.timeSlots = (value["time_slots"] as? [Int])!
                 returningReqs.append(req)
-        }
+            }
             completion(returningReqs)
-    })
+        })
         
     }
+    
+    
+    internal func getFlatReservations(fltID : String, completion : @escaping([ReservationRequest]?) -> ()){
+        var allReserv = [ReservationRequest]()
+        getCurrentLoggedIn { (usr) in
+            FIRREF.instance().getRef().child("user_flats/" + usr!.id! + "/" + fltID + "/" + "reservations").observeSingleEvent(of: .value, with: { (ss) in
+                if ss.childrenCount > 0{
+                    let obj = ss.value as! [String:Bool]
+                    
+                    for (index,a) in obj.enumerated(){
+                        let reserv = ReservationRequest()
+                        FIRREF.instance().getRef().child("reservationRequests/" + a.key).observeSingleEvent(of: .value, with: { (ss) in
+                            let value = ss.value as! [String:Any]
+                            reserv.accepted = value["status"] as? Int
+                            reserv.date = value["date"] as! String?
+                            reserv.flatID = value["flatID"] as! String?
+                            reserv.hostUID = value["hostUID"] as! String?
+                            reserv.renterUID = value["renterUID"] as? String
+                            reserv.id = ss.key
+                            let b = value["time_slots"] as! [String:Bool]
+                            for c in b{
+                                reserv.timeSlots.append(Int(c.key)!)
+                            }
+                            allReserv.append(reserv)
+                            if index == obj.count - 1 {
+                                completion(allReserv)
 
+                            }
+                        })
+                    }
+                    
+                }
+                else{
+                    completion(nil)
+                }
+                
 
-
+            })
+        }
+    }
+    
+    internal func getRenterReservations(completion : @escaping([ReservationRequest]) -> ()){
+        var allReserv = [ReservationRequest]()
+        getCurrentLoggedIn { (usr) in
+            FIRREF.instance().getRef().child("users/" + usr!.id! + "/" + "reservations").observeSingleEvent(of: .value, with: { (ss) in
+                let obj = ss.value as! [String:Bool]
+                
+                for a in obj{
+                    let reserv = ReservationRequest()
+                    FIRREF.instance().getRef().child("reservationRequests/" + a.key).observeSingleEvent(of: .value, with: { (ss) in
+                        let value = ss.value as! [String:Any]
+                        reserv.accepted = value["status"] as? Int
+                        reserv.date = value["date"] as! String!
+                        reserv.flatID = value["flatID"] as! String!
+                        reserv.hostUID = value["hostUID"] as! String!
+                        reserv.renterUID = value["renterUID"] as? String
+                        reserv.id = ss.key
+                        let b = value["time_slots"] as! [Int:Bool]
+                        for c in b{
+                            reserv.timeSlots.append(c.key)
+                        }
+                        allReserv.append(reserv)
+                    })
+                }
+                completion(allReserv)
+            })
+        }
+    }
+    
     /// This function makes reservation request accepted
     ///
     ///  - Parameter req: (ReservationRequest)
@@ -198,7 +313,7 @@ class FIRUSER: FIRUSERDelegate {
     internal func rejectReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(2, forKey: "accepted")
     }
-
+    
     /// This function adds reservation request to DB
     ///
     ///  - Parameter req: (ReservationRequest)
@@ -208,28 +323,36 @@ class FIRUSER: FIRUSERDelegate {
     internal func sendReservationRequest(req: ReservationRequest, completion: @escaping (String?) -> ()) {
         FIRREF.instance().getRef().child("reservationRequests/" + req.id).setValue(
             [
-            "toU": req.toU! as String,
-            "flat" : req.flat!,
-            "from": req.from!,
-            "to" : req.to!,
-            "accepted": req.accepted!,
-            "date": req.date!
+                "renterUID": req.renterUID! as String,
+                "hostUID": req.hostUID! as String,
+                "flatID" : req.flatID!,
+                "status": req.accepted!,
+                "date": req.date!
             ]
             
-            ) { (err, nil) in
-                if err == nil
-                {
-                    completion(nil)
-                }
-                else
-                {
-                    completion(err.debugDescription)
-                }
+        ) { (err, nil) in
+            if err == nil
+            {
+                self.insertReservationTimeSlot(req: req, completion: { (str) in
+                    if str == nil{
+                        self.insertReservationIDToUserFlat(req: req, completion: { (err) in
+                            if err == nil{
+                                completion(nil)
+                            }
+                        }) 
+                    }
+                    
+                })
+            }
+            else
+            {
+                completion(err.debugDescription)
+            }
         }
     }
-
     
-
+    
+    
     /// This functions gets user from DB with userID
     ///
     ///  - Parameter id: (String) UserID
@@ -243,14 +366,14 @@ class FIRUSER: FIRUSERDelegate {
             
             if(snapshot.childrenCount >= 1){
                 
-                let objdict = snapshot.value as! [String:String]
+                let objdict = snapshot.value as! [String:Any]
                 usr.id = snapshot.key
-                usr.email = objdict["email"]!
-                usr.Gender = objdict["gender"]!
-                usr.name = objdict["firstName"]!
-                usr.birthDate = objdict["birthdate"]!
-                usr.surname = objdict["lastName"]!
-                usr.country = objdict["country"]!
+                usr.email = objdict["email"] as! String!
+                usr.Gender = objdict["gender"] as! String!
+                usr.name = objdict["firstName"] as! String!
+                usr.birthDate = objdict["birthdate"] as! String!
+                usr.surname = objdict["lastName"] as! String!
+                usr.country = objdict["country"] as! String!
                 completion(usr)
             }
             else
@@ -260,7 +383,7 @@ class FIRUSER: FIRUSERDelegate {
         })
     }
     
-
+    
     /// This function opens issue to specific user.
     ///
     ///  - Parameter toUser: (ManipulableUser) User
@@ -274,9 +397,9 @@ class FIRUSER: FIRUSERDelegate {
             "issued": toUser.id!,
             "title": issue.title!,
             "issuer": issue.issuer!] as [String : Any]
-
+        
         FIRREF.instance().getRef().child("issues/"  + issue.ID!).setValue(insertingDict) { (err, nil) in
-
+            
             if err == nil
             {
                 completion(nil)
@@ -287,7 +410,7 @@ class FIRUSER: FIRUSERDelegate {
             }
         }
     }
-
+    
     /// This function gets issue of user.
     ///
     ///  - Parameter user: (ManipulableUser) User object
@@ -296,21 +419,21 @@ class FIRUSER: FIRUSERDelegate {
     ///  - throws: FIRERROR
     internal func getISsue(user: ManipulableUser, completion: @escaping ([Issue]) -> ()) {
         var issues = [Issue]()
-        FIRREF.instance().getRef().observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("issues").queryOrdered(byChild: "issuer").queryEqual(toValue: user.id).observeSingleEvent(of: .value, with: { (ss) in
             let obj = ss.children.allObjects
             for a in obj
             {
                 let key = a as! FIRDataSnapshot
                 let value = key.value as! [String:Any]
-
+                
                 let title = value["title"] as! String
                 let content = value["content"] as! String
                 let issued = value["issued"] as! String
-                let isOpen = value["isopen"] as! String
+                let isOpen = value["isOpen"] as! String
                 let answer = value["answer"] as? String
-                var issue = Issue(title: title, content: content, issued: issued)
+                let issue = Issue(title: title, content: content, issued: issued)
                 issue.ID = key.key
-                issue.issuer = value["issuer"] as! String
+                issue.issuer = value["issuer"] as? String
                 issue.isOpen = isOpen
                 issue.answer = answer
                 issues.append(issue)
@@ -319,9 +442,9 @@ class FIRUSER: FIRUSERDelegate {
             completion(issues)
         })
     }
-
-   
-
+    
+    
+    
     /// This function sends password reset email to user
     ///
     ///  - Parameter email: (String) UserEmail
@@ -348,16 +471,16 @@ class FIRUSER: FIRUSERDelegate {
     ///  - returns void
     ///  - throws: FIRERROR
     internal func getCities(completion: @escaping ([String]) -> ()) {
-        FIRREF.instance().getRef().child("cities").queryOrderedByKey().observe(.value, with: { (ss) in
-        var arr = [String]()
-        let dict = ss.value as! [String]
+        FIRREF.instance().getRef().child("cities").queryOrderedByKey().observeSingleEvent(of: .value, with: { (ss) in
+            var arr = [String]()
+            let dict = ss.value as! [String]
             for a in dict
             {
                 arr.append(a)
             }
             let sortedArr = arr.sorted(by: { $0 < $1  })
             completion(sortedArr)
-       
+            
         })
     }
     
@@ -375,10 +498,10 @@ class FIRUSER: FIRUSERDelegate {
             completion(str)
         }
     }
-
-
-
-   
+    
+    
+    
+    
     
     
     /// This function retrieves rates of User from DB
@@ -389,7 +512,7 @@ class FIRUSER: FIRUSERDelegate {
     ///  - throws: FIRERROR
     internal func getUserRates(userID: String, completion: @escaping ([Rate]?) -> ()) {
         var allRates = [Rate]()
-        FIRREF.instance().getRef().child("user_rates/" + userID).observe(.value, with:  { (ss) in
+        FIRREF.instance().getRef().child("user_rates/" + userID).observeSingleEvent(of: .value, with:  { (ss) in
             let allvalues = ss.children.allObjects
             for a in allvalues
             {
@@ -427,7 +550,7 @@ class FIRUSER: FIRUSERDelegate {
         
         
     }
-
+    
     /// This function retrieves user's profile image's URL
     ///
     ///  - Parameter user: ManipubleUSer
@@ -440,9 +563,9 @@ class FIRUSER: FIRUSERDelegate {
             completion(dict["downloadURL"])
         })
     }
-
-
-
+    
+    
+    
     /// This fuction inserts User Profile Image to storage and DB
     ///
     ///  - Parameter user: ManipubleUser
@@ -478,11 +601,11 @@ class FIRUSER: FIRUSERDelegate {
             return
         }
     }
-
     
     
-
-
+    
+    
+    
     
     /// This function changes Email of user
     ///
@@ -506,7 +629,7 @@ class FIRUSER: FIRUSERDelegate {
             }
         })
     }
-
+    
     /// This function changes password of user
     ///
     ///  - Parameter newPassword: UserEmail
@@ -514,28 +637,28 @@ class FIRUSER: FIRUSERDelegate {
     ///  - returns void
     ///  - throws: FIRERROR
     internal func changePassword(newPassword:String,completion: @escaping (String?) -> ()) {
-            FIRAuth.auth()?.currentUser?.updatePassword(newPassword, completion: { (err) in
-                if err == nil
-                {
-                    completion(nil)
-                }
-                else{
+        FIRAuth.auth()?.currentUser?.updatePassword(newPassword, completion: { (err) in
+            if err == nil
+            {
+                completion(nil)
+            }
+            else{
                 completion(err.debugDescription)
-                    return
-                }
-            })
-         }
-
+                return
+            }
+        })
+    }
+    
     /// This function checks is user verified
     ///
     ///  - Parameter completion: Completion Block
     ///  - returns void
     ///  - throws: FIRERROR
     internal func isUserVerified(completion: @escaping (Bool) -> ()) {
-            let isVerified = FIRAuth.auth()?.currentUser?.isEmailVerified
-            completion(isVerified!)
+        let isVerified = FIRAuth.auth()?.currentUser?.isEmailVerified
+        completion(isVerified!)
     }
-
+    
     /// That function sends verification email to user
     ///
     ///  - Parameter completion: Completion Block that gets String
@@ -555,7 +678,7 @@ class FIRUSER: FIRUSERDelegate {
             }
         })
     }
-
+    
     ///Returns a Manipulableuser Instance for a given email. If email exists in DB.
     ///If the user exists, returns it. Otherwise, returns nil.
     ///Returning parameters are in completion block.
@@ -566,19 +689,19 @@ class FIRUSER: FIRUSERDelegate {
     ///  - throws: FIRERROR
     internal func getByEmail(email: String, completion: @escaping (ManipulableUser?) -> ()) {
         let usr = User()
-
+        
         FIRREF.instance().getRef().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value, with: { snapshot in
             
             if(snapshot.childrenCount >= 1){
-            let obj = snapshot.children.allObjects[0] as! FIRDataSnapshot
-                let objdict = obj.value as! [String:String]
+                let obj = snapshot.children.allObjects[0] as! FIRDataSnapshot
+                let objdict = obj.value as! [String:Any]
                 usr.id = obj.key
-                usr.email = objdict["email"]!
-                usr.Gender = objdict["gender"]!
-                usr.name = objdict["firstName"]!
-                usr.birthDate = objdict["birthdate"]!
-                usr.surname = objdict["lastName"]!
-                usr.country = objdict["country"]!
+                usr.email = objdict["email"] as! String!
+                usr.Gender = objdict["gender"] as! String!
+                usr.birthDate = objdict["birthdate"] as! String!
+                usr.surname = objdict["lastName"] as! String!
+                usr.name = objdict["firstName"] as! String!
+                usr.country = objdict["country"] as! String!
                 
                 
                 completion(usr)
@@ -589,7 +712,7 @@ class FIRUSER: FIRUSERDelegate {
             }
         })
     }
-
+    
     ///Returns currently logged user if any.
     ///If the user exists, returns it. Otherwise, returns nil.
     ///Returning parameters are in completion block.
@@ -606,7 +729,7 @@ class FIRUSER: FIRUSERDelegate {
         else
         {
             completion(nil)
-
+            
         }
     }
     
@@ -624,7 +747,7 @@ class FIRUSER: FIRUSERDelegate {
         completion(nil)
         
         return
-
+        
     }
     
     ///Logouts user who is logged in already.
@@ -639,7 +762,7 @@ class FIRUSER: FIRUSERDelegate {
             if err != nil{
                 completion(err.debugDescription)
                 return
-
+                
             }
             else
             {
@@ -680,7 +803,7 @@ class FIRUSER: FIRUSERDelegate {
                         completion(str)
                     }
                 })
-
+                
             }
             else
             {
@@ -688,7 +811,7 @@ class FIRUSER: FIRUSERDelegate {
             }
         }
         
-
+        
         
         
         
@@ -708,13 +831,13 @@ class FIRUSER: FIRUSERDelegate {
             {
                 FIRREF.instance().getRef().child("users").child(user!.uid).setValue(
                     [
-                    "firstName": usr.name!,
-                    "lastName" : usr.surname!,
-                    "email": usr.email!,
-                    "gender": usr.Gender!,
-                    "birthdate": usr.birthDate!,
-                    "country": usr.country!,
-                    "isActive": "true"
+                        "firstName": usr.name!,
+                        "lastName" : usr.surname!,
+                        "email": usr.email!,
+                        "gender": usr.Gender!,
+                        "birthdate": usr.birthDate!,
+                        "country": usr.country!,
+                        "isActive": "true"
                     ],
                     withCompletionBlock: { (err, ref) in
                         if err == nil{
@@ -728,14 +851,14 @@ class FIRUSER: FIRUSERDelegate {
                             return
                         }
                 })
-
+                
             }
             else {
                 completion(err?.localizedDescription)
                 return
             }
         })
-
+        
     }
 }
 

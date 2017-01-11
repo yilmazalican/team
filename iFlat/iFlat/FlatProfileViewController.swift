@@ -9,10 +9,11 @@
 import UIKit
 
 /// This class controls flat profile view
-class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class FlatProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ShowAlert {
     
+    @IBOutlet weak var cityLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
     /// Outlet for UserProfileImage whose flats user
-
     @IBOutlet weak var wishListButton: UIButton!
     // Outlet for UserProfileImage whose flats user
     @IBOutlet weak var userProfileIV: UIImageView!
@@ -76,19 +77,15 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         return cell
         
     }
-
+    
     /// This function adds flat to whishlist
     @IBAction func addtoWish(_ sender: UIButton) {
-        self.flatEP.getFlatofUser(userID: self.receivedFlat!.userID!, flatID: self.receivedFlat!.flatID!) { (flt) in
-            
-      
-            
-            self.flatEP.addWishList(flt: flt!) { (err) in
-                
-                self.wishListButton.isEnabled = false 
-        }
-        
-        }
+        self.flatEP.addWishList(fltID: (self.receivedFlat?.flatID)! , completion: { (err) in
+            if err == nil{
+                self.showAlert(title: "Success", message: "The flat has been added to your wish list.")
+                sender.isEnabled = false
+            }
+        })
     }
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.flatImagesArr.count
@@ -103,8 +100,8 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             self.userProfileIV.translatesAutoresizingMaskIntoConstraints = true
             
             
-
-
+            
+            
         }
         /// This function retrieve user Image
         userRP.getUserByID(id: ownerID!) { (usr) in
@@ -125,6 +122,9 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             self.bedroomCLb.text = String(describing:flt!.bedroomCount!)
             self.bedroomCLb.text = String(describing:flt!.bedCount!)
             self.bathroomCLb.text = String(describing:flt!.bathroomCount!)
+            self.bedCLb.text = String(describing:flt!.bedCount!)
+            self.addressLbl.text = String(describing:flt!.address!)
+            self.cityLbl.text = String(describing:flt!.city!)
 
             self.assignTrueOrFalse(sender: self.pool, what: (flt?.pool)!)
             self.assignTrueOrFalse(sender: self.internet, what: (flt?.internet)!)
@@ -136,9 +136,9 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
             self.assignTrueOrFalse(sender: self.parking, what: (flt?.parking)!)
             self.assignTrueOrFalse(sender: self.smoking, what: (flt?.smoking)!)
             self.assignTrueOrFalse(sender: self.gateKeeper, what: (flt?.gateKeeper)!)
-
-            self.city.text = flt?.city
-            self.address.text = flt?.address
+            
+            self.cityLbl.text = flt?.city
+            self.addressLbl.text = flt?.address
             
             //RATE?
             //self.assignRate(sender: self.rating, star: flt.)
@@ -149,7 +149,7 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
         
         
     }
-
+    
     /// This function generates tick or cross for true or false
     func assignTrueOrFalse(sender:UILabel, what:Bool)
     {
@@ -187,12 +187,40 @@ class FlatProfileViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let segue = segue.destination as! ShowUserProfileViewController
-        segue.strUserID = self.ownerID!
+        if(segue.destination is ShowUserProfileViewController){
+            let segue = segue.destination as! ShowUserProfileViewController
+            segue.strUserID = self.ownerID!
+
+        }
+        else{
+            let segue = segue.destination as! ReservationController
+            segue.flatID = receivedFlat?.flatID
+            segue.ownerID = receivedFlat?.userID
+        }
+        
+                
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.userRP.getCurrentLoggedIn { (usr) in
+            self.userRP.getWishes(usrID: (usr?.id)!, completion: { (wishes) in
+                if wishes?[(self.receivedFlat?.flatID)!] != nil {
+                    self.wishListButton.isEnabled = false
+                }
+                else{
+                    self.wishListButton.isEnabled = true
+                }
+                
+            })
 
+            self.flatEP.getFlatsofUser(userID: (usr?.id)!, completion: { (flts) in
+                
+            })
+            
+        }
+    }
     
     
-
-
+    
+    
 }

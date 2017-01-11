@@ -19,16 +19,21 @@ protocol FIRFlatDelegate :class
     func setOwnerID() -> String!
     func insertFlat(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func insertTimeSlot(flt:ManipulableFlat, timeslot:[Int], completion: @escaping (String?) -> ())
-    func addWishList(flt:ManipulableFlat, completion: @escaping (String?) -> ())
+    func addWishList(fltID:String, completion: @escaping (String?) -> ())
     func deleteWish(flt:ManipulableFlat, completion: @escaping (String?) -> ())
     func getAvailableTimeSlots(flt:ManipulableFlat, completion: @escaping ([Int?]) -> ())
     func deleteFlat(flt:ManipulableFlat,oldcity:String)
+    
     
 }
 
 
 class FIRFlat:FIRFlatDelegate
 {
+
+
+
+
     var endp = FIRUSER()
     /// This function deletes flat
     ///
@@ -47,7 +52,7 @@ class FIRFlat:FIRFlatDelegate
     ///  - returns void
     ///  - throws: FIRERROR
     internal func getAvailableTimeSlots(flt: ManipulableFlat, completion: @escaping ([Int?]) -> ()) {
-        FIRREF.instance().getRef().child("time_slots").queryOrdered(byChild: flt.id).queryEqual(toValue: true).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("time_slots").queryOrdered(byChild: flt.id).queryEqual(toValue: true).observeSingleEvent(of: .value, with: { (ss) in
             var timeSlots = [Int]()
             for a in ss.children.allObjects
             {
@@ -66,7 +71,7 @@ class FIRFlat:FIRFlatDelegate
     ///  - throws: FIRERROR
     internal func deleteWish(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
         
-        FIRREF.instance().getRef().child("Wishes/" + flt.userID! + "/" + flt.id).removeValue()
+        FIRREF.instance().getRef().child("wishes/" + flt.userID! + "/" + flt.id).removeValue()
         completion(nil)
     }
 
@@ -76,11 +81,11 @@ class FIRFlat:FIRFlatDelegate
     ///  - Parameter completion: Completion Block
     ///  - returns void
     ///  - throws: FIRERROR
-    internal func addWishList(flt: ManipulableFlat, completion: @escaping (String?) -> ()) {
+    internal func addWishList(fltID:String, completion: @escaping (String?) -> ()) {
      
         endp.getCurrentLoggedIn { (usr) in
-            FIRREF.instance().getRef().child("Wishes/" + (usr?.id!)! + "/" + flt.id).setValue(true)
-
+            FIRREF.instance().getRef().child("wishes/" + (usr?.id!)! + "/" + fltID).setValue(true)
+            completion(nil)
         }
         
     }
@@ -133,7 +138,7 @@ class FIRFlat:FIRFlatDelegate
             "tv" : flt.tv!,
             "washingMachine" : flt.washingMachine!,
             "capacity" : flt.flatCapacity!,
-            "userId" : flt.userID,
+            "userId" : flt.userID!,
             "city" : flt.city!,
             "address": flt.address!,
             "published": flt.published!,
@@ -157,7 +162,7 @@ class FIRFlat:FIRFlatDelegate
                 if flt.images != nil{
                     if flt.images!.count > 0
                     {
-                        for (index,iterator) in (flt.images?.enumerated())!
+                        for (_,iterator) in (flt.images?.enumerated())!
                         {
                             let pngREP = UIImageJPEGRepresentation(iterator.image, 0.1)
                             FIRREF.instance().getStorageRef().child("flat_images/" + iterator.id + ".jpeg").put(pngREP!, metadata: nil, completion: { (mdata, err3) in
@@ -235,7 +240,7 @@ class FIRFlat:FIRFlatDelegate
     ///  - returns void
     ///  - throws: FIRERROR
     internal func getFlatofUser(userID: String, flatID: String, completion: @escaping (ManipulableFlat?) -> ()) {
-        FIRREF.instance().getRef().child("user_flats/" + userID + "/" + flatID ).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("user_flats/" + userID + "/" + flatID ).observeSingleEvent(of: .value, with: { (ss) in
             if ss.childrenCount >= 1 && userID != "" && flatID != ""{
                 let flt = Flat()
                 let objdict = ss.value as! [String:Any]
@@ -279,7 +284,7 @@ class FIRFlat:FIRFlatDelegate
     ///  - returns void
     ///  - throws: FIRERROR
     internal func getFlatsofUser(userID: String, completion: @escaping ([ManipulableFlat]?) -> ()) {
-        FIRREF.instance().getRef().child("user_flats/" + userID).queryOrdered(byChild: "disabled").queryEqual(toValue: false).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("user_flats/" + userID).queryOrdered(byChild: "disabled").queryEqual(toValue: false).observeSingleEvent(of: .value, with: { (ss) in
             var fltArr = [ManipulableFlat]()
             for a in ss.children.allObjects as! [FIRDataSnapshot]
             {

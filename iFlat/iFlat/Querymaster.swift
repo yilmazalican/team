@@ -27,7 +27,7 @@ class Querymaster:QuerymasterDelegate
     internal func getPromotions(completion: @escaping ([Promotion]) -> ()) {
 
         var promotions = [Promotion]()
-        FIRREF.instance().getRef().child("promotions").queryOrdered(byChild: "isActive").queryEqual(toValue: true).observe(.value, with: { (ss) in
+        FIRREF.instance().getRef().child("promotions").queryOrdered(byChild: "isActive").queryEqual(toValue: true).observeSingleEvent(of: .value, with: { (ss) in
             for ts in ss.children.allObjects
             {
                 let promotionObject = ts as! FIRDataSnapshot
@@ -57,20 +57,36 @@ class Querymaster:QuerymasterDelegate
     ///  - throws: FIRERROR
     internal func getFilteredFlats(filter: FilterModel, completion: @escaping ([FilteredFlat]) -> ()) {
         
+        var arr = [String]()
         var zamanAraliginaUygunFlatlar = [String]()
+        var a = filter.toDate!.toTimeStamp()
+        a  -= (60*60*24)
         
-        FIRREF.instance().getRef().child("time_slots").queryOrderedByKey().queryStarting(atValue: String(describing: filter.fromDate?.toTimeStamp())).queryEnding(atValue: String(describing: filter.toDate?.toTimeStamp())).observeSingleEvent(of: .value, with: { (ss) in
+        FIRREF.instance().getRef().child("time_slots").queryOrderedByKey().queryStarting(atValue: String(describing: filter.fromDate!.toTimeStamp())).queryEnding(atValue: String(describing: a)).observeSingleEvent(of: .value, with: { (ss) in
+            
             for ts in ss.children.allObjects
             {
                 let timeslotFlatObj = ts as! FIRDataSnapshot
                 let timeslotForFlat = timeslotFlatObj.value as! [String:Bool]
                 for x in timeslotForFlat
                 {
-                    if (x.value == true && !zamanAraliginaUygunFlatlar.contains(x.key))
+                    if (x.value == true)
                     {
-                        zamanAraliginaUygunFlatlar.append(x.key)
+                        arr.append(x.key)
+                        
                     }
-                    
+               }               
+            }
+            let timeSlotRange = (filter.toDate!.toTimeStamp() - filter.fromDate!.toTimeStamp()) / (60*60*24)
+            var counts:[String:Int] = [:]
+            
+            for item in arr {
+                counts[item] = (counts[item] ?? 0) + 1
+            }
+            for (key, value) in counts {
+                if(value >= timeSlotRange)
+                {
+                    zamanAraliginaUygunFlatlar.append(key)
                 }
             }
             
@@ -78,7 +94,7 @@ class Querymaster:QuerymasterDelegate
             //MARK: This method pulls all flats with filtered city.//
             /////////////////////////////////////////////////////////
             
-            FIRREF.instance().getRef().child("filter_flats/" + filter.city!).observe(.value, with: { (ss) in
+            FIRREF.instance().getRef().child("filter_flats/" + filter.city!).observeSingleEvent(of: .value, with: { (ss) in
                 
                 var sehirdekiFlatler = [String:Flat]()
                 
@@ -110,7 +126,7 @@ class Querymaster:QuerymasterDelegate
                     
                     sehirdekiFlatler[flt.id] = flt
                     
-                    if(!(zamanAraliginaUygunFlatlar).contains(flt.id))
+                    if((zamanAraliginaUygunFlatlar).contains(flt.id))
                     {
                         if(filter.bathroomCount == 0 || filter.bathroomCount! <= flt.bathroomCount!)
                         {
@@ -151,8 +167,6 @@ class Querymaster:QuerymasterDelegate
                                                                                         filteredFlat.flatTitle = flt.title
                                                                                         filteredFlat.userID = flt.userID
                                                                                         self.returningFlats.append(filteredFlat)
-                                                                                        
-                                                                                        
                                                                                     }
                                                                                 }
                                                                             }

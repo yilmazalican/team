@@ -97,7 +97,14 @@ class FiltersViewController: UIViewController  {
         filter?.washingMachine = (self.washingMachineSwitch.isOn)
         filter?.priceFrom = Double(self.priceFromTextField.text!)
         filter?.priceTo = Double(self.priceToTextField.text!)
+        for a in (self.navigationController?.viewControllers)!{
+            if a is ListFlatViewController{
+                let vc = a as! ListFlatViewController
+                vc.receivedFilter = self.filter!
+                self.navigationController?.popViewController(animated: true)       
 
+            }
+        }
         
         
     }
@@ -120,11 +127,6 @@ class FiltersViewController: UIViewController  {
         field.inputView = numberPlusPickerObj
     }
 
-    /// Segue function for passing variable to 'ListFlatViewController'
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigationController = segue.destination as! ListFlatViewController
-        navigationController.receivedFilter = self.filter!
-    }
 
 
 }

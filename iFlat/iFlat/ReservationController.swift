@@ -2,93 +2,183 @@
 //  ReservationController.swift
 //  iFlat
 //
-//  Created by Eren AY on 26/12/16.
-//  Copyright © 2016 SE 301. All rights reserved.
+//  Created by Alican Yilmaz on 10/01/2017.
+//  Copyright © 2017 SE 301. All rights reserved.
 //
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-class ReservationController: UICollectionViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+class ReservationController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowAlert {
+    var customDateBabyInstance: CustomDateDay?
+    var flatCalendarItem = [FlatCalendarItem]()
+    var selectedIndexes:Int = 0    
+    var trueControl:Int = 0 
+    var cellArr = [CalendarCell]()
+    let userEndpoint = FIRUSER()
+    let flatEndpoint = FIRFlat()
+    var flatID:String?
+    var ownerID:String?
+    //for reservedSlots
+    var disabledTimeSlots = [Int]()
+    //for disabledSlots
+    var returningSlots = [Int]()
+    @IBOutlet weak var reservationTTV: UITableView!
     
-        // Configure the cell
     
+    @IBAction func sendReservationRequestTapped(_ sender: UIButton) {
+        //MARK: Select etmezse??
+        var selectedTimeSlots = [Int]()
+        let selectedRows = self.reservationTTV.indexPathsForSelectedRows
+        for a in selectedRows!{
+            
+            selectedTimeSlots.append((self.customDateBabyInstance!.dayList[a.section][a.row]).date.toTimeStamp())
+        }
+        
+        userEndpoint.getCurrentLoggedIn { (usr) in
+            let request = ReservationRequest(renterUID: usr!.id!, hostUID: self.ownerID!, flatID: self.flatID!, timeSlots: selectedTimeSlots)
+            self.userEndpoint.sendReservationRequest(req: request, completion: { (err) in
+                if err == nil{
+                    self.showAlert(title: "Success", message: "Reservation hes been sent.")
+                }
+            }) 
+        }
+    }
+    
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return (self.customDateBabyInstance?.sectionL.count)!
+    }
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        selectedIndexes -= 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexes += 1
+        let mycell = tableView.cellForRow(at: indexPath) as! CalendarCell
+        mycell.isSelected = true
+        if selectedIndexes > 2{
+            for a in tableView.indexPathsForSelectedRows!{
+                tableView.deselectRow(at: a, animated: true)
+                mycell.isSelected = false
+                
+            }
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+            selectedIndexes = 1
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.customDateBabyInstance?.sectionL[section]
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell") as! CalendarCell
+        cell.layer.backgroundColor = UIColor.white.cgColor
+        cell.isUserInteractionEnabled = true
+        cell.calendarDayLabel.text = String(describing:(self.customDateBabyInstance!.dayList[indexPath.section][indexPath.row]).day)
+        cellAction(sender: cell, indexPath: indexPath)
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (self.customDateBabyInstance?.dayList[section].count)!
     }
-    */
+    
+    
+    
+    
+    func disabledDays(completion: @escaping ([Int]?) -> ()){
+        userEndpoint.getFlatReservations(fltID: self.flatID!) { (reservations) in
+            if reservations != nil{
+                var dateArr = [Int]()
+                for a in reservations!{
+                    if a.accepted! > 1{
+                        for b in a.timeSlots{
+                            dateArr.append(b)
+                        }
+                    }
+                }
+                completion(dateArr) 
+            }
+            else{
+                completion(nil)
+            }
 
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.customDateBabyInstance = CustomDateDay()
+      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        disabledDays { (disabledTimeSlots) in
+            if (disabledTimeSlots?.count) != nil{
+                self.disabledTimeSlots = disabledTimeSlots!
+                self.reservationTTV.reloadData()
+                
+            }
+
+        } 
+        getAvailableTimeSlotsOfFlat { (returningSlots) in
+            self.returningSlots = returningSlots!
+            self.reservationTTV.reloadData()
+
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("dsadsa")
+    }
+    
+    
+    
+    func getAvailableTimeSlotsOfFlat(completion: @escaping ([Int]?) -> ()){
+        userEndpoint.getAvailableTimeSlotsOfFlat(userID: self.ownerID!, fltID: self.flatID!) { (returningSlots) in
+            completion(returningSlots)
+            self.reservationTTV.reloadData()
+        }
+    }
+    
+    func cellAction(sender:CalendarCell, indexPath:IndexPath){
+        DispatchQueue.main.async {
+            if(self.disabledTimeSlots.contains(self.customDateBabyInstance!.dayList[indexPath.section][indexPath.row].date.toTimeStamp())){
+                sender.layer.backgroundColor = UIColor.lightGray.cgColor
+                sender.isUserInteractionEnabled = false
+            }
+            else if(self.returningSlots.contains(self.customDateBabyInstance!.dayList[indexPath.section][indexPath.row].date.toTimeStamp())){
+                sender.layer.backgroundColor = UIColor.white.cgColor
+                sender.isUserInteractionEnabled = true
+                
+            }
+            else{
+                sender.layer.backgroundColor = UIColor.darkGray.cgColor
+                sender.isUserInteractionEnabled = false
+            }
+ 
+        }
+               
+    }
+    
+    
+    
+    
+    
 }
+
+
+

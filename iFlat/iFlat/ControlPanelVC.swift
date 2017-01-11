@@ -19,12 +19,12 @@ class ControlPanelVC: UITableViewController, ShowAlert, MFMailComposeViewControl
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mailComposeViewController = configuredMailComposeViewController()
-        if indexPath.row == 5 && MFMailComposeViewController.canSendMail(){
+        if indexPath.row == 6 && MFMailComposeViewController.canSendMail(){
             self.present(mailComposeViewController, animated: true, completion: nil)
 
         
         }
-        if indexPath.row == 6{
+        if indexPath.row == 7{
                     let alert = UIAlertController(title: "Confirmation", message: "Are you sure?", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
                     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in

@@ -32,6 +32,11 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
      - returns: Void
      */
     override func viewDidLoad() {
+
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
         self.view.isUserInteractionEnabled = false
         self.tabBarController?.tabBar.isUserInteractionEnabled = false
@@ -42,12 +47,11 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         qm.getFilteredFlats(filter: self.receivedFilter) { (dsa) in
             self.filteredFlats = dsa
-                        self.listFlatCollectionView.reloadData()
-                self.indicator.stopAnimating()
-                self.tabBarController?.tabBar.isUserInteractionEnabled = true
-                self.view.isUserInteractionEnabled = true
+            self.listFlatCollectionView.reloadData()
+            self.indicator.stopAnimating()
+            self.tabBarController?.tabBar.isUserInteractionEnabled = true
+            self.view.isUserInteractionEnabled = true
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,7 +117,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
             let cell = listFlatCollectionView.cellForItem(at: indexPath) as! ListFlatCollectionViewCell
             let storyboard = UIStoryboard(name: "FlatProfile", bundle: nil)
 
-            let flatProfileVC = storyboard.instantiateViewController(withIdentifier: "flatProfile") as! FlatProfileViewController
+            _ = storyboard.instantiateViewController(withIdentifier: "flatProfile") as! FlatProfileViewController
 
 
             performSegue(withIdentifier: "flatProfileSegue", sender: cell)
@@ -133,7 +137,7 @@ class ListFlatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
             let flatProfileVC = segue.destination as! FlatProfileViewController
             flatProfileVC.ownerID = self.filteredFlats[(indexPath?.row)!].userID
-            flatProfileVC.receivedFlat = self.filteredFlats[(indexPath?.row)!] as! FilteredFlat
+            flatProfileVC.receivedFlat = self.filteredFlats[(indexPath?.row)!] 
             
 
             }

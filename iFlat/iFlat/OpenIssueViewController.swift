@@ -70,13 +70,17 @@ public class OpenIssueViewController: UIViewController,UITextFieldDelegate,UITex
         else {
             
             firebase.openIssue(toUser: reportedUser, issue: issue) { (err) in
-                print("err")
+               self.dismiss(animated: true, completion: nil)
             }
         }
         
        
     }
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+    @IBOutlet weak var cancelButtonTapped: UIButton!
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
         issue.title = textField.text

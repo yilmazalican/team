@@ -11,40 +11,30 @@ class ReservationRequest
 {
     private let dbEndpoint = FIRUSER()
     var id = UUID().uuidString
-    var toU:String?
-    var fromU:String?
-    var flat:String?
-    var from:Int?
-    var to:Int?
+    var hostUID:String?
+    var renterUID:String?
+    var flatID:String?
+    var timeSlots = [Int]()
     var accepted:Int?
     var date:String?
+
     
-    init(fromU:String, toU:String,flat:String,from:Int,to:Int) {
+    init(renterUID:String, hostUID:String,flatID:String, timeSlots:[Int]) {
         self.accepted = 0
-        self.toU = toU
-        self.flat = flat
-        self.from = from
-        self.to = to
+        self.timeSlots = timeSlots
         let date = Date()
         let locale = Locale(identifier: "tr-TR")
         let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 3)
         formatter.dateFormat = "dd/MM/yyyy HH:mm:ss:SSSS"
         formatter.locale = locale
         let result = formatter.string(from: date)
         self.date = result
-        self.fromU = ""
-        dbEndpoint.getCurrentLoggedIn { (usr) in
-            if usr == nil
-            {
-                fatalError()
-            }
-            else
-            {
-                self.fromU = usr!.id!
-            }
-        }
-        
-        
+        self.renterUID = renterUID
+        self.hostUID = hostUID
+        self.flatID = flatID
+    
+       
     }
     
     init()

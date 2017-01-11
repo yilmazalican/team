@@ -110,6 +110,9 @@ class ChoosePhotoViewController: UIViewController,ShowAlert {
         }, completion: nil)
     }
     
+    @IBAction func cancelTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
  
     
    

@@ -28,9 +28,38 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
         passwordTextField.delegate = self
         dbbridge2.getCurrentLoggedIn(completion: { (usr) in
             if usr != nil{  
-                let viewControllerYouWantToPresent = self.storyboard?.instantiateViewController(withIdentifier: "mainFlow")
-                self.present(viewControllerYouWantToPresent!, animated: true, completion: nil)
-                self.indicator.stopAnimating()
+                self.dbbridge2.isUserBanned(usrID: (usr?.id)!, completion: { (comp) in
+                    if comp == true{
+                        let viewControllerYouWantToPresent = self.storyboard?.instantiateViewController(withIdentifier: "mainFlow")
+                        self.present(viewControllerYouWantToPresent!, animated: true, completion: nil)
+                        self.indicator.stopAnimating()
+
+                    }
+                    else{
+                        let appDelegate = UIApplication.shared.delegate
+                        let window = appDelegate!.window!
+                        
+                        if window?.visibleViewController is LoginViewController {
+                            self.showAlert(title: "Banned", message: "You have been banned! Contact support team.")
+                            self.indicator.stopAnimating()
+                            
+                        }
+                        else{
+                            self.dismiss(animated: true, completion: { 
+                                self.showAlert(title: "Banned", message: "You have been banned! Contact support team.")
+                                self.indicator.stopAnimating()
+                                
+                            })
+                        }
+                        self.dbbridge2.logout(completion: { (str) in
+                            if str != nil{
+                                fatalError()
+                            }
+                        })
+
+                    }
+                })
+                
             }
             else{
                 self.indicator.stopAnimating()
@@ -153,7 +182,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,ShowAlert {
                                 })
                             }
                             self.dbbridge2.logout(completion: { (str) in
-
+                                if str != nil{
+                                    fatalError()
+                                }
                             })
                         }
                     })

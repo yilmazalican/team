@@ -20,7 +20,7 @@ class AddFlatViewController: UIViewController {
     var dbFirebaseFlat = FIRFlat()
 
     var flatImage = [FlatImage]()
-    
+    var timeSlots = [Int]()
    
     
     var addingFlat : Flat = {
@@ -38,7 +38,7 @@ class AddFlatViewController: UIViewController {
         flat.smoking = false
         flat.tv = false
         flat.gateKeeper = false
-        flat.city = "Adana"
+        flat.city = "ADANA"
         
         return flat
         
@@ -277,6 +277,20 @@ class AddFlatViewController: UIViewController {
                     self.dbFirebaseFlat.getFlatImages(flatID: self.addingFlat.id, completion: { (imgs) in
                  
                             self.indicator.stopAnimating()
+                        self.dbFirebaseFlat.insertTimeSlot(flt: self.addingFlat, timeslot: self.timeSlots, completion: { (err) in
+                            if err != nil
+                            {
+                                fatalError("Ekleyemedim timeslot")
+                            }
+                            else{
+                                self.dbFirebase.insertAvailableTimeSlotsToFlat(flt: self.addingFlat, timeslot: self.timeSlots, completion: { (str) in
+                                    if str == nil{
+                                        self.dismiss(animated: true, completion: nil)
+                                    }
+                                })
+                            }
+                            
+                        })
                             
                         
                     })
@@ -295,7 +309,9 @@ class AddFlatViewController: UIViewController {
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
 
     }
     
@@ -479,9 +495,14 @@ extension AddFlatViewController : UITextFieldDelegate,UITextViewDelegate,ShowAle
         
         return true
     }
+    
+    
+    
 
    
 }
+
+
 
 
 
