@@ -2,8 +2,7 @@
 
 # Welcome
 iFlat is a extra space monetizing platform which allows customers to rent their flat easily and showcase it to an audience of millions.
-SUMMARY OF THE SE301 OF OUR SCHOOL. WE OUR SCORE WAS THE LOWEST SCORE OF SCORE LIMIT
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/9GGRDG8HCfU/0.jpg)](https://www.youtube.com/watch?v=9GGRDG8HCfU)
+
 
 
 
